@@ -10,6 +10,7 @@
   <header class="site-header">
     <div class="container">
       <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
       <span class="site-subtitle">经济学 → 经济学原理 → 01 导论</span>
     </div>
   </header>
@@ -18,7 +19,7 @@
     <aside class="sidebar">
       <nav id="menu"></nav>
     </aside>
-    <main class="main">
+    <main class="main" id="main-content">
       <h1>01 导论</h1>
       <p>本篇覆盖《经济学原理》前三章：经济学的十大原理、经济学家像科学家一样的思考方式（两个基础模型），以及贸易为什么能使人人受益。</p>
 
@@ -151,6 +152,7 @@
       <p>没有贸易时，PPF 同时就是消费可能性边界。假设两人都各用一半时间生产一种产品：农民消费 4 盎司肉类 + 16 盎司土豆；牧场主消费 12 盎司肉类 + 24 盎司土豆。</p>
 
       <div id="fig-ppf-autarky"></div>
+      <p>图中灰色虚线是<strong>两人合并的 PPF</strong>（把两人的产能加总：先让机会成本低的牧场主生产肉类，到拐点 (24肉, 32土豆) 后再让农民转产）。注意星形的两人<strong>合计消费点 (16肉, 40土豆) 位于合并 PPF 之内</strong>——自给自足状态下，这个"小经济"还有未被挖掘的生产潜力。</p>
 
       <h3>二阶段：选择贸易</h3>
       <p><strong>前置说明：两个人的交易计划。</strong>牧场主向农民提议：</p>
@@ -170,7 +172,7 @@
 
       <div id="fig-ppf-trade"></div>
 
-      <p>注意图中两颗星：<strong>双方的消费点都跑到了各自 PPF 的外面</strong>——这是他们单靠自己永远无法达到的组合。</p>
+      <p>注意图中三颗星：农民和牧场主的<strong>消费点都跑到了各自 PPF 的外面</strong>——这是他们单靠自己永远无法达到的组合；而绿色的<strong>合计生产点 (18肉, 44土豆) 恰好落在合并 PPF 上</strong>——按比较优势专业化分工后，整个"小经济"达到了有效率的生产，蛋糕确实变大了。</p>
 
       <h3>总结：贸易收益的来源</h3>
       <p>对比贸易前后：</p>
@@ -237,19 +239,25 @@
       </ul>
       <p>这解释了国际贸易的基本原理：<strong>即使一个国家在所有方面都更有效率，贸易仍然对所有参与方有利</strong>。</p>
     </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
   </div>
 
   <script src="../../../assets/js/menu.js"></script>
   <script src="../../../assets/js/charts.js"></script>
   <script>
-    renderMenu(document.getElementById('menu'), {
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
       basePath: '../../../',
       activeLink: 'pages/economics/principles-of-economics/01-introduction.html',
     });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
 
-    // ===== 图1：循环流量图 =====
+    // ===== 图1：循环流量图（同心双圆环：内圈实物流、外圈货币流） =====
     Charts.circularFlow(document.getElementById('fig-circular-flow'), {
-      caption: '图 1：循环流量图 —— 绿色为实物流，橙色为货币流',
+      caption: '图 1：循环流量图 —— 内圈为实物流，外圈为货币流',
     });
 
     // ===== 图2：生产可能性边界（汽车 vs 电脑） =====
@@ -259,7 +267,8 @@
       xMax: 1100, yMax: 3300, xStep: 200, yStep: 500,
       caption: '图 2：生产可能性边界（PPF）',
       series: [{
-        points: [[0, 3000], [300, 2760], [600, 2200], [700, 2000], [800, 1660], [900, 1120], [1000, 0]],
+        // 平缓的外弯曲线：加密路径点使曲率均匀变化
+        points: [[0, 3000], [250, 2790], [450, 2480], [600, 2200], [700, 2000], [800, 1760], [880, 1500], [940, 1180], [970, 800], [990, 400], [1000, 0]],
         type: 'spline', color: '#1d4ed8', label: 'PPF（生产可能性边界）',
       }],
       markers: [
@@ -270,37 +279,41 @@
       ],
     });
 
-    // ===== 图3：无贸易时两人各自的 PPF 与自给自足点 =====
+    // ===== 图3：无贸易时两人各自的 PPF、合并 PPF 与自给自足点 =====
     Charts.ppf(document.getElementById('fig-ppf-autarky'), {
       xLabel: '肉类（盎司）',
       yLabel: '土豆（盎司）',
-      xMax: 28, yMax: 54, xStep: 4, yStep: 8,
-      caption: '图 3：一阶段 —— 无贸易，两人各自自给自足',
+      xMax: 36, yMax: 88, xStep: 4, yStep: 16,
+      caption: '图 3：一阶段 —— 无贸易，两人各自自给自足（合计点在合并 PPF 之内）',
       series: [
+        { points: [[0, 80], [24, 32], [32, 0]], type: 'linear', color: '#9ca3af', dash: true, label: '两人合并的 PPF' },
         { points: [[8, 0], [0, 32]], type: 'linear', color: '#2563eb', label: '农民的 PPF' },
         { points: [[24, 0], [0, 48]], type: 'linear', color: '#7c3aed', label: '牧场主的 PPF' },
       ],
       markers: [
-        { x: 4, y: 16, label: '农民自给自足 (4肉, 16土豆)', color: '#2563eb', legend: '自给自足点（生产=消费）', labelDx: 8, labelDy: 16 },
+        { x: 4, y: 16, label: '农民自给自足 (4肉, 16土豆)', color: '#2563eb', legend: '自给自足点（生产=消费）', labelDx: 8, labelDy: 20 },
         { x: 12, y: 24, label: '牧场主自给自足 (12肉, 24土豆)', color: '#7c3aed', labelDx: 10, labelDy: -8 },
+        { x: 16, y: 40, label: '合计 (16肉, 40土豆)', color: '#0f766e', shape: 'star', legend: '两人合计消费', labelDx: -30, labelDy: 24 },
       ],
     });
 
-    // ===== 图4：贸易后 —— 生产点在边界上，消费点在边界外 =====
+    // ===== 图4：贸易后 —— 生产点在各自边界上，合计点落在合并 PPF 上 =====
     Charts.ppf(document.getElementById('fig-ppf-trade'), {
       xLabel: '肉类（盎司）',
       yLabel: '土豆（盎司）',
-      xMax: 28, yMax: 54, xStep: 4, yStep: 8,
-      caption: '图 4：二阶段 —— 专业化 + 贸易，消费点超出 PPF',
+      xMax: 36, yMax: 88, xStep: 4, yStep: 16,
+      caption: '图 4：二阶段 —— 专业化 + 贸易，合计生产点恰好落在合并 PPF 上',
       series: [
+        { points: [[0, 80], [24, 32], [32, 0]], type: 'linear', color: '#9ca3af', dash: true, label: '两人合并的 PPF' },
         { points: [[8, 0], [0, 32]], type: 'linear', color: '#2563eb', label: '农民的 PPF' },
         { points: [[24, 0], [0, 48]], type: 'linear', color: '#7c3aed', label: '牧场主的 PPF' },
       ],
       markers: [
         { x: 0, y: 32, label: '农民生产 (0肉, 32土豆)', color: '#2563eb', legend: '生产点（专业化后）', labelDx: 8, labelDy: 4 },
-        { x: 18, y: 12, label: '牧场主生产 (18肉, 12土豆)', color: '#7c3aed', labelDx: -70, labelDy: 22 },
-        { x: 5, y: 17, label: '农民消费 (5肉, 17土豆)', color: '#dc2626', shape: 'star', legend: '贸易后消费点（超出 PPF）', lineTo: [0, 32], labelDx: 8, labelDy: 14 },
+        { x: 18, y: 12, label: '牧场主生产 (18肉, 12土豆)', color: '#7c3aed', labelDx: -30, labelDy: 26 },
+        { x: 5, y: 17, label: '农民消费 (5肉, 17土豆)', color: '#dc2626', shape: 'star', legend: '贸易后消费点（超出各自 PPF）', lineTo: [0, 32], labelDx: 8, labelDy: 20 },
         { x: 13, y: 27, label: '牧场主消费 (13肉, 27土豆)', color: '#dc2626', shape: 'star', lineTo: [18, 12], labelDx: 10, labelDy: -6 },
+        { x: 18, y: 44, label: '合计生产=合计消费 (18肉, 44土豆)', color: '#0f766e', shape: 'star', legend: '两人合计（在合并 PPF 上）', labelDx: 10, labelDy: -8 },
       ],
     });
   </script>

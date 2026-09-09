@@ -154,12 +154,13 @@ window.Charts = (function () {
   }
 
   /**
-   * 循环流量图
+   * 循环流量图（同心双圆环版）
+   * 内圈=实物流（物品/服务/生产要素），外圈=货币流（支出/收入），
+   * 两个圆环被家庭/企业方块和两个市场椭圆"切割"（圆环从它们下方穿过）。
    * opts（均可选，默认对应教材标准模型）:
-   *  - households, firms            两个参与者名称
-   *  - goodsMarket, factorsMarket   两个市场名称
-   *  - goodsColor, moneyColor       实物流 / 货币流颜色
-   *  - caption                      图标题
+   *  - goodsColor, moneyColor   实物流 / 货币流颜色
+   *  - labels                   覆盖参与者/市场名称
+   *  - caption                  图标题
    */
   function circularFlow(container, opts) {
     opts = opts || {};
@@ -172,10 +173,14 @@ window.Charts = (function () {
       factorsMarket: '生产要素市场',
     }, opts.labels || {});
 
-    const W = 680, H = 470;
+    const W = 680, H = 480;
+    const CX = 340, CY = 245;
+    // 外圈=货币流，内圈=实物流（rx/ry 不同 => 不同大小的"圆圈"）
+    const OUTER = { rx: 285, ry: 175 };
+    const INNER = { rx: 225, ry: 140 };
+
     const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' });
 
-    // 箭头 marker（按颜色各定义一个）
     const defs = el('defs', null, svg);
     [['arrow-goods', goods], ['arrow-money', money]].forEach(([id, color]) => {
       const marker = el('marker', {
@@ -185,73 +190,91 @@ window.Charts = (function () {
       el('path', { d: 'M0,0 L8,3 L0,6 Z', fill: color }, marker);
     });
 
-    // 几何：左=家庭，右=企业，上=产品与服务市场，下=生产要素市场
+    // ---- 先画两个圆环（置于底层） ----
+    el('ellipse', { cx: CX, cy: CY, rx: OUTER.rx, ry: OUTER.ry, fill: 'none', stroke: money, 'stroke-width': 2.5 }, svg);
+    el('ellipse', { cx: CX, cy: CY, rx: INNER.rx, ry: INNER.ry, fill: 'none', stroke: goods, 'stroke-width': 2.5 }, svg);
+
+    // 椭圆上一点（θ 为数学角，屏幕坐标 y 向下，θ 增大 = 视觉顺时针）
+    const pt = (ring, deg) => {
+      const t = (deg * Math.PI) / 180;
+      return [CX + ring.rx * Math.cos(t), CY + ring.ry * Math.sin(t)];
+    };
+    // 在 θ 处沿流向放置一个箭头（clockwise=true 顺时针）
+    const arrow = (ring, deg, clockwise, arrowId) => {
+      const t = (deg * Math.PI) / 180;
+      const [x, y] = pt(ring, deg);
+      // 切向量：顺时针 = (-rx·sinθ, ry·cosθ)，逆时针取反
+      let tx = -ring.rx * Math.sin(t);
+      let ty = ring.ry * Math.cos(t);
+      if (!clockwise) { tx = -tx; ty = -ty; }
+      const len = Math.hypot(tx, ty);
+      const dx = (tx / len) * 9, dy = (ty / len) * 9;
+      // 用一小段沿切向的可见线段挂箭头，指示圆环上的流向
+      el('line', {
+        x1: x - dx, y1: y - dy, x2: x + dx, y2: y + dy,
+        stroke: arrowId === 'arrow-goods' ? goods : money, 'stroke-width': 2.5,
+        'marker-end': `url(#${arrowId})`,
+      }, svg);
+    };
+
+    // 外圈货币流：顺时针（上半圈 家庭→市场→企业，下半圈 企业→市场→家庭）
+    arrow(OUTER, 225, true, 'arrow-money');   // 左上：支出
+    arrow(OUTER, 315, true, 'arrow-money');   // 右上：收入
+    arrow(OUTER, 45, true, 'arrow-money');    // 右下：工资/租金/利润
+    arrow(OUTER, 135, true, 'arrow-money');   // 左下：收入
+    // 内圈实物流：逆时针（上半圈 企业→市场→家庭，下半圈 家庭→市场→企业）
+    arrow(INNER, 225, false, 'arrow-goods');  // 左上：物品与服务
+    arrow(INNER, 315, false, 'arrow-goods');  // 右上：物品与服务
+    arrow(INNER, 45, false, 'arrow-goods');   // 右下：生产要素
+    arrow(INNER, 135, false, 'arrow-goods');  // 左下：生产要素
+
+    // ---- 再画方块与椭圆（覆盖圆环，形成"切割"） ----
     const box = (x, y, w, h, txt) => {
       el('rect', { x, y, width: w, height: h, rx: 8, fill: '#eff6ff', stroke: '#1d4ed8', 'stroke-width': 1.5 }, svg);
       text(svg, x + w / 2, y + h / 2 + 5, txt, { 'text-anchor': 'middle', 'font-weight': 700, 'font-size': 15 });
     };
     const market = (cx, cy, txt) => {
-      el('ellipse', { cx, cy, rx: 130, ry: 38, fill: '#f0fdf4', stroke: '#15803d', 'stroke-width': 1.5 }, svg);
+      el('ellipse', { cx, cy, rx: 128, ry: 40, fill: '#f0fdf4', stroke: '#15803d', 'stroke-width': 1.5 }, svg);
       text(svg, cx, cy + 5, txt, { 'text-anchor': 'middle', 'font-weight': 700, 'font-size': 15 });
     };
+    box(15, 215, 130, 60, label.households);        // 家庭（左）
+    box(535, 215, 130, 60, label.firms);            // 企业（右）
+    market(CX, 72, label.goodsMarket);              // 产品与服务市场（上）
+    market(CX, 418, label.factorsMarket);           // 生产要素市场（下）
 
-    box(20, 200, 130, 60, label.households);       // 家庭
-    box(530, 200, 130, 60, label.firms);           // 企业
-    market(340, 80, label.goodsMarket);            // 上市场
-    market(340, 390, label.factorsMarket);         // 下市场
-
-    const flow = (d, color, arrowId) => {
-      el('path', {
-        d, fill: 'none', stroke: color, 'stroke-width': 2.5,
-        'marker-end': `url(#${arrowId})`,
-      }, svg);
-    };
-    const A_G = 'arrow-goods', A_M = 'arrow-money';
-
-    // ---- 上半圈：产品与服务 ----
-    // 货币(支出)：家庭 -> 市场
-    flow('M 130 205 C 180 150, 210 110, 245 92', money, A_M);
-    // 物品与服务：市场 -> 家庭
-    flow('M 225 68 C 180 90, 150 140, 125 195', goods, A_G);
-    // 物品与服务：企业 -> 市场
-    flow('M 550 195 C 500 140, 470 100, 438 84', goods, A_G);
-    // 货币(收入)：市场 -> 企业
-    flow('M 445 96 C 490 120, 520 150, 552 205', money, A_M);
-
-    // ---- 下半圈：生产要素 ----
-    // 生产要素：家庭 -> 市场
-    flow('M 125 265 C 150 320, 180 360, 222 380', goods, A_G);
-    // 货币(收入)：市场 -> 家庭
-    flow('M 240 402 C 200 380, 165 330, 132 268', money, A_M);
-    // 货币(工资/租金/利润)：企业 -> 市场
-    flow('M 552 268 C 520 320, 490 355, 448 378', money, A_M);
-    // 生产要素：市场 -> 企业
-    flow('M 445 400 C 490 375, 525 320, 550 262', goods, A_G);
-
-    // 流向文字标注
+    // ---- 流向文字标注（放在圆环外侧，避开方块与椭圆） ----
     const note = (x, y, txt, color, anchor) =>
       text(svg, x, y, txt, { 'text-anchor': anchor || 'middle', 'font-size': 12, fill: color, 'font-weight': 600 });
 
-    note(150, 128, '支出(货币)', money);
-    note(140, 190, '物品与服务', goods, 'end');
-    note(530, 128, '收入(货币)', money);
-    note(545, 190, '物品与服务', goods, 'start');
-    note(140, 318, '生产要素', goods, 'end');
-    note(140, 380, '收入(货币)', money, 'end');
-    note(545, 318, '生产要素', goods, 'start');
-    note(545, 380, '工资、租金与利润', money, 'start');
+    const [olx, oly] = pt(OUTER, 225);              // 外圈左上
+    note(olx - 18, oly - 14, '支出(货币)', money, 'end');
+    const [orx, ory] = pt(OUTER, 315);              // 外圈右上
+    note(orx + 18, ory - 14, '收入(货币)', money, 'start');
+    const [obrx, obry] = pt(OUTER, 45);             // 外圈右下
+    note(obrx + 18, obry + 24, '工资、租金与利润', money, 'start');
+    const [oblx, obly] = pt(OUTER, 135);            // 外圈左下
+    note(oblx - 18, obly + 24, '收入(货币)', money, 'end');
+
+    const [ilx, ily] = pt(INNER, 210);              // 内圈左上
+    note(ilx - 8, ily + 30, '物品与服务', goods, 'middle');
+    const [irx, iry] = pt(INNER, 330);              // 内圈右上
+    note(irx + 8, iry + 30, '物品与服务', goods, 'middle');
+    const [ibrx, ibry] = pt(INNER, 30);             // 内圈右下
+    note(ibrx + 8, ibry - 12, '生产要素', goods, 'middle');
+    const [iblx, ibly] = pt(INNER, 150);            // 内圈左下
+    note(iblx - 8, ibly - 12, '生产要素', goods, 'middle');
 
     mount(container, svg, opts.caption, [
-      { label: '实物流（物品、服务与生产要素）', color: goods, style: 'line' },
-      { label: '货币流（支出与收入）', color: money, style: 'line' },
-    ]);
+      { label: '实物流（内圈：物品、服务与生产要素）', color: goods, style: 'line' },
+      { label: '货币流（外圈：支出与收入）', color: money, style: 'line' },
+    ], 'top');
   }
 
-  /** 输出 SVG + 图例 + 标题到容器 */
-  function mount(container, svg, caption, legend) {
+  /** 输出 SVG + 图例 + 标题到容器；legendPosition: 'top' 时图例在图上方 */
+  function mount(container, svg, caption, legend, legendPosition) {
     const wrap = document.createElement('div');
     wrap.className = 'figure';
-    wrap.appendChild(svg);
+    if (legendPosition !== 'top') wrap.appendChild(svg);
 
     if (legend && legend.length) {
       const lg = document.createElement('div');
@@ -280,6 +303,8 @@ window.Charts = (function () {
       });
       wrap.appendChild(lg);
     }
+
+    if (legendPosition === 'top') wrap.appendChild(svg);
 
     if (caption) {
       const cap = document.createElement('div');
