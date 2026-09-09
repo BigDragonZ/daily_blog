@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Blog - 学习笔记</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="index.html">Daily Blog</a>
+      <span class="site-subtitle">每日学习笔记</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main">
+      <h1>学习笔记目录</h1>
+      <p>这里按学科整理每日学习内容。从左侧菜单进入具体章节。</p>
+    </main>
+  </div>
+
+  <script src="assets/js/menu.js"></script>
+  <script>
+    renderMenu(document.getElementById('menu'), { basePath: '' });
+  </script>
+</body>
+</html>
