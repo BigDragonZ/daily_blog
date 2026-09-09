@@ -1,0 +1,16 @@
+# 快速命令
+
+## Windows（cmd / 双击）
+app.bat start      # 启动应用  http://localhost:8080
+app.bat stop       # 停止应用
+app.bat restart    # 重启应用
+
+## Linux / Git Bash
+./app.sh start     # 启动应用  http://localhost:8080
+./app.sh stop      # 停止应用
+./app.sh restart   # 重启应用
+
+## 其他
+node server.js            # 前台启动（Ctrl+C 停止）
+node server.js 9090       # 指定端口启动
+logs/server.log           # 运行日志位置
