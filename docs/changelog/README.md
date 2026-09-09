@@ -18,3 +18,4 @@
 | 2026-09-09 | 站点导航与图表优化 | [2026-09-09-nav-and-charts-optimization.md](2026-09-09-nav-and-charts-optimization.md) |
 | 2026-09-09 | 吸顶导航优化 | [2026-09-09-sticky-nav.md](2026-09-09-sticky-nav.md) |
 | 2026-09-09 | 改为本地应用方式访问（localhost:8080） | [2026-09-09-local-server.md](2026-09-09-local-server.md) |
+| 2026-09-09 | 一键启停脚本 | [2026-09-09-one-click-scripts.md](2026-09-09-one-click-scripts.md) |
