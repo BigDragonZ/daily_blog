@@ -16,3 +16,4 @@
 | :--- | :--- | :--- |
 | 2026-09-09 | 经济学原理 01 导论（Ch01-Ch03） | [2026-09-09-ch01-introduction.md](2026-09-09-ch01-introduction.md) |
 | 2026-09-09 | 站点导航与图表优化 | [2026-09-09-nav-and-charts-optimization.md](2026-09-09-nav-and-charts-optimization.md) |
+| 2026-09-09 | 吸顶导航优化 | [2026-09-09-sticky-nav.md](2026-09-09-sticky-nav.md) |
