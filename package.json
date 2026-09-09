@@ -1,0 +1,9 @@
+{
+  "name": "daily_blog",
+  "private": true,
+  "version": "0.1.0",
+  "description": "每日学习笔记静态站点",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
