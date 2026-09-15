@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 生产理论 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>04 生产理论：从生产函数到规模报酬</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 5 讲（L05）：课程从消费者理论转入生产者理论。我们将看到，生产者与消费者使用几乎相同的工具箱——<span class="term">生产函数</span>对应效用函数、<span class="term">等产量线</span>对应无差异曲线、<span class="term">MRTS</span> 对应 MRS；但也有全新的概念：边际产量递减、规模报酬，以及决定我们生活水平的根本变量——<span class="term">生产率</span>。</p>
+
+      <!-- ==================== 一、引入与生产函数 ==================== -->
+      <h2>一、马尔萨斯的预言与生产函数（Production Function）</h2>
+      <p><strong>反直觉开场：</strong>1798 年，<span class="term">托马斯·马尔萨斯</span><span class="term-en">（Thomas Malthus）</span>写了一本"非常令人沮丧的书"：粮食生产的两种投入中，劳动可以增长，但土地永远固定；随着越来越多的人口挤在有限的土地上，劳动的边际产量不断递减，人均粮食必然下降，人类将陷入周期性大饥荒。然而自那以后，世界人口增长了约 <strong>1000%</strong>，我们却比以往任何时候都吃得更饱。一个逻辑严密的推理，错在了哪里？答案要学到本篇第五节才能揭晓——它正是生产理论在现实世界最重要的应用。</p>
+      <p>先建立基本框架。消费者理论中，我们给定收入和价格，让消费者最大化效用；而企业能<strong>自己决定生产多少、赚多少收入</strong>，所以生产者理论要多一步——先研究"能生产什么"，再研究"怎样生产最省钱"（下一篇成本理论）。</p>
+      <ul>
+        <li>正如消费者有<span class="term">效用函数</span><span class="term-en">（Utility Function）</span>，生产者有<span class="term">生产函数</span><span class="term-en">（Production Function）</span>：</li>
+      </ul>
+      <p style="text-align:center;"><strong>q = f(L, K)</strong></p>
+      <p>其中 q 是单个<strong>企业</strong>的产出量（惯例：小写 q 指企业，大写 Q 指整个市场）；<span class="term">劳动</span><span class="term-en">（Labor, L）</span>是工人数或工时；<span class="term">资本</span><span class="term-en">（Capital, K）</span>是机器、厂房、土地等工人用来生产的资料。L 和 K 合称<span class="term">生产要素</span><span class="term-en">（Factors of Production）</span>。生产函数把投入转化为产出，就像效用函数把商品转化为幸福感——但产出是<strong>可测量的实物</strong>，不是"效用单位"那种无形的偏好映射。企业的目标是最大化<span class="term">利润</span><span class="term-en">（Profit）</span> = <span class="term">收入</span><span class="term-en">（Revenue）</span> − <span class="term">成本</span><span class="term-en">（Cost）</span>，而第一步就是尽可能高效地生产。</p>
+      <h3>短期 vs 长期：哪些投入能变？</h3>
+      <ul>
+        <li><span class="term">可变投入</span><span class="term-en">（Variable Input）</span>：可以轻松改变，如工时——今天加班、明天早退都行；</li>
+        <li><span class="term">固定投入</span><span class="term-en">（Fixed Input）</span>：难以快速改变，如厂房规模——MIT 东校区的新楼要建好几年。</li>
+      </ul>
+      <p>据此定义两个时间框架：<span class="term">短期</span><span class="term-en">（Short Run）</span>内<strong>劳动可变、资本固定</strong>，生产函数写成 q = f(L, K̄)（K̄ 表示固定资本）；<span class="term">长期</span><span class="term-en">（Long Run）</span>内<strong>所有投入都可变</strong>。注意：短期/长期没有确切天数，技术定义是"长期 = 让所有投入都变为可变所需的时间"。短期里你唯一的决策是雇多少工人；长期里你才需要在工人和机器之间做权衡——那才是有趣的部分。</p>
+
+      <!-- ==================== 二、短期生产 ==================== -->
+      <h2>二、短期生产：边际产量递减（Diminishing Marginal Product）</h2>
+      <p><strong>反直觉开场：</strong>一把铲子，六个工人。第一个工人全力挖洞；第二个工人来轮班，让第一个人休息，产出明显增加；到第六个工人时，他大部分时间只能站着看别人挖——他不是"没有帮助"，而是帮助比前一个人小得多。</p>
+      <p>短期里企业唯一的决策变量是 L，决策依据是<span class="term">劳动的边际产量</span><span class="term-en">（Marginal Product of Labor, MPL）</span>：</p>
+      <p style="text-align:center;"><strong>MPL = Δq / ΔL</strong>　即　每多雇一个工人带来的额外产出</p>
+      <p>这与消费者理论中"每多吃一块披萨带来的额外效用"完全平行。我们假设<span class="term">边际产量递减</span><span class="term-en">（Diminishing Marginal Product）</span>：每新增一个工人，他带来的额外产出比上一个工人少。<strong>递减的根源恰恰是资本固定</strong>——工人们的机器和厂房是有限的。铲子不会变多，第六个工人自然派不上大用场；一栋楼里塞进第一千零一个工人，他也起不了太大作用。</p>
+
+      <div id="fig-tp-mpl"></div>
+      <p><strong>图 1 解读：</strong>资本固定为"一把铲子"（K̄ = 1）时，总产量曲线 q = f(L, K̄) 随工人数上升但越来越平：从 1 人到 2 人产出增 9，从 5 人到 6 人只增 5。每级台阶的高度就是 MPL（10 → 9 → 8 → 7 → 6 → 5，单调递减）。<strong>模型的优点</strong>：用"资本固定"一个假设就解释了递减，逻辑透明；<strong>缺点</strong>：现实中有些任务两人协作反而都更高效（边际产量可能先递增），递减只在达到一定规模后才成立，我们关注的正是这个区间。</p>
+
+      <!-- ==================== 三、长期生产：等产量线 ==================== -->
+      <h2>三、长期生产：等产量线（Isoquant）</h2>
+      <p><strong>反直觉开场：</strong>2 个工人 + 2 台机器能生产 2 单位产出；把工人砍到 1 个、机器加到 4 台，产出<strong>不变</strong>；反过来 4 个工人 + 1 台机器，产出还是不变。劳动和资本之间竟然可以"换"，就像披萨和饼干可以换一样。</p>
+      <p>进入长期，L 和 K 都可变，企业要在两者间权衡。沿用与消费者理论相似的形式，我们取生产函数 q = √(L·K)（此前效用函数是 U = √(披萨·饼干)）。正如用<span class="term">无差异曲线</span><span class="term-en">（Indifference Curve）</span>表示效用，我们用<span class="term">等产量线</span><span class="term-en">（Isoquant）</span>表示生产：<strong>能生产出相同产量的所有 (L, K) 组合的连线</strong>。它比无差异曲线更"有形"——无差异曲线是无形的偏好概念，等产量线是可实测的技术关系。无差异曲线的性质全部继承：离原点越远产量越高、互不相交、向下倾斜。</p>
+
+      <div id="fig-isoquant"></div>
+      <p><strong>图 2 解读：</strong>q = √(L·K) = 2 的等产量线经过 A(1, 4)、B(2, 2)、C(4, 1) 三点（1×4 = 2×2 = 4×1 = 4，开方都是 2）。从 A 到 B：多雇 1 个工人可以少用 2 台机器——此时工人稀缺、机器富余，工人很"值钱"；从 B 到 C：要多雇 2 个工人才能少用 1 台机器——工人已经很多了，新增的工人没那么有用。这正是边际产量递减在等产量线上的体现：曲线凸向原点。</p>
+
+      <h3>两个极端：完全替代与完全不可替代</h3>
+      <p>一般等产量线是凸向原点的曲线，但两个极端形态值得记住：</p>
+      <ul>
+        <li><span class="term">完全可替代</span><span class="term-en">（Perfect Substitutes）</span>：q = L + K。一单位劳动和一单位资本可以完全互换，等产量线是<strong>直线</strong>（斜率恒为 −1）。教授开玩笑的例子："一个哈佛毕业生和一个 Beanie Baby 玩偶"；</li>
+        <li><span class="term">完全不可替代</span><span class="term-en">（Perfect Complements）</span>，即<span class="term">里昂惕夫生产函数</span><span class="term-en">（Leontief Production Function）</span>：q = min(L, K)。只增加一种投入毫无用处，等产量线是 <strong>L 形</strong>。经典例子：<strong>左脚鞋和右脚鞋</strong>——两只左脚鞋配一只右脚鞋，还是只有一双能穿；课堂补充的例子还有"程序员和电脑"、"麦片和麦片盒"。</li>
+      </ul>
+
+      <div class="figure-pair">
+        <div id="fig-substitutes"></div>
+        <div id="fig-leontief"></div>
+      </div>
+      <p><strong>图 3 / 图 4 解读：</strong>左图中 q = L + K 的等产量线是斜率 −1 的直线，(4, 0)、(2, 2)、(0, 4) 产出完全相同；右图中 q = min(L, K) 的等产量线以 (2, 2)、(4, 4) 为拐点的 L 形——从 (2, 4) 到 (2, 2)，机器减半产出不变（多余的机器闲置），但想增产必须 L 和 K 同时增加。现实中的生产技术大多介于两极端之间。</p>
+
+      <h3>边际技术替代率（MRTS）</h3>
+      <p>无差异曲线的斜率叫<span class="term">边际替代率</span><span class="term-en">（Marginal Rate of Substitution, MRS）</span>；等产量线的斜率，经济学家"不擅长创新"地命名为<span class="term">边际技术替代率</span><span class="term-en">（Marginal Rate of Technical Substitution, MRTS）</span>——"技术"二字因为它来自生产技术而非个人偏好。图 2 中：A→B 的 MRTS = ΔK/ΔL = (2−4)/(2−1) = <strong>−2</strong>（一个工人替代两台机器）；B→C 的 MRTS = (1−2)/(4−2) = <strong>−1/2</strong>（两个工人才替代一台机器）。</p>
+      <p>MRTS 有一个便捷的数学表达。沿等产量线移动时产出不变，即劳动变化带来的产出增量与资本变化带来的产出减量之和为零：</p>
+      <p style="text-align:center;">ΔL·MPL + ΔK·MPK = 0　⟹　<strong>MRTS = ΔK/ΔL = − MPL / MPK</strong></p>
+      <p>其中 <span class="term">资本的边际产量</span><span class="term-en">（Marginal Product of Capital, MPK）</span> = Δq/ΔK。这与 MRS = −MU₁/MU₂ 完全对偶。课堂问答补充：里昂惕夫函数的 MRTS 在 L 形拐角处<strong>无定义</strong>，水平段为 0，垂直段为无穷大；完全替代（直线）的 MRTS 则是<strong>常数</strong>。</p>
+
+      <!-- ==================== 四、规模报酬 ==================== -->
+      <h2>四、规模报酬（Returns to Scale）</h2>
+      <p><strong>反直觉开场：</strong>把所有投入都翻一倍，产出一定也翻一倍吗？不一定——可能更多，也可能更少，而这决定了企业"该长多大"。</p>
+      <p><span class="term">规模报酬</span><span class="term-en">（Returns to Scale）</span>研究的是<strong>按比例增加所有投入</strong>时产出的变化（注意与边际产量递减的区别：那里只变 L、K 固定；这里 L 和 K 一起变）。三种情形：</p>
+      <ul>
+        <li><span class="term">规模报酬不变</span><span class="term-en">（Constant Returns to Scale, CRS）</span>：f(2L, 2K) = 2·f(L, K)。投入翻倍，产出恰好翻倍——基准情形；</li>
+        <li><span class="term">规模报酬递增</span><span class="term-en">（Increasing Returns to Scale, IRS）</span>：f(2L, 2K) &gt; 2·f(L, K)。来源是<strong>专业化</strong>：2 个工人 2 台电脑变成 4 个工人 4 台电脑后，每人可以专攻一项任务，效率更高；</li>
+        <li><span class="term">规模报酬递减</span><span class="term-en">（Decreasing Returns to Scale, DRS）</span>：f(2L, 2K) &lt; 2·f(L, K)。来源是<strong>协调困难</strong>：2 个工人你可以盯着不偷懒，8 个、80 个就管不过来了。</li>
+      </ul>
+
+      <div id="fig-rts"></div>
+      <p><strong>图 5 解读：</strong>横轴是投入规模倍数 t（所有投入同乘 t），纵轴是产出。CRS 是直线（t 翻倍产出精确翻倍：t=2 时 q=4）；IRS 向上弯（t=2 时 q≈5.3，超过翻倍）；DRS 向下弯（t=2 时 q≈3.0，不到翻倍）。课堂提到的现实例子：烟草生产被认为是 DRS（好土地有限），初级金属生产可能是 IRS（机器与工人协同效应强）。</p>
+      <p><strong>企业生命周期：</strong>不可能永远 IRS——否则一家企业会越来越高效，最终长成吞掉整个经济的垄断者（谷歌、亚马逊的崛起让这个"传统上不可能"的情形显得没那么遥远了）。传统看法是：企业通常<strong>先经历 IRS（初创期专业化红利），后转入 DRS（规模过大、管理笨重）</strong>。<strong>模型的优点</strong>：只用三种情形就刻画了"企业最优规模"的存在性；<strong>缺点</strong>：现实中的生产函数属于哪类很难实测，"先 IRS 后 DRS"也只是经验规律而非定理。</p>
+
+      <!-- ==================== 五、生产率 ==================== -->
+      <h2>五、生产率：马尔萨斯错在哪（Productivity）</h2>
+      <p>回到开场的谜题。马尔萨斯的推理链条其实没错——在 q = f(L, K̄) 的框架下，人口（劳动）增长而土地固定，MPL 递减、人均产出下降，饥荒是逻辑必然。他错在<strong>框架本身</strong>：现实中的生产函数不是固定不变的，而是</p>
+      <p style="text-align:center;"><strong>q = A(t) · f(L, K)</strong></p>
+      <p>A(t) 是随时间增长的<span class="term">生产率</span><span class="term-en">（Productivity）</span>因子，即<span class="term">创新</span>。拖拉机、化肥、抗病种子……这些马尔萨斯没预见到的东西，让同样的劳动和土地生产出越来越多的粮食。整条生产函数曲线在<strong>向上移动</strong>，而不是沿原曲线滑动。</p>
+
+      <div id="fig-tech-shift"></div>
+      <p><strong>图 6 解读：</strong>三条曲线是同一函数 f(L, K̄) = √(L)（土地固定）在不同时代的形态：1798 年 A=2，1900 年 A=4，今天 A=8。即使劳动投入不变（L = 4），人均粮食也从 4 单位涨到 8 再到 16——人口涨 10 倍，我们反而吃得更饱。马尔萨斯看到了边际产量递减（沿单条曲线的移动），却漏掉了技术进步（曲线本身的上移）。</p>
+      <p>关于饥荒还有一个更深的修正：诺贝尔奖得主<span class="term">阿马蒂亚·森</span><span class="term-en">（Amartya Sen）</span>指出，现代饥荒<strong>不是技术问题，而是政治与分配问题</strong>——粮食总量够吃，是分配机制失灵让一部分人拿不到。技术之外，汽车业是创新的另一经典案例：20 世纪初亨利·福特引入<span class="term">大规模生产</span><span class="term-en">（Mass Production）</span>流水线，通过专业化实现巨大的 IRS，一夜颠覆整个行业；今天印度塔塔（Tata）的 Nano 汽车只卖 2500 美元，也是持续创新的产物。</p>
+      <p><strong>生活水平根本上由生产率决定</strong>：在劳动投入给定时，想更富有只有两条路——增加资本 K（来自储蓄），或提高生产率 A（来自创新）。美国生产率年均增速的历史数据分为四个阶段：</p>
+      <ul>
+        <li><strong>1947–1973</strong>：约 <strong>2.5%</strong>/年——同样的工作量，每年多产出 2.5%；</li>
+        <li><strong>1973–1995</strong>：大幅放缓至约 <strong>1%</strong>/年；</li>
+        <li><strong>1995–2005</strong>：IT 革命推动反弹至约 <strong>2.3%</strong>/年；</li>
+        <li><strong>2005 至今</strong>：又回落到约 <strong>1.5%</strong>/年。</li>
+      </ul>
+
+      <div id="fig-us-productivity"></div>
+      <p><strong>图 7 解读：</strong>美国生产率增长的四段阶梯。IT 革命的反弹（1995–2005，2.3%）没能延续，2005 年后回落到 1.5%——计算机似乎不像工业革命那样持久地改变生产方式。由此引出三个开放问题：① IT 革命的生产率红利为何如此短暂？② 生产率增长该"花"在哪——美国几乎全部用来消费更多（工作更努力），欧洲则分一部分给闲暇（更长的假期），孰对孰错没有标准答案；③ 增长的收益归谁——1947–1973 年收益大致全民共享，而 2009–2016 年经济增长的净收益几乎全部流向最富有的 1%。公平与效率的权衡，是本学期后续课程的主线之一。</p>
+
+      <!-- ==================== 六、总结 ==================== -->
+      <h2>六、总结：消费者理论 vs 生产者理论</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>消费者理论（第一单元）</th><th>生产者理论（第二单元）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>目标</td><td>最大化<span class="term">效用</span><span class="term-en">（Utility）</span></td><td>最大化<span class="term">利润</span><span class="term-en">（Profit = 收入 − 成本）</span></td></tr>
+          <tr><td>核心函数</td><td>效用函数 U(商品)</td><td>生产函数 q = f(L, K)（实为 q = A(t)·f(L, K)）</td></tr>
+          <tr><td>函数性质</td><td>无形的偏好映射，不可直接测量</td><td>有形的技术关系，产出可实测</td></tr>
+          <tr><td>等值曲线</td><td><span class="term">无差异曲线</span><span class="term-en">（Indifference Curve）</span></td><td><span class="term">等产量线</span><span class="term-en">（Isoquant）</span></td></tr>
+          <tr><td>曲线斜率</td><td>MRS = −MU₁/MU₂</td><td>MRTS = −MPL/MPK</td></tr>
+          <tr><td>递减规律</td><td>边际效用递减</td><td>边际产量递减（根源：资本固定）</td></tr>
+          <tr><td>极端形态</td><td>完全替代（直线）/ 完全互补（L 形）</td><td>完全替代 q=L+K（直线）/ 里昂惕夫 q=min(L,K)（L 形，如左右鞋）</td></tr>
+          <tr><td>决策约束</td><td>收入给定（预算约束）</td><td>企业自定产量与收入，需额外一步（成本最小化，见下一篇）</td></tr>
+          <tr><td>独有概念</td><td>收入/替代效应、吉芬品</td><td>短期/长期、规模报酬（CRS/IRS/DRS）、生产率 A(t)</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（供给从何而来？马尔萨斯为何错了）→ 简化模型（q = f(L, K)，短期 K̄ 固定、长期两投入权衡）→ 推导（MPL 递减 → 等产量线凸向原点 → MRTS = −MPL/MPK；投入同比例变化 → 规模报酬三分）→ 实际应用（企业生命周期先 IRS 后 DRS；q = A(t)·f(L,K) 解释粮食增长；美国生产率四阶段数据）→ 局限性（递减只在部分区间成立、规模报酬类型难实测、生产率增长及其分配仍是开放问题）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/04-production-theory.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // 双曲线 L·K = q² 路径点生成（等产量线 q=√(L·K) 即 K = q²/L）
+    function isoquant(q, xs) {
+      return xs.map(function (x) { return [x, +((q * q) / x).toFixed(2)]; });
+    }
+
+    // ===== 图1：短期总产量曲线（一把铲子六个工人）=====
+    Charts.xy(document.getElementById('fig-tp-mpl'), {
+      xLabel: '工人数 L',
+      yLabel: '产出 q',
+      xMax: 7, yMax: 50, xStep: 1, yStep: 10,
+      legendPosition: 'top',
+      caption: '图 1：短期生产函数 q = f(L, K̄) —— 资本固定，MPL 递减（10, 9, 8, 7, 6, 5）',
+      series: [
+        { points: [[0, 0], [1, 10], [2, 19], [3, 27], [4, 34], [5, 40], [6, 45]], type: 'spline', color: '#1d4ed8', label: '总产量 q = f(L, K̄)，K̄ = 1 把铲子' },
+      ],
+      markers: [
+        { x: 1, y: 10, label: '(1, 10)', color: '#1d4ed8', legend: '各级产量点（台阶高度 = MPL）', labelDx: 10, labelDy: -12 },
+        { x: 2, y: 19, label: '(2, 19)', color: '#1d4ed8', labelDx: 10, labelDy: -12 },
+        { x: 3, y: 27, label: '(3, 27)', color: '#1d4ed8', labelDx: 10, labelDy: -12 },
+        { x: 4, y: 34, label: '(4, 34)', color: '#1d4ed8', labelDx: 10, labelDy: -12 },
+        { x: 5, y: 40, label: '(5, 40)', color: '#1d4ed8', labelDx: 10, labelDy: -12 },
+        { x: 6, y: 45, label: '(6, 45) 第6人只增5', color: '#b91c1c', labelDx: -96, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图2：等产量线 q=√(L·K)，标 A(1,4)/B(2,2)/C(4,1) =====
+    Charts.xy(document.getElementById('fig-isoquant'), {
+      xLabel: '劳动 L',
+      yLabel: '资本 K',
+      xMax: 8, yMax: 8, xStep: 1, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 2：等产量线 q = √(L·K) —— q=2 曲线过 A/B/C，MRTS 由 −2 变为 −1/2',
+      series: [
+        { points: isoquant(2, [0.6, 0.8, 1, 1.3, 1.6, 2, 2.5, 3, 3.5, 4, 5, 6, 7]), type: 'spline', color: '#2563eb', label: 'q = 2（过 A、B、C）' },
+        { points: isoquant(3, [1.3, 1.6, 2, 2.5, 3, 3.6, 4.5, 5.5, 6.5, 7.5]), type: 'spline', color: '#7c3aed', dash: true, label: 'q = 3（离原点更远，产量更高）' },
+        { points: isoquant(4, [2.3, 2.7, 3.2, 3.8, 4.5, 5.3, 6.2, 7.2, 8]), type: 'spline', color: '#0d9488', dash: true, label: 'q = 4' },
+      ],
+      markers: [
+        { x: 1, y: 4, label: 'A (1, 4)', color: '#2563eb', legend: 'q=2 上的关键点', labelDx: 12, labelDy: -12 },
+        { x: 2, y: 2, label: 'B (2, 2)', color: '#2563eb', labelDx: 12, labelDy: -14 },
+        { x: 4, y: 1, label: 'C (4, 1)', color: '#2563eb', labelDx: 12, labelDy: 20 },
+        { x: 1.5, y: 3, label: 'A→B：MRTS=−2', shape: 'star', color: '#dc2626', legend: 'MRTS 标注', lineTo: [1, 4], labelDx: -20, labelDy: -18 },
+        { x: 3, y: 1.5, label: 'B→C：MRTS=−1/2', shape: 'star', color: '#dc2626', lineTo: [4, 1], labelDx: 12, labelDy: 24 },
+      ],
+    });
+
+    // ===== 图3（左）：完全替代 q = L + K，线性等产量线 =====
+    Charts.xy(document.getElementById('fig-substitutes'), {
+      xLabel: '劳动 L',
+      yLabel: '资本 K',
+      xMax: 7, yMax: 7, xStep: 1, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 3：完全替代 q = L + K —— 等产量线为直线，MRTS 恒为 −1',
+      series: [
+        { points: [[0, 4], [4, 0]], type: 'linear', color: '#2563eb', label: 'q = 4' },
+        { points: [[0, 6], [6, 0]], type: 'linear', color: '#7c3aed', dash: true, label: 'q = 6' },
+      ],
+      markers: [
+        { x: 2, y: 2, label: '(2, 2)', color: '#2563eb', legend: 'q=4 上的点（产出相同）', labelDx: 10, labelDy: -14 },
+        { x: 4, y: 0, label: '(4, 0)', color: '#2563eb', labelDx: -8, labelDy: -16 },
+        { x: 0.05, y: 4, label: '(0, 4)', color: '#2563eb', labelDx: 8, labelDy: 18 },
+      ],
+    });
+
+    // ===== 图4（右）：里昂惕夫 q = min(L, K)，L 形等产量线 =====
+    Charts.xy(document.getElementById('fig-leontief'), {
+      xLabel: '左脚鞋 L',
+      yLabel: '右脚鞋 K',
+      xMax: 7, yMax: 7, xStep: 1, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 4：里昂惕夫 q = min(L, K) —— L 形等产量线（左右鞋），拐点处 MRTS 无定义',
+      series: [
+        { points: [[2, 7], [2, 2], [7, 2]], type: 'linear', color: '#2563eb', label: 'q = 2（一双）' },
+        { points: [[4, 7], [4, 4], [7, 4]], type: 'linear', color: '#7c3aed', dash: true, label: 'q = 4（两双）' },
+      ],
+      markers: [
+        { x: 2, y: 2, label: '拐点 (2, 2)', color: '#2563eb', legend: 'L 形拐点', labelDx: 12, labelDy: -14 },
+        { x: 4, y: 4, label: '拐点 (4, 4)', color: '#7c3aed', labelDx: 12, labelDy: -14 },
+        { x: 2, y: 5, label: '(2, 5)：多余右鞋闲置', color: '#b91c1c', legend: '单侧增加无效', labelDx: 10, labelDy: -4 },
+      ],
+    });
+
+    // ===== 图5：规模报酬 CRS / IRS / DRS =====
+    Charts.xy(document.getElementById('fig-rts'), {
+      xLabel: '投入规模倍数 t（所有投入 × t）',
+      yLabel: '产出 q',
+      xMax: 3.2, yMax: 10, xStep: 1, yStep: 2,
+      legendPosition: 'top',
+      caption: '图 5：规模报酬三种形态 —— t=2 时：CRS 恰好翻倍（4），IRS 超翻倍（5.3），DRS 不足翻倍（3.0）',
+      series: [
+        { points: [[0, 0], [0.5, 1], [1, 2], [1.5, 3], [2, 4], [2.5, 5], [3, 6]], type: 'linear', color: '#2563eb', label: 'CRS：q = 2t（f(2L,2K) = 2·f(L,K)）' },
+        { points: [[0, 0], [0.5, 0.76], [1, 2], [1.5, 3.53], [2, 5.28], [2.5, 7.21], [3, 9.32]], type: 'spline', color: '#15803d', label: 'IRS：q = 2·t^1.4（专业化红利）' },
+        { points: [[0, 0], [0.5, 1.32], [1, 2], [1.5, 2.55], [2, 3.03], [2.5, 3.47], [3, 3.87]], type: 'spline', color: '#d97706', label: 'DRS：q = 2·t^0.6（协调困难）' },
+      ],
+      markers: [
+        { x: 1, y: 2, label: '(1, 2) 基准', color: '#374151', legend: '投入翻倍点（t=2）', labelDx: -60, labelDy: 20 },
+        { x: 2, y: 5.28, label: '(2, 5.3) IRS', color: '#15803d', labelDx: 10, labelDy: -12 },
+        { x: 2, y: 4, label: '(2, 4) CRS', color: '#2563eb', guides: true, gxLabel: 't=2', labelDx: 10, labelDy: 18 },
+        { x: 2, y: 3.03, label: '(2, 3.0) DRS', color: '#d97706', labelDx: 10, labelDy: 18 },
+      ],
+    });
+
+    // ===== 图6：马尔萨斯错在哪 —— q = A(t)·f(L, K̄) 生产函数上移 =====
+    Charts.xy(document.getElementById('fig-tech-shift'), {
+      xLabel: '劳动 L（人口）',
+      yLabel: '人均粮食 q',
+      xMax: 10, yMax: 26, xStep: 2, yStep: 4,
+      legendPosition: 'top',
+      caption: '图 6：q = A(t)·√L —— 土地固定下，技术进步（A 上升）使整条生产函数上移',
+      series: [
+        { points: [[0, 0], [1, 2], [2, 2.83], [3, 3.46], [4, 4], [6, 4.9], [8, 5.66], [10, 6.32]], type: 'spline', color: '#b91c1c', label: '1798 年：A = 2（马尔萨斯所见）' },
+        { points: [[0, 0], [1, 4], [2, 5.66], [3, 6.93], [4, 8], [6, 9.8], [8, 11.31], [10, 12.65]], type: 'spline', color: '#d97706', label: '1900 年：A = 4（化肥、农机）' },
+        { points: [[0, 0], [1, 8], [2, 11.31], [3, 13.86], [4, 16], [6, 19.6], [8, 22.63], [10, 25.3]], type: 'spline', color: '#15803d', label: '今天：A = 8（抗病种子、现代农技）' },
+      ],
+      markers: [
+        { x: 4, y: 4, label: '(4, 4)', color: '#b91c1c', legend: '同样劳动投入 L=4 的产出', lineTo: [4, 8], labelDx: -46, labelDy: 22 },
+        { x: 4, y: 8, label: '(4, 8)', color: '#d97706', lineTo: [4, 16], labelDx: -46, labelDy: 22 },
+        { x: 4, y: 16, label: '(4, 16) 人口涨10倍反而更饱', color: '#15803d', guides: true, gxLabel: 'L=4', labelDx: 12, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图7：美国生产率年均增长四阶段 =====
+    Charts.xy(document.getElementById('fig-us-productivity'), {
+      xLabel: '年份',
+      yLabel: '生产率年均增速（%）',
+      xMax: 2025, xTicks: [1947, 1973, 1995, 2005, 2020],
+      yMax: 3, yStep: 0.5,
+      legendPosition: 'top',
+      caption: '图 7：美国生产率增长四阶段 —— 2.5% → 1% → 2.3%（IT 革命）→ 1.5%',
+      series: [
+        { points: [[1947, 2.5], [1973, 2.5]], type: 'linear', color: '#2563eb', label: '1947–1973：2.5%（黄金期）' },
+        { points: [[1973, 1], [1995, 1]], type: 'linear', color: '#b91c1c', label: '1973–1995：1.0%（大放缓）' },
+        { points: [[1995, 2.3], [2005, 2.3]], type: 'linear', color: '#15803d', label: '1995–2005：2.3%（IT 革命反弹）' },
+        { points: [[2005, 1.5], [2020, 1.5]], type: 'linear', color: '#d97706', label: '2005 至今：1.5%（再度回落）' },
+        { points: [[1973, 2.5], [1973, 1]], type: 'linear', color: '#9ca3af', dash: true },
+        { points: [[1995, 1], [1995, 2.3]], type: 'linear', color: '#9ca3af', dash: true },
+        { points: [[2005, 2.3], [2005, 1.5]], type: 'linear', color: '#9ca3af', dash: true },
+      ],
+      markers: [
+        { x: 1960, y: 2.5, label: '2.5%', color: '#2563eb', legend: '各阶段年均增速', labelDx: -8, labelDy: -14 },
+        { x: 1984, y: 1, label: '1.0%', color: '#b91c1c', labelDx: -8, labelDy: 22 },
+        { x: 2000, y: 2.3, label: '2.3%', color: '#15803d', labelDx: -8, labelDy: -14 },
+        { x: 2012, y: 1.5, label: '1.5%', color: '#d97706', labelDx: -8, labelDy: 22 },
+      ],
+    });
+  </script>
+</body>
+</html>

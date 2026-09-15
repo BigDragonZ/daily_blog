@@ -26,3 +26,4 @@
 | 2026-09-14 | 经济学原理 08 长期经济（Ch25、Ch26、Ch28） | [2026-09-14-ch08-long-run-economy.md](2026-09-14-ch08-long-run-economy.md) |
 | 2026-09-14 | 经济学原理 09-10 货币与物价、短期经济（Ch29-30、Ch33-34） | [2026-09-14-ch09-10-money-and-short-run.md](2026-09-14-ch09-10-money-and-short-run.md) |
 | 2026-09-15 | MIT 微观经济学原理 P01-P03（L01-L04） | [2026-09-15-mit-micro-p01-03.md](2026-09-15-mit-micro-p01-03.md) |
+| 2026-09-15 | MIT 微观经济学原理 P04-P06（L05-L08） | [2026-09-15-mit-micro-p04-06.md](2026-09-15-mit-micro-p04-06.md) |

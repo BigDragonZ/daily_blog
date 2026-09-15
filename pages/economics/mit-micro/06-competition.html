@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 完全竞争 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>06 完全竞争：利润最大化、停产与长期均衡</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 7、8 两讲（L07+L08）：从一个"亏本卖票反而赚了"的反直觉故事出发，分清<span class="term">沉没成本</span>与<span class="term">固定成本</span>；进入<span class="term">完全竞争</span><span class="term-en">（Perfect Competition）</span>市场，看<span class="term">价格接受者</span>如何用 <strong>P = MC</strong> 决定产量；再回答两个更难的问题——亏到什么程度才该<span class="term">停产</span>？为什么长期竞争会把利润压到零？</p>
+
+      <!-- ==================== L07 ==================== -->
+      <h2>一、L07 竞争 I（Competition I）：沉没成本、价格接受者与 P = MC</h2>
+
+      <h3>1.1 引入：240 美元买的门票只能卖 220 —— 你亏了吗？</h3>
+      <p><strong>反直觉开场：</strong>教授花 240 美元买了两张 Journey 乐队演唱会门票，临近演出发现自己其实没那么喜欢这支乐队，于是在二手平台以 220 美元卖出。直觉上他"亏了 20 美元"。但正确答案是：<strong>这个问题本身就问错了</strong>——那 240 美元在卖票那一刻已经与他无关了。</p>
+
+      <h3>1.2 沉没成本 vs 固定成本</h3>
+      <p><span class="term">沉没成本</span><span class="term-en">（Sunk Cost）</span>是指<strong>无论你从现在起采取任何行动，都无法改变</strong>的成本——一旦投入就永远无法撤销的投资。它与<span class="term">固定成本</span><span class="term-en">（Fixed Cost, FC）</span>不同：</p>
+      <ul>
+        <li>以一名医生为例：<strong>短期</strong>内，可变成本是工作时长、雇佣护士的数量；</li>
+        <li><strong>长期</strong>内，办公室大小这个固定成本可以调整（换大或换小）；</li>
+        <li>但<strong>上医学院的投入</strong>是沉没成本——你永远无法"撤销"上过医学院这件事，那笔费用一去不复返。</li>
+      </ul>
+      <p>可以把沉没成本理解为"长期的固定成本"：固定成本在长期尚可调整，沉没成本连长期也无法收回。</p>
+
+      <h3>1.3 沉没成本谬误（Sunk Cost Fallacy）</h3>
+      <p>回到门票故事。教授最初想"我至少得把 240 美元赚回来"，随后意识到这完全错了——240 美元已经花出去、已经沉没，与卖票决策无关。正确的思考方式只问一个问题：<strong>我现在还愿意花多少钱去看这场演唱会？</strong></p>
+      <ul>
+        <li>假设他现在只愿意付 100 美元去看。那么：票价能卖到 100 美元以上就卖，卖不到就自己去；</li>
+        <li>最终以 220 美元卖出 → 他做的是一个<strong>好决策</strong>（用只值 100 美元的东西换回 220 美元），而不是"亏了 20 美元"。</li>
+      </ul>
+      <p>经济学家把"关注了已经无关紧要的事情"称为<span class="term">沉没成本谬误</span><span class="term-en">（Sunk Cost Fallacy）</span>。另一个典型例子是<strong>房地产市场</strong>：许多房主坚持"不想以低于买入价出售"。但你当初付了多少钱并不重要，重要的是<strong>现在能卖多少钱</strong>，以及你是否愿意以那个价格出售（有抵押贷款现金流约束时情况复杂些，但原理相同）。</p>
+
+      <h3>1.4 完全竞争三条件与价格接受者</h3>
+      <p>生产者理论中我们有一系列等产量线与等成本线的切点，却不知道该选哪个产量——这个缺失的约束来自<strong>市场</strong>。三种市场结构中（完全竞争 / <span class="term">垄断</span><span class="term-en">（Monopoly）</span> / <span class="term">寡头垄断</span><span class="term-en">（Oligopoly）</span>），本节从最极端的<span class="term">完全竞争</span><span class="term-en">（Perfect Competition）</span>开始。</p>
+      <p>完全竞争市场的技术性定义：生产者是<span class="term">价格接受者</span><span class="term-en">（Price Taker）</span>——单个生产者对售价<strong>没有任何影响力</strong>，市场价格对它是给定的。这发生在公司面临的需求<span class="term">完全有弹性</span><span class="term-en">（Perfectly Elastic）</span>时：无论卖多少，价格总是 P，变化的只有数量。成为完全竞争市场需要三个条件：</p>
+      <ol>
+        <li><span class="term">产品同质化</span><span class="term-en">（Identical Products）</span>：所有公司销售的商品在消费者看来完全相同；</li>
+        <li><span class="term">信息完全</span><span class="term-en">（Full Information）</span>：消费者了解每个公司收取的价格；</li>
+        <li><span class="term">交易成本低</span><span class="term-en">（Low Transaction Costs）</span>：消费者可以毫不费力地比较和选择卖家。</li>
+      </ol>
+      <p>现实中几乎没有市场完全满足这三条，但 <strong>eBay</strong> 很接近：搜索"72 英寸红色椭圆形鞋带"，产品基本相同、价格一目了然、比较毫不费力。另一个例子是埃菲尔铁塔下卖纪念品的小贩。</p>
+
+      <h3>1.5 公司需求 vs 市场需求：剩余需求与弹性公式</h3>
+      <p><strong>反直觉之处：</strong>市场需求曲线明明向下倾斜（弹性并不大），单个公司面临的需求却可以<strong>近乎水平</strong>。关键在于区分两条曲线：</p>
+      <ul>
+        <li><span class="term">市场需求</span><span class="term-en">（Market Demand，大写 Q）</span>：第一课就讲的向下倾斜的需求曲线；</li>
+        <li><span class="term">公司需求</span><span class="term-en">（Firm Demand，小写 q）</span>：<span class="term">剩余需求</span><span class="term-en">（Residual Demand）</span>，即市场总需求减去其他所有公司的供给：<strong>q(P) = Q(P) − S_other(P)</strong>。</li>
+      </ul>
+      <p>单个公司的<span class="term">需求弹性</span><span class="term-en">（Elasticity of Demand, ε）</span>可以用下式推导：</p>
+      <p style="text-align:center;"><strong>ε_i = n · ε − (n − 1) · η</strong></p>
+      <p>其中 n 是公司数量，ε 是市场需求弹性，η 是市场<span class="term">供给弹性</span><span class="term-en">（Elasticity of Supply, η）</span>。代入 n = 100、ε = −1、η = 1：</p>
+      <p style="text-align:center;">ε_i = 100 × (−1) − 99 × 1 = <strong>−199</strong></p>
+      <p>−199 已接近负无穷——单个公司面对的是一条<strong>近乎水平</strong>的需求曲线。所以"市场不弹性 ≠ 公司不弹性"：在埃菲尔铁塔下卖纪念品，你提价一欧元就没人买你的，降价一欧元所有人都来你这儿买。"完全弹性需求"的假设并不疯狂。</p>
+
+      <h3>1.6 经济利润 vs 会计利润</h3>
+      <p>会计师说利润 = 收入 − 成本；经济学家认为这漏掉了<span class="term">机会成本</span><span class="term-en">（Opportunity Cost）</span>。讲义案例：你毕业后开了一家网站设计公司，雇一名程序员（年薪 4 万美元），用自己的一台闲置电脑，第一年销售额 6 万美元：</p>
+      <ul>
+        <li><span class="term">会计利润</span><span class="term-en">（Accounting Profit）</span> = 60,000 − 40,000 = <strong>+20,000 美元</strong>；</li>
+        <li><span class="term">经济利润</span><span class="term-en">（Economic Profit）</span> 要计入机会成本：你的时间（不创业去工作本可赚 80,000）+ 你的电脑（可卖 1,000）。真实成本 = 40,000 + 80,000 + 1,000 = 121,000；</li>
+        <li>经济利润 = 60,000 − 121,000 = <strong>−61,000 美元</strong>。</li>
+      </ul>
+      <p>账面上赚 2 万，经济上亏 6.1 万——后文的"利润"一律指<strong>经济利润</strong>。这也为 L08 的"长期零利润"埋下伏笔：零经济利润不等于白干，而是说所有资源（包括你自己的时间和设备）都已拿到市场水平的回报。</p>
+
+      <h3>1.7 利润最大化法则：P = MC</h3>
+      <p>利润 π = R − C（收入 − 成本）。对产量 q 求导并令其为零：dπ/dq = dR/dq − dC/dq = 0，即 <span class="term">边际收入</span><span class="term-en">（Marginal Revenue, MR）</span> = <span class="term">边际成本</span><span class="term-en">（Marginal Cost, MC）</span>。完全竞争公司是价格接受者，每多卖一单位的额外收入就是市场价格 P，即 <strong>MR = P</strong>。于是利润最大化条件为：</p>
+      <p style="text-align:center;"><strong>P = MC</strong>　—— 持续生产，直到"再生产一单位的成本"恰好等于"它能卖的价格"</p>
+      <p>数值例（沿用上一篇的成本函数）：C(q) = 10 + 5q²，市场价格 P = 30：</p>
+      <ul>
+        <li>MC = dC/dq = 10q；令 P = MC：30 = 10q → 最优产量 <strong>q* = 3</strong>；</li>
+        <li>收入 R = 30 × 3 = 90；成本 C = 10 + 5 × 3² = 55；利润 <strong>π = 35</strong>；</li>
+        <li>验证：若生产第 4 个单位，MC(4) = 40 &gt; 30，卖 30 美元却花 40 美元造，亏 10 美元——所以停在 q = 3。</li>
+      </ul>
+      <p>图形上，单位利润 = 价格 − <span class="term">平均成本</span><span class="term-en">（Average Cost, AC）</span>。在 q* = 3 处 AC = 55/3 ≈ 18.33，单位利润 = 30 − 18.33 = 11.67，总利润 = 11.67 × 3 = 35，即下图中绿色<strong>利润矩形</strong>（高 11.67 × 宽 3）。</p>
+
+      <div id="fig-profit-max"></div>
+      <p><strong>图 1 解读：</strong>蓝线是 MC = 10q，紫色曲线是 AC = 10/q + 5q，红色水平线是市场价格 P = 30（公司面对的需求=价格线）。MC 与价格线交于 (3, 30)——利润最大化产量 q* = 3；该产量下 AC = 18.33，绿色矩形（高 = 30 − 18.33 = 11.67，宽 = 3）就是总利润 35。点 (4, 40) 说明为何不生产第 4 个单位：其边际成本 40 已高于售价 30。</p>
+      <p><strong>P = MC 模型的优缺点：</strong>优点是把"生产多少"这个看似模糊的决策压缩成一条可操作的规则，且只需要成本函数和市场价格两个可观测输入；缺点是一阶条件只保证极值不保证最大（需 MC 递增穿过价格线），且它回答的是"生产多少"，还没回答"要不要生产"——后者是 L08 的停产规则。</p>
+
+      <h3>1.8 从量税 vs 固定税</h3>
+      <p>如果政府对每单位产品征收 10 美元的<span class="term">从量税</span><span class="term-en">（Per-unit Tax）</span>：</p>
+      <ul>
+        <li>新成本函数 C_new = (10 + 5q²) + 10q，新边际成本 MC_new = 10q + 10；</li>
+        <li>利润最大化：30 = 10q + 10 → 最优产量降到 <strong>q* = 2</strong>；</li>
+        <li>新平均成本 AC′(2) = 10/2 + 5×2 + 10 = 25，单位利润 = 30 − 25 = 5，总利润 = 5 × 2 = <strong>10</strong>。</li>
+      </ul>
+      <p>从量税抬高 MC，公司减产；同时 AC 也上移，单位利润缩水——利润矩形<strong>又高又宽地双向缩小</strong>（35 → 10）。</p>
+      <p>相比之下，若政府征收 10 美元的<span class="term">固定税</span><span class="term-en">（Fixed / Lump-sum Tax）</span>（与产量无关）：成本函数变为 C_new = (10 + 10) + 5q²，<strong>MC 不变</strong>，产量决策不变（q* 仍为 3），只是 AC 上移到 (20 + 45)/3 ≈ 21.67，总利润从 35 降到 25。固定税只削利润、不改产量。</p>
+
+      <div id="fig-tax"></div>
+      <p><strong>图 2 解读：</strong>蓝色 MC = 10q 与价格线 P = 30 交于 (3, 30)，税前 q* = 3，绿色利润矩形 π = 35；从量税使 MC 上移为红色 MC′ = 10q + 10，与价格线交于 (2, 30)，税后 q* = 2，且 AC 也上移到红色虚线 AC′（q=2 处 AC′ = 25），利润矩形缩为橙色的 π = 10。矩形的高（11.67→5）和宽（3→2）同时缩水。</p>
+
+      <p>两种税的影响汇总（沿用 C = 10 + 5q²、P = 30 的例子）：</p>
+      <table>
+        <thead>
+          <tr><th>税种</th><th>边际成本 MC</th><th>平均成本 AC</th><th>最优产量 q*</th><th>总利润 π</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>无税（基准）</td><td>10q</td><td>10/q + 5q</td><td>3</td><td>35</td></tr>
+          <tr><td><span class="term">从量税</span><span class="term-en">（Per-unit Tax）</span>：每单位 $10</td><td>上移至 10q + 10</td><td>上移至 10/q + 5q + 10</td><td><strong>降至 2</strong></td><td><strong>降至 10</strong></td></tr>
+          <tr><td><span class="term">固定税</span><span class="term-en">（Fixed Tax）</span>：一次性 $10</td><td><strong>不变</strong></td><td>上移至 20/q + 5q</td><td><strong>不变（3）</strong></td><td>降至 25</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ==================== L08 ==================== -->
+      <h2>二、L08 竞争 II（Competition II）：停产、供给曲线与长期均衡</h2>
+
+      <h3>2.1 引入：价格在亏本线以下，老板还在开工 —— 理性还是执拗？</h3>
+      <p><strong>反直觉开场：</strong>市场价格跌到 10 美元，而这家公司造一个单位要花 15 美元——明摆着亏本，老板却继续开工。是理性还是执拗？答案藏在"反正都要付的钱"里：停不停产，固定成本都照付，所以正确的比较不是"赚还是亏"，而是"<strong>哪个亏得更少</strong>"。</p>
+
+      <h3>2.2 停产规则：仅当 P &lt; AVC 才停产</h3>
+      <p>短期内没有进入和退出，公司不能真正离开市场，但可以选择产量为零——这叫<span class="term">停产</span><span class="term-en">（Shut Down）</span>，与<span class="term">退出</span><span class="term-en">（Exit）</span>（卷铺盖走人）不同：停产时你已支付了固定成本，无处可去。设价格从 30 突然降到 10，回到原成本函数 C = 10 + 5q²：</p>
+      <ul>
+        <li><strong>继续生产</strong>：P = MC → 10 = 10q → q = 1。收入 R = 10，成本 C = 10 + 5 = 15，利润 <strong>π = −5</strong>；</li>
+        <li><strong>停产（q = 0）</strong>：收入为零，但固定成本照付 10，利润 <strong>π = −10</strong>。</li>
+      </ul>
+      <p>生产亏 5、停产亏 10——<strong>即使亏本也应该继续生产那一个单位</strong>。推广成规则：只有当你的收入低于<span class="term">可变成本</span><span class="term-en">（Variable Cost, VC）</span>时才停产，因为固定成本无论如何都得付（它已经是沉没的）。两边同除以 q，停产规则写为：</p>
+      <p style="text-align:center;"><strong>仅当 P &lt; <span class="term">AVC</span><span class="term-en">（Average Variable Cost，平均可变成本）</span> 时才停产</strong></p>
+      <p>对本例，可变成本 = 5q²，AVC = 5q；最优点 P = MC = 10q → q = P/10，代入得 AVC = 5 × (P/10) = 0.5P。停产条件 P &lt; 0.5P 对任何正价格都不可能成立——<strong>对这个成本函数，公司永远不会停产</strong>。</p>
+
+      <h3>2.3 供给曲线 = MC 曲线在 AVC 以上的部分</h3>
+      <p>现在把每个价格下的最优产量描出来：P = 10 → q = 1；P = 20 → q = 2；P = 30 → q = 3；P = 40 → q = 4。这条从 (0,0) 到 (4,40) 的线就是 MC 线——在每个点上价格都等于边际成本。经过这么多数学推导，这条 MC 线是什么？它就是<span class="term">供给曲线</span><span class="term-en">（Supply Curve）</span>——"市场价格与生产者愿意生产的数量之间的关系"，正是边际成本曲线所描述的。严格地说，公司供给曲线是 <strong>MC 曲线在 AVC 最低点以上的部分</strong>（AVC 以下公司宁可停产，供给为零）。至此我们从第一性原理（生产函数 + 投入品价格 + 完全竞争）推导出了第一讲直接使用的供给曲线，完成了闭环。</p>
+
+      <div id="fig-supply"></div>
+      <p><strong>图 3 解读：</strong>蓝色 MC = 10q 即公司供给曲线，四个圆点对应价格 10/20/30/40 → 产量 1/2/3/4；灰色虚线是 AVC = 5q，始终位于 MC 下方，故本例整条 MC 都是供给曲线。红色小矩形展示 P = 10 时的亏损：q = 1 处 AC = 15，单位亏 5、共亏 5——但这仍好于停产的亏 10（且 AVC(1) = 5 &lt; P = 10，停产规则说继续生产）。</p>
+
+      <h3>2.4 短期均衡五步法</h3>
+      <p>有了单个公司的供给曲线，把它<strong>水平加总</strong>就得到<span class="term">市场供给曲线</span><span class="term-en">（Market Supply Curve）</span>：每增加一个相同的公司，同一价格下总供给量翻倍，市场供给曲线变得更平坦、更有弹性。推导<span class="term">短期均衡</span><span class="term-en">（Short-run Equilibrium）</span>的五步：</p>
+      <ol>
+        <li><strong>确定成本函数</strong>：短期资本 K̄ 固定，由生产函数和投入品价格（工资 w、租金 r）推出 C = 10 + 5q²；</li>
+        <li><strong>推导公司供给曲线</strong>：P = MC，MC = 10q → 公司供给 q = P/10；</li>
+        <li><strong>推导市场供给曲线</strong>：水平加总。设短期市场上有 n = 6 家公司，Q = 6 × (P/10) = (3/5)P；</li>
+        <li><strong>与需求联立</strong>：设市场需求 Q = 48 − P。令供给 = 需求：(3/5)P = 48 − P，解得均衡价格 <strong>P* = 30</strong>；</li>
+        <li><strong>计算均衡数量</strong>：Q* = 48 − 30 = <strong>18</strong>；每家公司生产 q = 30/10 = 3，6 家 × 3 = 18，供需平衡。</li>
+      </ol>
+
+      <div id="fig-sr-eq"></div>
+      <p><strong>图 4 解读：</strong>蓝色市场供给 Q = (3/5)P（6 家相同公司水平加总，比单个公司更平坦）与红色市场需求 Q = 48 − P 交于均衡点 (Q* = 18, P* = 30)。这个价格正是 1.7 节里单个公司"当作给定"的 P = 30——市场决定了价格，公司在该价格下各自生产 q = 3。</p>
+
+      <h3>2.5 长期均衡：进入与退出把利润压到零</h3>
+      <p>五步法的 n = 6 从哪来？答案在<span class="term">长期竞争</span><span class="term-en">（Long-run Competition）</span>里：长期允许公司<span class="term">进入</span><span class="term-en">（Entry）</span>与<span class="term">退出</span><span class="term-en">（Exit）</span>，且所有成本都是可变的（没有停产规则那种复杂情形——长期亏损就退出）。基本法则：</p>
+      <ul>
+        <li><strong>有利润 → 公司进入</strong> → 市场供给增加、价格下降、利润被挤压；</li>
+        <li><strong>有亏损 → 公司退出</strong> → 市场供给减少、价格上升、亏损被消除；</li>
+        <li>两股力量的终点：<strong>长期竞争均衡中经济利润为零</strong>，公司在 <strong>AC 最低点</strong>生产，长期市场供给曲线<strong>完全弹性（水平）</strong>，价格 = 行业最低平均成本。</li>
+      </ul>
+      <p>（沿用本例成本函数可算出这个长期价格：AC = 10/q + 5q 在 q = √2 ≈ 1.41 处取最小值 ≈ 14.14——若允许自由进出，价格最终会被压到 14.14 附近。）</p>
+
+      <div class="figure-pair">
+        <div id="fig-pc-entry"></div>
+        <div id="fig-mainframe-exit"></div>
+      </div>
+      <p><strong>图 5 / 图 6 解读：</strong>左图（PC 市场，进入）：1990 年代初 PC 需求旺盛而厂商少，供给 SR₁ 与需求 D 交于较高价格 P₁ = 20，戴尔赚到厚利；Gateway 等公司看到利润进入，供给右移变平到 SR₂，价格降至 P₂ = 15，戴尔的利润矩形缩小——只要还有利润进入就会继续，直到利润归零。右图（大型机市场，退出）：PC 兴起使大型机需求下降到 D′，价格 P₁ = 20 低于 IBM 的平均成本、IBM 亏损；一些公司退出，供给左移变陡到 SR₂，价格回升到 P₂ = 22.5 = 最低 AC，利润归零，市场达到长期均衡。两个案例方向相反、机制相同：<strong>进入和退出分别消灭正利润和负利润</strong>。</p>
+
+      <h3>2.6 零利润的三个现实修正</h3>
+      <p>现实中公司明明在赚钱、股市也很繁荣，"零利润"听起来不现实——因为模型建立在极端假设上。三个修正：</p>
+      <ol>
+        <li><span class="term">进入壁垒</span><span class="term-en">（Barriers to Entry）</span>：模型假设公司可以无成本自由进出，但现实中存在巨大沉没成本（建厂、研发）、政府许可、品牌忠诚度等壁垒。只要利润不高于跨越壁垒的成本，新公司就不会进入，现有公司可保住长期利润；</li>
+        <li><strong>公司差异（Firms Differ）</strong>：模型假设所有公司相同，但现实中成本结构不同。以棉花市场为例：巴基斯坦棉农的生产成本比美国低，若全球需求大到价格必须高到让美国农民也愿意种棉花，巴基斯坦的低成本棉农就能以这个高市场价出售，获得长期利润；</li>
+        <li><strong>投入品价格变化（Input Prices Change）</strong>：模型假设工资、原材料价格固定，但行业扩张会推高对劳动力和原材料的需求、抬高投入品价格，使所有公司的成本曲线上移。为吸引更多产量，市场价格必须上涨——<strong>长期供给曲线向上倾斜</strong>而非水平，即使每个公司的利润最终仍为零。</li>
+      </ol>
+      <p>模型的关键启示是<strong>方向性</strong>的：竞争持续推动公司走向成本最小化和零利润。现实修正只是让均衡偏离终点，并没有取消这股压力。</p>
+      <p><strong>完全竞争长期模型的优缺点：</strong>优点是只用"自由进出"一条假设就预言了价格水平（= 最低 AC）、生产效率（AC 最低点）和利润趋势（→ 0），解释力极强；缺点是三个核心假设（自由进出、公司同质、投入品价格不变）在现实中都不严格成立，所以它更适合作为衡量现实市场的<strong>基准（benchmark）</strong>而非精确描述。</p>
+
+      <h3>2.7 收尾对比：短期 vs 长期竞争均衡</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>短期（Short-run）</th><th>长期（Long-run）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>资本与固定成本</td><td>资本 K̄ 固定，固定成本存在且照付</td><td>一切成本可变，无固定成本</td></tr>
+          <tr><td>公司数量</td><td>固定（无进入退出），如 n = 6</td><td>内生：进入消灭正利润、退出消灭亏损</td></tr>
+          <tr><td>停产决策</td><td>可停产（q = 0 但仍在市场内），规则 P &lt; AVC</td><td>无"停产"概念，亏损即退出</td></tr>
+          <tr><td>经济利润</td><td>可为正（P = 30 时 π = 35）或为负（P = 10 时 π = −5）</td><td><strong>恒为零</strong></td></tr>
+          <tr><td>生产点</td><td>P = MC 处（q* = 3），AC 不一定最低</td><td>P = MC = 最低 AC 处（q = √2 ≈ 1.41）</td></tr>
+          <tr><td>供给曲线</td><td>向上倾斜（MC 在 AVC 以上部分），加总后 Q = (3/5)P</td><td>水平于最低 AC（基准情形）；投入品涨价时向上倾斜</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（竞争市场中的公司生产多少、亏到何时停产、长期利润归于何处）→ 简化模型（价格接受者 + 成本函数 C = 10 + 5q² + 自由进出）→ 推导（P = MC 定产量 → P &lt; AVC 定停产 → MC 即供给曲线 → 五步法出短期均衡 → 进入退出出长期零利润）→ 实际应用（从量税 vs 固定税的产量效应、PC 与大型机市场的兴衰）→ 局限性（进入壁垒、公司差异、投入品价格变化使现实偏离零利润终点）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/06-competition.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // 函数曲线采样：[x, f(x)] 路径点
+    function curve(f, xs) {
+      return xs.map(function (x) { return [x, +(f(x)).toFixed(2)]; });
+    }
+    var acFn = function (q) { return 10 / q + 5 * q; };        // AC  = 10/q + 5q
+    var acTaxFn = function (q) { return acFn(q) + 10; };         // AC' = AC + 10（从量税 $10）
+    var acXs = [0.9, 1.1, 1.414, 1.8, 2.2, 2.7, 3.2, 3.8, 4.4, 5];
+
+    // ===== 图1：P = MC 利润最大化与利润矩形（C=10+5q²，P=30，q*=3，π=35） =====
+    Charts.xy(document.getElementById('fig-profit-max'), {
+      xLabel: '产量 q',
+      yLabel: '价格 / 成本（美元）',
+      xMax: 5, yMax: 50, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：P = MC 决定 q* = 3，绿色矩形为利润 π = 35（高 11.67 × 宽 3）',
+      areas: [
+        { points: [[0, 18.33], [3, 18.33], [3, 30], [0, 30]], color: '#15803d', opacity: 0.18, label: 'π = 35' },
+      ],
+      series: [
+        { points: [[0, 0], [5, 50]], type: 'linear', color: '#2563eb', label: 'MC = 10q' },
+        { points: curve(acFn, acXs), type: 'spline', color: '#7c3aed', label: 'AC = 10/q + 5q' },
+        { points: [[0, 30], [5, 30]], type: 'linear', color: '#dc2626', label: '价格线 P = 30（= 公司需求 = MR）' },
+      ],
+      markers: [
+        { x: 3, y: 30, label: 'P = MC → q* = 3', color: '#2563eb', legend: '利润最大化点', guides: true, gxLabel: 'q* = 3', gyLabel: 'P = 30', labelDx: 14, labelDy: -14 },
+        { x: 3, y: 18.33, label: 'AC(3) = 18.33', color: '#15803d', legend: '平均成本点', guides: true, gyLabel: 'AC = 18.33', labelDx: 14, labelDy: 20 },
+        { x: 4, y: 40, label: 'MC(4) = 40 > 30：不生产第 4 个', color: '#dc2626', labelDx: -186, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图2：从量税 $10 —— MC 与 AC 同时上移，q* 3→2，π 35→10 =====
+    Charts.xy(document.getElementById('fig-tax'), {
+      xLabel: '产量 q',
+      yLabel: '价格 / 成本（美元）',
+      xMax: 5, yMax: 50, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：从量税 $10 —— q* 3→2，利润矩形高 11.67→5、宽 3→2，π 35→10',
+      areas: [
+        { points: [[0, 18.33], [3, 18.33], [3, 30], [0, 30]], color: '#15803d', opacity: 0.15 },
+        { points: [[0, 25], [2, 25], [2, 30], [0, 30]], color: '#d97706', opacity: 0.3 },
+      ],
+      series: [
+        { points: [[0, 0], [5, 50]], type: 'linear', color: '#2563eb', label: 'MC = 10q（税前）' },
+        { points: [[0, 10], [4, 50]], type: 'linear', color: '#dc2626', label: "MC' = 10q + 10（从量税后）" },
+        { points: curve(acFn, acXs), type: 'spline', color: '#7c3aed', dash: true, label: 'AC（税前）' },
+        { points: curve(acTaxFn, acXs), type: 'spline', color: '#d97706', dash: true, label: "AC' = AC + 10（从量税后）" },
+        { points: [[0, 30], [5, 30]], type: 'linear', color: '#0d9488', label: '价格线 P = 30' },
+      ],
+      markers: [
+        { x: 3, y: 30, label: '税前 q* = 3', color: '#2563eb', legend: '利润最大化点（P = MC）', guides: true, gxLabel: 'q* = 3', gyLabel: 'P = 30', labelDx: 12, labelDy: -14 },
+        { x: 2, y: 30, label: '税后 q* = 2', color: '#dc2626', guides: true, gxLabel: 'q* = 2', labelDx: -86, labelDy: -16 },
+        { x: 3, y: 18.33, label: 'AC(3) = 18.33（π = 35，绿）', color: '#15803d', legend: '平均成本点', guides: true, gyLabel: '18.33', labelDx: 14, labelDy: 22 },
+        { x: 2, y: 25, label: "AC'(2) = 25（π = 10，橙）", color: '#d97706', guides: true, gyLabel: '25', labelDx: -160, labelDy: 20 },
+      ],
+    });
+
+    // ===== 图3：供给曲线 = MC（AVC 以上部分）；P=10 时亏 5 仍生产（停产亏 10） =====
+    Charts.xy(document.getElementById('fig-supply'), {
+      xLabel: '产量 q',
+      yLabel: '价格 P（美元）',
+      xMax: 5, yMax: 45, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：公司供给曲线 = MC（AVC 以上部分）—— 价格 10→40 对应产量 1→4',
+      areas: [
+        { points: [[0, 10], [1, 10], [1, 15], [0, 15]], color: '#dc2626', opacity: 0.18, label: '亏 5' },
+      ],
+      series: [
+        { points: [[0, 0], [4.5, 45]], type: 'linear', color: '#2563eb', label: 'MC = 10q = 公司供给曲线' },
+        { points: [[0, 0], [4.5, 22.5]], type: 'linear', color: '#6b7280', dash: true, label: 'AVC = 5q（其下方停产）' },
+      ],
+      markers: [
+        { x: 1, y: 10, label: 'P = 10 → q = 1', color: '#dc2626', legend: 'P = MC 供给点', guides: true, gxLabel: '1', gyLabel: '10', labelDx: 12, labelDy: 20 },
+        { x: 2, y: 20, label: 'P = 20 → q = 2', color: '#d97706', guides: true, gxLabel: '2', gyLabel: '20', labelDx: 12, labelDy: 18 },
+        { x: 3, y: 30, label: 'P = 30 → q = 3', color: '#15803d', guides: true, gxLabel: '3', gyLabel: '30', labelDx: 12, labelDy: 16 },
+        { x: 4, y: 40, label: 'P = 40 → q = 4', color: '#7c3aed', guides: true, gxLabel: '4', gyLabel: '40', labelDx: -108, labelDy: -14 },
+        { x: 1, y: 15, label: 'AC(1) = 15', color: '#dc2626', legend: 'P = 10 时的成本点', labelDx: 12, labelDy: -8 },
+        { x: 1, y: 5, label: 'AVC(1) = 5 < P = 10 → 继续生产', color: '#6b7280', labelDx: 12, labelDy: 18 },
+      ],
+    });
+
+    // ===== 图4：短期均衡五步法结果 —— 市场供给(6家加总) ∩ 市场需求 =====
+    Charts.xy(document.getElementById('fig-sr-eq'), {
+      xLabel: '市场数量 Q',
+      yLabel: '价格 P（美元）',
+      xMax: 50, yMax: 50, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：短期均衡 —— 供给 Q = (3/5)P 与需求 Q = 48 − P 联立，P* = 30，Q* = 18',
+      series: [
+        { points: [[0, 0], [30, 50]], type: 'linear', color: '#2563eb', label: '市场供给 Q = (3/5)P（6 家公司加总）' },
+        { points: [[0, 48], [48, 0]], type: 'linear', color: '#dc2626', label: '市场需求 Q = 48 − P' },
+      ],
+      markers: [
+        { x: 18, y: 30, label: '均衡：P* = 30，Q* = 18（每家 q = 3）', color: '#7c3aed', legend: '短期均衡点', guides: true, gxLabel: 'Q* = 18', gyLabel: 'P* = 30', labelDx: 16, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图5（左）：长期进入 —— PC 市场，Gateway 进入使价格 20→15 =====
+    Charts.xy(document.getElementById('fig-pc-entry'), {
+      xLabel: 'PC 市场数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 50, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5：长期进入（PC 市场）—— 利润吸引进入，供给 SR₁→SR₂，价格 20→15',
+      series: [
+        { points: [[0, 45], [90, 0]], type: 'linear', color: '#dc2626', label: '市场需求 D' },
+        { points: [[0, 0], [100, 40]], type: 'linear', color: '#2563eb', label: 'SR₁（进入前，厂商少）' },
+        { points: [[0, 0], [100, 25]], type: 'linear', color: '#0d9488', label: 'SR₂（Gateway 等进入后）' },
+      ],
+      markers: [
+        { x: 50, y: 20, label: 'P₁ = 20，Q₁ = 50（戴尔厚利）', color: '#2563eb', legend: '均衡点', guides: true, gxLabel: 'Q₁ = 50', gyLabel: 'P₁ = 20', labelDx: 12, labelDy: -14 },
+        { x: 60, y: 15, label: 'P₂ = 15，Q₂ = 60（利润缩小）', color: '#0d9488', guides: true, gxLabel: 'Q₂ = 60', gyLabel: 'P₂ = 15', labelDx: -182, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图6（右）：长期退出 —— 大型机市场，退出使价格回升到最低 AC =====
+    Charts.xy(document.getElementById('fig-mainframe-exit'), {
+      xLabel: '大型机市场数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 50, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 6：长期退出（大型机市场）—— 亏损引发退出，价格回升到最低 AC（零利润）',
+      series: [
+        { points: [[0, 40], [80, 0]], type: 'linear', color: '#dc2626', label: "市场需求 D′（PC 兴起后下降）" },
+        { points: [[0, 0], [100, 50]], type: 'linear', color: '#2563eb', label: 'SR₁（退出前）' },
+        { points: [[0, 5], [90, 50]], type: 'linear', color: '#0d9488', label: 'SR₂（部分厂商退出后）' },
+      ],
+      markers: [
+        { x: 40, y: 20, label: 'P₁ = 20 < AC（IBM 亏损）', color: '#2563eb', legend: '均衡点', guides: true, gxLabel: 'Q₁ = 40', gyLabel: 'P₁ = 20', labelDx: -174, labelDy: 26 },
+        { x: 35, y: 22.5, label: 'P₂ = 22.5 = 最低 AC（零利润）', color: '#0d9488', guides: true, gxLabel: 'Q₂ = 35', gyLabel: 'P₂ = 22.5', labelDx: 14, labelDy: -14 },
+      ],
+    });
+  </script>
+</body>
+</html>

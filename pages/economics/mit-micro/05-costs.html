@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 成本 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>05 成本：短期、长期与沉没成本之外的决策</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 6 讲（L06）：从生产函数出发推导<span class="term">成本曲线</span><span class="term-en">（Cost Curve）</span>——先看短期内固定成本与可变成本如何合成总成本，理解边际成本与平均成本的 U 形关系；再进入长期，用等成本线与等产量线的切点解决"工人与机器如何搭配"的成本最小化问题；最后把短期与长期成本曲线连成下包络线，解释特斯拉为什么要建 Gigafactory。（"沉没成本"是下一篇 L07 的主题，本篇聚焦成本曲线本身。）</p>
+
+      <!-- ==================== 一、引入 ==================== -->
+      <h2>一、引入：特斯拉的"产能地狱"</h2>
+      <p><strong>反直觉开场：</strong>同样是造一辆 Model 3，为什么在小工厂里加班加点赶出来，比建一座更大的工厂来造要<strong>贵得多</strong>？直觉上"厂小省钱、厂大烧钱"，现实却恰恰相反。</p>
+      <p>伊隆·马斯克最初预计到 2017 年汽车需求约 2 万辆，于是建了一座相对较小的工厂。结果实际需求飙升到 20 万辆。短期内工厂规模（资本）改不了，特斯拉只能让这座小厂超负荷运转——加班费、设备损耗、产线拥堵把每辆车的成本推得极高，马斯克称之为"产能地狱"（Production Hell）。只有在长期，他才能重新选择工厂规模：在内华达州建世界上最大的电池厂 Gigafactory，用大工厂在低得多的平均成本下生产。</p>
+      <p>这个故事里藏着本讲的全部主题：<strong>短期</strong>内资本固定、只能多雇工人，成本随产量加速上升；<strong>长期</strong>内所有投入都可调，企业能为目标产量选出最省钱的工厂规模。本讲的思想链路：核心问题（成本如何随产量变化）→ 简化模型（生产函数 Q = √(L·K) + 投入价格 W、R）→ 推导（短期成本函数 → MC/AC → 长期切点条件 → 长期成本函数）→ 实际应用（特斯拉建厂、最低工资辩论）→ 局限性（依赖生产函数形式、假设投入价格外生给定）。</p>
+
+      <!-- ==================== 二、从生产函数推成本 ==================== -->
+      <h2>二、从生产函数推导成本函数（Deriving the Cost Function）</h2>
+      <p>沿用上一篇的生产函数 <strong>Q = √(L·K)</strong>：企业用劳动 L 与资本 K 两种投入生产 q 单位产品。劳动是<span class="term">可变投入</span><span class="term-en">（Variable Input）</span>，短期长期都能调整；资本是<span class="term">固定投入</span><span class="term-en">（Fixed Input）</span>，只能在长期改变。</p>
+      <p>企业生产的成本就是投入的数量乘以投入的价格：</p>
+      <ul>
+        <li><strong>劳动成本</strong>：工时数 L × 每小时<span class="term">工资率</span><span class="term-en">（Wage Rate, W）</span>；</li>
+        <li><strong>资本成本</strong>：机器数 K̄ × <span class="term">租金率</span><span class="term-en">（Rental Rate, R）</span>。注意是"租"不是"买"——正如你不会"买下"一个工人而是按小时付工资，我们也把机器看作按每个周期 R 的价格租用，这样资本和劳动都是"流量"，时间口径一致。可以把 R 理解为使用一台机器一个周期的全部成本。</li>
+      </ul>
+      <p>于是短期总成本为 <strong>C = R·K̄ + W·L</strong>。给定 R = $10、W = $5，推导只需四步：</p>
+      <ol>
+        <li>短期资本固定：Q = √(L·K̄)；</li>
+        <li>反解出劳动需求：L = Q² / K̄；</li>
+        <li>代入成本方程：C = 10·K̄ + 5·(Q² / K̄)；</li>
+        <li>取 K̄ = 1，得到短期成本函数：<strong>C = 10 + 5Q²</strong>。</li>
+      </ol>
+      <p>其中 10 是<span class="term">固定成本</span><span class="term-en">（Fixed Cost, FC）</span>——不随产量变化（租金照付）；5Q² 是<span class="term">可变成本</span><span class="term-en">（Variable Cost, VC）</span>——随产量变化；两者之和是<span class="term">总成本</span><span class="term-en">（Total Cost, TC）</span>。</p>
+
+      <div id="fig-cost-decomp"></div>
+      <p><strong>图 1 解读：</strong>固定成本 FC = 10 是一条水平线（蓝），可变成本 VC = 5q² 从原点加速上升（绿），总成本 TC 是两者的垂直相加（红），即 VC 曲线整体向上平移 10 个单位。以 q = 2 为例：TC = 30 = FC 10 + VC 20。注意 TC 与 VC 都是<strong>凸向上</strong>的——产量翻倍，成本变成四倍，这正是短期资本固定、劳动边际产量递减的直接后果。</p>
+
+      <!-- ==================== 三、MC vs AC ==================== -->
+      <h2>三、边际成本与平均成本（MC vs AC）</h2>
+      <p>有了成本函数，就可以定义驱动整个企业分析的两个核心概念：</p>
+      <ul>
+        <li><span class="term">边际成本</span><span class="term-en">（Marginal Cost, MC）</span>：生产<strong>下一个单位</strong>的成本，MC = dC/dQ = <strong>10Q</strong>——产量越大，边际成本越高；</li>
+        <li><span class="term">平均成本</span><span class="term-en">（Average Cost, AC）</span>：整个生产范围内<strong>每个单位平均</strong>的成本，AC = C/Q = <strong>10/Q + 5Q</strong>。</li>
+      </ul>
+      <p>区分"边际"与"平均"至关重要：生产函数非线性时，两者通常不相等。平均成本 AC 可以拆成两部分：<span class="term">平均固定成本</span><span class="term-en">（Average Fixed Cost, AFC）</span> = 10/Q 和<span class="term">平均可变成本</span><span class="term-en">（Average Variable Cost, AVC）</span> = 5Q。</p>
+      <p><strong>AC 为什么呈 U 形？</strong>刚开始生产时，寥寥几个单位要分摊全部固定成本，AFC 很高；随着产量增加，固定成本被摊到更多单位上，AFC 不断下降，把 AC 往下拉。但与此同时 AVC = 5Q 随产量持续上升。起初 AFC 摊薄的力量占主导，AC 下降；越过某个产量后，AVC 上升的力量反超，AC 掉头向上。两股力量的拉锯造就了 U 形。</p>
+
+      <div id="fig-mc-ac"></div>
+      <p><strong>图 2 解读：</strong>MC = 10q（蓝直线）与 AVC = 5q（绿线）都从原点出发，MC 斜率是 AVC 的两倍；AC = 10/q + 5q（红曲线）先降后升呈 U 形。关键几何事实：<strong>MC 恰好穿过 AC 的最低点</strong> q* = √2 ≈ 1.41，此处 AC = MC = 10√2 ≈ 14.1。直觉是：只要"下一个单位的成本"低于平均值，它就会把平均值往下拉（MC &lt; AC → AC 下降）；一旦高于平均值，就把它往上抬（MC &gt; AC → AC 上升）——所以两者必然在 AC 的最低点相交。</p>
+      <p><strong>这个模型的优缺点：</strong>优点是用一条 U 形曲线同时概括了"固定成本摊薄"与"边际产量递减"两股力量，并给出企业效率规模的明确预测（AC 最低点）；缺点是它完全由生产函数与投入价格推出——若规模报酬或技术形态不同，AC 未必是 U 形，且现实中 FC 与 VC 的划分常有时间口径上的模糊地带。</p>
+
+      <!-- ==================== 四、MC = W/MPL ==================== -->
+      <h2>四、关键关系：MC = W / MPL</h2>
+      <p><strong>反直觉一问：</strong>企业为什么愿意为高技能员工支付高得多的工资？如果工资高意味着成本高，"压价雇便宜人"不是更省钱吗？未必。</p>
+      <p>短期内成本的变化只来自劳动的变化，即 dC = W·dL。于是：</p>
+      <p style="text-align:center;"><strong>MC = dC/dQ = W·(dL/dQ) = W / MPL</strong></p>
+      <p>其中 <span class="term">劳动的边际产量</span><span class="term-en">（Marginal Product of Labor, MPL）</span> = dQ/dL，即多雇一个工人能多生产多少。这个公式说：下一个单位的边际成本，随工资 W 上升而上升，随工人效率 MPL 上升而<strong>下降</strong>。用高效率工人生产下一个单位是便宜的——哪怕他工资更高，只要他多生产的产出足够多，摊到每单位上的成本反而更低。这就是企业愿意为高生产率付高工资的根本原因：比较的不是工资本身，而是<strong>每单位产出的成本 W/MPL</strong>。</p>
+
+      <!-- ==================== 五、长期成本最小化 ==================== -->
+      <h2>五、长期成本最小化：等成本线与等产量线的切点</h2>
+      <p>进入长期，资本 K 不再固定，企业可以自由选择"工人与机器的组合"。目标分两歩：先对给定产量找出成本最低的 (L, K)；再看这个最优组合如何随产量变化。</p>
+      <p>引入<span class="term">等成本线</span><span class="term-en">（Isocost Curve）</span>：方程 C = W·L + R·K 在 K-L 空间中的图像，代表<strong>花费相同总成本</strong>的所有投入组合，是斜率为 −W/R 的直线。它与消费侧的预算约束线完全同构，区别只在于企业没有固定预算——我们画的是一族平行线，每条对应一个成本水平。</p>
+      <p>企业要生产给定产量（即待在某条<span class="term">等产量线</span><span class="term-en">（Isoquant）</span>上）且成本最小，答案与消费者理论一模一样：<strong>等产量线与等成本线的切点</strong>。相切意味着两条线斜率相等：<span class="term">边际技术替代率</span><span class="term-en">（Marginal Rate of Technical Substitution, MRTS）</span> = −MPL/MPK = −W/R。重排成"性价比"形式更直观：</p>
+      <p style="text-align:center;"><strong>MPL / W = MPK / R</strong></p>
+      <p>即：花在劳动上的最后一美元带来的产量增量，必须等于花在资本上的最后一美元带来的产量增量。这与消费侧的 bang-for-the-buck 条件（MU₁/P₁ = MU₂/P₂）是完美的<strong>对偶</strong>——消费者分配预算让每美元的效用相等，生产者分配成本让每美元的产出相等。</p>
+
+      <div id="fig-isocost"></div>
+      <p><strong>图 3 解读：</strong>紫色曲线是产量 Q = 2 的等产量线（L·K = 4）。三条等成本线斜率都是 −W/R = −1/2：C = 20（灰虚线）太便宜，整条线够不到等产量线，根本生产不出 Q = 2；C = 40（橙虚线）与等产量线相交两次，能生产但浪费钱；C = 10·2√2 ≈ 28.3（蓝线）恰好与等产量线<strong>相切</strong>于 X 点（L = 2.83, K = 1.41）——这就是生产 Q = 2 的最低成本组合。切点处 MRTS = −K/L = −1/2 = −W/R，等价于 K = L/2：资本用量应是劳动的一半。</p>
+
+      <!-- ==================== 六、工资上涨与替代 ==================== -->
+      <h2>六、工资上涨：沿等产量线用资本替代劳动</h2>
+      <p>投入品价格变化会怎样？假设工资 W 从 $5 涨到 $10，与租金率 R 持平，价格比从 −1/2 变为 −1。要保持产量不变（留在同一条等产量线上），企业会<strong>沿着等产量线移动</strong>：减少变贵的劳动、增加相对变便宜的资本——这就是企业层面的<span class="term">替代效应</span><span class="term-en">（Substitution Effect）</span>。</p>
+
+      <div id="fig-substitution"></div>
+      <p><strong>图 4 解读：</strong>同一条等产量线 Q = 2（紫）上，工资上涨前最优组合是 X（L = 2.83, K = 1.41），等成本线（蓝）斜率 −1/2、成本 28.3；工资涨到 W = $10 后，等成本线（红）斜率变陡为 −1，最优组合移到 Y（L = 2, K = 2）——企业砍掉约 30% 的工人，换上更多机器。注意新成本 40 高于原成本 28.3：劳动变贵使任何产量都更贵了，企业能做的只是"少受伤"。</p>
+      <p>这个机制正是<strong>最低工资辩论</strong>的理论基础：一个常见论点认为，提高最低工资会抬高 W/R，诱使企业沿等产量线用机器（自助点餐机、仓储机器人）取代低技能工人，反而伤害政策想帮助的人群。该模型的优点是给出了"资本替代劳动"的清晰方向与可检验预测；缺点是把调整设想成无摩擦瞬时完成的——现实中裁员与购机都有调整成本，且需求、产出水平也可能同时变化（此处只刻画了保持产量不变的替代效应）。</p>
+
+      <!-- ==================== 七、扩张路径与长期成本 ==================== -->
+      <h2>七、长期扩张路径与长期成本函数</h2>
+      <p>把每个产量水平下的最优投入组合连起来，得到的轨迹叫<span class="term">长期扩张路径</span><span class="term-en">（Long-run Expansion Path）</span>。对本讲的 Cobb-Douglas 生产函数，它是一条直线 <strong>K = L/2</strong>——无论产量多大，最优资本-劳动比保持不变。但对其他生产函数，扩张路径可以弯曲：偏向资本（重型机械行业）或偏向劳动（快餐店）。</p>
+
+      <div id="fig-expansion"></div>
+      <p><strong>图 5 解读：</strong>蓝直线是扩张路径 K = L/2，三条紫色虚线分别是 Q = 1、2、3 的等产量线。切点 E₁（1.41, 0.71）、E₂（2.83, 1.41）、E₃（4.24, 2.12）都落在射线上：产量每上一个台阶，劳动与资本都按同一比例同步扩张。</p>
+      <p>把最优组合代回成本方程，就得到本讲的目标——<strong>长期成本函数</strong>：由 K = L/2 得 Q = L/√2，即 L = √2·Q、K = (√2/2)·Q，代入 C = W·L + R·K：</p>
+      <p style="text-align:center;">C = 5·(√2·Q) + 10·(√2/2·Q) = <strong>10√2·Q ≈ 14.1·Q</strong></p>
+      <p>长期成本与产量成正比——这是该生产函数<span class="term">规模报酬不变</span><span class="term-en">（Constant Returns to Scale, CRS）</span>的直接结果。对比短期成本 C = 10 + 5Q² 的加速上升，长期成本之所以更低，是因为企业能同步扩大资本，避免"在小厂里硬塞更多工人"导致的边际产量递减。</p>
+
+      <!-- ==================== 八、LRAC 下包络线 ==================== -->
+      <h2>八、短期与长期的关系：LRAC 是 SRAC 的下包络线</h2>
+      <p><strong>长期成本总是低于或等于短期成本</strong>——原因很简单：长期拥有更多自由度。短期你被锁死在某个工厂规模（K̄ 固定）上；长期你能为预期产量选出最优的工厂规模。</p>
+      <p>假设企业可以建三种规模的工厂：小型（K̄ = 1）、中型（K̄ = 2）、大型（K̄ = 4），各自对应一条<span class="term">短期平均成本</span><span class="term-en">（Short-run Average Cost, SRAC）</span>曲线 SRAC = 10K̄/q + 5q/K̄。计划产量低时小厂最省，计划产量高时大厂最省。<span class="term">长期平均成本</span><span class="term-en">（Long-run Average Cost, LRAC）</span>就是所有可能 SRAC 曲线的<span class="term">下包络线</span><span class="term-en">（Lower Envelope）</span>。</p>
+
+      <div id="fig-envelope"></div>
+      <p><strong>图 6 解读：</strong>三条 U 形曲线分别是小厂 SRAC₁（蓝，最低点 q* = 1.41）、中厂 SRAC₂（红，q* = 2.83）、大厂 SRAC₃（绿，q* = 5.66），最低平均成本都是 10√2 ≈ 14.1（星标）。若计划产量 q &lt; 2 选小厂最省，2 &lt; q &lt; 4 选中厂，q &gt; 4 选大厂。灰色虚线是真正的 LRAC：本例因规模报酬不变，它是一条水平线 10√2 ≈ 14.1，与每条 SRAC 在其最低点<strong>相切</strong>。一般情形下（工厂规模连续可选、规模报酬先增后减），LRAC 是一条平滑的浅 U 形曲线，贴着无数条 SRAC 的下缘滑过——所以它才叫"包络线"。</p>
+      <p><strong>回到特斯拉：</strong>马斯克按 2 万辆需求建的小厂相当于 SRAC₁。需求冲到 20 万辆后，短期只能沿 SRAC₁ 向右上方硬撑——平均成本飙升，这就是产能地狱的成本语言。内华达 Gigafactory 则相当于从 SRAC₁ 跳到 SRAC₃：在更高产量上把平均成本压回包络线附近。短期受约束、长期重新优化，一张图说尽。</p>
+
+      <!-- ==================== 九、总结对比表 ==================== -->
+      <h2>九、总结：短期 vs 长期成本决策</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>短期（Short Run）</th><th>长期（Long Run）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>可调整的投入</td><td>只有劳动 L（资本 K̄ 固定）</td><td>劳动与资本均可调</td></tr>
+          <tr><td>成本结构</td><td>固定成本 FC + 可变成本 VC</td><td>全部成本都是可变的（无 FC）</td></tr>
+          <tr><td>本讲成本函数</td><td>C = 10 + 5Q²（凸向上，加速上升）</td><td>C = 10√2·Q ≈ 14.1·Q（线性，比例上升）</td></tr>
+          <tr><td>核心曲线</td><td>MC = 10Q；AC = 10/Q + 5Q（U 形）</td><td>LRAC = SRAC 的下包络线</td></tr>
+          <tr><td>决策规则</td><td>关注 MC = W/MPL 与 AC 最低点</td><td>切点条件 MPL/W = MPK/R，沿扩张路径扩张</td></tr>
+          <tr><td>价格变化的应对</td><td>只能增减工人</td><td>沿等产量线替代（工资涨→资本替代劳动）</td></tr>
+          <tr><td>成本大小关系</td><td>SRAC ≥ LRAC（被工厂规模锁死）</td><td>LRAC ≤ SRAC（自由选最优规模）</td></tr>
+          <tr><td>特斯拉案例</td><td>小厂超负荷赶工 = 产能地狱</td><td>Gigafactory = 跳到更大规模的 SRAC</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（成本如何随产量变化、投入如何搭配）→ 简化模型（Q = √(L·K)，W = $5，R = $10）→ 推导（短期 C = 10 + 5Q² → MC/AC 与 MC = W/MPL → 长期切点 MPL/W = MPK/R → 扩张路径 → C = 10√2·Q → LRAC 包络线）→ 实际应用（特斯拉 Gigafactory、最低工资辩论、高薪雇高生产率工人）→ 局限性（结论依赖 Cobb-Douglas 形式、忽略调整成本与投入价格内生性、CRS 下 LRAC 水平的结论不具普遍性）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/05-costs.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // 函数采样：把 f 在 xs 处的取值转为 [x, y] 路径点
+    function sample(f, xs) {
+      return xs.map(function (x) { return [x, +(f(x)).toFixed(2)]; });
+    }
+
+    // ===== 图1：短期成本函数 C = 10 + 5q² = FC + VC =====
+    Charts.xy(document.getElementById('fig-cost-decomp'), {
+      xLabel: '产量 q',
+      yLabel: '成本 C（美元）',
+      xMax: 4, yMax: 90, xStep: 1, yStep: 15,
+      legendPosition: 'top',
+      caption: '图 1：短期成本函数 C = 10 + 5q² —— 总成本 = 固定成本 + 可变成本',
+      series: [
+        { points: sample(function (q) { return 10 + 5 * q * q; }, [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]), type: 'spline', color: '#dc2626', label: '总成本 TC = 10 + 5q²' },
+        { points: [[0, 10], [4, 10]], type: 'linear', color: '#2563eb', label: '固定成本 FC = 10' },
+        { points: sample(function (q) { return 5 * q * q; }, [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]), type: 'spline', color: '#15803d', label: '可变成本 VC = 5q²' },
+      ],
+      markers: [
+        { x: 2, y: 30, label: 'q=2：TC=30 = FC 10 + VC 20', color: '#dc2626', guides: true, gxLabel: 'q=2', legend: '成本分解示例点', labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图2：MC = 10q 与 AC = 10/q + 5q（MC 穿过 AC 最低点） =====
+    Charts.xy(document.getElementById('fig-mc-ac'), {
+      xLabel: '产量 q',
+      yLabel: '单位成本（美元）',
+      xMax: 4, yMax: 40, xStep: 1, yStep: 5,
+      legendPosition: 'top',
+      caption: '图 2：MC 穿过 AC 最低点（q* = √2 ≈ 1.41，AC = MC = 10√2 ≈ 14.1）',
+      series: [
+        { points: [[0, 0], [4, 40]], type: 'linear', color: '#2563eb', label: '边际成本 MC = 10q' },
+        { points: sample(function (q) { return 10 / q + 5 * q; }, [0.5, 0.65, 0.8, 1, 1.2, 1.41, 1.7, 2, 2.4, 2.8, 3.2, 3.6, 4]), type: 'spline', color: '#dc2626', label: '平均成本 AC = 10/q + 5q' },
+        { points: [[0, 0], [4, 20]], type: 'linear', color: '#15803d', dash: true, label: '平均可变成本 AVC = 5q' },
+      ],
+      markers: [
+        { x: 1.41, y: 14.14, label: 'AC 最低点 (1.41, 14.1)', color: '#dc2626', guides: true, gxLabel: 'q*', legend: 'MC 与 AC 交点（AC 最低）', labelDx: 14, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图3：等产量线 Q=2 与等成本线切点 =====
+    Charts.xy(document.getElementById('fig-isocost'), {
+      xLabel: '劳动 L（工时）',
+      yLabel: '资本 K（机器）',
+      xMax: 6, yMax: 6, xStep: 1, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 3：生产 Q = 2 的成本最小组合 —— 等产量线与等成本线的切点 X',
+      series: [
+        { points: sample(function (l) { return 4 / l; }, [0.7, 0.85, 1, 1.3, 1.6, 2, 2.4, 2.83, 3.3, 3.8, 4.4, 5, 5.6]), type: 'spline', color: '#7c3aed', dash: true, label: '等产量线 Q = 2（L·K = 4）' },
+        { points: [[0, 2.83], [5.66, 0]], type: 'linear', color: '#2563eb', label: '等成本线 C = 28.3（相切，最低成本）' },
+        { points: [[0, 2], [4, 0]], type: 'linear', color: '#6b7280', dash: true, label: '等成本线 C = 20（达不到产量）' },
+        { points: [[0, 4], [6, 1]], type: 'linear', color: '#d97706', dash: true, label: '等成本线 C = 40（能生产但浪费）' },
+      ],
+      markers: [
+        { x: 2.83, y: 1.41, label: 'X (L=2.83, K=1.41)', color: '#2563eb', legend: '成本最小投入组合（切点）', labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图4：工资上涨 W $5→$10，沿等产量线资本替代劳动 =====
+    Charts.xy(document.getElementById('fig-substitution'), {
+      xLabel: '劳动 L（工时）',
+      yLabel: '资本 K（机器）',
+      xMax: 6, yMax: 6, xStep: 1, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 4：工资上涨 → 沿等产量线从 X 移到 Y —— 用资本替代劳动',
+      series: [
+        { points: sample(function (l) { return 4 / l; }, [0.7, 0.85, 1, 1.3, 1.6, 2, 2.4, 2.83, 3.3, 3.8, 4.4, 5, 5.6]), type: 'spline', color: '#7c3aed', dash: true, label: '等产量线 Q = 2（L·K = 4）' },
+        { points: [[0, 2.83], [5.66, 0]], type: 'linear', color: '#2563eb', label: '原等成本线（W=5, R=10，斜率 −1/2）' },
+        { points: [[0, 4], [4, 0]], type: 'linear', color: '#dc2626', label: '新等成本线（W=10, R=10，斜率 −1）' },
+      ],
+      markers: [
+        { x: 2.83, y: 1.41, label: 'X (2.83, 1.41)', color: '#2563eb', legend: '工资上涨前的最优组合', labelDx: 12, labelDy: 22 },
+        { x: 2, y: 2, label: 'Y (2, 2)', color: '#dc2626', legend: '工资上涨后的最优组合', lineTo: [2.83, 1.41], labelDx: -14, labelDy: -18 },
+      ],
+    });
+
+    // ===== 图5：长期扩张路径 K = L/2 =====
+    Charts.xy(document.getElementById('fig-expansion'), {
+      xLabel: '劳动 L（工时）',
+      yLabel: '资本 K（机器）',
+      xMax: 6, yMax: 4, xStep: 1, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 5：长期扩张路径 K = L/2 —— 各产量下的最优投入组合连成射线',
+      series: [
+        { points: [[0, 0], [6, 3]], type: 'linear', color: '#2563eb', label: '长期扩张路径 K = L/2' },
+        { points: sample(function (l) { return 1 / l; }, [0.3, 0.4, 0.55, 0.75, 1, 1.41, 1.9, 2.5, 3.1, 3.6]), type: 'spline', color: '#7c3aed', dash: true, label: '等产量线 Q = 1' },
+        { points: sample(function (l) { return 4 / l; }, [1.05, 1.3, 1.6, 2, 2.4, 2.83, 3.4, 4, 4.8, 5.5, 6]), type: 'spline', color: '#a78bfa', dash: true, label: '等产量线 Q = 2' },
+        { points: sample(function (l) { return 9 / l; }, [2.3, 2.7, 3.2, 3.7, 4.24, 4.9, 5.5, 6]), type: 'spline', color: '#c4b5fd', dash: true, label: '等产量线 Q = 3' },
+      ],
+      markers: [
+        { x: 1.41, y: 0.71, label: 'E₁ (1.41, 0.71)', color: '#2563eb', legend: '各产量下的最优投入组合', labelDx: -20, labelDy: 22 },
+        { x: 2.83, y: 1.41, label: 'E₂ (2.83, 1.41)', color: '#2563eb', labelDx: -20, labelDy: 24 },
+        { x: 4.24, y: 2.12, label: 'E₃ (4.24, 2.12)', color: '#2563eb', labelDx: -30, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图6：三条 SRAC 与 LRAC 下包络线 =====
+    Charts.xy(document.getElementById('fig-envelope'), {
+      xLabel: '产量 q',
+      yLabel: '平均成本（美元）',
+      xMax: 8, yMax: 24, xStep: 1, yStep: 4,
+      legendPosition: 'top',
+      caption: '图 6：LRAC 是 SRAC 的下包络线 —— 三种工厂规模与各自的最优产量',
+      series: [
+        { points: sample(function (q) { return 10 / q + 5 * q; }, [0.6, 0.75, 0.9, 1.1, 1.41, 1.8, 2.2, 2.7, 3.2, 3.7, 4]), type: 'spline', color: '#2563eb', label: 'SRAC₁（小厂 K̄=1）' },
+        { points: sample(function (q) { return 20 / q + 2.5 * q; }, [1.1, 1.4, 1.8, 2.3, 2.83, 3.4, 4, 4.7, 5.3, 5.6]), type: 'spline', color: '#dc2626', label: 'SRAC₂（中厂 K̄=2）' },
+        { points: sample(function (q) { return 40 / q + 1.25 * q; }, [2.2, 2.8, 3.5, 4.3, 5, 5.66, 6.4, 7.2, 8]), type: 'spline', color: '#15803d', label: 'SRAC₃（大厂 K̄=4）' },
+        { points: [[0, 14.14], [8, 14.14]], type: 'linear', color: '#6b7280', dash: true, label: 'LRAC = 10√2 ≈ 14.1（下包络线）' },
+      ],
+      markers: [
+        { x: 1.41, y: 14.14, shape: 'star', label: 'q*=1.41', color: '#2563eb', legend: '各规模工厂的最优产量（SRAC 最低点）', labelDx: -12, labelDy: 22 },
+        { x: 2.83, y: 14.14, shape: 'star', label: 'q*=2.83', color: '#dc2626', labelDx: -12, labelDy: 24 },
+        { x: 5.66, y: 14.14, shape: 'star', label: 'q*=5.66', color: '#15803d', labelDx: -12, labelDy: 22 },
+      ],
+    });
+  </script>
+</body>
+</html>
