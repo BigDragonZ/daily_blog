@@ -12,6 +12,23 @@ const MENU = [
         title: '经济学原理',
         children: [
           { title: '01 导论', link: 'pages/economics/principles-of-economics/01-introduction.html' },
+          { title: '02 市场如何运行', link: 'pages/economics/principles-of-economics/02-how-markets-work.html' },
+          { title: '03 市场和福利', link: 'pages/economics/principles-of-economics/03-markets-and-welfare.html' },
+          { title: '04 市场失灵', link: 'pages/economics/principles-of-economics/04-market-failures.html' },
+          { title: '05 企业行为与产业组织', link: 'pages/economics/principles-of-economics/05-firms-and-industry.html' },
+          { title: '06 生产要素市场', link: 'pages/economics/principles-of-economics/06-factor-markets.html' },
+          { title: '07 宏观经济指标', link: 'pages/economics/principles-of-economics/07-macro-indicators.html' },
+          { title: '08 长期经济', link: 'pages/economics/principles-of-economics/08-long-run-economy.html' },
+          { title: '09 货币与物价', link: 'pages/economics/principles-of-economics/09-money-and-prices.html' },
+          { title: '10 短期经济', link: 'pages/economics/principles-of-economics/10-short-run-economy.html' },
+        ],
+      },
+      {
+        title: 'MIT微观经济学原理',
+        children: [
+          { title: '01 导论：稀缺、权衡与供求模型', link: 'pages/economics/mit-micro/01-introduction.html' },
+          { title: '02 消费者选择 I：偏好、效用与预算约束', link: 'pages/economics/mit-micro/02-consumer-choice-1.html' },
+          { title: '03 消费者选择 II：需求推导、弹性与收入/替代效应', link: 'pages/economics/mit-micro/03-consumer-choice-2.html' },
         ],
       },
     ],

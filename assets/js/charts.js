@@ -1,8 +1,11 @@
 /**
  * charts.js — 可复用 SVG 图表库（无第三方依赖）
  *
- * Charts.ppf(container, opts)          生产可能性边界图
+ * Charts.xy(container, opts)          通用 x-y 坐标图（直线/曲线、区域填充、标注点、参考线）
+ * Charts.ppf(container, opts)         xy 的别名，用于生产可能性边界图
+ * Charts.sd(container, opts)          xy 的别名，用于供给-需求图
  * Charts.circularFlow(container, opts) 循环流量图
+ * Charts.pie(container, opts)         饼图
  *
  * 所有图表统一输出：SVG + 图例(.legend) + 可选标题，挂载到给定容器。
  */
@@ -50,13 +53,18 @@ window.Charts = (function () {
   }
 
   /**
-   * 生产可能性边界图（PPF）
+   * 通用 x-y 坐标图（PPF、供给-需求等共用）
    * opts:
    *  - xLabel, yLabel        坐标轴名称
    *  - xMax, yMax            坐标轴最大值
-   *  - xStep, yStep          刻度间隔
+   *  - xStep, yStep          刻度间隔（自定义刻度时不需要）
+   *  - xTicks, yTicks        自定义刻度（可选）：数字数组或 {v, label} 数组；传 [] 隐藏刻度
    *  - width, height         画布尺寸（可选，默认 640x460）
    *  - caption               图标题（可选）
+   *  - areas: [{             填充区域（可选，画在曲线下方，用于剩余/无谓损失等福利分析）
+   *      points: [[x,y],...],   多边形顶点
+   *      color, opacity(可选，默认 0.15), label(可选，显示在区域重心)
+   *    }]
    *  - series: [{
    *      points: [[x,y],...],   曲线经过的数据点
    *      type: 'linear'|'spline', linear=直线(线性PPF)，spline=平滑曲线(向外弯曲)
@@ -67,10 +75,13 @@ window.Charts = (function () {
    *      shape: 'circle'|'star'   (默认 circle)
    *      labelDx, labelDy         标签偏移(可选)
    *      lineTo: [x,y]            画一条虚线到该点(可选)
+   *      guides: true             画到两条坐标轴的虚线参考线(可选)
+   *      gxLabel, gyLabel         参考线在坐标轴上的标签(可选，如 'Q*'、'P*')
    *    }]
    *  - legend: [{ label, color, style: 'line'|'dashed'|'dot'|'star' }]（可选，默认由 series/markers 自动生成）
+   *  - legendPosition: 'top'      图例放在图上方（可选，默认在图下方）
    */
-  function ppf(container, opts) {
+  function xy(container, opts) {
     const W = opts.width || 640;
     const H = opts.height || 460;
     const M = { top: 30, right: 30, bottom: 56, left: 64 };
@@ -85,20 +96,41 @@ window.Charts = (function () {
     el('line', { x1: M.left, y1: M.top, x2: M.left, y2: M.top + ih, stroke: '#9ca3af', 'stroke-width': 1.5 }, svg);
     el('line', { x1: M.left, y1: M.top + ih, x2: M.left + iw, y2: M.top + ih, stroke: '#9ca3af', 'stroke-width': 1.5 }, svg);
 
-    // 刻度
-    ticks(opts.xMax, opts.xStep).forEach((v) => {
-      el('line', { x1: sx(v), y1: M.top + ih, x2: sx(v), y2: M.top + ih + 5, stroke: '#9ca3af' }, svg);
-      text(svg, sx(v), M.top + ih + 20, v, { 'text-anchor': 'middle', 'font-size': 11, fill: '#6b7280' });
+    // 刻度（xTicks/yTicks 可自定义：数字数组或 {v, label} 数组，传 [] 则隐藏）
+    const normTicks = (custom, max, step) => {
+      if (custom) return custom.map((t) => (typeof t === 'object' ? t : { v: t, label: t }));
+      return ticks(max, step).map((v) => ({ v, label: v }));
+    };
+    normTicks(opts.xTicks, opts.xMax, opts.xStep).forEach((t) => {
+      el('line', { x1: sx(t.v), y1: M.top + ih, x2: sx(t.v), y2: M.top + ih + 5, stroke: '#9ca3af' }, svg);
+      text(svg, sx(t.v), M.top + ih + 20, t.label, { 'text-anchor': 'middle', 'font-size': 11, fill: '#6b7280' });
     });
-    ticks(opts.yMax, opts.yStep).forEach((v) => {
-      el('line', { x1: M.left - 5, y1: sy(v), x2: M.left, y2: sy(v), stroke: '#9ca3af' }, svg);
-      text(svg, M.left - 10, sy(v) + 4, v, { 'text-anchor': 'end', 'font-size': 11, fill: '#6b7280' });
+    normTicks(opts.yTicks, opts.yMax, opts.yStep).forEach((t) => {
+      el('line', { x1: M.left - 5, y1: sy(t.v), x2: M.left, y2: sy(t.v), stroke: '#9ca3af' }, svg);
+      text(svg, M.left - 10, sy(t.v) + 4, t.label, { 'text-anchor': 'end', 'font-size': 11, fill: '#6b7280' });
     });
 
     // 轴名称
     text(svg, M.left + iw / 2, H - 10, opts.xLabel, { 'text-anchor': 'middle', 'font-weight': 600 });
     const yl = text(svg, 16, M.top + ih / 2, opts.yLabel, { 'text-anchor': 'middle', 'font-weight': 600 });
     yl.setAttribute('transform', `rotate(-90 16 ${M.top + ih / 2})`);
+
+    // 填充区域（画在曲线下方，标签显示在区域重心）
+    (opts.areas || []).forEach((a) => {
+      const px = a.points.map((pt) => [sx(pt[0]), sy(pt[1])]);
+      el('polygon', {
+        points: px.map((pt) => pt.join(',')).join(' '),
+        fill: a.color,
+        'fill-opacity': a.opacity != null ? a.opacity : 0.15,
+        stroke: a.color,
+        'stroke-opacity': 0.35,
+      }, svg);
+      if (a.label) {
+        const cx = px.reduce((s, pt) => s + pt[0], 0) / px.length;
+        const cy = px.reduce((s, pt) => s + pt[1], 0) / px.length;
+        text(svg, cx, cy + 5, a.label, { 'text-anchor': 'middle', 'font-size': 14, 'font-weight': 700, fill: a.color });
+      }
+    });
 
     // 曲线
     (opts.series || []).forEach((s) => {
@@ -117,6 +149,13 @@ window.Charts = (function () {
 
     // 标注点
     (opts.markers || []).forEach((m) => {
+      if (m.guides) {
+        const guide = { stroke: m.color, 'stroke-width': 1, 'stroke-dasharray': '4 3' };
+        el('line', Object.assign({ x1: sx(m.x), y1: sy(m.y), x2: sx(m.x), y2: sy(0) }, guide), svg);
+        el('line', Object.assign({ x1: sx(m.x), y1: sy(m.y), x2: sx(0), y2: sy(m.y) }, guide), svg);
+        if (m.gxLabel) text(svg, sx(m.x), M.top + ih + 20, m.gxLabel, { 'text-anchor': 'middle', 'font-size': 12, fill: m.color, 'font-weight': 700 });
+        if (m.gyLabel) text(svg, M.left - 10, sy(m.y) + 4, m.gyLabel, { 'text-anchor': 'end', 'font-size': 12, fill: m.color, 'font-weight': 700 });
+      }
       if (m.lineTo) {
         el('line', {
           x1: sx(m.x), y1: sy(m.y), x2: sx(m.lineTo[0]), y2: sy(m.lineTo[1]),
@@ -134,7 +173,7 @@ window.Charts = (function () {
       }
     });
 
-    mount(container, svg, opts.caption, opts.legend || autoLegend(opts));
+    mount(container, svg, opts.caption, opts.legend || autoLegend(opts), opts.legendPosition);
   }
 
   function autoLegend(opts) {
@@ -316,5 +355,46 @@ window.Charts = (function () {
     container.appendChild(wrap);
   }
 
-  return { ppf, circularFlow };
+  /**
+   * 饼图
+   * opts:
+   *  - items: [{ label, value, color }]  各扇区（value 为正数，自动换算为占比）
+   *  - size                   直径（可选，默认 320）
+   *  - caption                图标题（可选）
+   *  - legend: [...]          覆盖自动图例（可选，默认 items 带百分比）
+   */
+  function pie(container, opts) {
+    const size = opts.size || 320;
+    const cx = size / 2, cy = size / 2, r = size / 2 - 10;
+    const items = (opts.items || []).filter((it) => it.value > 0);
+    const total = items.reduce((s, it) => s + it.value, 0);
+
+    const svg = el('svg', { viewBox: `0 0 ${size} ${size}`, role: 'img' });
+
+    let angle = -Math.PI / 2; // 从 12 点方向开始，顺时针
+    items.forEach((it) => {
+      const sweep = Math.min((it.value / total) * Math.PI * 2, Math.PI * 2 - 1e-6);
+      const a0 = angle, a1 = angle + sweep;
+      angle = a1;
+      const x0 = cx + r * Math.cos(a0), y0 = cy + r * Math.sin(a0);
+      const x1 = cx + r * Math.cos(a1), y1 = cy + r * Math.sin(a1);
+      const large = sweep > Math.PI ? 1 : 0;
+      el('path', {
+        d: `M ${cx} ${cy} L ${x0.toFixed(2)} ${y0.toFixed(2)} A ${r} ${r} 0 ${large} 1 ${x1.toFixed(2)} ${y1.toFixed(2)} Z`,
+        fill: it.color, 'fill-opacity': 0.85, stroke: '#fff', 'stroke-width': 2,
+      }, svg);
+      // 扇区中角处放百分比标签
+      const mid = (a0 + a1) / 2;
+      const pct = ((it.value / total) * 100).toFixed(1).replace(/\.0$/, '') + '%';
+      const lr = r * 0.62;
+      text(svg, cx + lr * Math.cos(mid), cy + lr * Math.sin(mid) + 5, pct,
+        { 'text-anchor': 'middle', 'font-size': 14, 'font-weight': 700, fill: '#fff' });
+    });
+
+    mount(container, svg, opts.caption, opts.legend || items.map((it) => ({
+      label: it.label, color: it.color, style: 'dot',
+    })));
+  }
+
+  return { xy, ppf: xy, sd: xy, circularFlow, pie };
 })();

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07 宏观经济指标 - 经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>07 宏观经济指标</h1>
+      <p>本篇开始进入宏观经济学，覆盖国民收入的核算（GDP）与生活成本的衡量（CPI）两章。前者回答"如何评估一个经济体的健康状况"，后者回答"如何比较不同时期的货币购买力"。</p>
+
+      <!-- ==================== GDP ==================== -->
+      <h2>GDP：国内生产总值</h2>
+
+      <h3>核心问题：如何评估一个经济体的健康状况？</h3>
+      <p>评估一个经济体（或一个国家）的健康状况，首要切入点是它的<strong>收入</strong>。收入并非衡量福祉的唯一指标——它无法反映健康、债务或收入分配——但它是极其重要的起点。<span class="term">国内生产总值</span><span class="term-en">（Gross Domestic Product, GDP）</span>正是经济学家用来<strong>衡量一国总体收入的核心指标</strong>。</p>
+      <p>本章的思想链路：核心问题（如何计算国民收入）→ 用简化的循环流量模型建立分析框架 → 发现 GDP 的"双重身份"（总收入 = 总支出）→ 给出官方定义与构成 → 区分名义与实际 GDP → 引出价格指数与通胀率 → 实际应用与局限性。</p>
+
+      <h3>简化模型：循环流量图与 GDP 的双重身份</h3>
+      <p>回到第 2 章的循环流量模型：经济由两类主体（家庭与企业）和两个市场（产品与服务市场、生产要素市场）构成（图 1）。</p>
+
+      <div id="fig-circular-flow"></div>
+
+      <ul>
+        <li><strong>上方流动</strong>（产品市场）：家庭支付给企业的货币是家庭的<span class="term">支出</span><span class="term-en">（Expenditure）</span>，同时构成企业的收入；</li>
+        <li><strong>下方流动</strong>（要素市场）：企业支付给家庭的工资、租金和利润构成家庭的<span class="term">收入</span><span class="term-en">（Income）</span>。</li>
+      </ul>
+      <p>由于货币在经济中循环流动，<strong>总支出必然等于总收入</strong>——这就是 GDP 的双重身份。因此 GDP 有两种等价的核算方法：</p>
+      <table>
+        <thead>
+          <tr><th></th><th>收入法</th><th>支出法</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>做法</strong></td><td>加总所有家庭的收入（工资、租金、利润）</td><td>加总所有对商品与服务的支出</td></tr>
+          <tr><td><strong>依据</strong></td><td colspan="2">循环流量图中两者是同一笔货币流的两面，必然相等</td></tr>
+          <tr><td><strong>实践选择</strong></td><td colspan="2">实践中更多使用<strong>支出法</strong>：家庭可能有低报收入的动机（如避税），而支出数据相对更容易获取和核实</td></tr>
+        </tbody>
+      </table>
+
+      <h3>GDP 的官方定义：逐词详解</h3>
+      <div class="callout">
+        <strong>GDP 是在某一既定时期内，一个国家境内生产的所有最终商品与服务的市场价值。</strong><br>
+        GDP is the market value of all final goods and services produced within a country in a given period of time.
+      </div>
+      <p>定义中每个词都有精确含义：</p>
+      <ol>
+        <li><strong>市场价值</strong><span class="term-en">（Market Value）</span>：用市场价格核算，而非主观估值——汽车对 GDP 的贡献大于理发；未进入市场交易的活动（如家庭内部劳动）不计入。</li>
+        <li><strong>最终</strong>商品与服务<span class="term-en">（Final Goods and Services）</span>：只算最终产品，排除<span class="term">中间产品</span><span class="term-en">（Intermediate Goods）</span>以避免<strong>重复计算</strong>——汽车的价值已包含轮胎，不再单算轮胎。既包括有形商品（钢笔），也包括无形服务（经济学讲座）。</li>
+        <li><strong>生产的</strong><span class="term-en">（Produced）</span>：只计当期新生产。二手交易不计入（旧车在生产年份已核算过）；但当期生产而未售出的商品作为<span class="term">存货投资</span><span class="term-en">（Inventory Investment）</span>计入。</li>
+        <li><strong>一个国家境内</strong><span class="term-en">（Within a Country）</span>：地域原则——购买德国制造的汽车不计入美国 GDP。与之相对，采用国民原则的指标是 <span class="term">GNP</span><span class="term-en">（Gross National Product，国民生产总值）</span>，核算一国国民无论身处何地的生产。</li>
+        <li><strong>既定时期</strong><span class="term-en">（Given Period of Time）</span>：通常为一年或一个季度。报告数据一般经过<span class="term">季节性调整</span><span class="term-en">（Seasonally Adjusted）</span>，剔除节假日消费等季节波动。</li>
+      </ol>
+
+      <h3>GDP 的构成：Y = C + I + G + NX</h3>
+      <p>按支出法，GDP（记为 Y）分解为四个部分：</p>
+      <p><strong>Y = C + I + G + NX</strong></p>
+
+      <div id="fig-gdp-pie"></div>
+
+      <ul>
+        <li><strong>C 消费</strong><span class="term-en">（Consumption）</span>：家庭对商品与服务的支出，是 GDP 中最大的部分。包括耐用品（汽车、家电）、非耐用品（食品、衣物）和服务（理发、医疗、教育）。</li>
+        <li><strong>I 投资</strong><span class="term-en">（Investment）</span>：企业对未来生产能力的支出。注意经济学中的"投资"≠买股票的金融投资，它包括企业固定资产投资（机器、厂房）、住宅投资（新建住房）和存货投资。</li>
+        <li><strong>G 政府购买</strong><span class="term-en">（Government Purchases）</span>：各级政府对商品与服务的直接支出（军事装备、政府雇员工资、公共设施）。<strong>不包括</strong><span class="term">转移支付</span><span class="term-en">（Transfer Payments）</span>——社会保障金、失业救济等不涉及当期商品交换，不计入 G（但会通过家庭收入间接影响 C）。</li>
+        <li><strong>NX 净出口</strong><span class="term-en">（Net Exports）</span>：<strong>NX = 出口 X − 进口 M</strong>。出口是外国人购买本国产品，应计入本国 GDP；进口已包含在 C、I、G 中，必须减去以修正。NX 可以为负（贸易逆差）。</li>
+      </ul>
+
+      <h3>名义 GDP 与实际 GDP</h3>
+      <ul>
+        <li><span class="term">名义 GDP</span><span class="term-en">（Nominal GDP）</span>：用<strong>当期价格</strong> × 当期数量核算。它的变化可能来自产量变化，也可能来自价格变化——无法单独反映真实产出。</li>
+        <li><span class="term">实际 GDP</span><span class="term-en">（Real GDP）</span>：用<strong>基年的固定价格</strong> × 当期数量核算。消除了价格变动的影响，只反映实际产出的变化。</li>
+      </ul>
+      <p><strong>数值示例：热狗与汉堡经济。</strong>假设某经济体只生产两种商品：</p>
+      <table>
+        <thead>
+          <tr><th>年份</th><th>热狗数量</th><th>热狗价格</th><th>汉堡数量</th><th>汉堡价格</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2001</td><td>100</td><td>$1</td><td>50</td><td>$2</td></tr>
+          <tr><td>2002</td><td>150</td><td>$2</td><td>100</td><td>$3</td></tr>
+          <tr><td>2003</td><td>200</td><td>$3</td><td>150</td><td>$4</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr><th>年份</th><th>名义 GDP（当期价格）</th><th>实际 GDP（2001 基年价格）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2001</td><td>100×$1 + 50×$2 = <strong>$200</strong></td><td>100×$1 + 50×$2 = <strong>$200</strong></td></tr>
+          <tr><td>2002</td><td>150×$2 + 100×$3 = <strong>$600</strong></td><td>150×$1 + 100×$2 = <strong>$350</strong></td></tr>
+          <tr><td>2003</td><td>200×$3 + 150×$4 = <strong>$1,200</strong></td><td>200×$1 + 150×$2 = <strong>$500</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>关键观察</strong>：名义 GDP 从 2001 到 2002 增长了 200%（$200→$600），下一年又翻倍；而实际 GDP 同期只增长 75%（$200→$350）和约 43%（$350→$500）。名义 GDP 的飙升主要由<strong>价格上涨</strong>驱动，而非产出的大幅增加（图 3 中两条线的分叉直观展示了这一点）。</p>
+
+      <div id="fig-nominal-real"></div>
+
+      <h3>GDP 平减指数与通货膨胀率</h3>
+      <p><span class="term">GDP 平减指数</span><span class="term-en">（GDP Deflator）</span>是一种衡量总体价格水平的价格指数：</p>
+      <p><strong>GDP 平减指数 = (名义 GDP ÷ 实际 GDP) × 100</strong></p>
+      <table>
+        <thead>
+          <tr><th>年份</th><th>名义 GDP</th><th>实际 GDP</th><th>GDP 平减指数</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2001</td><td>$200</td><td>$200</td><td>(200/200)×100 = <strong>100</strong></td></tr>
+          <tr><td>2002</td><td>$600</td><td>$350</td><td>(600/350)×100 ≈ <strong>171</strong></td></tr>
+          <tr><td>2003</td><td>$1,200</td><td>$500</td><td>(1200/500)×100 = <strong>240</strong></td></tr>
+        </tbody>
+      </table>
+      <p>基年（2001）的名义与实际 GDP 必然相等，所以基年的平减指数<strong>恒为 100</strong>。</p>
+      <p>GDP 平减指数的变化率就是<span class="term">通货膨胀率</span><span class="term-en">（Inflation Rate）</span>：</p>
+      <ul>
+        <li>从基年起算：<strong>通胀率 = 当年平减指数 − 100</strong>。如 2001→2002：171 − 100 = <strong>71%</strong>。</li>
+        <li>任意两年之间（均非基年）：<strong>通胀率 = (末期指数 − 初期指数) ÷ 初期指数 × 100%</strong>。如 2002→2003：(240 − 171)/171 ≈ <strong>40.4%</strong>。</li>
+      </ul>
+      <div class="callout">
+        <strong>"平减"的经济学含义</strong>：把公式变形可得 <strong>实际 GDP = 名义 GDP ÷ 平减指数 × 100</strong>。这正是"deflator"名称的由来——它把名义 GDP 中因价格上涨而"膨胀"的部分<strong>"放气"（deflate）</strong>，还原出真实产出水平。
+      </div>
+
+      <h3>实际应用：Rule of 72 与衰退</h3>
+      <p>自 20 世纪 60 年代中期以来，美国实际 GDP 年均增长约 <strong>3%</strong>——按此速度实际 GDP 约每 24 年翻一番，至今实际收入已增长约 4 倍。增长并非匀速：有的年份高于 3%，有的年份出现负增长。</p>
+      <p><span class="term">72 法则</span><span class="term-en">（Rule of 72）</span>是估算翻倍时间的简便公式：</p>
+      <p><strong>翻倍所需年数 ≈ 72 ÷ 年增长率（%）</strong></p>
+      <table>
+        <thead>
+          <tr><th>年增长率</th><th>1%</th><th>2%</th><th>3%</th><th>4%</th><th>6%</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>翻倍所需年数</strong></td><td>72 年</td><td>36 年</td><td>24 年</td><td>18 年</td><td>12 年</td></tr>
+        </tbody>
+      </table>
+      <p><strong>关键洞见</strong>：增长率的微小差异有巨大的长期影响——1% 与 2% 之差意味着生活水平翻倍从 72 年缩短到 36 年。任何可能压低长期增长率的政策，哪怕只压低 1 个百分点，代价都不可小觑。</p>
+      <p><span class="term">衰退</span><span class="term-en">（Recession）</span>的技术性定义：<strong>实际 GDP 连续两个季度（六个月）下降</strong>。衰退通常伴随失业率上升、企业破产增加和企业利润下降。</p>
+
+      <h3>GDP 的局限性与被忽略的因素</h3>
+      <p>GDP 是衡量经济活动的有力工具，但绝非福祉的完整图景。以下因素被系统性忽略：</p>
+      <ul>
+        <li><strong>教育质量</strong>：高 GDP 可能伴随低质量的教育体系，损害长期增长潜力。</li>
+        <li><strong>人口健康</strong>：尤其儿童健康；以牺牲公共健康换取 GDP 增长不可取。</li>
+        <li><strong>环境质量</strong>：GDP 不反映污染与生态退化，污染性生产反而可能推高 GDP。</li>
+        <li><strong>收入分配公平性</strong>：人均 GDP 掩盖分配结构——2015 年美国人均 GDP 约 $56,000，但贫富差距巨大。</li>
+        <li><strong>非市场活动</strong>：家庭生产（居家育儿、家务）、志愿服务、地下经济都不计入。同样的育儿劳动，在家做不计入 GDP，送日托中心就计入——实际价值相似，核算结果迥异。</li>
+        <li><strong>休闲的价值</strong>：更长的工作时间被计为产出增加，休闲减少对福祉的负面影响却不体现。</li>
+      </ul>
+      <div class="callout warn">
+        GDP 是评估经济健康状况的重要<strong>起点</strong>，但绝非终点。分析任何经济体时，必须把 GDP 与社会、环境和分配指标结合起来，才能形成全面判断。
+      </div>
+
+      <h3>本章总结</h3>
+      <table>
+        <thead>
+          <tr><th>概念</th><th>要点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>GDP 定义</strong></td><td>一国境内、既定时期内、所有最终商品与服务的市场价值</td></tr>
+          <tr><td><strong>核算方法</strong></td><td>支出法：Y = C + I + G + NX；收入法：要素收入总和；两者恒等</td></tr>
+          <tr><td><strong>名义 GDP</strong></td><td>当期价格 × 当期数量；受价格和产量双重影响</td></tr>
+          <tr><td><strong>实际 GDP</strong></td><td>基年价格 × 当期数量；只反映产量变化</td></tr>
+          <tr><td><strong>GDP 平减指数</strong></td><td>（名义 GDP ÷ 实际 GDP）× 100；基年恒为 100</td></tr>
+          <tr><td><strong>通胀率</strong></td><td>GDP 平减指数的变化率</td></tr>
+          <tr><td><strong>Rule of 72</strong></td><td>72 ÷ 增长率 ≈ 翻倍所需年数</td></tr>
+          <tr><td><strong>衰退</strong></td><td>实际 GDP 连续两个季度下降</td></tr>
+          <tr><td><strong>GDP 局限</strong></td><td>忽略教育、健康、环境、公平、非市场活动、休闲价值</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ==================== CPI ==================== -->
+      <h2>生活成本：消费者价格指数（CPI）</h2>
+
+      <h3>引入案例：贝比·鲁斯的薪水相当于今天多少？</h3>
+      <p>1931 年，著名棒球运动员<strong>贝比·鲁斯</strong><span class="term-en">（Babe Ruth）</span>的年薪是 8 万美元。今天顶尖棒球运动员年薪高达数千万美元，8 万看起来微不足道——但这样比较公平吗？不公平：1931 年以来的<strong>价格水平</strong>已经发生了巨大变化。要比较不同时期的美元，必须先根据价格水平的变动进行调整。完成这项工作的衡量工具就是<span class="term">消费者价格指数</span><span class="term-en">（Consumer Price Index, CPI）</span>。</p>
+
+      <h3>CPI 的定义与用途</h3>
+      <p><span class="term">CPI</span>衡量典型家庭购买<strong>一篮子商品和服务</strong><span class="term-en">（Basket of Goods and Services）</span>所需的美元数量，由美国劳工统计局<span class="term-en">（Bureau of Labor Statistics）</span>每月计算并公布：</p>
+      <ul>
+        <li>CPI 上升 → 维持相同生活水平需要花更多的钱；</li>
+        <li>CPI 下降 → 用更少的钱就能维持相同生活水平。</li>
+      </ul>
+      <p>用途：用 CPI 的百分比变化计算<strong>通货膨胀率</strong>；把过去的货币金额换算成今天的等值金额；作为指数化合同（如社保、工资）的调整依据。</p>
+
+      <h3>CPI 的计算五步骤</h3>
+      <ol>
+        <li><strong>固定篮子</strong><span class="term-en">（Fix the Basket）</span>：确定典型消费者买哪些商品、各占总支出多大权重（劳工统计局通过调查数千个家庭完成）。</li>
+        <li><strong>找出价格</strong><span class="term-en">（Find the Prices）</span>：收集篮子中每种商品在各时点的价格（早年靠派人跑商店记录，如今大部分电子化）。</li>
+        <li><strong>计算篮子成本</strong><span class="term-en">（Compute the Cost of the Basket）</span>：用各年价格计算购买<strong>同一篮子</strong>的总成本。</li>
+        <li><strong>选择基准年并计算指数</strong><span class="term-en">（Choose a Base Year）</span>：<strong>CPI =（当年篮子成本 ÷ 基准年篮子成本）× 100</strong>。</li>
+        <li><strong>计算通货膨胀率</strong>：<strong>通胀率 =（CPI 今年 − CPI 去年）÷ CPI 去年 × 100%</strong>。</li>
+      </ol>
+      <div class="callout">
+        这套流程与名义 GDP / 实际 GDP / GDP 平减指数的计算很相似、容易混淆，需要通过练习来区分——关键差别在下一步的示例中可以看到：<strong>CPI 固定的是篮子（数量），变化的是价格；实际 GDP 固定的是基年价格，变化的是数量。</strong>
+      </div>
+
+      <h3>计算示例（热狗与汉堡）</h3>
+      <p>沿用 GDP 示例中的价格数据，但注意：计算 CPI <strong>不需要</strong>每年的产量，只需要篮子的固定数量和各年价格。</p>
+      <ol>
+        <li><strong>固定篮子</strong>：典型消费者的篮子 = 4 个热狗 + 2 个汉堡。</li>
+        <li><strong>价格</strong>：2001 年热狗 $1、汉堡 $2；2002 年 $2、$3；2003 年 $3、$4。</li>
+        <li><strong>篮子成本</strong>：2001 年 4×$1 + 2×$2 = <strong>$8</strong>；2002 年 4×$2 + 2×$3 = <strong>$14</strong>；2003 年 4×$3 + 2×$4 = <strong>$20</strong>。</li>
+        <li><strong>CPI</strong>（以 2001 为基准年）：2001 年 ($8/$8)×100 = <strong>100</strong>；2002 年 ($14/$8)×100 = <strong>175</strong>；2003 年 ($20/$8)×100 = <strong>250</strong>。</li>
+        <li><strong>通胀率</strong>：2001→2002：(175−100)/100 = <strong>75%</strong>；2002→2003：(250−175)/175 ≈ <strong>43%</strong>。</li>
+      </ol>
+      <div class="callout warn">
+        注意：CPI 从 175 到 250 的绝对增量是 75，但通胀率<strong>不是</strong> 75%——百分比变化的分母是<strong>前一年</strong>的 CPI（175），不是基准年的 100。
+      </div>
+
+      <h3>CPI 存在的问题</h3>
+      <p>CPI 旨在衡量生活成本的变化，但存在固有问题，通常使它<strong>高估</strong>真实通胀：</p>
+      <ol>
+        <li><strong>替代偏误</strong><span class="term-en">（Substitution Bias）</span>：商品价格涨幅不同时，消费者会多买相对变便宜的商品。CPI 的固定篮子假设购买量不变，忽略了这种替代行为，从而高估维持同等生活水平的成本。</li>
+        <li><strong>新产品的引入</strong><span class="term-en">（Introduction of New Goods）</span>：新产品让消费者的选择更多，每一美元的购买力实际上升了；但固定篮子要过一段时间才会纳入新产品，CPI 无法及时反映这种福利增长。</li>
+        <li><strong>无法衡量的质量变化</strong><span class="term-en">（Unmeasured Quality Changes）</span>：今天的智能手机比十年前强大得多。若质量提升而价格不变，生活成本实际在下降，但这类质量变化难以量化，CPI 捕捉不全。</li>
+      </ol>
+      <p>研究普遍认为 CPI 每年高估通胀率约 <strong>0.5 个百分点</strong>——看似不大，但对依赖 CPI 调整的合同与政策，长期累积影响显著。此外，劳工统计局还计算<span class="term">生产者价格指数</span><span class="term-en">（Producer Price Index, PPI）</span>，衡量企业购买的一篮子投入品（劳动力、原材料等）的成本，方法类似但篮子不同。</p>
+
+      <h3>CPI 与 GDP 平减指数的对比</h3>
+      <table>
+        <thead>
+          <tr><th></th><th>CPI</th><th>GDP 平减指数</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>商品范围</strong></td><td>典型消费者<strong>购买</strong>的商品与服务，<strong>含进口品</strong></td><td>只反映<strong>国内生产</strong>的商品与服务，不含进口品</td></tr>
+          <tr><td><strong>商品篮子</strong></td><td>较长时间保持不变的<strong>固定篮子</strong></td><td>篮子随每年产出构成<strong>自动变化</strong></td></tr>
+          <tr><td><strong>影响示例</strong></td><td colspan="2">进口商品（如石油）涨价时，CPI 显著上升，GDP 平减指数则不受影响</td></tr>
+        </tbody>
+      </table>
+      <p>用热狗-汉堡经济的同一组数据可以同时算出两个指数（图 4）：两者走势相近但不相同——平减指数用当年产量加权（数量在变），CPI 用固定篮子（数量不变）。</p>
+
+      <div id="fig-cpi-deflator"></div>
+
+      <h3>利用通货膨胀调整经济变量</h3>
+      <p>用 CPI 可以把过去的金额换算成今天的等值金额：</p>
+      <p><strong>当今美元金额 = T 年美元金额 ×（当今 CPI ÷ T 年 CPI）</strong></p>
+      <p>回到贝比·鲁斯：1931 年薪水 $80,000，1931 年 CPI = 15.2，2018 年 CPI = 251.1：</p>
+      <p><strong>2018 年等值薪水 = $80,000 ×（251.1 ÷ 15.2）≈ $1,321,579</strong></p>
+      <p>即他 1931 年的 8 万美元购买力相当于 2018 年的约 132 万美元——仍远低于当今顶尖球员的薪水，说明后者的真实收入确实更高。</p>
+      <div class="callout">
+        一个更易记忆的通用公式：<strong>（A 年美元金额 ÷ A 年 CPI）=（X 年美元金额 ÷ X 年 CPI）</strong>。只要知道其中三项，就能解出第四项。
+      </div>
+
+      <h3>指数化与利率</h3>
+      <p><span class="term">指数化</span><span class="term-en">（Indexation）</span>：当某个货币金额依法律或合同<strong>自动随通胀调整</strong>时，就称它被指数化了。常见例子：劳动合同和社会保障中的<span class="term">生活成本调整</span><span class="term-en">（Cost-of-Living Adjustment, COLA）</span>，以及所得税的税收等级。这些调整都依赖 CPI，因此 CPI 的准确性至关重要。</p>
+      <p>储蓄和投资中必须区分两种利率：</p>
+      <ul>
+        <li><span class="term">名义利率</span><span class="term-en">（Nominal Interest Rate）</span>：银行公布的、未经通胀调整的利率——告诉你账户里的<strong>美元数量</strong>增长多快。</li>
+        <li><span class="term">实际利率</span><span class="term-en">（Real Interest Rate）</span>：经通胀调整后的利率——告诉你<strong>购买力</strong>增长多快。</li>
+      </ul>
+      <p><strong>实际利率 = 名义利率 − 通货膨胀率</strong></p>
+      <p>示例：存入 $100，名义年利率 10%，一年后账户有 $110：</p>
+      <ul>
+        <li>当年通胀率 4% → 实际利率 = 10% − 4% = <strong>6%</strong>，购买力只增长 6%；</li>
+        <li>若名义利率 2%、通胀率 4% → 实际利率 = <strong>−2%</strong>，购买力每年缩水 2%；</li>
+        <li>若持有现金（名义利率 0%）、通胀率 4% → 实际回报率 = <strong>−4%</strong>。</li>
+      </ul>
+      <div class="callout warn">
+        做储蓄与投资决策时必须关注<strong>实际回报率</strong>——只有它真实反映你财富（购买力）的增长情况。
+      </div>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/principles-of-economics/07-macro-indicators.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：循环流量图 —— 总收入 = 总支出 =====
+    Charts.circularFlow(document.getElementById('fig-circular-flow'), {
+      caption: '图 1：循环流量图 —— 上方流动既是家庭的支出也是企业的收入，下方流动是家庭的收入；总收入 = 总支出',
+    });
+
+    // ===== 图3：名义 GDP vs 实际 GDP（热狗-汉堡经济） =====
+    Charts.sd(document.getElementById('fig-nominal-real'), {
+      xLabel: '年份',
+      yLabel: 'GDP（美元）',
+      xMax: 4, yMax: 1300,
+      xTicks: [{ v: 1, label: '2001' }, { v: 2, label: '2002' }, { v: 3, label: '2003' }],
+      yStep: 200,
+      caption: '图 3：同一经济的两种核算 —— 名义 GDP（当期价格）因涨价飙升，实际 GDP（基年价格）只反映产量增长',
+      series: [
+        { points: [[1, 200], [2, 600], [3, 1200]], type: 'linear', color: '#dc2626', label: '名义 GDP' },
+        { points: [[1, 200], [2, 350], [3, 500]], type: 'linear', color: '#2563eb', label: '实际 GDP（基年 2001）' },
+      ],
+      markers: [
+        { x: 3, y: 1200, label: '$1,200', color: '#dc2626', labelDx: -44, labelDy: -10 },
+        { x: 3, y: 500, label: '$500', color: '#2563eb', labelDx: -34, labelDy: 20 },
+        { x: 1, y: 200, label: '$200', color: '#0f766e', labelDx: 12, labelDy: 18 },
+      ],
+    });
+
+    // ===== 图3：GDP 构成饼图（Y = C + I + G + NX） =====
+    Charts.pie(document.getElementById('fig-gdp-pie'), {
+      caption: '图 2：GDP 的支出构成（以美国大致结构为例）—— 饼图展示三个正项 C+I+G 的相对份额；净出口 NX ≈ -3%（贸易逆差），为负值无法以扇区表示',
+      items: [
+        { label: 'C 消费', value: 68, color: '#2563eb' },
+        { label: 'I 投资', value: 18, color: '#c2410c' },
+        { label: 'G 政府购买', value: 17, color: '#15803d' },
+      ],
+      legend: [
+        { label: 'C 消费（约占 GDP 68%）', color: '#2563eb', style: 'dot' },
+        { label: 'I 投资（约占 18%）', color: '#c2410c', style: 'dot' },
+        { label: 'G 政府购买（约占 17%）', color: '#15803d', style: 'dot' },
+        { label: 'NX 净出口（约占 -3%，为负）', color: '#6b7280', style: 'dot' },
+      ],
+    });
+
+    // ===== 图4：CPI vs GDP 平减指数（同一组数据） =====
+    Charts.sd(document.getElementById('fig-cpi-deflator'), {
+      xLabel: '年份',
+      yLabel: '指数（基年 = 100）',
+      xMax: 4, yMax: 260,
+      xTicks: [{ v: 1, label: '2001' }, { v: 2, label: '2002' }, { v: 3, label: '2003' }],
+      yStep: 50,
+      caption: '图 4：同一经济的两个价格指数 —— CPI 固定篮子（数量不变），GDP 平减指数随产出构成变化（篮子可变）',
+      series: [
+        { points: [[1, 100], [2, 175], [3, 250]], type: 'linear', color: '#7c3aed', label: 'CPI（固定篮子）' },
+        { points: [[1, 100], [2, 171], [3, 240]], type: 'linear', color: '#0f766e', label: 'GDP 平减指数（篮子可变）' },
+      ],
+      markers: [
+        { x: 3, y: 250, label: '250', color: '#7c3aed', labelDx: -24, labelDy: -10 },
+        { x: 3, y: 240, label: '240', color: '#0f766e', labelDx: 12, labelDy: 14 },
+      ],
+    });
+  </script>
+</body>
+</html>

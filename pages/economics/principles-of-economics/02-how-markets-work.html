@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 市场如何运行 - 经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>02 市场如何运行</h1>
+      <p>本篇覆盖《经济学原理》第 4～6 章：供给与需求模型（微观经济学的理论基石）、弹性（衡量买卖双方对价格变化的响应程度），以及政府政策（价格管制与税收）对市场的影响。</p>
+
+      <!-- ==================== Ch04-05 ==================== -->
+      <h2>Ch04-05 供给和需求（Supply and Demand）</h2>
+
+      <h3>反直觉示例：汽油价格由谁决定？</h3>
+      <p>直觉的回答是：加油站老板、大型石油公司，或者国会和总统。但在竞争性市场中，正确的答案是——<strong>没有人决定</strong>。价格是供给与需求两种市场力量自发作用的结果。</p>
+      <p>一个可观察的佐证：同一城镇内各加油站的价格高度趋同甚至完全一致。这常被误解为厂商串谋（collusion），实际上它是市场力量自发均衡的外在表现。当然，在垄断或寡头等市场结构中，买方或卖方确实能影响价格；但在汽油这类竞争性市场中，任何单一主体都无法设定价格。理解这一点，正是需求-供给模型的核心洞见。</p>
+
+      <h3>市场的定义和分类</h3>
+      <p><span class="term">市场</span><span class="term-en">（Market）</span>是某种商品或服务的<strong>买方与卖方的集合</strong>。市场不依赖正式的交易场所——无论是规范化的零售商店还是街头交易，只要存在买方与卖方，就构成市场。</p>
+      <p>本章聚焦于<span class="term">完全竞争市场</span><span class="term-en">（Perfectly Competitive Markets）</span>，它需满足两个条件：</p>
+      <ol>
+        <li><strong>大量的小型买者与卖者</strong>：每个参与者的交易量相对市场总规模微不足道，无法单独影响价格。即便你一次给 10 辆车加满油，也不足以推动油价发生任何可观测的变动。</li>
+        <li><strong>商品的同质性</strong>（消费者感知层面）：关键不在于商品物理上是否完全相同，而在于<strong>消费者是否将其视为无差异的替代品</strong>。反例是阿司匹林——品牌药与仿制药化学成分一致，但消费者因品牌认知愿意支付溢价；正例是汽油——各公司配方略有差异，但消费者只按价格决策。</li>
+      </ol>
+      <p>符合完全竞争特征的市场还有农产品期货市场（玉米、大豆）和证券交易所（同一家公司的股票完全同质）。完全竞争虽不普遍，但它是分析的基准：许多现实市场近似满足条件，而垄断、寡头等非竞争市场都以它为参照系。</p>
+
+      <h3>需求（Demand）</h3>
+      <p><span class="term">需求量</span><span class="term-en">（Quantity Demanded, Q<sub>d</sub>）</span>指消费者在特定价格下<strong>愿意且能够</strong>购买的数量。需求量与价格呈<strong>反向关系</strong>：价格上升则需求量下降，价格下降则需求量上升——这就是<span class="term">需求定律</span><span class="term-en">（Law of Demand）</span>，因此需求曲线始终向右下方倾斜。</p>
+      <p>需求定律由两种效应共同支撑：</p>
+      <ul>
+        <li><span class="term">收入效应</span><span class="term-en">（Income Effect）</span>：价格上升等价于实际购买力下降，消费预算被压缩，需求减少。</li>
+        <li><span class="term">替代效应</span><span class="term-en">（Substitution Effect）</span>：价格上升使其他商品相对变便宜，消费者转向替代品。</li>
+      </ul>
+
+      <h3>需求曲线：个人与市场</h3>
+      <p><strong>个人需求表</strong><span class="term-en">（Demand Schedule）</span>列出某消费者在不同价格下的需求量。例如 Bill 对披萨的月度需求：</p>
+      <table>
+        <thead>
+          <tr><th>披萨价格</th><th>$12</th><th>$8</th><th>$4</th><th>$0</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>需求量（个/月）</strong></td><td>0</td><td>10</td><td>20</td><td>30</td></tr>
+        </tbody>
+      </table>
+      <p>把这些点在 (Q, P) 坐标系中描出并连线，就得到 Bill 向右下方倾斜的个人需求曲线。<strong>市场需求曲线</strong><span class="term-en">（Market Demand Curve）</span>则是所有个人需求曲线的<span class="term">水平加总</span><span class="term-en">（Horizontal Summation）</span>——在每一价格下把各消费者的需求量加总：</p>
+      <table>
+        <thead>
+          <tr><th>披萨价格</th><th>Bill 的需求量</th><th>Mary 的需求量</th><th>市场需求量</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>$12</td><td>0</td><td>5</td><td>5</td></tr>
+          <tr><td>$8</td><td>10</td><td>10</td><td>20</td></tr>
+          <tr><td>$4</td><td>20</td><td>15</td><td>35</td></tr>
+          <tr><td>$0</td><td>30</td><td>20</td><td>50</td></tr>
+        </tbody>
+      </table>
+
+      <div id="fig-demand"></div>
+
+      <h3>哪些因素影响需求曲线的移动</h3>
+      <p>需求曲线的位置受五类外生因素影响（需求决定因素，Demand Shifters）：</p>
+      <ol>
+        <li><strong>收入</strong><span class="term-en">（Income）</span>：影响方向取决于商品类型。<span class="term">正常商品</span><span class="term-en">（Normal Good）</span>收入增加则需求增加（右移），如电影、餐饮；<span class="term">劣等商品</span><span class="term-en">（Inferior Good）</span>收入增加则需求减少（左移），如方便面、公共交通、二手衣物。注意"正常/劣等"不是商品的物理属性，而是消费者偏好的函数——同一商品对不同人可能分类不同。</li>
+        <li><strong>相关商品价格</strong><span class="term-en">（Prices of Related Goods）</span>：<span class="term">替代品</span><span class="term-en">（Substitutes）</span>（如可口可乐与百事可乐）价格上升，本商品需求增加（右移）；<span class="term">互补品</span><span class="term-en">（Complements）</span>（如热狗与热狗面包）价格上升，本商品需求减少（左移）。</li>
+        <li><strong>品味与偏好</strong><span class="term-en">（Tastes）</span>：受广告、朋友、医学研究等影响。例如若人们相信"吃热狗与高考试分数相关"的报道（无论真假），热狗需求就会增加。</li>
+        <li><strong>预期</strong><span class="term-en">（Expectations）</span>：预期未来价格上涨，现在就会囤货（需求右移）；预期未来收入增加（如毕业后找到好工作），现在就会增加消费。无论预期最终是否兑现，它都决定当前的需求。</li>
+        <li><strong>购买者数量</strong><span class="term-en">（Number of Buyers）</span>：市场中购买者增多，市场需求曲线右移；减少则左移。</li>
+      </ol>
+      <div class="callout">
+        前四个因素与第五个有本质区别：收入、相关商品价格、品味、预期会<strong>移动每个人的个人需求曲线</strong>，市场需求随之移动；而购买者数量<strong>不移动任何已有个人的需求曲线</strong>——镇上披萨食客的数量不影响你对披萨的需求，它只是让加总的人变多了，从而移动市场需求曲线。
+      </div>
+
+      <h3>需求变化 vs 需求量变化</h3>
+      <ul>
+        <li><strong>需求量的变化</strong><span class="term-en">（Change in Quantity Demanded）</span>：由商品<strong>自身价格</strong>变化引起，表现为<strong>沿着既定需求曲线的移动</strong>（图 2 中 A → B）。</li>
+        <li><strong>需求的变化</strong><span class="term-en">（Change in Demand）</span>：由价格以外的决定因素（收入、相关商品价格、品味、预期、购买者数量）变化引起，表现为<strong>整条需求曲线的移动</strong>（图 2 中 D1 → D2 或 D3）。</li>
+      </ul>
+
+      <div id="fig-demand-shift-vs-move"></div>
+
+      <h3>供给（Supply）</h3>
+      <p>供给的分析结构与需求完全对称，只是视角从买方换成卖方：</p>
+      <ul>
+        <li><span class="term">供给量</span><span class="term-en">（Quantity Supplied, Q<sub>s</sub>）</span>：卖方在特定价格下愿意且能够出售的数量。卖方喜欢高价、买方喜欢低价，价格与供给量呈<strong>正向关系</strong>。</li>
+        <li><span class="term">供给定律</span><span class="term-en">（Law of Supply）</span>：价格上涨导致供给量增加，价格下跌导致供给量减少——因为高价下销售更有利可图。供给曲线<strong>向右上方倾斜</strong>（图 3）。</li>
+        <li><strong>市场供给曲线</strong>：与市场需求一样，是所有单个企业供给曲线的水平加总。</li>
+      </ul>
+
+      <div id="fig-supply"></div>
+
+      <p><strong>供给的决定因素</strong>（使供给曲线移动的五类因素）：</p>
+      <ol>
+        <li><strong>投入品价格</strong><span class="term-en">（Input Prices）</span>：投入品涨价 → 成本上升、盈利下降 → 供给减少（左移）；反之右移。</li>
+        <li><strong>技术</strong><span class="term-en">（Technology）</span>：技术进步意味着同样的投入生产更多产出，等效于成本下降 → 供给增加（右移）。</li>
+        <li><strong>生产中的替代品价格</strong><span class="term-en">（Prices of Substitutes in Production）</span>：汽车厂商可生产轿车和卡车，若卡车涨价更有利可图，资源会从轿车转向卡车 → 轿车供给减少（左移）。</li>
+        <li><strong>卖方的预期</strong><span class="term-en">（Expectations of Sellers）</span>：预期产品未来涨价，会减少现在的供给以待将来高价出售（左移）。</li>
+        <li><strong>卖方数量</strong><span class="term-en">（Number of Sellers）</span>：卖方增多 → 市场供给增加（右移），同样是通过加总更多个体而非移动已有企业的曲线。</li>
+      </ol>
+
+      <h3>市场均衡（Equilibrium）</h3>
+      <p>把需求曲线和供给曲线画在同一张图上，交点就是<span class="term">均衡</span><span class="term-en">（Equilibrium）</span>，对应<span class="term">均衡价格</span><span class="term-en">（P*）</span>和<span class="term">均衡数量</span><span class="term-en">（Q*）</span>。均衡价格是唯一使<strong>需求量等于供给量</strong>的价格——买方愿意购买的数量恰好等于卖方愿意出售的数量。均衡是一种静止状态：没有外部变化时，价格和数量将保持不变。</p>
+
+      <div id="fig-equilibrium"></div>
+
+      <h3>如何达到均衡：短缺与过剩</h3>
+      <p>市场通过<strong>价格的自发调整</strong>达到均衡（图 5）：</p>
+      <ul>
+        <li><span class="term">短缺</span><span class="term-en">（Shortage）</span>：价格低于 P*（如 P<sub>低</sub>）时，需求量大于供给量，商品很快售罄。短缺产生<strong>向上的价格压力</strong>——卖方意识到可以提价，买方为买到商品也愿意支付更多。价格上升使需求量减少、供给量增加，短缺逐渐消除。</li>
+        <li><span class="term">过剩</span><span class="term-en">（Surplus）</span>：价格高于 P*（如 P<sub>高</sub>）时，供给量大于需求量，卖方库存积压。过剩产生<strong>向下的价格压力</strong>——卖方为清库存而降价，过剩逐渐消除。</li>
+      </ul>
+      <p>这个价格自发调整以消除短缺或过剩的过程称为<span class="term">供求定律</span><span class="term-en">（Law of Supply and Demand）</span>。注意：市场参与者（如加油站老板）不需要看到供求图，他们只凭本地信息行事——库存积压就降价、顾客盈门就提价。所有买卖者的独立行为共同推动价格趋向均衡。</p>
+
+      <div id="fig-shortage-surplus"></div>
+
+      <h3>分析均衡变化的三步骤</h3>
+      <p>当需求或供给的决定因素变化时，均衡点会移动。分析方法分三步：</p>
+      <ol>
+        <li><strong>判断哪条曲线移动</strong>：因素影响买方 → 需求曲线移动；影响卖方 → 供给曲线移动。</li>
+        <li><strong>判断移动方向</strong>：增加向右、减少向左（对需求和供给都适用）。</li>
+        <li><strong>画图并比较新旧均衡点</strong>：得出价格和数量如何变化的结论。</li>
+      </ol>
+
+      <p><strong>示例 1：需求变化</strong>——热狗面包（互补品）价格下降。</p>
+      <ol>
+        <li>影响买方 → <strong>需求曲线</strong>移动。</li>
+        <li>面包便宜了，人们买更多面包也买更多热狗 → 需求<strong>增加，右移</strong>。</li>
+        <li>图 6：新均衡在原均衡右上方 → <strong>均衡价格上升，均衡数量增加</strong>。</li>
+      </ol>
+
+      <div id="fig-example-demand"></div>
+
+      <p><strong>示例 2：供给变化</strong>——某城镇加油站数量增加。</p>
+      <ol>
+        <li>影响卖方 → <strong>供给曲线</strong>移动。</li>
+        <li>卖方数量增加 → 供给<strong>增加，右移</strong>。</li>
+        <li>图 7：新均衡在原均衡右下方 → <strong>均衡价格下降，均衡数量增加</strong>。</li>
+      </ol>
+
+      <div id="fig-example-supply"></div>
+
+      <p><strong>示例 3：供求同时变化</strong>——需求增加，同时供给减少。</p>
+      <ol>
+        <li>需求曲线右移，供给曲线左移。</li>
+        <li>图 8：新均衡必在原均衡<strong>上方</strong> → <strong>均衡价格明确上升</strong>。</li>
+        <li>但均衡数量的变化<strong>不确定</strong><span class="term-en">（Ambiguous）</span>：取决于需求增幅与供给减幅哪个更大——需求增得多则数量增加，供给减得多则数量减少，幅度相当时数量可能不变（图 8 中恰好不变）。</li>
+      </ol>
+
+      <div id="fig-example-both"></div>
+
+      <div class="callout">
+        <strong>反向推断</strong>：也可以从结果推原因。若观察到某市场均衡价格上涨、均衡数量下降，在图上标出初始均衡 A 和新均衡 B（价格更高、数量更低），唯一能把均衡点从 A 移到 B 的单一变化就是<strong>供给减少</strong>（供给曲线左移）。
+      </div>
+
+      <!-- ==================== Ch05 ==================== -->
+      <h2>Ch05 弹性（Elasticity）</h2>
+
+      <h3>什么是弹性，为什么要有弹性</h3>
+      <p>到此为止，我们画出供求曲线、找到交点，就知道市场的价格和数量——但我们并不关心曲线画得有多陡。<span class="term">弹性</span><span class="term-en">（Elasticity）</span>补上了这一环：它是<strong>衡量两个相关事物之间响应程度的数学方法</strong>，让供需模型变得更有用。</p>
+      <p>弹性并非经济学家凭空创造。两个直观类比：</p>
+      <ul>
+        <li><strong>扔球</strong>：用同样的力把球扔向墙壁，超级球弹回的距离比棒球远——力与回滚距离的关系因材质而异。</li>
+        <li><strong>踩刹车</strong>：有的车轻踩刹车就迅速减速，有的车要用力踩才有反应——踏板压力与减速速度的关系因车而异。</li>
+      </ul>
+      <p>在经济学中，我们关心的是<strong>价格与需求量之间的响应关系</strong>。需求定律告诉我们涨价会使需求量下降，但没说下降多少：汽油价格翻倍，你只会稍微少开点车（响应很小）；百事可乐价格翻倍，你会直接改喝可口可乐（响应巨大）。区别就在于替代品的可获得性——这正是弹性要量化的东西。</p>
+
+      <h3>需求价格弹性：定义</h3>
+      <p><span class="term">需求价格弹性</span><span class="term-en">（Price Elasticity of Demand, PED）</span>衡量<strong>需求量对价格变化的响应程度</strong>。两个术语：</p>
+      <ul>
+        <li><span class="term">弹性</span><span class="term-en">（Elastic）</span>：需求量对价格变化响应<strong>大</strong>（像容易拉伸的橡皮筋）。</li>
+        <li><span class="term">非弹性</span><span class="term-en">（Inelastic）</span>：需求量对价格变化响应<strong>小</strong>（像拉不动的橡皮筋）。</li>
+      </ul>
+
+      <h3>影响需求弹性的因素</h3>
+      <ol>
+        <li><strong>可替代品的可用性</strong><span class="term-en">（Availability of Close Substitutes）</span>：替代品多 → 弹性（百事可乐 vs 可口可乐）；几乎没有好替代品 → 非弹性（汽油，步行/滑板对长途出行不是好替代）。</li>
+        <li><strong>时间跨度</strong><span class="term-en">（Passage of Time）</span>：短期非弹性（油价翻倍你仍要上班上学）；长期更有弹性（高油价持续数月，你会换省油的车甚至摩托车）。</li>
+        <li><strong>必需品 vs 奢侈品</strong><span class="term-en">（Necessity vs. Luxury）</span>：必需品（食物、水）非弹性；奢侈品（看电影）弹性——票价涨了可以改听音乐会。</li>
+        <li><strong>市场的定义</strong><span class="term-en">（Definition of the Market）</span>：定义越宽越非弹性（"蔬菜"的替代品有限）；定义越窄越有弹性（"胡萝卜"的替代品包括所有其他蔬菜）。</li>
+        <li><strong>占预算的份额</strong><span class="term-en">（Share of Budget）</span>：占比小 → 非弹性（口香糖涨价你不会注意）；占比大 → 弹性（房租、汽油的价格变化你很敏感）。</li>
+      </ol>
+
+      <h3>如何计算弹性</h3>
+      <p>定义公式：</p>
+      <p><strong>PED = 需求量变化的百分比 ÷ 价格变化的百分比</strong>，即 <code>PED = %ΔQd / %ΔP</code></p>
+      <p>例：价格上涨 10% 导致需求量下降 20%，则 PED = −20% ÷ 10% = −2。由于价格与需求量总是反向变动，PED 恒为负，经济学家<strong>通常忽略负号，直接用绝对值</strong>——此例弹性为 2。</p>
+
+      <h3>不同的计算方式：中点法</h3>
+      <p>计算百分比变化时有个问题：结果随起点不同而不同。例如成绩从 80 到 100 是 +25%（20/80），从 100 到 80 却是 −20%（20/100）。同样的两个数，方向不同结果不同。为此经济学家使用<span class="term">中点法</span><span class="term-en">（Midpoint Method）</span>：不用初始值，而用<strong>两个值的平均值作分母</strong>：</p>
+      <ul>
+        <li><code>%ΔQd = 数量变化量 ÷ 平均数量</code></li>
+        <li><code>%ΔP = 价格变化量 ÷ 平均价格</code></li>
+        <li><code>PED = (数量变化量 ÷ 平均数量) ÷ (价格变化量 ÷ 平均价格)</code></li>
+      </ul>
+      <p><strong>计算示例 1</strong>：披萨价格 $10 时 Bill 每年吃 50 个，降至 $8 时吃 70 个。</p>
+      <ol>
+        <li>%ΔQd = (70−50) ÷ ((50+70)/2) = 20/60 = 1/3</li>
+        <li>%ΔP = (10−8) ÷ ((10+8)/2) = 2/9</li>
+        <li>PED = (1/3) ÷ (2/9) = (1/3) × (9/2) = <strong>3/2 = 1.5</strong></li>
+      </ol>
+      <p><strong>计算示例 2</strong>：P1 = $2 时 Q1 = 13，P2 = $10 时 Q2 = 3。</p>
+      <ol>
+        <li>%ΔQd = (13−3) ÷ ((13+3)/2) = 10/8 = 5/4</li>
+        <li>%ΔP = (10−2) ÷ ((10+2)/2) = 8/6 = 4/3</li>
+        <li>PED = (5/4) ÷ (4/3) = (5/4) × (3/4) = <strong>15/16</strong></li>
+      </ol>
+      <div class="callout">
+        在教科书里你可能看到合并成一行的大公式 <code>PED = (Q1−Q2)/((Q1+Q2)/2) ÷ (P1−P2)/((P1+P2)/2)</code>，看起来很吓人。它和上面的分步算法在数学上完全等价——先分别算两个百分比变化、再相除，只是更容易理解和操作。
+      </div>
+
+      <h3>如何解读弹性值</h3>
+      <table>
+        <thead>
+          <tr><th>弹性值</th><th>名称</th><th>含义</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>PED &gt; 1</strong></td><td>弹性（Elastic）</td><td>需求量变化百分比 &gt; 价格变化百分比，消费者对价格敏感</td></tr>
+          <tr><td><strong>PED &lt; 1</strong></td><td>非弹性（Inelastic）</td><td>需求量变化百分比 &lt; 价格变化百分比，消费者对价格不敏感</td></tr>
+          <tr><td><strong>PED = 1</strong></td><td>单位弹性（Unit Elastic）</td><td>两者恰好相等</td></tr>
+        </tbody>
+      </table>
+      <p>用语言描述：弹性值代表<strong>价格每变化 1%，需求量反向变化多少个百分点</strong>。PED = 2 即"价格每变动 1%，需求量反向变动 2%"。</p>
+
+      <h3>弹性在图形上的展示</h3>
+      <p>弹性反映了需求曲线的<strong>陡峭程度</strong>：曲线越平坦，需求越有弹性；越陡峭，越缺乏弹性。两个极端情况：</p>
+      <ul>
+        <li><span class="term">完全无弹性</span><span class="term-en">（Perfectly Inelastic，PED = 0）</span>：无论价格如何，需求量不变。例：每天必须服用一粒维持心脏的药——吃两粒没有额外好处，一粒不能少。需求曲线<strong>完全垂直</strong>。</li>
+        <li><span class="term">完全弹性</span><span class="term-en">（Perfectly Elastic，PED = ∞）</span>：价格稍有上涨就立即转向完美替代品，销量归零。需求曲线<strong>完全水平</strong>。</li>
+      </ul>
+      <p>大多数需求曲线介于两者之间。图 9 中，陡峭的 D1 与平坦的 D2 穿过同一点 A：价格同样从 P1 降到 P2，D1 上需求量只从 Q1 小幅增加到 B1，D2 上则大幅增加到 B2——同样的价格变化，平坦曲线上的响应大得多，所以 D2 更有弹性。画图时要考虑这一点：汽油的需求曲线就应该画得像 D1 一样陡。</p>
+
+      <div id="fig-elasticity-steep-flat"></div>
+
+      <div id="fig-elasticity-extremes"></div>
+
+      <div class="callout">
+        <strong>为什么不直接用斜率？</strong>因为斜率带有度量单位——苹果需求曲线的斜率是"美元/苹果"，汽油的是"美元/加仑"，两者无法直接比较。弹性使用百分比变化，消掉了单位，使不同商品的需求响应可以互相比较。
+      </div>
+
+      <h3>弹性与总收入：为什么对企业至关重要</h3>
+      <p>弹性不是为了让课程更复杂——<strong>需求曲线的弹性决定了市场变化如何影响公司的收入</strong>。<span class="term">总收入</span><span class="term-en">（Total Revenue, TR）</span> = 价格 × 数量（P × Q），在图上就是以 P 为高、Q 为宽的矩形面积。</p>
+      <p>对比两个市场，都从 A 点（P = $2，Q = 50，TR = $100）出发，价格都翻倍到 $4：</p>
+      <ul>
+        <li><strong>非弹性市场</strong>（图 11，陡峭需求）：需求量只降到 40，新 TR = 4 × 40 = <strong>$160，收入增加</strong>。</li>
+        <li><strong>弹性市场</strong>（图 12，平坦需求）：需求量暴跌到 10，新 TR = 4 × 10 = <strong>$40，收入减少</strong>。</li>
+      </ul>
+
+      <div id="fig-revenue-inelastic"></div>
+
+      <div id="fig-revenue-elastic"></div>
+
+      <p>价格变化时总收入受两种效应拉扯：<strong>价格效应</strong>（每单位卖更多钱，利好）与<strong>数量效应</strong>（销量下降，利空）。弹性衡量的正是哪个效应更强。通用法则：</p>
+      <ul>
+        <li>需求<strong>非弹性</strong>时，价格与总收入<strong>同向</strong>变动（涨价增收）。</li>
+        <li>需求<strong>有弹性</strong>时，价格与总收入<strong>反向</strong>变动（涨价减收）。</li>
+      </ul>
+      <div class="callout warn">
+        <strong>卖家并非总希望涨价</strong>：如果商品有很多替代品（需求有弹性），涨价会让消费者集体转向别家，损失惨重；只有商品缺乏替代品（需求非弹性）时，涨价才能增加总收入。
+      </div>
+      <p>另外，<strong>线性需求曲线上弹性并非常数</strong>：上半段（价格高、数量少）有弹性（PED &gt; 1），中点处单位弹性（PED = 1），下半段（价格低、数量多）非弹性（PED &lt; 1）。日常说"弹性/非弹性"时，通常是在比较两条不同曲线的陡峭程度。</p>
+
+      <h3>案例：为什么农民反对增产技术</h3>
+      <p>爱荷华州曾培育出能让每英亩土地产出更多的玉米杂交品种，出人意料的是许多农民<strong>反对</strong>它。用弹性分析：</p>
+      <ol>
+        <li>玉米需求<strong>非弹性</strong>：必需品、占预算比例小，价格下降人们也不会大量囤积。</li>
+        <li>技术进步使<strong>供给曲线右移</strong>。</li>
+        <li>结果：均衡价格<strong>大幅下降</strong>，均衡数量只<strong>小幅增加</strong>。</li>
+        <li>需求非弹性时价格与收入同向变动 → 价格大跌的影响超过数量小增 → <strong>农民总收入下降</strong>。</li>
+      </ol>
+      <p>农民的反对完全理性：单产提高了，但市场价格下跌使总收入反而减少。这就是理解弹性的价值——它能看清表面现象背后的经济逻辑。</p>
+
+      <h3>衍生术语：其他弹性</h3>
+      <p>所有弹性的计算都遵循同一模式：<strong>分子是数量的百分比变化，分母由弹性的名称决定</strong>（自身价格 / 相关商品价格 / 收入）。</p>
+      <table>
+        <thead>
+          <tr><th>弹性</th><th>公式</th><th>解读关键</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="term">交叉价格弹性</span><span class="term-en">（Cross-Price Elasticity, CPED）</span></td>
+            <td>商品1需求量变化% ÷ 商品2价格变化%</td>
+            <td>看<strong>符号</strong>：为正 → 替代品（百事涨价，可口可乐销量增）；为负 → 互补品（面包涨价，热狗销量减）</td>
+          </tr>
+          <tr>
+            <td><span class="term">收入弹性</span><span class="term-en">（Income Elasticity, IED）</span></td>
+            <td>需求量变化% ÷ 收入变化%</td>
+            <td>看<strong>符号</strong>：为正 → 正常品；为负 → 劣等品</td>
+          </tr>
+          <tr>
+            <td><span class="term">供给价格弹性</span><span class="term-en">（Price Elasticity of Supply, PES）</span></td>
+            <td>供给量变化% ÷ 价格变化%</td>
+            <td>恒为<strong>正</strong>（价格与供给量同向）；&gt;1 有弹性、&lt;1 非弹性、=1 单位弹性。短期供给难调整（如新建湖边小屋）偏非弹性，长期更有弹性</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ==================== Ch06 ==================== -->
+      <h2>Ch06 政府政策的影响（Government Intervention）</h2>
+      <p>政府对供需运作施加限制时会发生什么？本章分析两类干预：<strong>价格管制</strong>（价格上限与价格下限）和<strong>税收</strong>。</p>
+
+      <h3>价格控制：术语</h3>
+      <ul>
+        <li><span class="term">价格上限</span><span class="term-en">（Price Ceiling）</span>：法定的<strong>最高价格</strong>，法律禁止价格超过该水平。常以"保护消费者免受高价之苦"为由立法。</li>
+        <li><span class="term">价格下限</span><span class="term-en">（Price Floor）</span>：法定的<strong>最低价格</strong>，法律禁止价格低于该水平。常以"保护卖方（如工人）"为由立法。</li>
+        <li><span class="term">社会总福利</span><span class="term-en">（Total Surplus / Total Welfare）</span>：<strong>消费者剩余 + 生产者剩余</strong>。消费者剩余是买方支付意愿与实际支付价格之差（需求曲线以下、价格以上的区域）；生产者剩余是卖方实收价格与成本之差（价格以下、供给曲线以上的区域）。自由市场均衡使总剩余最大化。</li>
+      </ul>
+
+      <h3>价格上限：高与低的区别</h3>
+      <p>分析价格上限，先确定"允许范围"——法律允许任何<strong>低于</strong>上限的价格：</p>
+      <ul>
+        <li><strong>上限设得高（高于 P*）→ 非约束性</strong><span class="term-en">（Non-binding）</span>：均衡价格本就在允许范围内，政策无效，市场维持 P*、Q* 的自由市场结果。</li>
+        <li><strong>上限设得低（低于 P*）→ 约束性</strong><span class="term-en">（Binding）</span>：市场力量想把价格推向均衡，但法律禁止。在这个被压低的价格上<strong>需求量大于供给量</strong>，产生持续<strong>短缺</strong>。而且长期中供需都更有弹性，短缺会愈演愈烈。</li>
+      </ul>
+      <p><strong>产生的后果：价格之外的配给机制。</strong>自由市场中价格负责配给商品（决定谁能得到）；价格被冻结后短缺无法通过涨价消除，必然出现其他配给机制，而它们都是低效的：</p>
+      <ol>
+        <li><strong>排队</strong><span class="term-en">（Lines）</span>：先到先得——得到商品的是有时间排队的人，而不是最珍视商品的人，商品没有分配到估值最高者手中。</li>
+        <li><strong>歧视或偏袒</strong><span class="term-en">（Discrimination / Favoritism）</span>：卖方按个人偏好决定卖给谁（朋友、熟人），政策变相鼓励了歧视。</li>
+        <li><strong>黑市</strong><span class="term-en">（Black Market）</span>：人们转入地下经济，以高于法定上限的价格交易，虽非法却难以避免。</li>
+      </ol>
+
+      <h3>价格上限的福利分析</h3>
+      <p>用消费者剩余（CS）、生产者剩余（PS）和<span class="term">无谓损失</span><span class="term-en">（Deadweight Loss, DWL）</span>分析约束性价格上限（图 13）：</p>
+      <table>
+        <thead>
+          <tr><th></th><th>自由市场（P*, Q*）</th><th>约束性价格上限（P̄, Q1）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>消费者剩余</strong></td><td>A + B</td><td>A + C</td></tr>
+          <tr><td><strong>生产者剩余</strong></td><td>C + D + E</td><td>E（明确受损）</td></tr>
+          <tr><td><strong>无谓损失</strong></td><td>0</td><td>B + D</td></tr>
+          <tr><td><strong>转移</strong></td><td>—</td><td>C 从生产者转移给消费者</td></tr>
+        </tbody>
+      </table>
+
+      <div id="fig-price-ceiling"></div>
+
+      <p><strong>解读</strong>：交易量从 Q* 降至 Q1（上限价格下的供给量）。区域 B + D 是被政策阻止的互惠交易本可创造的福利，凭空消失，即无谓损失。注意：新的消费者剩余 A + C 只是<strong>上限</strong>——它假设商品仍分配到估值最高的消费者手中；实际上排队等低效配给机制会让部分商品落入估值较低者手中，真实消费者剩余更小。</p>
+
+      <h3>价格下限：高与低的区别</h3>
+      <p>价格下限的允许范围是<strong>高于</strong>下限的任何价格：</p>
+      <ul>
+        <li><strong>下限设得低（低于 P*）→ 非约束性</strong>：市场价格本就更高，政策无效。</li>
+        <li><strong>下限设得高（高于 P*）→ 约束性</strong>：市场力量想把价格压低但法律禁止，在此高价上<strong>供给量大于需求量</strong>，产生持续<strong>过剩</strong>。</li>
+      </ul>
+
+      <h3>价格下限的福利分析与示例：最低工资</h3>
+      <p>约束性价格下限的福利效应（图 14）：</p>
+      <table>
+        <thead>
+          <tr><th></th><th>自由市场（P*, Q*）</th><th>约束性价格下限（P̄, Q1）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>消费者剩余</strong></td><td>A + B + C</td><td>A（明确受损）</td></tr>
+          <tr><td><strong>生产者剩余</strong></td><td>D + E</td><td>B + D</td></tr>
+          <tr><td><strong>无谓损失</strong></td><td>0</td><td>C + E</td></tr>
+          <tr><td><strong>转移</strong></td><td>—</td><td>B 从消费者转移给生产者</td></tr>
+        </tbody>
+      </table>
+
+      <div id="fig-price-floor"></div>
+
+      <p>同样，新的生产者剩余 B + D 只是上限——无法保证是成本最低的生产者获得了销售机会。</p>
+      <p><strong>典型示例：<span class="term">最低工资</span><span class="term-en">（Minimum Wage）</span></strong>。劳动力市场上，工人是卖方、工资是价格。约束性最低工资导致劳动力过剩，即<strong>失业</strong>：</p>
+      <ul>
+        <li>保住工作或找到工作的工人受益于更高的工资；</li>
+        <li>因最低工资而失业或找不到工作的工人明显受损。</li>
+      </ul>
+      <p>最低工资帮助了一部分目标群体，却伤害了另一部分，未能普遍实现政策目标。</p>
+
+      <h3>替代方案：补贴</h3>
+      <p>价格管制扭曲市场信号，带来短缺/过剩和无谓损失。大多数经济学家认为更好的办法是<span class="term">补贴</span><span class="term-en">（Subsidies）</span>：对低收入工人提供<strong>工资补贴</strong>，对租房困难的租客提供<strong>租金补贴</strong>。补贴直接帮助目标人群，同时不干预价格形成机制，让市场自由调节，避免短缺、过剩与无谓损失。补贴当然也有成本、可能被滥用，但通常比价格管制更有效率。</p>
+
+      <h3>税收：定义与分类</h3>
+      <p><span class="term">税收</span><span class="term-en">（Tax）</span>是政府对交易征收的费用，常见两类：<span class="term">单位税</span><span class="term-en">（Per-unit Tax）</span>（每购买一单位征收固定金额，如每件 $1）和<span class="term">百分比税</span><span class="term-en">（Percentage Tax）</span>（如按总价一定比例征收的销售税）。两者运作方式相似，这里分析最简单的单位税。</p>
+      <div class="callout">
+        <strong>思想实验</strong>：你在车行看中一辆 $10,000 的车，口头约定明天付款。当晚新闻说州议会通过法案即日生效：汽车销售商每卖一辆车须向政府缴税 $1,000。第二天车价会是多少？多数人直觉认为是 $11,000——把税款直接加到原价上。但税收的实际运作远非如此，它通过改变买卖双方的激励来起作用，最终的税负分配由市场力量决定。
+      </div>
+
+      <h3>对买方征税（图形分析）</h3>
+      <p>政府对买方每单位征税 T，意味着买方除支付价格外还要向政府缴 T。例：你对披萨的最高支付意愿是 $10，政府对你征 $1 的税；若披萨标价 $9.25，你的总成本是 $10.25，超出支付意愿，你不会买——你最多只愿意向卖方付 $9。</p>
+      <p>结论：<strong>对买方征税使买方的支付意愿恰好降低税额 T，需求曲线垂直向下移动 T 的距离</strong>（需求曲线的高度代表支付意愿）。</p>
+      <p>图 15 中，市场原在 A 点均衡（P1, Q1）。征税后需求曲线下移至 D'，与供给曲线交于新均衡 B：</p>
+      <ul>
+        <li><strong>数量</strong>：从 Q1 降至 Q2。</li>
+        <li><strong>卖方价格 PS</strong>：B 点对应的价格，卖方实收，低于 P1。</li>
+        <li><strong>买方价格 PB</strong>：在 Q2 处沿<strong>原</strong>需求曲线找到的价格，PB = PS + T，高于 P1。</li>
+      </ul>
+
+      <div id="fig-tax-buyer"></div>
+
+      <h3>对卖方征税（图形分析）</h3>
+      <p>对卖方征税相当于<strong>生产成本增加</strong>：制作一个披萨成本 $5，每售出一件缴税 $1，总成本变为 $6，愿意出售的最低价也从 $5 提高到 $6。结论：<strong>对卖方征税使供给曲线垂直向上移动 T 的距离</strong>（供给曲线的高度代表成本）。</p>
+      <p>图 16 中，供给曲线上移至 S'，与需求曲线交于新均衡 B：</p>
+      <ul>
+        <li><strong>数量</strong>：同样从 Q1 降至 Q2。</li>
+        <li><strong>买方价格 PB</strong>：B 点对应的价格，高于 P1。</li>
+        <li><strong>卖方价格 PS</strong>：卖方收到 PB 后缴税 T，实收 PS = PB − T，可在 Q2 处沿<strong>原</strong>供给曲线找到。</li>
+      </ul>
+
+      <div id="fig-tax-seller"></div>
+
+      <h3>总结：税负归宿</h3>
+      <p><span class="term">税负归宿</span><span class="term-en">（Tax Incidence）</span>回答"税负最终由谁承担"。无论向哪一方征税：</p>
+      <ul>
+        <li><strong>买方负担</strong> = PB − P1（支付价格的上升部分）；</li>
+        <li><strong>卖方负担</strong> = P1 − PS（实收价格的下降部分）；</li>
+        <li>两者之和 = 税额 T。即使法律明文规定由买方缴税，卖方也无法幸免——税收压低买方的支付意愿，间接压低了卖方能收到的价格。</li>
+      </ul>
+      <p><strong>税收等价性</strong><span class="term-en">（Tax Equivalence）</span>：对比图 15 与图 16，虽然移动的曲线不同，但最终结果<strong>完全相同</strong>——同样的 PB、PS、Q2 和税负分配。<strong>对买方征税在经济上等同于对卖方征税</strong>。政客争论"对企业还是消费者征税"在经济学上没有意义：法律条文无法决定税负归宿，决定它的是市场的供求力量。</p>
+      <p><strong>税收楔子</strong><span class="term-en">（Tax Wedge）</span>分析法：既然对谁征税都一样，可以不移动任何曲线——税收像在买方价格与卖方价格之间打入一个高为 T 的楔子。在图上找到使需求曲线高度与供给曲线高度的垂直距离恰好等于 T 的数量，那就是税后均衡数量 Q2；该数量处需求曲线上是 PB，供给曲线上是 PS。</p>
+      <p><strong>弹性决定税负分配</strong>：<strong>税负更多由更缺乏弹性的一方承担</strong>。需求陡（非弹性）而供给平（有弹性）→ 买方承担大部分税负，因为买方对价格不敏感、难以减少购买来避税；反之卖方承担大部分——谁的调整空间小，谁就躲不开税。</p>
+      <div class="callout warn">
+        <strong>案例：美国 90 年代的奢侈品税</strong>。国会对游艇、私人飞机征税，意图让富人多缴税。但游艇需求非常有弹性（富人可以改买度假别墅、名贵跑车），供给却相对非弹性（造船厂和工人技能高度专业化，难以转产）。结果税负主要落在缺乏弹性的供给方：制造商实收价格大降，富人买家支付的价格仅微升。税收没让富人承担多少负担，反而导致大量造船厂倒闭、工人失业，最终被废除。
+      </div>
+      <p><strong>税收的福利影响</strong>：税后消费者剩余（需求曲线以下、PB 以上）和生产者剩余（PS 以下、供给曲线以上）都减少；政府得到税收收入 T × Q2（图中 PB 与 PS 之间的矩形），它从买卖双方剩余中转移而来；从 Q2 到 Q1 之间本可发生的互利交易被税收阻止，形成<strong>无谓损失</strong>（图中的三角形）。任何税收在创造政府收入的同时都不可避免地带来无谓损失。</p>
+      <p><strong>政策启示与比较</strong>：</p>
+      <ul>
+        <li>税收会减少被税商品的交易量，所以应对希望减少的"坏东西"（污染、烟草）征税，而非希望增加的"好东西"（劳动、投资）——所得税本质上是对劳动征税，会抑制劳动供给。</li>
+        <li>补贴是税收的反面：对买方补贴使需求曲线上移、对卖方补贴使供给曲线下移，交易量增加；但补贴造成过度生产（超出有效率的均衡点），同样产生无谓损失。</li>
+        <li>与价格管制对比：<strong>价格管制</strong>制造单一的非均衡价格，导致短缺（上限）或过剩（下限），管制价格下需求量 ≠ 供给量；<strong>税收</strong>则在买卖双方价格之间打入楔子形成两个价格，但税后数量下需求量 = 供给量，不产生短缺或过剩。两者都减少交易量并产生无谓损失，但机制截然不同。</li>
+      </ul>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/principles-of-economics/02-how-markets-work.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    const D_BLUE = '#2563eb';    // 需求
+    const S_ORANGE = '#c2410c';  // 供给
+    const EQ_GREEN = '#0f766e';  // 均衡点
+
+    // ===== 图1：个人需求曲线与市场需求曲线（水平加总） =====
+    Charts.sd(document.getElementById('fig-demand'), {
+      xLabel: '数量（个/月）',
+      yLabel: '价格（美元）',
+      xMax: 55, yMax: 13, xStep: 10, yStep: 2,
+      caption: '图 1：Bill 的个人需求曲线与市场需求曲线（每个价格下把各人需求量加总）',
+      series: [
+        { points: [[0, 12], [10, 8], [20, 4], [30, 0]], type: 'linear', color: D_BLUE, label: 'Bill 的个人需求' },
+        { points: [[5, 12], [20, 8], [35, 4], [50, 0]], type: 'linear', color: '#7c3aed', label: '市场需求（Bill + Mary）' },
+      ],
+    });
+
+    // ===== 图2：需求量的变化（沿曲线移动）vs 需求的变化（整条曲线移动） =====
+    Charts.sd(document.getElementById('fig-demand-shift-vs-move'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 13, xTicks: [], yTicks: [],
+      caption: '图 2：A→B 是价格变化引起的"需求量的变化"；D1→D2/D3 是其他因素引起的"需求的变化"',
+      series: [
+        { points: [[10, 10], [90, 2]], type: 'linear', color: D_BLUE, label: 'D1（原需求）' },
+        { points: [[20, 11], [100, 3]], type: 'linear', color: D_BLUE, dash: true, label: 'D2（需求增加）' },
+        { points: [[0, 9], [70, 2]], type: 'linear', color: '#94a3b8', dash: true, label: 'D3（需求减少）' },
+      ],
+      markers: [
+        { x: 30, y: 8, label: 'A', color: EQ_GREEN, guides: true, gxLabel: 'Q1', gyLabel: 'P1', labelDx: 10, labelDy: -10 },
+        { x: 50, y: 6, label: 'B', color: '#dc2626', guides: true, gxLabel: 'Q2', gyLabel: 'P2', labelDx: 10, labelDy: 14 },
+      ],
+    });
+
+    // ===== 图3：供给曲线（向右上方倾斜） =====
+    Charts.sd(document.getElementById('fig-supply'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 12, xTicks: [], yTicks: [],
+      caption: '图 3：供给曲线 —— 价格从 P1 升到 P2，供给量从 Q1 增至 Q2（供给定律）',
+      series: [
+        { points: [[0, 2], [90, 11]], type: 'linear', color: S_ORANGE, label: 'S（供给曲线）' },
+      ],
+      markers: [
+        { x: 20, y: 4, label: 'A', color: EQ_GREEN, guides: true, gxLabel: 'Q1', gyLabel: 'P1', labelDx: 10, labelDy: 16 },
+        { x: 60, y: 8, label: 'B', color: '#dc2626', guides: true, gxLabel: 'Q2', gyLabel: 'P2', labelDx: 10, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图4：市场均衡 =====
+    Charts.sd(document.getElementById('fig-equilibrium'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 12, xTicks: [], yTicks: [],
+      caption: '图 4：市场均衡 —— 供给与需求的交点决定均衡价格 P* 与均衡数量 Q*',
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（需求）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S（供给）' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'E 均衡点', color: EQ_GREEN, guides: true, gxLabel: 'Q*', gyLabel: 'P*', labelDx: 12, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图5：短缺与过剩 =====
+    Charts.sd(document.getElementById('fig-shortage-surplus'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 12,
+      xTicks: [],
+      yTicks: [{ v: 4, label: 'P低' }, { v: 7, label: 'P*' }, { v: 10, label: 'P高' }],
+      caption: '图 5：价格高于 P* 产生过剩（Qs > Qd），低于 P* 产生短缺（Qd > Qs），价格自发调整回到 P*',
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（需求）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S（供给）' },
+        { points: [[20, 10], [80, 10]], type: 'linear', color: '#64748b', dash: true, label: '过剩（P高 处 Qs − Qd）' },
+        { points: [[20, 4], [80, 4]], type: 'linear', color: '#94a3b8', dash: true, label: '短缺（P低 处 Qd − Qs）' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'E', color: EQ_GREEN, labelDx: 10, labelDy: -10 },
+        { x: 20, y: 10, label: 'Qd', color: D_BLUE, labelDx: -16, labelDy: -10 },
+        { x: 80, y: 10, label: 'Qs', color: S_ORANGE, labelDx: 12, labelDy: -10 },
+        { x: 20, y: 4, label: 'Qs', color: S_ORANGE, labelDx: -16, labelDy: 16 },
+        { x: 80, y: 4, label: 'Qd', color: D_BLUE, labelDx: 12, labelDy: 16 },
+      ],
+    });
+
+    // ===== 图6：示例1 —— 需求增加（互补品降价） =====
+    Charts.sd(document.getElementById('fig-example-demand'), {
+      xLabel: '数量 Q（热狗）',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 12, xTicks: [], yTicks: [],
+      caption: '图 6：互补品降价 → 需求右移（D1→D2）→ 价格上升、数量增加',
+      series: [
+        { points: [[10, 9], [90, 1]], type: 'linear', color: D_BLUE, label: 'D1' },
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, dash: true, label: 'D2（需求增加）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S' },
+      ],
+      markers: [
+        { x: 40, y: 6, label: 'E1', color: EQ_GREEN, guides: true, gxLabel: 'Q1*', gyLabel: 'P1*', labelDx: -24, labelDy: 4 },
+        { x: 50, y: 7, label: 'E2', color: '#dc2626', guides: true, gxLabel: 'Q2*', gyLabel: 'P2*', labelDx: 12, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图7：示例2 —— 供给增加（卖方增多） =====
+    Charts.sd(document.getElementById('fig-example-supply'), {
+      xLabel: '数量 Q（汽油）',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 12, xTicks: [], yTicks: [],
+      caption: '图 7：加油站增多 → 供给右移（S1→S2）→ 价格下降、数量增加',
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S1' },
+        { points: [[0, 0], [100, 10]], type: 'linear', color: S_ORANGE, dash: true, label: 'S2（供给增加）' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'E1', color: EQ_GREEN, guides: true, gxLabel: 'Q1*', gyLabel: 'P1*', labelDx: -26, labelDy: -6 },
+        { x: 60, y: 6, label: 'E2', color: '#dc2626', guides: true, gxLabel: 'Q2*', gyLabel: 'P2*', labelDx: 12, labelDy: 14 },
+      ],
+    });
+
+    // ===== 图8：示例3 —— 供求同时变化（价格明确上升，数量不确定） =====
+    Charts.sd(document.getElementById('fig-example-both'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 14, xTicks: [], yTicks: [],
+      caption: '图 8：需求右移 + 供给左移 → 价格明确上升；数量变化不确定（图中两者幅度相当，数量恰好不变）',
+      series: [
+        { points: [[10, 9], [90, 1]], type: 'linear', color: D_BLUE, label: 'D1' },
+        { points: [[0, 13], [100, 3]], type: 'linear', color: D_BLUE, dash: true, label: 'D2（需求增加）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S1' },
+        { points: [[0, 5], [90, 14]], type: 'linear', color: S_ORANGE, dash: true, label: 'S2（供给减少）' },
+      ],
+      markers: [
+        { x: 40, y: 6, label: 'E1', color: EQ_GREEN, guides: true, gxLabel: 'Q1*', gyLabel: 'P1*', labelDx: 12, labelDy: 14 },
+        { x: 40, y: 9, label: 'E2', color: '#dc2626', guides: true, gyLabel: 'P2*', labelDx: 12, labelDy: -10 },
+      ],
+    });
+
+    // ===== 图9：弹性与曲线陡峭程度 =====
+    Charts.sd(document.getElementById('fig-elasticity-steep-flat'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 70, yMax: 11,
+      xTicks: [],
+      yTicks: [{ v: 4, label: 'P2' }, { v: 6, label: 'P1' }],
+      caption: '图 9：价格同样从 P1 降到 P2，平坦的 D2 上需求量增幅远大于陡峭的 D1 —— 越平坦越有弹性',
+      series: [
+        { points: [[0, 10], [45, 1]], type: 'linear', color: D_BLUE, label: 'D1（陡峭，非弹性，如汽油）' },
+        { points: [[0, 7], [70, 3.5]], type: 'linear', color: '#7c3aed', label: 'D2（平坦，有弹性，如百事可乐）' },
+        { points: [[0, 4], [70, 4]], type: 'linear', color: '#94a3b8', dash: true },
+      ],
+      markers: [
+        { x: 20, y: 6, label: 'A', color: EQ_GREEN, guides: true, gxLabel: 'Q1', labelDx: 10, labelDy: -10 },
+        { x: 30, y: 4, label: 'B1', color: D_BLUE, guides: true, gxLabel: 'Q2(D1)', labelDx: 10, labelDy: 16 },
+        { x: 60, y: 4, label: 'B2', color: '#7c3aed', guides: true, gxLabel: 'Q2(D2)', labelDx: 10, labelDy: 16 },
+      ],
+    });
+
+    // ===== 图10：两个极端 —— 完全无弹性与完全弹性 =====
+    Charts.sd(document.getElementById('fig-elasticity-extremes'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 60, yMax: 10, xStep: 10, yStep: 2,
+      caption: '图 10：极端情况 —— 垂直的需求曲线（PED = 0）与水平的需求曲线（PED = ∞）',
+      series: [
+        { points: [[30, 0], [30, 10]], type: 'linear', color: D_BLUE, label: '完全无弹性（PED = 0，如救命药）' },
+        { points: [[0, 6], [60, 6]], type: 'linear', color: '#7c3aed', label: '完全弹性（PED = ∞，有完美替代品）' },
+      ],
+    });
+
+    // ===== 图11：非弹性市场 —— 涨价使总收入增加 =====
+    Charts.sd(document.getElementById('fig-revenue-inelastic'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 60, yMax: 12, xTicks: [], yTicks: [],
+      caption: '图 11：非弹性（陡峭）需求 —— 价格从 $2 涨到 $4，总收入从 $100 增至 $160（绿色矩形更高）',
+      areas: [
+        { points: [[0, 0], [40, 0], [40, 4], [0, 4]], color: '#15803d', label: 'TR后 = 4×40 = $160' },
+        { points: [[0, 0], [50, 0], [50, 2], [0, 2]], color: D_BLUE, opacity: 0.22, label: 'TR前 = 2×50 = $100' },
+      ],
+      series: [
+        { points: [[0, 12], [55, 1]], type: 'linear', color: D_BLUE, label: 'D（非弹性）' },
+      ],
+      markers: [
+        { x: 50, y: 2, label: 'A', color: EQ_GREEN, guides: true, gxLabel: '50', gyLabel: '$2', labelDx: 10, labelDy: 16 },
+        { x: 40, y: 4, label: 'B', color: '#dc2626', guides: true, gxLabel: '40', gyLabel: '$4', labelDx: 10, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图12：弹性市场 —— 涨价使总收入减少 =====
+    Charts.sd(document.getElementById('fig-revenue-elastic'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 90, yMax: 5, xTicks: [], yTicks: [],
+      caption: '图 12：有弹性（平坦）需求 —— 价格从 $2 涨到 $4，总收入从 $100 跌至 $40（绿色矩形明显变小）',
+      areas: [
+        { points: [[0, 0], [50, 0], [50, 2], [0, 2]], color: D_BLUE, opacity: 0.22, label: 'TR前 = 2×50 = $100' },
+        { points: [[0, 0], [10, 0], [10, 4], [0, 4]], color: '#15803d', label: 'TR后 = $40' },
+      ],
+      series: [
+        { points: [[0, 4.5], [80, 0.5]], type: 'linear', color: D_BLUE, label: 'D（有弹性）' },
+      ],
+      markers: [
+        { x: 50, y: 2, label: 'A', color: EQ_GREEN, guides: true, gxLabel: '50', gyLabel: '$2', labelDx: 10, labelDy: -12 },
+        { x: 10, y: 4, label: 'B', color: '#dc2626', guides: true, gxLabel: '10', gyLabel: '$4', labelDx: 10, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图13：约束性价格上限的福利分析 =====
+    Charts.sd(document.getElementById('fig-price-ceiling'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 13,
+      xTicks: [{ v: 30, label: 'Q1' }, { v: 50, label: 'Q*' }],
+      yTicks: [{ v: 5, label: 'P̄' }, { v: 7, label: 'P*' }],
+      caption: '图 13：约束性价格上限（P̄ < P*）—— CS: A+B → A+C；PS: C+D+E → E；无谓损失 = B+D；C 为生产者向消费者的转移',
+      areas: [
+        { points: [[0, 7], [0, 12], [30, 9], [30, 7]], color: D_BLUE, label: 'A' },
+        { points: [[30, 7], [30, 9], [50, 7]], color: '#dc2626', label: 'B' },
+        { points: [[0, 5], [0, 7], [30, 7], [30, 5]], color: '#15803d', label: 'C' },
+        { points: [[30, 5], [30, 7], [50, 7]], color: '#dc2626', label: 'D' },
+        { points: [[0, 2], [0, 5], [30, 5]], color: S_ORANGE, label: 'E' },
+      ],
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（需求）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S（供给）' },
+        { points: [[0, 5], [100, 5]], type: 'linear', color: '#64748b', dash: true, label: 'P̄ 价格上限' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'E 自由市场均衡', color: EQ_GREEN, labelDx: 12, labelDy: -12 },
+        { x: 30, y: 5, label: 'Qs', color: S_ORANGE, labelDx: -18, labelDy: 18 },
+        { x: 70, y: 5, label: 'Qd（短缺 = Qd − Qs）', color: D_BLUE, labelDx: -10, labelDy: 20 },
+      ],
+    });
+
+    // ===== 图14：约束性价格下限的福利分析 =====
+    Charts.sd(document.getElementById('fig-price-floor'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 13,
+      xTicks: [{ v: 30, label: 'Q1' }, { v: 50, label: 'Q*' }],
+      yTicks: [{ v: 7, label: 'P*' }, { v: 9, label: 'P̄' }],
+      caption: '图 14：约束性价格下限（P̄ > P*）—— CS: A+B+C → A；PS: D+E → B+D；无谓损失 = C+E；B 为消费者向生产者的转移',
+      areas: [
+        { points: [[0, 9], [0, 12], [30, 9]], color: D_BLUE, label: 'A' },
+        { points: [[0, 7], [0, 9], [30, 9], [30, 7]], color: '#15803d', label: 'B' },
+        { points: [[30, 9], [50, 7], [30, 7]], color: '#dc2626', label: 'C' },
+        { points: [[0, 2], [0, 7], [30, 7], [30, 5]], color: S_ORANGE, label: 'D' },
+        { points: [[30, 7], [50, 7], [30, 5]], color: '#dc2626', label: 'E' },
+      ],
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（需求）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S（供给）' },
+        { points: [[0, 9], [100, 9]], type: 'linear', color: '#64748b', dash: true, label: 'P̄ 价格下限' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'E 自由市场均衡', color: EQ_GREEN, labelDx: 12, labelDy: 14 },
+        { x: 30, y: 9, label: 'Qd', color: D_BLUE, labelDx: -18, labelDy: -12 },
+        { x: 70, y: 9, label: 'Qs（过剩 = Qs − Qd）', color: S_ORANGE, labelDx: -10, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图15：对买方征税 =====
+    Charts.sd(document.getElementById('fig-tax-buyer'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 13,
+      xTicks: [{ v: 40, label: 'Q2' }, { v: 50, label: 'Q1' }],
+      yTicks: [{ v: 6, label: 'PS' }, { v: 7, label: 'P1' }, { v: 8, label: 'PB' }],
+      caption: '图 15：对买方征税 T=2 —— 需求曲线下移 T，数量 Q1→Q2；买方付 PB、卖方收 PS，税负双方共担',
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（原需求）' },
+        { points: [[0, 10], [100, 0]], type: 'linear', color: D_BLUE, dash: true, label: "D'（税后需求，下移 T）" },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S（供给）' },
+        { points: [[40, 6], [40, 8]], type: 'linear', color: '#64748b', dash: true, label: '税额 T' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'A 税前均衡', color: EQ_GREEN, labelDx: 12, labelDy: -12 },
+        { x: 40, y: 6, label: 'B（卖方价格 PS）', color: S_ORANGE, labelDx: 12, labelDy: 16 },
+        { x: 40, y: 8, label: '买方价格 PB', color: D_BLUE, labelDx: -100, labelDy: -10 },
+      ],
+    });
+
+    // ===== 图16：对卖方征税 =====
+    Charts.sd(document.getElementById('fig-tax-seller'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 13,
+      xTicks: [{ v: 40, label: 'Q2' }, { v: 50, label: 'Q1' }],
+      yTicks: [{ v: 6, label: 'PS' }, { v: 7, label: 'P1' }, { v: 8, label: 'PB' }],
+      caption: '图 16：对卖方征税 T=2 —— 供给曲线上移 T，数量 Q1→Q2；PB、PS 与对买方征税完全相同（税收等价性）',
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（需求）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S（原供给）' },
+        { points: [[0, 4], [90, 13]], type: 'linear', color: S_ORANGE, dash: true, label: "S'（税后供给，上移 T）" },
+        { points: [[40, 6], [40, 8]], type: 'linear', color: '#64748b', dash: true, label: '税额 T' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'A 税前均衡', color: EQ_GREEN, labelDx: 12, labelDy: -12 },
+        { x: 40, y: 8, label: 'B（买方价格 PB）', color: D_BLUE, labelDx: -110, labelDy: -10 },
+        { x: 40, y: 6, label: '卖方价格 PS', color: S_ORANGE, labelDx: 12, labelDy: 16 },
+      ],
+    });
+  </script>
+</body>
+</html>

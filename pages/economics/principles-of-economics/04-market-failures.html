@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 市场失灵 - 经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>04 市场失灵</h1>
+      <p>本篇覆盖《经济学原理》第 10、11 章：外部性的定义、类型与解决方案，商品的四种分类，以及公共物品的"搭便车"问题与公共资源的"公地悲剧"。</p>
+      <p>先回顾前几篇的内容：我们从<strong>供给需求模型</strong>出发，看到价格自发调节使市场趋向<strong>均衡</strong>；随后引入<span class="term">消费者剩余</span><span class="term-en">（CS）</span>和<span class="term">生产者剩余</span><span class="term-en">（PS）</span>两个福祉指标，得出关键结论——<strong>自由市场均衡使总剩余（CS + PS）最大化</strong>，商品流向估价最高的人，生产交给成本最低的人。</p>
+      <p>但市场并非万能。上述结论有一个隐含前提：买卖双方的交易<strong>只影响他们自己</strong>。当一方的行为波及到与交易无关的第三方时，市场价格就无法反映全部的成本与收益，市场均衡不再有效率——这就是<span class="term">市场失灵</span><span class="term-en">（Market Failure）</span>。本篇讨论两类最重要的市场失灵：<strong>外部性</strong>，以及<strong>公共物品与公共资源</strong>问题。</p>
+
+      <!-- ==================== Ch10 ==================== -->
+      <h2>Ch10 外部性（Externalities）</h2>
+
+      <h3>从"零污染"的误区谈起</h3>
+      <p>如果在街上问人们"适度的污染量是多少"，多数人的直觉反应是<strong>"零"</strong>。但这个答案经不起推敲：污染不像轮胎那样由专门的"污染工厂"生产——它是<strong>一切生产活动的副产品</strong>。婴儿配方奶粉、药品、食品、交通、娱乐……生产任何东西都会产生污染。若真要实现零污染，唯一的办法就是停止一切生产，这显然不可取。</p>
+      <p>因此我们必须<strong>权衡取舍</strong>：在享受生产带来的利益与承受污染的成本之间找到平衡。麻烦在于，污染的成本往往没有明确的标价，容易被搁置和忽略——而好的经济决策不能忽视这些成本。这正是外部性分析要解决的问题。</p>
+
+      <h3>外部性的定义与分类</h3>
+      <p><span class="term">外部性</span><span class="term-en">（Externality）</span>是指：<strong>一项经济活动给与该活动（生产或消费）没有直接关系的第三方所带来的利益或成本</strong>。更通俗地说：只要一个人的行为影响了另一个人，而这个影响没有通过价格得到补偿，就存在外部性——某人因为他人的行为获得了利益或承担了成本，而这并非源于其自身的行为。</p>
+      <p>外部性分为两类：</p>
+      <ul>
+        <li><strong><span class="term">负外部性</span><span class="term-en">（Negative Externality）</span></strong>：一个人的行为给他人带来了<strong>成本</strong>。例如：
+          <ul>
+            <li><strong>二手烟</strong>——经典例子，周围人被迫吸入烟雾，承担健康成本；</li>
+            <li><strong>生产过程中的污染</strong>——工厂排放废气、污水、噪音，周边居民承担成本；</li>
+            <li><strong>驾驶汽车</strong>——尾气被他人吸入（电动车只是把排放转移到了仍以化石燃料为主的发电厂，负外部性并未消失）；</li>
+            <li><strong>大声播放音乐</strong>——打扰到邻居。</li>
+          </ul>
+        </li>
+        <li><strong><span class="term">正外部性</span><span class="term-en">（Positive Externality）</span></strong>：一个人的行为给他人带来了<strong>利益</strong>。例如：
+          <ul>
+            <li><strong>接受大学教育</strong>——受教育程度更高的人更有生产力、决策更负责任，整个社会受益；</li>
+            <li><strong>接种疫苗</strong>——有助于建立一个更健康的社会，他人同样受益；</li>
+            <li><strong>美化庭院</strong>——路过的人看到优美景观，心情变好。</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>负外部性如何导致市场失灵</h3>
+      <p>以<strong>电力生产</strong>为例（图 1）。电力公司在做生产决策时，只考虑自己承担的成本——<span class="term">私人成本</span><span class="term-en">（Private Cost）</span>，它对应市场上的供给曲线 S<sub>私人</sub>。但发电还产生了<span class="term">外部成本</span><span class="term-en">（External Cost）</span>：空气污染损害公众健康，这部分成本由全社会承担，而非公司。私人成本加上外部成本，得到<span class="term">社会成本</span><span class="term-en">（Social Cost）</span>——对应一条位于私人供给曲线<strong>上方</strong>的曲线 S<sub>社会</sub>，两条曲线的垂直距离就是外部成本。</p>
+      <ul>
+        <li><strong>自由市场均衡</strong>：私人供给曲线与需求曲线的交点（Q<sub>m</sub>, P<sub>m</sub>）；</li>
+        <li><strong>社会最优</strong>：社会成本曲线与需求曲线的交点（Q<sub>o</sub>, P<sub>o</sub>）。</li>
+      </ul>
+      <p>结论：存在负外部性时，<strong>自由市场生产的商品过多（Q<sub>m</sub> &gt; Q<sub>o</sub>），且价格过低（P<sub>m</sub> &lt; P<sub>o</sub>）</strong>——因为价格没有反映全部生产成本。注意，市场失灵并不是说价格无法调节供需，而是说<strong>市场均衡的结果是无效率的</strong>：在 Q<sub>o</sub> 到 Q<sub>m</sub> 之间，每多生产一单位电力的社会成本都高于买方对它的评价，这些交易使总剩余缩水，产生无谓损失（图中红色三角形）。</p>
+
+      <div id="fig-neg-ext"></div>
+
+      <h3>正外部性如何导致市场失灵</h3>
+      <p>正外部性的情况正好相反，以<strong>大学教育</strong>为例（图 2）。学生的需求曲线 D<sub>私人</sub> 只反映个人从教育中获得的<span class="term">私人利益</span><span class="term-en">（Private Benefit）</span>；但教育还产生<span class="term">外部利益</span><span class="term-en">（External Benefit）</span>——一个更高素质的社会。两者相加得到<span class="term">社会利益</span><span class="term-en">（Social Benefit）</span>，对应位于私人需求曲线上方的 D<sub>社会</sub>。</p>
+      <p>自由市场的结果是私人需求曲线与供给曲线的交点（Q<sub>m</sub>），而社会最优是社会需求曲线与供给曲线的交点（Q<sub>o</sub>）。结论：存在正外部性时，<strong>自由市场提供的商品数量过少（Q<sub>m</sub> &lt; Q<sub>o</sub>）</strong>。这正是政府通过助学金、奖学金或补贴大学来鼓励教育的理论依据。</p>
+
+      <div id="fig-pos-ext"></div>
+
+      <h3>外部性的根源：不完整的产权</h3>
+      <p>外部性（无论正负）产生的根本原因是<span class="term">不完整的产权结构</span><span class="term-en">（Incomplete Property Rights）</span>：产权不清晰时，一些人就能把成本转嫁给他人，或者无法获取其行为产生的全部收益。</p>
+      <div class="callout">
+        <strong>湖与河的对比</strong>：假设你拥有一片带湖泊的土地，并把部分土地租给一家造纸厂。如果造纸厂污染了<strong>你的湖</strong>，由于你拥有湖的产权，你可以通过法律途径要求其承担责任——成本被"内部化"了，不存在外部性。但如果造纸厂建在一条<strong>公共河流</strong>旁，情况就完全不同："人人所有"实际上等于"无人所有"，作为私人公民你无法因公共河流被污染而起诉污染者。除非有政府管制，工厂就可以把污染成本转嫁给整个社会——外部性由此产生。
+      </div>
+
+      <h3>解决方案一：私人谈判与科斯定理</h3>
+      <p>经济学家<span class="term">罗纳德·科斯</span><span class="term-en">（Ronald Coase）</span>提出的<span class="term">科斯定理</span><span class="term-en">（Coase Theorem）</span>指出：只要<span class="term">交易成本</span><span class="term-en">（Transaction Costs）</span>很低，外部性的相关方就有动机通过<strong>私人谈判</strong>解决问题，从而消除外部性。</p>
+      <p><strong>例子</strong>：一个度假村位于发电厂的下游，发电厂排放的热水影响了度假村的生意。度假村老板有动机向发电厂支付一笔钱，要求其减少热水排放——只要支付的金额低于他的利润损失。理论上双方可以达成对彼此都有利的协议。然而科斯定理在现实中应用有限：<strong>交易成本往往很高</strong>，尤其是涉及多方时（想想让全城居民联合起来与一家工厂谈判有多难）。</p>
+
+      <h3>解决方案二：政府干预</h3>
+      <ol>
+        <li><strong><span class="term">矫正税</span><span class="term-en">（Corrective Tax）</span></strong>：政府对产生负外部性的活动征税。若税额恰好等于外部成本，就迫使生产者把外部成本<strong>"内部化"</strong>——私人成本曲线上移，与社会成本曲线重合，市场自发达到有效率的产出水平 Q<sub>o</sub>（图 3）。这种税也称<span class="term">庇古税</span><span class="term-en">（Pigouvian Tax）</span>。主要挑战在于：<strong>政府很难准确估算外部成本的大小</strong>。对于正外部性，对称的做法是提供<span class="term">补贴</span><span class="term-en">（Subsidy）</span>。</li>
+        <li><strong><span class="term">命令与控制</span><span class="term-en">（Command and Control）</span></strong>：政府直接规定允许排放的污染量，或要求企业采用特定技术。缺点是<strong>缺乏灵活性</strong>：不同企业的减排成本不同，一刀切的规定效率低下，因为政府缺乏足够的信息为每个企业制定最优标准。</li>
+      </ol>
+
+      <div id="fig-pigou"></div>
+
+      <h3>解决方案三：可交易的排污许可证</h3>
+      <p><span class="term">可交易的排污许可证</span><span class="term-en">（Tradable Permits）</span>是一种更有效率的政府干预方式：政府先确定一个<strong>总的污染排放上限</strong>，向企业发放相应数量的排污许可证，企业可以在市场上<strong>自由买卖</strong>这些许可证。</p>
+      <p>这一制度利用市场力量，以<strong>最低的社会总成本</strong>实现减排目标：</p>
+      <ul>
+        <li><strong>减排成本低的企业</strong>发现：减少污染、出售多余许可证有利可图；</li>
+        <li><strong>减排成本高的企业</strong>则选择购买许可证，比自行减排更划算。</li>
+      </ul>
+      <p>这种方法曾成功用于解决美国的<strong>酸雨</strong>问题（由二氧化硫引起）。注意政策目标并不是把排放量降到零，而是减少到一个<strong>社会可接受的、权衡了利弊的水平</strong>——呼应本篇开头的讨论。</p>
+
+      <h3>商品的四种类型</h3>
+      <p>在讨论公共物品之前，先建立一个分类框架。我们可以根据两个维度对所有商品进行分类：</p>
+      <ol>
+        <li><strong><span class="term">竞争性</span><span class="term-en">（Rivalry）</span></strong>：一个人对某商品的消费是否会<strong>减少</strong>其他人对该商品的消费量？大部分商品是竞争性的——我吃了一块披萨，别人就不能再吃同一块。</li>
+        <li><strong><span class="term">排他性</span><span class="term-en">（Excludability）</span></strong>：是否可以<strong>阻止不付费的人</strong>消费某商品？大部分商品是排他性的——不付钱就得不到披萨。</li>
+      </ol>
+      <p>两个维度交叉，得到四种类型：</p>
+      <table>
+        <thead>
+          <tr><th>类型</th><th>竞争性</th><th>排他性</th><th>例子</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>私人物品</strong><br>Private Goods</td>
+            <td>有</td>
+            <td>有</td>
+            <td>披萨、理发服务——日常接触最多的商品</td>
+          </tr>
+          <tr>
+            <td><strong>公共物品</strong><br>Public Goods</td>
+            <td>无</td>
+            <td>无</td>
+            <td>国防、公共电视广播——我享受国防不影响你享受，不付费也无法被排除在保护之外</td>
+          </tr>
+          <tr>
+            <td><strong>准公共物品（俱乐部物品）</strong><br>Quasi-Public / Club Goods</td>
+            <td>无</td>
+            <td>有</td>
+            <td>卫星电视、付费电台——不付费收不到信号（排他），但我收看不影响他人收看（无竞争）</td>
+          </tr>
+          <tr>
+            <td><strong>公共资源</strong><br>Common Resources</td>
+            <td>有</td>
+            <td>无</td>
+            <td>公海里的鱼、野生水牛——任何人都可捕捞猎杀（无排他），但一旦被捕获别人就没了（有竞争）</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>为什么这个分类重要</strong>：私人物品和俱乐部物品都有排他性，市场可以正常定价和提供；而<strong>公共物品</strong>（无排他性）和<strong>公共资源</strong>（无排他性）恰恰是市场处理不好的两类——这正是 Ch11 的主题。
+      </div>
+
+      <!-- ==================== Ch11 ==================== -->
+      <h2>Ch11 公共物品和公共资源</h2>
+
+      <h3>公共物品与"搭便车"问题</h3>
+      <p>由于公共物品的<strong>非排他性</strong>，人们即使不付费也能享用，这就导致了<span class="term">"搭便车"问题</span><span class="term-en">（Free-Rider Problem）</span>：每个人都有动机隐瞒自己的真实支付意愿，坐等别人出钱。例如，许多人观看公共电视却从不捐款。</p>
+      <p>因为存在搭便车者，仅靠市场自发提供，公共物品的<strong>供给量会远低于社会最优水平</strong>——愿意付费的人太少，企业无利可图。这就是为什么国防、基础研究等公共物品通常由<strong>政府</strong>提供：政府用税收强制所有人出资，再通过成本收益分析决定提供多少。</p>
+      <div class="callout">
+        <strong>公共物品的需求曲线怎么加总？</strong>对私人物品，市场需求是每个人需求量的<strong>水平相加</strong>（同一价格下把数量加起来）。但公共物品不行——所有人<strong>同时消费同一单位</strong>的商品（同一份国防保护你我所有人）。正确做法是<strong>垂直相加</strong>：对每一单位公共物品，把每个消费者愿意支付的价格（边际利益）加起来，得到社会总的支付意愿。
+      </div>
+
+      <h3>公共资源与"公地悲剧"</h3>
+      <p>公共资源兼具<strong>非排他性</strong>和<strong>竞争性</strong>，因此极易被<strong>过度使用</strong>——这就是<span class="term">"公地悲剧"</span><span class="term-en">（Tragedy of the Commons）</span>。</p>
+      <p>机制上与负外部性一脉相承：个人使用公共资源时，只考虑自己的<strong>私人成本</strong>，而忽略了行为给他人带来的成本——每多捕一条鱼、多打一头水牛，都使资源更稀缺、增加了他人的获取难度。于是资源的"市场使用量"超过"社会最优量"，导致<strong>过度开采甚至枯竭</strong>。</p>
+      <ul>
+        <li><strong>历史案例</strong>：美国西部的野生水牛被过度猎杀，几近灭绝；</li>
+        <li><strong>当代案例</strong>：海洋渔业资源被过度捕捞。《纽约时报》一篇《两种渔业的故事》（A Tale of Two Fisheries）生动地解释了这一现象及其解决方案。</li>
+      </ul>
+      <div class="callout warn">
+        <strong>对比记忆</strong>：公共物品的问题是<strong>供给不足</strong>（搭便车 → 没人愿意提供）；公共资源的问题是<strong>过度使用</strong>（无排他 + 有竞争 → 人人抢着消耗）。两者的共同根源都是<strong>产权缺失</strong>——"人人所有"等于"无人所有"。
+      </div>
+
+      <h3>结论</h3>
+      <p>外部性是市场失灵的一个重要例子：当外部性存在时，自由市场无法达到社会最优的结果——负外部性下生产过多，正外部性下提供不足。公共物品与公共资源问题则是同一逻辑的延伸：缺乏排他性时，市场价格机制失灵。</p>
+      <p>好消息是，市场失灵不等于无药可救。通过<strong>清晰界定产权</strong>、利用<strong>矫正税与补贴</strong>、或设计巧妙的<strong>市场化机制</strong>（如可交易排污许可证），我们可以把外部成本与外部利益"内部化"，纠正市场失灵，走向更有效率的资源配置结果。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/principles-of-economics/04-market-failures.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    const D_BLUE = '#2563eb';    // 需求 / 消费者剩余
+    const S_ORANGE = '#c2410c';  // 供给 / 生产者剩余
+    const EQ_GREEN = '#0f766e';  // 均衡点
+    const GOV_GREEN = '#15803d'; // 政府收入 / 转移
+    const GAIN_PURPLE = '#7c3aed'; // 社会成本 / 社会利益曲线
+    const DWL_RED = '#dc2626';   // 无谓损失
+
+    // ===== 图1：负外部性（电力市场）—— 社会成本 > 私人成本，Qm > Qo =====
+    Charts.sd(document.getElementById('fig-neg-ext'), {
+      xLabel: '数量 Q（电力）',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 14,
+      xTicks: [{ v: 40, label: 'Qo' }, { v: 50, label: 'Qm' }],
+      yTicks: [{ v: 7, label: 'Pm' }, { v: 8, label: 'Po' }],
+      caption: '图 1：负外部性 —— 社会成本曲线位于私人成本曲线上方（间距 = 外部成本），市场量 Qm 超过社会最优量 Qo，红色三角形 = 无谓损失',
+      areas: [
+        { points: [[40, 8], [50, 7], [50, 9]], color: DWL_RED, label: 'DWL' },
+      ],
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（需求）' },
+        { points: [[0, 4], [100, 14]], type: 'linear', color: GAIN_PURPLE, label: 'S社会（社会成本）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S私人（私人成本）' },
+        { points: [[25, 4.5], [25, 6.5]], type: 'linear', color: '#64748b', dash: true, label: '外部成本' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'E 市场均衡', color: EQ_GREEN, labelDx: 12, labelDy: 16 },
+        { x: 40, y: 8, label: '社会最优', color: EQ_GREEN, labelDx: -58, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图2：正外部性（大学教育）—— 社会利益 > 私人利益，Qm < Qo =====
+    Charts.sd(document.getElementById('fig-pos-ext'), {
+      xLabel: '数量 Q（大学教育）',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 14,
+      xTicks: [{ v: 40, label: 'Qm' }, { v: 50, label: 'Qo' }],
+      yTicks: [{ v: 6, label: 'Pm' }, { v: 7, label: 'Po' }],
+      caption: '图 2：正外部性 —— 社会利益曲线位于私人利益曲线上方（间距 = 外部利益），市场量 Qm 低于社会最优量 Qo，红色三角形 = 无谓损失',
+      areas: [
+        { points: [[40, 8], [50, 7], [40, 6]], color: DWL_RED, label: 'DWL' },
+      ],
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: GAIN_PURPLE, label: 'D社会（社会利益）' },
+        { points: [[0, 10], [100, 0]], type: 'linear', color: D_BLUE, label: 'D私人（私人利益）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S（供给）' },
+        { points: [[25, 7.5], [25, 9.5]], type: 'linear', color: '#64748b', dash: true, label: '外部利益' },
+      ],
+      markers: [
+        { x: 40, y: 6, label: 'E 市场均衡', color: EQ_GREEN, labelDx: -66, labelDy: 20 },
+        { x: 50, y: 7, label: '社会最优', color: EQ_GREEN, labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图3：庇古税（矫正税）—— 税额 = 外部成本，私人成本曲线上移至社会成本 =====
+    Charts.sd(document.getElementById('fig-pigou'), {
+      xLabel: '数量 Q（电力）',
+      yLabel: '价格 P',
+      xMax: 100, yMax: 14,
+      xTicks: [{ v: 40, label: 'Qo' }, { v: 50, label: 'Qm' }],
+      yTicks: [{ v: 6, label: 'Ps' }, { v: 8, label: 'Pb' }],
+      caption: '图 3：庇古税 —— 税额 T 等于外部成本时，私人成本曲线上移至与社会成本重合，市场自发达到 Qo；绿色矩形 = 税收收入（T × Qo）',
+      areas: [
+        { points: [[0, 6], [0, 8], [40, 8], [40, 6]], color: GOV_GREEN, label: 'T×Qo' },
+      ],
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（需求）' },
+        { points: [[0, 4], [100, 14]], type: 'linear', color: GAIN_PURPLE, label: 'S社会 = S私人 + 税T' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, dash: true, label: 'S私人（税前）' },
+      ],
+      markers: [
+        { x: 40, y: 8, label: '税后均衡（买方付 Pb）', color: EQ_GREEN, labelDx: 12, labelDy: -14 },
+        { x: 40, y: 6, label: '卖方实收 Ps', color: S_ORANGE, labelDx: -74, labelDy: 22 },
+        { x: 50, y: 7, label: '原市场均衡', color: '#64748b', labelDx: 12, labelDy: 18 },
+      ],
+    });
+  </script>
+</body>
+</html>

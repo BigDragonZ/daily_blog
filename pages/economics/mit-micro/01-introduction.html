@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 导论：稀缺、权衡与供求模型 - MIT 微观经济学 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>01 导论：稀缺、权衡与供求模型</h1>
+      <p>本篇对应 MIT 14.01《微观经济学原理》第 1 讲（Introduction and Supply &amp; Demand，主讲 Jon Gruber）：什么是微观经济学、经济学家如何使用模型，以及本课程的第一个模型——供给与需求。</p>
+
+      <!-- ==================== 引入 ==================== -->
+      <div class="callout">
+        <strong>一个反直觉的事实</strong>：没有水，人几天就会死——维持生命的东西却几乎免费；钻石对生存毫无用处——一颗却能卖到天价。如果"越有用的东西越贵"，这个世界显然不这么运转。价格到底由什么决定？这正是经济学入门第一课要回答的问题。
+      </div>
+
+      <!-- ==================== 核心范式 ==================== -->
+      <h2>一、核心范式：稀缺世界中的有约束最优化</h2>
+
+      <h3>什么是微观经济学</h3>
+      <p><span class="term">微观经济学</span><span class="term-en">（Microeconomics）</span>是研究在<span class="term">稀缺</span><span class="term-en">（Scarcity）</span>的世界里，个人和企业如何做决策的学科。因为资源有限而欲望无限，任何选择都意味着放弃别的选择，所以从根本上说，<strong>微观经济学就是一连串的<span class="term">有约束最优化</span><span class="term-en">（Constrained Optimization）</span>练习</strong>：每个经济行为人（无论个人还是企业）都在自己的约束条件下，努力让境况变得尽可能好。</p>
+      <p>有约束，就有<span class="term">权衡取舍</span><span class="term-en">（Trade-off）</span>：在有限的条件下，你必须在不同事物之间做取舍，才能把自己置于最佳状态。这是贯穿整门课的主线。</p>
+      <p>值得一提的是，这个范式与 MIT 的工程学一脉相承：以 2.007 机器人大赛为例，你要用有限的材料造一台能完成指定任务的机器人——这就是有约束最优化。现代经济学正是保罗·萨缪尔森（Paul Samuelson）20 世纪 40–50 年代在 MIT 用工程学原理写出的基础教科书所奠定的。可以把微观经济学想象成"工程学，但更有趣"：你构建的不是推乒乓球的机器人，而是人们的生活与商业模式。</p>
+
+      <h3>机会成本：本课程重复上百遍的概念</h3>
+      <p><span class="term">机会成本</span><span class="term-en">（Opportunity Cost, OC）</span>：每一个行动（或不行动）的成本，等于你为此放弃的<strong>次优选择</strong>的价值。买了一件衬衫，就放弃了买一条裤子；坐在家里看电视，就放弃了出去工作的收入。你做的任何事，都有一个被放弃的"下一件最好的事"。</p>
+      <div class="callout">
+        这也是经济学被戏称为<span class="term">"沉闷的科学"</span><span class="term-en">（the Dismal Science）</span>的原因：它的核心信念是<strong>天下没有免费的午餐</strong>——总有权衡，总有机会成本。你觉得沉闷还是有趣，决定了你适不适合学经济学。
+      </div>
+
+      <!-- ==================== 模型观 ==================== -->
+      <h2>二、模型观：所有模型都是错的</h2>
+
+      <h3>George Box 的名言与模型的权衡</h3>
+      <p><span class="term">模型</span><span class="term-en">（Model）</span>是对两个或多个经济变量之间关系的描述。但经济模型与物理学定律不同：它<strong>永远不会百分之百正确</strong>，正确率可能只有 10% 到 95%。统计学家乔治·博克斯（George Box）说得好：<strong>"所有模型都是错的，但有些是有用的。"</strong></p>
+      <p>建模本质上是一个权衡：一方面希望模型尽可能<strong>捕捉现实世界</strong>，另一方面希望它足够<span class="term">易处理</span><span class="term-en">（Tractable）</span>——简单到可以从第一性原理出发进行教学。经济学的传统是<strong>偏向易处理性</strong>：做一系列巨大的简化假设，换取用较少的步骤解释广泛现象的能力。正因如此，整个微观经济学才能在一个学期内教完。</p>
+
+      <div id="fig-model-tradeoff"></div>
+
+      <p><strong>图的解读</strong>：横轴是模型复杂度。<span style="color:#15803d;font-weight:600">绿色曲线</span>表示模型的现实解释力——随复杂度上升，但增速递减（加一个假设能解释的现象越来越少）；<span style="color:#dc2626;font-weight:600">红色曲线</span>表示易处理性——随复杂度上升而下降。经济学课程通常选择在两曲线交点附近（★ 处）工作：再简单则解释力不足，再复杂则无法从第一性原理推导。这只是一个概念示意，坐标没有具体单位——它要传达的是"权衡"这个思想本身。</p>
+
+      <h3>理解模型的三个层次</h3>
+      <p>对本课程的每一个模型，都要从三个层次掌握：</p>
+      <ol>
+        <li><strong>直觉层面</strong><span class="term-en">（Intuitive Level）</span>：最重要的层次，又称"通过妈妈测试（Mom Test）"——感恩节回家时，你能向妈妈把这个模型讲明白。</li>
+        <li><strong>图形层面</strong><span class="term-en">（Graphical Level）</span>：大部分模型都以 XY 坐标图展开，图形具有强大的简明表达能力。</li>
+        <li><strong>数学层面</strong><span class="term-en">（Mathematical Level）</span>：最不重要，但最容易用来考试，所以也必须掌握。</li>
+      </ol>
+
+      <h3>模型的优点与缺点</h3>
+      <p><strong>优点</strong>：一套相当简单的模型，就能为各种各样的现实现象提供洞见——虽然从不完美，但通常"八九不离十"；简化假设让我们能用较少的步骤覆盖广泛的现象。</p>
+      <p><strong>缺点</strong>：模型不是定律，正确率有限；巨大的简化假设意味着它可能遗漏关键因素。使用模型的纪律是：先明确它解释了什么，再追问它漏掉了什么——这正是本课程后半段（市场失灵、行为经济学）要做的事。</p>
+
+      <!-- ==================== 供给与需求 ==================== -->
+      <h2>三、第一个模型：供给与需求</h2>
+
+      <h3>水与钻石悖论</h3>
+      <p>回到开头的问题。这个悖论由"经济学之父"亚当·斯密（Adam Smith）在 1776 年的《国富论》（<em>The Wealth of Nations</em>）中提出：水对生命至关重要却几乎免费，钻石毫无用处却极其昂贵，这怎么可能？</p>
+      <p>斯密的答案是：上面的描述只讲了<span class="term">需求</span><span class="term-en">（Demand）</span>——我们对水的需求很大，对钻石的需求较小。但价格不只由需求决定，还必须结合<span class="term">供给</span><span class="term-en">（Supply）</span>：水的供给几乎是无限的，而钻石的供给（即便不是天然稀缺）被商业决策人为限制。<strong>供给与需求像一把剪刀的两片刀刃</strong>，孤立看任何一片都无法剪裁出价格，必须合在一起才能解释现实。</p>
+
+      <h3>玫瑰市场：均衡是怎么形成的</h3>
+      <p>看一个具体例子：玫瑰市场。横轴是玫瑰的<span class="term">数量</span><span class="term-en">（Quantity, Q）</span>，纵轴是<span class="term">价格</span><span class="term-en">（Price, P）</span>。</p>
+      <ul>
+        <li><span class="term">需求曲线</span><span class="term-en">（Demand Curve）</span>：向下倾斜——价格越高，人们想买的数量越少。之后几节课会从第一性原理（消费者选择）把它推导出来。</li>
+        <li><span class="term">供给曲线</span><span class="term-en">（Supply Curve）</span>：向上倾斜——市场价格越高，企业越愿意多生产，因为能赚更多钱。它的推导更难，要花大约 12 节课。</li>
+      </ul>
+
+      <div id="fig-rose-market"></div>
+
+      <p><strong>图的解读</strong>：两条曲线的交点是<span class="term">市场均衡</span><span class="term-en">（Market Equilibrium）</span>，本图中为 <strong>P* = $3，Q* = 600 枝</strong>。在这一点上，消费者恰好愿意以 3 美元买 600 枝玫瑰，生产者也恰好愿意以 3 美元供给 600 枝——这是<strong>唯一让买卖双方同时满意</strong>的价格-数量组合。若价格高于 3 美元，供给超过需求，卖不完的玫瑰会迫使价格回落；若低于 3 美元，需求超过供给，抢购会推高价格。市场就这样被"剪刀"裁到了均衡点。</p>
+      <p><strong>模型的优点</strong>：两条线就同时解释了价格的形成（水为什么便宜、钻石为什么贵）和数量的决定，且能用于预测外生变化的影响。<strong>模型的缺点</strong>：假定价格可以灵活调整、买卖双方都是价格接受者；供求曲线本身的来源（偏好、成本）被暂时当作黑箱，要等消费者理论与生产理论讲完后才真正闭合。</p>
+
+      <!-- ==================== 实证 vs 规范 ==================== -->
+      <h2>四、实证分析 vs 规范分析</h2>
+
+      <h3>两种问题</h3>
+      <ul>
+        <li><span class="term">实证分析</span><span class="term-en">（Positive Analysis）</span>：研究"世界<strong>是</strong>什么样"的问题。</li>
+        <li><span class="term">规范分析</span><span class="term-en">（Normative Analysis）</span>：研究"世界<strong>应该是</strong>什么样"的问题。</li>
+      </ul>
+
+      <h3>案例：eBay 卖肾</h3>
+      <p>几年前，有人在 eBay 上拍卖自己的一个肾（人有两个肾，一个就能活）。起拍价 25,000 美元，在被 eBay 叫停之前，价格一路飙升到 <strong>500 万美元</strong>。</p>
+      <p><strong>实证问题：为什么价格会这么高？</strong>这是亚当·斯密"剪刀"的直接应用——供给极低（很少有人愿意卖肾），需求极高（没有肾移植就会死）。供求模型预测：极低供给 × 极高需求 = 极高的价格。</p>
+
+      <div id="fig-kidney-market"></div>
+
+      <p><strong>图的解读</strong>：肾脏的供给曲线几乎是垂直的（哪怕价格从 0 涨到数百万美元，愿意卖肾的人也几乎不增加），而需求曲线处在极高的位置（对等待移植的病人来说这是生死问题）。两条曲线在很靠左、很靠上的位置相交：数量极小（图中 Q≈1，即只有一位卖家），价格极高（P≈500 万美元，注意纵轴单位是万美元，起拍价 2.5 万美元在图上几乎贴着横轴）。这正是一次教科书式的实证分析——不问"该不该"，只用供求解释"为什么"。</p>
+
+      <h3>规范问题：应不应该允许卖肾？</h3>
+      <p><strong>标准经济学观点：应该允许。</strong>成千上万的人因为等不到肾移植而死亡，他们愿意花大价钱活下去；同时数亿人有两个肾，其中许多穷人卖掉一个肾换来的钱可以改变生活。这是一笔让<strong>双方都变得更好</strong>的交易。</p>
+      <p><strong>但反对者提出三类理由：</strong></p>
+      <ol>
+        <li><span class="term">市场失灵</span><span class="term-en">（Market Failure）</span>：比如欺诈（你无法确定买到的是不是真肾）和信息不完全（你真的清楚只剩一个肾对余生的影响吗？）。</li>
+        <li><span class="term">公平</span><span class="term-en">（Equity / Fairness）</span>：合法化会造就一个"只有富人才能得到肾"的世界。目前器官分配基于等待名单而非财富——MIT 的 Nikhil Agarwal 教授就在用经济模型研究如何优化器官分配。</li>
+        <li><span class="term">行为经济学</span><span class="term-en">（Behavioral Economics）</span>：人并不总是完全理性。一个极度贫困的人可能在没有充分评估长期风险的情况下卖掉自己的肾。</li>
+      </ol>
+      <div class="callout warn">
+        <strong>纪律</strong>：规范分析必须建立在实证分析之上。不先用供求模型搞清楚"这个市场实际会怎样运行"，就直接跳到"该不该允许"，结论是没有根基的。这也是本课程坚持从基本框架学起的原因。
+      </div>
+
+      <!-- ==================== 资本主义 vs 指令性经济 ==================== -->
+      <h2>五、资本主义 vs 指令性经济：看不见的手</h2>
+
+      <h3>两种组织经济的方式</h3>
+      <table>
+        <thead>
+          <tr><th></th><th>资本主义经济（Capitalistic Economy）</th><th>指令性经济（Command Economy）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>谁做决策</strong></td><td>个人和企业决定生产与消费什么；政府只设定基本"交通规则"（如防欺诈）</td><td>政府做出所有生产和消费决策：生产多少汽车、多少衬衫，谁能得到它们</td></tr>
+          <tr><td><strong>典型代表</strong></td><td>美国</td><td>1989 年之前的苏联</td></tr>
+          <tr><td><strong>实际效果</strong></td><td>带来巨大的经济增长（美国成为世界最富国家），但也带来主要发达国家中最大的贫富差距</td><td>理论上确保公平，实践中效果很差：腐败丛生，最终拖垮了苏联经济</td></tr>
+        </tbody>
+      </table>
+
+      <h3>看不见的手</h3>
+      <p>亚当·斯密提出<span class="term">看不见的手</span><span class="term-en">（Invisible Hand）</span>：在资本主义经济中，当消费者和企业各自追求自身利益时，市场最终会实现对社会最有利的结果——仿佛有一只看不见的手在引导。本课程前三分之二把"对社会最有利"定义为<span class="term">剩余最大化</span><span class="term-en">（Maximum Surplus）</span>：生产并消费了最多人们所珍视的东西。后三分之一再来讨论这只手在哪里会失灵（市场失灵、公平、行为经济学）。</p>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>六、总结</h2>
+
+      <h3>思想链路</h3>
+      <p><strong>核心问题</strong>（稀缺世界如何做决策）→ <strong>简化模型</strong>（供求剪刀，接受巨大简化假设）→ <strong>推导</strong>（需求下倾 + 供给上倾 ⇒ 唯一均衡 P*=$3、Q*=600）→ <strong>实际应用</strong>（解释水与钻石悖论、eBay 肾价）→ <strong>局限性</strong>（模型不是定律；市场失灵与公平问题留待课程后半段）。</p>
+
+      <h3>实证 vs 规范对比表</h3>
+      <table>
+        <thead>
+          <tr><th></th><th>实证分析（Positive Analysis）</th><th>规范分析（Normative Analysis）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>研究什么</strong></td><td>世界"是"什么样</td><td>世界"应该是"什么样</td></tr>
+          <tr><td><strong>eBay 卖肾案例</strong></td><td>为什么价格飙到 500 万美元？（供给极低 + 需求极高）</td><td>应不应该允许出售肾脏？（效率 vs 公平、市场失灵、有限理性）</td></tr>
+          <tr><td><strong>能否证伪</strong></td><td>能——可以用数据和事实检验对错</td><td>不能——涉及价值判断，事实无法判定对错</td></tr>
+        </tbody>
+      </table>
+
+      <h3>课程展望</h3>
+      <ol>
+        <li>先看需求侧：消费者如何在预算约束下做决策，实现<span class="term">效用最大化</span><span class="term-en">（Utility Maximization）</span>；</li>
+        <li>再看供给侧：企业如何决定生产什么，不同市场结构（完全竞争、垄断）如何影响行为；</li>
+        <li>把供给与需求合起来，分析市场均衡；</li>
+        <li>最后讨论理想模型在现实中如何失效：市场失灵、公平与行为经济学。</li>
+      </ol>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/01-introduction.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：模型的权衡 —— 现实解释力 vs 易处理性（概念示意） =====
+    Charts.xy(document.getElementById('fig-model-tradeoff'), {
+      xLabel: '模型复杂度 →',
+      yLabel: '',
+      xMax: 10, yMax: 10,
+      xTicks: [], yTicks: [],
+      caption: '图 1：模型的权衡 —— 越复杂越贴近现实，但越难处理（概念示意，无具体单位）',
+      series: [
+        { points: [[0.5, 1.0], [1.5, 2.9], [2.8, 4.4], [4.0, 5.2], [5.5, 6.0], [7.0, 6.7], [8.5, 7.1], [9.5, 7.3]], type: 'spline', color: '#15803d', label: '现实解释力（随复杂度上升，增速递减）' },
+        { points: [[0.5, 9.0], [1.5, 7.6], [2.8, 6.3], [4.0, 5.2], [5.5, 4.0], [7.0, 2.9], [8.5, 2.1], [9.5, 1.6]], type: 'spline', color: '#dc2626', label: '易处理性（随复杂度上升而下降）' },
+      ],
+      markers: [
+        { x: 4.0, y: 5.2, label: '经济学的选择：足够简单，足够有用', color: '#1d4ed8', shape: 'star', legend: '平衡点（本课程的工作区间）', labelDx: 12, labelDy: -6 },
+      ],
+    });
+
+    // ===== 图2：玫瑰市场 —— 供求均衡 P*=$3, Q*=600 =====
+    // 需求：过 (0,7) 与 (1050,0)，恰过均衡点 (600,3)；供给：过 (0,0.5) 与 (1200,5.5)，恰过 (600,3)
+    Charts.sd(document.getElementById('fig-rose-market'), {
+      xLabel: '玫瑰数量 Q（枝）',
+      yLabel: '价格 P（美元/枝）',
+      xMax: 1200, yMax: 8, xStep: 200, yStep: 1,
+      caption: '图 2：玫瑰市场的供给与需求 —— 均衡 P* = $3，Q* = 600 枝',
+      series: [
+        { points: [[0, 7], [1050, 0]], type: 'linear', color: '#2563eb', label: '需求曲线 D（向下倾斜）' },
+        { points: [[0, 0.5], [1200, 5.5]], type: 'linear', color: '#d97706', label: '供给曲线 S（向上倾斜）' },
+      ],
+      markers: [
+        { x: 600, y: 3, label: '市场均衡 (Q*=600, P*=$3)', color: '#dc2626', legend: '市场均衡', guides: true, gxLabel: 'Q* = 600', gyLabel: 'P* = $3', labelDx: 14, labelDy: -10 },
+      ],
+    });
+
+    // ===== 图3：eBay 肾脏市场 —— 近垂直的供给 × 极高的需求 ⇒ 极高的价格 =====
+    // 需求与供给在 (1.0, 500) 相交；起拍价 2.5 万美元 ≈ 供给曲线上 P=25 处
+    Charts.sd(document.getElementById('fig-kidney-market'), {
+      xLabel: '肾脏数量 Q（个）',
+      yLabel: '价格 P（万美元）',
+      xMax: 2.2, yMax: 600, xStep: 0.5, yStep: 100,
+      caption: '图 3：eBay 肾脏拍卖的供求分析 —— 均衡价格约 500 万美元（起拍价 2.5 万美元）',
+      series: [
+        { points: [[0, 600], [0.4, 570], [0.7, 540], [1.0, 500], [1.4, 420], [1.8, 270], [2.05, 120], [2.2, 0]], type: 'spline', color: '#2563eb', label: '需求曲线 D（等待移植的病人，需求极高）' },
+        { points: [[0.85, 0], [0.95, 200], [1.0, 500], [1.02, 600]], type: 'linear', color: '#d97706', label: '供给曲线 S（近垂直：极少人愿意卖肾）' },
+      ],
+      markers: [
+        { x: 1.0, y: 500, label: '均衡 (Q≈1, P≈500万美元)', color: '#dc2626', legend: '市场均衡', guides: true, gxLabel: 'Q≈1', gyLabel: 'P≈500', labelDx: 12, labelDy: -8 },
+        { x: 0.865, y: 25, label: '起拍价 2.5 万美元', color: '#6b7280', legend: '起拍价', labelDx: 10, labelDy: 14 },
+      ],
+    });
+  </script>
+</body>
+</html>

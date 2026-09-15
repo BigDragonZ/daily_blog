@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 消费者选择 II - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>03 消费者选择 II：需求推导、弹性与收入/替代效应</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 4 讲（L04）：从效用函数与预算约束出发，严格推导出第一课就直接使用的<span class="term">需求曲线</span><span class="term-en">（Demand Curve）</span>；讨论决定其形状的<span class="term">需求弹性</span>；再看收入变化如何影响需求（恩格尔曲线）；最后把价格变化的影响分解为替代效应与收入效应，并解释"需求曲线向上倾斜"的极端情形——吉芬品。</p>
+
+      <!-- ==================== 一、推导需求曲线 ==================== -->
+      <h2>一、从效用推导需求曲线（Deriving the Demand Curve）</h2>
+      <p><strong>反直觉开场：</strong>"需求曲线向下倾斜"人人都背过——但它并不是一条公理。它能从"快乐函数"（效用函数）加一条预算线<strong>严格推导</strong>出来；而且在极端情况下，它甚至可以<strong>向上倾斜</strong>（见本文第五节的吉芬品）。</p>
+      <p>回到上一篇的例子，只需要四个要素就能推导需求曲线：</p>
+      <ul>
+        <li><strong>偏好</strong>：效用函数 U = P × C（披萨份数 × 饼干块数）；</li>
+        <li><strong>收入</strong>：父母给了 72 美元；</li>
+        <li><strong>价格</strong>：披萨 12 美元/份，饼干 6 美元/块（这两个价格随后会变动）。</li>
+      </ul>
+      <p>价格和收入是无可争议的客观事实，效用函数只是对偏好形态的一个合理假设——但仅凭这四样，需求曲线就被唯一确定了。</p>
+
+      <h3>第一步：旋转预算线，找出三个最优消费点</h3>
+      <p>保持收入和披萨价格不变，只让<strong>饼干价格</strong>变动。由于 Y 轴截距（最多买 72/12 = 6 份披萨）不变，<span class="term">预算约束线</span><span class="term-en">（Budget Constraint, BC）</span>只是绕 Y 轴截距<strong>旋转</strong>，其斜率为 −Pc/Pp：</p>
+      <ul>
+        <li><strong>BC₁</strong>（Pc = $6）：X 轴截距 72/6 = 12，斜率 −6/12 = <strong>−1/2</strong>。最优点 <strong>A</strong>：6 块饼干 + 3 份披萨；</li>
+        <li><strong>BC₂</strong>（Pc = $9）：X 轴截距 72/9 = 8，斜率 −9/12 = <strong>−3/4</strong>（更陡）。最优点 <strong>B</strong>：4 块饼干 + 3 份披萨；</li>
+        <li><strong>BC₃</strong>（Pc = $4）：X 轴截距 72/4 = 18，斜率 −4/12 = <strong>−1/3</strong>（更平）。最优点 <strong>C</strong>：9 块饼干 + 3 份披萨。</li>
+      </ul>
+      <p>每个最优点都是预算线与最高<span class="term">无差异曲线</span><span class="term-en">（Indifference Curve）</span>的切点，通过对约束优化问题求解得到。</p>
+
+      <h3>第二步：把"价格-数量"组合描到另一张图上</h3>
+      <p>需求曲线的定义就是<strong>价格与需求量之间的关系</strong>。我们刚刚已经得到了三个"饼干价格 → 饼干需求量"的组合：$6→6 块（A）、$9→4 块（B）、$4→9 块（C）。把这三个点描到"数量-价格"坐标系中并连成线，就推导出了需求曲线（对本例的效用函数，它恰好是 Q = 36/Pc）。</p>
+
+      <div class="figure-pair">
+        <div id="fig-demand-derive"></div>
+        <div id="fig-demand-curve"></div>
+      </div>
+      <p><strong>图 1 / 图 2 解读：</strong>左图中，饼干涨价（$6→$9）使预算线从 BC₁ 内旋到 BC₂，切点从 A(6, 3) 移到 B(4, 3)；饼干降价（$6→$4）使预算线外旋到 BC₃，切点移到 C(9, 3)。右图把这三个切点"翻译"成价格-数量点 A′、B′、C′ 并连线——需求曲线就这样从偏好与预算约束中推导出来了。它向下倾斜，因为在给定效用函数下，商品价格上升时你会减少对它的需求。</p>
+
+      <div class="callout">
+        <strong>课堂问答：</strong>学生问："饼干价格变化时，披萨需求量始终是 3 份，这是普遍规律吗？"教授答：<strong>不是</strong>。这是 U = P × C 这个特定效用函数的特性——它使一种商品的需求量只取决于自身价格和收入，不受其他商品价格影响，称为<span class="term">平坦的价格消费曲线</span><span class="term-en">（Flat Price Consumption Curve）</span>。更一般的效用函数下，一种商品的价格变化会影响所有商品的需求量。选这个简化函数是为了在不引入额外复杂性的情况下推导出一条合理的需求曲线。
+      </div>
+      <p><strong>这个推导模型的优缺点：</strong>优点是只用四个可检验的要素（偏好、收入、两个价格）就解释了需求曲线的来源，逻辑完全透明；缺点是结论依赖效用函数的具体形式——换一个效用函数，"披萨需求恒为 3"这类简洁性质就消失了。</p>
+
+      <!-- ==================== 二、需求弹性 ==================== -->
+      <h2>二、需求弹性（Price Elasticity of Demand, ε）</h2>
+      <p><strong>反直觉开场：</strong>胰岛素价格翻倍，糖尿病人照买不误；某品牌口香糖贵了一分钱，却可能一块都卖不出去。同样是"涨价"，需求量的反应为何天差地别？</p>
+      <p>需求曲线的具体形状由<span class="term">需求弹性</span><span class="term-en">（Elasticity of Demand, ε）</span>刻画：</p>
+      <p style="text-align:center;"><strong>ε = (ΔQ / Q) / (ΔP / P)</strong>　即　需求量变化百分比 ÷ 价格变化百分比</p>
+      <p>例如价格每上涨 1%、需求量下降 2%，则 ε = −2。只要需求曲线向下倾斜，ε 就小于或等于零。理解这个概念，最好的入口是两个极端：</p>
+      <ul>
+        <li><span class="term">完全无弹性</span><span class="term-en">（Perfectly Inelastic）</span>：<strong>ε = 0</strong>。无论价格如何变化，需求量都保持不变，需求曲线是一条<strong>垂直线</strong>。经典例子是<strong>胰岛素</strong>：糖尿病人没有它就会死亡，剂量固定，价格不影响需求量。通常发生在商品没有可行替代品时。</li>
+        <li><span class="term">完全有弹性</span><span class="term-en">（Perfectly Elastic）</span>：<strong>ε = −∞</strong>。在某一特定价格下消费者愿意购买任意数量，但价格稍涨一点需求就降为零，需求曲线是一条<strong>水平线</strong>。驱动因素是存在<strong>完美替代品</strong>，例如完全同质的品牌口香糖或快餐汉堡：只要一家贵一分钱，就没人买它。</li>
+      </ul>
+
+      <div class="figure-pair">
+        <div id="fig-elastic-inelastic"></div>
+        <div id="fig-elastic-perfect"></div>
+      </div>
+      <p><strong>图 3 / 图 4 解读：</strong>左图中需求曲线垂直于 Q*——胰岛素的剂量需求不随价格变动（ε = 0）；右图中需求曲线水平于 P*——存在完美替代品时，价格只要略高于 P*，需求量立刻归零（ε = −∞）。两张图是两个极端，现实中的需求曲线介于两者之间。</p>
+      <p><strong>决定弹性的核心因素是<span class="term">可替代性</span><span class="term-en">（Substitutability）</span>：</strong>一种商品的可替代品越多，其需求弹性就越大。这个模型的优点是用一个数字概括了消费者对价格的敏感度，便于比较不同商品；缺点是两个极端情形在现实中几乎不存在，实际弹性还需随价格区间、时间尺度变化，并非固定常数。</p>
+
+      <!-- ==================== 三、恩格尔曲线 ==================== -->
+      <h2>三、收入变化与恩格尔曲线（Engel Curve）</h2>
+      <p>价格之外，收入变化如何影响需求？沿用本例参数（I = $72、Pc = $6、Pp = $12，最优点 A）：</p>
+      <ul>
+        <li>收入增加到 <strong>$96</strong>：预算线向外<strong>平行</strong>移动，你会消费更多披萨和更多饼干（饼干 8 块、披萨 4 份）；</li>
+        <li>收入下降到 <strong>$48</strong>：预算线内移，两种商品都消费更少（饼干 4 块、披萨 2 份）。</li>
+      </ul>
+      <p>把"收入 → 需求量"的关系绘成图，就得到<span class="term">恩格尔曲线</span><span class="term-en">（Engel Curve）</span>——在价格不变的情况下，收入如何影响一种商品的需求量。与之配套的指标是<span class="term">收入弹性</span><span class="term-en">（Income Elasticity of Demand, γ）</span>：</p>
+      <p style="text-align:center;"><strong>γ = (ΔQ / Q) / (ΔY / Y)</strong>　即　需求量变化百分比 ÷ 收入变化百分比</p>
+      <p>根据 γ 的取值，商品可以分为四类：</p>
+      <ul>
+        <li><span class="term">正常品</span><span class="term-en">（Normal Goods）</span>：<strong>γ &gt; 0</strong>，收入增加就买得更多。本例的饼干和披萨都是正常品；</li>
+        <li><span class="term">劣等品</span><span class="term-en">（Inferior Goods）</span>：<strong>γ &lt; 0</strong>，收入增加反而买得更少。典型例子是快餐、土豆——人们变富后从快餐转向高档餐厅；</li>
+        <li><span class="term">奢侈品</span><span class="term-en">（Luxuries）</span>：<strong>γ &gt; 1</strong>（正常品的子类），收入增加时花在这类商品上的预算<strong>份额</strong>上升，如珠宝、游艇；</li>
+        <li><span class="term">必需品</span><span class="term-en">（Necessities）</span>：<strong>0 &lt; γ &lt; 1</strong>，花的绝对金额随收入增加，但占总预算的份额下降，如食物——富人吃得更贵，但食物开支占比反而更低。</li>
+      </ul>
+
+      <div id="fig-engel"></div>
+      <p><strong>图 5 解读：</strong>蓝线是本例饼干的恩格尔曲线 Q = Y/12，过原点、γ = 1，三个圆点对应讲义中的三个收入水平（$48→4 块、$72→6 块、$96→8 块）。绿线（必需品）向上但越来越平——收入越高，多花在上面的比例越小；橙线（奢侈品）越来越陡——预算份额随收入上升；红线（劣等品）干脆向下倾斜——越富买得越少。</p>
+
+      <!-- ==================== 四、替代效应与收入效应 ==================== -->
+      <h2>四、替代效应与收入效应（Substitution Effect &amp; Income Effect）</h2>
+      <p><strong>反直觉开场：</strong>饼干涨价让你少买饼干，这件事里其实藏着<strong>两股不同的力量</strong>——一股来自"饼干相对变贵了"，另一股来自"你实际上变穷了"。把它们拆开，才能解释为什么劣等品的需求反应可能违背直觉。</p>
+      <p>消费者对价格变化的反应可以分解为两个理论部分：</p>
+      <ul>
+        <li><span class="term">替代效应</span><span class="term-en">（Substitution Effect, SE）</span>：在<strong>保持效用水平不变</strong>的情况下，由相对价格变化引起的需求量变化；</li>
+        <li><span class="term">收入效应</span><span class="term-en">（Income Effect, IE）</span>：在<strong>保持价格不变</strong>的情况下，由价格变化导致的<strong>实际购买力（有效收入）</strong>变化引起的需求量变化。</li>
+      </ul>
+
+      <h3>分解方法：虚构预算线</h3>
+      <p>以饼干涨价（$6→$9）为例，从初始点 A 到最终点 C 的移动被拆成两步：</p>
+      <ol>
+        <li><strong>A → B（替代效应）</strong>：画一条与新预算线 BC₂ 平行的<span class="term">虚构预算约束线</span> BC′，使其与<strong>原来的</strong>无差异曲线 U₁ 相切，切点即 B。这一步保持"快乐程度"不变，只反映相对价格变化：饼干相对披萨变贵，于是用披萨替代饼干。对本例可精确求解：B = (4.9, 3.7)。<strong>替代效应的方向永远确定：涨价 → 需求量减少，降价 → 需求量增加。</strong></li>
+        <li><strong>B → C（收入效应）</strong>：从虚构的 BC′ 平行移动到真实的 BC₂，效用以 U₁ 降到 U₂。这一步反映涨价使你"变穷"（机会集缩小）。饼干是正常品，变穷就买得更少——收入效应与替代效应<strong>同向</strong>，都使饼干消费下降（6 → 4.9 → 4）。</li>
+      </ol>
+
+      <div id="fig-decomp-normal"></div>
+      <p><strong>图 6 解读：</strong>A(6, 3) 是涨价前最优点；B(4.9, 3.7) 是虚构预算线 BC′（灰色虚线，与 BC₂ 平行）与旧无差异曲线 U₁ 的切点；C(4, 3) 是最终最优点。A→B 的虚线段是替代效应（饼干 6→4.9，恒为负），B→C 的虚线段是收入效应（饼干 4.9→4，正常品同向为负）。</p>
+
+      <h3>劣等品：两股力量方向相反</h3>
+      <p>如果商品是<strong>劣等品</strong>，局面立刻有趣起来。以"牛排 vs 土豆"为例，土豆是劣等品，假设土豆涨价：</p>
+      <ul>
+        <li><strong>替代效应（A→B）</strong>：土豆变贵，用牛排替代土豆 → 土豆消费减少（方向恒为负）；</li>
+        <li><strong>收入效应（B→C）</strong>：涨价使你变穷，但土豆是劣等品，变穷反而<strong>增加</strong>对它的消费（方向为正）。</li>
+      </ul>
+      <p>两股力量方向相反，总效应取决于谁更强。下图中替代效应更大，土豆消费总体仍是下降的（5 → 3.95 → 4.6）。</p>
+
+      <div id="fig-decomp-inferior"></div>
+      <p><strong>图 7 解读：</strong>A(5, 5) 为涨价前最优点；B(3.95, 6.3) 为虚构预算线 BC′ 与旧无差异曲线 U₁ 的切点（替代效应：土豆 5→3.95）；C(4.6, 2.6) 为最终最优点（收入效应：土豆 3.95→4.6，因劣等品而反弹）。总效应 5→4.6 仍为下降——本图替代效应压过了收入效应。</p>
+
+      <p>两种情形下各效应的方向汇总如下（与讲义一致）：</p>
+      <table>
+        <thead>
+          <tr><th>价格变化</th><th>替代效应</th><th>收入效应（正常品）</th><th>总效应（正常品）</th><th>收入效应（劣等品）</th><th>总效应（劣等品）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>价格上涨</strong></td><td>减少（−）</td><td>减少（−）</td><td><strong>减少（−）</strong></td><td>增加（+）</td><td><strong>不确定（?）</strong></td></tr>
+          <tr><td><strong>价格下跌</strong></td><td>增加（+）</td><td>增加（+）</td><td><strong>增加（+）</strong></td><td>减少（−）</td><td><strong>不确定（?）</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>这个分解模型的优缺点：</strong>优点是把"价格变化 → 需求变化"的黑箱拆成了两个有明确经济学含义的机制，既能解释正常品也能容纳反常情形；缺点是替代效应与收入效应在现实中不可直接观测（虚构预算线只是思想实验），分解结果依赖效用函数的设定。</p>
+
+      <!-- ==================== 五、吉芬品 ==================== -->
+      <h2>五、吉芬品（Giffen Good）：需求曲线向上倾斜</h2>
+      <p><strong>反直觉开场：</strong>大米降价，贫困家庭反而<strong>少买</strong>大米——这不是行为反常，而是被中国的田野实验验证过的经济学现象。</p>
+      <p>理论上存在一种可能：一种商品是劣等品，且其<strong>收入效应强大到超过替代效应</strong>。此时价格上涨，替代效应让你少买、收入效应让你更多买且占上风，<strong>总需求量反而增加</strong>——需求曲线向上倾斜。这种商品称为<span class="term">吉芬品</span><span class="term-en">（Giffen Good）</span>。</p>
+      <p>吉芬品在现实中极其罕见，如同神话中的"格里芬"（Griffin）。但研究者在中国非常贫困的地区发现了类似行为：向家庭发放可降低大米价格的优惠券后，那些极度贫困、几乎只靠大米果腹的家庭，在大米降价时感觉自己"变富了"——他们没有用省下的钱买更多大米，而是买了少量肉等其他食物，<strong>反而减少</strong>了大米消费。对这些家庭而言，大米就是吉芬品。</p>
+
+      <div id="fig-giffen"></div>
+      <p><strong>图 8 解读：</strong>大米券使米价下降，预算线从 BC₁ 外旋到 BC₂。A(2.5, 5) 为领券前最优点；B(3.5, 3.5) 为虚构预算线 BC′ 与 U₁ 的切点——替代效应使大米消费增加（2.5→3.5，方向正常）；但收入效应（B→C）使大米消费从 3.5 大幅回落到 2（变"富"后少吃大米多吃肉），<strong>压过了替代效应</strong>。总效应：米价下降，大米需求反而减少（2.5→2）——需求曲线向上倾斜。</p>
+
+      <!-- ==================== 六、总结 ==================== -->
+      <h2>六、总结：三类商品的效应分解符号</h2>
+      <table>
+        <thead>
+          <tr><th>商品类型</th><th>收入弹性 γ</th><th>涨价·替代效应</th><th>涨价·收入效应</th><th>涨价·总效应</th><th>需求曲线形态</th><th>例子</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="term">正常品</span><span class="term-en">（Normal Good）</span></td><td>γ &gt; 0</td><td>减少（−）</td><td>减少（−）</td><td><strong>减少（−）</strong></td><td>向下倾斜</td><td>饼干、披萨</td></tr>
+          <tr><td><span class="term">劣等品</span><span class="term-en">（Inferior Good）</span><br>（替代效应主导）</td><td>γ &lt; 0</td><td>减少（−）</td><td>增加（+）</td><td><strong>减少（−）</strong></td><td>仍向下倾斜</td><td>快餐、土豆</td></tr>
+          <tr><td><span class="term">吉芬品</span><span class="term-en">（Giffen Good）</span><br>（收入效应主导）</td><td>γ &lt; 0</td><td>减少（−）</td><td>增加（+，更强）</td><td><strong>增加（+）</strong></td><td><strong>向上倾斜</strong></td><td>极贫家庭的大米</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（需求曲线从何而来、何时反常）→ 简化模型（效用函数 U = P·C + 预算约束）→ 推导（旋转预算线找切点 → 描成需求曲线；价格效应分解为替代 + 收入）→ 实际应用（用弹性判断价格敏感度、用恩格尔曲线给商品分类、吉芬品解释极端贫困下的反常需求）→ 局限性（结论依赖效用函数形式、两效应不可直接观测、吉芬品极罕见）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/03-consumer-choice-2.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // 双曲线（无差异曲线 U=k 与需求曲线 P=k/Q）路径点生成
+    function hyperbola(k, xs) {
+      return xs.map(function (x) { return [x, +(k / x).toFixed(2)]; });
+    }
+
+    // ===== 图1（左）：预算线旋转 + 三条无差异曲线 + 切点 A/B/C =====
+    Charts.xy(document.getElementById('fig-demand-derive'), {
+      xLabel: '饼干（块）',
+      yLabel: '披萨（份）',
+      xMax: 20, yMax: 8, xStep: 2, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 1：饼干价格变动 → 预算线绕 Y 轴旋转 → 三个最优切点 A / B / C',
+      series: [
+        { points: [[0, 6], [12, 0]], type: 'linear', color: '#2563eb', label: 'BC₁（Pc=$6，斜率 −1/2）' },
+        { points: [[0, 6], [8, 0]], type: 'linear', color: '#dc2626', label: 'BC₂（Pc=$9，斜率 −3/4）' },
+        { points: [[0, 6], [18, 0]], type: 'linear', color: '#15803d', label: 'BC₃（Pc=$4，斜率 −1/3）' },
+        { points: hyperbola(18, [2.4, 3, 3.6, 4.5, 5.2, 6, 7, 8, 9, 10, 11, 12, 13]), type: 'spline', color: '#7c3aed', dash: true, label: 'U₁=18（过 A）' },
+        { points: hyperbola(12, [2, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]), type: 'spline', color: '#a78bfa', dash: true, label: 'U₂=12（过 B）' },
+        { points: hyperbola(27, [3.6, 4.5, 5.4, 6.75, 9, 10.8, 13.5, 16.9, 18]), type: 'spline', color: '#0d9488', dash: true, label: 'U₃=27（过 C）' },
+      ],
+      markers: [
+        { x: 6, y: 3, label: 'A (6饼干, 3披萨)', color: '#2563eb', legend: '最优消费点（切点）', labelDx: 10, labelDy: -14 },
+        { x: 4, y: 3, label: 'B (4, 3)', color: '#dc2626', labelDx: -68, labelDy: 26 },
+        { x: 9, y: 3, label: 'C (9, 3)', color: '#15803d', labelDx: 10, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图2（右）：把三个价格-数量组合描成需求曲线 =====
+    Charts.xy(document.getElementById('fig-demand-curve'), {
+      xLabel: '饼干需求量 Q（块）',
+      yLabel: '饼干价格 P（美元）',
+      xMax: 12, yMax: 12, xStep: 2, yStep: 2,
+      legendPosition: 'top',
+      caption: '图 2：三个价格-数量点连线 → 推导出的饼干需求曲线',
+      series: [
+        { points: hyperbola(36, [3, 3.6, 4, 4.5, 5.1, 6, 7.2, 9, 10.3, 12]), type: 'spline', color: '#b91c1c', label: '饼干需求曲线（Q = 36/Pc）' },
+      ],
+      markers: [
+        { x: 4, y: 9, label: 'B′（Pc=$9 → 4块）', color: '#dc2626', legend: '由左图切点转换而来', labelDx: 12, labelDy: -8 },
+        { x: 6, y: 6, label: 'A′（Pc=$6 → 6块）', color: '#2563eb', labelDx: 12, labelDy: -12 },
+        { x: 9, y: 4, label: 'C′（Pc=$4 → 9块）', color: '#15803d', labelDx: -14, labelDy: 24 },
+      ],
+    });
+
+    // ===== 图3（左）：完全无弹性——胰岛素，垂直需求曲线 =====
+    Charts.xy(document.getElementById('fig-elastic-inelastic'), {
+      xLabel: '胰岛素需求量 Q',
+      yLabel: '胰岛素价格 P',
+      xMax: 10, yMax: 10, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：完全无弹性（ε = 0）——垂直的需求曲线',
+      series: [
+        { points: [[5, 0], [5, 10]], type: 'linear', color: '#2563eb', label: '需求曲线（垂直，ε = 0）' },
+      ],
+      markers: [
+        { x: 5, y: 5, color: '#2563eb', guides: true, gxLabel: 'Q*', label: '无论价格如何变化，剂量固定', legend: '需求量恒为 Q*', labelDx: 14, labelDy: -10 },
+      ],
+    });
+
+    // ===== 图4（右）：完全有弹性——完美替代品，水平需求曲线 =====
+    Charts.xy(document.getElementById('fig-elastic-perfect'), {
+      xLabel: '某品牌口香糖需求量 Q',
+      yLabel: '价格 P',
+      xMax: 10, yMax: 10, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：完全有弹性（ε = −∞）——水平的需求曲线',
+      series: [
+        { points: [[0, 6], [10, 6]], type: 'linear', color: '#dc2626', label: '需求曲线（水平，ε = −∞）' },
+      ],
+      markers: [
+        { x: 5, y: 6, color: '#dc2626', guides: true, gyLabel: 'P*', label: '价格略高于 P* → 需求降为 0', legend: '价格上限 P*', labelDx: 14, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图5：恩格尔曲线——收入与需求量的关系（商品四分法） =====
+    Charts.xy(document.getElementById('fig-engel'), {
+      xLabel: '收入 Y（美元）',
+      yLabel: '需求量 Q',
+      xMax: 120, yMax: 14, xStep: 20, yStep: 2,
+      legendPosition: 'top',
+      caption: '图 5：恩格尔曲线的四种形态 —— 必需 / 奢侈 / 正常（本例）/ 劣等',
+      series: [
+        { points: [[0, 0], [12, 3.79], [24, 5.37], [48, 7.59], [72, 9.3], [96, 10.73], [120, 12]], type: 'spline', color: '#15803d', label: '必需品（0<γ<1，如食物）' },
+        { points: [[0, 0], [24, 0.48], [48, 1.92], [72, 4.32], [96, 7.68], [120, 12]], type: 'spline', color: '#d97706', label: '奢侈品（γ>1，如珠宝、游艇）' },
+        { points: [[0, 0], [48, 4], [72, 6], [96, 8], [120, 10]], type: 'linear', color: '#2563eb', label: '饼干（本例 Q=Y/12，γ=1）' },
+        { points: [[0, 10], [40, 8], [80, 6], [120, 4]], type: 'linear', color: '#dc2626', label: '劣等品（γ<0，如快餐）' },
+      ],
+      markers: [
+        { x: 48, y: 4, label: '($48 → 4块)', color: '#2563eb', legend: '本例最优消费点', labelDx: 8, labelDy: 18 },
+        { x: 72, y: 6, label: '($72 → 6块)', color: '#2563eb', labelDx: 8, labelDy: -16 },
+        { x: 96, y: 8, label: '($96 → 8块)', color: '#2563eb', labelDx: 8, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图6：正常品的替代/收入效应分解（饼干涨价 $6→$9） =====
+    Charts.xy(document.getElementById('fig-decomp-normal'), {
+      xLabel: '饼干（块）',
+      yLabel: '披萨（份）',
+      xMax: 14, yMax: 9, xStep: 2, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 6：虚构预算线法分解（正常品）—— A→B 替代效应，B→C 收入效应',
+      series: [
+        { points: [[0, 6], [12, 0]], type: 'linear', color: '#2563eb', label: 'BC₁（Pc=$6）' },
+        { points: [[0, 6], [8, 0]], type: 'linear', color: '#dc2626', label: 'BC₂（Pc=$9）' },
+        { points: [[0, 7.35], [9.8, 0]], type: 'linear', color: '#6b7280', dash: true, label: '虚构预算线 BC′（∥ BC₂）' },
+        { points: hyperbola(18, [2.4, 3, 3.6, 4.5, 5.2, 6, 7, 8, 9, 10, 11, 12, 13]), type: 'spline', color: '#7c3aed', dash: true, label: 'U₁（原效用 = 18）' },
+        { points: hyperbola(12, [2, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]), type: 'spline', color: '#a78bfa', dash: true, label: 'U₂（新效用 = 12）' },
+      ],
+      markers: [
+        { x: 6, y: 3, label: 'A (6, 3)', color: '#2563eb', legend: '初始 / 最终最优点', labelDx: 12, labelDy: -14 },
+        { x: 4.9, y: 3.67, label: 'B (4.9, 3.7)', color: '#6b7280', legend: '虚构切点（保持原效用）', lineTo: [6, 3], labelDx: -104, labelDy: -16 },
+        { x: 4, y: 3, label: 'C (4, 3)', color: '#dc2626', lineTo: [4.9, 3.67], labelDx: -24, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图7：劣等品的分解（土豆涨价，替代与收入效应反向） =====
+    Charts.xy(document.getElementById('fig-decomp-inferior'), {
+      xLabel: '土豆（磅）',
+      yLabel: '牛排（份）',
+      xMax: 12, yMax: 14, xStep: 2, yStep: 2,
+      legendPosition: 'top',
+      caption: '图 7：劣等品的分解（土豆涨价）—— 收入效应与替代效应方向相反',
+      series: [
+        { points: [[0, 10], [10, 0]], type: 'linear', color: '#2563eb', label: 'BC₁（土豆涨价前）' },
+        { points: [[0, 10], [6.25, 0]], type: 'linear', color: '#dc2626', label: 'BC₂（土豆涨价后）' },
+        { points: [[0, 12.64], [7.9, 0]], type: 'linear', color: '#6b7280', dash: true, label: '虚构预算线 BC′（∥ BC₂）' },
+        { points: hyperbola(25, [2.2, 2.6, 3.2, 3.95, 5, 6, 7, 8.3, 10]), type: 'spline', color: '#7c3aed', dash: true, label: 'U₁（原效用）' },
+        { points: [[3.4, 4.9], [4.2, 3.2], [4.6, 2.64], [5.4, 1.75], [6.2, 1.3]], type: 'spline', color: '#a78bfa', dash: true, label: 'U₂（新效用）' },
+      ],
+      markers: [
+        { x: 5, y: 5, label: 'A (5, 5)', color: '#2563eb', legend: '初始 / 最终最优点', labelDx: 12, labelDy: -14 },
+        { x: 3.95, y: 6.32, label: 'B (3.95, 6.3)', color: '#6b7280', legend: '虚构切点（保持原效用）', lineTo: [5, 5], labelDx: -118, labelDy: -12 },
+        { x: 4.6, y: 2.64, label: 'C (4.6, 2.6)', color: '#dc2626', lineTo: [3.95, 6.32], labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图8：吉芬品分解（大米降价，收入效应压倒替代效应） =====
+    Charts.xy(document.getElementById('fig-giffen'), {
+      xLabel: '大米（斤）',
+      yLabel: '肉类（份）',
+      xMax: 11, yMax: 11, xStep: 1, yStep: 2,
+      legendPosition: 'top',
+      caption: '图 8：吉芬品（大米券实验）—— 米价下降，大米需求反而减少',
+      series: [
+        { points: [[0, 10], [5, 0]], type: 'linear', color: '#2563eb', label: 'BC₁（领券前，米价高）' },
+        { points: [[0, 10], [10, 0]], type: 'linear', color: '#15803d', label: 'BC₂（大米券后，米价降）' },
+        { points: [[0, 7.08], [7.08, 0]], type: 'linear', color: '#6b7280', dash: true, label: '虚构预算线 BC′（∥ BC₂）' },
+        { points: hyperbola(12.5, [1.4, 1.8, 2.2, 2.5, 3, 3.54, 4.2, 5.2, 6.5, 8]), type: 'spline', color: '#7c3aed', dash: true, label: 'U₁（原效用）' },
+        { points: [[1.2, 8.6], [1.6, 8.4], [2, 8], [2.6, 7.3], [3.4, 6.4], [4.5, 5.4], [6, 4.4], [8, 3.4]], type: 'spline', color: '#a78bfa', dash: true, label: 'U₂（新效用）' },
+      ],
+      markers: [
+        { x: 2.5, y: 5, label: 'A (2.5, 5)', color: '#2563eb', legend: '初始 / 最终最优点', labelDx: 12, labelDy: -12 },
+        { x: 3.54, y: 3.54, label: 'B (3.5, 3.5)', color: '#6b7280', legend: '虚构切点（保持原效用）', lineTo: [2.5, 5], labelDx: 14, labelDy: 22 },
+        { x: 2, y: 8, label: 'C (2, 8)', color: '#15803d', lineTo: [3.54, 3.54], labelDx: 12, labelDy: -12 },
+      ],
+    });
+  </script>
+</body>
+</html>

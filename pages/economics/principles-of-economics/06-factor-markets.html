@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 生产要素市场 - 经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>06 生产要素市场</h1>
+      <p>本篇覆盖《经济学原理》第 18 章与第 21 章：第 18 章分析生产要素（劳动、土地、资本）市场的供给与需求如何决定工资、租金等要素收入；第 21 章用预算约束和无差异曲线建立消费者选择理论，解释需求曲线的来源以及收入效应与替代效应。两章首尾呼应——第 18 章中"工作还是休闲"的劳动供给决策，本身就是第 21 章消费者在"休闲与消费"之间的最优化问题。</p>
+
+      <!-- ==================== Ch18 ==================== -->
+      <h2>Ch18 生产要素市场（The Market for Factors of Production）</h2>
+
+      <h3>核心问题：一个人的收入由什么决定</h3>
+      <p>为什么医生的收入高于高中教师？本章的答案是：<strong>生产要素市场的供给与需求</strong>。<span class="term">生产要素</span><span class="term-en">（Factors of Production）</span>是用于生产物品与服务的投入品（Inputs），通常分为三种：<strong>土地</strong>（物理空间）、<strong>劳动</strong>（人的工作）、<strong>资本</strong>（建筑物与设备）。</p>
+      <p>分析工具与产出市场完全相同——供给和需求。但要注意角色互换：在产出市场，企业是卖方、家庭是买方；在<strong>要素市场，企业是需求方、家庭是供给方</strong>。劳动的价格称为<span class="term">工资</span><span class="term-en">（Wage）</span>，土地和资本的价格称为租金。</p>
+      <div class="callout">
+        企业对投入品的需求被称为<span class="term">派生需求</span><span class="term-en">（Derived Demand）</span>：它<strong>派生自企业生产产出的决策</strong>——如果企业不生产任何产品，也就不需要购买任何投入品。要理解劳动需求，必须先理解企业的生产决策。
+      </div>
+      <p>分析从一家<strong>完全竞争企业</strong>开始：它在产出市场上是价格接受者，在购买投入品的市场上也是价格接受者（相对于两个市场都规模很小），目标是<strong>利润最大化</strong>。以一家生产盒饭（"餐食"）的企业为例。</p>
+
+      <h3>劳动的需求：生产函数与边际产量</h3>
+      <p>企业需要多少工人，取决于工人的生产率，这由<span class="term">生产函数</span><span class="term-en">（Production Function）</span>描述——投入（工人数 L）与产出（餐食数 Q）之间的关系。横轴为劳动量、纵轴为产出量，把各点连接起来得到一条<strong>逐渐变平</strong>的曲线（图 1）。</p>
+
+      <div id="fig-production"></div>
+
+      <p>为什么不是直线？因为<span class="term">边际产量</span><span class="term-en">（Marginal Product of Labor, MPL）</span>——每多雇一个工人带来的产量变化 ΔQ/ΔL（即生产函数曲线的斜率）——在不断下降。这就是<span class="term">边际产量递减规律</span><span class="term-en">（Law of Diminishing Marginal Product）</span>：工作空间和设备等固定投入不变时，随着工人增多，大家开始共享设备、互相妨碍，每个人的生产率下降——正如俗话所说"厨房里的厨子太多了"。</p>
+
+      <h3>边际产量值与雇佣决策</h3>
+      <p>工人多生产的餐食值多少钱？这就是<span class="term">边际产量值</span><span class="term-en">（Value of the Marginal Product, VMPL）</span>（一些教材称"边际收益产品" MRP）：</p>
+      <p><strong>VMPL = 产出价格 P × 边际产量 MPL</strong></p>
+      <p>设每份餐食售价 $10（由餐食市场决定），市场日薪为 $150。把各项数字列入下表：</p>
+      <table>
+        <thead>
+          <tr><th>工人数 L</th><th>产量 Q</th><th>边际产量 MPL</th><th>边际产量值 VMPL = P×MPL</th><th>工资（边际成本）</th><th>雇佣决策</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>0</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>1</td><td>50</td><td>50</td><td>$500</td><td>$150</td><td>雇</td></tr>
+          <tr><td>2</td><td>90</td><td>40</td><td>$400</td><td>$150</td><td>雇</td></tr>
+          <tr><td>3</td><td>120</td><td>30</td><td>$300</td><td>$150</td><td>雇</td></tr>
+          <tr><td>4</td><td>140</td><td>20</td><td>$200</td><td>$150</td><td>雇</td></tr>
+          <tr><td>5</td><td>150</td><td>10</td><td>$100</td><td>$150</td><td><strong>不雇</strong></td></tr>
+        </tbody>
+      </table>
+      <p>决策规则是经济学基本原则的又一次应用：<strong>当且仅当边际收益大于边际成本时才采取行动</strong>。这里边际收益是 VMPL，边际成本是工资。前 4 个工人的 VMPL 都高于 $150，第 5 个工人的 VMPL 只有 $100，不雇——<strong>利润最大化的雇佣量是 4 人</strong>。</p>
+      <p>给定任何市场工资，企业都会沿着 VMPL 曲线雇用工人，直到 <strong>VMPL = 工资</strong>的那一点。因此，<strong>VMPL 曲线就是企业的劳动需求曲线</strong>（图 2）。</p>
+
+      <div id="fig-vmpl"></div>
+
+      <h3>劳动需求曲线的移动</h3>
+      <p>既然劳动需求 = VMPL = P × MPL，任何改变 P 或 MPL 的因素都会使需求曲线移动：</p>
+      <ol>
+        <li><strong>产出价格 P</strong>：产出价格上涨，产出更值钱，生产这些产出的工人也更值钱 → 派生需求增加；反之亦然。</li>
+        <li><strong>技术变革</strong>：改变 MPL。<span class="term">劳动增强型技术</span><span class="term-en">（Labor-augmenting Technology）</span>让现有工人效率更高 → 需求增加；<span class="term">劳动节约型技术</span><span class="term-en">（Labor-saving Technology）</span>（如快餐店自助点餐机）替代人工 → 需求减少。历史上多数技术进步是增强劳动的。</li>
+        <li><strong>其他要素的供给</strong>：资本等其他投入品供给增加，会提高与之配合的劳动的 MPL（厨房里设备更多，厨师生产率更高）→ 劳动需求增加。</li>
+      </ol>
+
+      <h3>劳动的供给</h3>
+      <p>劳动供给背后是每个人"工作多少"的决策，本质是<strong>工作与休闲之间的权衡</strong>：时薪 $20 意味着享受一小时休闲的机会成本是 $20；工资涨到 $25，休闲的机会成本上升，人们倾向于减少休闲、增加工作——劳动供给曲线<strong>向上倾斜</strong>。</p>
+      <p>但情况更复杂：休闲通常是正常品，工资上涨使收入增加，你不需要工作同样长的时间就能赚到和以前一样多的钱。有充分证据表明，工资很高时人们会选择减少工作、享受更多休闲，劳动供给曲线会<strong>向后弯曲</strong>（其微观基础见本篇 Ch21 的应用部分）。入门分析中通常假设它简单地向上倾斜。</p>
+      <p>劳动供给曲线的移动因素：</p>
+      <ol>
+        <li><strong>品味或偏好的变化</strong>：如对工作的态度改变。研究发现 16～24 岁年轻男性的劳动参与率几十年来持续下降（可能原因包括游戏、药物滥用等）。</li>
+        <li><strong>替代机会的变化</strong>：一个市场的工资上涨，会把工人从其他市场吸引过来。</li>
+        <li><strong>工人数量的变化</strong>：重要来源是<strong>移民</strong>——工人迁出会减少原地供给，迁入会增加当地供给。</li>
+      </ol>
+
+      <h3>劳动市场均衡</h3>
+      <p>把供给与需求放在一起：需求曲线背后是企业，供给曲线背后是工人，交点决定均衡工资 W* 和均衡就业量 L*（图 3）。</p>
+
+      <div id="fig-labor-eq"></div>
+
+      <p><strong>例一：供给移动</strong>。假设偏好变化使劳动参与率下降，劳动供给曲线从 S1 左移到 S2：新均衡的工资更高（W2 &gt; W1），就业量更少（L2 &lt; L1）（图 4）。</p>
+
+      <div id="fig-supply-shift"></div>
+
+      <p><strong>例二：需求移动</strong>。假设焊工生产的金属拖车价格上涨，焊工的 VMPL 提高（VMPL = P × MPL），劳动需求从 D1 右移到 D2：焊工的均衡工资和就业量<strong>同时上升</strong>（图 5）。</p>
+
+      <div id="fig-demand-shift"></div>
+
+      <div class="callout">
+        一个基本经济学原理：<strong>你的生活水平取决于你生产他人愿意购买的东西的能力</strong>。你的收入取决于你能创造的边际产量值（VMPL），也取决于市场上有多少人能做同样的工作（供给）。
+      </div>
+
+      <h3>非竞争性要素市场：买方垄断</h3>
+      <p>以上分析假设市场完全竞争。一个非竞争性劳动市场的例子是<span class="term">买方垄断</span><span class="term-en">（Monopsony）</span>：垄断（Monopoly）是市场上只有一个<strong>卖家</strong>，买方垄断是只有一个<strong>买家</strong>。典型情形是"只有一个大工厂的小镇"——该工厂是镇上唯一的雇主；体育经济学中也有很多例子，如美国职业棒球大联盟（MLB）之于顶级棒球运动员。作为劳动力的唯一买家，它拥有市场势力，可以把工资压到竞争性水平之下。</p>
+
+      <h3>土地与资本市场</h3>
+      <p>土地和资本市场的运作方式与劳动市场完全相同。家庭拥有土地和资本并将其出租给企业，供求决定它们的<span class="term">租金价格</span><span class="term-en">（Rental Price）</span>。区别在于：土地的供给曲线通常<strong>非常缺乏弹性</strong>（土地总量相对固定），但基本原理不变——<strong>每种投入品获得的报酬等于它对生产过程的边际贡献价值</strong>。</p>
+
+      <h3>市场是相互关联的</h3>
+      <p>原理课通常只分析单个市场（<span class="term">局部均衡分析</span><span class="term-en">（Partial Equilibrium Analysis）</span>），但现实中一个市场的变化会涟漪般波及其他市场（<span class="term">一般均衡分析</span><span class="term-en">（General Equilibrium Analysis）</span>）。例如：一场风暴摧毁了一批卡车 → 卡车供给下降、价格上涨 → 卡车减少使卡车司机的生产率下降（没有卡车的司机生产率很低）→ 对司机的需求减少 → 司机工资下降。</p>
+      <div class="callout warn">
+        回到最初的问题：<strong>为什么医生比高中教师赚得多？</strong>答案归结为供给和需求：医生服务的市场价值（VMPL）更高，而成为医生所需的培训远比成为教师严格和漫长，限制了医生的供给。高工资并非社会优先事项错位，而是市场力量作用的结果。
+      </div>
+
+      <!-- ==================== Ch21 ==================== -->
+      <h2>Ch21 消费者选择理论（Theory of Consumer Choice）</h2>
+
+      <h3>效用与效用最大化</h3>
+      <p><span class="term">效用</span><span class="term-en">（Utility）</span>是经济学家用来替代"人类福祉"（Human Well-being）的概念——消费商品和服务为你提供效用（用"幸福"解释不完全准确，更准确的理解是福祉）。本章基于<span class="term">效用最大化</span><span class="term-en">（Utility Maximization）</span>模型，回答三个问题：消费者如何做决策？需求曲线从哪里来？<span class="term">收入效应</span><span class="term-en">（Income Effect）</span>和<span class="term">替代效应</span><span class="term-en">（Substitution Effect）</span>如何运作？</p>
+
+      <h3>预算约束</h3>
+      <p>把消费者的决策简化到最基本的形式：用既定收入购买<strong>能负担的最佳商品组合</strong>。简化假设：不能借钱、没有储蓄、只看单一时间点、只有两种商品——<strong>披萨</strong>（每个 $10）和<strong>可乐</strong>（每罐 $2），月预算 $500。</p>
+      <p>极端情形：全买披萨可买 50 个；全买可乐可买 250 罐。理性消费者通常倾向多样化消费。下表列出花光全部 $500 的一些代表性组合：</p>
+      <table>
+        <thead>
+          <tr><th>披萨数量</th><th>可乐数量</th><th>披萨花费</th><th>可乐花费</th><th>总花费</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>50</td><td>0</td><td>$500</td><td>$0</td><td>$500</td></tr>
+          <tr><td>40</td><td>50</td><td>$400</td><td>$100</td><td>$500</td></tr>
+          <tr><td>30</td><td>100</td><td>$300</td><td>$200</td><td>$500</td></tr>
+          <tr><td>20</td><td>150</td><td>$200</td><td>$300</td><td>$500</td></tr>
+          <tr><td>10</td><td>200</td><td>$100</td><td>$400</td><td>$500</td></tr>
+          <tr><td>0</td><td>250</td><td>$0</td><td>$500</td><td>$500</td></tr>
+        </tbody>
+      </table>
+      <p>把这些组合画成图（注意：<strong>两个轴都是数量</strong>，不是价格-数量图），连接两个端点 (0, 250) 与 (50, 0)，就得到<span class="term">预算约束线</span><span class="term-en">（Budget Constraint）</span>——也称预算线或消费可能性边界（图 6）：</p>
+      <ul>
+        <li>线上及线内的点都是<strong>可负担</strong>的组合；线外的点负担不起。</li>
+        <li>由于假设没有储蓄动机、希望最大化福祉，消费者会选择<strong>线上</strong>的某一点（线内的点意味着没花完预算）。</li>
+        <li>斜率 = −250/50 = <strong>−5</strong>，代表两种商品的交换比率：多买 1 个披萨必须放弃 5 罐可乐。</li>
+      </ul>
+
+      <div id="fig-budget"></div>
+
+      <p>预算约束的通用公式与直线形式（y = b + mx）：</p>
+      <p><strong>收入 I = P<sub>可乐</sub>·Q<sub>可乐</sub> + P<sub>披萨</sub>·Q<sub>披萨</sub></strong>　⇒　<strong>Q<sub>可乐</sub> = I/P<sub>可乐</sub> − (P<sub>披萨</sub>/P<sub>可乐</sub>)·Q<sub>披萨</sub></strong></p>
+      <p>纵轴截距 b = I/P<sub>可乐</sub> = 500/2 = 250（全部收入能买的可乐）；斜率 m = −P<sub>披萨</sub>/P<sub>可乐</sub> = −10/2 = −5（<strong>价格比</strong>）。</p>
+
+      <h3>预算约束线的变动</h3>
+      <p><strong>收入变动：平行移动</strong>。收入从 $500 增加到 $1000，价格不变：可乐截距变为 1000/2 = 500，披萨截距变为 1000/10 = 100，预算线向外<strong>平行</strong>移动，斜率仍是 −5（图 7）。收入减少则向内平行移动。</p>
+
+      <div id="fig-income-change"></div>
+
+      <p><strong>价格变动：旋转（摆动）</strong>。披萨价格从 $10 降到 $5，收入仍为 $500：可乐截距不变（250 罐），披萨截距变为 500/5 = 100，预算线以<strong>纵轴截距为轴心向外旋转</strong>，斜率从 −5 变为 −2.5（图 8）。</p>
+
+      <div id="fig-price-change"></div>
+
+      <p>价格变动的规律总结：</p>
+      <ul>
+        <li><strong>横轴商品</strong>价格下降 → 以纵轴截距为轴心向外旋转；价格上升 → 向内旋转。</li>
+        <li><strong>纵轴商品</strong>价格下降 → 以横轴截距为轴心向上旋转；价格上升 → 向下旋转。</li>
+      </ul>
+
+      <h3>无差异曲线：偏好的图形表示</h3>
+      <p>预算约束告诉我们消费者<em>能</em>买什么；要确定他们<em>会</em>买什么，还需要了解<span class="term">偏好</span><span class="term-en">（Preferences）</span>，用<span class="term">无差异曲线</span><span class="term-en">（Indifference Curve）</span>表示：它展示了能给消费者带来<strong>同等效用水平</strong>的所有商品组合。例如消费者现有组合 A（6 罐可乐 + 半片披萨），拿走 2 罐可乐后需要补偿一些披萨，使他认为新组合 B（4 罐可乐 + 1.5 片披萨）与 A 一样好——他在 A、B 之间<strong>无差异</strong>。无数个这样的点连成一条无差异曲线。</p>
+      <p><strong>无差异曲线的四个性质</strong>（图 9）：</p>
+      <ol>
+        <li><strong>更高的无差异曲线代表更高的效用</strong>：消费者总是偏好更多的商品，离原点越远的曲线效用越高。消费者的目标就是达到其<strong>能负担的最高无差异曲线</strong>。</li>
+        <li><strong>向右下方倾斜</strong>：保持效用不变，减少一种商品就必须增加另一种商品。</li>
+        <li><strong>不能相交</strong>：相交意味着同一个组合产生两种不同的效用水平，逻辑矛盾。</li>
+        <li><strong>凸向原点</strong>：反映<span class="term">边际替代率递减</span><span class="term-en">（Diminishing Marginal Rate of Substitution）</span>——可乐很多时，你愿意用很多罐可乐换一片披萨；可乐越来越少时，你愿意为一单位披萨放弃的可乐越来越少。</li>
+      </ol>
+
+      <div id="fig-indifference"></div>
+
+      <p>两种极端的无差异曲线：</p>
+      <ul>
+        <li><span class="term">完全替代品</span><span class="term-en">（Perfect Substitutes）</span>：两种商品可按固定比例完美替换（如可口可乐与百事可乐），无差异曲线是<strong>直线</strong>，边际替代率恒定。</li>
+        <li><span class="term">完全互补品</span><span class="term-en">（Perfect Complements）</span>：必须按固定比例一起消费才有用（如左脚鞋与右脚鞋），无差异曲线是 <strong>L 形</strong>——多一只左脚鞋而没有匹配的右脚鞋，效用一个点也不增加。</li>
+      </ul>
+
+      <h3>消费者的最优选择</h3>
+      <p>消费者的目标是在预算约束下实现效用最大化，即选择能让他达到<strong>最高无差异曲线</strong>的组合。这个最优点就是预算约束线与无差异曲线<strong>相切</strong>的那一点（图 10）：</p>
+      <ul>
+        <li>消费者在切点花光全部预算（点在预算线上），并获得该预算下可能的最高效用；</li>
+        <li>比它低的无差异曲线上虽有点可负担，但效用更低；更高的无差异曲线则完全买不起。</li>
+      </ul>
+      <p>切点处两条曲线斜率相等。无差异曲线的斜率是<span class="term">边际替代率</span><span class="term-en">（Marginal Rate of Substitution, MRS）</span>——消费者<em>愿意</em>用一种商品交换另一种商品的<strong>主观比率</strong>；预算线的斜率是价格比——市场<em>要求</em>的<strong>客观比率</strong>。因此最优点满足：</p>
+      <p><strong>MRS = P<sub>披萨</sub>/P<sub>可乐</sub>（= 5）</strong>　——主观交换意愿与市场交换比率达成一致。</p>
+
+      <div id="fig-optimum"></div>
+
+      <h3>从消费者选择推导需求曲线</h3>
+      <p>消费者选择模型可以解释需求曲线的来源：</p>
+      <ol>
+        <li><strong>初始状态</strong>：给定预算约束，最优点 A 对应披萨的初始价格 P<sub>A</sub> 和需求量 Q<sub>A</sub>，在下方的价格-数量坐标系中标出该点；</li>
+        <li><strong>价格变化</strong>：披萨降价 → 预算约束线向外旋转；</li>
+        <li><strong>新的最优</strong>：消费者达到更高的无差异曲线，新最优点 B 对应更低的价格 P<sub>B</sub> 和更高的需求量 Q<sub>B</sub>；</li>
+        <li><strong>重复与连线</strong>：不断改变价格，得到一系列 (P, Q) 点，连接起来就是向右下方倾斜的<strong>需求曲线</strong>。</li>
+      </ol>
+      <p>这解释了需求定律的微观基础：价格下降时，效用最大化的消费者会选择购买更多该商品。</p>
+
+      <h3>收入效应与替代效应</h3>
+      <p>价格下降使消费者购买更多，这个总效应可以分解为两部分（图 11）：</p>
+      <ul>
+        <li><span class="term">替代效应</span><span class="term-en">（Substitution Effect）</span>：价格下降使该商品相对于其他商品<strong>变得更便宜</strong>，消费者用它替代相对昂贵的商品。图形上表现为<strong>沿着同一条无差异曲线</strong>移动到斜率等于新价格比的点（A → B）。替代效应<strong>总是</strong>使消费者购买更多降价的商品。</li>
+        <li><span class="term">收入效应</span><span class="term-en">（Income Effect）</span>：价格下降相当于<strong>实际收入（购买力）增加</strong>——买同样的组合花费更少，消费者感觉自己变富了。图形上表现为从替代效应的点移动到<strong>更高的无差异曲线</strong>上的最终点（B → C）。</li>
+      </ul>
+
+      <div id="fig-effects"></div>
+
+      <p>对<strong>正常品</strong>（Normal Good），收入效应<strong>增强</strong>替代效应，消费者买得更多；对<strong>劣等品</strong>（Inferior Good），收入效应<strong>部分抵消</strong>替代效应（收入增加反而减少对劣等品的购买），但总效应通常仍是价格下降、购买增加。</p>
+
+      <h3>吉芬商品：理论上的特例</h3>
+      <div class="callout warn">
+        是否存在价格下降、人们反而买得更少的商品（即需求曲线向上倾斜）？理论上存在，称为<span class="term">吉芬商品</span><span class="term-en">（Giffen Good）</span>，必须同时满足两个条件：<strong>① 它是劣等品；② 它是"强劣等品"</strong>——负向的收入效应超过正向的替代效应。图形上，价格下降后最终最优点 B 落在初始点 A 的左侧。现实中几乎没有令人信服的吉芬商品实例，因此经济学家普遍认为<strong>所有需求曲线都向下倾斜</strong>。
+      </div>
+
+      <h3>应用：劳动供给决策</h3>
+      <p>消费者选择模型也能分析"工作多长时间"的决策——把选择看作<span class="term">休闲</span><span class="term-en">（Leisure）</span>与<strong>消费</strong>（用工作收入购买的商品）之间的权衡，这正是 Ch18 劳动供给曲线的微观基础：</p>
+      <ul>
+        <li><strong>预算约束</strong>：总时间固定（如每周 100 个清醒小时）；工资率决定放弃一小时休闲能换来多少消费品——<strong>工资就是休闲的"价格"（机会成本）</strong>；</li>
+        <li><strong>最优选择</strong>：无差异曲线与预算约束线相切的休闲-消费组合。</li>
+      </ul>
+      <p>工资上涨时两种效应角力：</p>
+      <ul>
+        <li><strong>替代效应</strong>：休闲变得更"贵"（放弃一小时休闲能赚更多钱）→ 减少休闲、<strong>增加工作</strong>；</li>
+        <li><strong>收入效应</strong>：更高的工资意味着更富有，而休闲是正常品 → 想"购买"更多休闲、<strong>减少工作</strong>。</li>
+      </ul>
+      <p>工资较低时替代效应通常占主导，工资上涨使人们工作更多；工资非常高时收入效应可能占主导，工资进一步上涨反而使人们减少工作、享受休闲——劳动供给曲线<strong>向后弯曲</strong>（图 12），这解释了 Ch18 中提到的现象。</p>
+
+      <div id="fig-backward"></div>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/principles-of-economics/06-factor-markets.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    const D_BLUE = '#2563eb';    // 需求 / 预算线
+    const S_ORANGE = '#c2410c';  // 供给 / 工资成本
+    const EQ_GREEN = '#0f766e';  // 均衡点
+    const GOV_GREEN = '#15803d'; // 收入增加 / 新预算线
+    const GAIN_PURPLE = '#7c3aed'; // 无差异曲线
+    const DWL_RED = '#dc2626';   // 不雇 / 转折点
+
+    // ===== 图1：生产函数与边际产量递减 =====
+    Charts.sd(document.getElementById('fig-production'), {
+      xLabel: '工人数 L',
+      yLabel: '产量 Q（餐食）',
+      xMax: 5.8, yMax: 165,
+      xTicks: [1, 2, 3, 4, 5],
+      yTicks: [50, 100, 150],
+      caption: '图 1：生产函数 —— 每多一个工人带来的产量增量（边际产量，即曲线斜率）递减，曲线逐渐变平',
+      series: [
+        { points: [[0, 0], [1, 50], [2, 90], [3, 120], [4, 140], [5, 150]], type: 'spline', color: GAIN_PURPLE, label: '生产函数 Q(L)' },
+      ],
+      markers: [
+        { x: 1, y: 50, label: 'MPL=50', color: EQ_GREEN, labelDx: 8, labelDy: -10 },
+        { x: 5, y: 150, label: 'MPL=10', color: DWL_RED, labelDx: -62, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图2：VMPL 曲线 = 劳动需求曲线 =====
+    Charts.sd(document.getElementById('fig-vmpl'), {
+      xLabel: '工人数 L',
+      yLabel: 'VMPL / 工资（美元）',
+      xMax: 5.8, yMax: 560,
+      xTicks: [1, 2, 3, 4, 5],
+      yTicks: [150, 300, 500],
+      caption: '图 2：VMPL 曲线即劳动需求曲线 —— 工资 $150 时雇到第 4 人（VMPL≥W），第 5 人 VMPL=$100 不雇',
+      series: [
+        { points: [[1, 500], [2, 400], [3, 300], [4, 200], [5, 100]], type: 'linear', color: D_BLUE, label: 'VMPL = P × MPL（劳动需求）' },
+        { points: [[0, 150], [5.6, 150]], type: 'linear', color: S_ORANGE, dash: true, label: '工资 W = $150' },
+      ],
+      markers: [
+        { x: 4, y: 200, label: '第 4 人：雇', color: EQ_GREEN, labelDx: 10, labelDy: -12 },
+        { x: 5, y: 100, label: '第 5 人：不雇', color: DWL_RED, labelDx: -84, labelDy: 16 },
+      ],
+    });
+
+    // ===== 图3：劳动市场均衡 =====
+    Charts.sd(document.getElementById('fig-labor-eq'), {
+      xLabel: '劳动量 L（工人/工时）',
+      yLabel: '工资 W',
+      xMax: 100, yMax: 13, xTicks: [], yTicks: [],
+      caption: '图 3：劳动市场均衡 —— 企业是需求方、工人是供给方，交点决定均衡工资 W* 与就业量 L*',
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（企业：VMPL）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S（工人）' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'E 均衡', color: EQ_GREEN, guides: true, gxLabel: 'L*', gyLabel: 'W*', labelDx: 12, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图4：劳动供给左移（劳动参与率下降） =====
+    Charts.sd(document.getElementById('fig-supply-shift'), {
+      xLabel: '劳动量 L',
+      yLabel: '工资 W',
+      xMax: 100, yMax: 13, xTicks: [], yTicks: [],
+      caption: '图 4：劳动参与率下降，供给 S1→S2 左移 —— 均衡工资 W1→W2 上升，就业量 L1→L2 减少',
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D（企业）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S1' },
+        { points: [[0, 4], [90, 13]], type: 'linear', color: S_ORANGE, dash: true, label: 'S2（左移）' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'E1', color: EQ_GREEN, guides: true, gxLabel: 'L1', gyLabel: 'W1', labelDx: 14, labelDy: 2 },
+        { x: 40, y: 8, label: 'E2', color: DWL_RED, guides: true, gxLabel: 'L2', gyLabel: 'W2', labelDx: -28, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图5：劳动需求右移（金属拖车涨价 → 焊工 VMPL 上升） =====
+    Charts.sd(document.getElementById('fig-demand-shift'), {
+      xLabel: '焊工数量 L',
+      yLabel: '工资 W',
+      xMax: 100, yMax: 14, xTicks: [], yTicks: [],
+      caption: '图 5：金属拖车涨价使焊工 VMPL 上升，需求 D1→D2 右移 —— 均衡工资与就业量同时上升',
+      series: [
+        { points: [[0, 12], [100, 2]], type: 'linear', color: D_BLUE, label: 'D1' },
+        { points: [[0, 14], [100, 4]], type: 'linear', color: D_BLUE, dash: true, label: 'D2（右移）' },
+        { points: [[0, 2], [100, 12]], type: 'linear', color: S_ORANGE, label: 'S（工人）' },
+      ],
+      markers: [
+        { x: 50, y: 7, label: 'E1', color: EQ_GREEN, guides: true, gxLabel: 'L1', gyLabel: 'W1', labelDx: -30, labelDy: 20 },
+        { x: 60, y: 8, label: 'E2', color: DWL_RED, guides: true, gxLabel: 'L2', gyLabel: 'W2', labelDx: 12, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图6：预算约束线 =====
+    Charts.sd(document.getElementById('fig-budget'), {
+      xLabel: '披萨数量（个）',
+      yLabel: '可乐数量（罐）',
+      xMax: 58, yMax: 285,
+      xTicks: [{ v: 50, label: '50' }],
+      yTicks: [{ v: 250, label: '250' }],
+      caption: '图 6：预算约束线（I=$500，披萨 $10、可乐 $2）—— 斜率 −5：多买 1 个披萨须放弃 5 罐可乐；阴影为可负担区域',
+      areas: [
+        { points: [[0, 0], [0, 250], [50, 0]], color: D_BLUE, label: '可负担区域' },
+      ],
+      series: [
+        { points: [[0, 250], [50, 0]], type: 'linear', color: D_BLUE, label: '预算约束线（斜率 = −5）' },
+      ],
+      markers: [
+        { x: 0, y: 250, label: '全买可乐', color: EQ_GREEN, labelDx: 10, labelDy: -6 },
+        { x: 50, y: 0, label: '全买披萨', color: EQ_GREEN, labelDx: -70, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图7：收入增加 —— 预算线平行外移 =====
+    Charts.sd(document.getElementById('fig-income-change'), {
+      xLabel: '披萨数量（个）',
+      yLabel: '可乐数量（罐）',
+      xMax: 115, yMax: 570,
+      xTicks: [{ v: 50, label: '50' }, { v: 100, label: '100' }],
+      yTicks: [{ v: 250, label: '250' }, { v: 500, label: '500' }],
+      caption: '图 7：收入 $500→$1000，价格不变 —— 预算约束线向外平行移动，斜率 −5 不变，选择范围扩大',
+      series: [
+        { points: [[0, 250], [50, 0]], type: 'linear', color: D_BLUE, label: 'I = $500' },
+        { points: [[0, 500], [100, 0]], type: 'linear', color: GOV_GREEN, label: 'I = $1000（平行外移）' },
+      ],
+    });
+
+    // ===== 图8：披萨降价 —— 预算线旋转 =====
+    Charts.sd(document.getElementById('fig-price-change'), {
+      xLabel: '披萨数量（个）',
+      yLabel: '可乐数量（罐）',
+      xMax: 115, yMax: 285,
+      xTicks: [{ v: 50, label: '50' }, { v: 100, label: '100' }],
+      yTicks: [{ v: 250, label: '250' }],
+      caption: '图 8：披萨价格 $10→$5 —— 预算线以纵轴截距（250 罐可乐）为轴心向外旋转，斜率 −5 → −2.5',
+      series: [
+        { points: [[0, 250], [50, 0]], type: 'linear', color: D_BLUE, label: 'P披萨 = $10（斜率 −5）' },
+        { points: [[0, 250], [100, 0]], type: 'linear', color: GOV_GREEN, label: 'P披萨 = $5（斜率 −2.5）' },
+      ],
+      markers: [
+        { x: 0, y: 250, label: '纵截距不变', color: EQ_GREEN, labelDx: 10, labelDy: -6 },
+      ],
+    });
+
+    // ===== 图9：无差异曲线族 =====
+    Charts.sd(document.getElementById('fig-indifference'), {
+      xLabel: '披萨数量',
+      yLabel: '可乐数量',
+      xMax: 90, yMax: 340, xTicks: [], yTicks: [],
+      caption: '图 9：无差异曲线族 —— 向右下方倾斜、互不相交、凸向原点（边际替代率递减）；越靠右上的曲线效用越高',
+      series: [
+        { points: [[5, 160], [8, 100], [12, 67], [20, 40], [40, 20], [80, 10]], type: 'spline', color: '#c084fc', label: 'IC1（效用最低）' },
+        { points: [[5, 320], [10, 160], [20, 80], [40, 40], [80, 20]], type: 'spline', color: '#a855f7', label: 'IC2' },
+        { points: [[10, 320], [20, 160], [40, 80], [80, 40]], type: 'spline', color: GAIN_PURPLE, label: 'IC3（效用最高）' },
+      ],
+    });
+
+    // ===== 图10：消费者最优选择 —— 相切条件 =====
+    Charts.sd(document.getElementById('fig-optimum'), {
+      xLabel: '披萨数量（个）',
+      yLabel: '可乐数量（罐）',
+      xMax: 60, yMax: 285, xTicks: [], yTicks: [],
+      caption: '图 10：最优选择 —— 预算线与最高可达无差异曲线 IC2 相切于 A；切点处 MRS = P披萨/P可乐 = 5',
+      series: [
+        { points: [[0, 250], [50, 0]], type: 'linear', color: D_BLUE, label: '预算约束线' },
+        { points: [[8, 225], [12, 150], [18, 100], [28, 64], [45, 40]], type: 'spline', color: '#c084fc', dash: true, label: 'IC1（可负担，效用低）' },
+        { points: [[13, 240], [16, 195], [20, 156], [25, 125], [32, 98], [42, 74], [55, 57]], type: 'spline', color: GAIN_PURPLE, label: 'IC2（相切，最优）' },
+        { points: [[18, 250], [25, 180], [35, 129], [50, 90], [60, 75]], type: 'spline', color: '#a855f7', dash: true, label: 'IC3（更高效用，买不起）' },
+      ],
+      markers: [
+        { x: 25, y: 125, label: '最优点 A', color: EQ_GREEN, guides: true, gxLabel: '披萨*', gyLabel: '可乐*', labelDx: 12, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图11：收入效应与替代效应 =====
+    Charts.sd(document.getElementById('fig-effects'), {
+      xLabel: '披萨数量（个）',
+      yLabel: '可乐数量（罐）',
+      xMax: 108, yMax: 285, xTicks: [], yTicks: [],
+      caption: '图 11：披萨降价（$10→$5）的分解 —— A→B 沿同一无差异曲线移动 = 替代效应；B→C 移到更高无差异曲线 = 收入效应',
+      series: [
+        { points: [[0, 250], [50, 0]], type: 'linear', color: D_BLUE, label: 'BL1（P披萨=$10）' },
+        { points: [[0, 250], [100, 0]], type: 'linear', color: GOV_GREEN, label: 'BL2（P披萨=$5）' },
+        { points: [[0, 177], [71, 0]], type: 'linear', color: '#64748b', dash: true, label: '补偿预算线（辅助线）' },
+        { points: [[15, 208], [20, 156], [25, 125], [35.4, 88], [45, 69], [55, 57]], type: 'spline', color: GAIN_PURPLE, label: 'IC1' },
+        { points: [[30, 208], [40, 156], [50, 125], [65, 96], [80, 78]], type: 'spline', color: '#a855f7', label: 'IC2' },
+      ],
+      markers: [
+        { x: 25, y: 125, label: 'A 初始最优', color: EQ_GREEN, guides: true, gxLabel: 'QA', labelDx: -70, labelDy: -14 },
+        { x: 35.4, y: 88, label: 'B（替代效应终点）', color: GAIN_PURPLE, labelDx: 12, labelDy: 16 },
+        { x: 50, y: 125, label: 'C 最终最优', color: GOV_GREEN, guides: true, gxLabel: 'QC', labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图12：向后弯曲的劳动供给曲线 =====
+    Charts.sd(document.getElementById('fig-backward'), {
+      xLabel: '劳动时间（小时）',
+      yLabel: '工资 W',
+      xMax: 70, yMax: 21, xTicks: [], yTicks: [],
+      caption: '图 12：向后弯曲的劳动供给曲线 —— 低工资时替代效应主导（涨工资多工作），高工资时收入效应主导（涨工资反而少工作）',
+      series: [
+        { points: [[5, 2], [20, 4], [35, 7], [48, 10], [57, 13], [60, 16], [55, 18], [47, 19.5]], type: 'spline', color: S_ORANGE, label: '劳动供给 S' },
+      ],
+      markers: [
+        { x: 60, y: 16, label: '转折点', color: DWL_RED, shape: 'star', labelDx: 12, labelDy: -4 },
+      ],
+    });
+  </script>
+</body>
+</html>

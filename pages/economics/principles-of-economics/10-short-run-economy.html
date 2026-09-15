@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 短期经济 - 经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>10 短期经济</h1>
+      <p>本篇覆盖短期宏观经济波动的两章：总需求-总供给模型（AD/AS）——分析经济为什么会波动；以及货币政策与财政政策如何通过这个模型影响总需求。</p>
+
+      <!-- ==================== Ch33 ==================== -->
+      <h2>总需求与总供给（Aggregate Demand and Aggregate Supply）</h2>
+
+      <h3>核心：整个经济体的总需求与总供给</h3>
+      <p><span class="term">总需求-总供给模型</span><span class="term-en">（AD/AS Model）</span>在图形机制上很像微观经济学的供求模型，但本质截然不同：微观模型分析<strong>单一商品</strong>，而这里考虑的是<strong>整个经济体中所有商品和服务的总需求与总供给</strong>。模型的功能：帮助我们理解经济波动的成因——什么导致衰退（Recession）、什么导致扩张（Expansion），以及如何帮助经济走出衰退。</p>
+
+      <h3>关于经济波动的三个关键事实</h3>
+      <ol>
+        <li><strong>经济波动是无规律且不可预测的</strong>。声称能预测下一次衰退的人通常是在推销书籍或投资产品。"商业周期"（Business Cycle）这个词其实有误导性——它暗示正弦波般的规律，但经济波动并非如此。</li>
+        <li><strong>大多数宏观经济变量同时波动</strong>。衰退时收入下降、企业利润减少、失业率上升、房屋止赎率上升……它们趋向一同变动，但关系复杂，并非简单同步。</li>
+        <li><strong>产出下降，失业率上升</strong>。这是最关键、最稳固的关系：用实际 GDP 衡量产出与收入，产出下降时失业率随之上升。</li>
+      </ol>
+
+      <h3>短期与长期的对比</h3>
+      <p>之前的模型（可贷资金市场、货币中性）都是<strong>长期模型</strong>：变量分为名义与实际两类，货币供给的变化只影响名义变量。但 AD/AS 是一个<strong>短期模型</strong>，专注解释经济的短期波动。它的核心是分析<span class="term">物价水平</span><span class="term-en">（Price Level, P）</span>（名义变量）与<span class="term">实际 GDP</span><span class="term-en">（Y）</span>（实际变量）之间的关系——长期中两者无关，短期内却确实存在关联，这正是本模型的关键。</p>
+
+      <h3>模型的图线与详细解释</h3>
+      <p>模型的坐标（图 1）：纵轴是<strong>物价水平 P</strong>（所有商品和服务的平均价格），横轴是<strong>实际 GDP Y</strong>（经济的总产出 = 总收入，Y = C + I + G + NX）。三条曲线：</p>
+      <ul>
+        <li><strong>总需求曲线</strong><span class="term-en">（Aggregate Demand, AD）</span>：向下倾斜——每个物价水平下，家庭、企业、政府和外国客户想购买的总量。物价越高，总需求量越低。</li>
+        <li><strong>短期总供给曲线</strong><span class="term-en">（Short-Run Aggregate Supply, SRAS）</span>：向上倾斜——每个物价水平下，所有企业选择生产和销售的总量。</li>
+        <li><strong>长期总供给曲线</strong><span class="term-en">（Long-Run Aggregate Supply, LRAS）</span>：垂直——长期中产出取决于真实生产能力，与物价水平无关。</li>
+      </ul>
+      <p><strong>长期均衡</strong>在 AD 与 LRAS 的交点（图 1 中 A 点），SRAS 也穿过该点（预期物价 = 实际物价）。对应均衡物价水平 P* 与自然产出率 Y<sub>N</sub>。</p>
+
+      <div id="fig-adas-basic"></div>
+
+      <h3>总需求曲线为什么向下倾斜</h3>
+      <p>原因与微观需求曲线完全不同（不是收入效应和替代效应——整个经济没有可"替代"的对象）：</p>
+      <ol>
+        <li><strong>财富效应</strong><span class="term-en">（Wealth Effect）</span>：物价下降 → 货币的实际价值增加，消费者感觉更富有 → 消费 C 增加 → 总需求量增加。</li>
+        <li><strong>利率效应</strong><span class="term-en">（Interest-Rate Effect）</span>：物价下降 → 交易所需货币减少 → 多余货币存入银行或买债券 → 可贷资金供给增加 → 利率下降 → 企业投资 I 增加 → 总需求量增加。</li>
+        <li><strong>净出口效应</strong><span class="term-en">（Net Export Effect）</span>：物价下降 → 利率下降 → 本国资产对外国投资者吸引力减小 → 资本外流、本币贬值 → 本国商品相对便宜 → 出口增、进口减 → 净出口 NX 增加。</li>
+      </ol>
+
+      <h3>总需求曲线的移动</h3>
+      <p>任何在<strong>给定物价水平</strong>下改变 C、I、G、NX 的事件都会移动 AD：</p>
+      <ul>
+        <li><strong>消费 C</strong>：悲观情绪（战争、疫情、股市崩盘）→ 减少支出增加储蓄 → AD 左移；减税增加可支配收入 → AD 右移。</li>
+        <li><strong>投资 I</strong>：企业对未来乐观（如新技术出现）→ AD 右移；投资税收抵免 → AD 右移；货币供给增加使利率下降 → AD 右移（下一章详述）。</li>
+        <li><strong>政府购买 G</strong>：最直接的政策工具——增加基础设施、国防支出直接使 AD 右移。</li>
+        <li><strong>净出口 NX</strong>：欧洲发生衰退 → 减少购买美国商品 → AD 左移；资本流动引起的汇率变动也会影响 NX。</li>
+      </ul>
+
+      <h3>总供给曲线：长期垂直，短期上倾</h3>
+      <p><strong>长期总供给（LRAS）</strong>：长期中供给量取决于真实生产能力——劳动力、资本、自然资源、技术知识——与物价水平无关，因此<strong>垂直</strong>。垂线所在位置称<span class="term">自然产出率</span><span class="term-en">（Natural Rate of Output）</span>（或充分就业产出）。移动因素：劳动力（移民增加右移；最低工资大幅提高致结构性失业增加则左移）、资本（物质与人力资本增加右移）、自然资源（新矿藏发现右移）、技术知识（进步右移——增长最重要的驱动力）。</p>
+      <p><strong>短期总供给（SRAS）</strong>：短期内物价水平确实影响产出，曲线<strong>向上倾斜</strong>。三种解释理论：</p>
+      <ol>
+        <li><strong>粘性工资理论</strong><span class="term-en">（Sticky Wage Theory）</span>：名义工资因长期合同或社会规范调整缓慢。物价意外下降而工资不变 → 实际工资上升 → 成本增加 → 企业减雇减产。</li>
+        <li><strong>粘性价格理论</strong><span class="term-en">（Sticky Price Theory）</span>：菜单成本使部分价格调整缓慢。物价意外下降时，价格粘性的企业产品相对变贵 → 销量下降 → 削减产量。</li>
+        <li><strong>错觉理论</strong><span class="term-en">（Misperceptions Theory）</span>：物价总水平下降时，企业误以为是<strong>自己产品的相对价格</strong>下降 → 认为生产收益减少 → 减少产量。</li>
+      </ol>
+      <p>三个理论指向同一结论：</p>
+      <div class="callout">
+        <strong>产出供给量 = 自然产出率 + a ×（实际物价水平 − 预期物价水平）</strong><br>
+        a 是决定产出对未预期物价变动反应程度的系数。当实际物价偏离预期时，短期产出就偏离自然产出率。
+      </div>
+      <p><strong>SRAS 的移动</strong>：所有移动 LRAS 的因素（劳动、资本、资源、技术）同样移动 SRAS；此外还有独特因素——<strong>预期物价水平</strong>：企业预期未来物价上升 → 预期成本（工资）上升 → 现在就要求更高价格 → 每个物价水平下供给减少 → SRAS <strong>左移</strong>；预期物价下降则右移。</p>
+
+      <h3>需求和供给变化的影响：两个案例</h3>
+      <p><strong>案例一：总需求下降（经济衰退）。</strong>经济原在长期均衡 A。股市崩盘或悲观情绪蔓延使 AD1 左移至 AD2（图 2）：</p>
+      <ol>
+        <li><strong>短期</strong>：移到 B 点（AD2 与 SRAS1 交点）——产出降至 Y2（低于自然产出率）、物价降至 P2，经济陷入衰退，失业率上升。</li>
+        <li><strong>长期调整</strong>：政策干预（扩张性政策把 AD 移回 AD1，快速回到 A）；或自然调整——低物价逐渐降低人们的预期，SRAS 右移（SRAS1→SRAS2），直到 C 点：产出回到 Y<sub>N</sub>，物价进一步降至 P3。</li>
+      </ol>
+      <p><strong>历史案例</strong>：1930 年代大萧条可视为巨大的总需求下降——实际 GDP 下降约 27%，失业率飙升至 25%，物价水平下降 22%；二战期间政府支出大增则是巨大的总需求扩张，把美国经济带出了大萧条。</p>
+
+      <div id="fig-ad-decline"></div>
+
+      <p><strong>案例二：总供给下降（滞胀）。</strong>关键原材料（如石油）价格突然飙升 → 生产成本大增 → SRAS1 左移至 SRAS2（图 3）：</p>
+      <ol>
+        <li><strong>短期</strong>：移到 B 点——产出降至 Y2，但物价<strong>上升</strong>至 P2。产出停滞（Stagnation）与通货膨胀（Inflation）并存，即<span class="term">滞胀</span><span class="term-en">（Stagflation）</span>，尤为痛苦。</li>
+        <li><strong>长期</strong>：政策制定者面临<strong>两难</strong>——扩张总需求对抗衰退会进一步推高物价；紧缩对抗通胀会让衰退更严重。若不干预且冲击是暂时的，高失业最终压低工资物价，SRAS 移回原位，经济回到 A。</li>
+      </ol>
+      <p><strong>历史案例</strong>：2020 年 COVID-19 是罕见的<strong>双重冲击</strong>——封锁与恐惧使消费投资锐减（AD 左移），停工与供应链中断使供给减少（SRAS 左移），产出急剧下降。</p>
+
+      <div id="fig-as-decline"></div>
+
+      <!-- ==================== Ch34 ==================== -->
+      <h2>政策影响（货币与财政政策）</h2>
+
+      <h3>两个重点政策</h3>
+      <ul>
+        <li><span class="term">货币政策</span><span class="term-en">（Monetary Policy）</span>：主要涉及<strong>货币供给量的变动</strong>以及银行体系的运作方式，核心是改变经济中的货币数量。货币供给由<strong>美联储</strong>控制而非政治家——制度设计有意将美联储与政治过程隔离以保证独立性。</li>
+        <li><span class="term">财政政策</span><span class="term-en">（Fiscal Policy）</span>：与政府的支出和税收决策有关，即之前课程讨论过的<strong>政府购买 G</strong> 和<strong>税收 T</strong>。</li>
+      </ul>
+      <p>两种政策都能移动总需求曲线。本章重点关注<strong>利率效应</strong>对总需求的影响。</p>
+
+      <h3>流动性偏好理论</h3>
+      <p>为深入理解利率效应，引入凯恩斯的<span class="term">流动性偏好理论</span><span class="term-en">（Theory of Liquidity Preference）</span>——解释<strong>短期</strong>利率决定的模型（与解释长期利率的可贷资金模型对应）。流动性指资产转换为交易媒介的难易程度，该理论研究人们对流动性最强的资产——货币——的需求。</p>
+      <ul>
+        <li><strong>货币供给</strong>：假设完全由美联储通过公开市场操作等工具设定，与利率无关 → 以利率为纵轴、货币量为横轴的图中，<strong>货币供给曲线是垂线</strong>。</li>
+        <li><strong>货币需求</strong>：人们持有货币主要为交易，但持有货币有机会成本——不持有货币而持有债券等有息资产本可获得的利息。<strong>利率就是持有货币的机会成本</strong>：利率高 → 机会成本高 → 人们转向债券、货币需求少；利率低 → 持有货币损失小、需求多。因此<strong>货币需求曲线向下倾斜</strong>。</li>
+        <li><strong>货币市场均衡</strong>（图 4）：供给与需求的交点决定<span class="term">均衡利率</span><span class="term-en">（Equilibrium Interest Rate）</span>。利率低于均衡时货币需求超过供给，人们出售债券换货币 → 债券价格下跌、利率上升；反之亦然——市场力量自动把利率推向均衡。</li>
+      </ul>
+
+      <div id="fig-liquidity-preference"></div>
+
+      <p>用此模型可以清晰展示<strong>利率效应</strong>链条：</p>
+      <ol>
+        <li>物价水平上升 → 交易需要更多货币 → <strong>货币需求曲线右移</strong>；</li>
+        <li>货币供给不变 → <strong>均衡利率上升</strong>；</li>
+        <li>更高利率提高借贷成本 → 抑制企业投资与居民消费（购房、购车）→ <strong>总需求量减少</strong>。</li>
+      </ol>
+      <p>这正是总需求曲线向下倾斜的关键机制。</p>
+
+      <h3>货币政策如何影响总需求</h3>
+      <p>以经济面临衰退风险时的<strong>扩张性货币政策</strong>为例（图 5、图 6）：</p>
+      <ol>
+        <li>美联储通过公开市场操作<strong>购买政府债券</strong>，向银行体系注入准备金 → 货币供给增加；</li>
+        <li>货币供给曲线<strong>右移</strong>（MS1→MS2，图 5）；</li>
+        <li>货币需求不变 → 均衡利率<strong>下降</strong>（r1→r2）；</li>
+        <li>利率下降降低借贷成本 → 刺激企业投资与居民消费；</li>
+        <li>任何给定物价水平下的总需求量增加 → <strong>总需求曲线右移</strong>（AD1→AD2，图 6），短期均衡从 A 到 B：产出 Y 上升、物价 P 上升。</li>
+      </ol>
+      <p>反之，面临通胀压力时美联储可减少货币供给 → 利率上升 → AD 左移。美联储可以通过设定货币供给目标或利率目标（如联邦基金利率）来调控总需求。</p>
+
+      <div id="fig-monetary-expansion"></div>
+
+      <div id="fig-ad-expansion"></div>
+
+      <h3>财政政策如何影响总需求</h3>
+      <ul>
+        <li><strong>政府购买 G</strong>：直接影响。政府增加 100 亿美元修建高速公路，这 100 亿直接计入总需求 → <strong>AD 右移</strong>。</li>
+        <li><strong>税收 T</strong>：间接影响。减税增加家庭可支配收入 → 刺激消费；投资税收抵免激励企业投资 → C 和 I 增加 → <strong>AD 右移</strong>。</li>
+      </ul>
+
+      <h3>乘数效应与挤出效应</h3>
+      <p>财政政策的最终影响比初始变动量复杂，涉及两种方向相反的效应：</p>
+      <ul>
+        <li><strong>乘数效应</strong><span class="term-en">（Multiplier Effect）</span>：初始支出会被放大。政府支出 100 亿成为承包商和工人的收入，他们按<span class="term">边际消费倾向</span><span class="term-en">（Marginal Propensity to Consume, MPC）</span>把一部分花掉，又成为别人的收入，循环往复。乘数公式：<strong>Multiplier = 1 ÷ (1 − MPC)</strong>。MPC = 0.75 时乘数为 4——100 亿支出最终可能使总需求增加 400 亿。</li>
+        <li><strong>挤出效应</strong><span class="term-en">（Crowding-Out Effect）</span>：政府增加支出（往往靠借贷融资）→ 资金需求增加 → 利率上升 → 抑制私人投资——政府支出"挤出"私人投资，部分抵消财政扩张的效果。</li>
+      </ul>
+      <p>一项财政政策对总需求的最终影响，取决于乘数效应与挤出效应的相对大小。</p>
+
+      <h3>关于稳定经济政策的争论</h3>
+      <ul>
+        <li><strong>支持积极干预者</strong>：经济偏离自然产出水平时，政府和中央银行应主动调整总需求，减轻衰退的严重程度。</li>
+        <li><strong>反对积极干预者</strong>：政策存在漫长且不确定的时滞（认识时滞、决策时滞、实施时滞），干预往往为时已晚，甚至可能加剧波动，弊大于利。</li>
+      </ul>
+      <p>此外，经济中存在<span class="term">自动稳定器</span><span class="term-en">（Automatic Stabilizers）</span>——如累进税制度和失业保险：衰退时自动减税增支（税收减少、转移支付增加）刺激总需求，过热时自动抑制，无需政府采取额外行动。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/principles-of-economics/10-short-run-economy.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    const D_BLUE = '#2563eb';
+    const S_ORANGE = '#c2410c';
+    const EQ_GREEN = '#0f766e';
+    const GRAY = '#64748b';
+
+    // ===== AD/AS 公共曲线：AD1: P = 10.8 − 0.08Y；SRAS1: P = 3 + 0.05Y；LRAS: Y = 60；A = (60, 6) =====
+    const ADAS = {
+      xLabel: '实际 GDP Y',
+      yLabel: '物价水平 P',
+      xMax: 100, yMax: 12, xTicks: [], yTicks: [],
+    };
+    const AD1 = { points: [[0, 10.8], [100, 2.8]], type: 'linear', color: D_BLUE, label: 'AD1（总需求）' };
+    const SRAS1 = { points: [[0, 3], [100, 8]], type: 'linear', color: S_ORANGE, label: 'SRAS1（短期总供给）' };
+    const LRAS = { points: [[60, 0], [60, 12]], type: 'linear', color: GRAY, label: 'LRAS（长期总供给）' };
+
+    // ===== 图1：AD/AS 模型全貌 =====
+    Charts.sd(document.getElementById('fig-adas-basic'), Object.assign({}, ADAS, {
+      caption: '图 1：AD/AS 模型 —— 长期均衡在 AD、SRAS 与垂直的 LRAS 的共同交点 A（自然产出率 YN）',
+      series: [AD1, SRAS1, LRAS],
+      markers: [
+        { x: 60, y: 6, label: 'A 长期均衡', color: EQ_GREEN, guides: true, gxLabel: 'YN', gyLabel: 'P*', labelDx: 12, labelDy: -12 },
+      ],
+    }));
+
+    // ===== 图2：总需求下降（衰退）A→B→C =====
+    Charts.sd(document.getElementById('fig-ad-decline'), Object.assign({}, ADAS, {
+      caption: '图 2：总需求下降 —— AD1→AD2 左移，短期到 B（产出降、物价降）；长期预期下调使 SRAS1→SRAS2 右移，到 C（产出回归自然率、物价更低）',
+      series: [
+        AD1,
+        { points: [[0, 8.8], [100, 0.8]], type: 'linear', color: D_BLUE, dash: true, label: 'AD2（需求下降）' },
+        SRAS1,
+        { points: [[0, 1], [100, 6]], type: 'linear', color: S_ORANGE, dash: true, label: 'SRAS2（预期下调后）' },
+        LRAS,
+      ],
+      markers: [
+        { x: 60, y: 6, label: 'A', color: EQ_GREEN, guides: true, gxLabel: 'YN', labelDx: 10, labelDy: -10 },
+        { x: 44.6, y: 5.2, label: 'B（短期：衰退）', color: '#dc2626', guides: true, gxLabel: 'Y2', gyLabel: 'P2', labelDx: -70, labelDy: -12 },
+        { x: 60, y: 4, label: 'C（长期）', color: '#7c3aed', guides: true, gyLabel: 'P3', labelDx: 10, labelDy: 14 },
+      ],
+    }));
+
+    // ===== 图3：总供给下降（滞胀）A→B =====
+    Charts.sd(document.getElementById('fig-as-decline'), Object.assign({}, ADAS, {
+      caption: '图 3：总供给下降（如油价飙升）—— SRAS1→SRAS2 左移，到 B：产出下降、物价上升（滞胀）；政策制定者面临两难',
+      series: [
+        AD1,
+        SRAS1,
+        { points: [[0, 4.5], [100, 9.5]], type: 'linear', color: S_ORANGE, dash: true, label: 'SRAS2（成本冲击后）' },
+        LRAS,
+      ],
+      markers: [
+        { x: 60, y: 6, label: 'A', color: EQ_GREEN, guides: true, gxLabel: 'YN', labelDx: 10, labelDy: 16 },
+        { x: 48.5, y: 6.9, label: 'B（滞胀）', color: '#dc2626', guides: true, gxLabel: 'Y2', gyLabel: 'P2', labelDx: -66, labelDy: -12 },
+      ],
+    }));
+
+    // ===== 货币市场公共曲线：MS 垂直于 M=50；MD: r = 10 − 0.12M；E = (50, 4) =====
+    const MM = {
+      xLabel: '货币量 M',
+      yLabel: '利率 r',
+      xMax: 100, yMax: 10, xTicks: [], yTicks: [],
+    };
+    const MM_MD = { points: [[0, 10], [80, 0.4]], type: 'linear', color: D_BLUE, label: 'MD（货币需求）' };
+
+    // ===== 图4：货币市场均衡（流动性偏好理论） =====
+    Charts.sd(document.getElementById('fig-liquidity-preference'), Object.assign({}, MM, {
+      caption: '图 4：流动性偏好理论 —— 货币供给由美联储设定（垂直）；利率是持有货币的机会成本，故需求向下倾斜；交点决定均衡利率',
+      series: [
+        { points: [[50, 0], [50, 10]], type: 'linear', color: S_ORANGE, label: 'MS（货币供给，美联储设定）' },
+        MM_MD,
+      ],
+      markers: [
+        { x: 50, y: 4, label: 'E 均衡', color: EQ_GREEN, guides: true, gxLabel: 'M1', gyLabel: 'r*', labelDx: 12, labelDy: -12 },
+      ],
+    }));
+
+    // ===== 图5：扩张性货币政策 —— MS 右移，利率下降 =====
+    Charts.sd(document.getElementById('fig-monetary-expansion'), Object.assign({}, MM, {
+      caption: '图 5：扩张性货币政策 —— 美联储购买债券使货币供给 MS1→MS2 右移，均衡利率 r1→r2 下降',
+      series: [
+        { points: [[50, 0], [50, 10]], type: 'linear', color: S_ORANGE, label: 'MS1' },
+        { points: [[70, 0], [70, 10]], type: 'linear', color: S_ORANGE, dash: true, label: 'MS2（货币供给增加）' },
+        MM_MD,
+      ],
+      markers: [
+        { x: 50, y: 4, label: 'E1', color: EQ_GREEN, guides: true, gxLabel: 'M1', gyLabel: 'r1', labelDx: -24, labelDy: -10 },
+        { x: 70, y: 1.6, label: 'E2', color: '#dc2626', guides: true, gxLabel: 'M2', gyLabel: 'r2', labelDx: 10, labelDy: 16 },
+      ],
+    }));
+
+    // ===== 图6：政策传导 —— AD 右移（扩张性政策的短期效果） =====
+    Charts.sd(document.getElementById('fig-ad-expansion'), Object.assign({}, ADAS, {
+      caption: '图 6：利率下降刺激投资与消费 → 总需求 AD1→AD2 右移 → 短期均衡从 A 到 B：产出 Y 上升、物价 P 上升',
+      series: [
+        AD1,
+        { points: [[0, 12.8], [100, 4.8]], type: 'linear', color: D_BLUE, dash: true, label: 'AD2（总需求增加）' },
+        SRAS1,
+        LRAS,
+      ],
+      markers: [
+        { x: 60, y: 6, label: 'A', color: EQ_GREEN, guides: true, gxLabel: 'YN', labelDx: -20, labelDy: 16 },
+        { x: 75.4, y: 6.8, label: 'B（短期）', color: '#dc2626', guides: true, gxLabel: 'Y2', gyLabel: 'P2', labelDx: 10, labelDy: -12 },
+      ],
+    }));
+  </script>
+</body>
+</html>

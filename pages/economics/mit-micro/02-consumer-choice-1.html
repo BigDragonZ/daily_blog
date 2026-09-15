@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 消费者选择 I - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>02 消费者选择 I：偏好、效用与预算约束</h1>
+      <p>本篇覆盖 MIT 14.01 的 L02 与 L03：需求曲线不是凭空出现的，它来自消费者的选择。L02 讨论"你想要什么"（偏好与效用函数），L03 讨论"你买得起什么"（预算约束），并把两者合起来得到受约束的最优选择。</p>
+
+      <!-- ==================== L02 ==================== -->
+      <h2>L02 偏好与效用函数（Preferences and Utility Functions）</h2>
+
+      <p><strong>引入</strong>：假设你中了彩票，钱完全不是问题——你该怎么决定自己想要什么？听起来像是不用动脑的美事，但"我想要什么"恰恰是经济学最难回答的问题之一。这一讲我们先假装中了彩票（无约束的选择），下一讲再告诉你：其实你没中。</p>
+
+      <h3>效用最大化三步走</h3>
+      <p>需求曲线源于消费者如何做出选择。我们的消费者决策模型是一个<span class="term">效用最大化</span><span class="term-en">（Utility Maximization）</span>模型，其核心是<span class="term">约束下的最大化</span><span class="term-en">（Constrained Maximization）</span>：在预算允许的范围内，让自己的幸福感尽可能大。整个过程分三步：</p>
+      <ol>
+        <li><span class="term">偏好</span><span class="term-en">（Preferences）</span>：如何为人们的品味建模？（L02）</li>
+        <li><span class="term">效用函数</span><span class="term-en">（Utility Function）</span>：如何把偏好转化为数学表达？（L02）</li>
+        <li><span class="term">预算约束</span><span class="term-en">（Budget Constraint）</span>：人们面临的支付能力限制。（L03）</li>
+      </ol>
+      <p>效用函数给每个消费组合赋予一个数值，单位叫<span class="term">效用单位</span><span class="term-en">（Utils）</span>。关键点是：<strong>Utils 只有相对意义，没有绝对意义</strong>——说组合 A 是 10 utils、组合 B 是 5 utils，只表示你偏好 A 胜过 B，不代表 A 让你"快乐两倍"。</p>
+
+      <h3>三大偏好假设</h3>
+      <p>模型依赖简化的假设，关键在于假设是否合理。我们为偏好提出三个假设：</p>
+      <ol>
+        <li><span class="term">完备性</span><span class="term-en">（Completeness）</span>：对于任意两组商品，你都能做出比较——要么偏好其一，要么觉得两者一样好。你可以"无差异"，但不能说"我不知道怎么选"。</li>
+        <li><span class="term">传递性</span><span class="term-en">（Transitivity）</span>：如果你偏好 A 胜过 B，偏好 B 胜过 C，那么必然偏好 A 胜过 C。这是我们从小就熟悉的逻辑。</li>
+        <li><span class="term">非饱和性</span><span class="term-en">（Non-satiation）</span>：<strong>越多越好（More is always better）</strong>。注意：我们并不是说下一单位带来的快乐和上一单位一样多（实际上会更少），而是说在多与少之间，你总是因拥有更多而更快乐。这个假设赋予模型强大的解释力。</li>
+      </ol>
+
+      <h3>无差异曲线（Indifference Curve, IC）</h3>
+      <p>有了假设，就可以画出偏好的"地图"——<span class="term">无差异曲线</span><span class="term-en">（Indifference Curve, IC）</span>：所有能带来<strong>同等满足感</strong>的消费组合连成的曲线。假设你只把钱花在披萨和饼干上，考虑三个组合：</p>
+      <ul>
+        <li><strong>组合 A</strong>：2 块披萨，1 块饼干</li>
+        <li><strong>组合 B</strong>：1 块披萨，2 块饼干</li>
+        <li><strong>组合 C</strong>：2 块披萨，2 块饼干</li>
+      </ul>
+      <p>假设你对 A 和 B <span class="term">无差异</span><span class="term-en">（Indifferent）</span>（觉得一样好），那么它们在同一条无差异曲线上。而你<em>必然</em>更偏好 C——这不需要额外假设，直接由<strong>非饱和性</strong>推出：C 在两种商品上都不比 A、B 少，且至少一样更多。</p>
+
+      <div id="fig-indiff"></div>
+
+      <p><strong>图的解读</strong>（横轴 = 饼干，纵轴 = 披萨）：A(1饼干, 2披萨) 与 B(2饼干, 1披萨) 落在同一条蓝色曲线 I1 上，表示两者带来同等满足；C(2饼干, 2披萨) 落在更靠外（离原点更远）的绿色曲线 I2 上。I2 上任意一点都优于 I1 上任意一点——越靠外越快乐。</p>
+
+      <h3>无差异曲线的四个性质</h3>
+      <div class="callout">
+        讲义补全说明：L02 原始讲义在第三个性质处截断。"不相交"与"凸向原点"两条性质按标准教材（Pindyck &amp; Rubinfeld《微观经济学》）补全，与本课前两条性质同属通行结论。
+      </div>
+      <ol>
+        <li><strong>消费者偏好更高的无差异曲线</strong>：离原点越远，满意度越高（C 优于 A、B）。</li>
+        <li><strong>无差异曲线向下倾斜</strong>：一条向上倾斜的曲线意味着"1 披萨 1 饼干"与"2 披萨 2 饼干"一样好，这在非饱和性下不可能。</li>
+        <li><strong>无差异曲线不相交</strong>（教材补全）：若两条曲线相交，交点同时等于两条曲线上的组合，由传递性会推出"某组合优于其自身"的矛盾。</li>
+        <li><strong>无差异曲线凸向原点</strong>（教材补全）：沿曲线向右移动，曲线越来越平缓——人们偏好"均衡搭配"甚于"极端偏科"，拥有的某商品越多，越不愿意再用别的商品去换它。</li>
+      </ol>
+      <p>四个性质都可以追溯到三大假设，对照如下：</p>
+      <table>
+        <thead>
+          <tr><th>性质</th><th>内容</th><th>来源假设</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>越高越好</td><td>离原点越远的曲线效用越高</td><td>非饱和性</td></tr>
+          <tr><td>向下倾斜</td><td>曲线斜率为负</td><td>非饱和性</td></tr>
+          <tr><td>不相交</td><td>任意两条无差异曲线没有交点</td><td>传递性</td></tr>
+          <tr><td>凸向原点</td><td>沿曲线 MRS 递减</td><td>非饱和性 + 对多样化组合的偏好（边际替代率递减）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>边际替代率（Marginal Rate of Substitution, MRS）</h3>
+      <p><span class="term">边际替代率</span><span class="term-en">（Marginal Rate of Substitution, MRS）</span>衡量你的<strong>主观交换意愿</strong>：在保持同样快乐的前提下，你愿意用多少块披萨去换 1 块饼干。数学上，它等于无差异曲线的斜率：</p>
+      <p style="text-align:center"><strong>MRS = −MU<sub>c</sub> / MU<sub>p</sub></strong></p>
+      <p>其中 <span class="term">边际效用</span><span class="term-en">（Marginal Utility, MU）</span>是多吃一单位某商品带来的效用增量。由于凸向原点，<strong>MRS 沿曲线递减</strong>：饼干少披萨多时，饼干很"珍贵"，你愿意为 1 块饼干放弃很多披萨；饼干多了以后，就只愿意放弃很少披萨了。</p>
+
+      <div id="fig-mrs"></div>
+
+      <p><strong>图的解读</strong>：同一条无差异曲线上取两点。在饼干稀缺处（2饼干, 6披萨），切线陡峭，MRS = −3：愿意用 3 块披萨换 1 块饼干；在饼干充裕处（6饼干, 2披萨），切线平缓，MRS = −1/3：只愿意用 1/3 块披萨换 1 块饼干。虚线为该点处切线，其斜率即 MRS。</p>
+
+      <p><strong>模型的优点</strong>：只需三个符合直觉的假设，就能把"品味"这种看不见的东西变成可画图、可计算的曲线地图，为推导需求曲线打下地基。</p>
+      <p><strong>模型的缺点</strong>：效用（utils）无法实际测量，只有排序意义；三大假设在真实世界中常被违反（如选择困难破坏完备性、 Frame 效应破坏传递性、商品过量带来厌恶破坏非饱和性）。</p>
+
+      <!-- ==================== L03 ==================== -->
+      <h2>L03 预算约束与受约束选择（Budget Constraints and Constrained Choice）</h2>
+
+      <p><strong>引入</strong>：慧优体（Weight Watchers）不教会员营养学，也不让人数卡路里——它只给每天 30 个"点数"，每种食物标价若干点，花完为止。为什么这套虚拟的预算制度比精确计算卡路里更能帮人减肥？答案正是本讲的内容：<strong>预算约束 + 相对价格，就能引导人在各种选择间做权衡</strong>。</p>
+
+      <h3>预算方程</h3>
+      <p>"越多越好"，那是什么阻止人们无节制消费？是<span class="term">预算约束</span><span class="term-en">（Budget Constraint）</span>——有限的资源。我们做简化假设：<strong>支出 = 收入</strong>（不考虑储蓄与借贷）。这并非完全不切实际：美国家庭的储蓄中位数只有约 400 美元，"量入为出"描述了许多人的真实生活。</p>
+      <p>仍假设只消费披萨和饼干，则预算约束为：</p>
+      <p style="text-align:center"><strong>Y = P<sub>p</sub>·P + P<sub>c</sub>·C</strong></p>
+      <p>其中 Y 是收入，P<sub>p</sub>、P<sub>c</sub> 是披萨和饼干的价格，P、C 是购买数量。总支出必须等于收入。</p>
+      <p><strong>数值例子</strong>：收入 Y = $72，披萨 P<sub>p</sub> = $12，饼干 P<sub>c</sub> = $6。全买披萨最多 6 片（72/12），全买饼干最多 12 块（72/6）。</p>
+
+      <div id="fig-budget"></div>
+
+      <p><strong>图的解读</strong>：预算线连接两个截距——纵轴截距 Y/P<sub>p</sub> = 6（全买披萨），横轴截距 Y/P<sub>c</sub> = 12（全买饼干）。斜率 = −P<sub>c</sub>/P<sub>p</sub> = −6/12 = −1/2：每多买 1 块饼干，必须放弃半片披萨。预算线及其内侧是你的<span class="term">机会集</span><span class="term-en">（Opportunity Set）</span>——所有买得起的组合。</p>
+
+      <h3>边际转换率（Marginal Rate of Transformation, MRT）</h3>
+      <p>预算线的斜率叫<span class="term">边际转换率</span><span class="term-en">（Marginal Rate of Transformation, MRT）</span>：</p>
+      <p style="text-align:center"><strong>MRT = −P<sub>c</sub> / P<sub>p</sub></strong></p>
+      <p>我们不是真的把披萨"炼"成饼干，但因为钱固定且会花光，花在披萨上的钱多了，饼干就少了——通过预算约束，你实际上在两种商品之间做"转换"。这回扣了 L01 的<span class="term">机会成本</span><span class="term-en">（Opportunity Cost, OC）</span>：一片披萨的机会成本是 2 块饼干（$12 能买 2 块 $6 的饼干）。慧优体的点数制度正是这个原理的应用：巨无霸套餐 30 点正好花光一天预算，而麦乐鸡+苹果片+健怡可乐只要 13 点，晚餐就还有余量——点数没有绝对意义，但相对"价格"逼你做权衡。</p>
+
+      <h3>比较静态分析：价格旋转 vs 收入平移</h3>
+      <p><span class="term">比较静态分析</span><span class="term-en">（Comparative Statics）</span>：改变一个变量，观察系统如何变化。预算约束的两种变动方式截然不同：</p>
+
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div id="fig-price" style="flex:1;min-width:320px"></div>
+        <div id="fig-income" style="flex:1;min-width:320px"></div>
+      </div>
+
+      <p><strong>图的解读</strong>：</p>
+      <ul>
+        <li><strong>左图（价格变化）</strong>：披萨从 $12 涨到 $18，预算线绕横轴截距向内<strong>旋转</strong>——斜率从 −1/2 变为 −6/18 = −1/3，更平缓。全买饼干的数量不变（横截距仍是 12），但全买披萨从 6 片降为 4 片。红色区域是失去的机会集：钱没变，购买力却下降了，境况变差。</li>
+        <li><strong>右图（收入变化）</strong>：价格不变，零用钱从 $72 砍到 $60，预算线向内<strong>平行移动</strong>——相对价格没变，斜率仍是 −1/2；变的是截距（全买饼干 12→10，全买披萨 6→5）。机会集同样缩小，但方式与价格变化不同。</li>
+      </ul>
+
+      <h3>受约束的最优选择：MRS = MRT</h3>
+      <p>现在把偏好（无差异曲线）和预算约束合起来。消费者的目标：<strong>在预算线上找到能达到的最高无差异曲线</strong>。设效用函数 U = √(P·C)，预算同上（Y=72, P<sub>p</sub>=12, P<sub>c</sub>=6）。</p>
+
+      <div id="fig-optimum"></div>
+
+      <p><strong>图的解读</strong>：预算线上的 A(2饼干, 5披萨) 和 B(4饼干, 4披萨) 都可行，但位于较低的无差异曲线上；E(8饼干, 5披萨) 位于更高的曲线上，却超出预算、不可行。<strong>D(6饼干, 3披萨) 是预算线与最高可达无差异曲线的切点</strong>，即最优选择：3 片披萨 + 6 块饼干，效用 U = √18 ≈ 4.24。在切点处两条曲线斜率相等：</p>
+      <p style="text-align:center"><strong>MRS = MRT　⟺　−MU<sub>c</sub>/MU<sub>p</sub> = −P<sub>c</sub>/P<sub>p</sub>　⟺　MU<sub>c</sub>/P<sub>c</sub> = MU<sub>p</sub>/P<sub>p</sub></strong></p>
+      <p>最后一种写法叫"<span class="term">每元钱的边际效用</span><span class="term-en">（Bang for the Buck）</span>"：<strong>最优点处，花在饼干上的最后一美元带来的快乐，等于花在披萨上的最后一美元带来的快乐</strong>。下一美元永远该花在"性价比"最高的地方。</p>
+      <p><strong>数值验证（点 A 为何不是最优）</strong>：在 A(2饼干, 5披萨)，MU<sub>p</sub> = 0.5·C/√(P·C) = 1/√10 ≈ 0.316，MU<sub>c</sub> = 0.5·P/√(P·C) = 2.5/√10 ≈ 0.791。MRS = −MU<sub>c</sub>/MU<sub>p</sub> = −2.5：你愿意用 2.5 片披萨换 1 块饼干；而市场 MRT = −0.5，只要求你付 0.5 片。这笔交易太划算了——于是你减少披萨、增加饼干，沿预算线移向 D，直到主观意愿（MRS）与市场比率（MRT）相等为止。</p>
+
+      <h3>应用：食品券 vs 现金（SNAP）</h3>
+      <p>用这套框架分析真实政策：<span class="term">食品券</span>（现称<span class="term">补充营养援助计划</span><span class="term-en">（Supplemental Nutrition Assistance Program, SNAP）</span>）为低收入人群提供只能买食物的补贴。<strong>为什么政府给"券"而不直接给现金？</strong>设某人年收入 $5000，花在食物与住所上，政府补贴 $500：</p>
+      <ul>
+        <li><strong>现金补助</strong>：预算线整体外移（相当于收入变成 $5500）。</li>
+        <li><strong>食品券</strong>：预算线变成<span class="term">扭折线</span><span class="term-en">（Kinked Budget Line）</span>——即使不花自己的钱，也必须有 $500 的食物消费（券不能买别的），形成一段水平"平台"；食物超过 $500 后用自己的钱自由分配，斜率与原预算线相同。</li>
+      </ul>
+
+      <div id="fig-foodstamp"></div>
+
+      <p><strong>图的解读</strong>（横轴 = 食物支出 $，纵轴 = 住所支出 $）：</p>
+      <ul>
+        <li><strong>个人 Y</strong>（绿）本来就爱吃，现金下的最优 Y2(2500, 3000) 食物花费远超 $500，扭折线对他不构成束缚——<strong>食品券与现金完全等价</strong>。</li>
+        <li><strong>个人 X</strong>（紫）更偏好住所。拿现金他会选 X2′(300, 5200)，只花 $300 买食物；食品券强迫他至少消费 $500 食物，他被束缚在<strong>扭折点 X2(500, 5000)</strong>，效用低于现金情形。平台段（从 (0,5000) 到扭折点）就是"券必须花掉"的几何体现。</li>
+      </ul>
+
+      <h3>家长式作风（Paternalism）之争与实证</h3>
+      <p>个人 X 拿食品券比拿现金更差——既然现金让穷人更自由、更幸福，政府为什么还要发券？背后是<span class="term">家长式作风</span><span class="term-en">（Paternalism）</span>：政策制定者认为自己比受助者更清楚什么对其有好处。把纵轴的"住所"换成"可卡因"，强迫把钱花在食物上似乎就合理多了。但经济学家对此不安：这假设了政府比个人更懂个人的偏好；从纯效率角度看，若目标是让穷人更幸福，<strong>直接给现金是最优的</strong>。</p>
+      <p><strong>经验证据</strong>：</p>
+      <ul>
+        <li><strong>食品券现金兑付实验</strong>：随机给一部分人现金而非食品券，发现拿现金的人食物花费减少约 <strong>15%</strong>——说明食品券确实"强迫"人们买了比自愿选择更多的食物（世上存在不少"个人 X"）。另外，食品券存在黑市折价出售现象。</li>
+        <li><strong>乌干达现金转移实验</strong>：向女性提供 $150 现金补助，18 个月后其收入<strong>翻了一番</strong>——人们并没有把钱浪费在烟酒上，而是用于生产性投资（如创业）。发展中国家的类似证据越来越多，支持"少些家长式作风，多给现金"。但政策辩论仍在继续。</li>
+      </ul>
+
+      <h3>收尾对比：现金补助 vs 实物补助</h3>
+      <table>
+        <thead>
+          <tr><th></th><th>现金补助（Cash Transfer）</th><th>实物补助（In-Kind Transfer，如食品券）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>自由度</strong></td><td>最大：受助者按自己偏好分配</td><td>受限：只能用于指定商品</td></tr>
+          <tr><td><strong>目标锁定</strong></td><td>弱：不保证花在"目标品"上</td><td>强：强迫目标品消费（实证约 +15%）</td></tr>
+          <tr><td><strong>黑市折价</strong></td><td>无</td><td>有：券常被折价换现金</td></tr>
+          <tr><td><strong>经济效率</strong></td><td>高：不扭曲选择，效用最大</td><td>低：束缚型受助者效用受损（X2 &lt; X2′）</td></tr>
+          <tr><td><strong>背后理念</strong></td><td>尊重个人偏好</td><td>家长式作风（Paternalism）</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>思想链路回顾</strong>：核心问题（需求曲线从何而来）→ 简化模型（三大偏好假设 + 预算方程）→ 推导（无差异曲线四性质 → MRS，预算线 → MRT，切点条件 MRS = MRT）→ 实际应用（慧优体点数、食品券 vs 现金）→ 局限性（效用不可测、假设可被违反、家长式作风的政策价值无法在纯效率框架内评判）。下一讲将由此正式推导出需求曲线。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/02-consumer-choice-1.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：无差异曲线 —— A、B 无差异（同在 I1），C 更受偏好（在更高的 I2） =====
+    Charts.xy(document.getElementById('fig-indiff'), {
+      xLabel: '饼干（块）',
+      yLabel: '披萨（块）',
+      xMax: 4.5, yMax: 4.5, xStep: 1, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 1：无差异曲线 —— A(1饼干,2披萨) 与 B(2饼干,1披萨) 无差异，C(2,2) 更受偏好',
+      series: [
+        { points: [[0.5, 4], [0.7, 2.86], [1, 2], [1.4, 1.43], [2, 1], [2.9, 0.69], [4, 0.5], [4.4, 0.45]], type: 'spline', color: '#2563eb', label: 'I1（较低效用）' },
+        { points: [[1, 4], [1.3, 3.08], [2, 2], [2.9, 1.38], [4, 1], [4.4, 0.91]], type: 'spline', color: '#15803d', label: 'I2（更高效用）' },
+      ],
+      markers: [
+        { x: 1, y: 2, label: 'A (1饼干, 2披萨)', color: '#2563eb', legend: '无差异组合（同在 I1）', labelDx: 10, labelDy: -6 },
+        { x: 2, y: 1, label: 'B (2饼干, 1披萨)', color: '#2563eb', labelDx: 10, labelDy: 16 },
+        { x: 2, y: 2, label: 'C (2, 2) 更受偏好', color: '#15803d', legend: '更受偏好的组合（在 I2）', labelDx: 10, labelDy: -6 },
+      ],
+    });
+
+    // ===== 图2：MRS 沿无差异曲线递减（凸向原点） =====
+    Charts.xy(document.getElementById('fig-mrs'), {
+      xLabel: '饼干（块）',
+      yLabel: '披萨（块）',
+      xMax: 13, yMax: 13, xStep: 2, yStep: 2,
+      legendPosition: 'top',
+      caption: '图 2：MRS 沿曲线递减 —— 饼干稀缺处 MRS=−3，饼干充裕处 MRS=−1/3',
+      series: [
+        { points: [[1, 12], [1.5, 8], [2, 6], [3, 4], [4, 3], [6, 2], [8, 1.5], [12, 1]], type: 'spline', color: '#2563eb', label: '无差异曲线（U = 饼干×披萨 = 12）' },
+        { points: [[0.8, 9.6], [3.2, 2.4]], type: 'linear', color: '#c2410c', dash: true, label: '(2,6) 处切线，斜率 −3' },
+        { points: [[3, 3], [9, 1]], type: 'linear', color: '#15803d', dash: true, label: '(6,2) 处切线，斜率 −1/3' },
+      ],
+      markers: [
+        { x: 2, y: 6, label: '(2饼干, 6披萨) MRS = −3', color: '#c2410c', labelDx: 10, labelDy: -6 },
+        { x: 6, y: 2, label: '(6饼干, 2披萨) MRS = −1/3', color: '#15803d', labelDx: 10, labelDy: 18 },
+      ],
+    });
+
+    // ===== 图3：预算线（Y=72, Pp=12, Pc=6） =====
+    Charts.xy(document.getElementById('fig-budget'), {
+      xLabel: '饼干（块）',
+      yLabel: '披萨（片）',
+      xMax: 13, yMax: 7, xStep: 2, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 3：预算线 Y = 12P + 6C = 72 —— 斜率 = MRT = −1/2',
+      series: [
+        { points: [[0, 6], [12, 0]], type: 'linear', color: '#1d4ed8', label: '预算线 BC（12P + 6C = 72）' },
+      ],
+      markers: [
+        { x: 0, y: 6, label: '全买披萨 Y/Pp = 6', color: '#1d4ed8', legend: '截距', labelDx: 12, labelDy: -6 },
+        { x: 12, y: 0, label: '全买饼干 Y/Pc = 12', color: '#1d4ed8', labelDx: -80, labelDy: 22 },
+        { x: 6, y: 3, label: '(6饼干, 3披萨)：多 1 饼干 = 少 0.5 披萨', color: '#c2410c', legend: '线上组合', labelDx: 8, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图4a：价格变化 → 预算线旋转（Pp: 12→18） =====
+    Charts.xy(document.getElementById('fig-price'), {
+      xLabel: '饼干（块）',
+      yLabel: '披萨（片）',
+      xMax: 13, yMax: 7, xStep: 2, yStep: 1,
+      width: 480, height: 380,
+      legendPosition: 'top',
+      caption: '图 4a：披萨涨价 $12→$18，预算线绕横截距向内旋转',
+      areas: [
+        { points: [[0, 6], [0, 4], [12, 0]], color: '#dc2626', opacity: 0.12, label: '失去的机会集' },
+      ],
+      series: [
+        { points: [[0, 6], [12, 0]], type: 'linear', color: '#1d4ed8', label: 'BC1：Pp = $12（斜率 −1/2）' },
+        { points: [[0, 4], [12, 0]], type: 'linear', color: '#c2410c', label: 'BC2：Pp = $18（斜率 −1/3）' },
+      ],
+      markers: [
+        { x: 0, y: 6, label: '6', color: '#1d4ed8', labelDx: -18, labelDy: -6 },
+        { x: 0, y: 4, label: '4', color: '#c2410c', labelDx: -18, labelDy: 10 },
+        { x: 12, y: 0, label: '横截距不变：12', color: '#374151', labelDx: -100, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图4b：收入变化 → 预算线平移（Y: 72→60） =====
+    Charts.xy(document.getElementById('fig-income'), {
+      xLabel: '饼干（块）',
+      yLabel: '披萨（片）',
+      xMax: 13, yMax: 7, xStep: 2, yStep: 1,
+      width: 480, height: 380,
+      legendPosition: 'top',
+      caption: '图 4b：收入 $72→$60，预算线向内平行移动（斜率不变）',
+      series: [
+        { points: [[0, 6], [12, 0]], type: 'linear', color: '#1d4ed8', label: 'BC1：Y = $72' },
+        { points: [[0, 5], [10, 0]], type: 'linear', color: '#c2410c', label: 'BC2：Y = $60' },
+      ],
+      markers: [
+        { x: 0, y: 6, label: '6', color: '#1d4ed8', labelDx: -18, labelDy: -6 },
+        { x: 0, y: 5, label: '5', color: '#c2410c', labelDx: -18, labelDy: 10 },
+        { x: 12, y: 0, label: '12', color: '#1d4ed8', labelDx: -8, labelDy: 20 },
+        { x: 10, y: 0, label: '10', color: '#c2410c', labelDx: -8, labelDy: 20 },
+      ],
+    });
+
+    // ===== 图5：受约束最优 —— 预算线与最高可达无差异曲线相切于 D =====
+    Charts.xy(document.getElementById('fig-optimum'), {
+      xLabel: '饼干（块）',
+      yLabel: '披萨（片）',
+      xMax: 13, yMax: 7, xStep: 2, yStep: 1,
+      legendPosition: 'top',
+      caption: '图 5：受约束最优 —— U = √(P·C)，切点 D(6饼干, 3披萨) 处 MRS = MRT',
+      series: [
+        { points: [[0, 6], [12, 0]], type: 'linear', color: '#1d4ed8', label: '预算线（12P + 6C = 72）' },
+        { points: [[1.7, 5.88], [2, 5], [3, 3.33], [4, 2.5], [6, 1.67], [10, 1], [12, 0.83]], type: 'spline', color: '#9ca3af', label: 'I1（U=√10，过低）' },
+        { points: [[2.7, 5.93], [3, 5.33], [4, 4], [6, 2.67], [8, 2], [12, 1.33]], type: 'spline', color: '#60a5fa', label: 'I2（U=4，可行但非最优）' },
+        { points: [[3, 6], [4, 4.5], [6, 3], [9, 2], [12, 1.5]], type: 'spline', color: '#15803d', label: 'I3（U=√18，最高可达）' },
+        { points: [[6, 6.67], [8, 5], [10, 4], [12, 3.33]], type: 'spline', color: '#dc2626', label: 'I4（U=√40，不可行）' },
+      ],
+      markers: [
+        { x: 2, y: 5, label: 'A (2,5) 可行非最优', color: '#9ca3af', legend: '可行但非最优', labelDx: -40, labelDy: -14 },
+        { x: 4, y: 4, label: 'B (4,4)', color: '#60a5fa', labelDx: -30, labelDy: -12 },
+        { x: 6, y: 3, label: 'D (6,3) 最优切点', color: '#15803d', shape: 'star', legend: '最优选择（切点）', labelDx: 12, labelDy: 22 },
+        { x: 8, y: 5, label: 'E (8,5) 不可行', color: '#dc2626', legend: '超出预算（不可行）', labelDx: 10, labelDy: -6 },
+      ],
+    });
+
+    // ===== 图6：食品券 vs 现金 —— 扭折预算线 =====
+    Charts.xy(document.getElementById('fig-foodstamp'), {
+      xLabel: '食物支出（$）',
+      yLabel: '住所支出（$）',
+      xMax: 6000, yMax: 6000, xStep: 1000, yStep: 1000,
+      legendPosition: 'top',
+      caption: '图 6：$500 食品券（扭折线）vs $500 现金（平移线）—— 个人 X 束缚在扭折点，个人 Y 两者等价',
+      series: [
+        { points: [[0, 5000], [5000, 0]], type: 'linear', color: '#9ca3af', dash: true, label: '无补助预算线（Y = $5000）' },
+        { points: [[0, 5500], [5500, 0]], type: 'linear', color: '#1d4ed8', label: '现金补助 +$500（平移）' },
+        { points: [[0, 5000], [500, 5000], [5500, 0]], type: 'linear', color: '#c2410c', label: '食品券 $500（扭折线，含平台段）' },
+        { points: [[150, 5412], [300, 5200], [700, 4952], [1500, 4738]], type: 'spline', color: '#7c3aed', label: 'X 的无差异曲线（现金最优）' },
+        { points: [[300, 5150], [500, 5000], [1000, 4804], [2000, 4615], [3500, 4469]], type: 'spline', color: '#7c3aed', dash: true, label: 'X 的无差异曲线（券束缚，更低）' },
+        { points: [[1200, 5531], [1800, 3943], [2500, 3000], [3500, 2267], [4800, 1741], [5400, 1580]], type: 'spline', color: '#15803d', label: 'Y 的无差异曲线（两种补助等价）' },
+      ],
+      markers: [
+        { x: 500, y: 5000, label: '扭折点 = X2 (500, 5000)', color: '#c2410c', legend: '扭折点（X 被束缚于此）', labelDx: 10, labelDy: 18 },
+        { x: 300, y: 5200, label: 'X2′ (300, 5200) 现金下更优', color: '#7c3aed', legend: 'X 的现金最优（拿不到）', labelDx: -10, labelDy: -14 },
+        { x: 2500, y: 3000, label: 'Y2 (2500, 3000) 现金=券', color: '#15803d', shape: 'star', legend: 'Y 的最优（两种补助相同）', labelDx: 12, labelDy: -8 },
+      ],
+    });
+  </script>
+</body>
+</html>

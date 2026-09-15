@@ -19,3 +19,10 @@
 | 2026-09-09 | 吸顶导航优化 | [2026-09-09-sticky-nav.md](2026-09-09-sticky-nav.md) |
 | 2026-09-09 | 改为本地应用方式访问（localhost:8080） | [2026-09-09-local-server.md](2026-09-09-local-server.md) |
 | 2026-09-09 | 一键启停脚本 | [2026-09-09-one-click-scripts.md](2026-09-09-one-click-scripts.md) |
+| 2026-09-10 | 经济学原理 02 市场如何运行（Ch04-Ch06） | [2026-09-10-ch02-how-markets-work.md](2026-09-10-ch02-how-markets-work.md) |
+| 2026-09-10 | 经济学原理 03 市场和福利（Ch07-Ch09） | [2026-09-10-ch03-markets-and-welfare.md](2026-09-10-ch03-markets-and-welfare.md) |
+| 2026-09-10 | 经济学原理 04-06（Ch10-11、Ch13-17、Ch18+21） | [2026-09-10-ch04-06-pages.md](2026-09-10-ch04-06-pages.md) |
+| 2026-09-14 | 经济学原理 07 宏观经济指标（Ch23 GDP、Ch24 CPI） | [2026-09-14-ch07-macro-indicators.md](2026-09-14-ch07-macro-indicators.md) |
+| 2026-09-14 | 经济学原理 08 长期经济（Ch25、Ch26、Ch28） | [2026-09-14-ch08-long-run-economy.md](2026-09-14-ch08-long-run-economy.md) |
+| 2026-09-14 | 经济学原理 09-10 货币与物价、短期经济（Ch29-30、Ch33-34） | [2026-09-14-ch09-10-money-and-short-run.md](2026-09-14-ch09-10-money-and-short-run.md) |
+| 2026-09-15 | MIT 微观经济学原理 P01-P03（L01-L04） | [2026-09-15-mit-micro-p01-03.md](2026-09-15-mit-micro-p01-03.md) |
