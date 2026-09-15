@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08 垄断 I - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>08 垄断 I：定价、无谓损失与价格歧视</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 11 讲（L11）。从一个反直觉的问题出发：垄断者（Monopoly）明明是市场上唯一的公司、可以自己定价，<strong>为什么不敢把价格定到天上去？</strong>答案藏在"每多卖一件，就得给之前所有顾客退钱"的<span class="term">毒化效应</span>里。我们将由此推出垄断者的边际收益公式，解一个完整的利润最大化算例，看到垄断如何造成本课程第一个<span class="term">市场失灵</span>，最后用一个更反直觉的结论收尾：<span class="term">完全价格歧视</span>下的垄断竟然是有效率的——只是所有好处都归垄断者。</p>
+
+      <h2>一、引入：能随便定价的垄断者，为什么不敢定到天上？</h2>
+      <p><span class="term">垄断</span><span class="term-en">（Monopoly）</span>指市场中只有一个公司的情形。到目前为止我们学的<span class="term">完全竞争</span><span class="term-en">（Perfect Competition）</span>是市场组织的一个极端——它在现实中从未真正存在；垄断是另一个极端——不普遍，但确实存在（你本地的供水、供电就是）。现实中的大多数市场介于两者之间，叫<span class="term">寡头垄断</span><span class="term-en">（Oligopoly）</span>，我们后面再学；垄断这个相对简单的极端能为理解寡头提供大部分关键洞见。</p>
+      <p>垄断与竞争最核心的区别：垄断者是<span class="term">价格制定者</span><span class="term-en">（Price Maker）</span>，而不是<span class="term">价格接受者</span><span class="term-en">（Price Taker）</span>。竞争公司面对的价格由大市场给定，自己无法影响；垄断者是市场上唯一的公司，<strong>价格由它自己定</strong>。既然能自己定价，为什么不定个天价？因为垄断者面对的不再是水平需求线，而是<strong>整个市场的需求曲线</strong>——向下倾斜。价格定得越高，愿意买的人越少；想多卖，就必须降价。而降价这件事会带来一个竞争公司永远不会遇到的麻烦，这就是下一节的主题。</p>
+      <p>本讲前三分之二再加一个假设：<strong>单一价格</strong>——垄断者为所有消费者定同一个价格，即没有<span class="term">价格歧视</span><span class="term-en">（Price Discrimination）</span>。这个约束会驱动下面的核心直觉，之后再放松它。</p>
+
+      <h2>二、毒化效应：多卖一件，为什么要给所有老顾客"退钱"？</h2>
+      <p>利润最大化法则不变：<span class="term">边际收益</span><span class="term-en">（Marginal Revenue, MR）</span> = <span class="term">边际成本</span><span class="term-en">（Marginal Cost, MC）</span>。成本方面也没有任何变化——我们之前推导成本函数的全部工作原样适用。垄断的全部新意都在<strong>收益侧</strong>：对价格接受者而言 MR 就是价格；对垄断者不再是了。</p>
+      <p>对比两种公司里"多卖一个单位"的后果（假设 MC = 0，赚到的都是利润）：</p>
+      <ul>
+        <li><strong>完全竞争公司</strong>（图 1）：以价格 P₁ 卖了 Q 单位，利润为矩形 A。多卖 1 单位，额外收入就是矩形 B——价格不用变，<strong>MR = P</strong>；</li>
+        <li><strong>垄断公司</strong>（图 2）：以 P₁ 卖 Q 单位，收入为 A + C。想多卖 1 单位，必须降价到 P₂。此时两件事同时发生：<strong>收益增加</strong>——新单位以 P₂ 卖出，得到矩形 B；<strong>收益减少</strong>——之前 Q 个单位全部按更低价格出售，损失矩形 C。所以垄断者的 <strong>MR = B − C</strong>。</li>
+      </ul>
+      <div class="figure-pair">
+        <div id="fig-comp-mr"></div>
+        <div id="fig-mono-mr"></div>
+      </div>
+      <p><strong>图 1 / 图 2 解读：</strong>左图中竞争公司面临水平需求，多卖的第 Q+1 个单位带来纯增量 B，MR = P₁。右图中垄断者面临向下倾斜的市场需求：从 P₁ = 8（卖 4 单位）降到 P₂ = 7（卖 5 单位），新单位贡献 B = 7，但前 4 个单位各少收 1 元、共损失 C = 4，故 MR = B − C = 3 &lt; P₂ = 7。矩形 C 就是<span class="term">毒化效应</span><span class="term-en">（Poisoning Effect）</span>：为了多卖一个单位，垄断者不得不通过降低<strong>所有</strong>之前单位的价格来"毒化"自己的收益。竞争公司没有这个问题，因为它面临完全弹性的需求（dP/dQ = 0），多卖无需降价。这就是开头的答案：<strong>垄断者不敢漫天要价，因为每一档价格都对应着有限的销量，而每一步放量都要拿老顾客的利润做代价。</strong></p>
+
+      <h2>三、数学：MR = P·(1 + 1/ε)</h2>
+      <p>毒化效应可以直接写成公式。总收入 TR = P(Q)·Q，对 Q 求导：</p>
+      <p><strong>MR = P + (dP/dQ)·Q</strong>　　第一项 P &gt; 0 是"多卖一个单位的进账"（图 2 的 B）；第二项中需求向下倾斜故 dP/dQ &lt; 0，它就是毒化损失（图 2 的 C）。</p>
+      <p>用<span class="term">需求弹性</span><span class="term-en">（Elasticity of Demand, ε）</span>改写，得到本讲最重要的关系式：</p>
+      <p><strong>MR = P·(1 + 1/ε)</strong></p>
+      <p>两个极限情形帮我们检验直觉：</p>
+      <ul>
+        <li><strong>完全竞争</strong>：公司面临完全弹性需求，ε = −∞，1/ε = 0，故 <strong>MR = P</strong>——竞争只是这个公式的退化特例；</li>
+        <li><strong>单位弹性</strong>：ε = −1 时 <strong>MR = 0</strong>——多卖的进账 B 恰好被毒化损失 C 抵消，再增产总收入反而下降，垄断者绝不会越过这一点。</li>
+      </ul>
+      <p>对<strong>线性需求</strong>还有一个好记的几何结论：MR 曲线与需求曲线<strong>纵轴截距相同、斜率是其两倍</strong>。例如需求 Q = 24 − P，反转为 P = 24 − Q，则 TR = 24Q − Q²，MR = d(TR)/dQ = 24 − 2Q——同样从 24 出发，下降速度快一倍（见图 3）。关键事实：<strong>MR 曲线总是位于需求曲线下方</strong>（竞争的极端情形中两者重合）。</p>
+
+      <h2>四、完整算例：Q* = 6，P* = 18 —— 以及那个经典错误</h2>
+      <p>把上面的工具组装起来，解一个完整的垄断利润最大化问题：</p>
+      <ul>
+        <li>市场需求：Q = 24 − P（反转需求曲线：P = 24 − Q）；</li>
+        <li>成本函数：C(Q) = 12 + Q²，故 <strong>MC = dC/dQ = 2Q</strong>。</li>
+      </ul>
+      <ol>
+        <li><strong>算 MR</strong>：TR = (24 − Q)·Q = 24Q − Q² → MR = 24 − 2Q；</li>
+        <li><strong>MR = MC 定产量</strong>：24 − 2Q = 2Q → 4Q = 24 → <strong>Q* = 6</strong>；</li>
+        <li><strong>回需求曲线找价格</strong>：把 Q* = 6 代入 P = 24 − Q → <strong>P* = 24 − 6 = 18</strong>。</li>
+      </ol>
+      <p><strong>经典错误警示：</strong>第 2 步解出 MR = MC 的交点纵坐标是 12，很多人顺手把 12 当成价格——<strong>这是错的</strong>。12 只是"第 6 个单位的边际收益（= 边际成本）"，不是售价。垄断者虽然强大，仍必须尊重需求：他要选一个让消费者正好愿意买 6 个单位的价格，这个价格只能在<strong>需求曲线上</strong>找，即 P* = 18。图 3 中的虚线展示了正确路径：先在 MR = MC 交点 (6, 12) 定下 Q* = 6，再垂直向上走到需求曲线上的 (6, 18)。</p>
+      <div id="fig-monopoly-solution"></div>
+      <p><strong>图 3 解读：</strong>需求 D（红）与 MR（紫）同截距 24、MR 斜率两倍；MC（蓝）从原点出发。MR 与 MC 交于 (6, 12)，定出 Q* = 6；价格不由该交点给出，而要沿虚线上行到需求曲线读得 P* = 18。灰点 (8, 16) 是完全竞争均衡 EC（D = MC 处），留待下一节做福利对比。最后别忘<span class="term">停产规则</span><span class="term-en">（Shutdown Rule）</span>：本例 AVC = Q = 6，P* = 18 远高于 AVC，垄断者当然继续生产。</p>
+
+      <h2>五、垄断的福利分析：第一个市场失灵</h2>
+      <p>现在做规范性评估：单一价垄断对社会是好是坏？把垄断均衡 (Q* = 6, P* = 18) 与竞争均衡 (Q_c = 8, P_c = 16) 放在同一张图上分区（图 4）：</p>
+      <ul>
+        <li><span class="term">消费者剩余</span><span class="term-en">（Consumer Surplus, CS）</span> = <strong>A</strong>：需求曲线以下、价格线 18 以上的三角形，只剩 ½×6×6 = 18（竞争下是 32）；</li>
+        <li><span class="term">生产者剩余</span><span class="term-en">（Producer Surplus, PS）</span> = <strong>B + D</strong>：价格线以下、MC 以上的区域，合计 72（其中 B = 12 是从消费者手中转移来的）；</li>
+        <li><span class="term">无谓损失</span><span class="term-en">（Deadweight Loss, DWL）</span> = <strong>C + E</strong> = 6：第 6 到第 8 个单位，消费者支付意愿（需求曲线上 16~18）高于生产成本（MC 上 12~16），本应成交、双方都受益，却因垄断限产而未能交易——这部分剩余凭空蒸发了。</li>
+      </ul>
+      <div id="fig-welfare"></div>
+      <p><strong>图 4 解读：</strong>蓝色三角形 A 是垄断下仅存的消费者剩余；绿色矩形 B 与青色区域 D 合起来是生产者剩余（B 本质是把竞争下的 CS 转移给了垄断者，只是"换口袋"、不损总量）；橙色 C 与红色 E 组成无谓损失。与竞争均衡 EC (8, 16) 相比，垄断通过<strong>限制产量、抬高价格</strong>把总剩余从 96 压到 90。注意垄断伤害社会的机制不是"转移"（B 只是重新分配），而是<strong>消失的交易</strong>（C + E）。</p>
+      <p>这是我们遇到的第一个<span class="term">市场失灵</span><span class="term-en">（Market Failure）</span>：市场均衡未能最大化社会总福利。它打破了<span class="term">福利经济学第一基本定理</span><span class="term-en">（First Fundamental Theorem of Welfare Economics）</span>——该定理说完全竞争均衡是有效率的，而垄断市场不是。市场失灵的存在，为政府干预提供了潜在理由（如何干预是下一讲的主题）。</p>
+
+      <h2>六、完全价格歧视：最有效率的垄断，消费者却一无所有</h2>
+      <p>到目前为止都假设垄断者只收一个价。放松它：如果垄断者能进行<span class="term">价格歧视</span><span class="term-en">（Price Discrimination）</span>——对不同消费者收不同价格——会怎样？先看极端情形<span class="term">完全价格歧视</span><span class="term-en">（Perfect Price Discrimination）</span>：垄断者对每个消费者恰好收取其最高支付意愿。</p>
+      <p>反直觉的结论来了：<strong>完全价格歧视下的垄断是福利最大化的。</strong>原因在于毒化效应消失了——向第 7 个消费者收 17 元，无需降低前 6 个单位的价格（每个单位各收各的价）。于是垄断者可以沿着需求曲线一路向下收费，直到支付意愿等于边际成本为止，产量一路扩大到<strong>完全竞争水平</strong>（图 5 的 EC 点，Q = 8），DWL = 0。</p>
+      <div id="fig-perfect-pd"></div>
+      <p><strong>图 5 解读：</strong>完全价格歧视下，需求曲线本身就成了垄断者的 MR 曲线（每多卖一单位就按该单位的支付意愿全额入账，没有毒化），灰色虚线画出的单一价 MR 不再相关。垄断者一路生产到 D = MC 的 (8, 16)，产量与竞争完全相同——有效率。但需求与 MC 之间的全部三角形（PS = 96）都归垄断者，<strong>消费者剩余为零</strong>。对照灰点：单一价垄断停在 (6, 18)，那是毒化效应逼出来的限产。</p>
+      <p>这给出一个深刻的分离：<strong>效率</strong>（总剩余最大化）与<strong>公平</strong>（剩余如何分配）是两回事。完全价格歧视效率满分、公平零分——这个伏笔将在 L21 讲公平与再分配时回收。</p>
+
+      <h2>七、现实中的价格歧视案例串</h2>
+      <p>完全价格歧视几乎不存在（垄断者读不出你心里的支付意愿），但<strong>部分价格歧视</strong>非常普遍：公司寻找与需求弹性相关的<strong>信号</strong>，据此把顾客分组定价。一组例子：</p>
+      <ul>
+        <li><strong>机票</strong>：最后一刻购票的商务旅客需求弹性低 → 收高价；提前预订的度假者弹性高 → 给折扣。头等舱、商务舱则是用产品质量差异做价格歧视；</li>
+        <li><strong>地理定价</strong>：高速服务区的麦当劳、市中心超市更贵——那里的消费者选择更少、弹性更低；</li>
+        <li><strong>时间定价</strong>：餐厅"早鸟特价"、电影院日场更便宜——这些时段的顾客（如退休老人）时间充裕、弹性更高；</li>
+        <li><strong>本地折扣</strong>：迪士尼乐园给本地居民折扣——游客人都到了奥兰多，需求已极无弹性；本地人随时可去可不去，弹性高；</li>
+        <li><strong>软件锁</strong>：佛罗里达飓风期间，特斯拉远程"解锁"低配车的电池续航——暴露了高低配车型用的是<strong>同一块电池</strong>，仅靠软件限制来区分产品、实施价格歧视；</li>
+        <li><strong>降速芯片</strong>：早期激光打印机厂商在廉价家用机型里<strong>额外加一颗芯片让它变慢</strong>——人为制造"低配版"，好向价格不敏感的办公用户卖出"更快"的高价机型。这揭示了价格歧视的暗面：有时公司不是给高配版加价值，而是<strong>故意损毁低配版</strong>。</li>
+      </ul>
+
+      <h2>八、收尾对比：竞争 vs 单一价垄断 vs 完全歧视垄断</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>完全竞争</th><th>单一价垄断</th><th>完全价格歧视垄断</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>定价地位</td><td>价格接受者（Price Taker）</td><td>价格制定者（Price Maker），统一价</td><td>价格制定者，逐个定价</td></tr>
+          <tr><td>决策规则</td><td>P = MC</td><td>MR = MC（MR &lt; P，毒化效应）</td><td>沿需求曲线收费到 P = MC</td></tr>
+          <tr><td>产量</td><td>Q_c = 8</td><td>Q* = 6（限产）</td><td>Q = 8（= 竞争水平）</td></tr>
+          <tr><td>价格</td><td>P_c = 16（统一）</td><td>P* = 18（统一）</td><td>每单位不同：24 → 16</td></tr>
+          <tr><td>消费者剩余 CS</td><td>32</td><td>18（= A）</td><td><strong>0</strong></td></tr>
+          <tr><td>生产者剩余 PS</td><td>64</td><td>72（= B + D）</td><td><strong>96（全部）</strong></td></tr>
+          <tr><td>无谓损失 DWL</td><td>0</td><td>6（= C + E，市场失灵）</td><td>0（有效率但不公平）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（唯一的卖家如何定价、对社会是好是坏）→ 简化模型（价格制定者 + 单一价格 + 已知需求与成本）→ 推导（毒化效应 → MR = P(1+1/ε) → MR = MC 定 Q*、回需求曲线定 P* → 福利分区得 DWL）→ 实际应用（机票、地理、时间、迪士尼、特斯拉软件锁、打印机降速芯片）→ 局限性（完全歧视不可行；公平维度缺失，L21 回收；如何规制垄断是 L12 的主题）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/08-monopoly-1.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1（左）：完全竞争 —— 多卖 1 单位收 B，MR = P =====
+    Charts.xy(document.getElementById('fig-comp-mr'), {
+      xLabel: '公司产量 q',
+      yLabel: '价格 P',
+      xMax: 8, yMax: 14, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：完全竞争公司 —— 多卖 1 单位只需收 B，MR = P',
+      areas: [
+        { points: [[0, 0], [4, 0], [4, 10], [0, 10]], color: '#2563eb', opacity: 0.15, label: 'A' },
+        { points: [[4, 0], [5, 0], [5, 10], [4, 10]], color: '#15803d', opacity: 0.25, label: 'B' },
+      ],
+      series: [
+        { points: [[0, 10], [8, 10]], type: 'linear', color: '#dc2626', label: '公司面临的需求 = MR（水平于 P₁）' },
+      ],
+      markers: [
+        { x: 4, y: 10, label: '以 P₁ 卖 Q 单位（利润 A）', color: '#2563eb', legend: '当前销售点', guides: true, gxLabel: 'Q', gyLabel: 'P₁', labelDx: 12, labelDy: -14 },
+        { x: 5, y: 10, label: '多卖 1 单位：+B，无需降价', color: '#15803d', legend: '多卖 1 单位', guides: true, gxLabel: 'Q+1', labelDx: -40, labelDy: 26 },
+      ],
+      legend: [
+        { label: '公司面临的需求 = MR（水平于 P₁）', color: '#dc2626', style: 'line' },
+        { label: 'A：原有利润', color: '#2563eb', style: 'dot' },
+        { label: 'B：多卖 1 单位的净收益', color: '#15803d', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2（右）：垄断 —— MR = B − C（毒化效应） =====
+    Charts.xy(document.getElementById('fig-mono-mr'), {
+      xLabel: '市场总产量 Q',
+      yLabel: '价格 P',
+      xMax: 8, yMax: 14, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：垄断公司 —— 多卖 1 单位收 B、损失 C，MR = B − C',
+      areas: [
+        { points: [[0, 0], [4, 0], [4, 7], [0, 7]], color: '#2563eb', opacity: 0.15, label: 'A' },
+        { points: [[0, 7], [4, 7], [4, 8], [0, 8]], color: '#dc2626', opacity: 0.3, label: 'C' },
+        { points: [[4, 0], [5, 0], [5, 7], [4, 7]], color: '#15803d', opacity: 0.25, label: 'B' },
+      ],
+      series: [
+        { points: [[0, 12], [8, 4]], type: 'linear', color: '#dc2626', label: '市场需求 D（向下倾斜）' },
+      ],
+      markers: [
+        { x: 4, y: 8, label: 'P₁ = 8（卖 4 单位）', color: '#2563eb', guides: true, gxLabel: 'Q = 4', gyLabel: 'P₁ = 8', labelDx: 12, labelDy: -14 },
+        { x: 5, y: 7, label: '多卖 1 单位须降至 P₂ = 7', color: '#dc2626', guides: true, gxLabel: 'Q+1 = 5', gyLabel: 'P₂ = 7', labelDx: 14, labelDy: 18 },
+      ],
+      legend: [
+        { label: '市场需求 D（向下倾斜）', color: '#dc2626', style: 'line' },
+        { label: 'A：保留的收益', color: '#2563eb', style: 'dot' },
+        { label: 'B：新单位收益（+）', color: '#15803d', style: 'dot' },
+        { label: 'C：毒化损失（−）', color: '#dc2626', style: 'dot' },
+      ],
+    });
+
+    // ===== 图3：完整算例 —— MR = MC 定 Q* = 6，回需求曲线找 P* = 18 =====
+    Charts.xy(document.getElementById('fig-monopoly-solution'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P（美元）',
+      xMax: 14, yMax: 26, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：MR = MC 定 Q* = 6；价格须回需求曲线读 P* = 18（纵坐标 12 是经典错误）',
+      series: [
+        { points: [[0, 24], [14, 10]], type: 'linear', color: '#dc2626', label: '需求 D：P = 24 − Q' },
+        { points: [[0, 24], [12, 0]], type: 'linear', color: '#7c3aed', label: 'MR = 24 − 2Q（同截距、两倍斜率）' },
+        { points: [[0, 0], [12, 24]], type: 'linear', color: '#2563eb', label: 'MC = 2Q' },
+      ],
+      markers: [
+        { x: 6, y: 12, label: 'MR = MC 交点 (6, 12)：定 Q*，但 12 不是价格！', color: '#7c3aed', legend: 'MR = MC 交点', guides: true, gxLabel: 'Q* = 6', gyLabel: '12', lineTo: [6, 18], labelDx: 14, labelDy: 20 },
+        { x: 6, y: 18, label: '回需求曲线：P* = 18', color: '#dc2626', legend: '垄断定价点', guides: true, gyLabel: 'P* = 18', labelDx: 14, labelDy: -14 },
+        { x: 8, y: 16, label: '竞争均衡 EC (8, 16)', color: '#6b7280', legend: '竞争均衡（对照）', guides: true, gxLabel: 'Q_c = 8', gyLabel: '16', labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图4：垄断福利分析 —— CS = A，PS = B + D，DWL = C + E =====
+    Charts.xy(document.getElementById('fig-welfare'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P（美元）',
+      xMax: 14, yMax: 26, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：垄断福利分析 —— CS = A，PS = B + D，DWL = C + E（第一个市场失灵）',
+      areas: [
+        { points: [[0, 18], [0, 24], [6, 18]], color: '#2563eb', opacity: 0.2, label: 'A' },
+        { points: [[0, 16], [6, 16], [6, 18], [0, 18]], color: '#15803d', opacity: 0.3, label: 'B' },
+        { points: [[0, 0], [0, 16], [6, 16], [6, 12]], color: '#0d9488', opacity: 0.2, label: 'D' },
+        { points: [[6, 18], [6, 16], [8, 16]], color: '#d97706', opacity: 0.4, label: 'C' },
+        { points: [[6, 12], [6, 16], [8, 16]], color: '#dc2626', opacity: 0.3, label: 'E' },
+      ],
+      series: [
+        { points: [[0, 24], [14, 10]], type: 'linear', color: '#dc2626', label: '需求 D：P = 24 − Q' },
+        { points: [[0, 0], [12, 24]], type: 'linear', color: '#2563eb', label: 'MC = 2Q（= 社会供给）' },
+      ],
+      markers: [
+        { x: 6, y: 18, label: '垄断：Q* = 6，P* = 18', color: '#dc2626', legend: '垄断均衡', guides: true, gxLabel: 'Q* = 6', gyLabel: '18', labelDx: 14, labelDy: -14 },
+        { x: 8, y: 16, label: '竞争均衡 EC (8, 16)', color: '#6b7280', legend: '竞争均衡', guides: true, gxLabel: 'Q_c = 8', gyLabel: '16', labelDx: 14, labelDy: 24 },
+      ],
+      legend: [
+        { label: '需求 D：P = 24 − Q', color: '#dc2626', style: 'line' },
+        { label: 'MC = 2Q（= 社会供给）', color: '#2563eb', style: 'line' },
+        { label: 'A：消费者剩余 CS', color: '#2563eb', style: 'dot' },
+        { label: 'B + D：生产者剩余 PS（B 为转移）', color: '#15803d', style: 'dot' },
+        { label: 'C + E：无谓损失 DWL', color: '#d97706', style: 'dot' },
+      ],
+    });
+
+    // ===== 图5：完全价格歧视 —— 产量回到竞争水平，剩余全归垄断者 =====
+    Charts.xy(document.getElementById('fig-perfect-pd'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P（美元）',
+      xMax: 14, yMax: 26, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5：完全价格歧视 —— 毒化效应消失，产量 = 竞争水平 8，全部剩余归垄断者（CS = 0）',
+      areas: [
+        { points: [[0, 0], [0, 24], [8, 16]], color: '#15803d', opacity: 0.15, label: 'PS = 96（全部剩余归垄断者）' },
+      ],
+      series: [
+        { points: [[0, 24], [14, 10]], type: 'linear', color: '#dc2626', label: '需求 D = 歧视下的 MR（逐个按支付意愿收费）' },
+        { points: [[0, 0], [12, 24]], type: 'linear', color: '#2563eb', label: 'MC = 2Q' },
+        { points: [[0, 24], [12, 0]], type: 'linear', color: '#9ca3af', dash: true, label: '单一价时的 MR（歧视下不再相关）' },
+      ],
+      markers: [
+        { x: 8, y: 16, label: '生产到 D = MC：(8, 16)，与竞争同产量，DWL = 0', color: '#15803d', legend: '歧视垄断产量', guides: true, gxLabel: 'Q = 8', gyLabel: '16', labelDx: -236, labelDy: -16 },
+        { x: 6, y: 18, label: '单一价垄断点 (6, 18) 被放弃', color: '#6b7280', legend: '单一价垄断（对照）', labelDx: 14, labelDy: -12 },
+      ],
+    });
+  </script>
+</body>
+</html>

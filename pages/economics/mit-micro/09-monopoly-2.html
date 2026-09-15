@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 垄断 II - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>09 垄断 II：来源、规制与可竞争市场</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 12 讲（L12）。上一篇我们认识了<span class="term">垄断</span><span class="term-en">（Monopoly）</span>的定价逻辑与<span class="term">毒化效应</span><span class="term-en">（Poisoning Effect）</span>；本篇回答三个更现实的问题：垄断<strong>从哪里来</strong>（自然垄断与专利）？政府该<strong>怎么对付</strong>它（价格规制、引入竞争）？以及为什么有些"垄断"其实并不可怕（可竞争市场）？</p>
+
+      <!-- ==================== 一、垄断从何而来 ==================== -->
+      <h2>一、垄断从何而来？</h2>
+
+      <h3>1.1 引入：政府一边打击垄断，一边亲手发放 20 年垄断执照</h3>
+      <p><strong>反直觉开场：</strong>同一个政府，一边用反垄断法拆分垄断企业、重罚操纵价格的卡特尔；另一边又开着专利局，每年给成千上万的发明人发放<strong>长达 20 年的合法垄断执照</strong>——在这段时间里，只有你能卖这个产品，别人仿制就违法。这是精神分裂吗？</p>
+      <p>不是。学完本篇你会看到：垄断并非凭空出现，它有两个主要来源——<strong>成本优势</strong>与<strong>政府行为</strong>。而政府制造垄断有时是深思熟虑的权衡，甚至是刻意为之的奖励。</p>
+
+      <h3>1.2 来源一：自然垄断（Natural Monopoly）</h3>
+      <p>有些市场天然地给某个参与者提供了固有的成本优势。比如镇上只有一个采石场，控制它的人就为整个地区供应石头。更系统的情形是<span class="term">自然垄断</span><span class="term-en">（Natural Monopoly）</span>：<strong>在所有相关的产出水平上，一个企业总能比多个企业以更低的平均成本进行生产</strong>——等价地说，<span class="term">平均成本</span><span class="term-en">（Average Cost, AC）</span>在相关产量范围内持续下降。</p>
+      <p>以<strong>供水公司</strong>为例：往居民家里送水，必须先在地下铺设管网。管道一旦铺好，巨大的<span class="term">固定成本</span><span class="term-en">（Fixed Cost, FC）</span>就付掉了，而<span class="term">边际成本</span><span class="term-en">（Marginal Cost, MC）</span>微不足道——不过是下一加仑水本身的成本。我们熟悉的 AC 曲线是"先降后升"的 U 形：下降段在摊薄固定成本，上升段来自 MC 抬头。但在自然垄断中，固定成本相对 MC 极其巨大、MC 又长期平坦，AC 曲线的"上升段"在相关产量范围内根本不会出现——AC 持续下降，逐渐趋近 MC，却<strong>永远不会与它相交</strong>。</p>
+
+      <div id="fig-natural-monopoly"></div>
+
+      <p><strong>图 1 解读：</strong>假设铺设供水管网的固定成本 FC = 100，每多供一单位水的边际成本恒为 MC = 2，则 AC(Q) = 100/Q + 2。产量 5 时 AC 高达 22；产量翻一倍到 10，AC 降到 12；再翻一倍到 20，AC 只有 7——曲线一路下降、渐近 MC = 2 的水平线，却永不相交。这意味着：<strong>产量越大，平均成本越低，一家企业独供永远比两家分供便宜</strong>。</p>
+      <p>自然垄断真正厉害的地方在于它自带<span class="term">进入壁垒</span><span class="term-en">（Barriers to Entry）</span>。假设第二家公司看到供水公司赚钱，也想铺一套管网进来分一杯羹。第一家公司的管网成本已经支付、已成<span class="term">沉没成本</span><span class="term-en">（Sunk Cost）</span>，它可以放话："你敢进来，我就按边际成本 2 定价，直到你退出。"第一家只要 P &gt; 2 就不亏；而第二家若被迫接受 P ≈ 2 的价格，永远收不回那 100 的固定成本。理性的新公司预见到这场必输的价格战，干脆不进入。<strong>沉没的巨大固定成本本身就是进入壁垒</strong>，自然垄断由此自我维持。公用事业（供水、供电、邮政的本地投递）都是典型例子。</p>
+
+      <h3>1.3 来源二：政府行为与专利（Patent）</h3>
+      <p>垄断的第二个来源是<strong>政府亲手创造</strong>。有些是出于效率考虑（如邮政：建邮局的固定成本巨大、送一封信的边际成本很小，是自然垄断）；有些则纯粹出于政治原因（不少国家的政府控制钢铁、航空、银行业，证据表明这些领域没有政府控制会更有效率）。</p>
+      <p>在美国，政府制造垄断最主要的方式是<span class="term">专利</span><span class="term-en">（Patent）</span>：你有一个新想法并申请专利，政府授予你<strong>自申请日起 20 年</strong>内销售相关产品的垄断权。注意期限从<strong>申请日</strong>算起，不是上市日——如果你申请后花了 19 年才把产品开发出来，你只剩 1 年的垄断期。</p>
+      <p>专利的福利影响是一种<span class="term">静态与动态的权衡</span><span class="term-en">（Static vs Dynamic Trade-off）</span>：</p>
+      <ul>
+        <li><strong>静态损失：</strong>专利创造垄断，垄断者限产提价，长达 20 年产生<span class="term">无谓损失</span><span class="term-en">（Deadweight Loss, DWL）</span>；</li>
+        <li><strong>动态收益：</strong><span class="term">研发</span><span class="term-en">（Research and Development, R&amp;D）</span>是一笔巨大的固定成本。如果没有专利，你刚开发出新产品别人就能立刻仿制，你的研发投入打了水漂——于是没人愿意创新。专利通过授予一段专有权，让发明者能收回投资，从而激励创新。</li>
+      </ul>
+      <p>政府其实在做一笔交易："<strong>我们奖励第一个想出办法的人，奖品是 20 年垄断特权。</strong>"理想的专利期限应平衡这一权衡：足够长以激励创新，又足够短以限制垄断造成的无谓损失。所以开篇的"精神分裂"其实是深思熟虑——垄断并非天生是坏事，但它确实在每个时点上都造成 DWL，于是下一个问题自然浮现：该怎么对付它？</p>
+
+      <!-- ==================== 二、规制垄断 ==================== -->
+      <h2>二、规制垄断：价格上限竟能消除 DWL</h2>
+
+      <h3>2.1 机制：杀死毒化效应，垄断者自愿扩产到竞争产量</h3>
+      <p>垄断导致<span class="term">市场失灵</span><span class="term-en">（Market Failure）</span>——市场结果未能实现福利最大化，这为政府干预提供了潜在合理性。回忆上一篇的例子：需求 Q = 24 − P，边际成本 MC = 2Q。垄断者在 MR = MC 处生产，卖 6 个单位、定价 18，产生 DWL = 6；而竞争均衡是 P = 16、Q = 8。</p>
+      <p>现在政府规定：收费不得超过 16（即竞争价格）。<strong>反直觉的事情发生了——价格上限在这里竟能完全消除无谓损失。</strong>机制是毒化效应被"杀死"了：原本垄断者不愿卖第 7 个单位，因为那意味着所有单位都得从 18 降到 17（毒化效应）；但现在价格已被政府强制压到 16，"毒"已经被别人下完了——既然卖第 7 个、第 8 个都不必再降价，只要 16 &gt; MC 他就愿意继续卖。垄断者<strong>自愿</strong>扩产到 Q = 8，价格、产量、DWL 全部回到竞争均衡。</p>
+
+      <div class="figure-pair">
+        <div id="fig-cap-monopoly"></div>
+        <div id="fig-cap-competition"></div>
+      </div>
+
+      <p><strong>图 2（左）解读：</strong>垄断市场中，未规制时垄断点为 E<sub>M</sub>（Q = 6，P = 18），红色三角形是无谓损失 DWL = ½ × (18 − 12) × 2 = 6。政府设价格上限 16（青色虚线）后，毒化效应消失，垄断者沿 MC 一直卖到 Q = 8 的竞争均衡点，DWL 归零。<strong>但若政府算错、把上限错设为 10</strong>，垄断者只生产 MC = 10 对应的 Q = 5——比垄断产量 6 还少，DWL 反而扩大到 13.5，干预让情况更糟。</p>
+      <p><strong>图 3（右）解读：</strong>完全竞争市场中，同样设 10 的价格上限，效果恰好相反：供给降到 Q<sub>S</sub> = 5、需求升到 Q<sub>D</sub> = 14，出现 9 个单位的短缺，并制造 13.5 的无谓损失。<strong>同一个政策工具，在垄断市场消除 DWL，在竞争市场制造 DWL</strong>——这就是为什么经济学里"价格上限是好是坏"没有统一答案，取决于你面对的市场结构。</p>
+
+      <h3>2.2 两大现实障碍</h3>
+      <p>理论上很漂亮，但现实中政府怎么知道竞争价格 16 是多少？它需要知道需求曲线和企业的边际成本曲线，而这两样都拿不到：</p>
+      <ol>
+        <li><strong>信息问题：</strong>需求曲线不是公开信息。水、电这类商品没有活跃的市场价格可供参照，只能靠<span class="term">或有估值法</span><span class="term-en">（Contingent Valuation, CV）</span>——直接问人们"你愿意付多少钱"，但人们的回答往往既不准确也不一致；</li>
+        <li><strong>激励问题：</strong>问企业边际成本是多少？企业有强烈动机<strong>虚报高成本</strong>——成本报得越高，政府允许的定价就越高。</li>
+      </ol>
+      <p>信息不对称意味着规制可能帮倒忙（如图 2 中错设上限 10 的例子）。所以价格规制虽然理论上能完美解决垄断问题，实践中却步履维艰。</p>
+
+      <!-- ==================== 三、引入竞争 ==================== -->
+      <h2>三、引入竞争替代规制</h2>
+      <p>如果政府算不清价格，还有第二条路：<strong>不规制价格，而是引入竞争</strong>——即使是在看似自然垄断的市场，也可以把"自然垄断的环节"和"可以竞争的环节"拆开。</p>
+
+      <h3>3.1 欧洲宽带：管网自然垄断，服务可以竞争</h3>
+      <p>欧洲政府认识到：往千家万户铺设宽带线路是自然垄断（重复铺两套管网纯属浪费），因此通常只保留一套公共铺设的线路；但<strong>通过这套线路提供内容和服务</strong>不是自然垄断——于是开放线路，让不同公司在服务质量、速度和价格上竞争。竞争被引到了非自然垄断的环节，同时避免了基础设施的重复建设。</p>
+
+      <h3>3.2 教育券（Vouchers）与四大争议</h3>
+      <p>美国公立教育系统投入很高却表现不佳，原因之一是地方学区学校拥有<strong>地理上的垄断权</strong>——住在这个片区就只能上这所学校。引入竞争有三个由温和到激进的方案：</p>
+      <ul>
+        <li><span class="term">公立学校选择权</span><span class="term-en">（Public School Choice）</span>：允许学生通过抽签进入本学区内任何一所公立学校，迫使学校为吸引生源而提高质量；</li>
+        <li><span class="term">特许学校</span><span class="term-en">（Charter Schools）</span>：公共资助但独立运营的学校。MIT 同事的研究表明，特许学校带来了巨大的好处；</li>
+        <li><span class="term">教育券</span><span class="term-en">（Vouchers）</span>：最激进的方案。政府给每个家庭一张教育券（比如价值 10,000 美元），可在任何学校——公立或私立——抵付学费，在整个学区乃至更广范围内引入竞争压力。</li>
+      </ul>
+      <p>教育券的优点是引入竞争、提高效率；但争议也很大，主要有四条：</p>
+      <ol>
+        <li><strong>监管成本：</strong>政府需要确保私立学校提供合格的教育，监督本身要花大钱；</li>
+        <li><strong>财政成本：</strong>原本就自掏腰包上私立学校的富裕家庭也会领到补贴，造成财政浪费；</li>
+        <li><strong>公平问题：</strong>最积极、信息最灵通的家庭会带着孩子率先离开公立学校，留下家庭支持较少的学生，可能加剧教育不平等；</li>
+        <li><strong>信息不对称：</strong>家长很难判断学校的真实质量——教育不像面包，质量要很多年后才显现。</li>
+      </ol>
+
+      <!-- ==================== 四、可竞争市场 ==================== -->
+      <h2>四、可竞争市场（Contestable Markets）</h2>
+
+      <h3>4.1 定价权取决于进入壁垒，而非是否独占</h3>
+      <p>最后一个主题换一个视角：<span class="term">可竞争市场</span><span class="term-en">（Contestable Markets）</span>——市场上虽然只有一家垄断者，但由于进入壁垒很低，它并没有多少市场势力。垄断者的定价能力不仅取决于需求弹性，还取决于<strong>进入壁垒的高度</strong>：壁垒越低，潜在进入者的威胁越大，垄断者就越不敢把价格定高。换句话说，<strong>真正让垄断者老实的，往往不是反垄断法，而是"随时可能有人冲进来"的恐惧</strong>。</p>
+
+      <h3>4.2 案例：美国航空业放松管制</h3>
+      <p>在教授小时候，美国航空业受到严格管制：政府设定票价和航线，理由是把它当作自然垄断。那时坐飞机是奢侈品——服务极好，价格极贵。后来经济学家指出：航空业根本不是自然垄断，而是可竞争市场——买或租一架二手飞机的进入壁垒并不高，放开竞争价格必然大跌。</p>
+      <p>1970 年代，美国放松了对航空业的管制，随后发生了三件事：</p>
+      <ol>
+        <li><strong>价格大幅下降：</strong>飞行成本下降约三分之一，People's Express 等廉价航空公司涌现；</li>
+        <li><strong>航线增多：</strong>航空公司开辟了许多以前被政府认定无利可图、实际上却能盈利的航线；</li>
+        <li><strong>服务质量下降：</strong>没有免费餐食，座位狭小，飞行体验变糟。</li>
+      </ol>
+      <p>服务为什么变差？管制时代航空公司不能在价格上竞争，只能在质量上竞争（美食、美酒、大座位）——那其实是被管制逼出来的<strong>低效率质量竞争</strong>。放开后竞争转向价格，事实证明大多数消费者宁愿要便宜机票，也不愿为那些额外服务买单。</p>
+      <p>但经济学家漏算了一个<strong>意外后果</strong>：<span class="term">枢纽-辐射系统</span><span class="term-en">（Hub-and-Spoke System）</span>的兴起。飞机本身不是自然垄断，但<strong>机场</strong>——特别是登机口和起降时刻——是。各大航空公司开始控制枢纽机场的时刻资源：西北航空控制了明尼阿波利斯，美航控制了达拉斯……通过扼住枢纽，它们在以枢纽为起讫的特定航线上<strong>重新建立了局部垄断</strong>，票价在经历大跌后又有所回升。</p>
+      <p>总评：放松管制是成功的——今天的出行比管制时代更便宜、更便捷。但这个案例提醒我们：<strong>市场力量会以意想不到的方式卷土重来</strong>，即使在看似可竞争的市场中也是如此。</p>
+
+      <!-- ==================== 五、收尾对比 ==================== -->
+      <h2>五、收尾：三种应对垄断的方式对比</h2>
+      <table>
+        <thead>
+          <tr><th>方式</th><th>思路</th><th>适用场景</th><th>信息要求</th><th>风险</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>价格规制</strong>（Price Regulation）</td>
+            <td>设价格上限，杀死毒化效应，逼垄断者按竞争产量生产</td>
+            <td>真正的自然垄断（供水、电网），无法引入竞争时</td>
+            <td>极高：需准确知道需求曲线与边际成本</td>
+            <td>算错上限比不规制更糟（图 2 中上限 10 → Q = 5 &lt; 6）；企业虚报成本</td>
+          </tr>
+          <tr>
+            <td><strong>引入竞争</strong>（Introducing Competition）</td>
+            <td>拆分自然垄断环节与可竞争环节，在后者放开竞争</td>
+            <td>只有部分环节是自然垄断的行业（宽带、教育、铁路）</td>
+            <td>低：让市场去发现价格</td>
+            <td>监管与财政成本；公平问题（教育券）；环节拆分不干净</td>
+          </tr>
+          <tr>
+            <td><strong>反垄断拆分</strong>（Antitrust）</td>
+            <td>用法律阻止或拆散垄断，直接改变市场结构</td>
+            <td>人为形成的垄断、卡特尔、滥用市场势力</td>
+            <td>中：需证明垄断行为及其危害</td>
+            <td>误伤自然垄断或专利型垄断；扼杀创新激励；诉讼旷日持久</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>思想链路回顾：</strong>核心问题（垄断限产造成 DWL）→ 简化模型（Q = 24 − P、MC = 2Q 的垄断定价）→ 推导（价格上限杀死毒化效应，理论上可消除 DWL）→ 实际应用（自然垄断靠规制、可拆环节靠竞争、人为垄断靠反垄断）→ 局限性（政府不知需求、企业谎报成本、市场力量借枢纽-辐射之类的渠道卷土重来）。</p>
+      <p><strong>模型的优点与缺点：</strong>优点是统一了看似矛盾的现象——政府打击垄断与发放专利、限价在垄断与竞争市场中效果相反——都能在同一框架下解释。缺点是它高度依赖"政府知道真实成本与需求"这一强假设，而现实恰恰卡在这里；下一篇将进入寡头垄断（Oligopoly），看看"几家巨头相互揣测"时又会发生什么。</p>
+    </main>
+
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/09-monopoly-2.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // 函数曲线采样：[x, f(x)] 路径点
+    function curve(f, xs) {
+      return xs.map(function (x) { return [x, +(f(x)).toFixed(2)]; });
+    }
+
+    // ===== 图1：自然垄断 —— AC(Q) = 100/Q + 2 持续下降，渐近 MC = 2 永不相交 =====
+    var acNatFn = function (q) { return 100 / q + 2; };          // AC = FC/Q + MC，FC=100，MC=2
+    var acNatXs = [4.5, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 21, 24, 27, 30];
+    Charts.xy(document.getElementById('fig-natural-monopoly'), {
+      xLabel: '供水量 Q（百万加仑）',
+      yLabel: '成本（美元 / 加仑）',
+      xMax: 30, yMax: 25, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：自然垄断 —— AC = 100/Q + 2 持续下降，渐近 MC = 2 却永不相交',
+      series: [
+        { points: curve(acNatFn, acNatXs), type: 'spline', color: '#7c3aed', label: 'AC = 100/Q + 2（持续下降）' },
+        { points: [[0, 2], [30, 2]], type: 'linear', color: '#2563eb', label: 'MC = 2（每加仑水的成本，近似平坦）' },
+      ],
+      markers: [
+        { x: 5, y: 22, label: 'AC(5) = 22', color: '#15803d', legend: '平均成本点', guides: true, gxLabel: '5', gyLabel: '22', labelDx: 12, labelDy: -12 },
+        { x: 10, y: 12, label: 'AC(10) = 12', color: '#d97706', guides: true, gxLabel: '10', gyLabel: '12', labelDx: 12, labelDy: -12 },
+        { x: 20, y: 7, label: 'AC(20) = 7（仍在下降）', color: '#dc2626', guides: true, gxLabel: '20', gyLabel: '7', labelDx: 12, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图2（左）：垄断市场设价格上限 16 —— 杀死毒化效应，消除 DWL =====
+    // 需求 Q = 24 − P；MC = 2Q；垄断 MR = 24 − 2Q 交 MC → Q=6, P=18；竞争均衡 P=16, Q=8
+    Charts.xy(document.getElementById('fig-cap-monopoly'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 26, yMax: 26, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：垄断市场 —— 价格上限 16 消除 DWL（上限错设 10 反而更糟）',
+      areas: [
+        { points: [[6, 12], [6, 18], [8, 16]], color: '#dc2626', opacity: 0.2, label: 'DWL = 6' },
+      ],
+      series: [
+        { points: [[0, 24], [24, 0]], type: 'linear', color: '#dc2626', label: '需求 D：Q = 24 − P' },
+        { points: [[0, 0], [12, 24]], type: 'linear', color: '#2563eb', label: 'MC = 2Q' },
+        { points: [[0, 24], [12, 0]], type: 'linear', color: '#6b7280', dash: true, label: 'MR = 24 − 2Q' },
+        { points: [[0, 16], [20, 16]], type: 'linear', color: '#0d9488', dash: true, label: '价格上限 P = 16（= 竞争价格）' },
+      ],
+      markers: [
+        { x: 6, y: 18, label: '垄断点 EM：Q = 6，P = 18', color: '#7c3aed', legend: '未规制垄断点', guides: true, gxLabel: 'Q = 6', gyLabel: 'P = 18', labelDx: 14, labelDy: -14 },
+        { x: 8, y: 16, label: '上限 16 → Q = 8，DWL = 0', color: '#0d9488', legend: '规制后 = 竞争均衡', guides: true, gxLabel: 'Q = 8', gyLabel: 'P = 16', labelDx: 14, labelDy: 22 },
+        { x: 5, y: 10, label: '若错设上限 10：Q = 5 < 6，DWL 更大', color: '#d97706', legend: '错设上限的结果', guides: true, gxLabel: 'Q = 5', labelDx: 14, labelDy: 20 },
+      ],
+    });
+
+    // ===== 图3（右）：竞争市场设价格上限 10 —— 短缺 9，制造 DWL = 13.5 =====
+    Charts.xy(document.getElementById('fig-cap-competition'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 26, yMax: 26, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：竞争市场 —— 同样的价格上限反而制造短缺与 DWL',
+      areas: [
+        { points: [[5, 10], [5, 19], [8, 16]], color: '#dc2626', opacity: 0.2, label: 'DWL = 13.5' },
+      ],
+      series: [
+        { points: [[0, 24], [24, 0]], type: 'linear', color: '#dc2626', label: '需求 D：Q = 24 − P' },
+        { points: [[0, 0], [12, 24]], type: 'linear', color: '#2563eb', label: '供给 S = MC = 2Q' },
+        { points: [[0, 10], [22, 10]], type: 'linear', color: '#0d9488', dash: true, label: '价格上限 P = 10' },
+      ],
+      markers: [
+        { x: 8, y: 16, label: '竞争均衡：P = 16，Q = 8', color: '#7c3aed', legend: '自由市场均衡', guides: true, gxLabel: 'Q = 8', gyLabel: 'P = 16', labelDx: 14, labelDy: -14 },
+        { x: 5, y: 10, label: 'QS = 5（MC = 10）', color: '#2563eb', legend: '上限下的供给量', guides: true, gxLabel: 'QS = 5', labelDx: 14, labelDy: 20 },
+        { x: 14, y: 10, label: 'QD = 14，短缺 = 9', color: '#dc2626', legend: '上限下的需求量', guides: true, gxLabel: 'QD = 14', labelDx: 14, labelDy: 20 },
+      ],
+    });
+  </script>
+</body>
+</html>

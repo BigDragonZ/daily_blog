@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07 福利经济学 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>07 福利经济学：剩余、第一定理与政府干预的代价</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 9、10 两讲（L09+L10）：先把供求曲线的微观基础"闭环"（供给为什么向上倾斜、需求为什么向下倾斜），给出<span class="term">消费者剩余</span>与<span class="term">生产者剩余</span>的标准定义与分区图；然后从一个反直觉的问题出发——政府限价明明在"帮穷人"，为什么整个社会反而变穷了？省下的钱去哪了？——证明<span class="term">福利经济学第一基本定理</span>，并用四个真实案例（汽油限价、阿黛尔门票黄牛、食物银行、出租车牌照）看清政府干预中"谁赢、谁输、损失去了哪里"。</p>
+
+      <!-- ==================== 引子 + L09 ==================== -->
+      <h2>一、引子：供需曲线的微观基础闭环（L09）</h2>
+
+      <h3>1.1 回到第一课：供求曲线"知道"什么？</h3>
+      <p>第一课我们直接画出了供给和需求图，当时只是一个假设。经过消费者理论（L02–L03）和生产者理论（L04–L08），现在我们可以回答这两条曲线<strong>为什么</strong>长这样，从而完成一个闭环：</p>
+      <ul>
+        <li><strong>供给曲线向上倾斜</strong>：更高的价格带来更多的供给。原因是完全竞争公司的供给曲线就是其<span class="term">边际成本</span><span class="term-en">（Marginal Cost, MC）</span>曲线（AVC 以上的部分，见第 06 篇）——价格升高时，企业沿着向上倾斜的 MC 曲线增产。供给曲线本质上是<strong>生产者的"供给意愿"</strong>：曲线上的每一点表示生产那一单位所需的边际成本。</li>
+        <li><strong>需求曲线向下倾斜</strong>：更高的价格导致更少的需求。原因是正常商品涨价时，<span class="term">收入效应</span>与<span class="term">替代效应</span>同向作用使需求量下降（见第 03 篇）。需求曲线本质上是消费者的<strong><span class="term">支付意愿</span><span class="term-en">（Willingness to Pay, WTP）</span></strong>：曲线上的每一点表示边际消费者愿意为那一单位支付的最高价格。</li>
+      </ul>
+      <p>于是我们从均衡点出发绕了一大圈，又回到了均衡点——但现在我们知道均衡背后站着的是无数个"P = MC"的生产决策和"MU/λ = P"的消费决策。</p>
+
+      <h3>1.2 消费者剩余与生产者剩余：交易的"赚头"如何度量</h3>
+      <p>有了 WTP 和 MC 这两把尺子，就能度量交易给双方带来多少好处：</p>
+      <ul>
+        <li><span class="term">消费者剩余</span><span class="term-en">（Consumer Surplus, CS）</span>：消费者愿意支付的价格与实际支付价格之差，对所有成交单位加总。图形上 = <strong>需求曲线以下、价格线以上</strong>的面积。</li>
+        <li><span class="term">生产者剩余</span><span class="term-en">（Producer Surplus, PS）</span>：生产者实际收到的价格与（边际）成本之差，对所有成交单位加总。图形上 = <strong>价格线以下、供给曲线以上</strong>的面积。</li>
+      </ul>
+      <p><strong>注：</strong>L09 原始讲义在此处严重截断，CS/PS 的正式定义按标准教材（Gruber《Public Finance》配套 14.01 课程体例）补全，数值示例为本篇自建的线性供求模型，便于几何校验。</p>
+
+      <div id="fig-cs-ps"></div>
+      <p><strong>图 1 解读：</strong>需求曲线 D：P = 12 − Q（红，向下倾斜，代表 WTP）；供给曲线 S：P = 2 + Q（蓝，向上倾斜，代表 MC）。均衡点 E = (5, 7)。蓝色三角形是消费者剩余 CS = 0.5 × 5 × (12−7) = <strong>12.5</strong>（消费者本愿付到 12，实际只付 7）；绿色三角形是生产者剩余 PS = 0.5 × 5 × (7−2) = <strong>12.5</strong>。CS + PS = 25 就是这笔市场交易为社会创造的总"赚头"。</p>
+
+      <!-- ==================== 第一基本定理 ==================== -->
+      <h2>二、福利 = CS + PS 与福利经济学第一基本定理</h2>
+
+      <h3>2.1 从实证到规范</h3>
+      <p>课程前半部分做的是<span class="term">实证经济学</span><span class="term-en">（Positive Economics）</span>：解释供给需求曲线从哪来、均衡在哪里——只描述"是什么"，不评判好坏。福利经济学属于<span class="term">规范经济学</span><span class="term-en">（Normative Economics）</span>：开始对结果做"好不好"的判断。要做判断，先要定义"好"：</p>
+      <p style="text-align:center;"><strong>社会福利（Social Welfare, W）= 消费者剩余 CS + 生产者剩余 PS</strong></p>
+      <p>注意这个定义的"平均主义"：不给消费者或生产者任何一方更高权重，只关心交易创造的<strong>总剩余</strong>。至于这块蛋糕在双方之间怎么分，是后面"公平"问题的事。</p>
+
+      <h3>2.2 福利经济学第一基本定理</h3>
+      <p><strong>反直觉之处：</strong>没有任何人指挥、每个消费者和生产者都只顾自己——市场"碰巧"停下来的那个点，居然恰好是全社会福利最大的点。这就是<span class="term">福利经济学第一基本定理</span><span class="term-en">（First Fundamental Theorem of Welfare Economics）</span>：</p>
+      <p style="text-align:center;"><strong>竞争性均衡（Competitive Equilibrium）最大化社会总剩余 W = CS + PS。</strong></p>
+      <p>图形直觉（图 2）：CS 与 PS 两个区域面积之和在供给与需求的交点处达到最大——交点左侧还有"双方都赚"的交易没有做，交点右侧的交易则是"成本高于支付意愿"的赔本买卖。实证结论（供求必交于均衡）由此导出规范结论（均衡使福利最大），这是经济学中最深刻的结论之一。</p>
+
+      <h3>2.3 价格上限的福利分解：转移 vs 无谓损失</h3>
+      <p>现在政府出场了：觉得均衡价 P1 = 7 太高，强行规定价格不得超过 <span class="term">价格上限</span><span class="term-en">（Price Ceiling）</span> P2 = 4。在 P2 = 4 处，生产者只愿意供应 Q = 2（沿供给曲线），实际成交量被压缩到 2。福利发生两种性质完全不同的变化：</p>
+      <ol>
+        <li><span class="term">转移</span><span class="term-en">（Transfer）</span>：矩形 S（面积 6）从生产者口袋换到消费者口袋——买到东西的 2 个单位的消费者每单位少付 3 美元。社会的总福利没变，只是<strong>换了主人</strong>。这通常正是政策的初衷。</li>
+        <li><span class="term">无谓损失</span><span class="term-en">（Deadweight Loss, DWL）</span>：三角形 V + U（面积 4.5 + 4.5 = 9）<strong>凭空消失</strong>，谁也没得到。Q = 2 到 Q = 5 之间，本来存在大量"消费者愿付价 &gt; 生产者成本"的双赢交易，被价格上限硬生生阻止了。DWL 度量的是<strong>因未能进行的交易导致的福利净减少</strong>，是一种纯粹的<span class="term">效率低下</span><span class="term-en">（Inefficiency）</span>。</li>
+      </ol>
+
+      <div id="fig-rvstu"></div>
+      <p><strong>图 2 解读：</strong>沿用图 1 的供求曲线。限价前：CS = R + V（蓝色系，12.5），PS = S + T + U（绿/青/红色系，12.5），总福利 25 在 E1 = (5, 7) 处最大。规定价格上限 P2 = 4 后，成交量萎缩到 Q = 2：CS 变为 R + S = 8 + 6 = 14（丢 V、得 S），PS 缩为 T = 2。矩形 S = 6 是<strong>转移</strong>（生产者→消费者）；三角形 V + U = 9 是<strong>无谓损失</strong>——总福利从 25 降到 16，蒸发的 9 没有任何人得到。回答引子问题：<strong>省下的钱一部分进了消费者口袋（S），另一部分（V + U）根本不存在了。</strong></p>
+      <p><strong>第一定理的优缺点：</strong>优点是给出了"为什么（竞争性）市场是好默认设置"的严格理由——分散决策自动实现总剩余最大化，且只需 W = CS + PS 一个定义和供求框架；缺点是其全部前提（完全竞争、无外部性、信息完全）在现实中常不成立，且它只承诺"总蛋糕最大"，对蛋糕的分配（公平）不置一词——这正是政府干预想要修正、却往往引入 DWL 的地方。</p>
+
+      <!-- ==================== 案例1 汽油 ==================== -->
+      <h2>三、案例 1：汽油限价——帮穷人，却让穷人排队</h2>
+
+      <h3>3.1 冲击与干预</h3>
+      <p>汽油市场原本处于均衡 E1。石油危机（如深水地平线漏油事件）使生产成本上升，供给曲线从 S1 上移到 S2，市场自然走向新均衡 E2：价格从 P1 = 5 升到 6，数量从 5 降到 4。政府不喜欢涨价，强制价格冻结在 P1 = 5——价格上限。</p>
+      <p>结果：在 P1 = 5 处消费者仍想买 QD = 5，生产者却只愿供应 QS = 3，出现 2 个单位的<strong>超额需求（短缺）</strong>。价格被冻结无法出清市场，实际成交量由受约束的一方（生产者）决定：市场停在 E3 = (3, 5)，而非自由均衡 E2 = (4, 6)。</p>
+
+      <div id="fig-gasoline"></div>
+      <p><strong>图 3 解读：</strong>需求 D：P = 10 − Q（红）；原供给 S1：P = Q（蓝虚线）；冲击后 S2：P = 2 + Q（蓝实线）。自由市场会到 E2 = (4, 6)；限价 P1 = 5 把市场钉在 E3 = (3, 5)，短缺 = QD − QS = 5 − 3 = 2。红色三角形（顶点 (3,5)、(3,7)、(4,6)）是无谓损失 DWL = 0.5 × 1 × 2 = <strong>1</strong>：Q = 3 到 4 之间消费者愿付 6~7、生产者成本仅 5~6 的双赢交易全部被阻止。</p>
+
+      <h3>3.2 排队：比 DWL 更隐蔽的分配效率低下</h3>
+      <p>图上的 DWL 只是第一重损失。第二重损失更隐蔽：市场的"奇迹"在于价格机制能保证<strong>商品流向最珍视它的人</strong>——涨价时退出的恰好是估值最低的消费者。价格上限制造短缺后，"谁得到汽油"不再由支付意愿决定。1970 年代美国石油危机的答案是：<strong>排队</strong>。这造成<span class="term">分配效率低下</span><span class="term-en">（Allocative Inefficiency）</span>——汽油可能流到了"最有空排队的人"而非"最需要的人"手中；同时排队本身浪费的时间是巨大的<span class="term">机会成本</span><span class="term-en">（Opportunity Cost）</span>——本可用于工作或休闲的小时数凭空蒸发，这是图表区域之外的又一层社会损失。</p>
+
+      <h3>3.3 公平与效率的权衡</h3>
+      <p>那限价的好处是什么？是<span class="term">公平</span><span class="term-en">（Equity）</span>：自由涨价可能让低收入者加不起油、甚至因此失业。这就引出贯穿全课的核心主题——<span class="term">公平与效率的权衡</span><span class="term-en">（Equity-Efficiency Trade-off）</span>：许多政策在追求更平等的同时会制造无谓损失。</p>
+      <p>一个尖锐的课堂提问值得记住："市场保证最'想要'的人得到汽油，这个'想要'不就是'愿意付钱'吗？岂不是假设人人收入相同？"——市场确实不假设收入相同，这正是公平问题的根源：<strong>分配依据是支付意愿，而支付意愿受收入约束</strong>，富人天然 WTP 更高。本课语境下的公平通常指<span class="term">纵向公平</span><span class="term-en">（Vertical Equity）</span>，即富人与穷人之间的公平。而限价讽刺地引入了新的不公平：得到汽油的是<strong>最有时间排队的人</strong>，未必是最穷或最需要的人。</p>
+
+      <!-- ==================== 案例2 黄牛 ==================== -->
+      <h2>四、案例 2：门票黄牛——阿黛尔想送粉丝剩余，黄牛替她"拍卖"</h2>
+      <p><strong>反直觉开场：</strong>歌手一片好心把票价压低，结果粉丝既没省钱也没更容易买到票——只是把钱从歌手/粉丝的口袋换到了黄牛的口袋。</p>
+      <p>阿黛尔（Adele）为让粉丝负担得起，把巡演票价定在 40–150 美元——远低于市场出清价。结果门票瞬间售罄，主要买家是用机器人抢票的"黄牛"，随后在 StubHub 等二级市场上转售，好位置一张可高达 1500 美元。阿黛尔本想送给粉丝的消费者剩余，大半被黄牛截走。</p>
+      <p>用模型看：演唱会座位数固定，供给是一条<strong>垂直线</strong>。低价（价格上限）造成超额需求；二级市场的转售实质上是<strong>市场绕开价格上限、重新爬回出清价格</strong>。与排队相比，黄牛转售在效率上反而更好——票最终流向支付意愿最高的人，没人浪费时间排队；但矩形剩余从"阿黛尔/粉丝"转移给了黄牛。</p>
+
+      <div id="fig-tickets"></div>
+      <p><strong>图 4 解读：</strong>需求 D：P = 14 − Q（红）；座位固定，供给为垂直线 Q = 8（蓝）。市场出清价 P = 6（E 点）；阿黛尔定价 P = 2 时需求量达 12，超额需求 = 4。二级市场把价格拉回 6：蓝色三角形是成交后粉丝保留的 CS = 0.5 × 8 × 8 = 32；橙色矩形 (6−2) × 8 = <strong>32</strong> 是从"阿黛尔（票价）/粉丝（剩余）"转移给黄牛的利润——注意此时<strong>没有 DWL</strong>（所有座位仍坐满，交易量不变），损失 purely 是分配性的。若限价靠排队执行，则还会额外付出排队时间的机会成本。</p>
+      <p>阿黛尔本可以怎么做？<strong>拍卖门票</strong>：同样达到有效率配置（票归 WTP 最高者），但那 32 的矩形归阿黛尔自己而不是黄牛——至少在纵向公平上不输给黄牛方案。Ticketmaster 真试过拍卖系统，却没推广开：人们觉得拍卖是"宰客"，哪怕他们最终在二级市场被黄牛宰得更狠。<strong>对市场的道德观感本身会影响制度能否存活</strong>——效率不是唯一的裁判。</p>
+
+      <!-- ==================== 案例3 食物银行 ==================== -->
+      <h2>五、案例 3：食物银行——没有价格的地方，人为造一个</h2>
+      <p><strong>反直觉开场：</strong>一个专门"反市场"（免费发食物）的慈善组织，解决内部分配难题的办法竟然是——在内部建一个市场。</p>
+      <p>食物银行为穷人提供免费食物，最大的是 Feeding America。它面临的难题：各地捐赠的食物怎么分配到最需要的地方？普通市场靠价格信号自动解决——缺什么，什么就贵，资源自然流过去。但食物银行免费，<strong>没有价格机制</strong>，于是常犯低级错误，比如把土豆捐给土豆泛滥的爱达荷州。</p>
+      <p>Feeding America 的解法堪称绝妙：建一个<strong>虚拟市场</strong>。给每个地方食物银行一笔"虚拟预算"，让他们用虚拟货币对最需要的食物<strong>竞标</strong>。需求旺的食物虚拟价格升高，信号引导分配——<strong>在没有价格的地方人为创造了价格信号</strong>，既利用了市场的信息聚合功能，又没向穷人收一分钱，公平目标毫发无损。这个案例是对"公平-效率权衡"最漂亮的回应：好的制度设计有时能<strong>绕开</strong>权衡，而不是在权衡里二选一。</p>
+
+      <!-- ==================== 案例4 出租车牌照 ==================== -->
+      <h2>六、案例 4：出租车牌照——限量的利润，最后归了谁？</h2>
+      <p><strong>反直觉开场：</strong>政府限制出租车数量，号称"保护贫穷的出租车司机"；几十年后牌照一张炒到 40 万美元，司机却依然贫穷——而 Uber 入场时跌得最惨的也不是司机。</p>
+
+      <h3>6.1 实证分析：供给曲线"弯折"</h3>
+      <p>出租车服务（标准化地从 A 到 B）理论上接近完全竞争：无管制时长期供给 S1 是<strong>水平线</strong>（完全弹性，价格 = 最低平均成本 P1 = 4），均衡 E1 = (8, 4)，行业经济利润为零。政府用<span class="term">出租车牌照</span><span class="term-en">（Medallion）</span>把数量限制在 N2 = 4 辆的运力：供给曲线在 Q = 4 处<strong>弯折</strong>——之前水平，之后向上倾斜（S2）。新均衡 E2 = (6, 6)：价格升到 6，数量降到 6，在位者开始赚取正利润。</p>
+
+      <div id="fig-taxi"></div>
+      <p><strong>图 5 解读：</strong>需求 D：P = 12 − Q（红）。S1（蓝虚线）：无管制长期供给，水平于 P = 4，均衡 E1 = (8, 4)，零利润。牌照限量后供给弯折为 S2（蓝实线）：Q ≤ 4 段水平、之后上倾，与需求交于 E2 = (6, 6)。福利分解：CS 从 A+B+C = 32 缩为 A = 18；PS 从 0 升为矩形 B = (6−4) × 6 = 12，即图中绿色阴影 <strong>π（利润）</strong>；红色三角形 C = 0.5 × 2 × 2 = 2 是无谓损失。政府为把 B 从消费者转给"生产者"，让社会付出了 C。</p>
+
+      <h3>6.2 规范分析的反转：利润归牌照食利者</h3>
+      <p>故事到这里像普通的限量分析，但有一个被忽略的关键事实：<strong>司机必须花钱买牌照</strong>。牌照的价格等于它未来能带来的利润流的现值——所以区域 B 的利润并没有落到每天开车的司机口袋里，而是资本化进了牌照价格，归<strong>牌照所有者</strong>。纽约市自 1937 年以来牌照数量几乎未增加；最初 10 美元一张的牌照，顶峰时价值高达 <strong>40 万美元</strong>。真正的赢家是最初拿到牌照并代代相传的"出租车牌照之王"——一群<span class="term">食利者</span><span class="term-en">（Rentiers）</span>，不是司机。</p>
+      <p>于是 Uber 入场时的最大输家也就清楚了：不是司机（他们本就只赚市场价工资），而是<strong>牌照所有者</strong>——牌照价格暴跌，资本化的垄断租金一夜蒸发。下次再听到"Uber 抢了出租车司机饭碗"，请记住：出租车司机的日子一直很艰难，Uber 真正击穿的是靠牌照垄断收租的人。</p>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>七、收尾对比：四种干预，四种结局</h2>
+      <table>
+        <thead>
+          <tr><th>案例</th><th>干预方式</th><th>赢家</th><th>输家</th><th>DWL 形态</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>汽油限价</td>
+            <td>价格上限（冻结在 P1）</td>
+            <td>买到油的消费者（低价）；名义上想帮低收入者</td>
+            <td>生产者；排不上队/误工的所有人；社会（DWL + 排队时间）</td>
+            <td>成交量萎缩的三角 DWL，<strong>外加</strong>排队的机会成本与分配错配</td>
+          </tr>
+          <tr>
+            <td>阿黛尔门票黄牛</td>
+            <td>低价售票（隐性价格上限）+ 二级市场转售</td>
+            <td>黄牛（攫取矩形转移 32）；买到票的高 WTP 粉丝</td>
+            <td>阿黛尔（少收的票款）；抢不到票的粉丝</td>
+            <td>转售使票归 WTP 最高者，<strong>几乎无 DWL</strong>；若靠排队则有时间浪费</td>
+          </tr>
+          <tr>
+            <td>食物银行</td>
+            <td>无价格 → 人为创设虚拟货币市场</td>
+            <td>各地食物银行与受助穷人（食物流向最需处）</td>
+            <td>几乎无（旧体制下"土豆送爱达荷"的错配消失）</td>
+            <td><strong>消除了</strong>原有分配错配这一隐性 DWL——干预反而增效率</td>
+          </tr>
+          <tr>
+            <td>出租车牌照</td>
+            <td>数量管制（牌照限量，供给弯折）</td>
+            <td><strong>牌照食利者</strong>（利润 B 资本化进牌照价，$10→$400,000）</td>
+            <td>消费者（价升量减）；社会（DWL = C）；Uber 时代的牌照主</td>
+            <td>三角 DWL（C）；另有垄断租金长期固化造成的分配扭曲</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（政府干预市场到底改变了什么、损失去哪了）→ 简化模型（W = CS + PS，线性供求下的区域分解）→ 推导（第一基本定理：竞争均衡最大化 W → 价格上限 = 转移 S + 无谓损失 V+U）→ 实际应用（汽油排队、黄牛票、食物银行虚拟货币、牌照租金与 Uber）→ 局限性（第一定理只谈总剩余不谈分配；"公平-效率权衡"不是铁律——食物银行案例显示精巧的制度设计可以绕开权衡；而牌照案例显示干预的收益会被资本化、流向意想不到的人）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/07-welfare-economics.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：标准 CS/PS 分区（D: P=12−Q，S: P=2+Q，E=(5,7)，CS=PS=12.5） =====
+    Charts.xy(document.getElementById('fig-cs-ps'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 12, yMax: 12, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：CS = 需求下/价格线上（蓝，12.5）；PS = 价格线下/供给上（绿，12.5）',
+      areas: [
+        { points: [[0, 7], [0, 12], [5, 7]], color: '#2563eb', opacity: 0.18, label: 'CS = 12.5' },
+        { points: [[0, 2], [0, 7], [5, 7]], color: '#15803d', opacity: 0.18, label: 'PS = 12.5' },
+      ],
+      series: [
+        { points: [[0, 12], [12, 0]], type: 'linear', color: '#dc2626', label: '需求 D：P = 12 − Q（= WTP）' },
+        { points: [[0, 2], [10, 12]], type: 'linear', color: '#2563eb', label: '供给 S：P = 2 + Q（= MC）' },
+        { points: [[0, 7], [12, 7]], type: 'linear', color: '#6b7280', dash: true, label: '价格线 P = 7' },
+      ],
+      markers: [
+        { x: 5, y: 7, label: 'E = (5, 7)', color: '#7c3aed', legend: '均衡点', guides: true, gxLabel: 'Q* = 5', gyLabel: 'P* = 7', labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图2：价格上限福利分解 R/V/S/T/U（P2=4，成交量 5→2；转移 S=6，DWL=V+U=9） =====
+    Charts.xy(document.getElementById('fig-rvstu'), {
+      xLabel: '数量 Q',
+      yLabel: '价格 P',
+      xMax: 12, yMax: 12, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：价格上限 P2 = 4 —— 转移 S = 6（绿），无谓损失 V + U = 9（红），总福利 25 → 16',
+      areas: [
+        { points: [[0, 7], [0, 12], [2, 10], [2, 7]], color: '#2563eb', opacity: 0.18, label: 'R = 8' },
+        { points: [[2, 7], [2, 10], [5, 7]], color: '#dc2626', opacity: 0.25, label: 'V = 4.5' },
+        { points: [[0, 4], [0, 7], [2, 7], [2, 4]], color: '#15803d', opacity: 0.25, label: 'S = 6' },
+        { points: [[0, 2], [0, 4], [2, 4]], color: '#0d9488', opacity: 0.25, label: 'T = 2' },
+        { points: [[2, 4], [5, 7], [2, 7]], color: '#dc2626', opacity: 0.25, label: 'U = 4.5' },
+      ],
+      series: [
+        { points: [[0, 12], [12, 0]], type: 'linear', color: '#dc2626', label: '需求 D：P = 12 − Q' },
+        { points: [[0, 2], [10, 12]], type: 'linear', color: '#2563eb', label: '供给 S：P = 2 + Q' },
+        { points: [[0, 4], [12, 4]], type: 'linear', color: '#6b7280', dash: true, label: '价格上限 P2 = 4' },
+      ],
+      legend: [
+        { label: '需求 D：P = 12 − Q', color: '#dc2626', style: 'line' },
+        { label: '供给 S：P = 2 + Q', color: '#2563eb', style: 'line' },
+        { label: '价格上限 P2 = 4', color: '#6b7280', style: 'dashed' },
+        { label: 'R+V = 限价前 CS（蓝）', color: '#2563eb', style: 'dot' },
+        { label: 'S = 转移：生产者→消费者（绿）', color: '#15803d', style: 'dot' },
+        { label: 'T = 限价后 PS（青）', color: '#0d9488', style: 'dot' },
+        { label: 'V+U = 无谓损失 DWL（红）', color: '#dc2626', style: 'dot' },
+      ],
+      markers: [
+        { x: 5, y: 7, label: 'E1 = (5, 7)：福利最大', color: '#7c3aed', legend: '自由均衡', guides: true, gxLabel: 'Q1 = 5', gyLabel: 'P1 = 7', labelDx: 12, labelDy: -14 },
+        { x: 2, y: 4, label: '限价后 Q = 2', color: '#dc2626', guides: true, gxLabel: 'Q2 = 2', gyLabel: 'P2 = 4', labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图3：汽油限价（D: P=10−Q；S1: P=Q → S2: P=2+Q；E1=(5,5)，E2=(4,6)，E3=(3,5)） =====
+    Charts.xy(document.getElementById('fig-gasoline'), {
+      xLabel: '汽油数量 Q',
+      yLabel: '汽油价格 P',
+      xMax: 10, yMax: 10, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：汽油限价 —— 供给冲击后本应在 E2 = (4, 6) 出清，限价把市场钉在 E3 = (3, 5)，短缺 2、DWL = 1',
+      areas: [
+        { points: [[3, 5], [3, 7], [4, 6]], color: '#dc2626', opacity: 0.28, label: 'DWL' },
+      ],
+      series: [
+        { points: [[0, 10], [10, 0]], type: 'linear', color: '#dc2626', label: '需求 D：P = 10 − Q' },
+        { points: [[0, 0], [9, 9]], type: 'linear', color: '#2563eb', dash: true, label: 'S1：P = Q（冲击前）' },
+        { points: [[0, 2], [8, 10]], type: 'linear', color: '#2563eb', label: 'S2：P = 2 + Q（石油危机后）' },
+        { points: [[0, 5], [10, 5]], type: 'linear', color: '#6b7280', dash: true, label: '价格上限 P1 = 5' },
+      ],
+      markers: [
+        { x: 5, y: 5, label: 'E1 = (5, 5)：原均衡 = 限价下需求量 QD = 5', color: '#7c3aed', legend: '均衡/交易点', guides: true, gxLabel: 'QD = 5', gyLabel: 'P1 = 5', labelDx: 12, labelDy: 24 },
+        { x: 4, y: 6, label: 'E2 = (4, 6)：自由市场新均衡', color: '#2563eb', guides: true, gxLabel: 'Q = 4', gyLabel: 'P = 6', labelDx: 12, labelDy: -14 },
+        { x: 3, y: 5, label: 'E3 = (3, 5)：限价后实际成交 QS = 3', color: '#dc2626', guides: true, gxLabel: 'QS = 3', labelDx: -176, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图4：黄牛票（垂直供给 Q=8，出清价 6，票面价 2；转移 32，无 DWL） =====
+    Charts.xy(document.getElementById('fig-tickets'), {
+      xLabel: '门票数量 Q（张）',
+      yLabel: '票价 P',
+      xMax: 14, yMax: 14, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：门票黄牛 —— 座位固定（垂直供给），二级市场把价格拉回出清价 6，矩形 32 从阿黛尔/粉丝转移给黄牛',
+      areas: [
+        { points: [[0, 6], [0, 14], [8, 6]], color: '#2563eb', opacity: 0.15, label: '粉丝 CS = 32' },
+        { points: [[0, 2], [8, 2], [8, 6], [0, 6]], color: '#d97706', opacity: 0.3, label: '转移 = 32' },
+      ],
+      series: [
+        { points: [[0, 14], [14, 0]], type: 'linear', color: '#dc2626', label: '需求 D：P = 14 − Q' },
+        { points: [[8, 0], [8, 14]], type: 'linear', color: '#2563eb', label: '供给：座位固定 Q = 8（垂直）' },
+        { points: [[0, 2], [14, 2]], type: 'linear', color: '#6b7280', dash: true, label: '票面价 P = 2（阿黛尔的低价）' },
+      ],
+      markers: [
+        { x: 8, y: 6, label: 'E = (8, 6)：二级市场出清价', color: '#7c3aed', legend: '出清点', guides: true, gxLabel: 'Q = 8', gyLabel: 'P = 6', labelDx: 12, labelDy: -14 },
+        { x: 8, y: 2, label: '票面价成交 (8, 2)', color: '#d97706', guides: true, gyLabel: 'P = 2', labelDx: -150, labelDy: 24 },
+        { x: 12, y: 2, label: 'QD = 12：超额需求 = 4', color: '#dc2626', labelDx: -130, labelDy: -18 },
+      ],
+    });
+
+    // ===== 图5：出租车牌照供给弯折（D: P=12−Q；E1=(8,4)→E2=(6,6)；CS 32→18，PS 0→12=π，DWL=2） =====
+    Charts.xy(document.getElementById('fig-taxi'), {
+      xLabel: '出租车服务数量 Q',
+      yLabel: '价格 P',
+      xMax: 12, yMax: 12, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5：出租车牌照 —— 供给在 N2 = 4 处弯折，E1 = (8, 4) → E2 = (6, 6)；利润 π = B = 12 资本化进牌照价格',
+      areas: [
+        { points: [[0, 6], [0, 12], [6, 6]], color: '#2563eb', opacity: 0.15, label: 'A = 18' },
+        { points: [[0, 4], [0, 6], [6, 6], [6, 4]], color: '#15803d', opacity: 0.25, label: 'B = π = 12' },
+        { points: [[6, 6], [6, 4], [8, 4]], color: '#dc2626', opacity: 0.28, label: 'C' },
+      ],
+      series: [
+        { points: [[0, 12], [12, 0]], type: 'linear', color: '#dc2626', label: '需求 D：P = 12 − Q' },
+        { points: [[0, 4], [12, 4]], type: 'linear', color: '#2563eb', dash: true, label: 'S1：无管制长期供给（水平，P = 4）' },
+        { points: [[0, 4], [4, 4], [12, 12]], type: 'linear', color: '#2563eb', label: 'S2：牌照限量后供给（Q = 4 处弯折）' },
+      ],
+      legend: [
+        { label: '需求 D：P = 12 − Q', color: '#dc2626', style: 'line' },
+        { label: 'S1：无管制长期供给（水平，P = 4）', color: '#2563eb', style: 'dashed' },
+        { label: 'S2：牌照限量后供给（Q = 4 处弯折）', color: '#2563eb', style: 'line' },
+        { label: 'A = 管制后 CS（蓝）', color: '#2563eb', style: 'dot' },
+        { label: 'B = π：转移+利润，资本化进牌照（绿）', color: '#15803d', style: 'dot' },
+        { label: 'C = 无谓损失 DWL = 2（红）', color: '#dc2626', style: 'dot' },
+      ],
+      markers: [
+        { x: 8, y: 4, label: 'E1 = (8, 4)：无管制，零利润', color: '#7c3aed', legend: '均衡点', guides: true, gxLabel: 'Q1 = 8', gyLabel: 'P1 = 4', labelDx: 12, labelDy: 26 },
+        { x: 6, y: 6, label: 'E2 = (6, 6)：牌照限量后', color: '#15803d', guides: true, gxLabel: 'Q2 = 6', gyLabel: 'P2 = 6', labelDx: 12, labelDy: -14 },
+        { x: 4, y: 4, label: 'N2 = 4：供给弯折点', color: '#2563eb', guides: true, gxLabel: 'N2 = 4', labelDx: -120, labelDy: 24 },
+      ],
+    });
+  </script>
+</body>
+</html>
