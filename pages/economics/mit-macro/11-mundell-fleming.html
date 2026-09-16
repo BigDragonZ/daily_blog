@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 蒙代尔-弗莱明模型与汇率制度 - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>11 蒙代尔-弗莱明模型与汇率制度</h1>
+      <p>本篇覆盖 MIT 14.02《宏观经济学原理》第 20、21 两讲（L20+L21），是开放经济模块的核心。L20 构建<span class="term">蒙代尔-弗莱明模型</span><span class="term-en">（Mundell-Fleming Model）</span>：把旧的 IS-LM 框架搬到开放经济中，加入净出口与汇率，用<span class="term">无抛补利率平价</span><span class="term-en">（Uncovered Interest Parity, UIP）</span>把国内利率、外国利率和汇率绑在一起，并用它做四个标准政策实验。L21 讨论<span class="term">汇率制度</span><span class="term-en">（Exchange Rate Regimes）</span>：为什么香港的利率就是美联储的利率、固定汇率的硬约束是什么、投机性攻击如何摧毁一个汇率挂钩、为什么仍有国家选择固定汇率，以及统领一切的<span class="term">三元悖论</span><span class="term-en">（Impossible Trinity）</span>。</p>
+
+      <!-- ==================== L20 ==================== -->
+      <h2>一、L20 蒙代尔-弗莱明模型（The Mundell-Fleming Model）</h2>
+
+      <h3>1.1 引入：汇率没等事件发生，就先动了</h3>
+      <p><strong>反直觉开场：</strong>2022 年，美联储一路激进加息，美元对欧元一度升值约 18%、对日元升值约 45%——这还算"有因有果"。真正反直觉的是下半场：2022 年末，美联储<strong>还没有</strong>转向，通胀数据只是露出一丝放缓迹象，市场开始<strong>觉得</strong>加息周期即将见顶、欧洲和日本会追上——美元立刻暴跌。汇率没有等任何实际政策发生，单凭"预期变了"就先动了。</p>
+      <p>这就是理解汇率的第一课：<strong>汇率是一种资产价格，而对资产价格而言，预期比现实更重要</strong>。任何时点上，汇率都由市场对各国利率政策路径的<strong>看法</strong>决定——无论这些看法最终是否成真。美元 2022 年暴涨的主驱动，是市场认为美国在商业周期中领先、会比世界其他地区更早收紧利率；随后的暴跌，则是市场预期欧洲还有更长加息周期、日本三十年不变的零利率也出现松动迹象。注意：这不意味着美国利率会低于日本，而是<strong>变化的方向</strong>——市场将先于别处放松，就足以让汇率大动。</p>
+
+      <div id="fig-usd-2022"></div>
+      <p><strong>图 1 解读：</strong>2021 年初至 2023 年中的美元汇率（指数化，2021-01 = 100；按本课程约定，汇率上升 = 美元升值）。蓝线美元/欧元从 100 升至 2022-09 峰值约 118（+18%）；绿线美元/日元更戏剧性，2022-10 峰值约 145（+45%），因为日元长期卡在零利率下限、没人预期日本会跟随美国加息。随后两轮预期反转——"美联储要转向"+"欧日会追赶"——曲线在美联储实际转向之前就已掉头向下。蒙代尔-弗莱明模型要回答的正是两件事：什么在驱动这些汇率波动，以及汇率波动如何在短期内反作用于实体经济。</p>
+
+      <h3>1.2 开放经济的 IS 关系：多了一个内生变量 E</h3>
+      <p>回到旧的 IS-LM 框架——非常短期的模型，甚至固定名义价格（忽略菲利普斯曲线与通胀，因此名义利率 = 实际利率）。商品市场均衡条件看起来和封闭经济一样：产出由总需求决定。但这里的总需求是<strong>对国内生产商品的需求</strong>，与国内居民的需求（C+I+G）不同——居民需求的一部分流向了进口，而国内生产者感受到的一部分需求来自出口。于是多出一项<span class="term">净出口</span><span class="term-en">（Net Exports, NX）</span>：</p>
+      <p><strong>Y = C(Y − T) + I(Y, i) + G + NX(Y, Y*, E)</strong></p>
+      <p>净出口取决于三个变量：</p>
+      <ol>
+        <li><strong>国内产出 Y（负向）</strong>：收入增加 → 买更多东西，包括更多进口 → 净出口恶化。Y 对 NX 的负向影响只是让乘数变小；</li>
+        <li><strong>外国产出 Y*（正向）</strong>：我们的出口就是他国的进口。外国收入上升 → 他们的进口增加 = 我们的出口增加。Y* 是外生参数，像自主消费 C₀ 一样移动总需求；</li>
+        <li><strong>汇率 E（负向）</strong>：严格说应是实际汇率 ε = EP/P*，但价格水平 P、P* 固定，实际汇率的全部变动都来自名义汇率 E。E 上升（本币升值）→ 我们的商品相对变贵 → 出口减少、进口增加 → 净出口下降。</li>
+      </ol>
+      <p>真正的问题在于：<strong>我们多了一个内生变量——汇率 E</strong>。封闭经济 IS-LM 有两个内生变量（Y、i）、两个方程；现在有三个内生变量，就需要第三个方程。这第三个方程来自资本账户的开放——人们要决定把钱投到哪里。</p>
+
+      <h3>1.3 无抛补利率平价（UIP）：套利的铁律</h3>
+      <p><span class="term">无抛补利率平价</span><span class="term-en">（Uncovered Interest Parity, UIP）</span>的核心思想：在均衡状态下，<strong>以同一种货币计价的不同资产的预期回报率必须相等</strong>。否则，如果某国资产的预期回报更高，所有人都会涌向它，资本流动本身会立即把回报率拉平。推导出的 UIP 条件：</p>
+      <p><strong>E<sub>t</sub> = (1 + i<sub>t</sub>) / (1 + i*<sub>t</sub>) · E<sup>e</sup><sub>t+1</sub></strong></p>
+      <p>其中 i<sub>t</sub> 是国内利率，i*<sub>t</sub> 是外国利率，E<sup>e</sup><sub>t+1</sub> 是对下一期汇率的预期。为进一步简化，本讲做一个重要而略显不切实际的假设：<strong>预期未来汇率 E<sup>e</sup> 固定不变</strong>（现实中预期本身就是汇率波动的重要来源，但这个假设能让我们看清基本机制）。在此假设下，UIP 方程直接给出求解当前汇率 E 所需的第三个方程。</p>
+
+      <div id="fig-uip-curve"></div>
+      <p><strong>图 2 解读：</strong>UIP 曲线（E-i 空间，取 i* = 0.05、E<sup>e</sup> = 1.00）。它是一条向右上方倾斜的直线，且必然经过点 <strong>(i*, E<sup>e</sup>) = (0.05, 1.00)</strong>——当国内外利率相等时，谁也不能预期汇率升贬，当前汇率必等于预期汇率。国内利率上升到 0.07 时，当前汇率立即升至约 1.019（升值）：持有本币债券的利息更高，必须由"预期未来贬值"来补偿——既然 E<sup>e</sup> 固定，唯一的办法就是让 E <strong>现在</strong>就升上去，留出从现在到未来的贬值空间。</p>
+
+      <h3>1.4 UIP 的三个推论：汇率的遥控器</h3>
+      <ol>
+        <li><strong>国内利率 i↑ → 本币立即升值（E↑）</strong>。更高的利息回报必须由预期资本损失（预期贬值）抵消；E<sup>e</sup> 固定，只能让当前 E 立即升值。</li>
+        <li><strong>外国利率 i*↑ → 本币立即贬值（E↓）</strong>。外国债券回报更高，要恢复无差异，投资者必须预期本币未来升值；E<sup>e</sup> 固定，唯一的办法是让当前 E 立即贬下去，留出升值空间。</li>
+        <li><strong>预期汇率 E<sup>e</sup>↑ → 当前 E 立即同幅上升</strong>。若人们预期未来本币更值钱而今天的汇率不动，持有本币资产就有无风险的预期资本利得——所有人抢购本币资产，需求瞬间把当前汇率推到新预期值，套利机会即刻消失。这正是 1.1 节"预期比现实重要"的模型化表达。</li>
+      </ol>
+
+      <h3>1.5 三方程组装：IS-LM-UIP = 蒙代尔-弗莱明</h3>
+      <p>把所有零件装到一起，开放经济的短期模型由三个方程组成：</p>
+      <ol>
+        <li><strong>IS 关系</strong>：Y = C(Y − T) + I(Y, i) + G + NX(Y, Y*, E)</li>
+        <li><strong>LM 关系</strong>：i = ī（央行直接设定利率）</li>
+        <li><strong>UIP 关系</strong>：E = (1 + i) / (1 + i*) · E<sup>e</sup></li>
+      </ol>
+      <p>这就是 <strong>IS-LM-UIP 模型</strong>，即蒙代尔-弗莱明模型。图形上用一个<strong>双图系统</strong>表示：左图是标准的 IS-LM 图（Y-i 空间），右图是 UIP 图（E-i 空间，注意横轴是 E、纵轴是 i，两图共用利率轴）。</p>
+
+      <div class="figure-pair">
+        <div id="fig-mf-islm"></div>
+        <div id="fig-mf-uip"></div>
+      </div>
+      <p><strong>图 3 解读：</strong>蒙代尔-弗莱明双图系统（i* = 0.05、E<sup>e</sup> = 1.00）。左图：IS 向右下方倾斜（利率高 → 投资少 → 产出低），LM 是央行钉住利率的水平线 i = 0.05，交于均衡点 <strong>A (Y₀ = 50, i₀ = 0.05)</strong>。右图：UIP 线 i = 1.05·E − 1 向右上方倾斜，在同一利率 i₀ = 0.05 处给出均衡汇率 <strong>A' (E₀ = 1.00, i₀ = 0.05)</strong>。两图通过利率轴联动：LM 决定 i，UIP 把 i 翻译成 E，E 再通过净出口反过来影响 IS——三方程环环相扣。</p>
+
+      <h3>1.6 货币政策的双渠道：开放经济中更强</h3>
+      <p>封闭经济中，货币政策只有一个渠道：利率 → 投资 → 总需求。开放经济中，央行加息会同时触发<strong>两个渠道</strong>：</p>
+      <ol>
+        <li><strong>投资渠道（传统渠道）</strong>：i↑ → 投资 I 下降 → 总需求下降（与封闭经济相同）；</li>
+        <li><strong>汇率/净出口渠道</strong>：i↑ → 本币升值（E↑）→ 出口商品变贵、进口商品变便宜 → NX 下降 → 总需求进一步下降。</li>
+      </ol>
+      <p>因此<strong>开放经济中货币政策对产出的影响比封闭经济更强</strong>，对贸易依存度高的小型开放经济体尤其如此——汇率渠道给利率装了一个放大器。</p>
+
+      <h3>1.7 四个标准实验</h3>
+      <p><strong>实验①：紧缩性货币政策（央行加息）。</strong>LM 曲线上移：i₀ → i₁。左图中利率更高、产出更低；右图中更高的利率沿 UIP 线对应更高的汇率——本币升值。投资渠道与汇率渠道同向叠加，产出明显下降。</p>
+
+      <div class="figure-pair">
+        <div id="fig-mp-islm"></div>
+        <div id="fig-mp-uip"></div>
+      </div>
+      <p><strong>图 4 解读：</strong>紧缩性货币政策（i：0.05 → 0.07）。左图 LM 上移至 LM₁，均衡从 A (50, 0.05) 移到 <strong>B (Y₁ = 25, i₁ = 0.07)</strong>——产出腰斩。右图沿 UIP 线（不动）从 A' 移到 <strong>B' (E₁ ≈ 1.019, i₁ = 0.07)</strong>——本币升值约 1.9%。注意 UIP 线本身没动，是利率沿线的移动：紧缩货币 ⇒ Y↓、E↑（升值）、NX↓（投资与净出口双杀）。</p>
+
+      <p><strong>实验②：扩张性财政政策（G↑ 或 T↓）。</strong>IS 曲线右移。<strong>若央行不动利率</strong>（LM 不动），产出增加——但增幅比封闭经济<strong>小</strong>，因为增加的需求有一部分通过进口流失到国外。利率不变 ⇒ 由 UIP，<strong>汇率 E 不变</strong>。现实中若财政扩张导致经济过热、央行加息回应，汇率才会升值。</p>
+      <p><strong>实验③：外国产出 Y*↓（"进口"他国衰退）。</strong>外国收入下降 → 我们的出口减少 → IS 曲线左移，产出下降；利率与 UIP 均不受影响，<strong>汇率 E 不变</strong>。这就是从世界其他地方"输入"衰退的机制——亚洲和拉美国家担心中国经济收缩，欧洲人也担心（德国向中国大量出口）；反过来，中国重新开放给欧洲带来希望，也成为欧元兑美元升值的原因之一。实验②③共用一张图：都是 IS 平移、央行不动、汇率不变，只是方向相反。</p>
+
+      <div class="figure-pair">
+        <div id="fig-is-islm"></div>
+        <div id="fig-is-uip"></div>
+      </div>
+      <p><strong>图 5 解读：</strong>IS 移动双实验（LM 钉在 0.05 不动）。左图：财政扩张使 IS₀ 右移到 IS_G，均衡从 A (50, 0.05) 移到 <strong>B (Y = 70, i = 0.05)</strong>；外国衰退（Y*↓）使 IS₀ 左移到 IS_Y*，均衡移到 <strong>C (Y = 35, i = 0.05)</strong>。右图：两个实验中利率都没变，UIP 线上均衡点原地不动——<strong>E 恒为 1.00</strong>。结论：IS 冲击（财政、外国需求）在央行不回应时只动产出、不动汇率；净出口都恶化（B 点因进口增加、C 点因出口减少）。</p>
+
+      <p><strong>实验④：外国利率 i*↑。</strong>它不直接移动 IS 或 LM，但会<strong>移动 UIP 曲线</strong>：给定国内利率，外国债券回报更高，要留住资本必须让投资者预期本币未来升值——E<sup>e</sup> 固定，只能让今天的汇率贬下去。UIP 曲线向左移动（任何给定 i 对应更低的 E）。而本币贬值使本国商品更便宜 → NX↑ → <strong>IS 曲线右移</strong>。最终结果：产出增加、汇率贬值——别国加息对我们是扩张性的（通过贸易渠道）。</p>
+
+      <div class="figure-pair">
+        <div id="fig-istar-islm"></div>
+        <div id="fig-istar-uip"></div>
+      </div>
+      <p><strong>图 6 解读：</strong>外国利率上升（i*：0.05 → 0.08）。右图：UIP 线从 UIP₀ 左移到 UIP₁（i = 1.08·E − 1），国内利率不变（0.05）时汇率从 A' (1.00) 贬到 <strong>B' (E₁ ≈ 0.972)</strong>——本币贬值约 2.8%。左图：贬值改善净出口，IS₀ 右移到 IS₁，产出从 A (50) 升至 <strong>B (Y = 68)</strong>。与实验①对照：同样是"利率变化"，本国加息是紧缩（Y↓、升值），外国加息反而是扩张（Y↑、贬值）——方向完全相反，机制全在 UIP 的移动方式上。</p>
+
+      <h3>1.8 模型优缺点与思想链路</h3>
+      <p><strong>蒙代尔-弗莱明模型的优缺点：</strong>优点是把 IS-LM 几乎原样搬到开放经济，只用 UIP 一个方程就同时解释了"什么驱动汇率"和"汇率如何反作用于产出"，并清晰区分了货币与财政、国内与国外冲击的不同传导路径；缺点是假设苛刻——价格完全固定（纯短期）、预期汇率 E<sup>e</sup> 外生固定（而现实中预期恰是汇率波动的最大来源）、UIP 中忽略风险溢价（现实中两国债券回报差可以长期存在）。</p>
+      <p><strong>本讲思想链路：</strong>核心问题（什么驱动汇率？汇率如何影响实体经济？）→ 简化模型（价格固定 + E<sup>e</sup> 固定 → IS-LM 加一条 UIP）→ 推导（三方程组装双图系统，货币政策出现汇率第二渠道）→ 实际应用（四个标准实验：紧缩货币、财政扩张、外国衰退、外国加息）→ 局限性（E<sup>e</sup> 其实内生、价格其实会变、UIP 其实有风险溢价——预期内生化是后续 L22-L24 的主题）。</p>
+
+      <!-- ==================== L21 ==================== -->
+      <h2>二、L21 汇率制度（Exchange Rate Regimes）</h2>
+
+      <h3>2.1 引入：香港金管局从不讨论加息降息</h3>
+      <p><strong>反直觉开场：</strong>各国央行的头条永远是"加不加息"，但香港金融管理局从不讨论这个问题——<strong>它的利率就是美联储的利率</strong>，美联储加多少，香港跟多少，几乎没有例外。香港明明有自己的货币（港币）、自己的央行，为什么主动放弃了货币政策？它换来了什么，又失去了什么？答案藏在 UIP 里。</p>
+
+      <h3>2.2 固定汇率的硬约束：可信 peg ⇒ i = i*</h3>
+      <p>到目前为止讨论的都是<span class="term">浮动汇率制度</span><span class="term-en">（Floating Exchange Rate）</span>：各国执行自己的政策，汇率按金融市场出清的需要自由调整。但许多国家选择相反的<span class="term">固定汇率制度</span><span class="term-en">（Fixed Exchange Rate）</span>——把本币<span class="term">钉住</span><span class="term-en">（Peg）</span>一种主要货币。极端例子是欧元区：成员国放弃各自货币，德国和意大利之间等于存在"超级挂钩"。更常见的是弱一些的挂钩，如港币长期钉住美元。</p>
+      <p>假设你处于一个<strong>可信的</strong>固定汇率制度中。挂钩可信意味着没人预期汇率会变：<strong>E<sup>e</sup> = E = 常数</strong>。代入 UIP 条件 E = (1+i)/(1+i*)·E<sup>e</sup>，立即得到：</p>
+      <p><strong>i = i*</strong></p>
+      <p>直觉很简单：挂钩可信时，两种货币"就像是同一种货币"，以同种货币发行的相同债券不可能支付不同利率，否则所有人都会涌向高息的那个。若固定汇率下的国家试图单方面加息，会触发大规模资本流入、对本币形成升值压力，央行为守住平价只能无限供应本币——实际上还是守不住利率差。结论：<strong>资本自由流动 + 固定汇率 = 放弃独立的货币政策</strong>。你钉住的那个国家做什么，你就必须跟随。这就是香港的答案：港币的可信挂钩，代价是货币政策完全外包给美联储。</p>
+
+      <h3>2.3 制度光谱：从纯浮动到失控</h3>
+      <p>实践中纯粹的制度很少，大多数国家处于中间的混合地带。从"最浮动"到"最失控"排成一条光谱：</p>
+      <ul>
+        <li><strong>纯浮动</strong>：美元/欧元、美元/日元、美元/英镑——最干净的浮动。正常情况下央行不干预，只在重大混乱（如大银行倒闭）时才出手；</li>
+        <li><strong>较脏的浮动</strong>：澳元、加元、瑞典克朗——属于浮动，但在<span class="term">避险</span><span class="term-en">（Risk-off）</span>环境中容易被抛售，波动更大（如新冠期间的剧烈震荡）；</li>
+        <li><strong>有管理的浮动</strong>：巴西雷亚尔、南非兰特、哥伦比亚比索——浮动成分很大，但央行干预更多；这些国家通胀通常较高，为维持实际汇率稳定，名义汇率呈长期贬值趋势；</li>
+        <li><strong>钉住/严格管理</strong>：<strong>港币</strong>（实质钉住美元，无独立货币政策）；<strong>人民币</strong>（波动被严格控制在一个远比自由浮动窄的区间内）；<strong>新加坡元</strong>（<span class="term">目标区</span><span class="term-en">（Target Zone）</span>制度：汇率可在一篮子货币为中心的窄区间内波动，篮子权重保密，新加坡的货币政策就是通过管理这个区间来实施的）；</li>
+        <li><strong>失控</strong>：土耳其里拉、阿根廷比索——通胀极高、货币持续大幅贬值；阿根廷甚至存在多重汇率（官方汇率、蓝色汇率等）。这些国家反复试图用稳定汇率来压通胀，但高通胀的根子不除，努力一再失败、币值暴跌。</li>
+      </ul>
+
+      <h3>2.4 衰退来了怎么办：两种制度下的工具箱</h3>
+      <p>假设一国陷入衰退，两种制度下的政策选择截然不同：</p>
+      <ul>
+        <li><strong>浮动汇率</strong>：①货币政策——降息既刺激投资（传统渠道），又引致本币贬值、提振净出口（汇率渠道），双渠道叠加，是<strong>非常强大的工具</strong>；②财政政策——G↑ 使 IS 右移，与封闭经济类似，只是乘数因进口流失而变小。</li>
+        <li><strong>固定汇率</strong>：①货币政策——<strong>作废</strong>。必须维持 i = i*，不能独立降息，除非被钉住国恰好也在衰退并同步宽松；②财政政策——仍可用，效果与浮动下类似，成了<strong>唯一剩下的工具</strong>。香港的处境即是如此：政策利率完全跟随美国，若冲击来自中国（与美国周期无关），货币工具完全用不上。</li>
+      </ul>
+
+      <h3>2.5 投机性攻击：捍卫平价的代价</h3>
+      <p>固定汇率还面临<span class="term">投机性攻击</span><span class="term-en">（Speculative Attack）</span>：你想守住平价，但市场不信你守得住。假设市场预期贬值（E<sup>e</sup>↓），UIP 曲线整体左移——此时要不让当前汇率贬下去，<strong>唯一的武器就是大幅加息</strong>，用更高的利息回报补偿投资者持有的贬值风险。但代价巨大：利率飙升会引发国内严重衰退。</p>
+
+      <div id="fig-speculative-attack"></div>
+      <p><strong>图 7 解读：</strong>固定汇率与投机攻击（钉住 Ē = 1.00，i* = 0.05）。正常情况下 UIP₀（E<sup>e</sup> = 1.00）经过 A 点：<strong>i = i* = 0.05</strong>，利率与被钉住国完全一致。市场一旦预期贬值（E<sup>e</sup> 降到 0.92），UIP 左移到 UIP₁：若不加息，汇率将从 A 跌到 <strong>C (0.05, 0.92)</strong>，平价失守；要守住 Ē = 1.00，利率必须飙到 <strong>B (i ≈ 14.1%, E = 1.00)</strong>——由 1.00 = (1+i)/1.05 × 0.92 解出。14% 的利率对实体经济是窒息性的，这就是"捍卫挂钩"的账单。信誉差的国家（阿根廷、土耳其）反复付这张账单；即使是发达经济体也难逃——<strong>1992 年<span class="term">欧洲汇率机制</span><span class="term-en">（Exchange Rate Mechanism, ERM）</span>危机</strong>：德国统一后大搞财政扩张 → 德国利率上升、马克升值，英国、法国等为维持本币对马克的窄幅波动被迫大幅加息抵抗攻击，经济痛苦不堪，最终英国弃钩、体系崩溃。另一个极端样本是<strong>俄罗斯 2022</strong>：入侵乌克兰后卢布暴跌，央行把利率飙至 <strong>20%</strong> 并实施<span class="term">资本管制</span><span class="term-en">（Capital Controls）</span>，卢布随后大幅回升——这种波动与基本面无关，纯粹由恐慌与政策反应驱动。</p>
+
+      <h3>2.6 为什么仍有人选择固定汇率？</h3>
+      <p>既然固定汇率要放弃货币政策、还要挨投机攻击，为什么制度光谱上总有国家选它？四个理由：</p>
+      <ol>
+        <li><strong>浮动的波动远超基本面</strong>。汇率是资产价格，贴现的是对未来的全部预期——而预期（"想象力"）变化多端，会产生大量与生产率、需求等基本面无关的"噪音"波动（俄罗斯 2022 就是样本）。这种波动给贸易与金融交易带来实实在在的不确定性与成本；能消除它，对经济有利。</li>
+        <li><strong><span class="term">最优货币区</span><span class="term-en">（Optimal Currency Area, OCA）</span>条件</strong>。若两国经济周期高度同步（面临相似的冲击），则两国理想的货币政策本来就差不多，让更可信的一方主导政策成本很低——固定汇率的主要代价（放弃独立政策）近乎为零。这是欧元区存在的部分理由。</li>
+        <li><strong>财政雄厚 + 要素市场灵活</strong>。货币政策没了，可以用财政政策补位（前提是财政实力够强）；名义汇率固定时，只要工资、价格等要素市场足够灵活，<strong>实际汇率</strong>仍可通过国内价格调整来变动，经济并不僵硬。香港就是样本：巨额储备足以抵御攻击、财政实力雄厚、市场灵活。</li>
+        <li><strong>向可信央行"输入信誉"治通胀</strong>。对饱受高通胀、自家央行毫无信誉的国家（如阿根廷），钉住美元等于"借用"美联储的信誉：放弃独立货币政策（通胀的主要来源之一），让可信的央行替自己制定政策，帮助锚定通胀预期——前提是市场相信你不会轻易放弃挂钩。这也是阿根廷的两难：它需要信誉，却又最难守住信誉。</li>
+      </ol>
+
+      <h3>2.7 三元悖论：不可兼得的三件事</h3>
+      <p>把整讲压缩成一句话，就是<span class="term">三元悖论</span><span class="term-en">（Impossible Trinity / Trilemma）</span>。一个国家想要的三样东西：</p>
+      <ol>
+        <li><strong>固定汇率</strong>（汇率稳定）；</li>
+        <li><strong>资本自由流动</strong>（无资本管制）；</li>
+        <li><strong>独立的货币政策</strong>（自主设定利率）。</li>
+      </ol>
+      <p><strong>三者不可兼得，最多选两个</strong>。逻辑正是 2.2 节的 UIP 硬约束：固定汇率 + 资本自由流动 ⇒ i = i*，货币政策必须外包（香港选这条）；想要独立货币政策 + 资本自由流动 ⇒ 汇率必须自由浮动（美国、欧元区、日本选这条）；想要固定汇率 + 独立货币政策 ⇒ 必须实施资本管制，把 UIP 背后的套利资本挡在门外（中国的选择）。三元悖论不是经验规律，而是套利逻辑的直接推论——UIP 的铁律不允许第三个角同时存在。</p>
+
+      <h3>2.8 收尾对比：四实验矩阵 + 浮动 vs 固定</h3>
+      <table>
+        <thead>
+          <tr><th>蒙代尔-弗莱明四实验</th><th>产出 Y</th><th>汇率 E（↑=升值）</th><th>净出口 NX</th><th>移动的曲线</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>① 紧缩货币（i↑）</strong></td>
+            <td>↓（双渠道叠加，强于封闭经济）</td>
+            <td>↑（升值）</td>
+            <td>↓（投资渠道外再加升值打击）</td>
+            <td>LM 上移；UIP 不动（沿线移动）</td>
+          </tr>
+          <tr>
+            <td><strong>② 财政扩张（G↑，央行不动）</strong></td>
+            <td>↑（弱于封闭经济，乘数被进口稀释）</td>
+            <td>不变（i 不变 ⇒ E 不变）</td>
+            <td>↓（收入↑ → 进口↑）</td>
+            <td>IS 右移；UIP 不动</td>
+          </tr>
+          <tr>
+            <td><strong>③ 外国衰退（Y*↓）</strong></td>
+            <td>↓（"进口"他国衰退）</td>
+            <td>不变</td>
+            <td>↓（出口↓）</td>
+            <td>IS 左移；UIP 不动</td>
+          </tr>
+          <tr>
+            <td><strong>④ 外国加息（i*↑）</strong></td>
+            <td>↑（贬值提振净出口）</td>
+            <td>↓（贬值）</td>
+            <td>↑</td>
+            <td>UIP 左移 → IS 右移；LM 不动</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr><th>维度</th><th>浮动汇率（Floating）</th><th>固定汇率（Fixed / Peg）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>货币政策自主性</strong></td>
+            <td>有；且双渠道（投资+汇率）放大，效果强于封闭经济</td>
+            <td>无；可信 peg ⇒ i = i*，政策外包给被钉住国</td>
+          </tr>
+          <tr>
+            <td><strong>财政政策作用</strong></td>
+            <td>可用；乘数被进口稀释而偏小</td>
+            <td>可用且是衰退时唯一工具；效果与浮动下类似</td>
+          </tr>
+          <tr>
+            <td><strong>汇率波动</strong></td>
+            <td>大，且常远超基本面（预期噪音）</td>
+            <td>名义汇率稳定；实际汇率要靠国内价格灵活调整</td>
+          </tr>
+          <tr>
+            <td><strong>投机攻击风险</strong></td>
+            <td>无平价可守，无攻击靶子</td>
+            <td>有；捍卫平价 = 大幅加息 → 国内严重衰退（1992 ERM）</td>
+          </tr>
+          <tr>
+            <td><strong>适用条件</strong></td>
+            <td>大型经济体、周期与他国不同步、央行有信誉</td>
+            <td>OCA（周期同步）、财政雄厚+要素市场灵活、或需"输入信誉"治通胀</td>
+          </tr>
+          <tr>
+            <td><strong>代表经济体</strong></td>
+            <td>美元、欧元、日元、英镑（纯浮动）；澳元、加元（较脏浮动）；巴西雷亚尔（有管理浮动）</td>
+            <td>港币（钉住美元）、人民币（窄区间管理）、新加坡元（目标区）；欧元区内部（超级挂钩）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>本讲思想链路：</strong>核心问题（汇率制度怎么选？固定汇率的代价与收益是什么？）→ 简化模型（可信 peg 代入 UIP ⇒ i = i*）→ 推导（固定汇率 + 资本自由流动 = 放弃货币政策；E<sup>e</sup>↓ ⇒ 捍卫平价的唯一工具是大幅加息）→ 实际应用（制度光谱、衰退工具箱、1992 ERM 危机、俄罗斯 2022、香港的取舍、阿根廷输入信誉）→ 一般化（三元悖论：三个角最多选两个，UIP 的套利逻辑不允许例外）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/11-mundell-fleming.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：美元汇率 2021-2023（指数化，2021-01 = 100；示意数据）—— 先暴涨后暴跌 =====
+    // x = 距 2021-01 的月数；EUR 峰值 2022-09（+18%），JPY 峰值 2022-10（+45%）
+    var eurPts = [[0, 100], [5, 103], [12, 108], [14, 110], [17, 114], [20, 118], [23, 107], [26, 109], [29, 108]];
+    var jpyPts = [[0, 100], [5, 107], [12, 111], [14, 117], [17, 131], [21, 145], [23, 128], [26, 130], [29, 139]];
+    Charts.xy(document.getElementById('fig-usd-2022'), {
+      xLabel: '时间（2021-01 至 2023-06）',
+      yLabel: '美元汇率指数（2021-01 = 100）',
+      xMax: 30, yMax: 160,
+      xTicks: [
+        { v: 0, label: '21-01' }, { v: 6, label: '21-07' }, { v: 12, label: '22-01' },
+        { v: 18, label: '22-07' }, { v: 24, label: '23-01' }, { v: 29, label: '23-06' },
+      ],
+      yTicks: [100, 110, 120, 130, 140, 150],
+      legendPosition: 'top',
+      caption: '图 1：2022 美元先暴涨后暴跌 —— 主驱动是市场对各国利率政策路径的预期，而非已发生的事件（示意数据）',
+      series: [
+        { points: eurPts, type: 'spline', color: '#2563eb', label: '美元/欧元（指数）' },
+        { points: jpyPts, type: 'spline', color: '#15803d', label: '美元/日元（指数）' },
+      ],
+      markers: [
+        { x: 20, y: 118, label: '2022-09：+18%（加息领先预期）', color: '#2563eb', legend: '峰值', labelDx: -170, labelDy: -12 },
+        { x: 21, y: 145, label: '2022-10：+45%（日元零利率）', color: '#15803d', labelDx: -200, labelDy: -12 },
+        { x: 23, y: 107, label: '2022 末：预期美联储转向 → 美元先跌（未等事件发生）', color: '#dc2626', legend: '预期反转', labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图2：UIP 曲线（E-i 空间）—— 过 (i*, E^e) 点；i* = 0.05, E^e = 1.00 =====
+    // E = (1+i)/1.05 × 1.00
+    var uipEi = [[0, 0.952], [0.02, 0.971], [0.05, 1.0], [0.07, 1.019], [0.10, 1.048]];
+    Charts.xy(document.getElementById('fig-uip-curve'), {
+      xLabel: '国内利率 i',
+      yLabel: '汇率 E（↑ = 本币升值）',
+      xMax: 0.10, yMin: 0.90, yMax: 1.10,
+      xTicks: [0, 0.02, 0.04, 0.06, 0.08, 0.10],
+      yTicks: [0.90, 0.95, 1.00, 1.05, 1.10],
+      legendPosition: 'top',
+      caption: '图 2：UIP 曲线 E = (1+i)/(1+i*)·E^e —— 必过 (i*, E^e) = (0.05, 1.00)；i↑ → 本币立即升值',
+      series: [
+        { points: uipEi, type: 'linear', color: '#2563eb', label: 'UIP：E = (1+i)/1.05 × 1.00' },
+      ],
+      markers: [
+        { x: 0.05, y: 1.0, label: '(i*, E^e) = (0.05, 1.00)', color: '#dc2626', shape: 'star', legend: 'UIP 必过点 (i*, E^e)', guides: true, gxLabel: 'i* = 0.05', gyLabel: '1.00', labelDx: 12, labelDy: 22 },
+        { x: 0.07, y: 1.019, label: 'i↑ 到 0.07 → E 立即升值到 1.019', color: '#7c3aed', legend: '推论1：i↑ → 升值', labelDx: -130, labelDy: -14 },
+      ],
+      arrows: [
+        { from: [0.052, 1.002], to: [0.068, 1.017], color: '#7c3aed', label: 'i↑ → E↑（立即升值）', labelDx: 10, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图3（双图）：IS-LM-UIP 组装 —— 均衡 A (Y₀=50, i₀=0.05)、A' (E₀=1.00, i₀=0.05) =====
+    // IS: i = 0.09 − 0.0008·Y（过 (50, 0.05)）；LM: i = 0.05；UIP: i = 1.05·E − 1（过 (1.00, 0.05)）
+    var isPts = [[10, 0.082], [30, 0.066], [50, 0.05], [70, 0.034], [90, 0.018]];
+    var lmPts = [[0, 0.05], [100, 0.05]];
+    var uipPts = [[0.952, 0], [1.0, 0.05], [1.048, 0.10]];
+    Charts.xy(document.getElementById('fig-mf-islm'), {
+      xLabel: '产出 Y', yLabel: '利率 i',
+      xMax: 100, yMax: 0.10,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3a：IS-LM（Y-i 空间）—— IS 与 LM 交于 A',
+      series: [
+        { points: isPts, type: 'linear', color: '#2563eb', label: 'IS：Y = C + I + G + NX' },
+        { points: lmPts, type: 'linear', color: '#dc2626', label: 'LM：i = ī = 0.05（央行钉住）' },
+      ],
+      markers: [
+        { x: 50, y: 0.05, label: 'A (Y₀ = 50, i₀ = 0.05)', color: '#dc2626', shape: 'star', legend: '均衡点 A', guides: true, gxLabel: 'Y₀ = 50', gyLabel: '0.05', labelDx: 12, labelDy: 22 },
+      ],
+    });
+    Charts.xy(document.getElementById('fig-mf-uip'), {
+      xLabel: '汇率 E（→ = 升值）', yLabel: '利率 i',
+      xMin: 0.90, xMax: 1.10, yMax: 0.10,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: "图 3b：UIP（E-i 空间）—— 同一利率 i₀ 给出均衡汇率 A'",
+      series: [
+        { points: uipPts, type: 'linear', color: '#15803d', label: 'UIP：i = 1.05·E − 1' },
+      ],
+      markers: [
+        { x: 1.0, y: 0.05, label: "A' (E₀ = 1.00, i₀ = 0.05)", color: '#dc2626', shape: 'star', legend: "均衡点 A'", guides: true, gxLabel: 'E₀ = 1.00', gyLabel: '0.05', labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图4（双图）：实验① 紧缩货币 i: 0.05 → 0.07 —— Y: 50→25，E: 1.00→1.019（升值） =====
+    // IS ∩ LM₁(i=0.07): Y = (0.09 − 0.07)/0.0008 = 25；E₁ = 1.07/1.05 ≈ 1.019
+    Charts.xy(document.getElementById('fig-mp-islm'), {
+      xLabel: '产出 Y', yLabel: '利率 i',
+      xMax: 100, yMax: 0.10,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4a：LM 上移 —— 均衡 A → B，产出 50 → 25',
+      series: [
+        { points: isPts, type: 'linear', color: '#2563eb', label: 'IS（不动）' },
+        { points: lmPts, type: 'linear', color: '#9ca3af', dash: true, label: 'LM₀：i = 0.05（原）' },
+        { points: [[0, 0.07], [100, 0.07]], type: 'linear', color: '#dc2626', label: 'LM₁：i = 0.07（加息）' },
+      ],
+      markers: [
+        { x: 50, y: 0.05, label: 'A (Y₀ = 50, i₀ = 0.05)', color: '#6b7280', legend: '原均衡 A', guides: true, gxLabel: 'Y₀ = 50', labelDx: 12, labelDy: 22 },
+        { x: 25, y: 0.07, label: 'B (Y₁ = 25, i₁ = 0.07)', color: '#dc2626', shape: 'star', legend: '新均衡 B', guides: true, gxLabel: 'Y₁ = 25', gyLabel: '0.07', labelDx: 12, labelDy: -14 },
+      ],
+      arrows: [
+        { from: [48, 0.054], to: [28, 0.067], color: '#d97706', label: 'A → B', labelDy: -10 },
+      ],
+    });
+    Charts.xy(document.getElementById('fig-mp-uip'), {
+      xLabel: '汇率 E（→ = 升值）', yLabel: '利率 i',
+      xMin: 0.90, xMax: 1.10, yMax: 0.10,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: "图 4b：沿 UIP 线移动（线不动）—— E: 1.00 → 1.019（升值）",
+      series: [
+        { points: uipPts, type: 'linear', color: '#15803d', label: 'UIP（不动）：i = 1.05·E − 1' },
+      ],
+      markers: [
+        { x: 1.0, y: 0.05, label: "A' (E₀ = 1.00)", color: '#6b7280', legend: "原均衡 A'", guides: true, gxLabel: 'E₀ = 1.00', labelDx: -110, labelDy: 22 },
+        { x: 1.019, y: 0.07, label: "B' (E₁ ≈ 1.019, i₁ = 0.07)", color: '#dc2626', shape: 'star', legend: "新均衡 B'", guides: true, gxLabel: 'E₁ ≈ 1.019', gyLabel: '0.07', labelDx: -150, labelDy: -14 },
+      ],
+      arrows: [
+        { from: [1.001, 0.051], to: [1.017, 0.068], color: '#d97706', label: "A' → B'", labelDx: 30, labelDy: 14 },
+      ],
+    });
+
+    // ===== 图5（双图）：实验②③ IS 移动 —— 财政扩张 IS 右移（Y→70）；Y*↓ IS 左移（Y→35）；E 不变 =====
+    // IS_G: i = 0.106 − 0.0008·Y（过 (70,0.05)）；IS_Y*: i = 0.078 − 0.0008·Y（过 (35,0.05)）
+    Charts.xy(document.getElementById('fig-is-islm'), {
+      xLabel: '产出 Y', yLabel: '利率 i',
+      xMax: 100, yMax: 0.10,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5a：财政扩张 IS 右移（A→B）；外国衰退 IS 左移（A→C）',
+      series: [
+        { points: isPts, type: 'linear', color: '#9ca3af', dash: true, label: 'IS₀（原）' },
+        { points: [[30, 0.082], [70, 0.05], [100, 0.026]], type: 'linear', color: '#15803d', label: 'IS_G：财政扩张（右移）' },
+        { points: [[0, 0.078], [35, 0.05], [80, 0.014]], type: 'linear', color: '#7c3aed', label: 'IS_Y*：外国衰退 Y*↓（左移）' },
+        { points: lmPts, type: 'linear', color: '#dc2626', label: 'LM：i = 0.05（央行不动）' },
+      ],
+      markers: [
+        { x: 50, y: 0.05, label: 'A (Y₀ = 50)', color: '#6b7280', legend: '原均衡 A', guides: true, gxLabel: 'Y₀ = 50', labelDx: -60, labelDy: 24 },
+        { x: 70, y: 0.05, label: 'B (Y = 70)：财政扩张', color: '#15803d', legend: '财政扩张均衡 B', guides: true, gxLabel: 'Y_B = 70', labelDx: 10, labelDy: 22 },
+        { x: 35, y: 0.05, label: 'C (Y = 35)：外国衰退', color: '#7c3aed', legend: '外国衰退均衡 C', guides: true, gxLabel: 'Y_C = 35', labelDx: -140, labelDy: -14 },
+      ],
+    });
+    Charts.xy(document.getElementById('fig-is-uip'), {
+      xLabel: '汇率 E（→ = 升值）', yLabel: '利率 i',
+      xMin: 0.90, xMax: 1.10, yMax: 0.10,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5b：两个实验中利率都不变 —— 均衡原地不动，E 恒为 1.00',
+      series: [
+        { points: uipPts, type: 'linear', color: '#15803d', label: 'UIP（不动）：i = 1.05·E − 1' },
+      ],
+      markers: [
+        { x: 1.0, y: 0.05, label: 'A\' = B\' = C\' (E = 1.00, i = 0.05)：央行不动 ⇒ i 不变 ⇒ E 不变', color: '#dc2626', shape: 'star', legend: '均衡点（三实验重合）', guides: true, gxLabel: 'E = 1.00', gyLabel: '0.05', labelDx: -230, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图6（双图）：实验④ 外国加息 i*: 0.05 → 0.08 —— UIP 左移 → 贬值 → IS 右移；Y↑、E↓ =====
+    // 新 UIP: i = 1.08·E − 1；i = 0.05 时 E = 1.05/1.08 ≈ 0.972；IS₁: i = 0.1044 − 0.0008·Y（过 (68,0.05)）
+    Charts.xy(document.getElementById('fig-istar-islm'), {
+      xLabel: '产出 Y', yLabel: '利率 i',
+      xMax: 100, yMax: 0.10,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 6a：贬值提振净出口 → IS 右移 —— 均衡 A → B，产出 50 → 68',
+      series: [
+        { points: isPts, type: 'linear', color: '#9ca3af', dash: true, label: 'IS₀（原）' },
+        { points: [[25, 0.084], [68, 0.05], [100, 0.024]], type: 'linear', color: '#2563eb', label: 'IS₁：贬值 → NX↑（右移）' },
+        { points: lmPts, type: 'linear', color: '#dc2626', label: 'LM：i = 0.05（央行不动）' },
+      ],
+      markers: [
+        { x: 50, y: 0.05, label: 'A (Y₀ = 50)', color: '#6b7280', legend: '原均衡 A', guides: true, gxLabel: 'Y₀ = 50', labelDx: -60, labelDy: 24 },
+        { x: 68, y: 0.05, label: 'B (Y₁ = 68)', color: '#2563eb', shape: 'star', legend: '新均衡 B', guides: true, gxLabel: 'Y₁ = 68', labelDx: 10, labelDy: 22 },
+      ],
+      arrows: [
+        { from: [52, 0.045], to: [66, 0.045], color: '#d97706', label: 'A → B', labelDy: 20 },
+      ],
+    });
+    Charts.xy(document.getElementById('fig-istar-uip'), {
+      xLabel: '汇率 E（→ = 升值）', yLabel: '利率 i',
+      xMin: 0.90, xMax: 1.10, yMax: 0.10,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: "图 6b：i*↑ → UIP 左移 —— 同一利率下 E: 1.00 → 0.972（贬值）",
+      series: [
+        { points: uipPts, type: 'linear', color: '#9ca3af', dash: true, label: 'UIP₀：i = 1.05·E − 1（原）' },
+        { points: [[0.926, 0], [0.972, 0.05], [1.019, 0.10]], type: 'linear', color: '#15803d', label: 'UIP₁：i = 1.08·E − 1（i*↑ 后左移）' },
+      ],
+      markers: [
+        { x: 1.0, y: 0.05, label: "A' (E₀ = 1.00)", color: '#6b7280', legend: "原均衡 A'", guides: true, gxLabel: 'E₀ = 1.00', labelDx: 10, labelDy: -14 },
+        { x: 0.972, y: 0.05, label: "B' (E₁ ≈ 0.972，贬值)", color: '#2563eb', shape: 'star', legend: "新均衡 B'", guides: true, gxLabel: 'E₁ ≈ 0.972', labelDx: -160, labelDy: 24 },
+      ],
+      arrows: [
+        { from: [0.998, 0.045], to: [0.974, 0.045], color: '#d97706', label: "A' → B'（贬值）", labelDy: 20 },
+      ],
+    });
+
+    // ===== 图7：固定汇率与投机攻击 —— peg Ē = 1.00；E^e: 1.00 → 0.92，捍卫需 i: 0.05 → 14.1% =====
+    // UIP₀: E = (1+i)/1.05 × 1.00；UIP₁: E = (1+i)/1.05 × 0.92；捍卫点: 1.00 = (1+i)/1.05×0.92 → i = 1.05/0.92 − 1 ≈ 0.141
+    Charts.xy(document.getElementById('fig-speculative-attack'), {
+      xLabel: '国内利率 i',
+      yLabel: '汇率 E（↑ = 升值）',
+      xMax: 0.16, yMin: 0.85, yMax: 1.10,
+      xTicks: [0, 0.02, 0.04, 0.06, 0.08, 0.10, 0.12, 0.14, 0.16],
+      yTicks: [0.85, 0.90, 0.95, 1.00, 1.05, 1.10],
+      legendPosition: 'top',
+      caption: '图 7：投机性攻击 —— 市场预期贬值（E^e↓）时，捍卫平价的唯一武器是把利率飙到 ≈14%',
+      series: [
+        { points: [[0, 0.952], [0.05, 1.0], [0.10, 1.048], [0.16, 1.105]], type: 'linear', color: '#2563eb', label: 'UIP₀：E^e = 1.00（正常）' },
+        { points: [[0, 0.876], [0.05, 0.92], [0.10, 0.964], [0.141, 1.0], [0.16, 1.016]], type: 'linear', color: '#dc2626', label: 'UIP₁：E^e = 0.92（预期贬值，左移）' },
+        { points: [[0, 1.0], [0.16, 1.0]], type: 'linear', color: '#6b7280', dash: true, label: '钉住平价 Ē = 1.00' },
+      ],
+      markers: [
+        { x: 0.05, y: 1.0, label: 'A：正常 i = i* = 0.05', color: '#2563eb', shape: 'star', legend: '正常均衡 A', labelDx: 10, labelDy: -14 },
+        { x: 0.05, y: 0.92, label: 'C：不捍卫 → 贬到 0.92', color: '#7c3aed', legend: '放弃平价 C', labelDx: 10, labelDy: 16 },
+        { x: 0.141, y: 1.0, label: 'B：捍卫点 i ≈ 14.1%', color: '#dc2626', shape: 'star', legend: '捍卫均衡 B', guides: true, gxLabel: 'i ≈ 0.141', labelDx: -130, labelDy: -16 },
+      ],
+      arrows: [
+        { from: [0.056, 1.0], to: [0.135, 1.0], color: '#dc2626', label: '捍卫：大幅加息（→ 国内严重衰退）', labelDy: -12 },
+        { from: [0.05, 0.995], to: [0.05, 0.928], color: '#7c3aed', label: '弃守 → 贬值', labelDx: 76, labelDy: 0 },
+      ],
+    });
+  </script>
+</body>
+</html>

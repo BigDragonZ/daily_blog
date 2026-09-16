@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 技术进步、趋同与跨国差异 - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>09 技术进步、趋同与跨国差异</h1>
+      <p>本篇覆盖 MIT 14.02《宏观经济学原理》第 15、16 两讲（L15+L16），为增长理论部分收官。上一篇的索洛模型有一个致命缺口：只靠资本积累，所有国家最终都会停在稳态、不再变富。L15 把<span class="term">技术进步</span><span class="term-en">（Technological Progress）</span>装进模型——以<span class="term">劳动增强型</span>方式把生产函数改写为 Y = F(K, A·N)，按<span class="term">有效劳动</span>标准化后整个索洛框架原样复用，并得出全课程最重要的结论之一：<strong>长期人均产出增长率完全由技术进步率 g<sub>A</sub> 决定</strong>，储蓄率只能提高收入水平、不能提高增长率。L16 用<span class="term">增长核算</span>与<span class="term">索洛残差</span>给这个结论做实证体检：核算中国 1978-2017 年的超高速增长，发现它仍在过渡区；检验跨国收入差异，发现约一半到三分之二来自技术水平 A 的差异；最后用<span class="term">条件趋同</span>解释为什么非洲看似"不趋同"——它们只是在趋同于各自的低稳态。</p>
+
+      <!-- ==================== L15 ==================== -->
+      <h2>一、L15 技术进步与增长（Technological Progress and Growth）</h2>
+
+      <h3>1.1 引入：只靠攒钱买机器，所有国家最终都会停止变富——美国凭什么涨了 200 年？</h3>
+      <p><strong>反直觉开场：</strong>把上一篇的索洛模型推到极限：一个国家把储蓄率提到极致、夜以继日地攒钱买机器，会发生什么？模型的回答很残酷——资本边际报酬递减，人均资本最终会停在稳态 k*，人均产出从此<strong>一动不动</strong>。也就是说，<strong>如果资本积累是增长的全部，那么所有国家（包括美国）最终都会停止变富</strong>。可现实是美国人均产出持续增长了两百年，1890-2017 年实际 GDP 增长 50 倍、人均增长 10 倍，至今没有停下来的迹象。这 200 年的增长不可能是"攒钱买机器"买出来的——一定有别的东西在持续推高生产函数本身。这个"别的东西"，就是本讲的主角：技术进步。</p>
+
+      <h3>1.2 技术进步的四种形态</h3>
+      <p>技术进步，又称<span class="term">全要素生产率</span><span class="term-en">（Total Factor Productivity, TFP）</span>的提高，在现实中有多种表现形式：</p>
+      <ol>
+        <li><strong>同样投入、更多产出</strong>：用同样数量的资本和劳动生产出更多产品（工艺改进、管理优化）；</li>
+        <li><strong>同样投入、更好产出</strong>：产品质量提升——更好的汽车、更快的电脑；</li>
+        <li><strong>创造全新产品与服务</strong>：以前不存在的东西被发明出来，如人工智能；</li>
+        <li><strong>更多样化的选择</strong>：产品种类不断丰富。</li>
+      </ol>
+      <p>四种形态在经济上不完全等价，但对增长建模来说，需要一个足够简洁、又能复用已有框架的写法。</p>
+
+      <h3>1.3 建模：劳动增强型技术与有效劳动</h3>
+      <p>课程把技术进步统一建模为<span class="term">劳动增强型</span><span class="term-en">（Labor-Augmenting）</span>：生产函数写成 <strong>Y = F(K, A·N)</strong>，其中 A 代表技术水平，N 是劳动（在长期分析中劳动、人口、劳动力同步变动，不再区分）。A·N 这一项称为<span class="term">有效劳动</span><span class="term-en">（Effective Labor）</span>——技术进步（A 上升）在数学上等同于劳动力变多：即使工人人数 N 不变，每个工人因技术加持变得更有效率，整个经济体"好像"拥有了更多劳动力。</p>
+      <p>这种写法的巧妙之处在于：<strong>整个索洛框架可以原样复用</strong>。上一篇按人口 N 标准化，这一篇只需改成按有效劳动 A·N 标准化。生产函数仍满足<span class="term">规模报酬不变</span><span class="term-en">（Constant Returns to Scale, CRS）</span>，于是人均有效产出是人均有效资本的函数：</p>
+      <p><strong>Y/(A·N) = f(K/(A·N))</strong>，边际报酬依然递减。</p>
+
+      <h3>1.4 完整动态方程：持平投资线斜率变成 δ + g<sub>A</sub> + g<sub>N</sub></h3>
+      <p>设技术进步率为 g<sub>A</sub>、人口增长率为 g<sub>N</sub>，推导过程与上一篇引入人口增长时完全类似，最终得到完整的资本积累方程：</p>
+      <p><strong>Δ(K/(A·N)) = s·f(K/(A·N)) − (δ + g<sub>A</sub> + g<sub>N</sub>)·(K/(A·N))</strong></p>
+      <p>持平投资现在有三项任务：弥补资本折旧 δ、为新增人口 g<sub>N</sub> 配备资本、还要为"技术升级变相新增的劳动力"g<sub>A</sub> 配备资本——因为分母 A·N 以 g<sub>A</sub> + g<sub>N</sub> 的速度膨胀，人均有效资本会被持续稀释。图上就是持平投资线斜率从 δ 变为 (δ + g<sub>A</sub> + g<sub>N</sub>)：</p>
+
+      <div id="fig-solow-tech"></div>
+      <p><strong>图 1 解读：</strong>含技术进步的索洛图（示意参数：f(k̂) = √k̂，s = 0.3，δ + g<sub>A</sub> + g<sub>N</sub> = 0.15，其中 δ = 8%、g<sub>A</sub> = 2%、g<sub>N</sub> = 5%）。横轴是人均有效资本 k̂ = K/(A·N)，不再是 K/N。投资曲线 s·f(k̂) 与持平投资线 0.15·k̂ 相交于稳态 k̂* = 4（0.3·√4 = 0.6 = 0.15·4），对应人均有效产出 ŷ* = 2。两侧动态箭头显示：无论 k̂ 从哪出发，都必然收敛到 k̂*。与上一篇唯一的区别是坐标口径换成了"人均有效"——这一个小小的改动，将引出完全不同的长期结论。</p>
+
+      <h3>1.5 平衡增长路径：一张增长率表看清全部结论</h3>
+      <p>稳态下人均有效变量不变，但 A 和 N 还在持续增长——所以这个稳态不是"静止"，而是一条<span class="term">平衡增长路径</span><span class="term-en">（Balanced Growth Path, BGP）</span>：所有变量以协调的速率一起增长。用恒等式 Y/N = [Y/(A·N)]·A 和 Y = [Y/(A·N)]·A·N 逐层还原，各口径变量的增长率如下：</p>
+      <table>
+        <thead>
+          <tr><th>变量口径</th><th>代表变量</th><th>BGP 上的增长率</th><th>推导直觉</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>人均有效劳动</strong></td>
+            <td>Y/(A·N)、K/(A·N)</td>
+            <td><strong>0</strong></td>
+            <td>标准化变量的稳态定义——这正是图 1 的交点</td>
+          </tr>
+          <tr>
+            <td><strong>人均</strong></td>
+            <td>Y/N、K/N</td>
+            <td><strong>g<sub>A</sub></strong></td>
+            <td>Y/N = [Y/(A·N)]·A：前者不变，A 以 g<sub>A</sub> 增长</td>
+          </tr>
+          <tr>
+            <td><strong>总量</strong></td>
+            <td>Y、K</td>
+            <td><strong>g<sub>A</sub> + g<sub>N</sub></strong></td>
+            <td>Y = [Y/(A·N)]·A·N：A、N 分别以 g<sub>A</sub>、g<sub>N</sub> 增长</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>表中最中间一行就是本讲的<strong>核心结论</strong>：<strong>在长期，一个经济体的人均产出（即生活水平）的增长率，完全由技术进步率 g<sub>A</sub> 决定。</strong>1.1 节的谜题就此解开——美国能涨 200 年，不是因为攒了 200 年的钱，而是因为技术持续了 200 年的进步。例如取<span class="term">柯布-道格拉斯生产函数</span><span class="term-en">（Cobb-Douglas Production Function）</span> Y = K<sup>1−α</sup>(A·N)<sup>α</sup>（指数和为 1，满足 CRS），两边取对数即得 g<sub>Y</sub> = (1−α)·g<sub>K</sub> + α·(g<sub>A</sub> + g<sub>N</sub>)；BGP 上 g<sub>K</sub> = g<sub>A</sub> + g<sub>N</sub>，代回即 g<sub>Y</sub> = g<sub>A</sub> + g<sub>N</sub>，人均口径再减 g<sub>N</sub> 正是 g<sub>A</sub>——上表对任意 CRS 生产函数都成立。</p>
+
+      <h3>1.6 储蓄率 vs 技术进步：水平效应与增长率效应的最终分工</h3>
+      <p>现在做两个对比实验。<strong>实验一：提高储蓄率 s</strong>。投资曲线 s·f(k̂) 上移，经济收敛到更高的人均有效资本与产出<strong>水平</strong>，过渡期经历一段暂时的高增长；但到达新稳态后，人均增长率依然回到 g<sub>A</sub>——储蓄率只有<span class="term">水平效应</span><span class="term-en">（Level Effect）</span>，没有增长率效应。<strong>实验二：提高技术进步率 g<sub>A</sub></strong>。人均产出的增长率<strong>永久</strong>上移——这是唯一拥有<span class="term">增长率效应</span><span class="term-en">（Growth Effect）</span>的旋钮。在对数坐标的时间路径图上看，两者的分工一目了然：</p>
+
+      <div id="fig-level-vs-growth"></div>
+      <p><strong>图 2 解读：</strong>对数人均产出 ln(Y/N) 的时间路径（对数坐标下直线斜率 = 增长率）。灰线是基准路径（g<sub>A</sub> = 2%）。绿线是 t = 15 时储蓄率 s 提高：过渡期（约 15-35 年）增长加快、曲线上弯，但渐近线与基准<strong>平行</strong>——水平永久抬高约 0.4 个对数单位，斜率（增长率）回到 2%。紫线是 t = 15 时 g<sub>A</sub> 从 2% 提高到 3.5%：路径斜率<strong>永久变陡</strong>，与基准的差距随时间越拉越大。储蓄率买水平，技术进步买斜率——这就是两者的最终分工。</p>
+
+      <h3>1.7 亚洲奇迹与中国科技创新的索洛逻辑</h3>
+      <p>上述分工为"亚洲奇迹"提供了标准解释。日本、韩国以及后来的中国，通过<strong>大幅提高储蓄率</strong>、并凭借后发经济体<strong>初始资本存量低</strong>（资本回报率高）的优势，实现了数十年的高速追赶式增长。但这种增长本质是<strong>过渡性</strong>的：随着经济逼近新稳态，资本回报率递减，追赶红利耗尽，增长必然放缓。今天这些经济体面对的共同挑战是：增长引擎必须从资本积累切换到技术创新。中国的处境还多一层压力——人口增长率 g<sub>N</sub> 快速下降甚至转负。按模型逻辑，一旦追赶式增长耗尽、人口红利消失，<strong>唯一能持续驱动增长的引擎就是提高 g<sub>A</sub></strong>。这正是中国如此强调科技创新与产业升级的深层原因——不是口号，而是索洛模型的内在逻辑：长期增长的根本在于创新。</p>
+
+      <!-- ==================== L16 ==================== -->
+      <h2>二、L16 趋同与跨国差异（Convergence and Cross-Country Variation）</h2>
+
+      <h3>2.1 引入：如果全世界技术相同，世界本该平等得多——缺失的拼图</h3>
+      <p><strong>反直觉开场：</strong>先做一个思想实验：假设全世界所有国家的技术水平 A 完全相同。那么按索洛模型，各国人均收入差异只能来自储蓄率、人口增长率和受教育程度的差异——而这些因素能解释的差距其实很小，<strong>世界本该比现实平等得多</strong>。可现实是，最富与最穷国家的人均收入相差几十倍，且许多穷国（尤其在非洲）丝毫没有追赶的迹象。模型预测与现实之间缺了一块巨大的拼图。本讲就是一场"寻宝"：先用增长核算把技术进步率 g<sub>A</sub> 变成可测量的数字，再一步步定位那块缺失的拼图——各国技术水平的巨大差异。</p>
+
+      <h3>2.2 增长核算与索洛残差：把看不见的 g<sub>A</sub> 算出来</h3>
+      <p>g<sub>N</sub> 好测（人口统计），g<sub>K</sub> 好测（投资减折旧累计），但 g<sub>A</sub> 无法直接观测——而它恰恰是长期增长的唯一引擎，必须想办法测量。提出测量方法的又是鲍勃·索洛（Bob Solow），这是他对增长理论的第二个贡献：<span class="term">增长核算</span><span class="term-en">（Growth Accounting）</span>。基本思想从竞争均衡出发：每个生产要素对产出的贡献等于它获得的报酬。就业增加 10%，产出增加"10% × 劳动贡献份额"。定义劳动份额 α（工资总额/总收入），则人口增长对产出增长的贡献为 α·g<sub>N</sub>；同理资本增长贡献 (1−α)·g<sub>K</sub>。把两项可测的贡献从总增长率中扣除，剩下的"剩余"就是技术进步：</p>
+      <p><strong>g<sub>Y</sub> = α·g<sub>N</sub> + (1−α)·g<sub>K</sub> + g<sub>A</sub></strong> &nbsp;⟹&nbsp; <strong>g<sub>A</sub> = g<sub>Y</sub> − α·g<sub>N</sub> − (1−α)·g<sub>K</sub></strong></p>
+      <p>这个反解出来的 g<sub>A</sub> 就是著名的<span class="term">索洛残差</span><span class="term-en">（Solow Residual）</span>——所有不能被劳动和资本增长解释的增长，统统记在技术进步账上。</p>
+
+      <h3>2.3 中国案例核算（1978-2017）：7.2% 的增长还能维持吗？</h3>
+      <p>以中国 1978-2017 年为例，这是经济史上罕见的持续高速增长期，年均增长超过 7%。四项核算数据：</p>
+      <table>
+        <thead>
+          <tr><th>指标</th><th>年均值（1978-2017）</th><th>来源/含义</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>产出增长率 g<sub>Y</sub></td><td><strong>7.2%</strong></td><td>直接测得（实际 GDP）</td></tr>
+          <tr><td>人口/就业增长率 g<sub>N</sub></td><td><strong>1.7%</strong></td><td>直接测得</td></tr>
+          <tr><td>资本存量增长率 g<sub>K</sub></td><td><strong>9.2%</strong></td><td>投资减折旧累计——惊人的资本积累速度</td></tr>
+          <tr><td>技术进步率 g<sub>A</sub>（索洛残差）</td><td><strong>≈ 4.2%</strong></td><td>g<sub>Y</sub> 中剔除劳动、资本贡献后的剩余；7.2% 是三项按要素份额加权合成的结果</td></tr>
+        </tbody>
+      </table>
+      <p><strong>判据——这是平衡增长路径吗？</strong>不是。BGP 上所有内生变量必须以同一速率增长，即 g<sub>K</sub> = g<sub>Y</sub> = g<sub>A</sub> + g<sub>N</sub>。算一下：g<sub>A</sub> + g<sub>N</sub> = 4.2% + 1.7% = <strong>5.9%</strong>。但资本实际增速是 9.2%，产出增速 7.2%——g<sub>K</sub> = 9.2% &gt; g<sub>A</sub> + g<sub>N</sub> = 5.9%，意味着<span class="term">资本产出比</span><span class="term-en">（Capital-Output Ratio, K/Y）</span>在持续上升，经济<strong>不在稳态上</strong>。这正是一个"初始资本存量低于稳态水平"的经济体的典型特征（计划经济转型 + 储蓄率急剧上升）：投资率长期高于持平投资，处于过渡性增长期。7.2% 的平均增速里，既有早期高达 15% 的追赶，也有后期回落到 6% 附近的放缓——平均数是过渡现象，不是常态。</p>
+      <p><strong>推论：</strong>如果 g<sub>A</sub>、g<sub>N</sub> 不变，中国收敛的目标增长率是 5.9%。再考虑 g<sub>N</sub> 正快速下降甚至转负，<strong>除非技术进步率出现巨大跃升，未来增速很难超过 5%</strong>。模型在此展现出强大的现实解释力：它既能解释中国为什么能涨 40 年，也能解释为什么正在放缓。</p>
+
+      <h3>2.4 人力资本扩展：多一年教育 ≈ 人力资本 +10%</h3>
+      <p>跨国收入差异的第一个候选解释是教育。把<span class="term">人力资本</span><span class="term-en">（Human Capital）</span>引入生产函数：Y = K<sup>1−α</sup>(A·H)<sup>α</sup>，其中 H = N·φ(u)，u 是平均受教育年限，φ(u) 是教育对劳动效率的放大系数。大量微观证据估计：平均每多一年学校教育，人力资本提高约 <strong>10%</strong>（φ′ ≈ 0.1）——效果相当于人口凭空多出 10%，非常可观。各国的平均受教育年限差异巨大，这解释了跨国收入差距的一部分。</p>
+      <p>但注意人力资本与 g<sub>A</sub> 的本质区别：受教育年限是有限的，人们不可能无限上学，所以人力资本增长率 g<sub>H</sub> 最终会归零——<strong>h 影响的是稳态收入水平，不是长期增长率</strong>。解出稳态人均产出：y = A·h·[s/(δ + g<sub>A</sub> + g<sub>N</sub>)]<sup>(1−α)/α</sup>。扩展模型的 BGP 性质与标准模型完全相同：人均变量仍以 g<sub>A</sub> 增长，总量仍以 g<sub>A</sub> + g<sub>N</sub> 增长。</p>
+
+      <h3>2.5 跨国检验的失败：约一半到三分之二收入差来自 A</h3>
+      <p>现在做终极检验。把各国人均产出都除以美国人均产出，并做一个"巨大的假设"：<strong>所有国家的技术水平 A 与 g<sub>A</sub> 相同</strong>。那么跨国收入差应该完全由储蓄率 s、人口增长率 g<sub>N</sub>、人力资本 h 的差异解释——s 高的国家更富、g<sub>N</sub> 高的国家更穷、教育多的国家更富。检验结论：<strong>失败</strong>。这三个因素只能解释收入差距的一小部分——如果差异真的只来自它们，世界将远比现在平等。遗漏的正是索洛残差：各国技术水平 A 相同的假设，是一个非常糟糕的假设。直接测量各国 TFP 并与人均产出对照，两者呈现强正相关——<strong>约一半到三分之二的跨国人均收入差异，可归因于技术水平 A 的差异</strong>：</p>
+
+      <div id="fig-tfp-scatter"></div>
+      <p><strong>图 3 解读：</strong>各国技术水平 A（横轴）与人均产出（纵轴）的跨国散点（均以美国 = 1 为基准，数值为宾大世界表风格示意）。从左上角的发达经济体（美国 1.00/1.00、挪威 0.92/0.86），到中间的新兴经济体（韩国 0.62/0.55、中国 0.35/0.25），再到左下角的低收入经济体（印度 0.25/0.12、津巴布韦 0.10/0.04），散点紧贴灰色虚线趋势线——技术水平与人均产出强正相关。缺失的拼图找到了：跨国差距的主角不是储蓄率，也不是教育年限，而是 A 本身。</p>
+
+      <h3>2.6 条件趋同：控制 A、h 之后，负相关回来了</h3>
+      <p>拼图归位后，重新审视上一篇的"趋同"事实。<strong>不加控制地看全样本</strong>：初始收入与后续增长率之间几乎没有负相关——非洲低收入国家增长同样低迷，"穷国增长快"的预测失效，趋同似乎是个幻觉。<strong>控制 A 与 h 之后</strong>：只看技术水平与人力资本相近的国家（如 OECD 内部），负相关清晰浮现，初始落后的日本等经济体确实追赶了上来。进一步，如果计算每个国家<strong>相对于自身稳态</strong>的距离、再看增长率，负相关在全样本中重新恢复——这就是<span class="term">条件趋同</span><span class="term-en">（Conditional Convergence）</span>：</p>
+
+      <div class="figure-pair">
+        <div id="fig-unconditional"></div>
+        <div id="fig-conditional"></div>
+      </div>
+      <p><strong>图 4 解读：</strong>左图是全样本：1960 年人均 GDP（美国 = 1）对随后年均增长率，趋势线近乎平坦——无条件趋同不成立，非洲经济体（灰点）集体趴在左下角。右图把横轴换成"初始产出占<strong>自身稳态</strong>产出的比例"：负相关立刻恢复，趋势线明显向下倾斜。关键启示：非洲国家并非不趋同，而是由于技术水平、制度等原因，<strong>它们的稳态本身就低——它们正在向各自的低稳态收敛</strong>（尼日利亚、肯尼亚等在右图中回到趋势线附近）。索洛模型没有错，只是每个国家的"目的地"不同；距离自己的目的地越远，跑得越快。</p>
+
+      <h3>2.7 诚实的局限：能解释"如何趋同"，解释不了"稳态为何天差地别"</h3>
+      <p>增长理论部分在此诚实收尾。我们已经拥有很好的模型，能解释一个国家<strong>如何</strong>向自身稳态收敛、能核算增长中劳动/资本/技术各贡献多少、能预判追赶式增长何时放缓。但对于一个更深的问题——<strong>为什么各国的稳态（尤其是技术水平 A）本身存在如此巨大的差异</strong>——模型保持沉默。技术在模型里是外生的"manna from heaven"，而现实中技术不会无成本扩散：制度质量、产权保护、政治稳定性、与前沿技术的距离，都在决定一个国家能用上多好的技术。世界在技术水平维度上高度不平等，且历史上长期加剧（直到最近中国等经济体崛起才有所逆转）。解释稳态本身的差异——制度与政治经济学——仍是经济学研究的核心前沿。</p>
+      <p><strong>含技术进步的索洛模型的优缺点：</strong>优点是以"改一个标准化口径"的极小代价复用了全部索洛框架，干净地分离出水平效应与增长率效应，统一解释了两百年持续增长、亚洲奇迹的兴起与衰竭、中国增速回落，并催生了可操作的测量工具（增长核算与索洛残差）；缺点是增长引擎 g<sub>A</sub> 本身外生——模型告诉你增长靠技术，却不告诉你技术从哪来、为何在各国分布如此不均，把最深的谜题留给了制度与政治经济学。</p>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>三、收尾对比：s↑、g<sub>N</sub>↑、g<sub>A</sub>↑ 三个实验</h2>
+      <table>
+        <thead>
+          <tr><th>实验</th><th>稳态人均产出水平</th><th>长期人均增长率</th><th>长期总量增长率</th><th>过渡期表现</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>储蓄率 s↑</strong></td>
+            <td>提高（水平效应）</td>
+            <td>不变（= g<sub>A</sub>）</td>
+            <td>不变（= g<sub>A</sub> + g<sub>N</sub>）</td>
+            <td>增长率暂时高于 g<sub>A</sub>，可达数十年——亚洲奇迹的追赶式增长</td>
+          </tr>
+          <tr>
+            <td><strong>人口增长 g<sub>N</sub>↑</strong></td>
+            <td>降低</td>
+            <td>不变（= g<sub>A</sub>）</td>
+            <td>提高（= g<sub>A</sub> + g<sub>N</sub>）</td>
+            <td>人均产出向下调整至更低稳态；分母稀释效应</td>
+          </tr>
+          <tr>
+            <td><strong>技术进步 g<sub>A</sub>↑</strong></td>
+            <td>提高</td>
+            <td><strong>永久提高（唯一的增长率效应）</strong></td>
+            <td>永久提高</td>
+            <td>增长率立即且持续上移——长期增长的唯一引擎</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>三行读法：只有最后一行能买到"斜率"，前两行只能买到"水平"。这就是为什么所有完成追赶的经济体，最终都必须把政策重心从投资转向创新。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（长期人均增长从哪来？跨国收入为何差几十倍？）→ 简化模型（劳动增强型技术 Y = F(K, A·N)，按有效劳动标准化复用索洛）→ 推导（Δ(K/AN) = s·f(K/AN) − (δ+g<sub>A</sub>+g<sub>N</sub>)·(K/AN) → 平衡增长路径增长率表 → 长期人均增长率 = g<sub>A</sub>）→ 实际应用（增长核算与索洛残差、中国 1978-2017 非稳态判定、人力资本扩展、TFP 跨国散点、条件趋同）→ 局限性（g<sub>A</sub> 外生；能解释"如何趋同"，不能解释"稳态为何天差地别"——制度与政治是前沿）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/09-tech-progress-convergence.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：含技术进步的索洛图 —— 持平投资线斜率 δ+g_A+g_N，稳态 k̂* = 4、ŷ* = 2 =====
+    // f(k̂)=√k̂, s=0.3, δ+g_A+g_N=0.15 → k̂*=(s/0.15)²=4, ŷ*=2, s·f(4)=0.6=0.15·4
+    var kGrid = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    var fKePts = kGrid.map(function (k) { return [k, +Math.sqrt(k).toFixed(2)]; });
+    var sfKePts = kGrid.map(function (k) { return [k, +(0.3 * Math.sqrt(k)).toFixed(2)]; });
+    Charts.xy(document.getElementById('fig-solow-tech'), {
+      xLabel: '人均有效资本 k̂ = K/(A·N)',
+      yLabel: '人均有效量（ŷ、投资、持平投资）',
+      xMax: 16, yMax: 4.5,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：含技术进步的索洛图 —— 持平投资线斜率 δ+g_A+g_N = 0.15，交点即稳态 k̂* = 4',
+      series: [
+        { points: fKePts, type: 'spline', color: '#2563eb', label: '生产函数 ŷ = f(k̂) = √k̂' },
+        { points: sfKePts, type: 'spline', color: '#15803d', label: '人均有效投资 s·f(k̂)（s = 0.3）' },
+        { points: [[0, 0], [16, 2.4]], type: 'linear', color: '#dc2626', label: '持平投资线 (δ+g_A+g_N)·k̂ = 0.15·k̂' },
+      ],
+      markers: [
+        { x: 4, y: 0.6, label: '稳态交点：s·f(k̂*) = 0.15·k̂* = 0.6', color: '#dc2626', legend: '稳态（Δk̂ = 0）', guides: true, gxLabel: 'k̂* = 4', gyLabel: '0.6', labelDx: 12, labelDy: 26 },
+        { x: 4, y: 2, label: 'ŷ* = f(k̂*) = 2', color: '#2563eb', legend: '稳态人均有效产出', guides: true, gyLabel: '2', labelDx: 12, labelDy: -12 },
+      ],
+      arrows: [
+        { from: [0.8, 0.25], to: [3.2, 0.25], color: '#d97706', label: 'k̂ < k̂*：投资 > 持平投资 → k̂ 增加', labelDy: 18 },
+        { from: [9.5, 0.25], to: [5.0, 0.25], color: '#7c3aed', label: 'k̂ > k̂*：持平投资 > 投资 → k̂ 减少', labelDy: -14 },
+      ],
+    });
+
+    // ===== 图2：水平效应 vs 增长率效应 —— 对数人均产出时间路径 =====
+    // 基准 g_A=2%；t=15 起：s↑ → 渐近水平上移 0.4、斜率回到 2%；g_A↑ 2%→3.5% → 斜率永久变陡
+    var tGrid = [0, 5, 10, 15, 18, 22, 27, 32, 38, 44, 50];
+    var sUpPts = tGrid.map(function (t) {
+      var extra = t > 15 ? 0.4 * (1 - Math.exp(-(t - 15) / 7)) : 0;
+      return [t, +(0.02 * t + extra).toFixed(3)];
+    });
+    var gAUpPts = [[0, 0], [5, 0.1], [10, 0.2], [15, 0.3], [20, 0.475], [25, 0.65], [30, 0.825], [35, 1.0], [40, 1.175], [45, 1.35], [50, 1.525]];
+    Charts.xy(document.getElementById('fig-level-vs-growth'), {
+      xLabel: '时间 t（年）',
+      yLabel: '对数人均产出 ln(Y/N)',
+      xMax: 50, yMax: 1.7,
+      xTicks: [0, 10, 20, 30, 40, 50], yTicks: [0, 0.5, 1.0, 1.5],
+      legendPosition: 'top',
+      caption: '图 2：储蓄率买水平、技术进步买斜率 —— s↑ 后渐近线与基准平行，g_A↑ 后斜率永久变陡',
+      series: [
+        { points: [[0, 0], [50, 1.0]], type: 'linear', color: '#6b7280', dash: true, label: '基准路径（g_A = 2%）' },
+        { points: sUpPts, type: 'spline', color: '#15803d', label: 's↑（t = 15）：水平效应，最终回到原斜率' },
+        { points: gAUpPts, type: 'spline', color: '#7c3aed', label: 'g_A↑（t = 15，2%→3.5%）：增长率效应，斜率永久变陡' },
+      ],
+      markers: [
+        { x: 15, y: 0.3, label: 't = 15：实验发生', color: '#dc2626', legend: '政策/技术冲击点', labelDx: 8, labelDy: 20 },
+        { x: 50, y: 1.525, label: 'g_A↑：永久更快（1.53）', color: '#7c3aed', legend: '期末位置', labelDx: -150, labelDy: -12 },
+        { x: 50, y: 1.397, label: 's↑：水平上移 0.4 后平行（1.40）', color: '#15803d', labelDx: -215, labelDy: 18 },
+        { x: 50, y: 1.0, label: '基准（1.00）', color: '#6b7280', labelDx: -90, labelDy: 16 },
+      ],
+    });
+
+    // ===== 图3：TFP 与人均产出跨国散点 —— 强正相关，约一半到三分之二收入差来自 A =====
+    Charts.xy(document.getElementById('fig-tfp-scatter'), {
+      xLabel: '技术水平 A（美国 = 1）',
+      yLabel: '人均产出（美国 = 1）',
+      xMax: 1.1, yMax: 1.1,
+      xTicks: [0, 0.2, 0.4, 0.6, 0.8, 1.0], yTicks: [0, 0.2, 0.4, 0.6, 0.8, 1.0],
+      legendPosition: 'top',
+      caption: '图 3：各国 TFP 与人均产出（均以美国 = 1，示意）—— 强正相关，约 1/2 ~ 2/3 收入差来自 A',
+      series: [
+        { points: [[0.05, 0.05], [1.02, 1.0]], type: 'linear', color: '#9ca3af', dash: true, label: '强正相关趋势线' },
+      ],
+      markers: [
+        { x: 1.0, y: 1.0, label: '美国（1.00, 1.00）', color: '#2563eb', legend: '发达经济体', labelDx: -110, labelDy: -12 },
+        { x: 0.92, y: 0.86, label: '挪威', color: '#2563eb', labelDx: -44, labelDy: 2 },
+        { x: 0.82, y: 0.9, label: '新加坡', color: '#2563eb', labelDx: 10, labelDy: -12 },
+        { x: 0.62, y: 0.55, label: '韩国', color: '#15803d', legend: '新兴经济体', labelDx: 8, labelDy: -10 },
+        { x: 0.45, y: 0.32, label: '墨西哥', color: '#15803d', labelDx: 8, labelDy: -10 },
+        { x: 0.35, y: 0.25, label: '中国', color: '#15803d', labelDx: 8, labelDy: 12 },
+        { x: 0.25, y: 0.12, label: '印度', color: '#9ca3af', legend: '低收入经济体', labelDx: 8, labelDy: -12 },
+        { x: 0.18, y: 0.09, label: '尼日利亚', color: '#9ca3af', labelDx: 10, labelDy: 14 },
+        { x: 0.1, y: 0.04, label: '津巴布韦', color: '#9ca3af', labelDx: 8, labelDy: -10 },
+      ],
+    });
+
+    // ===== 图4a：全样本 —— 初始收入 vs 其后增长率，趋势线近乎平坦（无条件趋同失败） =====
+    Charts.xy(document.getElementById('fig-unconditional'), {
+      width: 470, height: 400,
+      xLabel: '1960 年人均 GDP（美国 = 1）',
+      yLabel: '1960 年后年均增长率（%）',
+      xMax: 1.1, yMin: -1.5, yMax: 6.5,
+      xTicks: [0, 0.2, 0.4, 0.6, 0.8, 1.0], yTicks: [-1, 0, 1, 2, 3, 4, 5, 6],
+      legendPosition: 'top',
+      caption: '图 4a：全样本 —— 趋势线近乎平坦，无条件趋同不成立',
+      series: [
+        { points: [[0.03, 2.6], [1.02, 2.1]], type: 'linear', color: '#9ca3af', dash: true, label: '全样本趋势线（近乎平坦）' },
+      ],
+      markers: [
+        { x: 1.0, y: 2.0, label: '美国', color: '#2563eb', legend: 'OECD 国家', labelDx: -40, labelDy: -12 },
+        { x: 0.68, y: 2.3, label: '英国', color: '#2563eb', labelDx: 8, labelDy: -10 },
+        { x: 0.3, y: 4.5, label: '日本', color: '#2563eb', labelDx: 8, labelDy: -10 },
+        { x: 0.12, y: 5.4, label: '韩国', color: '#15803d', legend: '亚洲经济体', labelDx: 8, labelDy: -10 },
+        { x: 0.05, y: 4.3, label: '中国', color: '#15803d', labelDx: 8, labelDy: -10 },
+        { x: 0.09, y: 1.4, label: '尼日利亚', color: '#9ca3af', legend: '非洲经济体', labelDx: 8, labelDy: -10 },
+        { x: 0.06, y: 1.7, label: '肯尼亚', color: '#9ca3af', labelDx: 8, labelDy: 14 },
+        { x: 0.1, y: 0.5, label: '赞比亚', color: '#9ca3af', labelDx: 8, labelDy: -12 },
+        { x: 0.04, y: 0.9, label: '尼日尔', color: '#9ca3af', labelDx: -44, labelDy: 2 },
+        { x: 0.07, y: -0.5, label: '刚果（金）', color: '#9ca3af', labelDx: 8, labelDy: 2 },
+        { x: 0.11, y: 0.3, label: '津巴布韦', color: '#9ca3af', labelDx: 8, labelDy: 14 },
+      ],
+    });
+
+    // ===== 图4b：条件样本 —— 距自身稳态越远增长越快，负相关恢复（条件趋同） =====
+    Charts.xy(document.getElementById('fig-conditional'), {
+      width: 470, height: 400,
+      xLabel: '1960 年产出占自身稳态产出的比例（%）',
+      yLabel: '1960 年后年均增长率（%）',
+      xMax: 100, yMax: 6,
+      xTicks: [0, 20, 40, 60, 80, 100], yTicks: [0, 1, 2, 3, 4, 5, 6],
+      legendPosition: 'top',
+      caption: '图 4b：条件趋同 —— 控制各自稳态后，负相关恢复（示意）',
+      series: [
+        { points: [[22, 4.9], [95, 1.7]], type: 'linear', color: '#9ca3af', dash: true, label: '条件趋势线（负相关恢复）' },
+      ],
+      markers: [
+        { x: 92, y: 1.8, label: '美国', color: '#2563eb', legend: 'OECD 国家', labelDx: -42, labelDy: -12 },
+        { x: 85, y: 2.1, label: '英国', color: '#2563eb', labelDx: 8, labelDy: -12 },
+        { x: 72, y: 2.5, label: '法国', color: '#2563eb', labelDx: 8, labelDy: -10 },
+        { x: 38, y: 4.4, label: '日本', color: '#2563eb', labelDx: 8, labelDy: -12 },
+        { x: 30, y: 5.0, label: '韩国', color: '#15803d', legend: '亚洲经济体', labelDx: 8, labelDy: -14 },
+        { x: 26, y: 4.7, label: '中国', color: '#15803d', labelDx: 8, labelDy: 14 },
+        { x: 58, y: 2.9, label: '尼日利亚', color: '#9ca3af', legend: '非洲经济体（趋同于自身低稳态）', labelDx: 10, labelDy: -12 },
+        { x: 52, y: 3.1, label: '肯尼亚', color: '#9ca3af', labelDx: -48, labelDy: 4 },
+        { x: 45, y: 3.3, label: '尼日尔', color: '#9ca3af', labelDx: 8, labelDy: -12 },
+        { x: 66, y: 2.2, label: '刚果（金）', color: '#9ca3af', labelDx: 8, labelDy: 14 },
+        { x: 76, y: 2.4, label: '赞比亚', color: '#9ca3af', labelDx: 8, labelDy: -12 },
+        { x: 82, y: 2.0, label: '津巴布韦', color: '#9ca3af', labelDx: 8, labelDy: 14 },
+      ],
+    });
+  </script>
+</body>
+</html>

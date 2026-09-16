@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 预期、资产定价与政策可信度 - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>12 预期、资产定价与政策可信度</h1>
+      <p>本篇是 MIT 14.02《宏观经济学原理》的收官篇，覆盖第 22、23、24 三讲，并以第 25 讲（Quiz 3 复习）的知识清单收尾。L22 从金融市场切入：为什么一张毫无违约风险的 20 年期美国国债，市场价格却能先涨 45% 再跌逾 40%？答案是<span class="term">预期</span><span class="term-en">（Expectations）</span>——金融中的一切都与未来有关。我们用<span class="term">预期现值折现值</span><span class="term-en">（Expected Present Discounted Value, EPDV）</span>为债券定价，推出<span class="term">到期收益率</span>与<span class="term">预期假说</span>，并读懂<span class="term">收益率曲线</span>的倒挂与陡峭。L23 把定价扩展到股票：加入<span class="term">风险溢价</span>后，股票的基本面价值等于未来全部预期股利的现值；货币政策经由资产价格与财富效应传导，"好消息是坏消息"的机制回归，VIX 飙升与泡沫则是预期的极端形态。L24 把预期装回 IS-LM：消费取决于持久收入与财富，投资取决于预期利润的现值，于是 IS 曲线变得更陡，货币政策很大程度上变成"预期管理"，财政紧缩在特定条件下甚至可以是扩张性的。最后的全课收尾把"预期"这条暗线贯穿短期、中期、长期与开放四大模块，并附上 L25 的考前知识清单。</p>
+
+      <!-- ==================== L22 ==================== -->
+      <h2>一、L22 金融市场与预期（Financial Markets and Expectations）</h2>
+
+      <h3>1.1 引入：毫无违约风险的债券，价格为何先涨 45% 再跌逾 40%？</h3>
+      <p><strong>反直觉开场：</strong>考虑一只投资美国长期国债（期限 20 年以上）的 ETF。美国国债被视为全世界最安全的资产——<strong>毫无违约风险</strong>，只要你持有到期，必定拿回全部本金和承诺的每一分利息。按理说，它的价格应该稳如磐石。然而它的实际走势是：先<strong>上涨约 45%</strong>，又从峰值<strong>跌去逾 40%</strong>——波动幅度堪比股票。既然偿付毫无疑问，这巨大的价格波动来自哪里？答案不是"会不会还"，而是<strong>人们对未来利率的预期</strong>：预期未来利率高，债券今天就值得少；预期未来利率低，债券今天就值得多。加息周期中债券价格大跌，正是货币政策紧缩的结果。这一切都关乎未来。</p>
+
+      <div id="fig-tlt"></div>
+      <p><strong>图 1 解读：</strong>美国长期国债（20 年以上）ETF 价格走势（示意数据）。2019 年初约 120，低利率与避险需求一路把它推到 2020 年 8 月的峰值约 171（+45%）；随后通胀来袭、美联储激进加息，价格一路跌到 2022 年 10 月的谷底约 91——从峰值跌去约 47%。全程没有任何人怀疑美国政府会还钱：<strong>债券价格波动的驱动力不是违约预期，而是利率预期</strong>。读完本讲，你就能精确解释这条曲线。</p>
+
+      <h3>1.2 预期是金融的一切：第一共和银行的纯预期博弈</h3>
+      <p>股票市场的波动同样由预期主导。以<span class="term">标准普尔 500 指数</span><span class="term-en">（S&P 500）</span>为例：意识到新冠疫情的严重性后，美股暴跌约 <strong>35%</strong>；在大量政策支持下到 2021 年底反弹 <strong>114%</strong>；通胀来袭、美联储开始加息后，从峰值到底部又跌去约 <strong>25%</strong>；随后自底部再反弹约 16%。每一次剧烈波动的背后都是同样的问题：未来会更糟吗？美联储会引发衰退吗？利率还要升多高？</p>
+      <p>更纯粹的例子是<span class="term">第一共和银行</span><span class="term-en">（First Republic Bank）</span>的倒闭。它和硅谷银行一样持有大量对利率快速上升极度脆弱的资产；当损失浮现，储户开始担忧——仅仅在最后几天，它就流失了约 <strong>1000 亿美元</strong>存款，随后被清算并出售给摩根大通，取代硅谷银行成为美国历史上资产规模第二大的银行倒闭案。整件事完全是一场预期博弈：<strong>如果人们预期其他储户会把钱留在银行，这家银行可能就不会倒闭</strong>——每个人都在预测别人会怎么做，并据此抢先行动。</p>
+
+      <h3>1.3 预期现值折现值（EPDV）逐词拆解</h3>
+      <p>如何判断一项资产标价 100 美元是贵还是便宜？你必须把今天付的价格与未来能从它得到的回报相比较。这需要三个词，每一个都有精确含义：</p>
+      <ul>
+        <li><strong>预期（Expected）：</strong>未来是不确定的。即使是承诺固定支付的债券（比如第一共和银行发行的债）也可能无法兑付，所以对未来的现金流和利率，你只能持有预期；</li>
+        <li><strong>折现（Discounted）：</strong>未来的 1 美元不等于今天的 1 美元。今天的 1 美元可以买一年期国债，一年后变成 (1+i<sub>t</sub>) 美元；反过来说，<strong>明年的 1 美元今天只值 1/(1+i<sub>t</sub>) 美元</strong>——若 i<sub>t</sub> = 10%，明年 1 美元 ≈ 今天 90 美分。利率越高，未来的钱在今天越不值钱；</li>
+        <li><strong>现值（Present Value）：</strong>把每一笔未来现金流都折算回今天再加总，就是这项资产今天"该值"的价格。</li>
+      </ul>
+      <p>同理，两年后的 1 美元今天值 1/[(1+i<sub>t</sub>)(1+i<sub>t+1</sub>)]——若两年利率都是 10%，今天约值 1/1.21 ≈ 83 美分。折现就是把未来的钱"打个折"换算成今天的钱，折扣率由利率决定。</p>
+
+      <h3>1.4 通用公式与永续年金特例 V = Z/i</h3>
+      <p>一项资产今年付 Z<sub>t</sub>、明年付 Z<sub>t+1</sub>、后年付 Z<sub>t+2</sub>……其现值为：</p>
+      <p><strong>V<sub>t</sub> = Z<sub>t</sub> + Z<sub>t+1</sub>/(1+i<sub>t</sub>) + Z<sub>t+2</sub>/[(1+i<sub>t</sub>)(1+i<sub>t+1</sub>)] + …</strong></p>
+      <p>现实中的未来现金流与利率都未知，把未知量替换为基于当前信息的预期值 E<sub>t</sub>[Z<sub>t+1</sub>]、E<sub>t</sub>[i<sub>t+1</sub>]，就得到完整的<span class="term">预期现值折现值</span><span class="term-en">（EPDV）</span>公式。最有用的特例是<span class="term">永续年金</span><span class="term-en">（Consol / Perpetuity）</span>：每期恒定支付 Z、恒定利率 i、永续存在，则：</p>
+      <p><strong>V = Z / i</strong></p>
+      <p>注意它的爆炸性：<strong>当 i → 0 时，V → ∞</strong>。这很大程度上解释了近年来全球金融市场的现象——极低的利率系统性推高了长久期资产（长期债券、股票、房地产）的价值。</p>
+
+      <div id="fig-consol"></div>
+      <p><strong>图 2 解读：</strong>永续年金价值 V = Z/i 是一条双曲线。以每年付 100 美元的永续年金（蓝线）为例：i = 10% 时 V = 1000，i = 5% 时 V = 2000，i = 1% 时 V 已达 10000——利率越低，曲线越陡，价值对利率越敏感。年付 200 美元（绿线）在同样的利率下价值恒为两倍。越靠近纵轴（i → 0），价值越是冲向无穷大：这就是"低利率时代万物皆涨"的算术本质，也是长久期资产对加息最脆弱的原因。</p>
+
+      <h3>1.5 债券定价：一年期与两年期</h3>
+      <p>把 EPDV 用到最简单的债券上。债券的关键特征是<span class="term">期限</span><span class="term-en">（Maturity）</span>——做出最终本金偿付的时间。</p>
+      <ul>
+        <li><strong>一年期债券</strong>（一年后付 100 美元）：<strong>P<sub>1</sub> = 100/(1+i<sub>1</sub>)</strong>。价格与利率严格反向：利率越高，未来的 100 美元今天越不值钱；</li>
+        <li><strong>两年期债券</strong>（两年后付 100 美元）：<strong>P<sub>2</sub> = 100/[(1+i<sub>1</sub>)(1+E[i′<sub>1</sub>])]</strong>，其中 E[i′<sub>1</sub>] 是对"一年后的一年期利率"的预期。价格与当前利率<strong>和预期未来利率</strong>都反向——这就是为什么 20 年期国债毫无违约风险却剧烈波动：它的价格要在长达 20 年的预期利率路径上折现。</li>
+      </ul>
+
+      <h3>1.6 套利定价（Arbitrage Pricing）：两种策略，预期回报必等</h3>
+      <p>除了 EPDV，还有一条同样强大的定价逻辑——<span class="term">套利定价</span><span class="term-en">（Arbitrage Pricing）</span>：风险相似、期限相同的投资策略，必须提供相同的预期回报，否则就存在无风险赚钱的机会，市场会立刻把它抹平。比较两个投资一年的策略：</p>
+      <ol>
+        <li>买一张一年期债券，回报 = (1+i<sub>1</sub>)；</li>
+        <li>买一张两年期债券，一年后卖掉，预期回报 = E[P<sub>1</sub>′]/P<sub>2</sub>（届时它已变成一张一年期债券）。</li>
+      </ol>
+      <p>令两者相等：P<sub>2</sub> = E[P<sub>1</sub>′]/(1+i<sub>1</sub>)，而一年后的那张一年期债券价格 P<sub>1</sub>′ = 100/(1+i′<sub>1</sub>)。代回即得 P<sub>2</sub> = 100/[(1+i<sub>1</sub>)(1+E[i′<sub>1</sub>])]——<strong>与 EPDV 的结果完全一致</strong>。套利定价与基本面估值在逻辑上相通，是金融中极其强大的定价工具。</p>
+
+      <h3>1.7 到期收益率（YTM）与预期假说（Expectations Hypothesis）</h3>
+      <p><span class="term">到期收益率</span><span class="term-en">（Yield to Maturity, YTM）</span>定义为：使债券未来支付流的现值恰好等于其当前价格的那个<strong>恒定</strong>年利率。对两年期债券，i<sub>2</sub> 满足 P<sub>2</sub> = 100/(1+i<sub>2</sub>)²。与上一节的 P<sub>2</sub> 表达式等同，并对小利率取近似：</p>
+      <p><strong>i<sub>2</sub> ≈ (i<sub>1</sub> + E[i′<sub>1</sub>])/2</strong></p>
+      <p>这就是<span class="term">预期假说</span><span class="term-en">（Expectations Hypothesis）</span>：<strong>长期利率约等于其存续期内预期短期利率的平均值</strong>。n 年期收益率近似等于未来 n 年各期预期一年期利率的均值。长期利率因此是一扇窗：读懂它，就读懂了市场对整条未来利率路径的预期。</p>
+
+      <h3>1.8 收益率曲线（Yield Curve）：倒挂是衰退前兆</h3>
+      <p>把不同期限债券的到期收益率连成线，就是<span class="term">收益率曲线</span><span class="term-en">（Yield Curve）</span>，也称<span class="term">利率期限结构</span><span class="term-en">（Term Structure of Interest Rates）</span>。由预期假说：市场预期未来短期利率上升 → 长期利率高于短期利率 → 曲线<strong>向上倾斜（陡峭）</strong>；预期未来降息 → 长期利率低于短期利率 → 曲线<strong>向下倾斜（</strong><span class="term">倒挂</span><span class="term-en">，Inverted）</span>。而美联储降息通常发生在衰退中、加息发生在过热期，于是收益率曲线的形状成了经济晴雨表：<strong>倒挂 = 市场预期降息 = 衰退前兆</strong>；陡峭 = 预期加息或复苏。</p>
+
+      <div id="fig-yield-curve"></div>
+      <p><strong>图 3 解读：</strong>2000 年 11 月（红线）收益率曲线倒挂：短端约 6.4% 高于长端约 5.8%——当时经济过热、美联储把短期利率顶在高位，而市场已预期未来降息；随后一场小型衰退如期而至。到 2001 年 6 月（蓝线），美联储已大幅降息，短端骤降至约 3.7%（下移约 2.7 个百分点），长端因预期未来利率回升而保持在 5.7% 附近，曲线转为陡峭向上。倒挂今天再次出现（高通胀下的激进加息），市场普遍将其解读为衰退预警。</p>
+
+      <!-- ==================== L23 ==================== -->
+      <h2>二、L23 资产定价（Asset Pricing）</h2>
+
+      <h3>2.1 引入：牛顿也算不出人性的疯狂</h3>
+      <p><strong>反直觉开场：</strong>艾萨克·牛顿——人类历史上最伟大的头脑之一，能计算天体运行的轨迹——在 1720 年的<span class="term">南海泡沫</span><span class="term-en">（South Sea Bubble）</span>中损失惨重。他先是小赚离场，眼看着股价继续疯涨，忍不住在高位重仓杀回，结果泡沫破裂，巨亏约 2 万英镑（相当于他多年的薪水）。事后他留下名言：<strong>"我能计算天体的运行，却无法计算人性的疯狂。"</strong>如果资产价格只是现金流的算术，牛顿不该输。这一讲解释他为什么会输——以及资产定价中预期与情绪的极限在哪里。</p>
+
+      <h3>2.2 风险进入定价：违约风险、价格风险与期限溢价</h3>
+      <p>上一讲的定价忽略了<span class="term">风险</span><span class="term-en">（Risk）</span>。债券有两种主要风险：一是<span class="term">违约风险</span><span class="term-en">（Default Risk）</span>——发行方可能不按承诺支付（阿根廷国债、倒闭的区域性银行都是例子）；二是<span class="term">价格风险</span><span class="term-en">（Price Risk）</span>——到期前卖出时价格可能已波动。持有长期债券承担价格风险，投资者会要求额外补偿，即<span class="term">风险溢价</span><span class="term-en">（Risk Premium）</span>，在债券场合也称<span class="term">期限溢价</span><span class="term-en">（Term Premium）</span>。于是套利条件修正为：<strong>风险资产预期回报 = 无风险利率 + 风险溢价 x</strong>；风险资产的价格必须比无风险时更低，才能给出更高的预期回报。长期利率 = 预期短期利率均值 + 期限溢价，且通常期限越长、溢价越大。</p>
+
+      <h3>2.3 股票 vs 债券：两个关键区别</h3>
+      <ol>
+        <li><strong>支付物不同：</strong>股票不付固定票息，而是支付<span class="term">股利</span><span class="term-en">（Dividend, D）</span>。公司有股利政策，但那不是法律承诺——经营不善时削减甚至取消股利<strong>不构成违约</strong>；</li>
+        <li><strong>期限不同：</strong>债券有固定到期日，股票<strong>没有</strong>——原则上只要公司存续，股票可以永远存在。</li>
+      </ol>
+      <p>这两个区别会让股票的定价远比债券"漂浮"，稍后在泡沫一节会看到后果。</p>
+
+      <h3>2.4 股票套利定价：基本面价值 = 未来全部预期股利的现值</h3>
+      <p>再次用套利逻辑。比较"买一年期无风险债券"与"买一股股票、持有一年、收股利后卖出"：股票是风险资产，其预期回报必须等于无风险利率加上<span class="term">股权风险溢价</span><span class="term-en">（Equity Risk Premium）</span> x（通常远大于债券的期限溢价）。于是：</p>
+      <p><strong>Q<sub>t</sub> = (D<sup>e</sup><sub>t+1</sub> + Q<sup>e</sup><sub>t+1</sub>)/(1 + i + x)</strong></p>
+      <p>股票没有到期日，所以可以把 Q<sup>e</sup><sub>t+1</sub> 用同样的公式再展开，Q<sup>e</sup><sub>t+2</sub> 再展开……无限迭代下去，价格项被贴现到消失，剩下的结论是：</p>
+      <p><strong>股票的<span class="term">基本面价值</span><span class="term-en">（Fundamental Value）</span> = 未来全部预期股利的现值之和，贴现率 = 无风险利率 i + 股权风险溢价 x</strong></p>
+      <p>这是 EPDV 公式在股票上的直接应用——只不过现金流（股利）更不确定、期限是无穷。</p>
+
+      <h3>2.5 货币政策如何传导到资产价格：债涨 + 股涨的双重提振</h3>
+      <p>扩张性货币政策（降息）同时点燃两个市场：<strong>债券</strong>——贴现率下降，未来现金流的现值上升，债券价格上涨；<strong>股票</strong>——贴现率 (i+x) 中的 i 下降带来同样的估值提振，<em>而且</em>降息刺激经济活动、提高公司利润与预期股利，分子分母双重利好，股价获得额外推力。资产价格上涨 → 家庭财富上升 → 消费与投资增加 → 总需求扩张，这就是货币政策的<span class="term">财富效应</span><span class="term-en">（Wealth Effect）</span>传导渠道。反过来，紧缩性货币政策打压资产价格、摧毁财富，以抑制总需求——图 1 中债券 ETF 跌去逾 40% 正是这一渠道的镜子里另一面。</p>
+
+      <h3>2.6 "好消息是坏消息"机制回归（呼应 P01）</h3>
+      <p>当经济过热、美联储铁了心对抗通胀时，市场进入<strong>"好消息是坏消息"</strong>的怪诞状态：强劲的消费数据（对经济本是好消息）→ 市场预期美联储进一步加息 → 利率预期立刻上升 → 债券与股票<strong>双双下跌</strong>。经济的积极信号成了资产市场的利空。反之在衰退期，好消息就是好消息——美联储乐于见到总需求回升，不会出手打压。这正是 P01 讲过的机制在资产定价框架中的回归：<strong>资产价格反应的不是数据本身，而是数据引发的政策预期</strong>。</p>
+
+      <h3>2.7 风险偏好：VIX 与 risk-off</h3>
+      <p>资产价格的另一个主要驱动因素是人们在特定时刻<strong>承担风险的意愿</strong>，它直接改变贴现率中的股权风险溢价 x。常用晴雨表是 <span class="term">VIX 指数</span>（"恐慌指数"）。当市场恐慌、VIX 飙升——进入<span class="term">风险规避</span><span class="term-en">（Risk-off）</span>状态——风险溢价大幅上升，股票等风险资产价格暴跌。新冠疫情初期与区域性银行危机期间，都出现 VIX 飙升伴随股市大幅下挫的组合。</p>
+
+      <h3>2.8 泡沫（Bubbles）：为什么泡沫多见于股市</h3>
+      <p>与恐慌相对的是另一极端：<span class="term">泡沫</span><span class="term-en">（Bubbles）</span>——资产价格远超其基本面价值（未来全部预期股利的现值）。泡沫在股票市场比在债券市场常见得多，原因正是 2.3 的两个区别：<strong>债券有到期日这个"锚"</strong>——无论中途怎么波动，到期那天它确定地值 100；<strong>股票没有到期锚</strong>，基本面依赖无穷远的预期股利，为想象力留下了无限空间。南海泡沫中，连牛顿也未能幸免。</p>
+
+      <div id="fig-southsea"></div>
+      <p><strong>图 4 解读：</strong>1720 年南海公司股价（英镑，示意数据）：年初约 £128，上半年在狂热中一路冲到 7 月峰值约 £1000（半年近 8 倍），随后几个月内崩回年末约 £124——画出一座完美的对称"泡沫山"。牛顿第一次入场小赚离场，在山顶附近的第二次入场区间（星标处）重仓杀回，最终巨亏约 £20,000。整条曲线上没有任何一个点的价格是由"未来股利现值"解释的——这就是泡沫的定义。</p>
+
+      <!-- ==================== L24 ==================== -->
+      <h2>三、L24 预期与 IS-LM：政策可信度（IS-LM and Expectations）</h2>
+
+      <h3>3.1 引入：爱尔兰的紧缩怎么变成了扩张？</h3>
+      <p><strong>反直觉开场：</strong>20 世纪 80 年代末，爱尔兰财政赤字巨大、经济停滞。政府实施了坚定的财政整顿计划，大幅削减赤字。教科书（我们至今学过的 IS-LM）的预测斩钉截铁：财政紧缩 → IS 左移 → 产出下降、衰退加深。实际发生的却是：<strong>赤字下降的同时，经济进入了高速增长期，失业率最终下降</strong>。紧缩怎么会变成扩张？这一讲的答案是：政策的直接效果是一回事，政策通过改变<strong>预期</strong>产生的间接效果是另一回事——后者可以抵消甚至逆转前者。</p>
+
+      <h3>3.2 消费理论升级：持久收入假说与生命周期假说</h3>
+      <p>我们一直假设消费只取决于当前可支配收入，这过分强调了"当下"。两大经典理论指出真正重要的是长期视角：</p>
+      <ul>
+        <li><strong>弗里德曼的<span class="term">持久收入假说</span><span class="term-en">（Permanent Income Hypothesis, PIH）</span>：</strong>决定消费的不是当前收入，而是你预期一生中平均能获得的收入（持久收入）。由此划出一条重要界线：<strong>临时性事件不应过多影响消费，永久性事件才有大影响</strong>——中彩票是巨大的临时冲击，但你不会立刻花光，而是平滑到一生中使用；</li>
+        <li><strong>莫迪利安尼的<span class="term">生命周期假说</span><span class="term-en">（Life-Cycle Theory）</span>：</strong>年轻时收入低于未来，倾向多消费、多借贷；中年为退休储蓄；老年消耗储蓄。消费在一生中保持相对稳定。</li>
+      </ul>
+      <p>两者共享同一个内核——<span class="term">跨期平滑</span><span class="term-en">（Intertemporal Smoothing）</span>：消费不紧跟收入的每一次波动，而是在时间上摊平。这意味着消费盯住的是"平均收入"而非"当下收入"。</p>
+
+      <h3>3.3 财富的两个成分：金融财富与人力财富</h3>
+      <p>跨期视角下，真正决定消费的是<span class="term">总财富</span><span class="term-en">（Total Wealth）</span>而非当期收入。财富有两个成分，且<strong>两者都是预期现值（EPDV）概念</strong>：</p>
+      <ul>
+        <li><span class="term">金融财富</span><span class="term-en">（Financial Wealth）</span>：你拥有的全部资产减去债务——就是 L22-L23 里定价的那些东西的预期现金流现值。富人很少卖资产，而是以资产抵押借贷为消费融资（还有税收优势）；</li>
+        <li><span class="term">人力财富</span><span class="term-en">（Human Wealth）</span>：未来劳动收入的预期现值。对年轻人（学生）这甚至是更重要的成分——当前收入远低于未来收入，所以这个阶段借贷消费、不怎么储蓄是合乎逻辑的（尽管银行对以人力资本抵押放贷比对房产抵押谨慎得多）。</li>
+      </ul>
+      <p>原则上消费应与财富成正比，经验估计的比例因子约为 <strong>3%</strong>——每年大约消费总财富的 3%。</p>
+
+      <h3>3.4 现实的消费函数：当前收入与财富的混合</h3>
+      <p>纯粹按财富消费在现实中行不通，有两个原因：一是存在<span class="term">手停口动</span><span class="term-en">（Hand-to-Mouth）</span>人群——没有储蓄、完全依赖每期收入生活，谈不上跨期平滑；二是金融约束——银行不太愿意让你以"未来收入的预期现值"为抵押大量借款，即使你对财富很有信心，短期内仍受现金流约束。所以现实的消费函数是<strong>当前收入与财富的混合</strong>：微观上越富的人财富项越重要，越穷的人当前收入项越压倒一切；宏观平均上两者都起作用。这也重新解释了 IS-LM 里的消费函数：C = c₀ + c₁(Y−T) 并没有错，但<strong>自主消费 c₀ 里藏着大量与财富（以及对未来的预期）有关的东西</strong>。</p>
+
+      <h3>3.5 投资理论升级：预期现值、几何折旧与金融摩擦</h3>
+      <p>企业投资（实物资本，非金融投资）同样面向未来：买一台机器，要比较它的当前价格与它未来预期现金流的现值。计算这个现值 V 需要三块：</p>
+      <ol>
+        <li><strong>机器能用多久：</strong>假设<span class="term">几何折旧</span>率 δ——若机器每年"报废"概率为 5%，一年后仍在工作的概率是 (1−δ) = 95%，两年后是 (1−δ)²，依此类推；</li>
+        <li><strong>每年的预期利润</strong> E(π)；</li>
+        <li><strong>生命周期内的利率路径</strong>（含对未来利率的预期；看得懂收益率曲线的话，市场已经替你完成了预测，直接用两年期利率即可）。</li>
+      </ol>
+      <p><strong>V = E(π₁)/(1+r₁) + (1−δ)E(π₂)/[(1+r₁)(1+E(r₂))] + …</strong></p>
+      <p>原则上投资是 V 的增函数。但实践中当前现金流同样重要，原因是<span class="term">金融摩擦</span><span class="term-en">（Financial Frictions）</span>：公司可能有好项目，但银行不如公司乐观、不肯足额贷款，于是公司靠保留收益自我融资（苹果的巨额现金部分为此；小公司更是为了在融资约束下抓住机会）。产出高时销售与利润高、金融约束松——所以<strong>现实的投资函数 = f(V, Y)</strong>：预期未来通过 V 进入，当前状况通过 Y 进入。</p>
+
+      <h3>3.6 含预期的 IS：曲线变更陡</h3>
+      <p>把上面两块装回 IS-LM。LM 不变（央行设定利率），IS 升级为：</p>
+      <p><strong>Y = A(Y, T, r; Y′<sup>e</sup>, T′<sup>e</sup>, r′<sup>e</sup>) + G</strong>　　<strong>r = r̄</strong></p>
+      <p>总需求不仅是当前产出、税收、利率的函数，还是<strong>预期未来产出、预期未来税收、预期未来利率</strong>的函数（符号不变：Y′<sup>e</sup>↑ → A↑；T′<sup>e</sup>↑、r′<sup>e</sup>↑ → A↓）。关键后果：<strong>IS 曲线变得更陡</strong>。若只是当前利率下降而预期未来利率不变，这次降息被视为<strong>暂时的</strong>——对财富和项目现值影响甚微，产出只动一小步。要让利率变化产生显著效果，它必须被相信是<strong>持久的</strong>。</p>
+
+      <div id="fig-is-expectations"></div>
+      <p><strong>图 5 解读：</strong>同样从初始均衡 A（Y=50, r=3）出发把利率降到 r=2：在不含预期的旧 IS（灰线，较平坦）上，产出应大幅升到 B′（Y=75）；但在含预期的陡 IS（蓝线）上，若市场认为降息只是暂时的，产出只到 B（Y=65）——<strong>同样的利率动作，效果打了折扣</strong>。真正的威力在于：如果央行说服市场利率将长期保持低位（r′<sup>e</sup>↓）且经济会好转（Y′<sup>e</sup>↑），IS 曲线<strong>本身向右移动</strong>（紫色虚线），产出到达 C（Y=80）——预期渠道把政策效果成倍放大。货币政策因此很大程度上是预期管理。</p>
+
+      <h3>3.7 货币政策 = 预期管理：马拉多纳比喻与格林斯潘之谜</h3>
+      <p>前英格兰银行行长默文·金（Mervyn King）用马拉多纳的著名进球比喻成功的货币政策：马拉多纳几乎是<strong>直线跑向球门</strong>，却让所有防守队员倒向两侧——靠的不是变向，而是让对手<strong>预期</strong>他要变向。央行亦然：通过沟通与信号引导市场预期，就能以最小的实际行动达到最大的政策效果——降息 + 说服市场"利率将长期保持低位"，LM 下移的同时 IS 因 r′<sup>e</sup>↓ 与 Y′<sup>e</sup>↑ 自行右移，产出扩张被倍增。这种"说出来就生效"的操作就是<span class="term">前瞻性指引</span><span class="term-en">（Forward Guidance）</span>。</p>
+      <p>反面教材是<span class="term">格林斯潘之谜</span><span class="term-en">（Greenspan Conundrum）</span>：美联储不断加息，长期利率却持续下降——市场不相信紧缩会持续（或另有预期），长期利率拒绝跟随，货币政策无法为过热的经济降温。<strong>央行一旦失去引导预期的信誉，政策就失效</strong>——政策可信度本身就是政策的一部分。</p>
+
+      <h3>3.8 扩张性财政紧缩（Expansionary Fiscal Consolidation）：爱尔兰案例与警示</h3>
+      <p>财政政策在含预期的框架下也变得复杂。传统模型里，削减 G 永远使 IS 左移、产出下降。但若人们预期财政紧缩会带来未来更宽松的货币政策（r′<sup>e</sup>↓）或更稳定的未来（Y′<sup>e</sup>↑），预期的改善可以抵消甚至超过紧缩本身的负面效果。极端情形下财政紧缩甚至是<span class="term">扩张性财政紧缩</span><span class="term-en">（Expansionary Fiscal Consolidation）</span>：当一个国家的巨额赤字已经烂到成为经济信心的主要障碍——人人担心未来的金融危机——一个<strong>可信的</strong>整顿计划会大幅改善对未来稳定性的看法，家庭储蓄率下降（消费增加）、企业投资回升，IS 右移幅度超过紧缩造成的左移，产出不降反升。80 年代末的爱尔兰正是经典案例。</p>
+      <p><strong>适用警示：</strong>这个例子经常被滥用。它只在特定条件下成立——<strong>财政状况已经极度糟糕、成为信心本身的主要障碍时</strong>。对财政尚可的经济体照方抓药，紧缩就只剩教科书里的收缩效果。</p>
+
+      <!-- ==================== 全课收尾 ==================== -->
+      <h2>四、全课思想链路收尾：预期这条暗线</h2>
+      <p>回看整个课程，<strong>预期同时作用于三个地方</strong>：<strong>总供给</strong>——工资设定依赖预期通胀 π<sup>e</sup>（菲利普斯曲线）；<strong>总需求</strong>——消费与投资依赖 Y′<sup>e</sup>、T′<sup>e</sup>、r′<sup>e</sup>（本篇 L24）；<strong>资产定价</strong>——汇率依赖 E<sup>e</sup>（UIP），债券与股票依赖预期利率与预期股利（L22-L23）。它贯穿四大模块：短期 IS-LM、中期 AS-AD、长期增长（资产价格与财富效应连接金融与实体）、开放经济（蒙代尔-弗莱明中的 E<sup>e</sup>）。由此得到全课最后一条元规律：<strong>政策的直接效果可以被预期渠道放大、抵消、甚至逆转</strong>——理解政策，先要理解它如何改变人们对未来的看法。</p>
+
+      <div id="fig-expectations-thread"></div>
+      <p><strong>图 6 解读：</strong>"预期"这条暗线贯穿全课四大模块。每条出弧标注预期进入该模块的通道：短期总需求中，Y′<sup>e</sup> 与 r′<sup>e</sup> 进入消费与投资（含预期的 IS）；中期总供给中，π<sup>e</sup> 进入工资设定（菲利普斯曲线）；金融资产定价中，预期利率与预期股利进入 EPDV；开放经济中，E<sup>e</sup> 进入非抛补利率平价、决定汇率。四个模块共用同一个引擎——这也是为什么"管理预期"是现代宏观政策的核心技艺。</p>
+      <p><strong>全课思想链路：</strong>核心问题（产出、通胀与失业如何决定？政策能做什么、何时适得其反？）→ 简化模型（短期 IS-LM：价格固定，需求定产出 → 中期 AS-AD：价格与工资调整，预期通胀进供给 → 长期索洛：资本积累与技术进步 → 开放经济：UIP 与汇率内生化）→ 推导（每条行为方程背后都是预期：π<sup>e</sup>、Y′<sup>e</sup>、r′<sup>e</sup>、E<sup>e</sup>、预期股利）→ 实际应用（加息周期为何"弄坏东西"、"好消息是坏消息"、格林斯潘之谜、爱尔兰扩张性紧缩）→ 局限性（理性预期的强假设、泡沫与非理性繁荣提醒我们：预期本身最难建模——牛顿之殇）。</p>
+
+      <!-- ==================== L25 知识清单 ==================== -->
+      <h2>五、L25 知识清单（Quiz 3 Review）</h2>
+      <p>教授的原话：蒙代尔-弗莱明模型至少值测验 70% 的分数，把能想到的比较静态都练一遍；UIP 条件必须非常理解。以下四张卡片浓缩全部考点。</p>
+
+      <h3>5.1 UIP 公式卡 + 移动判读</h3>
+      <table>
+        <thead>
+          <tr><th>项目</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>公式</strong></td><td>(1+i) = (E/E<sup>e</sup>)·(1+i*)——本币债券与外币债券预期回报必等；i = i* 时 E = E<sup>e</sup></td></tr>
+          <tr><td><strong>i↑（国内加息）</strong></td><td>E 必须下降（本币升值），用"预期贬值"补偿高利率</td></tr>
+          <tr><td><strong>i*↑（外国加息）</strong></td><td>E 上升（本币贬值）；UIP 曲线向上/向左移</td></tr>
+          <tr><td><strong>E<sup>e</sup>↑（预期贬值）</strong></td><td>E 同步上升（当期即贬值）；UIP 曲线向右移</td></tr>
+          <tr><td><strong>判读口诀</strong></td><td>只有两件事移动 UIP 曲线：i* 与 E<sup>e</sup>；国内利率 i 是沿曲线读出的坐标</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5.2 蒙代尔-弗莱明四实验矩阵（灵活汇率）</h3>
+      <table>
+        <thead>
+          <tr><th>冲击</th><th>曲线移动</th><th>Y</th><th>E（↑=贬值）</th><th>NX</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>货币扩张（r↓）</strong></td><td>利率↓ → E↑（贬值）→ IS 右移（投资↑ + 净出口↑，双渠道）</td><td>↑</td><td>↑（贬值）</td><td>↑</td></tr>
+          <tr><td><strong>财政扩张（G↑）</strong></td><td>IS 右移；利率与汇率不变；乘数小于封闭经济（需求漏向进口）</td><td>↑</td><td>不变</td><td>↓（进口↑）</td></tr>
+          <tr><td><strong>外国产出 Y*↑</strong></td><td>出口↑ → IS 右移（出口拉动，贸易差额改善）</td><td>↑</td><td>不变</td><td>↑</td></tr>
+          <tr><td><strong>外国利率 i*↑</strong></td><td>UIP 左移 → E↑（贬值）→ 净出口↑ → IS 右移</td><td>↑</td><td>↑（贬值）</td><td>↑</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5.3 资产定价公式卡（EPDV / YTM / 股票）</h3>
+      <table>
+        <thead>
+          <tr><th>概念</th><th>公式</th><th>要点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>EPDV 通用式</strong></td><td>V<sub>t</sub> = Z<sub>t</sub> + Z<sub>t+1</sub>/(1+i<sub>t</sub>) + Z<sub>t+2</sub>/[(1+i<sub>t</sub>)(1+i<sub>t+1</sub>)] + …</td><td>未知的未来量一律换成预期值</td></tr>
+          <tr><td><strong>永续年金</strong></td><td>V = Z/i</td><td>i→0 时 V→∞；低利率推高长久期资产</td></tr>
+          <tr><td><strong>一年期债券</strong></td><td>P<sub>1</sub> = 100/(1+i<sub>1</sub>)</td><td>价格与利率严格反向</td></tr>
+          <tr><td><strong>两年期债券</strong></td><td>P<sub>2</sub> = 100/[(1+i<sub>1</sub>)(1+E[i′<sub>1</sub>])]</td><td>与当前利率、预期未来利率都反向；套利定价与 EPDV 殊途同归</td></tr>
+          <tr><td><strong>YTM / 预期假说</strong></td><td>i<sub>2</sub> ≈ (i<sub>1</sub>+E[i′<sub>1</sub>])/2</td><td>长期利率 ≈ 预期短期利率均值（+期限溢价）；倒挂 = 预期降息 = 衰退前兆</td></tr>
+          <tr><td><strong>股票定价</strong></td><td>Q<sub>t</sub> = (D<sup>e</sup><sub>t+1</sub>+Q<sup>e</sup><sub>t+1</sub>)/(1+i+x)</td><td>无限迭代 → 基本面价值 = 未来全部预期股利现值；x = 股权风险溢价</td></tr>
+          <tr><td><strong>风险补偿</strong></td><td>风险资产预期回报 = 无风险利率 + 风险溢价 x</td><td>债券：期限溢价；股票：股权风险溢价（更大）；VIX 飙升 → x↑ → 价格↓</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5.4 "冲击 → 曲线 → Y/E/NX" 决策表</h3>
+      <table>
+        <thead>
+          <tr><th>步骤</th><th>要做什么</th><th>检查点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1. 识别冲击</strong></td><td>判断冲击落在哪条行为方程：G/T→IS；r→LM/利率；i*、E<sup>e</sup>→UIP；Y*→出口</td><td>一个冲击只先动一条曲线</td></tr>
+          <tr><td><strong>2. 移动曲线</strong></td><td>先动直接曲线；若利率或 E<sup>e</sup> 变了，经 UIP 解出 E，再检查 E 是否回移 IS</td><td>汇率升值（E↓）→ NX↓ → IS 左；贬值（E↑）→ NX↑ → IS 右</td></tr>
+          <tr><td><strong>3. 读均衡</strong></td><td>由 ZZ 与 45° 线交点定 Y；由 UIP 定 E；由 ZZ 与 DD 的垂直距离读 NX</td><td>均衡条件：Y = 对国内生产商品的需求（≠ 国内总需求）</td></tr>
+          <tr><td><strong>4. 固定汇率特例</strong></td><td>汇率可信固定 → E = E<sup>e</sup> = 常数 → i = i*（放弃货币政策）；遭投机攻击时只能加息护盘 → 国内衰退</td><td>"三元悖论"直觉：固定汇率 + 资本自由流动 ⇒ 无独立货币政策</td></tr>
+        </tbody>
+      </table>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/12-expectations-asset-pricing.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：长期国债 ETF 价格 —— 无违约风险却先涨 45% 再跌逾 40%（示意数据） =====
+    Charts.xy(document.getElementById('fig-tlt'), {
+      xLabel: '年份',
+      yLabel: '价格（美元，示意）',
+      xMin: 2019, xMax: 2024, yMin: 80, yMax: 190,
+      xTicks: [2019, 2020, 2021, 2022, 2023],
+      yTicks: [80, 100, 120, 140, 160, 180],
+      legendPosition: 'top',
+      caption: '图 1：美国长期国债（20 年以上）ETF 价格 —— 先涨约 45%，再自峰值跌逾 40%（示意数据）',
+      series: [
+        { points: [[2019, 120], [2019.5, 138], [2020.3, 150], [2020.6, 171], [2021.3, 140], [2021.8, 150], [2022.3, 120], [2022.8, 91], [2023.3, 105], [2023.8, 92]], type: 'spline', color: '#2563eb', label: '长期国债 ETF 价格（示意）' },
+      ],
+      markers: [
+        { x: 2020.6, y: 171, label: '2020-08 峰值 ≈ 171（自 2019 年初 +45%）', color: '#15803d', legend: '峰值', labelDx: -60, labelDy: -14 },
+        { x: 2022.8, y: 91, label: '2022-10 谷底 ≈ 91（自峰值 −47%）', color: '#dc2626', legend: '谷底', labelDx: -120, labelDy: 22 },
+      ],
+      arrows: [
+        { from: [2019.7, 132], to: [2020.45, 164], color: '#15803d', label: '降息+避险：债涨', labelDx: 70, labelDy: -6 },
+        { from: [2021.2, 148], to: [2022.6, 96], color: '#dc2626', label: '激进加息：债跌', labelDx: 10, labelDy: -40 },
+      ],
+    });
+
+    // ===== 图2：永续年金 V = Z/i 双曲线（Z=100 与 Z=200） =====
+    var iGrid = [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.08, 0.10, 0.12, 0.15, 0.20];
+    var consol100 = iGrid.map(function (i) { return [i, Math.round(100 / i)]; });
+    var consol200 = iGrid.filter(function (i) { return i >= 0.02; }).map(function (i) { return [i, Math.round(200 / i)]; });
+    Charts.xy(document.getElementById('fig-consol'), {
+      xLabel: '利率 i',
+      yLabel: '永续年金价值 V（美元）',
+      xMax: 0.20, yMax: 10500,
+      xTicks: [
+        { v: 0.01, label: '1%' }, { v: 0.05, label: '5%' }, { v: 0.10, label: '10%' },
+        { v: 0.15, label: '15%' }, { v: 0.20, label: '20%' },
+      ],
+      yTicks: [0, 2000, 4000, 6000, 8000, 10000],
+      legendPosition: 'top',
+      caption: '图 2：永续年金价值 V = Z/i —— i→0 时 V→∞，低利率系统性推高长久期资产',
+      series: [
+        { points: consol100, type: 'spline', color: '#2563eb', label: 'Z = 100（每年付 100 美元）' },
+        { points: consol200, type: 'spline', color: '#15803d', label: 'Z = 200（每年付 200 美元）' },
+      ],
+      markers: [
+        { x: 0.10, y: 1000, label: 'i = 10% → V = 1000', color: '#2563eb', legend: 'Z = 100 关键点', labelDx: 12, labelDy: -12 },
+        { x: 0.05, y: 2000, label: 'i = 5% → V = 2000', color: '#2563eb', guides: true, gxLabel: '5%', gyLabel: '2000', labelDx: 14, labelDy: 18 },
+        { x: 0.01, y: 10000, label: 'i = 1% → V = 10000（i→0 时 V→∞）', color: '#dc2626', legend: '低利率爆炸区', labelDx: 14, labelDy: -12 },
+        { x: 0.05, y: 4000, label: 'Z = 200, i = 5% → V = 4000', color: '#15803d', legend: 'Z = 200 关键点', labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图3：收益率曲线 —— 2000-11 倒挂 vs 2001-06 陡峭（示意数据） =====
+    Charts.xy(document.getElementById('fig-yield-curve'), {
+      xLabel: '期限（到期时间）',
+      yLabel: '到期收益率（%）',
+      xMax: 30, yMin: 3, yMax: 7,
+      xTicks: [
+        { v: 0.25, label: '3个月' }, { v: 1, label: '1年' }, { v: 2, label: '2年' },
+        { v: 5, label: '5年' }, { v: 10, label: '10年' }, { v: 30, label: '30年' },
+      ],
+      yTicks: [3, 4, 5, 6, 7],
+      legendPosition: 'top',
+      caption: '图 3：收益率曲线的两种形态 —— 2000 年 11 月倒挂（衰退前兆）vs 2001 年 6 月陡峭（降息之后）',
+      series: [
+        { points: [[0.25, 6.4], [1, 6.0], [2, 5.9], [5, 5.8], [10, 5.75], [30, 5.9]], type: 'spline', color: '#dc2626', label: '2000-11：倒挂（短端 6.4% > 长端 5.9%）' },
+        { points: [[0.25, 3.7], [1, 3.8], [2, 4.3], [5, 4.9], [10, 5.3], [30, 5.7]], type: 'spline', color: '#2563eb', label: '2001-06：陡峭（短端 3.7% < 长端 5.7%）' },
+      ],
+      markers: [
+        { x: 0.25, y: 6.4, label: '短端 ≈ 6.4%', color: '#dc2626', legend: '短端（倒挂侧）', labelDx: 20, labelDy: -12 },
+        { x: 0.25, y: 3.7, label: '短端 ≈ 3.7%', color: '#2563eb', legend: '短端（陡峭侧）', labelDx: 20, labelDy: 16 },
+        { x: 30, y: 5.9, label: '长端 ≈ 5.9%', color: '#dc2626', labelDx: -110, labelDy: -12 },
+        { x: 30, y: 5.7, label: '长端 ≈ 5.7%', color: '#2563eb', labelDx: -110, labelDy: 18 },
+      ],
+      arrows: [
+        { from: [1.3, 6.3], to: [1.3, 3.85], color: '#7c3aed', label: '美联储降息：短端下移约 2.7 个百分点', labelDx: 190, labelDy: 0 },
+      ],
+    });
+
+    // ===== 图4：南海泡沫 1720 —— 牛顿之殇（示意数据） =====
+    Charts.xy(document.getElementById('fig-southsea'), {
+      xLabel: '1720 年（月份）',
+      yLabel: '南海公司股价（英镑）',
+      xMin: 0.5, xMax: 12.5, yMax: 1100,
+      xTicks: [
+        { v: 1, label: '1月' }, { v: 3, label: '3月' }, { v: 5, label: '5月' },
+        { v: 7, label: '7月' }, { v: 9, label: '9月' }, { v: 11, label: '11月' },
+      ],
+      yTicks: [0, 200, 400, 600, 800, 1000],
+      legendPosition: 'top',
+      caption: '图 4：南海泡沫 1720 —— 半年 8 倍、数月归零；牛顿高位杀回，巨亏 £20,000（示意数据）',
+      series: [
+        { points: [[1, 128], [2, 175], [3, 330], [4, 340], [5, 550], [6, 890], [7, 1000], [8, 800], [9, 400], [10, 200], [11, 150], [12, 124]], type: 'spline', color: '#2563eb', label: '南海公司股价（示意）' },
+      ],
+      markers: [
+        { x: 1, y: 128, label: '年初 ≈ £128', color: '#6b7280', legend: '起点', labelDx: 10, labelDy: -12 },
+        { x: 7, y: 1000, shape: 'star', label: '7 月峰值 ≈ £1000', color: '#dc2626', legend: '泡沫峰值', labelDx: -60, labelDy: -16 },
+        { x: 9.5, y: 300, label: '牛顿第二次入场区间：最终巨亏约 £20,000', color: '#d97706', legend: '牛顿之殇', labelDx: -150, labelDy: 40 },
+        { x: 12, y: 124, label: '年末 ≈ £124：回到起点', color: '#6b7280', labelDx: -150, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图5：含预期的 IS 更陡 —— 同一降息，旧模型 B′、暂时信念 B、可信持久宽松 C =====
+    // 旧 IS: r = 4.2 - 0.04(Y-20)；陡 IS: r = 5.0 - (4/60)(Y-20)；右移 IS: r = 5.0 - (4/60)(Y-35)
+    Charts.xy(document.getElementById('fig-is-expectations'), {
+      xLabel: '产出 Y',
+      yLabel: '实际利率 r（%）',
+      xMax: 100, yMax: 6,
+      xTicks: [0, 20, 40, 60, 80, 100],
+      yTicks: [0, 1, 2, 3, 4, 5, 6],
+      legendPosition: 'top',
+      caption: '图 5：含预期的 IS 更陡 —— 暂时的降息只到 B；被信为持久的宽松使 IS 本身右移到 C',
+      series: [
+        { points: [[20, 4.2], [80, 1.8]], type: 'linear', color: '#9ca3af', label: '原 IS（不含预期，较平坦）' },
+        { points: [[20, 5.0], [80, 1.0]], type: 'linear', color: '#2563eb', label: '含预期的 IS（更陡）' },
+        { points: [[35, 5.0], [95, 1.0]], type: 'linear', color: '#7c3aed', dash: true, label: 'r′e↓、Y′e↑：IS 本身右移' },
+      ],
+      markers: [
+        { x: 50, y: 3, label: 'A：初始均衡（Y=50, r=3）', color: '#111827', legend: '均衡点', guides: true, gxLabel: '50', gyLabel: '3', labelDx: -30, labelDy: -16 },
+        { x: 65, y: 2, label: 'B：降息被视为暂时 → 小步（Y=65）', color: '#2563eb', legend: '暂时降息', labelDx: -170, labelDy: 26 },
+        { x: 75, y: 2, label: 'B′：旧模型预言（Y=75）', color: '#9ca3af', legend: '旧模型预言', labelDx: -60, labelDy: 26 },
+        { x: 80, y: 2, label: 'C：低利率被信为持久 → IS 右移（Y=80）', color: '#7c3aed', legend: '可信持久宽松', guides: true, gxLabel: '80', labelDx: -30, labelDy: -40 },
+      ],
+      arrows: [
+        { from: [52, 2.88], to: [63, 2.18], color: '#2563eb', label: '沿陡 IS 小步', labelDx: -66, labelDy: 16 },
+        { from: [66.5, 1.9], to: [78, 1.9], color: '#7c3aed', label: '预期渠道放大', labelDy: -10 },
+      ],
+    });
+
+    // ===== 图6：预期暗线贯穿四大模块（每条出弧 = 预期进入该模块的通道） =====
+    Charts.cycle(document.getElementById('fig-expectations-thread'), {
+      nodes: ['短期·总需求', '金融·资产定价', '中期·总供给', '开放·UIP 汇率'],
+      notes: ["Y′e、r′e 进入消费与投资", '预期利率与股利进入 EPDV', 'πe 进入工资设定', 'Ee 进入利率平价'],
+      color: '#7c3aed',
+      caption: '图 6：预期这条暗线贯穿全课四大模块 —— 每条出弧标注预期进入该模块的通道',
+    });
+  </script>
+</body>
+</html>

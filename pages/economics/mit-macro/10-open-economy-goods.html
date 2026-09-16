@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 开放经济：商品市场与贸易差额 - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>10 开放经济：商品市场与贸易差额</h1>
+      <p>本篇覆盖 MIT 14.02《宏观经济学原理》第 17、19 两讲（L17+L19）：课程视角从<span class="term">封闭经济</span><span class="term-en">（Closed Economy）</span>切换到<span class="term">开放经济</span><span class="term-en">（Open Economy）</span>。L17 是导论：开放的三个维度（商品、金融、要素市场），<span class="term">名义汇率</span>与<span class="term">实际汇率</span>的区分，以及美国长期贸易逆差背后"储蓄太少"的宏观逻辑和金融开放如何为逆差融资。L19 把课程最早的凯恩斯交叉模型打开国门：区分<span class="term">对国内商品的需求</span> Z 与<span class="term">国内对商品的需求</span> C+I+G，完成 DD→AA→ZZ 两步改造，画出<span class="term">净出口曲线</span>，再用三个实验（本国财政扩张、外国繁荣拉动、贬值+财政对冲）回答"产出扩张的三条路径各有什么代价"。</p>
+
+      <!-- ==================== L17 ==================== -->
+      <h2>一、L17 开放经济导论（Introduction to Open Economy）</h2>
+
+      <h3>1.1 引入：月逆差 700 亿美元——政治说是"不公平"，宏观说是"存钱太少"</h3>
+      <p><strong>反直觉开场：</strong>美国目前每个月的<span class="term">贸易逆差</span><span class="term-en">（Trade Deficit）</span>约为 <strong>700 亿美元</strong>——进口远超出口，年复一年。政治话语里，这被解释成"不公平竞争"：别国补贴、操纵汇率、抢走了我们的工作。但宏观经济学给出一个完全不同的答案：<strong>美国贸易逆差的根源，是美国人的储蓄率低于世界其他地区</strong>——一个存钱太少、花钱太多的国家，消费的必然比生产的多，差额只能靠进口大于出口来补，再靠外国人把多收的美元借回来。逆差不主要是"别人使坏"，而是本国储蓄-支出结构的镜像。要看清这个问题，需要先把分析框架从封闭经济扩展到开放经济。</p>
+      <p>承上启下：L17 前半段用封闭经济的 IS-LM-PC 框架回顾了当时的美国经济——疫情重开后需求远强于供给、通胀高企、美联储"落后于曲线"后被迫快速加息，最终"弄坏了东西"：<span class="term">硅谷银行</span><span class="term-en">（Silicon Valley Bank, SVB）</span>倒闭引发存款挤兑与<span class="term">追求品质的逃离</span><span class="term-en">（Flight to Quality）</span>，中小银行被迫收缩贷款，经济进入<span class="term">信贷紧缩</span><span class="term-en">（Credit Crunch）</span>早期。这套封闭经济框架对美国这样的大型经济体大体够用，但对新加坡这样的小型开放经济体完全行不通——不理解世界其他地区，就无法理解它的经济。于是我们转向开放经济。</p>
+
+      <h3>1.2 开放的三维度：商品、金融与要素市场</h3>
+      <p>"开放"不是一个开关，而是三个可以分别打开的市场：</p>
+      <ol>
+        <li><strong>商品市场开放</strong>：居民和企业可以自由买卖国内外商品，主要壁垒是关税（Tariff）与配额（Quota）；</li>
+        <li><strong>金融市场开放</strong>：投资者可以选择购买本国或外国的金融资产，主要壁垒是资本管制（Capital Control）；</li>
+        <li><strong>要素市场开放</strong>：生产要素（资本与劳动力）可以跨国流动。</li>
+      </ol>
+      <p>本课程这一部分主要关注前两个。几个关键事实：<strong>国家越小，开放度越高</strong>——小国无法自己生产所有需要的商品，进出口占 GDP 的比重天然高（新加坡远高于美国）；欧洲单个国家开放度很高，但欧元区作为一个整体与美国相当；即使是相对封闭的美国，出口与进口占 GDP 的比重也在持续上升。高度融合带来一个直接后果：各国的<span class="term">商业周期</span><span class="term-en">（Business Cycle）</span>趋于<strong>同步</strong>——2008 年的衰退是全球性的，一个大型经济体的衰退很难不波及世界其他地区。</p>
+
+      <h3>1.3 名义汇率 vs 实际汇率："哪国买车更便宜"名义汇率回答不了</h3>
+      <p>开放经济的第一个关键变量是<span class="term">名义汇率</span><span class="term-en">（Nominal Exchange Rate, E）</span>。本课程采用如下惯例：<strong>E = 一单位本国货币能兑换多少外国货币</strong>（如 1 美元 = 130 日元）。因此 <strong>E 上升 = 本币<span class="term">升值</span><span class="term-en">（Appreciation）</span></strong>，E 下降 = <span class="term">贬值</span><span class="term-en">（Depreciation）</span>——这个方向与很多财经报道的标价法相反，务必记住。</p>
+      <p>但名义汇率只告诉我们两种货币的相对价格，<strong>回答不了"在哪国买东西更便宜"</strong>：知道 1 美元兑换 130 日元，并不能告诉你一辆车在日本买还是在美国买更划算——你还需要知道这辆车在两国的本地价格。为此定义<span class="term">实际汇率</span><span class="term-en">（Real Exchange Rate, ε）</span>：</p>
+      <p><strong>ε = (E × P) / P*</strong></p>
+      <p>其中 P 是本国物价水平（以本币计），P* 是外国物价水平（以外币计）。E×P 把本国商品价格换算成外币，再除以外国价格，得到的是<strong>本国商品相对于外国商品的价格</strong>——比如"一辆美国车能换几辆日本车"。ε 上升称<span class="term">实际升值</span><span class="term-en">（Real Appreciation）</span>：本国商品相对变贵；ε 下降称<span class="term">实际贬值</span><span class="term-en">（Real Depreciation）</span>：本国商品相对变便宜。这个相对价格直接决定进出口行为，是 L19 模型的核心参数。</p>
+
+      <div class="figure-pair">
+        <div id="fig-dollar-index"></div>
+        <div id="fig-trade-balance"></div>
+      </div>
+      <p><strong>图 1 解读：</strong>美元对主要贸易伙伴的贸易加权名义汇率指数（示意数据）。按本课程惯例，指数上升 = 美元升值。两个标注点值得记住：1985 年峰值（约 143）——美元过度升值重创美国出口竞争力，直接催生了压美元贬值的"广场协议"；2022 年的急升（约 126）——美联储快速加息吸引全球资本流入，美元暴涨。汇率的大幅波动大多与各国货币政策分化有关（这是 L20-L21 的主题）。</p>
+      <p><strong>图 2 解读：</strong>美国月度商品与服务贸易差额（十亿美元，示意数据）。灰色虚线是零线（贸易平衡）。整条曲线常年位于零线下方——结构性逆差；疫情期间先因进口骤降而收窄、后因财政刺激下需求爆棚而急剧扩大到 2022 年初约 −1070 亿美元/月的历史极值，随后回落到约 −700 亿美元/月的"常态"。政治热点归政治，宏观解释归宏观：这条曲线的高度最终由美国的储蓄-投资缺口决定。</p>
+
+      <h3>1.4 贸易差额、储蓄与金融开放：谁在替美国的逆差买单</h3>
+      <p><span class="term">贸易差额</span><span class="term-en">（Trade Balance）</span> = 出口 X − 进口 IM。美国长期逆差（X &lt; IM），从双边看对许多国家都有巨大逆差，最大的是对中国（每年约 <strong>3800 亿美元</strong>），其次是墨西哥、越南等。再强调一遍 1.1 的结论：逆差的宏观根源是<strong>美国储蓄率低于世界其他地区</strong>，而非单纯的不公平竞争。</p>
+      <p>金融市场开放（Financial Openness）的规模远大于商品市场，并带来一个耐人寻味的融资结构：</p>
+      <ul>
+        <li><strong>外国持有的美国资产</strong>：日本、中国、加拿大等国持有总额高达数万亿美元的美元资产。其中中国和日本的<strong>央行</strong>持有大量美国国债作为外汇储备；加拿大和英国则主要是私人部门（如养老基金）的投资——大多是<strong>安全的低回报资产</strong>。</li>
+        <li><strong>美国持有的外国资产</strong>：集中在加拿大、欧洲和新兴市场，多为<strong>风险更高、回报也更高</strong>的资产——股权投资、外国直接投资（FDI）。</li>
+        <li><strong>结果</strong>：美国对外支付的回报率低、从海外收回的回报率高，这个<span class="term">回报率差</span><span class="term-en">（Rate of Return Differential）</span>产生的净投资收益，长期为美国的贸易逆差融资——相当于全世界把钱低息存进美国，美国再拿去做高收益投资。</li>
+      </ul>
+
+      <!-- ==================== L19 ==================== -->
+      <h2>二、L19 开放经济中的商品市场（The Goods Market in the Open Economy）</h2>
+
+      <h3>2.1 引入：智利什么都不用做，中国重开就会繁荣</h3>
+      <p><strong>反直觉开场：</strong>2023 年初，智利和一批大宗商品经济体什么都没做，只是中国重新开放，它们就迎来了繁荣预期——中国产出扩张 → 从全世界进口更多铜和大豆 → 这些国家的出口被拉动、产出上升。换句话说：<strong>别国的财政政策，有时候比自己的还"香"</strong>。自己搞财政扩张要背财政赤字，还可能搞出贸易逆差；等别人搞扩张，产出照样涨，贸易余额还改善。为什么会有这种"搭便车"的好事？回答它需要把课程最早的需求决定产出模型打开国门。</p>
+
+      <h3>2.2 关键区分（本讲灵魂）：对国内商品的需求 ≠ 国内对商品的需求</h3>
+      <p>封闭经济里这两个概念是同一个，所以从未区分过；开放经济里它们分道扬镳，而区分二者是理解本讲一切的钥匙：</p>
+      <ul>
+        <li><span class="term">国内对商品的需求</span><span class="term-en">（Domestic Demand for Goods）</span> = C + I + G——本国居民、企业和政府购买的全部商品，<strong>不管买的是国货还是外国货</strong>。买一辆宝马（进口）也算在里面。</li>
+        <li><span class="term">对国内商品的需求</span><span class="term-en">（Demand for Domestic Goods, Z）</span>——全世界（本国居民 + 外国人）对<strong>本国生产的</strong>商品的需求。短期模型价格粘性、需求决定产出，决定本国产出的正是这个 Z。买宝马拉动的是德国的产出，不是福特的。</li>
+      </ul>
+      <p>两者的关系：</p>
+      <p><strong>Z = C + I + G − IM/ε + X</strong></p>
+      <p>两步调整：<strong>减去 IM/ε</strong>——国内需求中由进口满足的部分不构成对本国商品的需求（除以实际汇率 ε，是把外币计价的进口换算成本国商品单位）；<strong>加上 X</strong>——外国人对本国商品的需求（苹果手机销往全世界），这部分需求不来自本国居民却拉动本国产出。</p>
+
+      <h3>2.3 进出口行为函数：X = f(Y*, ε)，IM = f(Y, ε)</h3>
+      <p>模型只新增两条行为方程，各自的经济直觉都很朴素：</p>
+      <ul>
+        <li><strong>出口 X = X(Y*, ε)</strong>：随<span class="term">外国产出</span><span class="term-en">（Foreign Output, Y*）</span><strong>递增</strong>——贸易伙伴收入上升会消费更多一切商品，包括我们的出口（中国重开让大宗商品经济体欢呼，正是这个渠道）；随实际汇率 ε <strong>递减</strong>——ε 上升意味着本国商品相对变贵，外国人买得更少。</li>
+        <li><strong>进口 IM = IM(Y, ε)</strong>：随本国产出 Y <strong>递增</strong>——本国收入上升，消费扩张里总有一部分买外国货；随 ε <strong>递增</strong>——ε 上升意味着外国商品相对变便宜，同样的消费更多转向进口。进口函数其实就是出口函数的镜像：我们的进口，正是别国的出口。</li>
+      </ul>
+
+      <h3>2.4 DD → AA → ZZ：需求曲线的两步改造</h3>
+      <p>现在把 C+I+G 改造成 Z，图形上分两步（设定：DD = 4 + 0.8Y，进口 IM = 0.2Y，出口 X = 2）：</p>
+      <ol>
+        <li><strong>第一步：减进口，DD → AA</strong>。从国内需求中减去流向外国商品的部分。曲线<strong>下移</strong>且<strong>旋转变平</strong>——不是平行移动，因为存在正的<span class="term">边际进口倾向</span><span class="term-en">（Marginal Propensity to Import）</span>：收入越高，减去的进口越多（本例斜率从 0.8 降为 0.6）。</li>
+        <li><strong>第二步：加出口，AA → ZZ</strong>。加上外国人的需求 X。这是<strong>平行上移</strong>——出口取决于外国产出 Y*，不随本国 Y 变化，所以只动截距不动斜率（本例上移 2 个单位）。</li>
+      </ol>
+
+      <div id="fig-dd-aa-zz"></div>
+      <p><strong>图 3 解读：</strong>DD（蓝色，国内需求 C+I+G，斜率 0.8）先向下旋转为 AA（绿色，减去进口后，斜率 0.6）——红色箭头显示 Y = 15 处减去的进口为 3（= 0.2×15）；再平行上移为 ZZ（紫色，加上出口 X = 2）——绿色箭头显示任意 Y 处加上恒定的 2。灰色标注点 (10, 12) 是 DD 与 ZZ 的交点：此处对国内商品的需求恰好等于国内需求，即出口 = 进口，贸易余额为零。<strong>ZZ 比 DD 平坦，这就是"开放经济乘数更小"的几何表达</strong>：封闭经济里收入增加 → 消费增加 → 全部回来拉动本国产出；开放经济里增加的消费有一部分买了外国货，不再回来——需求"漏"向了外国，每一轮循环的推力都更小。</p>
+
+      <h3>2.5 均衡与净出口曲线（核心双图）</h3>
+      <p>短期均衡仍是"产出 = 需求"，但需求必须是对国内商品的需求：<strong>Y = ZZ</strong>。沿用图 3 的设定（ZZ = 6 + 0.6Y），解出均衡产出 Y = 15。同时定义<span class="term">净出口</span><span class="term-en">（Net Exports, NX）</span>曲线 NX(Y) = X − IM/ε = 2 − 0.2Y。两张图上下对齐看（横轴都是 Y）：</p>
+
+      <div id="fig-keynesian-cross"></div>
+      <div id="fig-nx-curve"></div>
+      <p><strong>图 4 解读（上）：</strong>开放经济的凯恩斯交叉。ZZ 与 45° 线交于均衡点 (15, 15)——机制和封闭经济一模一样，只是线更平、乘数更小（本例 1/(1−0.6) = 2.5，封闭经济同参数下是 1/(1−0.8) = 5）。</p>
+      <p><strong>图 5 解读（下）：</strong>净出口曲线 NX(Y) 向下倾斜——出口不依赖本国 Y（取决于 Y*），进口随 Y 递增，所以 Y 越大净出口越小。曲线与横轴的交点 Y_TB = 10 是<strong>贸易平衡</strong>点（也正好对应图 3 中 DD = ZZ 的点，因为 NX = Z − DD）；左侧绿色区域出口超过进口（贸易顺差），右侧红色区域进口超过出口（贸易逆差）。注意：<strong>没有任何力量保证均衡产出等于 Y_TB</strong>——本例均衡 Y = 15 落在逆差区，净出口 NX(15) = −1，这个国家的均衡恰好伴随贸易逆差。NX = Z − DD 这个关系还告诉我们：贸易余额不过就是"对国内商品的需求"与"国内需求"之差。</p>
+
+      <h3>2.6 实验一：本国财政扩张——产出涨了，贸易逆差也来了</h3>
+      <p>换一个干净的起点：经济恰好处于贸易平衡（Y₀ = 10，NX = 0，此时 ZZ₀ = 4 + 0.6Y）。政府增加支出 ΔG = 2：ZZ 平行上移至 ZZ₁ = 6 + 0.6Y，乘数 2.5 把产出从 10 推到 15。产出增幅超过 ΔG（乘数仍在），但<strong>明显小于封闭经济</strong>——新增的购买力一路漏向进口。贸易方面：净出口曲线本身不动（G 不是 NX 的参数），经济<strong>沿着</strong> NX 曲线从 (10, 0) 滑到 (15, −1)——从贸易平衡陷入逆差。这正是乘数变小的同一枚硬币的另一面：漏出去的需求，账面上就体现为进口增加。</p>
+
+      <h3>2.7 实验二：外国产出 Y*↑——"搭便车"优于自己动手</h3>
+      <p>同样的起点（Y₀ = 10，贸易平衡），这次换成中国重开、外国产出上升：出口从 2 增至 4，ZZ 同样上移至 ZZ₁ = 6 + 0.6Y，产出同样从 10 增至 15——上图和财政扩张<strong>完全一样</strong>。但下图截然不同：NX 曲线整体上移 2 个单位（NX₁ = 4 − 0.2Y），虽然产出增加仍拉动了一部分进口，最终均衡点落在 (15, +1)——<strong>贸易顺差</strong>而非逆差。</p>
+
+      <div class="figure-pair">
+        <div id="fig-exp-cross"></div>
+        <div id="fig-exp-nx"></div>
+      </div>
+      <p><strong>图 6 解读（左）：</strong>两个实验在上图无法区分——G↑2 与 X↑2 都把 ZZ 从 ZZ₀ 推到 ZZ₁，产出都从 Y₀ = 10 增至 Y₁ = 15。<strong>图 7 解读（右）：</strong>区别全在净出口上。财政扩张时 NX 曲线不动，经济沿蓝色曲线从起点 (10, 0) 下滑到红点 (15, −1)，陷入逆差；外国繁荣时绿色曲线整体上移 +2（绿色箭头），经济到达绿点 (15, +1)，转为顺差。同样的产出扩张，一个以贸易逆差 + 本国财政赤字为代价，一个零财政成本还附送贸易改善——这就是 2.1 节"搭便车"（Free Riding）的几何证明：<strong>每个国家都希望别国来做财政扩张</strong>。这也是 1990 年代末到 2000 年代"<span class="term">全球失衡</span><span class="term-en">（Global Imbalances）</span>"争论的背景：美国大逆差、中国大顺差，美国指责中国靠压低汇率搞出口拉动的<span class="term">重商主义</span><span class="term-en">（Mercantilism）</span>政策（教授本人对汇率低估的原因持保留意见，但出口驱动增长的结果是事实）。</p>
+
+      <h3>2.8 汇率作为政策工具：贬值、马歇尔-勒纳条件与经典政策组合</h3>
+      <p>开放经济多出一个封闭经济没有的政策工具：汇率。净出口是 ZZ 中唯一依赖 ε 的部分。ε 下降（贬值）时，本国商品相对变便宜，本国居民少买进口货、外国居民多买本国货——全世界的支出都"转"向本国商品，这个机制称为<span class="term">支出转换</span><span class="term-en">（Expenditure Switching）</span>。价格完全粘性的短期里，名义贬值就是实际贬值。</p>
+      <p>但严格地说，贬值对净出口<strong>值</strong>的影响有一个模糊处：NX = X − IM/ε 中，贬值使进口<strong>数量</strong>下降，但每一单位进口换算成本币却<strong>更贵</strong>——数量效应与价格（值）效应方向相反。<span class="term">马歇尔-勒纳条件</span><span class="term-en">（Marshall-Lerner Condition）</span>断言数量效应强于价格效应，即贬值能改善净出口。除极短期外，这是一个非常现实的假设，本课程全程采用（升值则对称地恶化净出口）。</p>
+      <p>由此得到一个经典政策组合。假设一国贸易逆差严重但对当前产出水平满意：单独贬值虽然改善贸易余额，却会通过支出转换<strong>扩张产出</strong>——不是它想要的。对策是<strong>贬值 + 财政紧缩（减少 G）</strong>：贬值负责改善净出口（把 ZZ 往上推），紧缩负责对冲产出效应（把 ZZ 往下拉回），最终产出不变、贸易余额改善。这个组合对逆差国诱惑极大；反过来，长期保持货币低估 + 国内高储蓄的出口导向经济体（当年的中国），就难免背上"重商主义"的指控。</p>
+
+      <h3>2.9 收尾：产出扩张的三条路径对比</h3>
+      <table>
+        <thead>
+          <tr><th>路径</th><th>产出 Y</th><th>贸易余额 NX</th><th>财政赤字</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>本国财政扩张（G↑）</strong></td>
+            <td>增加（乘数小于封闭经济）</td>
+            <td>恶化（从平衡陷入逆差）</td>
+            <td>扩大</td>
+          </tr>
+          <tr>
+            <td><strong>外国繁荣拉动（Y*↑）</strong></td>
+            <td>增加（同等幅度）</td>
+            <td>改善（转为顺差）</td>
+            <td>不扩大（税收随产出回升反而改善）</td>
+          </tr>
+          <tr>
+            <td><strong>贬值 + 财政紧缩（ε↓ 配 G↓）</strong></td>
+            <td>不变（两效应精确对冲）</td>
+            <td>改善</td>
+            <td>缩小</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>模型的优缺点：</strong>优点是一个恒等式 Z = C+I+G−IM/ε+X 就厘清了"两种需求"这一最容易混淆的概念，把贸易余额内化为产出的函数（NX = Z − DD），统一解释了开放经济乘数变小、政策通过 Y* 跨国溢出（中国重开拉动智利）、以及汇率作为政策工具的三类新现象；缺点是价格完全粘性、利率与资本流动被暂时关掉（需要 L20-L21 的 UIP 与蒙代尔-弗莱明模型补上）、Y* 外生（没有两国联动的"回声效应"），也没有刻画贬值生效的时滞（J 曲线）。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（美国为何常年逆差？别国扩张为何能拉动我？汇率能当政策工具吗？）→ 简化模型（区分 Z 与 C+I+G；X = f(Y*, ε)、IM = f(Y, ε)；价格粘性、需求决定产出）→ 推导（DD→AA→ZZ 两步改造 → ZZ 更平、乘数更小；Y = ZZ 定产出，NX(Y) 定贸易余额）→ 实际应用（财政扩张的贸易代价、中国重开的搭便车效应、贬值+紧缩的经典组合、全球失衡与重商主义之争）→ 局限性（金融市场与利率被关闭，Y* 外生——留待蒙代尔-弗莱明一讲）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/10-open-economy-goods.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：美元贸易加权名义汇率指数（示意）—— E↑ = 升值；1985 广场协议峰值、2022 加息急升 =====
+    Charts.xy(document.getElementById('fig-dollar-index'), {
+      width: 470, height: 430,
+      xLabel: '年份',
+      yLabel: '贸易加权名义汇率指数 E',
+      xMin: 1973, xMax: 2023, yMin: 60, yMax: 155,
+      xTicks: [1973, 1985, 1995, 2005, 2015, 2023],
+      yTicks: [60, 80, 100, 120, 140],
+      legendPosition: 'top',
+      caption: '图 1：美元指数走势 —— E 上升 = 升值；1985 峰值催生广场协议，2022 加息急升（示意数据）',
+      series: [
+        { points: [
+          [1973, 100], [1977, 95], [1980, 90], [1985, 143], [1988, 105], [1990, 102],
+          [1995, 85], [2000, 110], [2002, 120], [2008, 80], [2011, 78], [2014, 90],
+          [2016, 115], [2020, 118], [2022, 126], [2023, 118],
+        ], type: 'spline', color: '#2563eb', label: '美元名义有效汇率（贸易加权）' },
+      ],
+      markers: [
+        { x: 1985, y: 143, label: '1985 峰值 ≈ 143（广场协议前）', color: '#dc2626', legend: '关键点位', labelDx: -20, labelDy: -14 },
+        { x: 2011, y: 78, label: '2011 低点 ≈ 78', color: '#6b7280', labelDx: -60, labelDy: 24 },
+        { x: 2022, y: 126, label: '2022 急升 ≈ 126', color: '#dc2626', labelDx: -110, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图2：美国月度贸易差额（十亿美元，示意）—— 常年逆差，疫情期剧震后回到 ≈ −700 亿/月 =====
+    Charts.xy(document.getElementById('fig-trade-balance'), {
+      width: 470, height: 430,
+      xLabel: '年份',
+      yLabel: '贸易差额 X − IM（十亿美元/月）',
+      xMin: 2018, xMax: 2024.3, yMin: -120, yMax: 10,
+      xTicks: [2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      yTicks: [-100, -75, -50, -25, 0],
+      legendPosition: 'top',
+      caption: '图 2：美国月度贸易差额 —— 结构性逆差 ≈ 700 亿美元/月，疫情期间大幅波动（示意数据）',
+      series: [
+        { points: [[2018, 0], [2024.3, 0]], type: 'linear', color: '#9ca3af', dash: true, label: '贸易平衡线（NX = 0）' },
+        { points: [
+          [2018, -50], [2019, -45], [2019.8, -42], [2020.3, -62], [2020.6, -70],
+          [2021, -75], [2021.8, -80], [2022.2, -107], [2022.8, -72], [2023.3, -62], [2024, -75],
+        ], type: 'spline', color: '#2563eb', label: '美国贸易差额（X − IM）' },
+      ],
+      markers: [
+        { x: 2022.2, y: -107, label: '2022 年初极值 ≈ −1070 亿/月', color: '#dc2626', legend: '关键点位', labelDx: -60, labelDy: -14 },
+        { x: 2024, y: -75, label: '当前 ≈ −700 亿/月', color: '#2563eb', labelDx: -150, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图3：DD → AA → ZZ 两步改造 —— 减进口（下移+旋转变平）、加出口（平行上移） =====
+    // 设定：DD = 4 + 0.8Y；IM = 0.2Y → AA = 4 + 0.6Y；X = 2 → ZZ = 6 + 0.6Y
+    // DD = ZZ 交点：4+0.8Y = 6+0.6Y → Y = 10（贸易平衡点，NX = 0）
+    Charts.xy(document.getElementById('fig-dd-aa-zz'), {
+      xLabel: '产出 Y',
+      yLabel: '需求（对商品 / 对国内商品）',
+      xMax: 20, yMax: 20,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：DD → AA → ZZ —— 减进口使曲线下移且旋转变平，加出口使其平行上移；ZZ 更平 = 乘数更小',
+      series: [
+        { points: [[0, 4], [20, 20]], type: 'linear', color: '#2563eb', label: 'DD：国内需求 C+I+G（斜率 0.8）' },
+        { points: [[0, 4], [20, 16]], type: 'linear', color: '#15803d', label: 'AA：DD − IM/ε（斜率降为 0.6）' },
+        { points: [[0, 6], [20, 18]], type: 'linear', color: '#7c3aed', label: 'ZZ：AA + X（平行上移 2）' },
+      ],
+      markers: [
+        { x: 10, y: 12, label: 'DD = ZZ 于 (10, 12)：NX = 0 贸易平衡', color: '#6b7280', legend: '贸易平衡点', guides: true, gxLabel: 'Y_TB = 10', labelDx: 14, labelDy: -12 },
+      ],
+      arrows: [
+        { from: [15, 16], to: [15, 13], color: '#dc2626', label: '① 减进口 IM/ε = 3（Y=15 处）', labelDx: 118, labelDy: -4 },
+        { from: [5, 7], to: [5, 9], color: '#15803d', label: '② 加出口 X = 2', labelDx: -78, labelDy: -4 },
+      ],
+    });
+
+    // ===== 图4：开放经济凯恩斯交叉 —— Y = ZZ 定均衡产出 Y = 15 =====
+    // ZZ = 6 + 0.6Y，与 45° 线交于 (15, 15)
+    Charts.xy(document.getElementById('fig-keynesian-cross'), {
+      xLabel: '产出 Y',
+      yLabel: '对国内商品的需求 Z',
+      xMax: 20, yMax: 20,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：开放经济的凯恩斯交叉 —— ZZ 与 45° 线交于均衡 (15, 15)；乘数 1/(1−0.6) = 2.5',
+      series: [
+        { points: [[0, 0], [20, 20]], type: 'linear', color: '#9ca3af', dash: true, label: '45° 线（Y = Z）' },
+        { points: [[0, 6], [20, 18]], type: 'linear', color: '#7c3aed', label: 'ZZ = 6 + 0.6Y' },
+      ],
+      markers: [
+        { x: 15, y: 15, label: '均衡 (15, 15)', color: '#dc2626', legend: '均衡点（Y = ZZ）', guides: true, gxLabel: 'Y = 15', gyLabel: '15', labelDx: -120, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图5：净出口曲线 NX(Y) —— 下斜；Y_TB = 10 贸易平衡；均衡 Y = 15 落在逆差区 =====
+    // NX(Y) = X − IM/ε = 2 − 0.2Y；NX(10) = 0；NX(15) = −1
+    Charts.xy(document.getElementById('fig-nx-curve'), {
+      xLabel: '产出 Y',
+      yLabel: '净出口 NX = X − IM/ε',
+      xMax: 20, yMin: -2.5, yMax: 2.5,
+      xTicks: [], yTicks: [-2, -1, 0, 1, 2],
+      legendPosition: 'top',
+      caption: '图 5：净出口曲线 NX(Y) = 2 − 0.2Y —— 与横轴交于 Y_TB = 10（贸易平衡）；均衡 Y = 15 处于逆差区（NX = −1）',
+      areas: [
+        { points: [[0, 0], [0, 2], [10, 0]], color: '#15803d', opacity: 0.12, label: '顺差区' },
+        { points: [[10, 0], [20, 0], [20, -2]], color: '#dc2626', opacity: 0.12, label: '逆差区' },
+      ],
+      series: [
+        { points: [[0, 0], [20, 0]], type: 'linear', color: '#9ca3af', dash: true, label: '贸易平衡线（NX = 0）' },
+        { points: [[0, 2], [20, -2]], type: 'linear', color: '#2563eb', label: 'NX(Y) = 2 − 0.2Y（下斜）' },
+      ],
+      markers: [
+        { x: 10, y: 0, label: 'Y_TB = 10：贸易平衡', color: '#6b7280', legend: '贸易平衡点', guides: true, gxLabel: 'Y_TB = 10', labelDx: -130, labelDy: -14 },
+        { x: 15, y: -1, label: '均衡点 (15, −1)：贸易逆差', color: '#dc2626', legend: '均衡净出口', guides: true, gxLabel: 'Y = 15', gyLabel: '−1', labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图6：两个实验的凯恩斯交叉（相同）—— ZZ₀ → ZZ₁，Y：10 → 15 =====
+    // 起点贸易平衡：ZZ₀ = 4 + 0.6Y → Y₀ = 10；G↑2 或 X↑2 → ZZ₁ = 6 + 0.6Y → Y₁ = 15
+    Charts.xy(document.getElementById('fig-exp-cross'), {
+      width: 470, height: 430,
+      xLabel: '产出 Y',
+      yLabel: '对国内商品的需求 Z',
+      xMax: 20, yMax: 20,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 6：财政扩张（G↑2）与外国繁荣（X↑2）在上图无法区分 —— ZZ 同样上移，Y 同样 10 → 15',
+      series: [
+        { points: [[0, 0], [20, 20]], type: 'linear', color: '#9ca3af', dash: true, label: '45° 线（Y = Z）' },
+        { points: [[0, 4], [20, 16]], type: 'linear', color: '#2563eb', label: 'ZZ₀ = 4 + 0.6Y（起点贸易平衡）' },
+        { points: [[0, 6], [20, 18]], type: 'linear', color: '#7c3aed', dash: true, label: 'ZZ₁ = 6 + 0.6Y（两实验相同）' },
+      ],
+      markers: [
+        { x: 10, y: 10, label: '(10, 10)', color: '#2563eb', legend: '初始均衡', guides: true, gxLabel: 'Y₀ = 10', labelDx: -110, labelDy: 22 },
+        { x: 15, y: 15, label: '(15, 15)', color: '#7c3aed', legend: '新均衡', guides: true, gxLabel: 'Y₁ = 15', labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图7：两个实验的净出口（不同）—— G↑ 沿曲线下滑陷入逆差；Y*↑ 曲线上移转为顺差 =====
+    // NX₀ = 2 − 0.2Y：G↑ 后 (15, −1)；X：2→4 → NX₁ = 4 − 0.2Y：Y*↑ 后 (15, +1)
+    Charts.xy(document.getElementById('fig-exp-nx'), {
+      width: 470, height: 430,
+      xLabel: '产出 Y',
+      yLabel: '净出口 NX',
+      xMax: 20, yMin: -2.5, yMax: 4.5,
+      xTicks: [], yTicks: [-2, 0, 2, 4],
+      legendPosition: 'top',
+      caption: '图 7：区别全在净出口 —— 财政扩张沿 NX₀ 滑向逆差 (15, −1)；外国繁荣使曲线上移 +2，到达顺差 (15, +1)',
+      series: [
+        { points: [[0, 0], [20, 0]], type: 'linear', color: '#9ca3af', dash: true, label: '贸易平衡线（NX = 0）' },
+        { points: [[0, 2], [20, -2]], type: 'linear', color: '#2563eb', label: 'NX₀(Y) = 2 − 0.2Y（G↑ 沿此线移动）' },
+        { points: [[0, 4], [20, 0]], type: 'linear', color: '#15803d', label: 'NX₁(Y) = 4 − 0.2Y（Y*↑ 曲线上移 +2）' },
+      ],
+      markers: [
+        { x: 10, y: 0, label: '起点 (10, 0)：贸易平衡', color: '#6b7280', legend: '起点（贸易平衡）', labelDx: -120, labelDy: 24 },
+        { x: 15, y: -1, label: 'G↑ 后 (15, −1)：逆差', color: '#dc2626', legend: '财政扩张结果', labelDx: 12, labelDy: 22 },
+        { x: 15, y: 1, label: 'Y*↑ 后 (15, +1)：顺差', color: '#15803d', legend: '外国繁荣结果', labelDx: 12, labelDy: -14 },
+      ],
+      arrows: [
+        { from: [10.3, 0.6], to: [14.9, -0.32], color: '#dc2626', label: 'G↑：沿 NX₀ 下滑', labelDx: 30, labelDy: -16 },
+        { from: [10, 0.3], to: [10, 1.9], color: '#15803d', label: 'Y*↑：NX 曲线上移 +2', labelDx: 128, labelDy: -2 },
+      ],
+    });
+  </script>
+</body>
+</html>
