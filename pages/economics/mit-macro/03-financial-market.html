@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 金融市场与中央银行 - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>03 金融市场与中央银行</h1>
+      <p>本篇覆盖 MIT 14.02《宏观经济学原理》第 4 讲（L04）：从"美联储加息 50 个<span class="term">基点</span><span class="term-en">（Basis Point, bp）</span>"这句人人都听过的新闻出发，追问它背后到底做了什么操作。我们先把金融市场简化到只剩两种资产——<span class="term">货币</span><span class="term-en">（Money, M）</span>和<span class="term">债券</span><span class="term-en">（Bond, B）</span>，推导<span class="term">货币需求</span><span class="term-en">（Money Demand, M<sup>d</sup>）</span>曲线；再看利率决定的两种模式（钉住货币量 vs 钉住目标利率）；然后拆开<span class="term">公开市场操作</span><span class="term-en">（Open Market Operations, OMO）</span>和央行资产负债表；最后引入银行，看清美联储真正直接控制的那个利率——<span class="term">联邦基金利率</span><span class="term-en">（Federal Funds Rate）</span>，并预告它撞上的那堵墙：<span class="term">零利率下限</span><span class="term-en">（Zero Lower Bound, ZLB）</span>。</p>
+
+      <h2>一、引入与央行制度速览</h2>
+
+      <h3>1.1 引入："美联储加息 50 个基点"——但它具体做了什么？</h3>
+      <p><strong>反直觉开场：</strong>新闻里"美联储加息 50 个基点（即 0.5 个百分点）"只有一句话。利率是一个市场价格——央行既不能下令"从今天起利率就是 5%"，也没有哪家商店挂牌售卖"利率"。那么，一群人在华盛顿开个会、投个票，金融市场上真实的利率怎么就乖乖上涨了 0.5%？他们<strong>具体做了什么操作</strong>？这正是本讲要回答的问题，而答案藏在金融市场里——利率是在金融市场中决定的。</p>
+
+      <h3>1.2 美联储制度速览：理事会 + 12 家地区联储 + FOMC</h3>
+      <p>美国的中央银行叫<span class="term">联邦储备系统</span><span class="term-en">（Federal Reserve System, Fed）</span>——注意它确实是一个"系统"，由三部分拼成：</p>
+      <ul>
+        <li><span class="term">理事会</span><span class="term-en">（Board of Governors）</span>：位于华盛顿特区，共 <strong>7 名理事</strong>，由总统提名、参议院确认。美联储主席（现任为杰罗姆·鲍威尔 Jerome Powell）就是理事之一；</li>
+        <li><strong>12 家地区联邦储备银行</strong>：分布全国（波士顿就有一家），是美联储在各地区的执行臂膀；</li>
+        <li><span class="term">联邦公开市场委员会</span><span class="term-en">（Federal Open Market Committee, FOMC）</span>：利率政策由它投票决定。投票成员 = 7 名理事 + 12 位地区联储行长中的 4 位（轮流投票）。<strong>例外：纽约联储行长固定拥有投票权</strong>、不参与轮换——因为纽约是美国金融心脏，且纽约联储负责与金融市场的日常沟通，这对美联储是一项巨大的任务。</li>
+      </ul>
+      <p>世界上大多数央行至少是"理事会"这一层结构的变体；欧洲央行（ECB）是特例——它横跨多国，每个成员国派一名委员。</p>
+      <p><strong>趣味注脚：MIT 盛产央行行长。</strong>日本银行行长植田和男（Kazuo Ueda）就毕业于 MIT 博士项目。校友名单还包括：金融危机期间的美联储主席本·伯南克（Ben Bernanke）、欧债危机期间的欧洲央行行长马里奥·德拉吉（Mario Draghi）、前以色列央行行长斯坦利·费希尔（Stan Fischer）、澳大利亚储备银行行长菲利普·洛威（Philip Lowe），智利央行也出过两三任行长。如果央行行长是你的职业规划，这是个不错的项目。</p>
+
+      <h3>1.3 为什么先讲货币政策：最快、但最间接的政策工具</h3>
+      <p>短期内影响产出有两大政策杠杆：<span class="term">财政政策</span><span class="term-en">（Fiscal Policy）</span>（上一讲的 G 和 T）与<span class="term">货币政策</span><span class="term-en">（Monetary Policy）</span>。货币政策的优势是<strong>快</strong>——只需一群人开会投票即可改变利率；财政政策超出自动稳定器的任何动作都要国会批准，流程漫长。但货币政策也<strong>最间接</strong>：央行的任务是管商品市场（避免衰退、稳定物价），却<strong>没有直接购买商品的工具</strong>——央行不能去买汉堡包，那是财政部干的事。它只能到金融市场买卖债券，经由金融渠道传导到实体经济。所以我们必须先弄懂金融市场。</p>
+
+      <h2>二、只有两种资产的世界：货币、债券与货币需求</h2>
+
+      <h3>2.1 两种资产的极端简化</h3>
+      <p>现实中有数百万种金融工具，我们做一个巨大的简化：假设人们的财富只能以两种形式持有。这个简化合理，因为央行的常规干预恰好只作用于这两类市场：</p>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>货币（Money, M）</th><th>债券（Bond, B）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>能否用于交易</td><td><strong>能</strong>——现金可以买到任何东西</td><td><strong>不能</strong>——不能用债券买午餐，须先卖出换现金</td></tr>
+          <tr><td>是否付息</td><td><strong>零息</strong>——持现金不为投资，只为交易</td><td><strong>付正利率 i</strong></td></tr>
+          <tr><td>典型例子</td><td>现金（通货）；后文加入支票存款</td><td>国库券等付息债券</td></tr>
+        </tbody>
+      </table>
+      <p>于是出现了一个经济学家最感兴趣的权衡：<strong>交易便利性 vs 利息收入</strong>。交易需求大就多持货币；利率高（比如 5%）就多持债券。两年前利率接近零时没人纠结这个，如今利率高了，全把财富放现金等于白白放弃利息。这是个投资组合决策——我们只从货币一侧分析，因为定了货币份额，债券份额也就隐含确定了。</p>
+
+      <h3>2.2 利率 = 持有货币的机会成本</h3>
+      <p>持有货币不付息，所以<strong>利率 i 就是持有货币的<span class="term">机会成本</span><span class="term-en">（Opportunity Cost）</span></strong>——你每持有一元钱，就放弃了把它买成债券能赚到的 i。利率越高，这个代价越大，你越不愿意持币。</p>
+
+      <h3>2.3 货币需求：对 i 递减，对名义收入 $Y 递增</h3>
+      <p>把上面的权衡画出来：<span class="term">货币需求</span><span class="term-en">（Money Demand, M<sup>d</sup>）</span>在（货币 M，利率 i）空间中<strong>向下倾斜</strong>——i 越高，持币的机会成本越大，货币需求越少。可写成：</p>
+      <p style="text-align:center;"><strong>M<sup>d</sup> = $Y · L(i)，其中 L'(i) &lt; 0</strong></p>
+      <p>数值例：设名义收入 $Y = 1000（十亿美元），L(i) = 0.5 − 0.05i（i 以 % 计），则 M<sup>d</sup> = 500 − 50i：i = 3% 时需求 350，i = 5% 时降到 250。这里要区分两种变化（图 1 与图 2）：</p>
+      <ul>
+        <li><strong>沿曲线移动</strong>：利率自身变化（$Y 不变），i 从 3% 升到 5%，需求量沿同一条曲线从 350 降到 250；</li>
+        <li><strong>整条曲线右移</strong>：<span class="term">名义收入</span><span class="term-en">（Nominal Income, $Y）</span>上升，比如 $Y 从 1000 涨到 1400，则在<strong>任何给定利率</strong>下货币需求都增加（i = 5% 时从 250 升到 350）。</li>
+      </ul>
+      <p><strong>为什么用名义收入 $Y 而不是实际收入 Y？</strong>因为交易是按名义金额计价的。实际产出增加 → 交易量增加 → 需要更多货币；即使实际产出不变、价格水平 P 翻倍，完成同样的交易也需要两倍货币。两者都包含在 $Y = P × Y 里，所以 $Y 才是决定货币需求的正确变量。</p>
+      <div class="figure-pair">
+        <div id="fig-md-move"></div>
+        <div id="fig-md-shift"></div>
+      </div>
+      <p><strong>图 1、图 2 解读：</strong>两图画的是同一条货币需求函数 M<sup>d</sup> = $Y·(0.5 − 0.05i)。左图中利率从 3% 升到 5%（$Y 固定在 1000），只是沿曲线从 A 点移到 B 点，需求量 350 → 250；右图中利率钉在 5% 不动，名义收入从 1000 涨到 1400，整条需求曲线右移，同一利率下的需求量从 C 点的 250 跳到 C′ 点的 350。分清"沿曲线移动"和"曲线移动"是后续 IS-LM 分析的基本功。</p>
+
+      <h2>三、利率如何决定：旧模式 vs 现代模式</h2>
+
+      <h3>3.1 旧模式：钉住货币量 M，让市场定利率</h3>
+      <p>先用最简单的模型：没有银行，只有央行和公众，货币 = 通货，只有央行能发行。假设央行决定供给固定数量 M 的货币，货币供给就是一条在 M 处的<strong>垂直线</strong>，均衡利率由它与货币需求曲线的交点决定——在该利率下，需求恰好等于供给。过去的货币政策就是这样运作的：央行设定<span class="term">货币总量</span><span class="term-en">（Monetary Aggregates）</span>目标，利率交给市场。</p>
+      <p>问题是这像一场<strong>噩梦</strong>：现实中的货币需求曲线会因节假日、超级碗等各种原因不断左右移动，而供给被钉死，均衡利率只能剧烈上下波动（图 3：需求正常时 i = 4%，节假日需求外移后飙到约 5.7%）。</p>
+
+      <h3>3.2 现代模式：钉住目标利率 ī，供给任意 M</h3>
+      <p>现代央行的做法相反：<strong>设定一个目标利率，然后供给该利率下市场所需的任意数量的货币</strong>。货币供给变成一条在目标利率 ī 处的<strong>水平线</strong>（图 4）：需求右移时，央行把供给从 300 加到 420，利率纹丝不动。这就消除了货币需求波动引起的利率动荡。</p>
+      <p><strong>伏笔：</strong>这条水平的货币供给线就是下一讲 IS-LM 模型中<strong>水平的 LM 曲线</strong>的来源——现代央行直接钉住利率，LM 自然是水平的。</p>
+      <div class="figure-pair">
+        <div id="fig-old-regime"></div>
+        <div id="fig-new-regime"></div>
+      </div>
+      <p><strong>图 3、图 4 解读：</strong>两图使用完全相同的需求曲线（正常 D：M<sup>d</sup> = 500 − 50i；节假日 D′：M<sup>d</sup> = 700 − 70i）。左图（旧模式）供给被钉在 M̄ = 300，需求一外移，利率就从 4% 跳到约 5.7%；右图（现代模式）央行钉住 ī = 4%，需求外移时供给被动从 300 增加到 420，利率始终是 4%。对比两张图就明白为什么央行放弃了货币总量目标——它们不是控制不了 M，而是受不了利率的剧烈波动。</p>
+
+      <h3>3.3 扩张与紧缩的方向</h3>
+      <p>在这个框架下，<strong>扩张性货币政策</strong> = 增加货币供给（或下调目标利率）：原有利率上出现超额货币供给，利率必须下降，人们才愿意多持币，均衡利率随之走低。<strong>紧缩性货币政策</strong>正好相反——过去七次会议美联储连续加息，背后的操作正是让货币供给相对需求收缩，把均衡利率顶上去。顺带一提：随着经济增长、名义收入上升，货币需求持续右移，央行若想维持目标利率（比如 5%）不变，必须<strong>被动增加</strong>货币供给来满足增长的交易需求。</p>
+
+      <h2>四、公开市场操作与债券价格</h2>
+
+      <h3>4.1 央行怎么改变 M：公开市场操作（OMO）</h3>
+      <p>央行不是用直升机撒钱（"直升机撒钱"只在极端衰退时被提倡过）。常规工具是<span class="term">公开市场操作</span><span class="term-en">（Open Market Operations, OMO）</span>：在公开市场上<strong>用新创造的货币向公众购买债券</strong>。以扩张性 OMO（买入 100 万美元债券）为例，看央行<span class="term">资产负债表</span><span class="term-en">（Balance Sheet）</span>的 T 型账户：</p>
+      <table>
+        <thead>
+          <tr><th colspan="2">中央银行资产负债表（扩张性 OMO：买入 100 万美元债券）</th></tr>
+          <tr><th>资产（Assets）</th><th>负债（Liabilities）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>持有的债券 <strong>+100 万</strong></td><td>流通中的货币 <strong>+100 万</strong></td></tr>
+          <tr><td colspan="2" style="text-align:center;">资产与负债<strong>同时扩张</strong>——扩张性货币政策 = 央行资产负债表膨胀</td></tr>
+        </tbody>
+      </table>
+      <p>收缩性 OMO 反向操作（卖出债券、收回货币），资产负债表收缩。近年应对全球金融危机和新冠疫情，各大央行的资产负债表已比过去膨胀了一到两个数量级。</p>
+
+      <h3>4.2 债券价格与利率：一枚硬币的两面</h3>
+      <p>考虑一张最简单的债券：一年后支付 100 美元，期间无票息。若现在以价格 P<sub>B</sub> 买入，持有到期的回报率就是利率：</p>
+      <p style="text-align:center;"><strong>i = (100 − P<sub>B</sub>) / P<sub>B</sub></strong></p>
+      <p>例如 P<sub>B</sub> = 90 时 i ≈ 11.1%；P<sub>B</sub> = 95 时 i ≈ 5.3%；P<sub>B</sub> = 100 时 i = 0。<strong>债券价格与利率严格反向</strong>：为未来同样的 100 美元付得越多，回报率越低。由此得到 OMO 的另一种等价表述：央行扩张时大举买债 → 债券需求推高 P<sub>B</sub> → 利率下降。新闻说"央行买债"和"央行降息"，是同一件事的两面。</p>
+      <div id="fig-bond-price"></div>
+      <p><strong>图 5 解读：</strong>曲线 i = (100 − P<sub>B</sub>)/P<sub>B</sub> 单调下降。橙色箭头演示一次扩张性 OMO：央行买入债券把价格从 90 推到 95，利率相应从约 11.1% 压到约 5.3%。这给出了"加息到底做了什么"的第一层答案——紧缩性 OMO 卖出债券、压低债券价格，利率就上去了。</p>
+
+      <h2>五、引入银行：两层结构与联邦基金市场</h2>
+
+      <h3>5.1 银行带来两个变化：存款货币与准备金</h3>
+      <p>现在引入金融中介（银行），模型更贴近现实，出现两个变化：</p>
+      <ol>
+        <li><strong>银行也"创造"货币</strong>：货币不只是央行发行的<span class="term">通货</span><span class="term-en">（Currency, CU）</span>，还包括银行的<span class="term">支票存款</span><span class="term-en">（Checkable Deposits, D）</span>——你可以用支票和借记卡直接交易，所以存款就是货币；</li>
+        <li><strong>银行要在央行存钱</strong>：银行吸收存款后，一部分放贷、一部分买债券，还有一小部分（比如 θ = 10%）作为<span class="term">准备金</span><span class="term-en">（Reserves, R）</span>存放在央行。准备金是央行的负债。</li>
+      </ol>
+      <p>于是央行的负债变成两块：公众持有的通货 CU + 银行持有的准备金 R，合计称为<span class="term">央行货币</span><span class="term-en">（Central Bank Money）</span>或<span class="term">高能货币</span><span class="term-en">（High-Powered Money, H）</span>：</p>
+      <p style="text-align:center;"><strong>H ≡ CU + R</strong></p>
+      <p>H 是央行直接控制的货币基础；整个经济的总货币量（含银行存款）远大于 H。两家机构的 T 型账户如下：</p>
+      <table>
+        <thead>
+          <tr><th colspan="2">中央银行</th><th colspan="2">银行体系</th></tr>
+          <tr><th>资产</th><th>负债</th><th>资产</th><th>负债</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>债券 B</td><td>通货 CU</td><td>准备金 R（= θ·D）</td><td rowspan="2">支票存款 D</td></tr>
+          <tr><td></td><td>准备金 R</td><td>贷款与债券</td></tr>
+          <tr><td colspan="2" style="text-align:center;">负债合计 = <strong>H（高能货币）</strong></td><td colspan="2" style="text-align:center;">存款 D 是货币的主要构成</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5.2 准备金需求：H<sup>d</sup> = θ · M<sup>d</sup></h3>
+      <p>为简化，假设公众的货币需求全部以银行存款形式存在（M<sup>d</sup> = D）。银行须按存款的 θ（如 10%）持有准备金，因此对央行货币（准备金）的需求是：</p>
+      <p style="text-align:center;"><strong>H<sup>d</sup> = θ · M<sup>d</sup></strong></p>
+      <p>均衡条件是央行货币需求等于央行货币供给：H<sup>d</sup> = H。机制与第三节的简单模型<strong>本质相同</strong>——只是央行控制的变量从 M 换成了高能货币 H，利率仍由"供给 = 需求"的交点（现代模式下：目标利率）决定。</p>
+
+      <h3>5.3 联邦基金市场与联邦基金利率</h3>
+      <p>银行之间互相借贷准备金、以满足准备金要求的市场，叫<span class="term">联邦基金市场</span><span class="term-en">（Federal Funds Market）</span>，其利率即<span class="term">联邦基金利率</span><span class="term-en">（Federal Funds Rate）</span>。<strong>这才是美联储真正直接控制的利率</strong>——新闻里"加息 50 个基点"，指的就是把联邦基金利率目标区间上调 0.5 个百分点。美联储通过在公开市场调整准备金（高能货币）的供给，把联邦基金利率维持在目标区间内。随后，这个利率经由银行体系传导到经济的其他利率：存款利率、贷款利率、债券利率。至此，开篇问题的完整答案浮出水面：<strong>加息 = FOMC 投票上调联邦基金利率目标 → 纽约联储在公开市场收缩准备金供给 → 联邦基金利率上升 → 传导至整个利率体系</strong>。</p>
+
+      <h2>六、零利率下限（ZLB）预告</h2>
+
+      <h3>6.1 联邦基金利率的 2018–2023：从 2.5% 到零再到 5%</h3>
+      <div id="fig-ffr"></div>
+      <p><strong>图 6 解读：</strong>疫情前联邦基金利率约 2.5%，且美联储当时已在降息；2020 年 3 月疫情来袭，利率被迅速打到接近零，并在零附近维持约两年；2022 年起为对抗 40 年未见的高通胀，美联储开启激进加息周期，一路加到约 5.3%。所有这些操作，都是在准备金市场上通过控制高能货币供给实现的。</p>
+
+      <h3>6.2 那堵撞上的墙：零利率下限</h3>
+      <p>2020–2021 年利率为什么停在零附近不再往下？因为利率不能（显著）为负：一旦债券利率为负，人人都会抛弃债券改持零息现金——持现金至少不亏。这个现象叫<span class="term">零利率下限</span><span class="term-en">（Zero Lower Bound, ZLB）</span>。利率打到零下限后，常规货币政策弹药耗尽，这正是日本长期困境和各国央行被迫发明"非常规政策"（如量化宽松 QE）的原因，后续讲次再展开。</p>
+
+      <h2>七、收尾对比与思想链路</h2>
+
+      <h3>7.1 利率决定两模式对比</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>旧模式（钉住 M）</th><th>现代模式（钉住 ī）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>央行的控制变量</td><td>货币总量 M（货币供给 = 垂直线）</td><td>目标利率 ī（货币供给 = 水平线）</td></tr>
+          <tr><td>利率由谁决定</td><td>市场出清（M 与 M<sup>d</sup> 交点）</td><td>央行直接设定</td></tr>
+          <tr><td>货币量由谁决定</td><td>央行设定</td><td>市场出清（需求多少供多少）</td></tr>
+          <tr><td>节假日需求波动的后果</td><td>利率剧烈波动（4% → 5.7%）</td><td>M 被动调整（300 → 420），利率不动</td></tr>
+          <tr><td>对 IS-LM 的意义</td><td>对应向上倾斜的 LM 曲线</td><td>对应<strong>水平 LM 曲线</strong>（本课采用）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>7.2 模型的优缺点</h3>
+      <p><strong>优点：</strong>只用"货币 + 债券"两种资产就讲清了央行如何控制利率——货币需求对利率递减给出权衡，OMO 给出操作工具，H = CU + R 的两层结构精确定位了美联储真正控制的变量（联邦基金利率），还顺带解释了债券价格与利率反向这一金融市场最基础的规律。<strong>缺点：</strong>忽略了风险差异（现实中债券有违约风险、股票波动更大）、多种期限（短期 vs 长期利率的利差）、以及预期的作用（今天的利率取决于对未来利率的预期）——这些都会在后续讲次逐步加回。</p>
+
+      <h3>7.3 本篇思想链路</h3>
+      <p><strong>核心问题</strong>（"加息 50 个基点"具体是什么操作）→ <strong>简化模型</strong>（只有货币与债券两种资产，货币零息可交易、债券付息不可交易）→ <strong>推导</strong>（利率 = 持币机会成本 → 货币需求 M<sup>d</sup> = $Y·L(i) → 利率由货币供求决定 → 央行放弃钉 M 改为钉 ī → OMO 买卖债券改变 H → 债券价格与利率反向 → 引入银行后美联储控制联邦基金利率）→ <strong>实际应用</strong>（解读 FOMC 加息新闻、2018–2023 联邦基金利率走势）→ <strong>局限性</strong>（忽略风险、期限与预期；撞上零利率下限后常规政策失效，需后续讲次的非常规工具）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/03-financial-market.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // 函数曲线采样：[x, f(x)] 路径点
+    function curve(f, xs) {
+      return xs.map(function (x) { return [x, +(f(x)).toFixed(2)]; });
+    }
+
+    // 货币需求函数：M^d = $Y · (0.5 − 0.05·i)，i 以 % 计
+    var md = function (Y) { return function (i) { return Y * (0.5 - 0.05 * i); }; };
+    var md1 = md(1000); // $Y = 1000（十亿美元）
+    var md2 = md(1400); // $Y′ = 1400
+
+    // ===== 图1（左）：沿货币需求曲线移动 —— i: 3%→5%，M^d: 350→250 =====
+    Charts.xy(document.getElementById('fig-md-move'), {
+      xLabel: '货币 M（十亿美元）',
+      yLabel: '利率 i（%）',
+      xMax: 600, yMax: 8, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：沿货币需求曲线移动 —— $Y 不变，i 从 3% 升到 5%，需求量 350 → 250',
+      series: [
+        { points: [[0, 10], [500, 0]], type: 'linear', color: '#2563eb', label: '货币需求 Mᵈ = 1000×(0.5−0.05i)（$Y = 1000）' },
+      ],
+      markers: [
+        { x: 350, y: 3, label: 'A：i = 3%，Mᵈ = 350', color: '#15803d', legend: '均衡点', guides: true, gxLabel: '350', gyLabel: '3', labelDx: 14, labelDy: 22 },
+        { x: 250, y: 5, label: 'B：i = 5%，Mᵈ = 250', color: '#dc2626', legend: '利率上升后', guides: true, gxLabel: '250', gyLabel: '5', labelDx: -160, labelDy: -16 },
+        { x: 250, y: 5, label: '', color: '#dc2626', lineTo: [350, 3] },
+      ],
+    });
+
+    // ===== 图2（右）：货币需求曲线右移 —— $Y: 1000→1400，i=5% 处 M^d: 250→350 =====
+    Charts.xy(document.getElementById('fig-md-shift'), {
+      xLabel: '货币 M（十亿美元）',
+      yLabel: '利率 i（%）',
+      xMax: 800, yMax: 8, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：货币需求曲线右移 —— $Y 从 1000 涨到 1400，同一利率下需求 250 → 350',
+      series: [
+        { points: [[0, 10], [500, 0]], type: 'linear', color: '#2563eb', label: 'Mᵈ（$Y = 1000）' },
+        { points: [[0, 10], [700, 0]], type: 'linear', color: '#d97706', dash: true, label: "Mᵈ′（$Y′ = 1400，曲线右移）" },
+      ],
+      markers: [
+        { x: 250, y: 5, label: 'C：i = 5%，Mᵈ = 250', color: '#2563eb', legend: '均衡点（i = 5%）', guides: true, gxLabel: '250', gyLabel: '5', labelDx: 12, labelDy: 24 },
+        { x: 350, y: 5, label: "C′：i = 5%，Mᵈ = 350", color: '#d97706', guides: true, gxLabel: '350', labelDx: 14, labelDy: -16 },
+        { x: 250, y: 5, label: '', color: '#7c3aed', lineTo: [350, 5] },
+      ],
+    });
+
+    // ===== 图3（左）：旧模式 —— 钉住 M̄=300，需求波动 → 利率 4%→5.7% 剧烈波动 =====
+    Charts.xy(document.getElementById('fig-old-regime'), {
+      xLabel: '货币 M（十亿美元）',
+      yLabel: '利率 i（%）',
+      xMax: 800, yMax: 8, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：旧模式（钉住 M̄ = 300）—— 节假日需求外移，利率从 4% 飙到约 5.7%',
+      series: [
+        { points: [[300, 0], [300, 8]], type: 'linear', color: '#7c3aed', label: '货币供给 M̄ = 300（央行钉死）' },
+        { points: [[0, 10], [500, 0]], type: 'linear', color: '#2563eb', label: '货币需求 D（正常）：500−50i' },
+        { points: [[0, 10], [700, 0]], type: 'linear', color: '#d97706', dash: true, label: "货币需求 D′（节假日）：700−70i" },
+      ],
+      markers: [
+        { x: 300, y: 4, label: 'i = 4%（正常时）', color: '#2563eb', legend: '均衡利率', guides: true, gyLabel: '4%', labelDx: 16, labelDy: 20 },
+        { x: 300, y: 5.71, label: 'i ≈ 5.7%（节假日需求外移）', color: '#d97706', guides: true, gyLabel: '5.7%', labelDx: 16, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图4（右）：现代模式 —— 钉住 ī=4%，供给任意 M（300→420），利率不动 =====
+    Charts.xy(document.getElementById('fig-new-regime'), {
+      xLabel: '货币 M（十亿美元）',
+      yLabel: '利率 i（%）',
+      xMax: 800, yMax: 8, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：现代模式（钉住 ī = 4%）—— 需求外移时供给 300→420，利率纹丝不动（水平 LM 伏笔）',
+      series: [
+        { points: [[0, 4], [800, 4]], type: 'linear', color: '#7c3aed', label: '货币供给（水平于目标利率 ī = 4%）' },
+        { points: [[0, 10], [500, 0]], type: 'linear', color: '#2563eb', label: '货币需求 D（正常）' },
+        { points: [[0, 10], [700, 0]], type: 'linear', color: '#d97706', dash: true, label: "货币需求 D′（节假日）" },
+      ],
+      markers: [
+        { x: 300, y: 4, label: 'M = 300（正常时供给）', color: '#2563eb', legend: '均衡点', guides: true, gxLabel: '300', gyLabel: '4%', labelDx: 14, labelDy: -16 },
+        { x: 420, y: 4, label: "M′ = 420（央行被动多供）", color: '#d97706', guides: true, gxLabel: '420', labelDx: -170, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图5：债券价格与利率反向 —— i = (100 − P_B)/P_B =====
+    var bondRate = function (p) { return ((100 - p) / p) * 100; };
+    var bondPs = [60, 65, 70, 75, 80, 84, 88, 90, 92, 95, 97, 100];
+    Charts.xy(document.getElementById('fig-bond-price'), {
+      xLabel: '债券价格 P_B（美元，一年后兑付 100 美元）',
+      yLabel: '利率 i（%）',
+      xMax: 110, yMax: 70, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5：债券价格与利率反向 —— 扩张性 OMO 买债把 P_B 从 90 推到 95，利率从约 11.1% 压到约 5.3%',
+      series: [
+        { points: curve(bondRate, bondPs), type: 'spline', color: '#2563eb', label: 'i = (100 − P_B) / P_B' },
+      ],
+      markers: [
+        { x: 90, y: 11.11, label: 'P_B = 90 → i ≈ 11.1%', color: '#15803d', legend: 'OMO 前', guides: true, gxLabel: '90', gyLabel: '11.1%', labelDx: -158, labelDy: -14 },
+        { x: 95, y: 5.26, label: 'P_B = 95 → i ≈ 5.3%', color: '#dc2626', legend: 'OMO 后（央行买债）', guides: true, gxLabel: '95', gyLabel: '5.3%', labelDx: 14, labelDy: 20 },
+        { x: 100, y: 0, label: 'P_B = 100 → i = 0', color: '#6b7280', guides: true, gxLabel: '100', labelDx: -92, labelDy: -16 },
+        { x: 90, y: 11.11, label: '', color: '#d97706', lineTo: [95, 5.26] },
+      ],
+    });
+
+    // ===== 图6：联邦基金利率 2018–2023 —— 疫前 2.5% → ZLB → 5.3% =====
+    var ffrPoints = [
+      [2018.0, 1.42], [2018.5, 1.91], [2018.75, 2.19], [2019.0, 2.40],
+      [2019.5, 2.40], [2019.75, 1.82], [2020.0, 1.55], [2020.2, 0.08],
+      [2020.6, 0.08], [2021.0, 0.08], [2021.4, 0.08], [2021.9, 0.08],
+      [2022.2, 0.08], [2022.4, 0.83], [2022.6, 1.68], [2022.8, 3.08],
+      [2023.0, 4.33], [2023.4, 5.33], [2023.6, 5.33], [2023.9, 5.33],
+    ];
+    Charts.xy(document.getElementById('fig-ffr'), {
+      xLabel: '年份',
+      yLabel: '联邦基金利率（%）',
+      xMax: 2024, yMax: 6,
+      xTicks: [2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      yTicks: [0, 1, 2, 3, 4, 5, 6],
+      legendPosition: 'top',
+      caption: '图 6：联邦基金利率 2018–2023 —— 疫前约 2.5% → 疫情打到零下限（ZLB）→ 激进加息至约 5.3%',
+      areas: [
+        { points: [[2020.2, 0], [2022.2, 0], [2022.2, 0.5], [2020.2, 0.5]], color: '#dc2626', opacity: 0.12, label: 'ZLB' },
+      ],
+      series: [
+        { points: ffrPoints, type: 'spline', color: '#2563eb', label: '联邦基金利率（有效值，半年度采样）' },
+      ],
+      markers: [
+        { x: 2019.0, y: 2.40, label: '疫前 ≈ 2.5%', color: '#15803d', legend: '关键时点', labelDx: -80, labelDy: -16 },
+        { x: 2021.0, y: 0.08, label: '疫情 → 打到零（ZLB），维持约两年', color: '#dc2626', labelDx: 12, labelDy: -18 },
+        { x: 2023.4, y: 5.33, label: '2023 ≈ 5.3%（激进加息）', color: '#7c3aed', labelDx: -180, labelDy: -14 },
+      ],
+    });
+  </script>
+</body>
+</html>

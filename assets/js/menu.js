@@ -44,6 +44,15 @@ const MENU = [
           { title: '16 市场失灵专题：外部性、信息不对称与医疗', link: 'pages/economics/mit-micro/16-market-failures.html' },
         ],
       },
+      {
+        title: 'MIT宏观经济学原理',
+        children: [
+          { title: '01 宏观经济学导论与基本概念', link: 'pages/economics/mit-macro/01-introduction.html' },
+          { title: '02 商品市场与乘数：凯恩斯交叉', link: 'pages/economics/mit-macro/02-goods-market.html' },
+          { title: '03 金融市场与中央银行', link: 'pages/economics/mit-macro/03-financial-market.html' },
+          { title: '04 IS-LM 模型：构建与政策分析', link: 'pages/economics/mit-macro/04-is-lm.html' },
+        ],
+      },
     ],
   },
 ];

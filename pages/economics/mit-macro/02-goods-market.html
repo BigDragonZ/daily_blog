@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 商品市场与乘数 - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>02 商品市场与乘数：凯恩斯交叉</h1>
+      <p>本篇覆盖 MIT 14.02《宏观经济学原理》第 3 讲（L03 The Goods Market）：从"全国人民同时多存钱，国家反而变穷"的反直觉问题出发，建立短期宏观经济学的第一个模型——<span class="term">商品市场</span><span class="term-en">（The Goods Market）</span>上的均衡产出决定；推出<span class="term">消费函数</span>、<span class="term">乘数</span><span class="term-en">（Multiplier）</span>与<span class="term">凯恩斯交叉图</span><span class="term-en">（Keynesian Cross）</span>；最后用<span class="term">节俭悖论</span><span class="term-en">（Paradox of Saving）</span>解释政策制定者为什么在衰退时安抚市场、过热时放鹰。</p>
+
+      <h2>一、引入：储蓄是美德——但全国人民同时多存钱，国家反而变穷？</h2>
+      <p><strong>反直觉开场：</strong>从小我们被教育"储蓄是美德"——对个人而言，少花钱、多存钱几乎总是让自己更宽裕的正确选择。但如果<strong>整个国家的人在同一时刻都决定多存一点钱</strong>，会发生什么？直觉说"国家总储蓄上升，大家更富"。本讲的模型将给出相反答案：<strong>产出会收缩、收入会下降，而总储蓄很可能一分钱都没有增加</strong>。个人理性的加总不等于集体理性——这就是将在第九节严格推导的<span class="term">节俭悖论</span><span class="term-en">（Paradox of Saving / Paradox of Thrift）</span>。要理解它，得先搞清楚短期内产出到底由什么决定。</p>
+
+      <h2>二、宏观经济学三段论：短期、中期、长期</h2>
+      <p>这门课要回答的核心问题是"<span class="term">总产出</span><span class="term-en">（Aggregate Output）</span>由什么决定"。答案取决于你看多长的时间窗口，因此课程分为三段：</p>
+      <ul>
+        <li><span class="term">短期</span><span class="term-en">（Short Run）</span>：大约一年左右。价格基本不动，产出变化主要体现在<strong>数量</strong>上。分析短期波动就是<span class="term">商业周期</span><span class="term-en">（Business Cycle）</span>分析——<span class="term">衰退</span><span class="term-en">（Recession）</span>、繁荣、扩张都是描述短期的词。本讲及第一次小测前的所有内容都在这个窗口内；</li>
+        <li><span class="term">中期</span><span class="term-en">（Medium Run）</span>：定义为"价格开始充分调整所需的时间"。数量与价格一起变化，经济向潜在产出回归；</li>
+        <li><span class="term">长期</span><span class="term-en">（Long Run）</span>：产出的长期决定因素，即<span class="term">增长</span><span class="term-en">（Growth）</span>问题——"为什么中国增长比美国快"属于长期问题，不是商业周期问题。</li>
+      </ul>
+
+      <div id="fig-horizons"></div>
+      <p><strong>图 1 解读：</strong>三条横线是自左向右流逝的时间轴上的三个阶段。最上面的短期（约一年）是本讲的主战场：价格粘性，产出由需求决定；中期（第二条线）价格充分调整，数量与价格共同变化；长期（第三条线）则由资本积累与技术进步等增长因素主导。三个阶段用完全不同的模型分别分析，比把一切都塞进一个巨型机器要容易得多——这也是本课程的结构。</p>
+
+      <h2>三、短期核心循环：需求 → 产出 → 收入 → 需求</h2>
+      <p>短期内反复出现的核心机制只有一句话：<strong>均衡产出由需求决定</strong>。它由三步循环构成：</p>
+      <ol>
+        <li><strong>需求决定产出</strong>：需求变化，企业就调整生产；</li>
+        <li><strong>产出改变收入</strong>：从国民账户可知，产出和收入是同一枚硬币的两面——更多的生产意味着工人、资本所有者、政府中有人获得相应收入；</li>
+        <li><strong>收入再影响需求</strong>：收入变了，需求又会变，如此循环往复。</li>
+      </ol>
+
+      <div id="fig-cycle"></div>
+      <p><strong>图 2 解读：</strong>三个方块沿圆周排列，箭头沿方块外侧走线构成闭环：<strong>总需求 Z</strong>（上方）决定<strong>产出 Y</strong>（右下），产出同时就是等额的<strong>收入</strong>（左下），收入又反过来驱动下一轮需求。这个循环就是短期宏观经济学的精髓——它解释了为什么一则关于"消费者信心"的新闻能搅动市场：信心悲观 → 需求收缩 → 产出下降 → 收入下降 → 需求进一步收缩。谁预测未来 12 个月衰退，谁实际上就是在预测总需求将下降。</p>
+
+      <h2>四、总需求的构成：Z ≡ C + I + G</h2>
+      <p><span class="term">总需求</span><span class="term-en">（Aggregate Demand，记作 Z）</span>指对<strong>国内生产的商品</strong>的需求，由以下部分构成：</p>
+      <ul>
+        <li><span class="term">消费</span><span class="term-en">（Consumption, C）</span>：家庭购买的商品与服务，是总需求中最大的一块；</li>
+        <li><span class="term">投资</span><span class="term-en">（Investment, I）</span>：<strong>非住宅投资</strong>（设备、厂房）与<strong>住宅投资</strong>（房屋、公寓楼）之和——它们是资本品；</li>
+        <li><span class="term">政府支出</span><span class="term-en">（Government Spending, G）</span>：联邦、州和地方政府购买的商品与服务。<strong>注意：G 不含<span class="term">转移支付</span><span class="term-en">（Transfer Payments）</span></strong>——疫情期间政府寄给你的支票不算 G，它更像一种<strong>负税收</strong>，通过影响可支配收入间接作用于经济；</li>
+        <li><span class="term">出口</span><span class="term-en">（Exports, X）</span>与<span class="term">进口</span><span class="term-en">（Imports, IM）</span>：外国人买我们的产品 vs 我们买外国的产品；</li>
+        <li><span class="term">存货投资</span><span class="term-en">（Inventory Investment）</span>：生产与销售之间的差额，波动大但规模小。</li>
+      </ul>
+      <p>为了把第一个模型做到最简单，本讲做两个简化假设：<strong>封闭经济</strong>（<span class="term-en">Closed Economy</span>，X = IM = 0，约十讲之后才开放）和<strong>存货投资为零</strong>。于是：</p>
+      <p style="text-align:center;"><strong>Z ≡ C + I + G</strong>　（≡ 是恒等号：这只是定义，不是行为假设）</p>
+
+      <div id="fig-gdp-pie"></div>
+      <p><strong>图 3 解读：</strong>美国 2018 年 GDP 构成中，消费 C 占近 70%（约 68%），投资 I 约 18%，政府支出 G 约 17%，净出口 X−IM 约 −3%（进口大于出口）且存货投资接近于零。饼图按 C : I : G = 68 : 18 : 17 的相对比例绘制（三者合计约为 GDP 的 103%，负的净出口无法画入饼图，故扇区显示的是三者之间的相对份额）。这张图解释了本讲为何把全部火力对准消费——<strong>C 占了总需求的约三分之二，消费者信心因此成为均衡产出的主要驱动力之一</strong>（如密歇根大学消费者信心指数）。</p>
+
+      <h2>五、消费函数：C = c₀ + c₁(Y − T)</h2>
+      <p>在建模上，我们假设投资 I、政府支出 G、税收 T 都是<strong>外生给定</strong>的常量，唯一内生变化的是消费 C。消费是<span class="term">可支配收入</span><span class="term-en">（Disposable Income, Yd）</span>的增函数——可支配收入定义为收入减去税收：</p>
+      <p style="text-align:center;"><strong>Yd ≡ Y − T</strong></p>
+      <p>进一步简化为线性形式：</p>
+      <p style="text-align:center;"><strong>C = c₀ + c₁·(Y − T)</strong></p>
+      <ul>
+        <li><span class="term">自主消费</span><span class="term-en">（Autonomous Consumption, c₀）</span>：即使可支配收入为零也必须进行的最低消费，也捕捉了财富、消费者信心等当前收入以外的因素，是外生参数；</li>
+        <li><span class="term">边际消费倾向</span><span class="term-en">（Marginal Propensity to Consume, MPC / c₁）</span>：每增加一美元可支配收入，花掉多少用于消费。得到额外一美元花掉 60 美分，c₁ 就是 0.6。<strong>c₁ 介于 0 和 1 之间</strong>——这个不等式后面至关重要。</li>
+      </ul>
+
+      <div id="fig-consumption"></div>
+      <p><strong>图 4 解读：</strong>消费函数是一条直线（示意数值 c₀ = 100、c₁ = 0.6）：纵轴截距是自主消费 c₀ = 100——收入为零时仍要花的钱；斜率是边际消费倾向 c₁ = 0.6。灰色虚线直角三角形演示斜率的含义：可支配收入增加 ΔYd = 100（从 200 到 300），消费只增加 ΔC = 60（从 220 到 280），ΔC = 0.6 × ΔYd。因为 c₁ &lt; 1，这条线比 45° 线平缓——每多一美元收入，总有一部分被存起来而不是花掉。</p>
+
+      <h2>六、均衡条件 Y = Z：一个等式，但不是恒等式</h2>
+      <p>把消费函数代入总需求定义：</p>
+      <p style="text-align:center;">Z = c₀ + c₁·(Y − T) + I + G</p>
+      <p>这一个方程里有两个未知数（Z 和 Y），无法求解。第二个方程来自<strong>均衡条件</strong>：</p>
+      <p style="text-align:center;"><strong>Y = Z　—— 产出等于需求</strong></p>
+      <p><strong>注意：这不是恒等式，也不是定义。</strong>Z ≡ C + I + G 永远成立（恒等号 ≡），而 Y = Z 只在<strong>均衡状态</strong>下成立：它表达的是短期宏观经济学的核心思想——<strong>产出会调整到与需求相等的水平</strong>。在非均衡点（比如需求突然超过产出），Y ≠ Z，经济正处于调整过程中。两个方程、两个未知数，代入求解：</p>
+      <p style="text-align:center;">Y = c₀ + c₁·(Y − T) + I + G　⟹　Y·(1 − c₁) = c₀ + I + G − c₁·T</p>
+      <p style="text-align:center;"><strong>Y = [1 / (1 − c₁)] · [c₀ + I + G − c₁·T]</strong></p>
+      <p>解的两部分各有名字，都极其重要：</p>
+      <ul>
+        <li><strong>[c₀ + I + G − c₁·T]</strong> 叫<span class="term">自主支出</span><span class="term-en">（Autonomous Spending）</span>：不依赖于产出 Y 的那部分需求；</li>
+        <li><strong>[1 / (1 − c₁)]</strong> 叫<span class="term">乘数</span><span class="term-en">（Multiplier）</span>：因为 0 &lt; c₁ &lt; 1，所以 0 &lt; 1 − c₁ &lt; 1，<strong>乘数必然大于 1</strong>——它把自主支出的任何变化放大。这是宏观经济学特有的概念，微观经济学里不存在。c₁ 越大（人们把新增收入的大部分花掉），循环越强，乘数越大。</li>
+      </ul>
+
+      <h2>七、凯恩斯交叉图与乘数阶梯</h2>
+      <p>上面的代数可以用一张图直观呈现——<span class="term">凯恩斯交叉图</span><span class="term-en">（Keynesian Cross）</span>：横轴是产出/收入 Y，纵轴是需求 Z。<strong>45° 线</strong>代表均衡条件 Y = Z（线上任一点横纵坐标相等）；<strong>总需求曲线 ZZ</strong> 的方程是 Z = [c₀ + I + G − c₁·T] + c₁·Y，截距为自主支出、斜率为 c₁。因为 c₁ &lt; 1，ZZ 比 45° 线平缓，两线必相交——<strong>交点就是均衡</strong>。</p>
+      <p><strong>数值例（单位：十亿美元）</strong>：c₀ = 1000，I = 500，G = 500，T = 500，c₁ = 0.5。自主支出 = 1000 + 500 + 500 − 0.5×500 = 1750，乘数 = 1/(1−0.5) = 2，均衡产出 Y = 2 × 1750 = <strong>3500</strong>。现在做思想实验：消费者信心增强使 c₀ 增加 <strong>10 亿</strong>：</p>
+      <ol>
+        <li><strong>初始冲击</strong>：ZZ 向上平移 10 亿（截距 1750 → 1760），在原产出 3500 处需求变成 3510（A → B，第一轮 +10 亿）；</li>
+        <li><strong>第一轮</strong>：企业增产 10 亿满足需求，产出与收入各增 10 亿（B → C）；</li>
+        <li><strong>第二轮</strong>：收入多 10 亿，消费者花掉其中一半，需求再增 5 亿（C → D，+5 亿）；</li>
+        <li><strong>第三轮及以后</strong>：5 亿新需求变成新产出新收入，再催生 2.5 亿新消费（+2.5 亿）……</li>
+      </ol>
+      <p>这是一条几何级数：ΔY = 10 亿 × (1 + c₁ + c₁² + c₁³ + …) = 10 亿 × [1/(1−c₁)] = 10 亿 × 2 = <strong>+20 亿</strong>，新均衡 Y′ = 3520。</p>
+
+      <div id="fig-keynesian-cross"></div>
+      <p><strong>图 5 解读：</strong>均衡点附近的局部放大图（全貌中 ZZ 从纵轴截距 1750 出发、以斜率 0.5 缓缓上升，45° 线从原点出发，二者交于 (3500, 3500)）。灰色 45° 线与蓝色 ZZ 交于原均衡 A(3500, 3500)；c₀ +10 亿使 ZZ 上移到红色 ZZ′，在 Y = 3500 处需求跳到 B(3500, 3510)（+10 亿）。橙色阶梯路径展示乘数机制：B → C（产出 +10 亿）→ D（消费 +5 亿）→ …每轮增量是上一轮的 c₁ = 0.5 倍，沿阶梯收敛到新均衡 A′(3520, 3520)。<strong>初始冲击 10 亿，最终产出增加 20 亿——乘数 2 在图上就是这条阶梯的总水平位移</strong>。在交点左侧需求大于产出（企业会增产），右侧产出大于需求（企业会减产），经济因此被"推回"交点。</p>
+
+      <h2>八、等价表述：I = S + (T − G) —— IS 曲线名称的由来</h2>
+      <p>均衡条件还有第二种完全等价的推导，从储蓄出发：</p>
+      <ul>
+        <li><span class="term">私人储蓄</span><span class="term-en">（Private Saving, S）</span>：可支配收入减去消费，S = Yd − C = Y − T − C；</li>
+        <li><span class="term">公共储蓄</span><span class="term-en">（Public Saving）</span>：税收减去政府支出，T − G。T &gt; G 是预算盈余，T &lt; G 是预算赤字（负储蓄）。</li>
+      </ul>
+      <p>均衡时<strong>投资必须等于总储蓄</strong>：</p>
+      <p style="text-align:center;"><strong>I = S + (T − G)</strong>　⟺　I = (Y − T − C) + (T − G) = Y − C − G　⟺　Y = C + I + G = Z</p>
+      <p>与 Y = Z 逐字等价。<strong>"投资（Investment）= 储蓄（Saving）"正是后文 IS 曲线名称的由来</strong>（I 代表投资、S 代表储蓄）。用本节数值验证：C = 1000 + 0.5×(3500 − 500) = 2500，S = 3500 − 500 − 2500 = 500，公共储蓄 T − G = 0，I = 500 = 500 + 0 ✓。</p>
+
+      <h2>九、节俭悖论：乘数反向放大</h2>
+      <p>现在回答开头的反直觉问题。假设全社会突然决定"在任何给定收入水平下都多存钱"——这正是<strong>自主消费 c₀ 下降</strong>（比如 c₀ 从 1000 降到 990）：</p>
+      <ol>
+        <li><strong>消费下降</strong>：任何收入水平下的消费都减少 10 亿，ZZ 向下平移；</li>
+        <li><strong>产出下降</strong>：需求少了，企业减产，均衡产出下降；</li>
+        <li><strong>收入下降</strong>：产出即收入；</li>
+        <li><strong>乘数反向放大</strong>：收入下降进一步削减消费，产出与收入螺旋下行——上一轮讲过的乘数机制此刻朝负方向工作。最终 ΔY = −10 亿 × 2 = <strong>−20 亿</strong>，经济陷入衰退。</li>
+      </ol>
+
+      <div id="fig-paradox"></div>
+      <p><strong>图 6 解读：</strong>与图 5 同一坐标窗口的反向实验。蓝色 ZZ（截距 1750）与 45° 线交于原均衡 A(3500, 3500)；人人多存钱使 c₀ −10 亿，ZZ 下移到紫色 ZZ″（截距 1740）。橙色阶梯向下：B(3500, 3490)（−10 亿）→ −5 亿 → −2.5 亿 → …收敛到新均衡 A″(3480, 3480)。<strong>冲击只有 10 亿，产出却萎缩 20 亿</strong>——乘数不分方向地放大一切。</p>
+      <p>悖论的高潮在储蓄本身。新均衡下：C″ = 990 + 0.5×(3480 − 500) = 2480，S″ = 3480 − 500 − 2480 = <strong>500——与之前完全相同</strong>！原因很简单：均衡要求 I = S + (T − G)，而 I、T、G 都没变，总储蓄被钉死在 500。<strong>每个人都想多存钱，整个经济的总储蓄却一分没多，代价是产出少了 20 亿</strong>。在更现实的模型里（投资随产出下降），总储蓄甚至会真的减少。这就是节俭悖论：短期内，个人的理性储蓄行为加总为集体的衰退。</p>
+      <p><strong>政策含义</strong>：这解释了政策制定者的两种看似矛盾的姿态——</p>
+      <ul>
+        <li><strong>衰退时安抚</strong>：如果人人恐慌、削减开支，经济可能仅仅因为悲观情绪而崩溃（c₀ 下降 → 乘数放大）。所以衰退中政策制定者总是试图提振信心；</li>
+        <li><strong>过热时放鹰</strong>：当经济过热、通胀高企，美联储反而发表鹰派言论（"经济太热了，我们将采取措施"），故意让消费者和市场"悲观一点"以抑制需求——这就是为什么美联储官员强硬讲话时股市往往下跌。</li>
+      </ul>
+      <p>同理可理解<span class="term">财政政策</span><span class="term-en">（Fiscal Policy）</span>：<strong>扩张性</strong>财政政策（增 G 或减 T）抬升 ZZ、经乘数放大产出；<strong>紧缩性</strong>财政政策（减 G 或增 T）压下 ZZ、收缩产出——其机制与节俭悖论中的 c₀ 下降完全同构。</p>
+
+      <h2>十、收尾：三段论对比与模型评价</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>短期（Short Run）</th><th>中期（Medium Run）</th><th>长期（Long Run）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>时间尺度</td><td>约一年</td><td>价格充分调整所需时间</td><td>十年以上</td></tr>
+          <tr><td>价格假设</td><td>粘性（基本不动），变化体现在数量上</td><td>开始充分调整</td><td>完全灵活</td></tr>
+          <tr><td>产出由什么决定</td><td><strong>总需求 Z</strong>（本讲模型）</td><td>需求与供给共同作用</td><td>资本积累与技术进步</td></tr>
+          <tr><td>对应主题</td><td>商业周期（Business Cycle）：衰退与繁荣</td><td>向潜在产出回归</td><td>增长（Growth）</td></tr>
+          <tr><td>核心工具</td><td>凯恩斯交叉、乘数</td><td>IS-LM-PC（后续课程）</td><td>增长模型（后续课程）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>凯恩斯交叉模型的优缺点：</strong>优点是结构极简——一个消费函数加一条均衡条件，就同时解释了均衡产出的决定、需求冲击的放大（乘数）和信心/财政政策的作用方向，还给出了可计算的数值预言；缺点同样明显：假设价格完全不动（只适用于短期）、投资与利率无关（下一讲引入金融市场后将放松）、封闭经济且无存货调整，因此它是对现实的大幅简化，适合作为理解短期波动的起点而非终点。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（短期产出由什么决定？衰退从何而来）→ 简化模型（封闭经济、存货为零、线性消费函数 C = c₀ + c₁(Y−T)、均衡 Y = Z）→ 推导（Y = [1/(1−c₁)]·[自主支出]，乘数 &gt; 1，凯恩斯交叉图上的阶梯收敛；等价形式 I = S + (T−G)）→ 实际应用（消费者信心为何重要、节俭悖论、衰退时安抚与过热时放鹰、财政政策的放大效应）→ 局限性（价格粘性假设仅限短期、投资外生、封闭经济——将在后续课程逐一放松）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/02-goods-market.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：宏观三段论时间轴 —— 短期（商业周期）/ 中期 / 长期（增长） =====
+    Charts.xy(document.getElementById('fig-horizons'), {
+      xLabel: '时间 →',
+      yLabel: '',
+      xMax: 14, yMax: 4, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：宏观经济学三段时间轴 —— 本讲属于最上游的"短期"',
+      series: [
+        { points: [[0, 3], [2.5, 3]], type: 'linear', color: '#2563eb', label: '短期（Short Run，约 1 年）' },
+        { points: [[2.5, 2], [7, 2]], type: 'linear', color: '#0d9488', label: '中期（Medium Run）：价格充分调整' },
+        { points: [[7, 1], [13.5, 1]], type: 'linear', color: '#7c3aed', label: '长期（Long Run）：增长' },
+      ],
+      markers: [
+        { x: 1.25, y: 3, label: '商业周期（Business Cycle）：需求决定产出', color: '#2563eb', labelDx: -100, labelDy: 26 },
+        { x: 4.75, y: 2, label: '数量与价格共同变化', color: '#0d9488', labelDx: -90, labelDy: 26 },
+        { x: 10.25, y: 1, label: '资本积累与技术进步', color: '#7c3aed', labelDx: -85, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图2：短期核心循环 —— 需求→产出→收入→需求（箭头沿方块外侧） =====
+    Charts.cycle(document.getElementById('fig-cycle'), {
+      nodes: ['总需求 Z', '产出 Y', '收入 Y'],
+      notes: ['① 需求决定产出', '② 产出即收入', '③ 收入再驱动需求'],
+      color: '#2563eb',
+      caption: '图 2：短期核心循环 —— 需求 → 产出 → 收入 → 需求，循环往复并放大冲击',
+    });
+
+    // ===== 图3：美国 GDP 构成饼图（2018：C≈68%、I≈18%、G≈17%、NX≈−3%） =====
+    Charts.pie(document.getElementById('fig-gdp-pie'), {
+      items: [
+        { label: '消费 C（占 GDP 约 68%）', value: 68, color: '#2563eb' },
+        { label: '投资 I（占 GDP 约 18%）', value: 18, color: '#0d9488' },
+        { label: '政府支出 G（占 GDP 约 17%）', value: 17, color: '#d97706' },
+      ],
+      caption: '图 3：美国 GDP 构成（2018）—— 饼图按 C : I : G = 68 : 18 : 17 的相对比例绘制；净出口约 −3%（进口大于出口）与存货投资（≈0，本课设为零）未入饼',
+    });
+
+    // ===== 图4：消费函数 C = c₀ + c₁·Yd（示意 c₀=100、c₁=0.6），截距与斜率 =====
+    Charts.xy(document.getElementById('fig-consumption'), {
+      xLabel: '可支配收入 Yd = Y − T',
+      yLabel: '消费 C',
+      xMax: 500, yMax: 500, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：消费函数 —— 截距 c₀（自主消费），斜率 c₁（边际消费倾向）< 1',
+      series: [
+        { points: [[0, 100], [500, 400]], type: 'linear', color: '#2563eb', label: 'C = c₀ + c₁·Yd（c₀ = 100，c₁ = 0.6）' },
+        { points: [[200, 220], [300, 220], [300, 280]], type: 'linear', color: '#6b7280', dash: true, label: '斜率演示：ΔC = c₁ × ΔYd' },
+      ],
+      markers: [
+        { x: 0, y: 100, label: 'c₀ = 100（自主消费）', color: '#dc2626', legend: '截距 / 斜率点', guides: true, gyLabel: 'c₀', labelDx: 12, labelDy: -10 },
+        { x: 200, y: 220, label: 'Yd = 200 → C = 220', color: '#2563eb', guides: true, gxLabel: '200', labelDx: -150, labelDy: -12 },
+        { x: 300, y: 280, label: 'Yd = 300 → C = 280：ΔYd = 100，ΔC = 60', color: '#2563eb', guides: true, gxLabel: '300', labelDx: 14, labelDy: -12 },
+        { x: 300, y: 220, label: 'ΔC = 0.6 × ΔYd', color: '#6b7280', labelDx: 14, labelDy: 18 },
+      ],
+    });
+
+    // ===== 图5：凯恩斯交叉（均衡附近局部放大）—— c₀ +10 亿，乘数阶梯 A→A′ =====
+    // c₁ = 0.5，自主支出 1750 → Y = 3500；c₀ +10 → Y′ = 3520（ΔY = 10 × 2）
+    Charts.xy(document.getElementById('fig-keynesian-cross'), {
+      xLabel: '产出 / 收入 Y（十亿美元）',
+      yLabel: '需求 Z（十亿美元）',
+      xMin: 3485, xMax: 3535, yMin: 3485, yMax: 3535, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5：凯恩斯交叉图（均衡附近局部放大）—— c₀ +10 亿使 ZZ 上移，乘数阶梯收敛后 ΔY = +20 亿 = 10 亿 × 乘数 2',
+      series: [
+        { points: [[3485, 3485], [3535, 3535]], type: 'linear', color: '#6b7280', label: '45° 线（均衡条件 Y = Z）' },
+        { points: [[3485, 3492.5], [3535, 3517.5]], type: 'linear', color: '#2563eb', label: 'ZZ：Z = 1750 + 0.5Y（c₀ 上升前）' },
+        { points: [[3485, 3502.5], [3535, 3527.5]], type: 'linear', color: '#dc2626', label: "ZZ′：Z = 1760 + 0.5Y（c₀ +10 亿）" },
+        { points: [[3500, 3500], [3500, 3510], [3510, 3510], [3510, 3515], [3515, 3515], [3515, 3517.5], [3517.5, 3517.5], [3517.5, 3518.75], [3518.75, 3518.75], [3518.75, 3519.38], [3519.38, 3519.38]], type: 'linear', color: '#d97706', label: '乘数阶梯：+10 亿 → +5 亿 → +2.5 亿 → …' },
+      ],
+      markers: [
+        { x: 3500, y: 3500, label: 'A：原均衡 (3500, 3500)', color: '#2563eb', legend: '均衡点（ZZ ∩ 45°线）', guides: true, gxLabel: 'Y = 3500', gyLabel: '3500', labelDx: -150, labelDy: 28 },
+        { x: 3500, y: 3510, label: 'B：c₀↑，需求 +10 亿', color: '#dc2626', legend: '第 1 轮冲击', labelDx: -118, labelDy: -8 },
+        { x: 3510, y: 3515, label: '第 2 轮 +5 亿', color: '#d97706', labelDx: 12, labelDy: -8 },
+        { x: 3515, y: 3517.5, label: '第 3 轮 +2.5 亿', color: '#d97706', labelDx: 12, labelDy: -8 },
+        { x: 3520, y: 3520, label: "A′：新均衡 (3520, 3520)，ΔY = +20 亿", color: '#dc2626', legend: '新均衡点', guides: true, gxLabel: "Y′ = 3520", labelDx: -176, labelDy: 28 },
+      ],
+    });
+
+    // ===== 图6：节俭悖论 —— c₀ −10 亿，ZZ 下移，乘数反向放大，储蓄不变 =====
+    // c₀ 1000 → 990：截距 1750 → 1740，均衡 Y 3500 → 3480（ΔY = −20）；S 恒为 500
+    Charts.xy(document.getElementById('fig-paradox'), {
+      xLabel: '产出 / 收入 Y（十亿美元）',
+      yLabel: '需求 Z（十亿美元）',
+      xMin: 3465, xMax: 3515, yMin: 3465, yMax: 3515, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 6：节俭悖论（同一坐标窗口）—— 人人多存钱（c₀ −10 亿）使 ZZ 下移，产出 −20 亿，而总储蓄一分未增',
+      series: [
+        { points: [[3465, 3465], [3515, 3515]], type: 'linear', color: '#6b7280', label: '45° 线（均衡条件 Y = Z）' },
+        { points: [[3465, 3482.5], [3515, 3507.5]], type: 'linear', color: '#2563eb', label: 'ZZ：Z = 1750 + 0.5Y（c₀ 下降前）' },
+        { points: [[3465, 3472.5], [3515, 3497.5]], type: 'linear', color: '#7c3aed', label: "ZZ″：Z = 1740 + 0.5Y（c₀ −10 亿，人人多存钱）" },
+        { points: [[3500, 3500], [3500, 3490], [3490, 3490], [3490, 3485], [3485, 3485], [3485, 3482.5], [3482.5, 3482.5], [3482.5, 3481.25], [3481.25, 3481.25]], type: 'linear', color: '#d97706', label: '乘数反向放大：−10 亿 → −5 亿 → −2.5 亿 → …' },
+      ],
+      markers: [
+        { x: 3500, y: 3500, label: 'A：原均衡 (3500, 3500)', color: '#2563eb', legend: '均衡点（ZZ ∩ 45°线）', guides: true, gxLabel: 'Y = 3500', gyLabel: '3500', labelDx: -160, labelDy: -14 },
+        { x: 3500, y: 3490, label: 'B：消费 −10 亿', color: '#7c3aed', legend: '第 1 轮冲击', labelDx: 12, labelDy: 4 },
+        { x: 3490, y: 3485, label: '第 2 轮 −5 亿', color: '#d97706', labelDx: 12, labelDy: 4 },
+        { x: 3485, y: 3482.5, label: '第 3 轮 −2.5 亿', color: '#d97706', labelDx: 12, labelDy: 4 },
+        { x: 3480, y: 3480, label: "A″：新均衡 (3480, 3480)，ΔY = −20 亿", color: '#7c3aed', legend: '新均衡点', guides: true, gxLabel: "Y″ = 3480", labelDx: 14, labelDy: 30 },
+      ],
+    });
+  </script>
+</body>
+</html>

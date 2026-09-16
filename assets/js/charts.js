@@ -5,6 +5,7 @@
  * Charts.ppf(container, opts)         xy 的别名，用于生产可能性边界图
  * Charts.sd(container, opts)          xy 的别名，用于供给-需求图
  * Charts.circularFlow(container, opts) 循环流量图
+ * Charts.cycle(container, opts)        循环图（N 方块 + 圆外弧线箭头）
  * Charts.pie(container, opts)         饼图
  * Charts.bar(container, opts)         柱状图（单系列或分组）
  *
@@ -58,6 +59,7 @@ window.Charts = (function () {
    * opts:
    *  - xLabel, yLabel        坐标轴名称
    *  - xMax, yMax            坐标轴最大值
+   *  - xMin, yMin            坐标轴最小值（可选，默认 0；用于局部放大窗口，需配合自定义刻度）
    *  - xStep, yStep          刻度间隔（自定义刻度时不需要）
    *  - xTicks, yTicks        自定义刻度（可选）：数字数组或 {v, label} 数组；传 [] 隐藏刻度
    *  - width, height         画布尺寸（可选，默认 640x460）
@@ -88,8 +90,10 @@ window.Charts = (function () {
     const M = { top: 30, right: 30, bottom: 56, left: 64 };
     const iw = W - M.left - M.right;
     const ih = H - M.top - M.bottom;
-    const sx = (x) => M.left + (x / opts.xMax) * iw;
-    const sy = (y) => M.top + ih - (y / opts.yMax) * ih;
+    const xMin = opts.xMin || 0;
+    const yMin = opts.yMin || 0;
+    const sx = (x) => M.left + ((x - xMin) / (opts.xMax - xMin)) * iw;
+    const sy = (y) => M.top + ih - ((y - yMin) / (opts.yMax - yMin)) * ih;
 
     const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' });
 
@@ -98,15 +102,15 @@ window.Charts = (function () {
     el('line', { x1: M.left, y1: M.top + ih, x2: M.left + iw, y2: M.top + ih, stroke: '#9ca3af', 'stroke-width': 1.5 }, svg);
 
     // 刻度（xTicks/yTicks 可自定义：数字数组或 {v, label} 数组，传 [] 则隐藏）
-    const normTicks = (custom, max, step) => {
+    const normTicks = (custom, max, step, min) => {
       if (custom) return custom.map((t) => (typeof t === 'object' ? t : { v: t, label: t }));
-      return ticks(max, step).map((v) => ({ v, label: v }));
+      return ticks(max, step).filter((v) => v >= min).map((v) => ({ v, label: v }));
     };
-    normTicks(opts.xTicks, opts.xMax, opts.xStep).forEach((t) => {
+    normTicks(opts.xTicks, opts.xMax, opts.xStep, xMin).forEach((t) => {
       el('line', { x1: sx(t.v), y1: M.top + ih, x2: sx(t.v), y2: M.top + ih + 5, stroke: '#9ca3af' }, svg);
       text(svg, sx(t.v), M.top + ih + 20, t.label, { 'text-anchor': 'middle', 'font-size': 11, fill: '#6b7280' });
     });
-    normTicks(opts.yTicks, opts.yMax, opts.yStep).forEach((t) => {
+    normTicks(opts.yTicks, opts.yMax, opts.yStep, yMin).forEach((t) => {
       el('line', { x1: M.left - 5, y1: sy(t.v), x2: M.left, y2: sy(t.v), stroke: '#9ca3af' }, svg);
       text(svg, M.left - 10, sy(t.v) + 4, t.label, { 'text-anchor': 'end', 'font-size': 11, fill: '#6b7280' });
     });
@@ -152,8 +156,8 @@ window.Charts = (function () {
     (opts.markers || []).forEach((m) => {
       if (m.guides) {
         const guide = { stroke: m.color, 'stroke-width': 1, 'stroke-dasharray': '4 3' };
-        el('line', Object.assign({ x1: sx(m.x), y1: sy(m.y), x2: sx(m.x), y2: sy(0) }, guide), svg);
-        el('line', Object.assign({ x1: sx(m.x), y1: sy(m.y), x2: sx(0), y2: sy(m.y) }, guide), svg);
+        el('line', Object.assign({ x1: sx(m.x), y1: sy(m.y), x2: sx(m.x), y2: sy(yMin) }, guide), svg);
+        el('line', Object.assign({ x1: sx(m.x), y1: sy(m.y), x2: sx(xMin), y2: sy(m.y) }, guide), svg);
         if (m.gxLabel) text(svg, sx(m.x), M.top + ih + 20, m.gxLabel, { 'text-anchor': 'middle', 'font-size': 12, fill: m.color, 'font-weight': 700 });
         if (m.gyLabel) text(svg, M.left - 10, sy(m.y) + 4, m.gyLabel, { 'text-anchor': 'end', 'font-size': 12, fill: m.color, 'font-weight': 700 });
       }
@@ -457,5 +461,71 @@ window.Charts = (function () {
     mount(container, svg, opts.caption, series.map((s) => ({ label: s.label, color: s.color, style: 'dot' })), opts.legendPosition || 'top');
   }
 
-  return { xy, ppf: xy, sd: xy, circularFlow, pie, bar };
+  /**
+   * 循环图（N 个方块沿圆周排列，相邻方块间用圆外弧线箭头连接）
+   * 箭头沿方块外侧走线，不进入方块区域。
+   * opts:
+   *  - nodes: [label,...]     方块文字，按顺时针排列（第一个在正上方）
+   *  - notes: [label,...]     每段弧线上的流向说明（可选，nodes[i] → nodes[i+1]）
+   *  - color                  箭头颜色（可选，默认蓝）
+   *  - caption                图标题（可选）
+   *  - legend: [...]          覆盖图例（可选，默认无图例）
+   */
+  function cycle(container, opts) {
+    opts = opts || {};
+    const nodes = opts.nodes || [];
+    const notes = opts.notes || [];
+    const N = nodes.length;
+    const color = opts.color || '#2563eb';
+    const W = 560, H = 500;
+    const CX = W / 2, CY = H / 2 + 6;
+    const R = 138;                    // 方块中心所在圆半径
+    const RR = 196;                   // 箭头弧线半径（在方块外侧）
+    const boxW = 150, boxH = 56;
+    const GAP = 36;                   // 弧线两端让开方块的角度（度）
+
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' });
+
+    const defs = el('defs', null, svg);
+    const marker = el('marker', {
+      id: 'cycle-arrow', markerWidth: 10, markerHeight: 10, refX: 8, refY: 3,
+      orient: 'auto', markerUnits: 'strokeWidth',
+    }, defs);
+    el('path', { d: 'M0,0 L8,3 L0,6 Z', fill: color }, marker);
+
+    // 第 i 个方块的方位角：-90° 起（正上方），顺时针（屏幕坐标 y 向下）
+    const ang = (i) => ((-90 + (i * 360) / N) * Math.PI) / 180;
+    const ptAt = (r, rad) => [CX + r * Math.cos(rad), CY + r * Math.sin(rad)];
+
+    // 弧线箭头：nodes[i] → nodes[i+1]，沿半径 RR 的圆外侧走线
+    for (let i = 0; i < N; i++) {
+      const a0 = ang(i) + (GAP * Math.PI) / 180;
+      const a1 = ang(i + 1) - (GAP * Math.PI) / 180;
+      const [x0, y0] = ptAt(RR, a0);
+      const [x1, y1] = ptAt(RR, a1);
+      el('path', {
+        d: `M ${x0.toFixed(2)} ${y0.toFixed(2)} A ${RR} ${RR} 0 0 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`,
+        fill: 'none', stroke: color, 'stroke-width': 2.5, 'marker-end': 'url(#cycle-arrow)',
+      }, svg);
+      if (notes[i]) {
+        const mid = (a0 + a1) / 2;
+        const [lx, ly] = ptAt(RR + 26, mid);
+        text(svg, lx, ly + 4, notes[i], { 'text-anchor': 'middle', 'font-size': 12, fill: color, 'font-weight': 600 });
+      }
+    }
+
+    // 方块（覆盖在弧线内圈之上，弧线从方块外侧绕行）
+    nodes.forEach((label, i) => {
+      const [bx, by] = ptAt(R, ang(i));
+      el('rect', {
+        x: bx - boxW / 2, y: by - boxH / 2, width: boxW, height: boxH, rx: 8,
+        fill: '#eff6ff', stroke: '#1d4ed8', 'stroke-width': 1.5,
+      }, svg);
+      text(svg, bx, by + 5, label, { 'text-anchor': 'middle', 'font-weight': 700, 'font-size': 15 });
+    });
+
+    mount(container, svg, opts.caption, opts.legend, 'top');
+  }
+
+  return { xy, ppf: xy, sd: xy, circularFlow, cycle, pie, bar };
 })();
