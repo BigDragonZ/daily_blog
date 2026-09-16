@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 寡头与博弈论 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>10 寡头与博弈论：纳什均衡、古诺与伯特兰</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 13、14 两讲（L13+L14）：从"两家可乐都不打广告能各赚 80 亿、现实中却烧几十亿广告费只赚 30 亿"的反直觉困境出发，借助<span class="term">博弈论</span><span class="term-en">（Game Theory）</span>理解<span class="term">寡头垄断</span><span class="term-en">（Oligopoly）</span>——<span class="term">纳什均衡</span>与<span class="term">囚徒困境</span>解释合作为何脆弱，<span class="term">古诺模型</span>给出数量竞争的精确解，<span class="term">伯特兰模型</span>则警告：价格竞争下两家公司就足以把利润打到零。</p>
+
+      <!-- ==================== L13 ==================== -->
+      <h2>一、L13 寡头 I（Oligopoly I）：博弈论与古诺模型</h2>
+
+      <h3>1.1 引入：都不打广告各赚 80 亿，为什么现实中烧几十亿只赚 30 亿？</h3>
+      <p><strong>反直觉开场：</strong>可口可乐与百事可乐若能达成协议都不打广告，瓜分市场、省下巨额广告费，各自能赚 80 亿美元。现实中两家公司却在广告上烧掉几十亿美元，各自的利润反而只有 30 亿。<strong>双方都明知道合作更好，为什么却一起选择了更差的结果？</strong>这不是愚蠢，而是一种逻辑上几乎无法逃脱的均衡——本章就是用博弈论把这件事讲清楚。</p>
+
+      <h3>1.2 市场结构谱系：合作（卡特尔）vs 非合作</h3>
+      <p>完全竞争和垄断都是极端：前者卖家成千上万，后者只有一家。现实中大多数市场（汽车、航空、可乐）是<span class="term">寡头垄断</span><span class="term-en">（Oligopoly）</span>：<strong>少数几家公司相互竞争</strong>，同时存在进入壁垒挡住新进入者。把市场想象成一条谱系：</p>
+      <p style="text-align:center;"><strong>完全竞争（无数卖家，P = MC）⟵ 伯特兰 — 古诺 — 卡特尔 ⟶ 垄断（一家卖家，利润最大）</strong></p>
+      <p>寡头有两种行为方式：</p>
+      <ul>
+        <li><strong>合作</strong>：组成<span class="term">卡特尔</span><span class="term-en">（Cartel）</span>，共同决策、像一个垄断者一样行事。最著名的例子是 <span class="term">OPEC</span><span class="term-en">（石油输出国组织）</span>：约十几个国家控制世界约三分之二的石油储量，长期保持高价、压低产量、赚取垄断利润。结果落在谱系最右端；</li>
+        <li><strong>非合作</strong>：各自为战、相互竞争，利润被压到远低于垄断水平，甚至可能一直降到完全竞争水平。结果落在谱系中间某个位置——本章的古诺与伯特兰模型就是要算出它落在哪儿。</li>
+      </ul>
+      <p>卡特尔对生产者是最佳结果，但我们将看到它有两个致命问题：<strong>内在不稳定</strong>（每家都有作弊动机）和<strong>违法</strong>（反垄断法）。</p>
+
+      <h3>1.3 博弈论与纳什均衡</h3>
+      <p>分析非合作寡头需要<span class="term">博弈论</span><span class="term-en">（Game Theory）</span>。任何博弈要知道两件事：<strong>策略</strong>是什么、<strong>均衡</strong>是什么。最常用的均衡概念是<span class="term">纳什均衡</span><span class="term-en">（Nash Equilibrium, NE）</span>，以数学家约翰·纳什（John Nash，《美丽心灵》主角，诺贝尔经济学奖得主）命名：</p>
+      <p style="text-align:center;"><strong>纳什均衡：在给定其他参与者策略的情况下，没有任何一个参与者愿意单方面改变自己的策略。</strong></p>
+      <p>换句话说，均衡点上每个人都"对自己的决定满意"——不是因为它最好，而是因为<strong>在别人不改的前提下，自己改了只会更差</strong>。纳什的惊人洞见在于：在纳什之前，人们普遍认为竞争总是好的；他第一个证明，<strong>竞争也可能导致对所有参与者都更坏的结果</strong>。</p>
+
+      <h3>1.4 囚徒困境：支付矩阵与占优策略</h3>
+      <p>经典例子是<span class="term">囚徒困境</span><span class="term-en">（Prisoner's Dilemma）</span>：警察逮捕两名嫌疑人，分开审讯。规则：现有证据够各判 1 年；你指证同伙而他沉默，你无罪释放、他判 5 年；互相指证则各判 2 年。用<span class="term">支付矩阵</span><span class="term-en">（Payoff Matrix）</span>整理（刑期，越短越好）：</p>
+      <table>
+        <thead>
+          <tr><th>囚徒困境（刑期）</th><th>囚犯 B：沉默</th><th>囚犯 B：招供</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>囚犯 A：沉默</strong></td><td>A：1 年，B：1 年</td><td>A：5 年，B：0 年</td></tr>
+          <tr><td><strong>囚犯 A：招供</strong></td><td>A：0 年，B：5 年</td><td><strong>A：2 年，B：2 年（纳什均衡）</strong></td></tr>
+        </tbody>
+      </table>
+      <p>从 A 的角度逐列分析：若 B 沉默，A 招供（0 年）优于沉默（1 年）；若 B 招供，A 招供（2 年）仍优于沉默（5 年）。<strong>无论 B 怎么做，A 招供都更好</strong>——招供是 A 的<span class="term">占优策略</span><span class="term-en">（Dominant Strategy）</span>。由对称性，B 的占优策略也是招供。均衡结果：两人都招供，各判 2 年。</p>
+      <p>注意这个结果的"残酷性"：两人都沉默本可各判 1 年，但理性自利把两人推向各判 2 年——一场<strong>逐底竞争</strong>。非合作均衡对两个参与者都比合作结果更糟。</p>
+
+      <h3>1.5 可乐广告战与烈酒行业合作史</h3>
+      <p>回到开场问题。可口可乐与百事的广告决策同样是一个囚徒困境（利润，单位：十亿美元）：</p>
+      <table>
+        <thead>
+          <tr><th>可乐广告战（利润）</th><th>百事：不广告</th><th>百事：广告</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>可口可乐：不广告</strong></td><td>可口可乐：8，百事：8（合作最优）</td><td>可口可乐：−2，百事：13</td></tr>
+          <tr><td><strong>可口可乐：广告</strong></td><td>可口可乐：13，百事：−2</td><td><strong>可口可乐：3，百事：3（纳什均衡）</strong></td></tr>
+        </tbody>
+      </table>
+      <p>验证占优策略：若百事不广告，可口可乐广告（13）优于不广告（8）；若百事广告，可口可乐广告（3）优于不广告（−2）。广告是占优策略，百事同理。于是双方都在广告上烧钱，各赚 30 亿，而不是合作时的各 80 亿——开场问题的答案：<strong>他们被困在囚徒困境的纳什均衡里</strong>。</p>
+      <p>真实世界里合作并非不可能：<strong>烈酒行业</strong>曾长期维持"都不在电视上打广告"的行业默契——并非法律禁止，而是全行业守住了合作均衡。后来协议被打破，如今所有品牌都在打广告，整体利润可能还不如从前。</p>
+
+      <h3>1.6 重复博弈：合作如何维持，又为何在终点前崩溃</h3>
+      <p>囚徒困境的悲观结论有一个出口：<span class="term">重复博弈</span><span class="term-en">（Repeated Game）</span>。一次性博弈里没有明天，所以没有惩罚；但如果博弈反复进行，可口可乐可以宣布触发策略：<strong>"我不打广告，只要你也不打；你只要打一次，我就永远打。"</strong></p>
+      <p>百事在第一期面临两个选择：</p>
+      <ul>
+        <li><strong>背叛</strong>：第一期打广告赚 130 亿，但从第二期起可口可乐永远报复，之后每期只能赚 30 亿；</li>
+        <li><strong>合作</strong>：不打广告，每期稳稳赚 80 亿。</li>
+      </ul>
+      <p>显然"每期 80 亿"远好于"一次 130 亿 + 此后每期 30 亿"——重复博弈用未来的惩罚强制实现了合作均衡。</p>
+
+      <div id="fig-repeated"></div>
+      <p><strong>图 1 解读：</strong>横轴是期数，纵轴是百事的累计利润（十亿美元）。绿线（合作）每期 +8，红线（背叛）第 1 期 +13、之后每期 +3。两线在 <strong>(2, 16)</strong> 打平——背叛的短期优势两期就被耗尽；从第 3 期起合作累计利润反超且差距越拉越大（第 8 期 64 对 34）。只要博弈"看不到尽头"，背叛就是不划算的。</p>
+      <p><strong>但合作极其脆弱：它只在博弈无限期（或终点未知）时成立。</strong>一旦终点已知——比如政府宣布十年后禁售汽水——百事在第 9 年会想："最后一年了，报复没有明天，我最好打广告赚一把。"可口可乐也能算到这一步，于是第 9 年双方都打广告；既然第 9 年注定竞争，第 8 年的合作也就失去意义……<strong>倒推（Backward Induction）一路瓦解到第 1 年</strong>，合作从头到尾崩溃。这就是为什么"关系快要结束"的合作（毕业季、离职前、任期将满的政府）特别容易出问题。</p>
+
+      <h3>1.7 古诺模型：寡头竞争的完整数学推导</h3>
+      <p>现在把博弈论装进一个可计算的模型。<span class="term">古诺模型</span><span class="term-en">（Cournot Model）</span>分析的是<span class="term">数量竞争</span><span class="term-en">（Quantity Competition）</span>：每家公司选择产量，市场价格由总产量决定。<strong>古诺均衡是一种纳什均衡：每家公司都在给定对方产量的前提下，选择了自己利润最大化的产量。</strong></p>
+      <p>设定：波士顿—芝加哥航线只有美国航空（American）与美联航（United）两家公司。市场需求 P = 339 − Q（Q = Q_A + Q_U），两家边际成本恒为 MC = 147 美元。求解分五步：</p>
+      <ol>
+        <li><strong>剩余需求</strong><span class="term-en">（Residual Demand）</span>：美航面对的需求是市场需求减去美联航的产量：P = 339 − Q_U − Q_A；</li>
+        <li><strong>边际收益</strong><span class="term-en">（Marginal Revenue, MR）</span>：收益 R_A = (339 − Q_U − Q_A)·Q_A，对 Q_A 求导得 MR_A = 339 − 2·Q_A − Q_U（注意 MR 依赖对手产量）；</li>
+        <li><strong>MR = MC</strong>：339 − 2·Q_A − Q_U = 147，整理出美航的<span class="term">反应曲线</span><span class="term-en">（Reaction Curve / Best Response Curve）</span>：<strong>Q_A = 96 − 0.5·Q_U</strong>——对手每多生产 1 单位，我的最优产量就减 0.5；</li>
+        <li><strong>对称写出对方反应曲线</strong>：Q_U = 96 − 0.5·Q_A；</li>
+        <li><strong>联立求解</strong>：代入得 Q_A = 96 − 0.5·(96 − 0.5·Q_A) → 0.75·Q_A = 48 → <strong>Q_A = Q_U = 64</strong>。总产量 Q = 128，价格 P = 339 − 128 = <strong>211 美元</strong>。</li>
+      </ol>
+      <p>在 (64, 64) 处，给定对方生产 64，64 恰好是自己的最优反应——双方都没有单方面改变的动机，这就是古诺-纳什均衡。作为基准：若美航是垄断者，MR = 339 − 2Q = 147 给出 Q = 96、P = 243。</p>
+
+      <div id="fig-reaction"></div>
+      <p><strong>图 2 解读：</strong>横轴 Q_A（美航产量），纵轴 Q_U（美联航产量）。蓝线是美航反应曲线 Q_A = 96 − 0.5·Q_U（过 (96, 0) 与 (0, 192)），红线是美联航反应曲线 Q_U = 96 − 0.5·Q_A（过 (0, 96) 与 (192, 0)），灰色虚线是 45° 对称线。两线交点 <strong>(64, 64)</strong> 即古诺均衡。对照点：(48, 48) 是卡特尔/垄断配额（合计 96，恰为垄断产量），(96, 96) 是竞争极限（合计 192 = 339 − 147，即 P = MC 时的总产量）。<strong>古诺均衡恰好落在垄断与竞争之间</strong>——这就是 1.2 节谱系的精确位置。</p>
+      <p><strong>古诺模型的优缺点：</strong>优点是把"少数公司相互提防"这个模糊现象变成可解的方程组，均衡产量、价格、利润全部可算，且自然地介于垄断与竞争之间；缺点是假设公司同时决策且只竞争产量、成本对称、反应曲线为线性——成本不对称或曲线非线性时可能出现多个均衡甚至没有均衡，且它无法回答"为什么不直接合作"（那是 L14 的问题）。</p>
+
+      <!-- ==================== L14 ==================== -->
+      <h2>二、L14 寡头 II（Oligopoly II）：卡特尔、反垄断与伯特兰模型</h2>
+
+      <h3>2.1 卡特尔的诱惑：合作利润 4608 vs 古诺 4096</h3>
+      <p>沿用航空公司例子。若美航与美联航合作、像一个垄断者那样行事：总产量定为垄断产量 96，两家平分各飞 48 班，价格 P = 243。每家利润：</p>
+      <p style="text-align:center;">π_卡特尔 = 48 × (243 − 147) = <strong>4608 美元</strong></p>
+      <p>对比古诺均衡每家 64 × (211 − 147) = 4096 美元——合作让每家利润<strong>提升 12.5%</strong>（4096 → 4608）。这就是卡特尔的诱惑：联手解决了囚徒困境，把结果从谱系中段推向垄断端。那为什么寡头不总是合作？两个原因：内在不稳定 + 违法。</p>
+
+      <h3>2.2 卡特尔的内在不稳定：毒化效应</h3>
+      <p>假设两家已达卡特尔协议（各 48 班、各赚 4608）。美航悄悄把航班从 48 加到 50：</p>
+      <ul>
+        <li>总产量 96 → 98，价格 P = 339 − 98 = 241（降 2 美元）；</li>
+        <li><strong>美航利润</strong>：50 × (241 − 147) = <strong>4700</strong>（4608 → 4700，上升）；</li>
+        <li><strong>美联航利润</strong>：48 × (241 − 147) = <strong>4512</strong>（4608 → 4512，躺枪下降）。</li>
+      </ul>
+      <p>作弊为何划算？增产拉低市场价格，产生<span class="term">毒化效应</span><span class="term-en">（Poisoning Effect）</span>——但这个负面效应由<strong>市场上所有公司共同承担</strong>（美航只担一半），而新增 2 班的销售收入由美航<strong>独享</strong>。独享全部收益、只分摊一半成本，作弊必然有利。美联航发现价格下跌、识破作弊后也会跟进增产——卡特尔就此崩溃，市场滑回古诺均衡。</p>
+
+      <div id="fig-cartel-cheat"></div>
+      <p><strong>图 3 解读：</strong>蓝线是市场需求 P = 339 − Q，灰色虚线是 MC = 147。卡特尔点 (96, 243)：各飞 48 班、各赚 4608。美航作弊后总产量 98，均衡点滑到 (98, 241)。<strong>红色窄带是毒化区</strong>：价格 243 → 241 使原有 96 班每班少赚 2 美元，总损失 192 由两家分摊（各 −96）；<strong>绿色窄条是作弊者独享的收益</strong>：新增 2 班 × 每班利润 94 = +188。美航净赚 −96 + 188 = +92（4608 → 4700），美联航净亏 −96（4608 → 4512）。</p>
+
+      <h3>2.3 反垄断法与四个真实案例</h3>
+      <p>卡特尔的第二个障碍是<span class="term">反垄断法</span><span class="term-en">（Antitrust Laws）</span>。19 世纪末美国卡特尔盛行，为克服内在不稳定，各行业发明了<span class="term">托拉斯</span><span class="term-en">（Trusts）</span>：各公司把决策权交给共同的信托基金，公开协同产量与价格，谁也作不了弊。公众愤怒之下政府立法禁止。四个案例说明这场博弈至今仍在继续：</p>
+      <ol>
+        <li><strong>电影业拆分（1930-40 年代）</strong>：米高梅等制片公司收购电影院并规定只放自家电影，通过瓜分发行渠道建卡特尔。联邦政府起诉获胜，强行拆分了这种垂直整合；</li>
+        <li><strong>英航 vs 维珍（2004）</strong>：油价飙升之际，两家密谋以"燃油附加费"名义协同涨价（10 → 120 美元）。维珍的律师担心败露，主动向政府告发英航——<strong>现实版囚徒困境</strong>：维珍因坦白免罚，英航被罚超 5 亿美元；</li>
+        <li><strong>NFL 豁免</strong>：32 支球队实为 32 家企业，把转播权打包成垄断产品出售。1957 年法院裁定其违反反垄断法，国会随后立法将职业体育联盟豁免——美国人对橄榄球的热爱超过了对自由市场的坚持；</li>
+        <li><strong>日本汽车 VER（1980 年代）</strong>：里根政府"说服"日本车企<span class="term">自愿出口限制</span><span class="term-en">（Voluntary Export Restraint, VER）</span>。日方欣然同意——这等于美国政府帮忙建立并强制执行了一个卡特尔（作弊的车根本进不了美国）。结果：日本车在美均价上涨 1200 美元，美国车企利润增加，但消费者损失远超生产者收益，<strong>总社会福利损失约 30 亿美元</strong>。</li>
+      </ol>
+
+      <h3>2.4 三种市场结构的数值对比</h3>
+      <p>把已学的三种结构放进同一个数值例（P = 339 − Q，MC = 147）：</p>
+      <ul>
+        <li><strong>完全竞争</strong>：P = MC = 147，总产量 Q = 339 − 147 = <strong>192</strong>，利润 0，社会福利最大；</li>
+        <li><strong>古诺寡头</strong>：Q = <strong>128</strong>（64/家），P = 211，每家利润 4096，居中；</li>
+        <li><strong>垄断/卡特尔</strong>：Q = <strong>96</strong>，P = 243，总利润 9216，无谓损失最大。</li>
+      </ul>
+
+      <div id="fig-three-structures"></div>
+      <p><strong>图 4 解读：</strong>同一张需求-MC 图上标出三个均衡：垄断/卡特尔 <strong>(96, 243)</strong>、古诺 <strong>(128, 211)</strong>、竞争/伯特兰 <strong>(192, 147)</strong>。绿色矩形是古诺总利润 8192（高 211−147=64 × 宽 128）；橙色三角是相对竞争的古诺<span class="term">无谓损失</span><span class="term-en">（Deadweight Loss, DWL）</span> = ½ × 64 × 64 = <strong>2048</strong>；红色梯形是垄断比古诺<strong>多出的</strong>无谓损失 2560（垄断总 DWL = ½ × 96 × 96 = <strong>4608</strong>）。规律一目了然：市场越靠近垄断端，公司利润越高，但产量越小、DWL 越大。</p>
+
+      <h3>2.5 统一公式：公司数量决定加价幅度</h3>
+      <p>古诺模型给出一个优美的统一结论：市场加价幅度满足</p>
+      <p style="text-align:center;"><strong>(P − MC) / P = −1 / (N · ε)</strong></p>
+      <p>其中 N 是公司数量，ε 是市场<span class="term">需求弹性</span><span class="term-en">（Elasticity of Demand, ε）</span>。两个极端检验：N = 1 时就是垄断者的加价公式（回收 L11）；N → ∞ 时加价趋于零，P → MC，即完全竞争。<strong>垄断与竞争不是两个孤立的模型，而是同一条曲线上的两个端点。</strong>另外，N 越大卡特尔越难维持：需要协调和信任的人更多，作弊诱惑也更大——OPEC 在 70 年代产油国少时呼风唤雨，如今随着俄罗斯、美国等加入供给，控制力大不如前。</p>
+
+      <div id="fig-markup"></div>
+      <p><strong>图 5 解读：</strong>固定 ε = −2 画出 (P−MC)/P = 1/(2N)。N = 1（垄断）加价 50%；N = 2（双寡头）降到 25%；N = 5 时仅 10%；N = 20 时已贴近横轴。曲线快速收敛到零——<strong>"竞争"不需要成千上万家公司，数量增加本身就在快速挤压加价</strong>。注意弹性 ε 沿需求曲线逐点变化，图中取定值只为展示 N 的递减效应。</p>
+
+      <h3>2.6 伯特兰模型：两家公司就足以打出完全竞争</h3>
+      <p>古诺模型里公司竞争的是产量；但很多市场中公司直接竞争价格——<span class="term">价格竞争</span><span class="term-en">（Price Competition）</span>，即<span class="term">伯特兰模型</span><span class="term-en">（Bertrand Model）</span>。它的结论令人震惊：</p>
+      <p style="text-align:center;"><strong>即使只有两家公司，伯特兰竞争也能把市场推到完全竞争的结果（P = MC，利润为零）。</strong></p>
+      <p>逻辑是一条无法停止的降价链：只要 P > MC，任何一家把价格调低一分钱就能抢走<strong>全部</strong>客户；对手必然跟进……价格战一直打到 P = MC、利润归零才停。</p>
+
+      <div id="fig-bertrand"></div>
+      <p><strong>图 6 解读：</strong>横轴是降价轮次，纵轴是价格。从垄断价 243 出发，每轮"比对手低一分钱"把价格逐级砸下，灰色虚线 MC = 147 是地板——价格撞上它时利润归零，降价链终止。对比古诺均衡 P = 211：同样的两家公司，<strong>竞争工具从产量换成价格，结果就从"半个垄断"直接跳到完全竞争</strong>。</p>
+      <p><strong>伯特兰模型的优缺点：</strong>优点是用一条极简的直觉（低一分钱抢走全部客户）解释了同质化价格战的残酷，并给出"两家即竞争"的强结论；缺点是假设产品完全同质、产能无约束、消费者瞬间转移——现实中三条都未必成立，这也解释了为什么真实双寡头并非总是零利润。</p>
+
+      <h3>2.7 古诺 vs 伯特兰：适用场景与产品差异化</h3>
+      <ul>
+        <li><strong>古诺（数量竞争）</strong>：适用于生产周期长、资本密集、产量难以快速调整的行业——丰田无法在一天内响应降价带来的百万订单，汽车业、航空业属此类；</li>
+        <li><strong>伯特兰（价格竞争）</strong>：适用于生产周期短、可快速响应需求的行业，如麦片、软件。</li>
+      </ul>
+      <p>对生产者而言，伯特兰是噩梦。逃生通道是<span class="term">产品差异化</span><span class="term-en">（Product Differentiation）</span>：伯特兰的残酷源于大家卖<strong>完全相同</strong>的产品；一旦让消费者相信"我的不一样"，就获得一小块垄断势力，可以把价格定在 MC 之上。早餐麦片是绝佳例子：二战时只有几种，70 年代已超 150 种，今天成千上万。通用磨坊推出苹果肉桂味 Cheerios 不是出于善心——原味 Cheerios 市场已是薄利红海，差异化新品才能开辟一个可收高价的小市场。社会福利层面影响是双面的：差异化造成 P > MC 的无谓损失，但多样性本身满足多元偏好、创造价值——与专利制度"用暂时垄断利润激励创新"的逻辑同构。</p>
+
+      <h3>2.8 收尾核心表：五种市场结构一行通览</h3>
+      <p>统一数值例：需求 P = 339 − Q，MC = 147，双寡头时每家数据在括号内。</p>
+      <table>
+        <thead>
+          <tr><th>市场结构</th><th>总产量 Q</th><th>价格 P</th><th>总利润（每家）</th><th>无谓损失 DWL</th><th>机制要点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="term">垄断</span><span class="term-en">（Monopoly）</span></td><td>96</td><td>243</td><td>9216（一家独享）</td><td>4608</td><td>MR = MC，加价公式 (P−MC)/P = −1/ε</td></tr>
+          <tr><td><span class="term">卡特尔</span><span class="term-en">（Cartel）</span></td><td>96（48/家）</td><td>243</td><td>9216（4608/家）</td><td>4608</td><td>复制垄断结果，但内在不稳定 + 违法</td></tr>
+          <tr><td><span class="term">古诺</span><span class="term-en">（Cournot）</span></td><td>128（64/家）</td><td>211</td><td>8192（4096/家）</td><td>2048</td><td>数量竞争，反应曲线交点，介于垄断与竞争之间</td></tr>
+          <tr><td><span class="term">伯特兰</span><span class="term-en">（Bertrand）</span></td><td>192</td><td>147</td><td>0</td><td>0</td><td>价格竞争，两家即完全竞争</td></tr>
+          <tr><td><span class="term">完全竞争</span><span class="term-en">（Perfect Competition）</span></td><td>192</td><td>147</td><td>0</td><td>0</td><td>P = MC，社会福利最大</td></tr>
+        </tbody>
+      </table>
+      <p>伯特兰与完全竞争的数值完全相同，但机制不同：前者是两家公司的价格战均衡，后者是无数价格接受者的结果。从垄断到竞争，产量单调上升（96 → 128 → 192）、价格与利润单调下降、DWL 单调收敛到零——这条谱系就是本篇的主线。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（寡头会落在垄断与竞争之间的哪里？合作为何难维持？）→ 简化模型（囚徒困境支付矩阵 + 古诺数量竞争 + 伯特兰价格竞争）→ 推导（占优策略 → 纳什均衡；剩余需求 → MR = MC → 反应曲线交点 (64, 64)；降价链 → P = MC）→ 实际应用（可乐广告战、烈酒默契、英航维珍告密、日本 VER、Cheerios 差异化）→ 局限性（对称成本、同时决策、线性反应曲线、产品同质等假设在现实中松动，真实寡头介于各模型之间）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/10-oligopoly.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：重复博弈累计利润 —— 合作(每期+8) vs 背叛(第1期+13后每期+3)，t=2 打平 =====
+    Charts.xy(document.getElementById('fig-repeated'), {
+      xLabel: '期数 t',
+      yLabel: '百事累计利润（十亿美元）',
+      xMax: 8, yMax: 70, xTicks: [1, 2, 3, 4, 5, 6, 7, 8], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：重复博弈累计利润 —— 背叛的短期优势在第 2 期耗尽，此后合作持续领先',
+      series: [
+        { points: [[1, 8], [2, 16], [3, 24], [4, 32], [5, 40], [6, 48], [7, 56], [8, 64]], type: 'linear', color: '#15803d', label: '合作路径：每期 +8' },
+        { points: [[1, 13], [2, 16], [3, 19], [4, 22], [5, 25], [6, 28], [7, 31], [8, 34]], type: 'linear', color: '#dc2626', label: '背叛路径：第 1 期 +13，此后每期 +3' },
+      ],
+      markers: [
+        { x: 2, y: 16, label: 't = 2 打平（16 = 16）', color: '#7c3aed', legend: '背叛优势耗尽点', guides: true, gxLabel: 't = 2', gyLabel: '16', labelDx: 12, labelDy: 22 },
+        { x: 8, y: 64, label: '合作 8 期累计 64', color: '#15803d', labelDx: -138, labelDy: -12 },
+        { x: 8, y: 34, label: '背叛累计仅 34', color: '#dc2626', labelDx: -112, labelDy: 24 },
+      ],
+    });
+
+    // ===== 图2：古诺反应曲线交点 —— 古诺均衡(64,64)，对比卡特尔(48,48)与竞争(96,96) =====
+    Charts.xy(document.getElementById('fig-reaction'), {
+      xLabel: '美航产量 Q_A',
+      yLabel: '美联航产量 Q_U',
+      xMax: 200, yMax: 200, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：两条反应曲线的交点即古诺均衡 (64, 64) —— 恰好位于卡特尔与竞争之间',
+      series: [
+        { points: [[96, 0], [0, 192]], type: 'linear', color: '#2563eb', label: '美航反应曲线 Q_A = 96 − 0.5·Q_U' },
+        { points: [[0, 96], [192, 0]], type: 'linear', color: '#dc2626', label: '美联航反应曲线 Q_U = 96 − 0.5·Q_A' },
+        { points: [[0, 0], [200, 200]], type: 'linear', color: '#6b7280', dash: true, label: '45° 对称线（Q_A = Q_U）' },
+      ],
+      markers: [
+        { x: 64, y: 64, label: '古诺均衡 (64, 64)，Q = 128，P = 211', color: '#7c3aed', legend: '古诺均衡（反应曲线交点）', guides: true, gxLabel: '64', gyLabel: '64', labelDx: 14, labelDy: -14 },
+        { x: 48, y: 48, label: '卡特尔 (48, 48)，合计 96 = 垄断产量', color: '#15803d', legend: '对照点', guides: true, gxLabel: '48', gyLabel: '48', labelDx: 12, labelDy: 24 },
+        { x: 96, y: 96, label: '竞争 (96, 96)，合计 192，P = MC', color: '#d97706', guides: true, gxLabel: '96', gyLabel: '96', labelDx: -160, labelDy: -14 },
+        { x: 96, y: 0, label: 'A 垄断产量 96', color: '#2563eb', labelDx: 8, labelDy: -14 },
+        { x: 0, y: 96, label: 'U 垄断产量 96', color: '#dc2626', labelDx: 14, labelDy: -6 },
+      ],
+    });
+
+    // ===== 图3：卡特尔作弊的毒化效应 —— 美航 48→50，价格 243→241 =====
+    Charts.xy(document.getElementById('fig-cartel-cheat'), {
+      xLabel: '总产量 Q',
+      yLabel: '价格 P（美元）',
+      xMax: 110, yMax: 360, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：作弊的收益独享（绿 +188）、毒化的成本分摊（红 −192，各担 96）—— 美航 4608→4700',
+      areas: [
+        { points: [[0, 241], [96, 241], [96, 243], [0, 243]], color: '#dc2626', opacity: 0.35 },
+        { points: [[96, 147], [98, 147], [98, 241], [96, 241]], color: '#15803d', opacity: 0.35 },
+      ],
+      series: [
+        { points: [[0, 339], [110, 229]], type: 'linear', color: '#2563eb', label: '市场需求 P = 339 − Q' },
+        { points: [[0, 147], [110, 147]], type: 'linear', color: '#6b7280', dash: true, label: 'MC = 147' },
+      ],
+      markers: [
+        { x: 96, y: 243, label: '卡特尔点 Q = 96，P = 243（各 48 班、各赚 4608）', color: '#7c3aed', legend: '卡特尔点', guides: true, gxLabel: '96', gyLabel: '243', labelDx: -252, labelDy: -16 },
+        { x: 98, y: 241, label: '作弊后 Q = 98，P = 241', color: '#d97706', legend: '作弊后均衡点', guides: true, gxLabel: '98', gyLabel: '241', labelDx: 14, labelDy: 20 },
+        { x: 48, y: 242, label: '毒化区：P↓2，原有 96 班共损 192，两家各担 −96', color: '#dc2626', legend: '毒化区（分摊）', labelDx: 14, labelDy: -18 },
+        { x: 97, y: 190, label: '+188 独享', color: '#15803d', legend: '作弊独享收益', labelDx: 10, labelDy: 4 },
+      ],
+    });
+
+    // ===== 图4：三结构对比 —— 垄断(96,243) / 古诺(128,211) / 竞争(192,147)，DWL 分区 =====
+    Charts.xy(document.getElementById('fig-three-structures'), {
+      xLabel: '总产量 Q',
+      yLabel: '价格 P（美元）',
+      xMax: 220, yMax: 360, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：三种结构同图对比 —— 越靠近垄断端，利润越高、产量越小、DWL 越大',
+      areas: [
+        { points: [[0, 147], [128, 147], [128, 211], [0, 211]], color: '#15803d', opacity: 0.15, label: '古诺总利润 8192' },
+        { points: [[128, 211], [128, 147], [192, 147]], color: '#d97706', opacity: 0.3 },
+        { points: [[96, 243], [128, 211], [128, 147], [96, 147]], color: '#dc2626', opacity: 0.25, label: '垄断多损 2560' },
+      ],
+      series: [
+        { points: [[0, 339], [220, 119]], type: 'linear', color: '#2563eb', label: '市场需求 P = 339 − Q' },
+        { points: [[0, 147], [220, 147]], type: 'linear', color: '#6b7280', dash: true, label: 'MC = 147' },
+      ],
+      markers: [
+        { x: 96, y: 243, label: '垄断/卡特尔 Q = 96，P = 243', color: '#7c3aed', legend: '均衡点', guides: true, gxLabel: '96', gyLabel: '243', labelDx: -196, labelDy: -14 },
+        { x: 128, y: 211, label: '古诺 Q = 128，P = 211', color: '#15803d', guides: true, gxLabel: '128', gyLabel: '211', labelDx: 12, labelDy: -14 },
+        { x: 192, y: 147, label: '竞争/伯特兰 Q = 192，P = MC = 147', color: '#d97706', guides: true, gxLabel: '192', gyLabel: '147', labelDx: -208, labelDy: -22 },
+      ],
+    });
+
+    // ===== 图5：统一公式 (P−MC)/P = −1/(N·ε)，固定 ε = −2 =====
+    Charts.xy(document.getElementById('fig-markup'), {
+      xLabel: '公司数量 N',
+      yLabel: '加价幅度 (P − MC) / P',
+      xMax: 20, yMax: 0.55, xTicks: [1, 2, 5, 10, 15, 20], yTicks: [0, 0.1, 0.2, 0.3, 0.4, 0.5],
+      legendPosition: 'top',
+      caption: '图 5：(P−MC)/P = −1/(N·ε)，ε = −2 —— N = 1 垄断，N → ∞ 收敛到完全竞争',
+      series: [
+        { points: [[1, 0.5], [2, 0.25], [3, 0.1667], [4, 0.125], [5, 0.1], [6, 0.0833], [8, 0.0625], [10, 0.05], [12, 0.0417], [15, 0.0333], [18, 0.0278], [20, 0.025]], type: 'spline', color: '#2563eb', label: '(P−MC)/P = 1/(2N)（ε = −2）' },
+      ],
+      markers: [
+        { x: 1, y: 0.5, label: 'N = 1 垄断：加价 50%', color: '#7c3aed', legend: '端点', guides: true, gxLabel: 'N = 1', gyLabel: '0.5', labelDx: 14, labelDy: -10 },
+        { x: 2, y: 0.25, label: 'N = 2：25%', color: '#15803d', labelDx: 10, labelDy: -12 },
+        { x: 5, y: 0.1, label: 'N = 5：10%', color: '#d97706', labelDx: 10, labelDy: -12 },
+        { x: 20, y: 0.025, label: 'N → ∞：→ 0（P = MC，完全竞争）', color: '#dc2626', guides: true, gxLabel: '20', labelDx: -218, labelDy: 24 },
+      ],
+    });
+
+    // ===== 图6：伯特兰降价链 —— 从垄断价 243 逐级砸到 MC = 147 =====
+    Charts.xy(document.getElementById('fig-bertrand'), {
+      xLabel: '降价轮次',
+      yLabel: '价格 P（美元）',
+      xMax: 6, yMax: 260, xTicks: [0, 1, 2, 3, 4, 5, 6], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 6：伯特兰价格战 —— "比对手低一分钱"的降价链直达 P = MC = 147，利润归零',
+      series: [
+        { points: [[0, 243], [1, 220], [2, 195], [3, 175], [4, 160], [5, 152], [6, 147]], type: 'linear', color: '#dc2626', label: '价格战路径（每轮比对手低一点）' },
+        { points: [[0, 147], [6, 147]], type: 'linear', color: '#6b7280', dash: true, label: 'MC = 147（降价地板）' },
+      ],
+      markers: [
+        { x: 0, y: 243, label: '起始：垄断价 243', color: '#7c3aed', legend: '关键点', guides: true, gyLabel: '243', labelDx: 12, labelDy: -8 },
+        { x: 6, y: 147, label: '终点：P = MC = 147，利润 = 0', color: '#15803d', guides: true, gxLabel: 'P = MC', gyLabel: '147', labelDx: -186, labelDy: -20 },
+      ],
+    });
+  </script>
+</body>
+</html>

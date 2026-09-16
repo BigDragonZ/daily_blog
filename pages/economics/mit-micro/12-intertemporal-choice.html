@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 跨期选择 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>12 跨期选择：现值、复利与人力资本</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 17 讲全部与第 18 讲前半（L17+L18 前半）：从"100 万今天付清 vs 号称 200 万"的合同选择出发，建立<span class="term">现值</span><span class="term-en">（Present Value, PV）</span>这个贯穿金融决策的核心工具；看<span class="term">复利</span>如何让 22 岁开始存钱的人反超存钱年数两倍多的同龄人；再用<span class="term">净现值</span><span class="term-en">（Net Present Value, NPV）</span>回答"要不要给房子保温""要不要上大学"；最后落到个人理财：为什么税收递延账户值钱、三档投资工具怎么选、为什么绝不买雇主股票。</p>
+
+      <!-- ==================== L17 ==================== -->
+      <h2>一、L17 跨期选择（Making Choices Over Time）：现值、复利与 NPV</h2>
+
+      <h3>1.1 引入：100 万今天付清 vs 号称 200 万 —— 懂经济学的球员选前者</h3>
+      <p><strong>反直觉开场：</strong>一名职业球员面前有两份合同：合同 A，今天一次性付清 100 万美元；合同 B，今天付 50 万、10 年后再付 150 万。报纸头条会写"B 是 200 万的大合同"，不懂经济学的球员会选 B。但如果市场利率够高，懂经济学的球员会毫不犹豫地选 A——因为<strong>"号称 200 万"根本不是 200 万</strong>。错在哪？错在把不同时点的钱直接相加。</p>
+
+      <h3>1.2 不同时点的钱不能直接相加：苹果、牛排与金子</h3>
+      <p>资本市场的关键洞见：<strong>明天的一美元不如今天的一美元值钱</strong>。原因很简单——今天拿到一美元，你可以立刻投资它，明天就有不止一美元。这意味着不同时点的钱价值不同，不能直接相加。</p>
+      <p>教授喜欢的类比：一磅苹果、一磅牛排、一磅金子，你不会说"我有 3 磅"——这个说法毫无用处。你会想知道各自值多少钱，然后把<strong>美元价值</strong>加起来。时间上收到的钱也一样："今天 1 美元、明年 1 美元、5 年后 1 美元"不是同一种东西，因为未来收到的钱放弃了今天就拿去投资的可能性。</p>
+
+      <h3>1.3 现值（Present Value, PV）：把未来的钱折回今天</h3>
+      <p>经济学的处理办法是<span class="term">折现</span><span class="term-en">（Discounting）</span>：把未来的钱按利率折回今天，得到<span class="term">现值</span><span class="term-en">（Present Value, PV）</span>——每一笔未来支付"相当于今天的多少钱"。</p>
+      <p>推导例子：利率 i = 10%，你想明年有 100 美元，今天该存多少？设今天存 Y，则 Y × (1 + i) = 100，解得 <strong>Y = 100 / 1.1 ≈ 90.90 美元</strong>。推广到 t 期之后的一笔支付 FV（Future Value，终值）：</p>
+      <p style="text-align:center;"><strong>PV = FV / (1 + i)<sup>t</sup></strong>　—— t 期后的钱，除以 (1+i) 的 t 次方折回今天</p>
+      <p>如果是一连串支付呢？逻辑相同：<strong>逐项折现再相加</strong>。假设有人找你借 30 美元，承诺未来 3 年每年还 10 美元，利率 10%。你会拒绝，因为这笔还款流的现值是：</p>
+      <p style="text-align:center;">PV = 10/1.1 + 10/1.1² + 10/1.1³ = 9.09 + 8.26 + 7.51 = <strong>24.87 美元 &lt; 30 美元</strong></p>
+      <p>借出 30、只收回现值 24.87——亏本的买卖。为什么？因为把钱存银行能赚更多。这就是现值的核心：<strong>不能只看名义总额，必须折算成今天的钱再比较</strong>。</p>
+      <p>一个重要的特例是<span class="term">永续年金</span><span class="term-en">（Perpetuity）</span>——每年固定支付 F、永远持续。把无穷级数求和，得到简洁的近似公式：</p>
+      <p style="text-align:center;"><strong>PV = F / i</strong>　—— 利率 10% 时，"每年付你 10 美元直到永远"值 10/0.1 = 100 美元</p>
+      <p>（注意：该公式假设利率恒定；利率随时间变化时不能直接用。）</p>
+
+      <h3>1.4 终值（Future Value, FV）与复利奇迹</h3>
+      <p>把 PV 公式反过来：今天投资一笔钱，t 期后的<span class="term">终值</span><span class="term-en">（Future Value, FV）</span>为 <strong>FV = PV × (1 + i)<sup>t</sup></strong>。这个公式藏着一个关键特性：<span class="term">复利</span><span class="term-en">（Compounding）</span>之美——你不仅在本金上赚利息，还在<strong>已经赚到的利息</strong>上继续赚利息，时间越长越惊人。</p>
+      <p>数值例：假设你 22 岁工作到 70 岁，利率恒为 7%（假设零通胀）。对比两个储蓄计划：</p>
+      <ul>
+        <li><strong>计划 1（早存早停）</strong>：前 15 年每年存 3,000 美元（共存 45,000），37 岁后不再存，让钱躺在账户里滚。15 年后账户有 75,387 美元，再滚 33 年，70 岁时有 75,387 × 1.07³³ ≈ <strong>703,010 美元</strong>；</li>
+        <li><strong>计划 2（先玩后存）</strong>：前 15 年一分不存，之后 33 年每年存 3,000 美元（共存 99,000）。70 岁时只有约 <strong>356,800 美元</strong>。</li>
+      </ul>
+      <p><strong>反直觉的结论：</strong>计划 2 存钱的年数是计划 1 的两倍多（33 年 vs 15 年）、本金投入也多一倍多（9.9 万 vs 4.5 万），最终财富却只有一半。这就是复利奇迹：<strong>越早存，钱替你工作的时间越长</strong>。所以一拿到工作 offer 就该开始往 401(k) 里存钱。</p>
+
+      <div id="fig-compounding"></div>
+      <p><strong>图 1 解读：</strong>绿色曲线是计划 1（22–36 岁每年存 3,000 美元，37 岁起不再存入）：37 岁账户达 (37, 75,387) 后不再投入，纯靠复利滚到 (70, 703,010)；蓝色曲线是计划 2（前 15 年为零，37–69 岁每年存 3,000 美元）：起步晚，终点只有 (70, 356,800)。两条曲线在 37 岁处分叉后差距越拉越大——早期存下的每一美元享受了最长的复利时间。</p>
+
+      <p>复利对职业运动员同样适用。棒球运动员 <strong>Bobby Bonilla</strong> 的案例：1999 年纽约大都会队想买断他合同上剩余的 590 万美元，Bonilla 没有立即拿钱，而是让球队以 8% 的利率<span class="term">递延</span>支付。到 2011 年开始付款时，这笔钱已增值到近 3,000 万美元，转化为 2011–2035 年每年一张超过 100 万美元的支票——每年 7 月 1 日被球迷称为"Bobby Bonilla 日"。他有耐心让复利施展魔法。</p>
+
+      <h3>1.5 名义利率 vs 实际利率：r = i − π</h3>
+      <p>现实中物价不是恒定的。<span class="term">通货膨胀</span><span class="term-en">（Inflation, π）</span>是物价总水平每年上涨的百分比，政府用<span class="term">消费者价格指数</span><span class="term-en">（Consumer Price Index, CPI）</span>——一篮子数百种消费品价格的加权平均——来衡量它。</p>
+      <p>关键洞见：<strong>我们关心的不是美元数量，而是能买多少东西</strong>。所以重要的不是银行广告上的<span class="term">名义利率</span><span class="term-en">（Nominal Interest Rate, i）</span>，而是<span class="term">实际利率</span><span class="term-en">（Real Interest Rate, r）</span>：</p>
+      <p style="text-align:center;"><strong>r = i − π</strong></p>
+      <p>例子：存 100 美元、名义利率 10%，明年有 110 美元。若通胀为 0，你实际富裕了 10%；若通胀也是 10%，物价同样涨 10%，110 美元能买的东西和一年前 100 美元一样多——<strong>实际利率为零</strong>。前文所有数学只要把 i 换成 r 就照样成立。实践中的麻烦在于要用<strong>预期</strong>通胀（很难猜），且质量改进让通胀本身难以精确测量（今年的笔记本比去年强得多）。本课程此后除非特别说明，一律假设通胀为零，i 与 r 通用。</p>
+
+      <h3>1.6 PV 比较决策：合同、球星与彩票</h3>
+      <p>回到 1.1 的两份合同。正确做法是<strong>只比较现值</strong>：PV_A = 100 万；PV_B = 50 万 + 150 万 / (1+i)¹⁰。哪个划算取决于利率：</p>
+      <ul>
+        <li>i = 7% 时，PV_B ≈ 50 万 + 76.3 万 = <strong>126 万 &gt; 100 万</strong>，选 B；</li>
+        <li>i = 14% 时，PV_B ≈ 50 万 + 40.5 万 = <strong>90 万 &lt; 100 万</strong>，选 A；</li>
+        <li>临界利率约为 11.6%（令 150 万/(1+i)¹⁰ = 50 万解出）。</li>
+      </ul>
+      <p>直觉：利率越高，等待的机会成本越高，你越希望钱早点到手去赚复利。<strong>利率就是等待的机会成本</strong>。</p>
+
+      <div id="fig-contract-pv"></div>
+      <p><strong>图 2 解读：</strong>蓝色曲线是合同 B 的现值随利率的变化：i = 0 时高达 200 万（报纸的算法），随利率上升快速缩水；红色虚线是合同 A 的固定现值 100 万。两线交于临界利率 (11.6%, 100 万)：交点左侧（如 i = 7%，PV_B = 126 万）选 B，右侧（如 i = 14%，PV_B = 90 万）选 A。</p>
+
+      <p>这不是抽象练习。棒球投手 <strong>Max Scherzer</strong> 与华盛顿国民队签下的"7 年 2.1 亿美元"合同实际分 14 年支付，现值只有约 <strong>1.66 亿美元</strong>——从历史第 10 大合同跌到第 20 名左右。彩票也一样： advertised 2.9 亿美元的 Mega Millions 头奖分 20 年支付，按 7% 利率折现，现值约 <strong>1.64 亿美元</strong>——名义金额近乎腰斩。</p>
+
+      <h3>1.7 净现值（Net Present Value, NPV）与投资决策</h3>
+      <p>企业怎么做投资决策？投资就是"今天花钱、明天赚钱"，这时用<span class="term">净现值</span><span class="term-en">（Net Present Value, NPV）</span>——与现值同款，但允许负值（成本）。规则：<strong>仅当 NPV &gt; 0 才投资</strong>。</p>
+      <p style="text-align:center;"><strong>NPV = (R₀ − C₀) + (R₁ − C₁)/(1+i) + (R₂ − C₂)/(1+i)² + …</strong></p>
+      <p>例子：一台机器今天花 100 美元（C₀ = 100），永远可用，每年收入 200、维护费 50，净收益 150/年。用永续年金公式：</p>
+      <p style="text-align:center;">NPV = −100 + 150 / i</p>
+      <p>注意 NPV 是利率的<strong>负函数</strong>：i 上升 → NPV 下降 → 企业愿意做的投资变少。因为利率是投资的<span class="term">机会成本</span><span class="term-en">（Opportunity Cost）</span>——利率越高，"把钱存银行"这个备选越有吸引力。这就是新闻里"高利率对商业不利"的原因。</p>
+      <p>同样的逻辑适用于消费者。教授自己的例子：老房子的取暖费每年 2,000 美元，做保温可省 25%（每年省 500），保温成本 4,000 美元。该不该做？</p>
+      <p style="text-align:center;">NPV = −4,000 + 500 / i　→　当 i &lt; 500/4,000 = <strong>12.5%</strong> 时 NPV &gt; 0，值得做</p>
+      <p>若利率高于 12.5%，不如把 4,000 美元拿去投资、用收益支付更高的取暖费。（即使不打算永远住下去也成立：保温会以等于其 NPV 的幅度提升房屋这个资产的售价。）</p>
+
+      <div id="fig-insulation-npv"></div>
+      <p><strong>图 3 解读：</strong>蓝色曲线是保温收益的现值 500/i（每年省 500 美元的永续年金），红色虚线是今天的成本 4,000 美元。两线交于 (12.5%, 4,000)：交点左侧收益现值高于成本（如 i = 10% 时 PV 收益 = 5,000 &gt; 4,000，NPV = +1,000，值得做）；交点右侧成本占优，不值得做。i = 12.5% 就是这个投资的内部临界回报。</p>
+
+      <h3>1.8 人力资本（Human Capital）：上大学是一笔投资</h3>
+      <p>这套逻辑不只用于退休金和机器——<strong>上大学的决策本身就是投资决策</strong>，你投资的是自己的<span class="term">人力资本</span><span class="term-en">（Human Capital）</span>。</p>
+      <ul>
+        <li><strong>成本</strong>：学费（每年 35,000 美元）+ <span class="term">放弃收入</span>（不念书去工作本可赚的，每年约 20,000 美元）；</li>
+        <li><strong>收益</strong>：更高的终身收入。典型大学毕业生 22 岁起薪 45,000 美元（高中毕业生 28,000），且增长更快：51 岁时大学生 80,000 vs 高中生 45,000。</li>
+      </ul>
+      <p>收益的总规模远大于成本，但<strong>成本发生在现在、收益发生在未来</strong>——是否划算全看折现率：低利率时上大学很值；利率上升，未来收入的现值缩水；本例中<strong>利率一旦超过 8%，普通人上大学就变成不划算的投资</strong>。</p>
+      <p>这正是助学政策重要的原因：助学金直接砍成本；<strong>低息学生贷款</strong>更微妙——贷款利率低于市场利率，相当于<strong>降低了学生的折现率</strong>，让上大学这笔投资重新变得划算。这是鼓励教育投资的核心公共政策工具。</p>
+      <p><strong>PV/NPV 模型的优缺点：</strong>优点是用一条公式统一了所有跨期比较（合同、彩票、机器、房产、学位），且只需利率和现金流两类可观测输入；缺点是结果对折现率极其敏感（合同 B 在 7% 和 14% 下结论相反），而"正确的折现率"（含风险调整、预期通胀）本身很难确定，永续年金等简化公式还假设利率永远不变。</p>
+
+      <!-- ==================== L18 前半 ==================== -->
+      <h2>二、L18 前半 提高储蓄（Increasing Savings）：传导链、税收递延与投资策略</h2>
+
+      <h3>2.1 储蓄 → 增长传导链</h3>
+      <p>储蓄是经济增长的关键因素，传导链条如下：</p>
+      <ol>
+        <li><strong>储蓄 ↑</strong> → 资本市场中资金供给曲线向外移动；</li>
+        <li>需求不变、供给增加 → 资本的价格（<strong>利率 ↓</strong>）；</li>
+        <li>利率是 NPV 的负函数 → 投资的 <strong>NPV ↑</strong>，更多公司说"银行利息这么低，不如买台新机器"；</li>
+        <li><strong>投资 ↑</strong> → <strong>经济增长 ↑</strong>。</li>
+      </ol>
+      <p>结论：<strong>让更多储蓄进入资金池，是促进企业投资和经济增长的杠杆</strong>。而美国储蓄率低得惊人——按口径不同只有 3%–5%，欧洲和日本约 15% 以上。这促使政策制定者寻找鼓励储蓄的工具。</p>
+
+      <h3>2.2 税收递延（Tax-Deferred）账户为何值钱：401(k) 与 IRA</h3>
+      <p>美国鼓励储蓄的主要工具是<strong>退休储蓄的税收补贴</strong>。逻辑：存银行赚的利息和工资一样要缴税，实际回报率只有 R × (1 − τ)（τ 为税率）——银行付 10%、税率 50%，你实际只拿到 5%。税收压低储蓄回报（替代效应主导时储蓄减少），于是政府说："为退休而存的钱，先不征税。"三种形式：</p>
+      <ul>
+        <li><span class="term">雇主赞助养老金</span><span class="term-en">（Employer-sponsored Pension）</span>：雇主把部分工资存入账户，这部分不征税（MIT 付 10 万、1 万进养老金，只对 9 万计税）；</li>
+        <li><strong>401(k)</strong>：类似养老金但由你自己控制资金投向；</li>
+        <li><span class="term">个人退休账户</span><span class="term-en">（Individual Retirement Account, IRA）</span>：同类机制，个人存入免税。</li>
+      </ul>
+      <p>诀窍在于：这些账户并非彻底免税，而是<span class="term">税收递延</span><span class="term-en">（Tax-Deferred）</span>——取钱时仍要缴税。为什么仍然划算？<strong>未来缴税比现在缴税便宜</strong>：今天留在手里的税款可以继续赚利息。</p>
+      <p>一年期算例（利率 10%、税率 25%）：</p>
+      <ul>
+        <li><strong>普通账户</strong>：100 美元收入先缴 25 税，存 75；一年后本息 82.5，利息 7.5 缴 1.88 税，到手 <strong>80.62 美元</strong>；</li>
+        <li><strong>IRA</strong>：100 美元全额存入，一年后 110，取出时才缴 27.5 税，到手 <strong>82.50 美元</strong>。</li>
+      </ul>
+      <p>递延一年只多 1.88 美元，但复利会把差距放大：<strong>30 年期账户在 10% 利率、25% 税率下，IRA 里的钱约为普通账户的两倍</strong>。这就是 401(k)、养老金、IRA 存在的理由——通过提高储蓄回报来鼓励储蓄。</p>
+
+      <div id="fig-ira"></div>
+      <p><strong>图 4 解读：</strong>两条曲线都从 75 美元出发（普通账户：100 美元税后存 75；IRA：100 美元税前全额存入、视同税后价值 75 起算）。普通账户的利息每年都要缴税，实际按 7.5% 复利，30 年后约 (30, 657)；IRA 的利息不缴税，按全额 10% 复利，取出时一次性缴 25% 税后仍达约 (30, 1,309)——恰好多出一倍。差距全部来自"税款多滚了 30 年利息"。</p>
+
+      <h3>2.3 投资工具三档：风险-回报权衡（Risk-Return Trade-off）</h3>
+      <p>拿到 401(k) 的文件，里面通常有三档选择：</p>
+      <ol>
+        <li><span class="term">货币市场基金</span><span class="term-en">（Money Market Fund）</span>：投资政府债券（<span class="term">国库券</span><span class="term-en">（Treasury Security）</span>）。最安全——只要美国政府不违约就保本，但利率极低（低个位数）；</li>
+        <li><span class="term">债券基金</span><span class="term-en">（Bond Fund）</span>：把钱借给公司。公司可能倒闭，风险更高，回报也更高（约 4%–5%）；</li>
+        <li><span class="term">股票基金</span><span class="term-en">（Stock Fund）</span>：直接持有公司股权。公司好则大赚、差则亏损、破产则血本无归；风险最高，但长期年回报也最高（约 7%）。</li>
+      </ol>
+      <p>这就是<span class="term">风险-回报权衡</span><span class="term-en">（Risk-Return Trade-off）</span>：<strong>风险越高的投资，预期回报必须越高</strong>。人们是<span class="term">风险规避</span><span class="term-en">（Risk-Averse）</span>的，愿意为安全接受低利率。</p>
+
+      <div id="fig-risk-return"></div>
+      <p><strong>图 5 解读：</strong>三个圆点自下而上是货币市场基金（风险≈0，回报约 2%）、债券基金（中等风险，回报 4%–5%）、股票基金（高风险，长期回报约 7%），绿色连线即风险-回报权衡线——想得更高回报必须承担更高风险。红色五角星是警示：把退休金全押在雇主股票上，风险爆表且可能回报归零（安然员工的下场，见下节）。</p>
+
+      <h3>2.4 多元化（Diversification）与绝不买雇主股票</h3>
+      <p>经济学家的核心建议是<span class="term">多元化</span><span class="term-en">（Diversification）</span>：把资金分散到不同档次的工具中，按自己的风险偏好取得风险与回报的平衡。但有一条具体的铁律：<strong>你在 X 公司工作，就绝不要把退休金投进 X 公司的股票</strong>。因为这把你的<strong>投资风险与工资风险捆绑</strong>在了一起——公司一旦倒闭，你同时失去工作和全部储蓄，这是风险最高的做法。</p>
+      <p>惨痛教训是<strong>安然（Enron）</strong>事件：这家能源公司靠不正当交易撑股价，还鼓励（甚至奖励）员工把全部退休储蓄投进安然股票。骗局崩溃时，员工们不仅失业，还失去了毕生积蓄。这就是不做多元化、尤其把所有鸡蛋放进"自己雇主"这个篮子里的代价。</p>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>三、收尾：PV / FV / NPV 公式汇总卡</h2>
+      <table>
+        <thead>
+          <tr><th>公式</th><th>含义与用途</th><th>本篇例子</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>PV = FV / (1 + i)<sup>t</sup></strong><br>永续年金：PV = F / i</td>
+            <td><span class="term">现值</span><span class="term-en">（Present Value, PV）</span>：把未来的钱折回今天，用于比较不同时点的支付流</td>
+            <td>3 年每年还 10 美元，PV = 24.87 &lt; 30，不借；合同 B 在 i = 7% 时 PV = 126 万 &gt; A；彩票 2.9 亿分期 PV 仅 1.64 亿</td>
+          </tr>
+          <tr>
+            <td><strong>FV = PV × (1 + i)<sup>t</sup></strong></td>
+            <td><span class="term">终值</span><span class="term-en">（Future Value, FV）</span>：今天的钱滚到未来值多少，量化复利威力</td>
+            <td>22 岁起存 15 年共 4.5 万 → 70 岁 70.3 万；37 岁起存 33 年共 9.9 万 → 仅 35.7 万；Bonilla 590 万递延 → 近 3,000 万</td>
+          </tr>
+          <tr>
+            <td><strong>NPV = Σ(R<sub>t</sub> − C<sub>t</sub>) / (1 + i)<sup>t</sup></strong><br>规则：NPV &gt; 0 才投</td>
+            <td><span class="term">净现值</span><span class="term-en">（Net Present Value, NPV）</span>：允许负值（成本）的 PV，投资决策的裁判；利率是投资的机会成本</td>
+            <td>机器：−100 + 150/i；房屋保温：i &lt; 12.5% 才做；上大学：i &gt; 8% 不划算，低息贷款 = 降折现率</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（不同时点的钱如何比较、要不要投资/上大学/储蓄）→ 简化模型（恒定利率下的折现，PV = FV/(1+i)<sup>t</sup>）→ 推导（支付流逐项折现 → 永续年金 → FV 复利 → NPV &gt; 0 投资规则）→ 实际应用（球员合同与彩票现值、房屋保温、人力资本、税收递延账户、三档投资工具与多元化）→ 局限性（折现率含预期通胀与风险、难以确定；利率并非恒定；储蓄行为还受心理与流动性约束影响）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/12-intertemporal-choice.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // 采样辅助：[x, f(x)] 路径点
+    function curve(f, xs) {
+      return xs.map(function (x) { return [x, +(f(x)).toFixed(2)]; });
+    }
+    function range(a, b, step) {
+      var xs = [];
+      for (var x = a; x <= b + 1e-9; x += step) xs.push(+x.toFixed(2));
+      return xs;
+    }
+
+    // ===== 图1：复利奇迹 —— 22 岁存 15 年 vs 37 岁存 33 年（i = 7%） =====
+    // 计划1：22–36 岁每年存 3,000（15 笔），37 岁起不再存，纯复利滚动
+    function plan1(age) {
+      if (age < 22) return 0;
+      if (age <= 36) return 3000 * (Math.pow(1.07, age - 21) - 1) / 0.07;
+      return 75387 * Math.pow(1.07, age - 37);
+    }
+    // 计划2：前 15 年不存，37–69 岁每年存 3,000（33 笔）
+    function plan2(age) {
+      if (age < 37) return 0;
+      var n = Math.min(age - 36, 33);
+      return 3000 * (Math.pow(1.07, n) - 1) / 0.07;
+    }
+    Charts.xy(document.getElementById('fig-compounding'), {
+      xLabel: '年龄（岁）',
+      yLabel: '账户财富（美元）',
+      xMax: 72, yMax: 750000,
+      xTicks: [22, 30, 37, 45, 55, 62, 70],
+      yTicks: [{ v: 0, label: '0' }, { v: 250000, label: '25万' }, { v: 500000, label: '50万' }, { v: 750000, label: '75万' }],
+      legendPosition: 'top',
+      caption: '图 1：复利奇迹 —— 计划 1（早存早停，本金 4.5 万）终点 70.3 万 vs 计划 2（晚存 33 年，本金 9.9 万）终点 35.7 万',
+      series: [
+        { points: curve(plan1, range(22, 70, 1)), type: 'spline', color: '#15803d', label: '计划 1：22–36 岁每年存 3,000（共 4.5 万）' },
+        { points: curve(plan2, range(22, 70, 1)), type: 'spline', color: '#2563eb', label: '计划 2：37–69 岁每年存 3,000（共 9.9 万）' },
+      ],
+      markers: [
+        { x: 37, y: 75387, label: '(37, 75,387) 停止存入', color: '#d97706', legend: '关键节点', guides: true, gxLabel: '37 岁', gyLabel: '7.5万', labelDx: 12, labelDy: 22 },
+        { x: 70, y: 703010, label: '(70, 703,010)', color: '#15803d', legend: '70 岁终点', labelDx: -150, labelDy: -12 },
+        { x: 70, y: 356800, label: '(70, 356,800)', color: '#2563eb', labelDx: -150, labelDy: 24 },
+      ],
+    });
+
+    // ===== 图2：合同 B 的现值随利率变化 —— 临界利率约 11.6% =====
+    // PV_B(i) = 50万 + 150万/(1+i)^10（单位：百万美元）；合同 A 恒为 100 万
+    function pvB(iPct) { return 0.5 + 1.5 / Math.pow(1 + iPct / 100, 10); }
+    Charts.xy(document.getElementById('fig-contract-pv'), {
+      xLabel: '利率 i（%）',
+      yLabel: '合同现值（美元）',
+      xMax: 20, yMax: 2.2,
+      xTicks: [{ v: 0, label: '0%' }, { v: 5, label: '5%' }, { v: 10, label: '10%' }, { v: 15, label: '15%' }, { v: 20, label: '20%' }],
+      yTicks: [{ v: 0, label: '0' }, { v: 0.5, label: '50万' }, { v: 1, label: '100万' }, { v: 1.5, label: '150万' }, { v: 2, label: '200万' }],
+      legendPosition: 'top',
+      caption: '图 2：PV 比较决策 —— 合同 B（50 万 + 10 年后 150 万）现值随利率缩水，与合同 A（100 万）交于 i ≈ 11.6%',
+      series: [
+        { points: curve(pvB, range(0, 20, 0.5)), type: 'spline', color: '#2563eb', label: '合同 B 的现值：50万 + 150万/(1+i)¹⁰' },
+        { points: [[0, 1], [20, 1]], type: 'linear', color: '#dc2626', dash: true, label: '合同 A 的现值：100 万（今天付清）' },
+      ],
+      markers: [
+        { x: 11.61, y: 1, label: '临界 i ≈ 11.6%', color: '#7c3aed', legend: '临界点（两合同打平）', guides: true, gxLabel: '11.6%', gyLabel: '100万', labelDx: 14, labelDy: 24 },
+        { x: 7, y: 1.263, label: 'i = 7% → PV_B = 126万 > A，选 B', color: '#15803d', legend: '低利率：选 B', labelDx: 12, labelDy: -12 },
+        { x: 14, y: 0.905, label: 'i = 14% → PV_B = 90万 < A，选 A', color: '#d97706', legend: '高利率：选 A', labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图3：房屋保温决策 —— 收益现值 500/i 与成本 4,000 交于 i = 12.5% =====
+    function pvSave(iPct) { return 500 / (iPct / 100); }
+    Charts.xy(document.getElementById('fig-insulation-npv'), {
+      xLabel: '利率 i（%）',
+      yLabel: '现值（美元）',
+      xMax: 25, yMax: 10000,
+      xTicks: [{ v: 5, label: '5%' }, { v: 10, label: '10%' }, { v: 15, label: '15%' }, { v: 20, label: '20%' }, { v: 25, label: '25%' }],
+      yTicks: [0, 2000, 4000, 6000, 8000, 10000],
+      legendPosition: 'top',
+      caption: '图 3：NPV 投资决策 —— 每年省 500 美元的收益现值 500/i vs 成本 4,000，交点 i = 12.5%（左侧值得做）',
+      series: [
+        { points: curve(pvSave, range(5, 25, 0.5)), type: 'spline', color: '#2563eb', label: '收益现值 PV = 500 / i（永续年金）' },
+        { points: [[5, 4000], [25, 4000]], type: 'linear', color: '#dc2626', dash: true, label: '保温成本 = 4,000 美元（今天支付）' },
+      ],
+      markers: [
+        { x: 12.5, y: 4000, label: '临界 i = 12.5%（NPV = 0）', color: '#7c3aed', legend: '临界点', guides: true, gxLabel: '12.5%', gyLabel: '4,000', labelDx: 14, labelDy: -14 },
+        { x: 10, y: 5000, label: 'i = 10% → NPV = +1,000，值得做', color: '#15803d', legend: 'NPV > 0：投资', labelDx: -180, labelDy: -14 },
+        { x: 20, y: 2500, label: 'i = 20% → NPV = −1,500，不做', color: '#d97706', legend: 'NPV < 0：不投资', labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图4：税收递延的力量 —— IRA vs 普通账户 30 年（i = 10%，τ = 25%） =====
+    // 普通账户：税后存 75，利息每年缴税 → 按 7.5% 复利
+    // IRA：100 税前全额存入按 10% 复利，取出时缴 25% → 等效 75 起按 10% 复利
+    function iraWealth(t) { return 75 * Math.pow(1.10, t); }
+    function plainWealth(t) { return 75 * Math.pow(1.075, t); }
+    Charts.xy(document.getElementById('fig-ira'), {
+      xLabel: '持有年数 t',
+      yLabel: '税后财富（美元）',
+      xMax: 32, yMax: 1400,
+      xTicks: [0, 10, 20, 30],
+      yTicks: [0, 350, 700, 1050, 1400],
+      legendPosition: 'top',
+      caption: '图 4：税收递延为何值钱 —— 同样 100 美元收入，IRA（税后约 1,309）30 年后约为普通账户（657）的两倍',
+      series: [
+        { points: curve(iraWealth, range(0, 30, 1)), type: 'spline', color: '#15803d', label: 'IRA（税收递延）：全额 10% 复利，取出时缴税' },
+        { points: curve(plainWealth, range(0, 30, 1)), type: 'spline', color: '#2563eb', label: '普通账户：利息每年缴税，按 7.5% 复利' },
+      ],
+      markers: [
+        { x: 30, y: 1308.7, label: '(30, ≈1,309)', color: '#15803d', legend: '30 年终点', labelDx: -130, labelDy: -12 },
+        { x: 30, y: 656.6, label: '(30, ≈657)', color: '#2563eb', labelDx: -120, labelDy: 24 },
+      ],
+    });
+
+    // ===== 图5：风险-回报权衡 —— 三档投资工具 + 安然警示 =====
+    Charts.xy(document.getElementById('fig-risk-return'), {
+      xLabel: '风险（波动率，示意）',
+      yLabel: '长期年回报率（%）',
+      xMax: 30, yMax: 9,
+      xTicks: [0, 5, 10, 15, 20, 25, 30],
+      yTicks: [0, 2, 4, 6, 8],
+      legendPosition: 'top',
+      caption: '图 5：风险-回报权衡 —— 回报越高风险越高；全押雇主股票（安然）风险爆表、回报归零',
+      series: [
+        { points: [[0.5, 2], [5, 4.5], [15, 7]], type: 'spline', color: '#15803d', label: '风险-回报权衡线（长期历史水平）' },
+      ],
+      markers: [
+        { x: 0.5, y: 2, label: '货币市场基金 ≈2%（国库券，最安全）', color: '#0d9488', legend: '三档投资工具', labelDx: 12, labelDy: -12 },
+        { x: 5, y: 4.5, label: '债券基金 4–5%（公司可能倒闭）', color: '#d97706', labelDx: 12, labelDy: -14 },
+        { x: 15, y: 7, label: '股票基金 ≈7%（公司破产则血本无归）', color: '#2563eb', labelDx: -40, labelDy: -18 },
+        { x: 27, y: 0.3, label: '全押雇主股票：安然员工回报归零', color: '#dc2626', shape: 'star', legend: '未多元化的下场（安然）', labelDx: -230, labelDy: -16 },
+      ],
+    });
+  </script>
+</body>
+</html>

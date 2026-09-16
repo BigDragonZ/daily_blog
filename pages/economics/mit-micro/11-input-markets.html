@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 要素市场 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>11 要素市场：劳动与资本</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 15、16 两讲（L15+L16）。<strong>反直觉引入：</strong>工资涨了，你的工作时间反而可能变少——这不是懒人哲学，而是劳动供给曲线可能"向后弯曲"的逻辑结果。我们先看企业如何决定雇多少人（<span class="term">要素需求</span><span class="term-en">（Factor Demand）</span>），再看个人如何决定工作多久（<span class="term">要素供给</span><span class="term-en">（Factor Supply）</span>），最后用这套模型分析最低工资（<span class="term">Minimum Wage</span>）这个争议政策——在一种叫<span class="term">买方垄断</span><span class="term-en">（Monopsony）</span>的市场结构下，最低工资竟然可能同时提高工资和就业。</p>
+
+      <!-- ==================== L15 ==================== -->
+      <h2>一、L15 要素市场 I（Input Markets I）：劳动市场</h2>
+
+      <h3>1.1 引入：工资涨了，为什么有人反而少干活？</h3>
+      <p>直觉告诉我们：工资越高，愿意工作的人越多、工作时间越长——供给曲线向上倾斜。但想象一个具体场景：你想攒钱买一辆 200 美元的自行车，时薪 10 美元，需要工作 20 小时。如果时薪突然涨到 20 美元，你只需要工作 10 小时就能买到自行车——你很可能会选择少干 10 小时，把多出来的时间拿去休闲。工资翻倍，工作时间反而减半。这个例子背后是整个劳动供给理论的核心张力：<strong>工资既是"多干一小时"的回报，也是"你变富了"的信号</strong>，两股力量的方向相反。要理解它，需要先把劳动市场的需求侧和供给侧分别建出来。</p>
+
+      <h3>1.2 要素需求：雇佣到 MRP_L = W</h3>
+      <p>此前讨论生产者理论时，我们把工资 W 和资本价格 r 当作给定，从未问过它们从何而来。<span class="term">要素市场</span><span class="term-en">（Factor Markets）</span>就是决定这些价格的市场——它们可能是整个经济中最重要的价格。下面假设要素市场和产出品市场都是完全竞争的（大量企业与工人相互匹配，谁都是价格接受者）。</p>
+      <p>短期内资本固定，企业的决策是：要不要多雇一个工人（或多买一小时劳动）？照例比较边际收益与边际成本：</p>
+      <ul>
+        <li><strong>边际收益</strong>：多一个工人多生产 <span class="term">劳动的边际产量</span><span class="term-en">（Marginal Product of Labor, MPL）</span>，但企业关心的不是产量单位而是收入，多一单位产出的价值是<span class="term">边际收益</span><span class="term-en">（Marginal Revenue, MR）</span>。两者相乘得到<span class="term">劳动的边际收益产量</span><span class="term-en">（Marginal Revenue Product of Labor, MRP_L）</span>：<strong>MRP_L = MPL × MR</strong>。竞争产出市场中 MR = P，所以 MRP_L = MPL × P；</li>
+        <li><strong>边际成本</strong>：多一个工人的成本就是工资 W；</li>
+        <li><strong>优化条件</strong>：<strong>MRP_L = W</strong>，竞争情形下即 <strong>MPL × P = W</strong>——持续雇佣，直到下一个工人带来的产出价值等于他的工资。</li>
+      </ul>
+      <p>劳动需求曲线向下倾斜的原因：<span class="term">劳动的边际产量递减</span><span class="term-en">（Diminishing Marginal Product of Labor）</span>——资本固定（比如只有一把铲子）时，每增加一个工人对产出的贡献越来越小；P 是常数，所以 MRP_L 随雇佣量下降。</p>
+
+      <div id="fig-mrp"></div>
+      <p><strong>图 1 解读：</strong>单个企业面对水平的劳动供给（绿色 W = 100，作为投入市场的价格接受者，工资由市场给定），面对向下倾斜的劳动需求（红色 MRP_L = 1000/L，递减来自 MPL 递减）。最优雇佣量在两者交点 L* = 10：此时 MRP_L(10) = 100 = W。少于 10，多雇一人的产出价值超过工资，该雇；多于 10，工资超过产出价值，不该雇。</p>
+
+      <h3>1.3 体育案例：勒布朗的 3100 万与内特·罗宾逊的 50 万</h3>
+      <p><strong>反直觉案例：</strong>一个球员的边际产量大幅上升，工资却下降了——这可能吗？</p>
+      <p>假设你是 NBA（美国国家篮球协会）球队老板，目标是最大化胜利场次（胜利与门票、广告收入成正比）。你关心的边际产量是下一个球员对胜利总数的贡献：</p>
+      <ul>
+        <li><strong>勒布朗·詹姆斯（LeBron James）</strong>年薪 3100 万美元，因为他的边际产量巨大——克利夫兰骑士队在他离开后战绩一落千丈就是验证；</li>
+        <li><strong>内特·罗宾逊（Nate Robinson）</strong>身高仅 5 英尺 9 英寸，职业生涯末期年薪约 200 万美元，对胜利的贡献远小于勒布朗；</li>
+        <li>内特后来离开 NBA 去以色列联赛，在那里成为最具统治力的球员——<strong>他的边际产量（对胜利的贡献）大幅上升</strong>，但工资却从 200 万美元<strong>跌到 50 万美元</strong>。</li>
+      </ul>
+      <p>谜底就在 <strong>W = MP × P</strong>：工资不仅取决于生产多少，还取决于产出的价格。内特从生产高价值产品（NBA 胜利）的市场转到生产低价值产品（以色列联赛胜利）的市场——就像从生产电脑芯片改行生产薯片：产量也许更多了，但每单位的价值大大降低了。<strong>评估一个工人的工资，必须同时看他的产出数量和产出价值。</strong></p>
+
+      <h3>1.4 长期劳动需求更弹性；资本需求完全对称</h3>
+      <p>长期与短期的唯一区别：资本 K 也可以调整。工资上涨时，企业不仅可以沿给定的短期需求曲线减少雇佣，还可以更换整条曲线（调整资本水平、改用更多机器）。这种额外的灵活性使<strong>长期劳动需求比短期更具弹性</strong>——对工资变化的反应更敏感。</p>
+      <p>资本需求的逻辑与劳动完全对称：企业持续增加机器，直到<span class="term">资本的边际产量</span><span class="term-en">（Marginal Product of Capital, MPK）</span>乘以商品价格等于资本的租金率（利率）r：</p>
+      <p style="text-align:center;"><strong>MPK × P = r</strong></p>
+      <p><strong>要素需求模型的优缺点：</strong>优点是把"雇人/买机器"这个看似复杂的决策压缩成一条清晰的边际法则（MRP = 要素价格），且能解释体育明星、医生、快餐店员工的工资差异（数量 × 价值两条腿）；缺点是假设产出品和投入品市场都完全竞争（企业是工资接受者），在雇主有议价能力的市场（见 2.3 节买方垄断）中 MRP_L = W 不再成立，且 MPL 在现实中往往难以精确测量。</p>
+
+      <h3>1.5 休闲建模技巧：把"坏东西"变成"好东西"</h3>
+      <p>单个企业面对的劳动供给是水平的（完全弹性），但整个市场的劳动供给不是——它来自千家万户"工作多久"的决策。这里有一个权衡：多工作 → 多收入 → 多消费（披萨和饼干）；但工作本身不是享受，人们更喜欢<span class="term">休闲</span><span class="term-en">（Leisure）</span>。</p>
+      <p>直接对"劳动"建模很别扭，因为劳动是个"坏东西"（bad）。建模技巧是<strong>把它转化成"好东西"</strong>：不对劳动供给建模，而对休闲需求建模。一天总共 24 小时：</p>
+      <p style="text-align:center;"><strong>工作小时 H = 24 − 休闲小时 l</strong></p>
+      <p>于是问题变成消费者理论的标准形式：在两种"好东西"——消费（Consumption）与休闲——之间选择。两种"商品"的价格：</p>
+      <ul>
+        <li><strong>消费的价格</strong>：标准化为 1 美元；</li>
+        <li><strong>休闲的价格</strong>：是它的<span class="term">机会成本</span><span class="term-en">（Opportunity Cost）</span>——每休闲一小时，就放弃了工作一小时能赚到的工资。<strong>休闲的价格 = 时薪 W</strong>；</li>
+        <li><strong>预算约束</strong>：极端情形一，休闲满 24 小时，消费为零；极端情形二，工作 24 小时，消费 = 24 × W。预算线斜率 = −W。</li>
+      </ul>
+
+      <div id="fig-leisure"></div>
+      <p><strong>图 2 解读：</strong>横轴休闲 l（小时/天），纵轴消费 C（美元/天），时薪 W = 25。预算线（蓝）连接两个极端：(l = 0, C = 600) 全职工作与 (l = 24, C = 0) 完全不工作，斜率 −25 = −W。无差异曲线（红，U = C × l 形态）与预算线切于 (l* = 12, C* = 300)——最优休闲 12 小时，最优工作 H* = 24 − 12 = 12 小时，日消费 300 美元。这正是消费者理论切点解在劳动市场的原样复用。</p>
+
+      <h3>1.6 替代效应 vs 收入效应：向后弯曲的劳动供给</h3>
+      <p>工资 W 上涨时会发生什么？注意工资是<strong>休闲的价格</strong>，同时决定收入，所以两种效应方向相反：</p>
+      <ul>
+        <li><span class="term">替代效应</span><span class="term-en">（Substitution Effect）</span>：休闲变贵了 → 少"买"休闲 → <strong>工作增加</strong>（工资 ↑ → 休闲 ↓ → 劳动供给 ↑）；</li>
+        <li><span class="term">收入效应</span><span class="term-en">（Income Effect）</span>：工资上涨意味着更富有，而休闲是<span class="term">正常商品</span><span class="term-en">（Normal Good）</span> → 想多"买"休闲 → <strong>工作减少</strong>（工资 ↑ → 收入 ↑ → 休闲 ↑ → 劳动供给 ↓）。</li>
+      </ul>
+      <p>总效应取决于谁更强：替代效应主导 → 劳动供给曲线向上倾斜；收入效应主导 → 出现<span class="term">向后弯曲的劳动供给曲线</span><span class="term-en">（Backward-bending Labor Supply Curve）</span>。回到自行车例子：时薪 10 美元时需工作 20 小时买 200 美元的自行车；时薪涨到 20 美元后只需 10 小时——收入效应碾压替代效应，工作时间减半。</p>
+
+      <div id="fig-backward"></div>
+      <p><strong>图 3 解读：</strong>横轴工作小时 H，纵轴时薪 W。工资从低水平上升时，替代效应主导，供给量从 H = 8 增至 H = 20（蓝点 W = 10, H = 20：攒钱买 $200 自行车需 20 小时）；工资继续上升越过拐点后收入效应主导，曲线向后弯回（红点 W = 20, H = 10：收入效应使工作时间减半）。注意自行车例子中"目标收入"心智（攒够 200 美元就收工）正是收入效应极端化的表现。</p>
+
+      <h3>1.7 实证：已婚女性弹性 0.5–1 vs 男性 ≈ 0；越南童工案例</h3>
+      <p>20 世纪 70 年代的实证研究通常区分两类人群，差异正好能用两种效应解释：</p>
+      <ul>
+        <li><strong>已婚女性</strong>：当时女性有真实的"外出工作 / 在家"选择 → <strong>替代效应大</strong>；同时许多人不工作或只是家庭次要收入来源 → <strong>收入效应小</strong>。结果：劳动供给显著向上倾斜，<span class="term">劳动供给弹性</span><span class="term-en">（Elasticity of Labor Supply）</span>约 <strong>0.5 到 1</strong>；</li>
+        <li><strong>男性</strong>：当时男性被视为家庭经济支柱，每周 40 小时是社会常态，几乎没有选择空间 → <strong>替代效应小</strong>；但作为主要收入来源 → <strong>收入效应大</strong>。两者抵消，供给弹性<strong>接近于零</strong>，供给曲线近乎垂直，甚至略微向后弯曲。</li>
+      </ul>
+      <p>过去 40 年随着社会角色变化，女性更多进入劳动力市场并成为主要收入来源，其弹性有所下降（向男性靠拢）；男性变化不大。总体上我们进入了一个劳动供给弹性普遍较低的时代。</p>
+      <p><strong>应用：童工与国际贸易。</strong>一个普遍的担忧是：与发展中国家自由贸易会加剧童工——对商品的需求增加会转化为对劳动（包括儿童）的需求。这个论点漏掉了收入效应：自由贸易提高儿童劳动的市场价值（替代效应 → 更多童工），但同时让家庭变富（收入效应 → 家庭更愿意"购买"孩子的教育而不是让他们打工）。</p>
+
+      <div id="fig-child-labor"></div>
+      <p><strong>图 4 解读：</strong>越南大米贸易自由化的实证研究。需求侧：大米出口需求增加 → 童工需求 D₁ 右移到 D₂（红→橙）；供给侧：家庭收入提高 → 更愿意送孩子上学 → 童工供给 S₁ 左移到 S₂（蓝→青）。均衡从 E₁（L = 100, W = 10）移到 E₂（L = 90, W = 19）：<strong>童工工资大幅上升，童工数量反而下降</strong>。收入效应的力量超过了替代效应——经济学分析揭示了一个出乎意料的积极结果。</p>
+
+      <!-- ==================== L16 ==================== -->
+      <h2>二、L16 要素市场 II（Input Markets II）：劳动市场均衡与最低工资</h2>
+
+      <div style="background:#fef3c7;border:1px solid #d97706;border-radius:8px;padding:12px 16px;margin:16px 0;">
+        <strong>讲义完整性说明：</strong>L16 讲义原文严重截断——仅存 24 行，停在最低工资案例的开头。本节的最低工资标准分析（2.2）按大纲照常展开；买方垄断（Monopsony）下最低工资可能提升就业的内容（2.3）<strong>讲义中完全缺失，系按标准教材（Borjas《Labor Economics》等）补充</strong>，供完整理解最低工资辩论之用。
+      </div>
+
+      <h3>2.1 劳动市场均衡回顾："供给向上"远比"需求向下"可疑</h3>
+      <p>劳动市场像任何其他市场一样有价格和数量：横轴劳动量 L，纵轴工资 W。标准模型里供给曲线向上倾斜、需求曲线向下倾斜，交于均衡 (L₁, W₁)。但请记住这是一个<strong>假设</strong>，而且是个相当可疑的假设：</p>
+      <ul>
+        <li><strong>需求向下倾斜</strong>几乎总是成立——除非出现奇怪的<span class="term">吉芬商品</span><span class="term-en">（Giffen Good）</span>；</li>
+        <li><strong>供给向上倾斜</strong>则值得商榷——如 1.6 节所示，收入效应一旦主导，劳动供给会向后弯曲甚至向下倾斜。向上倾斜的供给并不像向下倾斜的需求那样"理所当然"。</li>
+      </ul>
+      <p>尽管如此，通常我们仍假设供给向上倾斜（或至少不向后弯曲），在这个标准框架下分析政策。</p>
+
+      <h3>2.2 最低工资：竞争市场中的标准分析</h3>
+      <p><span class="term">最低工资</span><span class="term-en">（Minimum Wage）</span>是劳动市场上的<span class="term">价格下限</span><span class="term-en">（Price Floor）</span>——政府规定工资不得低于某个水平。当它高于市场均衡工资时是"有约束力的"下限。沿用福利分析（P07）的框架：</p>
+      <ul>
+        <li>均衡工资 W* = 10，均衡就业 L* = 100；设最低工资 W_min = 15 > W*；</li>
+        <li>工资 15 时，企业只愿雇 <strong>L_d = 50</strong>（沿需求曲线上移），工人却愿意提供 <strong>L_s = 150</strong>（沿供给曲线上移）；</li>
+        <li>实际就业由短边（需求方）决定：<strong>就业量 = 50</strong>；</li>
+        <li>供过于求的缺口 <strong>150 − 50 = 100</strong> 就是最低工资造成的<span class="term">失业</span><span class="term-en">（Unemployment）</span>——想工作而找不到工作的人。</li>
+      </ul>
+
+      <div id="fig-minwage"></div>
+      <p><strong>图 5 解读：</strong>需求 D：W = 20 − 0.1L（红），供给 S：W = 0.1L（蓝），均衡 E（L* = 100, W* = 10）。绿色价格下限 W_min = 15 卡在均衡上方：与需求交于 L_d = 50（就业量），与供给交于 L_s = 150（求职量），两点之间紫色标注的缺口 = 100 即失业。标准结论：<strong>竞争劳动市场中，有约束力的最低工资提高在职者工资，但减少就业、制造失业</strong>。</p>
+
+      <h3>2.3 买方垄断下的最低工资：反而可能提高就业（按教材补充）</h3>
+      <p>上面的结论依赖"劳动市场完全竞争"的假设。如果市场上只有一个雇主（或少数几个雇主串通）呢？这就是<span class="term">买方垄断</span><span class="term-en">（Monopsony）</span>——与垄断（Monopoly，唯一卖方）镜像的"唯一买方"。现实近似：偏远小镇上唯一的工厂、某些地区的医院之于护士、职业体育联盟（工资帽时代）之于球员。</p>
+      <p>买方垄断者面对<strong>向上倾斜的市场供给曲线</strong> W = 0.1L：想多雇人必须给所有人加薪（不只新员工）。因此多雇一人的真实成本——<span class="term">边际要素成本</span><span class="term-en">（Marginal Factor Cost, MFC）</span>——高于工资本身：MFC = 0.2L，位于供给曲线上方（线性供给时斜率翻倍）。决策规则仍是边际收益 = 边际成本：MRP_L = MFC，而不是 MRP_L = W：</p>
+      <ul>
+        <li>买方垄断均衡：令 MFC = MRP，0.2L = 20 − 0.1L → <strong>L_m ≈ 66.7</strong>，工资按供给曲线支付 <strong>W_m ≈ 6.7</strong>——就业和工资<strong>双双低于</strong>竞争均衡（L_c = 100, W_c = 10）。买方垄断者人为压低雇佣量来压低工资，就像垄断者压低产量抬高价格；</li>
+        <li>现在政府设定最低工资 <strong>W_min = 9</strong>（高于 W_m ≈ 6.7、低于 W_c = 10）。买方垄断者在 L ≤ 90 范围内可以按 9 美元任意雇佣（供给充足），MFC 变成一条水平线 = 9（多雇一人不再需要普涨工资）；</li>
+        <li>新决策：在 L = 90 处 MRP = 20 − 9 = 11 > MFC = 9，继续雇有利可图；但超过 90 后供给要求更高工资，MFC 跳回 0.2L（L = 90 处 MFC = 18 > 11），不划算。<strong>最优雇佣 = L = 90，工资 = 9</strong>；</li>
+        <li>对比：<strong>就业 66.7 → 90（↑），工资 6.7 → 9（↑）</strong>——最低工资在买方垄断下同时提高了工资和就业，与竞争市场的结论完全相反！</li>
+      </ul>
+
+      <div id="fig-monopsony"></div>
+      <p><strong>图 6 解读：</strong>供给 S（蓝，W = 0.1L）上方是边际要素成本 MFC（橙，W = 0.2L，斜率翻倍），需求 = MRP_L（红，W = 20 − 0.1L）。灰点 (100, 10) 是竞争均衡参照；蓝点 (66.7, 6.7) 是买方垄断均衡（MFC = MRP 决定 L_m ≈ 66.7，工资沿供给曲线下探到 6.7）；绿色虚线 W_min = 9 使 MFC 在 L ≤ 90 段变平，新均衡（绿点）移到 (90, 9)——<strong>工资与就业双升</strong>。直觉：买方垄断下工资本就被人为压低于 MRP，价格下限只是迫使雇主把压价空间吐出来，只要下限不超过竞争工资 W_c = 10，就不会触发竞争市场里那种失业。</p>
+      <p><strong>买方垄断-最低工资模型的优缺点：</strong>优点是解释了实证文献中"最低工资提高后就业未降反升"的谜题（如著名的 Card &amp; Krueger 新泽西快餐店研究），并提醒政策效果取决于市场结构；缺点是纯粹的单一雇主在现实中罕见，多数低薪劳动力市场更接近"寡头买方"或带摩擦的竞争（求职者搜寻成本、跳槽不便），MFC 分析所需的供给弹性参数也很难估计——因此它更适合作为"结论取决于假设"的方法论警示，而非直接的定价公式。</p>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>三、收尾：消费者理论工具在劳动市场的复用</h2>
+      <p>本篇最精巧的地方在于：劳动供给理论没有发明任何新工具，只是把消费者理论（P02/P03）的整套装置换了一组标签：</p>
+      <table>
+        <thead>
+          <tr><th>消费者理论（商品市场）</th><th>劳动市场（休闲-消费选择）</th><th>对应关系说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>两种商品（披萨、饼干）</td><td>消费 C 与休闲 l（两种"好东西"）</td><td>劳动是"坏东西"，通过 H = 24 − l 转化为休闲需求</td></tr>
+          <tr><td>商品价格 P₁、P₂</td><td>消费价格 = 1（标准化），休闲价格 = 时薪 W</td><td>休闲的价格是机会成本：放弃的工资</td></tr>
+          <tr><td>收入（预算）M</td><td>时间禀赋 24 小时 × W = 全收入 24W</td><td>"预算"不是钱而是时间；斜率 −W 类比 −P₁/P₂</td></tr>
+          <tr><td>无差异曲线 ∩ 预算线 → 切点</td><td>切点 (l* = 12, C* = 300) → H* = 24 − l*</td><td>切点解完全复用，最优工作时间由此反推</td></tr>
+          <tr><td>价格变化 → 替代效应 + 收入效应</td><td>工资变化 → 替代效应（↑工作）+ 收入效应（↓工作）</td><td>两效应方向相反 → 供给曲线可能向后弯曲</td></tr>
+          <tr><td>需求曲线（价格 → 需求量）</td><td>劳动供给曲线（工资 → 工作小时）</td><td>由切点轨迹导出；形状取决于两效应相对强度</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（工资 W 和利率 r 从何而来）→ 简化模型（需求侧 MRP_L = W 的边际法则；供给侧休闲-消费切点）→ 推导（竞争均衡 (L*, W*)；两效应对抗决定供给形状；价格下限与买方垄断的政策分析）→ 实际应用（NBA 球员身价、70 年代性别弹性差异、越南童工、最低工资辩论）→ 局限性（完全竞争假设在买方垄断下失效、MPL 难测量、"供给向上"本身可疑）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/11-input-markets.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // 函数曲线采样：[x, f(x)] 路径点
+    function curve(f, xs) {
+      return xs.map(function (x) { return [x, +(f(x)).toFixed(2)]; });
+    }
+
+    // ===== 图1：劳动需求 MRP_L = MPL × P = 1000/L ∩ 水平供给 W = 100 → L* = 10 =====
+    var mrpFn = function (L) { return 1000 / L; };
+    var mrpXs = [2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 18, 20];
+    Charts.xy(document.getElementById('fig-mrp'), {
+      xLabel: '劳动量 L（工人）',
+      yLabel: '工资 W / MRP_L（美元）',
+      xMax: 20, yMax: 400, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：短期劳动需求 —— 雇佣到 MRP_L = W，交点 (L* = 10, W = 100)',
+      series: [
+        { points: curve(mrpFn, mrpXs), type: 'spline', color: '#dc2626', label: '劳动需求 = MRP_L = MPL × P = 1000/L' },
+        { points: [[0, 100], [20, 100]], type: 'linear', color: '#15803d', label: '公司面临的劳动供给（水平，W = 100 由市场给定）' },
+      ],
+      markers: [
+        { x: 10, y: 100, label: 'MRP_L = W → L* = 10', color: '#7c3aed', legend: '最优雇佣点', guides: true, gxLabel: 'L* = 10', gyLabel: 'W = 100', labelDx: 14, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图2：消费-休闲切点 —— 预算线 C = 600 − 25l，无差异曲线 C = 3600/l 切于 (12, 300) =====
+    var icFn = function (l) { return 3600 / l; };
+    var icXs = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+    Charts.xy(document.getElementById('fig-leisure'), {
+      xLabel: '休闲 l（小时/天）',
+      yLabel: '消费 C（美元/天）',
+      xMax: 24, yMax: 600, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：消费-休闲选择 —— 预算线斜率 = −W = −25，切点 l* = 12 → 工作 H* = 12',
+      series: [
+        { points: [[0, 600], [24, 0]], type: 'linear', color: '#2563eb', label: '预算线 C = 600 − 25l（端点：工作 24h 赚 600 / 休闲 24h 赚 0）' },
+        { points: curve(icFn, icXs), type: 'spline', color: '#dc2626', label: '无差异曲线 U = C × l' },
+      ],
+      markers: [
+        { x: 12, y: 300, label: '切点：l* = 12，H* = 24 − 12 = 12', color: '#7c3aed', legend: '最优选择', guides: true, gxLabel: 'l* = 12', gyLabel: 'C* = 300', labelDx: 16, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图3：向后弯曲的劳动供给 —— W=10→H=20（自行车 $200），W=20→H=10（收入效应主导） =====
+    var bbPts = [
+      [8, 4], [11, 5.8], [14, 7.4], [16.5, 8.6], [19, 9.5], [20, 10],
+      [19.7, 11.5], [18.7, 13], [17.3, 14.7], [15.5, 16.4], [13.5, 18],
+      [11.5, 19.2], [10, 20], [9.2, 21.5], [8.6, 23],
+    ];
+    Charts.xy(document.getElementById('fig-backward'), {
+      xLabel: '工作小时 H（小时/天）',
+      yLabel: '时薪 W（美元）',
+      xMax: 24, yMax: 26, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：向后弯曲的劳动供给 —— 替代效应主导段上升，收入效应主导段向后弯回',
+      series: [
+        { points: bbPts, type: 'spline', color: '#2563eb', label: '劳动供给曲线（高工资段向后弯曲）' },
+      ],
+      markers: [
+        { x: 20, y: 10, label: 'W = 10 → H = 20（攒 $200 买自行车）', color: '#15803d', legend: '替代效应主导点', guides: true, gxLabel: 'H = 20', gyLabel: 'W = 10', labelDx: -228, labelDy: -14 },
+        { x: 10, y: 20, label: 'W = 20 → H = 10（收入效应主导，工时减半）', color: '#dc2626', legend: '收入效应主导点', guides: true, gxLabel: 'H = 10', gyLabel: 'W = 20', labelDx: 14, labelDy: 20 },
+      ],
+    });
+
+    // ===== 图4：越南童工 —— D₁→D₂ 右移（需求增加）+ S₁→S₂ 左移（家庭变富），E₁(100,10)→E₂(90,19) =====
+    Charts.xy(document.getElementById('fig-child-labor'), {
+      xLabel: '童工数量 L',
+      yLabel: '童工工资 W',
+      xMax: 200, yMax: 30, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：越南大米贸易自由化 —— 需求右移 + 供给左移，净效果童工减少（L 100→90）',
+      series: [
+        { points: [[0, 20], [200, 0]], type: 'linear', color: '#dc2626', label: '需求 D₁（自由化前）：W = 20 − 0.1L' },
+        { points: [[0, 28], [200, 8]], type: 'linear', color: '#ea580c', label: '需求 D₂（大米出口需求↑ → 右移）：W = 28 − 0.1L' },
+        { points: [[0, 0], [200, 20]], type: 'linear', color: '#2563eb', label: '供给 S₁：W = 0.1L' },
+        { points: [[0, 10], [200, 30]], type: 'linear', color: '#0d9488', label: '供给 S₂（家庭变富 → 左移）：W = 10 + 0.1L' },
+      ],
+      markers: [
+        { x: 100, y: 10, label: 'E₁：L = 100，W = 10', color: '#2563eb', legend: '自由化前均衡', guides: true, gxLabel: 'L₁ = 100', gyLabel: 'W₁ = 10', labelDx: 14, labelDy: 24 },
+        { x: 90, y: 19, label: 'E₂：L = 90 ↓，W = 19 ↑（童工减少）', color: '#0d9488', legend: '自由化后均衡', guides: true, gxLabel: 'L₂ = 90', gyLabel: 'W₂ = 19', labelDx: 16, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图5：竞争市场最低工资 —— W* = 10，W_min = 15 → 就业 50，失业缺口 100 =====
+    Charts.xy(document.getElementById('fig-minwage'), {
+      xLabel: '劳动量 L',
+      yLabel: '工资 W（美元/小时）',
+      xMax: 200, yMax: 20, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5：最低工资 = 价格下限 —— 就业降到 L_d = 50，失业缺口 = L_s − L_d = 100',
+      series: [
+        { points: [[0, 20], [200, 0]], type: 'linear', color: '#dc2626', label: '劳动需求 D：W = 20 − 0.1L' },
+        { points: [[0, 0], [200, 20]], type: 'linear', color: '#2563eb', label: '劳动供给 S：W = 0.1L' },
+        { points: [[0, 15], [200, 15]], type: 'linear', color: '#15803d', dash: true, label: '最低工资 W_min = 15（价格下限）' },
+      ],
+      markers: [
+        { x: 100, y: 10, label: '均衡：L* = 100，W* = 10', color: '#7c3aed', legend: '无管制均衡', guides: true, gxLabel: 'L* = 100', gyLabel: '10', labelDx: 14, labelDy: 26 },
+        { x: 50, y: 15, label: '就业量 L_d = 50', color: '#dc2626', legend: '需求侧（实际就业）', guides: true, gxLabel: 'L_d = 50', gyLabel: '15', labelDx: -130, labelDy: -16 },
+        { x: 150, y: 15, label: '供给量 L_s = 150', color: '#2563eb', legend: '供给侧（想工作的人）', guides: true, gxLabel: 'L_s = 150', labelDx: 14, labelDy: -16 },
+        { x: 100, y: 15, label: '失业 = 150 − 50 = 100', color: '#d97706', legend: '失业缺口中点', labelDx: -64, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图6：买方垄断 + 最低工资 —— (66.7, 6.7) → W_min = 9 → (90, 9)，工资就业双升 =====
+    Charts.xy(document.getElementById('fig-monopsony'), {
+      xLabel: '劳动量 L',
+      yLabel: '工资 W（美元/小时）',
+      xMax: 200, yMax: 20, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 6（教材补充）：买方垄断下最低工资 —— 就业 66.7→90、工资 6.7→9 双升（讲义此处截断）',
+      series: [
+        { points: [[0, 20], [200, 0]], type: 'linear', color: '#dc2626', label: '劳动需求 = MRP_L：W = 20 − 0.1L' },
+        { points: [[0, 0], [200, 20]], type: 'linear', color: '#2563eb', label: '劳动供给 S：W = 0.1L' },
+        { points: [[0, 0], [100, 20]], type: 'linear', color: '#ea580c', label: '边际要素成本 MFC = 0.2L（多雇一人需普涨工资）' },
+        { points: [[0, 9], [200, 9]], type: 'linear', color: '#15803d', dash: true, label: '最低工资 W_min = 9（使 MFC 在 L ≤ 90 段变平）' },
+      ],
+      markers: [
+        { x: 66.7, y: 6.67, label: '买方垄断均衡：L_m ≈ 66.7，W_m ≈ 6.7', color: '#2563eb', legend: '买方垄断均衡（MFC = MRP）', guides: true, gxLabel: 'L_m ≈ 66.7', gyLabel: '6.7', labelDx: -40, labelDy: 30 },
+        { x: 100, y: 10, label: '竞争均衡参照：L_c = 100，W_c = 10', color: '#6b7280', legend: '竞争均衡（参照）', guides: true, labelDx: 16, labelDy: -16 },
+        { x: 90, y: 9, label: '最低工资后：L = 90 ↑，W = 9 ↑', color: '#15803d', legend: '最低工资下的新均衡', guides: true, gxLabel: 'L_min = 90', gyLabel: '9', labelDx: -226, labelDy: -18 },
+      ],
+    });
+  </script>
+</body>
+</html>
