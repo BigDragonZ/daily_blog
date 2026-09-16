@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16 市场失灵专题 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>16 市场失灵专题：外部性、信息不对称与医疗</h1>
+      <p>本篇是 MIT 14.01《微观经济学原理》收官篇，覆盖最后三讲（L23/L24 + L25 + L26）。整门课从<span class="term">福利经济学第一基本定理</span><span class="term-en">（First Fundamental Theorem of Welfare Economics）</span>出发——完全竞争的私人市场能实现福利最大化；最后用三讲回答同一个问题：<strong>市场什么时候不灵，政府又该做些什么？</strong>本篇走完政府干预的四大理由全景：<span class="term">不完全竞争</span><span class="term-en">（Imperfect Competition）</span>、<span class="term">再分配</span><span class="term-en">（Redistribution）</span>、<span class="term">外部性</span><span class="term-en">（Externality）</span>、<span class="term">信息不对称</span><span class="term-en">（Information Asymmetry）</span>，并把全部工具汇聚到一个现实战场——<strong>医疗经济学</strong>。</p>
+
+      <!-- ==================== 引入 ==================== -->
+      <h2>一、引入：保养完美的好车，为什么卖不出去？</h2>
+      <p><strong>反直觉开场：</strong>你有一辆保养得完美的十年车龄二手车，买家帕特里夏（Patricia）愿意为一辆好车付 <strong>6000 美元</strong>，你的底线是 5000 美元——这本是一笔能创造 1000 美元总收益的好交易。但帕特里夏最多只肯出 <strong>4000 美元</strong>。交易告吹。</p>
+      <p>问题出在哪？大多数十年车龄的车都有毛病，买家平均还要再花 2000 美元维修，所以她对"一辆平均水平的车"只愿出 6000 − 2000 = 4000 美元。你告诉她"我这辆是完美的"，她的回答却是：<strong>"我凭什么相信你？我无法验证你的车优于平均水平。"</strong>这就是诺贝尔经济学奖得主乔治·阿克洛夫（George Akerlof）1970 年提出的<span class="term">柠檬问题</span><span class="term-en">（Lemons Problem）</span>——"柠檬"（lemon）指有暗病的劣质车。卖方知道车况、买方不知道，<strong>信息的不对称</strong>让好车被当作普通车定价，好车卖家退出，市场向劣质品塌陷，本可双赢的交易无法发生。</p>
+      <p>这个例子的意义远不止二手车：它与钢铁厂污染河流、保险公司被高风险客户"淹没"、美国 5000 万人没有医疗保险，背后是同一个主题——<span class="term">市场失灵</span><span class="term-en">（Market Failure）</span>。注意，市场失灵不是"市场崩溃"，而是<strong>存在障碍使市场无法实现福利最大化的最优结果</strong>。在典型发达经济体中，政府支出占经济总量的 25%–30%：要么这些经济体全错了，要么标准模型之外确实存在政府干预的理由。本课程共给出四个：</p>
+      <ol>
+        <li><span class="term">不完全竞争</span><span class="term-en">（Imperfect Competition）</span>：垄断、寡头压低产量抬高价格（前面篇章已讲）；</li>
+        <li><span class="term">再分配</span><span class="term-en">（Redistribution）</span>：市场结果有效率但可能不公平，从富人向穷人转移可提升社会福利（上一篇已讲）；</li>
+        <li><span class="term">外部性</span><span class="term-en">（Externality）</span>：本篇第二、三节——一方的行为影响他人却不承担后果；</li>
+        <li><span class="term">信息不对称</span><span class="term-en">（Information Asymmetry）</span>：本篇第四节——交易双方掌握的信息不同，保险市场首当其冲。</li>
+      </ol>
+      <p>第五节把这四条线全部汇合到医疗问题上，作为整门课的收官。</p>
+
+      <!-- ==================== L23/24 外部性 ==================== -->
+      <h2>二、外部性（Externalities）：我的行为，你的代价</h2>
+
+      <h3>2.1 定义与负生产外部性：钢铁厂与渔民</h3>
+      <p><span class="term">外部性</span><span class="term-en">（Externality）</span>的严格定义：当一方的行为使另一方变好或变坏，而<strong>第一方并不承担该行为的后果</strong>（不付出全部成本，或得不到全部收益），外部性就产生了。</p>
+      <p>经典例子是<span class="term">负生产外部性</span><span class="term-en">（Negative Production Externality）</span>：河边一家钢铁厂，每生产一单位钢就向河里倾倒一单位淤泥；淤泥顺流而下杀死鱼类，下游渔民收入受损。"生产"是因为它出自生产过程，"负"是因为它伤害他人，"外部"是因为钢厂倾倒淤泥<strong>不承担任何代价</strong>，代价全由渔民扛下。</p>
+      <p>图形分析的关键是区分两条成本曲线：</p>
+      <ul>
+        <li><span class="term">私人边际成本</span><span class="term-en">（Private Marginal Cost, PMC）</span>：钢厂自己付的成本（机器、厂房、工人），即市场供给曲线 S；</li>
+        <li><span class="term">社会边际成本</span><span class="term-en">（Social Marginal Cost, SMC）</span>：社会福利函数包含钢厂<strong>和</strong>渔民，因此要加上对下游造成的<span class="term">边际损害</span><span class="term-en">（Marginal Damage, MD）</span>：</li>
+      </ul>
+      <p style="text-align:center;"><strong>SMC = PMC + MD</strong></p>
+      <p>需求曲线代表<span class="term">私人边际收益</span><span class="term-en">（Private Marginal Benefit, PMB）</span>，此处假设消费钢铁无外部性，故 PMB = <span class="term">社会边际收益</span><span class="term-en">（Social Marginal Benefit, SMB）</span>。设 MD = 每单位钢 100 美元（杀死的鱼的价值），则 SMC 是 PMC 平行上移 100。</p>
+
+      <div id="fig-neg-prod"></div>
+      <p><strong>图 1 解读：</strong>市场只认私人成本，均衡在 A 点（Q₁ = 400，P₁ = 200）——供给 PMC 与需求相交。但社会最优在 C 点（SMC = SMB，Q₂ = 300）：从 Q₂ 到 Q₁ 的每一单位钢，私人层面划算（PMB &gt; PMC），社会层面却亏本（SMC &gt; SMB）。这些"私有效率、社会无效率"的单位加总成<span class="term">无谓损失</span><span class="term-en">（Deadweight Loss, DWL）</span>三角形 ABC，面积为 ½ × (400−300) × (300−200) = <strong>5000</strong>。这是对亚当·斯密"看不见的手"的经典反驳：<strong>存在外部性时，私人最优 ≠ 社会最优，市场过度生产</strong>。</p>
+
+      <h3>2.2 边界辨析：什么不算外部性？</h3>
+      <p>外部性的定义有清晰边界，两个讲义中的辨析例子：</p>
+      <ul>
+        <li><strong>吸烟者工资被下调 → 不是外部性。</strong>吸烟者工作效率较低，如果雇主因此付给他们更低的工资，吸烟者本人就承担了后果——行为成本已被"内部化"。只有当工资没有相应调整、低生产率转嫁为公司利润损失或同事负担时，才构成外部性。判据永远是：<strong>造成后果的人是否自己承担了后果</strong>；</li>
+        <li><strong>独自抽烟致死 → 不是外部性。</strong>如果我独自坐在荒野的石头上抽烟直到死去，我的私人最优决策不影响任何他人，它同时也是社会最优。外部性只来自<strong>对他人的影响</strong>：二手烟（教授岳母每天三包烟导致其妻患上慢性阻塞性肺病 COPD）、共享医保池里的医疗费用上涨（同事、Medicare 纳税人分摊）、吸烟者引发的火灾（全球每年约 10 万人因此丧生）。</li>
+      </ul>
+      <p>还有一个更微妙的边界：如果岳母<strong>明知</strong>吸烟会让女儿生病仍选择吸烟，且她把女儿健康纳入自己的家庭效用函数，损害就已被"内部化"，不再是外部性。但实证研究表明家庭并不总是统一最大化：儿童福利金直接发给母亲时，花在孩子衣物上的钱更多；通过减税发给父亲时，花在烟酒上的钱更多——<strong>家庭内部也可能存在外部性</strong>。</p>
+
+      <h3>2.3 负消费外部性：吸烟（SMB &lt; PMB）</h3>
+      <p>外部性也可以发生在消费端。<span class="term">负消费外部性</span><span class="term-en">（Negative Consumption Externality）</span>的典型是吸烟：假设香烟生产本身无污染（PMC = SMC），但我吸烟会通过二手烟、医保分摊、火灾伤害他人——<strong>消费的社会价值低于私人价值</strong>，收益曲线下移：SMB = PMB − 对他人的损害。</p>
+
+      <div id="fig-neg-cons"></div>
+      <p><strong>图 2 解读：</strong>吸烟者只比较自己的愉悦（PMB）与价格，抽到 A 点（Q₁ = 400）。但每支烟的社会收益要扣掉对他人 120 的损害，SMB 在 PMB 下方，社会最优在 C 点（Q₂ = 250）。Q₂ 到 Q₁ 之间的消费量，SMC 超过 SMB，构成紫色 DWL 三角（面积 ½ × 150 × 120 = <strong>9000</strong>）——人们<strong>过度吸烟</strong>，因为没把对他人的伤害算进自己的账。与图 1 对照：负生产外部性"供给曲线上方藏一条 SMC"，负消费外部性"需求曲线下方藏一条 SMB"，结论同为<strong>过度</strong>。</p>
+
+      <h3>2.4 正外部性：园艺、研发与他汀的代价</h3>
+      <p>外部性也可以是正面的——我的行为让你受益，我却得不到报酬，于是这类行为<strong>供给不足</strong>。</p>
+      <ul>
+        <li><strong>正向消费外部性</strong><span class="term-en">（Positive Consumption Externality）</span>：邻居院子里有堆难看的土，清理成本 1000 美元，他自己从中获得的愉悦只值 800 美元——私下他不会清理。但整洁的院子让我获得 500 美元的愉悦，社会总收益 800 + 500 = 1300 &gt; 1000 成本，社会角度<strong>应该</strong>清理。SMB &gt; PMB，这类消费过少；</li>
+        <li><strong>正向生产外部性</strong><span class="term-en">（Positive Production Externality）</span>：企业研发（R&D）。研发不仅让企业自己受益，产生的知识还会<span class="term">外溢</span><span class="term-en">（Spillover）</span>让包括竞争对手在内的所有人受益——相当于向河里倾倒的不是淤泥，而是让下游万物生长的"知识"，SMC 实际上<strong>低于</strong> PMC。最佳经济学估计：1 美元研发的社会回报约是私人回报的 <strong>2–2.5 倍</strong>，因此企业从社会角度看<strong>研发投资不足</strong>，创新与经济增长被拖累。</li>
+      </ul>
+      <p><strong>他汀（Statins）案例</strong>是投资不足的真实代价：1980 年代，美国默克（Merck）与日本三共（Sankyo）竞逐降胆固醇药他汀。三共的动物试验出了问题（部分狗生病），于是中止研究；默克担心同样的问题，向三共索要数据，三共以竞争为由<strong>拒绝</strong>，默克也中止了研究。五年后，学术界证明狗的问题与药物无关。他汀最终问世、如今每年拯救数十万人生命，但整整晚了五年——<strong>可能有上百万人因两家公司无法共享研发知识的溢出而早逝</strong>。</p>
+
+      <div id="fig-pos-prod"></div>
+      <p><strong>图 3 解读：</strong>正生产外部性是图 1 的镜像：SMC 在 PMC <strong>下方</strong>（每单位研发附带 100 的知识外溢收益）。市场均衡 A（Q₁ = 400）低于社会最优 C（Q₂ = 500），Q₁ 到 Q₂ 之间每单位的社会收益（需求）都高于社会成本，却没被生产——绿色 DWL 三角（面积 ½ × 100 × 100 = 5000）衡量<strong>投资不足</strong>的福利损失。负外部性导致"太多"，正外部性导致"太少"，政府对策也相反：前者征税，后者补贴。</p>
+      <p><strong>外部性模型的优缺点：</strong>优点是只需一个概念（SMC = PMC + MD）就统一解释了污染、吸烟、研发等看似无关的现象，并直接给出政策方向（让私人面对真实社会成本/收益）；缺点是一切取决于 MD/外溢的<strong>定量估计</strong>——外部性大小很难精确测量，而估计误差会直接转化为政策误差。</p>
+
+      <h3>2.5 科斯定理：为什么人们不能自己解决？</h3>
+      <p>回到土堆例子：有个简单的私人解决方案——我直接付给邻居 <strong>201 美元</strong>请他清理土堆：他净赚 1 美元（800 + 201 − 1000），我净赚 299 美元（500 − 201），双赢，问题解决。</p>
+      <p>罗纳德·科斯（Ronald Coase）把这个直觉升格为<span class="term">科斯定理</span><span class="term-en">（Coase Theorem）</span>：<strong>只要产权界定清晰、交易成本为零，所有外部性都可以通过私人谈判内部化</strong>——根本不存在外部性问题。若渔民拥有河流产权，他们可以向钢厂收费，直到钢厂的私人成本被推高到与社会成本一致。</p>
+      <p><strong>但现实中科斯定理常常失效</strong>。想想最大的外部性——<strong>全球变暖</strong>：我每次开车排放的二氧化碳都可能导致孟加拉国被淹，孟加拉国的人怎么可能找到我、付钱让我少开车？涉及人数众多时私人谈判的<span class="term">交易成本</span><span class="term-en">（Transaction Costs）</span>高到不可行；即使邻里小事（请聚会吵闹的邻居关小音量），信息不对称（我不知他的真实成本、他不知我的真实收益）与社会习俗也让谈判难以发生。私人市场解不动，才轮到政府。</p>
+
+      <h3>2.6 政府方案：管制 vs 矫正税（第一个"好税"）</h3>
+      <p>政府有两种理论工具：</p>
+      <ol>
+        <li><span class="term">管制</span><span class="term-en">（Regulation，数量控制）</span>：直接规定"你最多生产 Q₂"。如果政府精确知道供求曲线和外部性大小，这能达到最优。但政府很难获得如此精确的信息（与管制垄断时的问题相同）——搞错了可能关掉一个本该继续运营的有价值的工厂；</li>
+        <li><span class="term">矫正税</span><span class="term-en">（Corrective Tax）</span>，即<span class="term">庇古税</span><span class="term-en">（Pigouvian Tax，价格控制）</span>：政府只需知道边际损害大小（每单位钢 100 美元），对每单位钢征 100 美元的税，钢厂的 PMC 曲线上移<strong>与 SMC 重合</strong>——外部性被强制<span class="term">内部化</span><span class="term-en">（Internalize the Externality）</span>，钢厂在新的成本下<strong>自愿</strong>选择社会最优产量 Q₂。对吸烟同理：对每包香烟征收等于其外部损害的税。</li>
+      </ol>
+      <p>这是本课程遇到的<strong>第一个"好税"</strong>：此前所有税收都<strong>造成</strong>无谓损失，庇古税却<strong>减少</strong>无谓损失——它矫正市场失灵而非扭曲经济。对称地，正外部性对应<span class="term">矫正补贴</span><span class="term-en">（Corrective Subsidy）</span>：补贴研发降低私人成本，鼓励企业多投资，向社会最优靠拢。</p>
+
+      <h3>2.7 应用光谱：碳税、酒驾与毒品辩论</h3>
+      <p><strong>环境：</strong>发电厂的二氧化硫与氮氧化物形成酸雨；最大的问题是全球变暖——大气 CO₂ 浓度达 80 万年最高，到 2100 年全球气温可能上升高达 10 华氏度，海平面上升淹没孟加拉国、纽约和佛罗里达大片地区，美国经济届时可能萎缩 10%。经济学解法很简单：<span class="term">碳税</span><span class="term-en">（Carbon Tax）</span>或管制，逐步淘汰化石燃料。但政治困境巨大：<strong>行动的成本在当下，收益在遥远的未来和遥远的国度</strong>。欧洲汽油税很高，美国连小幅加油税提案都是政治毒药；国际社会退而采用数量管制——1997 年《京都议定书》（Kyoto Protocol）与 2015 年《巴黎气候协定》（Paris Agreement）设定各国排放上限，但谈判极其困难：发展中国家说"你们排放了几个世纪才发展起来，凭什么限制我们？"，美国签署巴黎协定后又退出。</p>
+      <p><strong>酒精：</strong>饮酒的外部性远大于吸烟，主要是酒驾——美国每年约 <strong>1.3 万人</strong>死于酒驾事故（相当于每年四次"9·11"），40 万人受伤，但酒精税率很低。此外肥胖导致糖尿病等昂贵疾病：预测 2000 年出生的美国人三分之一将患糖尿病。</p>
+      <p><strong>毒品辩论：</strong>按至今的框架，我们似乎不该禁止任何东西、只该征税——只要我付清了外部成本的税就该让我吸。毒品使用本身的外部性可能不大，最大的外部性来自<strong>禁毒滋生的犯罪</strong>（若合法化，墨西哥贩毒集团会因价格暴跌而瓦解）。那我们为什么不把毒品合法化再征税？答案是：我们认为这个模型不适用于毒品——吸毒者（尤其前额叶皮层尚未发育完全的青少年）并非完全理性，一旦成瘾造成终身后果。这种"对自己造成的伤害"称为<span class="term">内部性</span><span class="term-en">（Internality）</span>。<strong>当内部性足够大时，社会选择彻底禁止替代征税</strong>。大麻合法化辩论正处在这条光谱上：大麻的外部性和内部性都相对较小（远低于吸烟），该如何定位其法律地位与税率，是公共政策的重要议题。</p>
+      <p>政府应对健康外部性的工具箱由此展开为四件：<strong>信息宣传</strong>（禁烟宣传很有效，但更多惠及高教育人群）、<strong>征税</strong>（香烟税有效降低青少年吸烟；对酒精/不健康食品征税更棘手——多数消费并无害，且涉及公平问题）、<strong>惩罚</strong>（酒驾重罚，但执法不完美如呼气测试不准）、<strong>禁止</strong>（极端管制，显著减少但不能消灭消费）。</p>
+
+      <!-- ==================== L25 信息不对称 ==================== -->
+      <h2>三、信息不对称（Information Asymmetry）：保险市场的柠檬</h2>
+
+      <h3>3.1 柠檬市场回顾与保险市场的反转</h3>
+      <p>开篇的柠檬市场里，<strong>卖方</strong>拥有更多信息（知道车况）。保险市场恰好相反：<strong>买方</strong>拥有更多信息——你比保险公司更了解自己的健康状况、家族病史、生活习惯（是否跳伞、是否天天接触生病的小孩）。保险公司担心的是：主动上门买保险的人，可能正是因为知道自己是高风险。</p>
+      <p>背景数据：私人保险在美国已是巨大产业（健康、车险、人寿、财产等合计每年约 1.5 万亿美元）。既然人们厌恶风险、私人保险如此庞大，政府为什么还要介入？答案就是信息不对称导致的<span class="term">逆向选择</span><span class="term-en">（Adverse Selection）</span>。</p>
+
+      <h3>3.2 逆向选择与死亡螺旋：MIT 毕业生算例</h3>
+      <p><span class="term">逆向选择</span><span class="term-en">（Adverse Selection）</span>：由于信息不对称，<strong>风险最高的人群最积极地参与市场</strong>，把平均成本推高、把低风险者挤出，保险公司亏损，市场甚至无法维系。讲义的数值算例：为 100 名刚毕业的 MIT 学生提供健康保险——</p>
+      <ul>
+        <li><strong>90 名健康者</strong>：每年 10% 概率产生 10,000 美元医疗费 → 预期成本 <strong>1000 美元</strong>；</li>
+        <li><strong>10 名体弱者</strong>：每年 50% 概率产生 10,000 美元医疗费 → 预期成本 <strong>5000 美元</strong>。</li>
+      </ul>
+      <p>若假设 100 人全部投保，平均预期成本 = 0.9 × 1000 + 0.1 × 5000 = <strong>1400 美元</strong>，于是保费定为 <strong>1500 美元</strong>，期望每人赚 100。但：</p>
+      <ul>
+        <li>体弱者（预期成本 5000）觉得 1500 的保费太划算，<strong>全买</strong>；</li>
+        <li>健康者（预期成本 1000）觉得 1500 太贵，除非极度厌恶风险，否则不买——假设只有一半（45 人）买。</li>
+      </ul>
+      <p>实际投保池变成 10 体弱 + 45 健康：总成本 = 10 × 5000 + 45 × 1000 = <strong>95,000 美元</strong>，总收入 = 55 × 1500 = <strong>82,500 美元</strong>——<strong>亏损 12,500</strong>，池子平均成本 95,000 / 55 ≈ <strong>1727 美元 &gt; 保费 1500</strong>。保险公司自然反应是提价，但提价让更多健康者退出，池子风险更高、平均成本更高、还得再提价——这就是<span class="term">死亡螺旋</span><span class="term-en">（Death Spiral）</span>：最终只剩风险最高的人，保险公司无法提供他们负担得起的保费，市场失灵；那些愿意为合理价格买保障的健康者被排挤出市场。</p>
+
+      <div id="fig-death-spiral"></div>
+      <p><strong>图 4 解读：</strong>三轮推演——第 0 轮（设想）：若全员投保，平均成本 1400，定价 1500 可盈利；第 1 轮：体弱全买、健康者半数退出，池子平均成本升至 ≈1727，超过保费 1500，保险公司亏损；第 2 轮：保费提到 2000，更多健康者退出（池子变为 10 体弱 + 20 健康），平均成本升至 ≈2333，依然入不敷出。蓝柱（保费）追着红柱（平均成本）跑，却永远追不上——螺旋的终点是市场瓦解。</p>
+
+      <h3>3.3 阿罗的完美信息悖论：更多信息不总是好事</h3>
+      <p>你可能会想：基因检测等技术让保险公司获得完美信息，逆向选择不就解决了吗？诺贝尔奖得主肯尼斯·阿罗（Kenneth Arrow）的"双岛例子"给出了令人不安的回答。</p>
+      <p>太平洋上两个小岛，各住一个农民。一场飓风将摧毁其中一个岛，但没人知道是哪个。两个农民自然达成协议：<strong>无论谁的岛被毁，幸存者分给对方一半收成</strong>——没人会饿死，双方总福利提高。这就是保险的本质：在"无知之幕"后分摊风险。</p>
+      <p>现在，一家气象服务机构出现，精确预测 <strong>A 岛将被摧毁</strong>。B 岛农民还愿意与 A 岛分享收成吗？当然不。结果：B 保住全部收成，A 饿死。<strong>信息变得更完美，总社会福利却下降了</strong>——完美信息摧毁了风险共担机制，保险本身不复存在。政策含义直指基因检测：<strong>允许保险公司使用基因信息，可能"治愈"逆向选择，却同时杀死保险</strong>；这也是各国立法限制保险公司获取基因检测结果的原因。</p>
+
+      <div id="fig-arrow-islands"></div>
+      <p><strong>图 5 解读：</strong>两个岛上的收成对比。无知之幕下（绿色）：保险协议让两个农民都锁定 50 的收成，风险被熨平；完美信息后（红色）：B 岛独得 100，A 岛颗粒无收、饿死。两种情形社会总产出都是 100，但第二种里保险消失、最坏结果变得不可承受——<strong>信息的价值在保险市场里可以是负的</strong>。</p>
+
+      <h3>3.4 政府三对策：补贴、强制购买、直接提供</h3>
+      <p>面对逆向选择，政府有三件工具：</p>
+      <ol>
+        <li><span class="term">补贴</span><span class="term-en">（Subsidization）</span>：用税收抵免或直接补贴鼓励（尤其健康低风险的）人们购买保险。美国的雇主健康保险免税，相当于政府每年花近 <strong>3000 亿美元</strong>补贴健康保险，维持市场稳定；</li>
+        <li><span class="term">强制购买</span><span class="term-en">（Mandate）</span>：立法要求人人投保——健康者体弱者都进池子，保险公司可按平均风险定价，逆向选择消失。例子：《平价医疗法案》（ACA/Obamacare）的个人强制条款、多数州强制的工伤赔偿保险（Workers' Compensation）。缺点：强迫本不想买的健康者消费，引发不满；</li>
+        <li><span class="term">直接提供</span><span class="term-en">（Public Provision）</span>：政府自己当保险人——这是美国最常见的做法：社会保障（Social Security，退休收入）、医疗保险（Medicare，老年人）、失业保险（Unemployment Insurance）、残疾保险（Disability Insurance）。政府社会保险总规模甚至超过私人保险市场，每年约 <strong>1.7–2 万亿美元</strong>。</li>
+      </ol>
+
+      <h3>3.5 道德风险：保险的另一面</h3>
+      <p>解决了逆向选择，新问题立刻出现：<span class="term">道德风险</span><span class="term-en">（Moral Hazard）</span>——知道自己被保险保护后，人们的行为变得不那么谨慎：有健康保险骑车更莽、有火灾保险不买灭火器、有失业保险找工作更慢。统计数据清晰支持其存在：<strong>当一个州提高工伤赔偿福利时，工伤报告数量随之增加</strong>；失业救济金提高时，失业持续时间变长。</p>
+      <p>道德风险带来<strong>双重成本</strong>：</p>
+      <ol>
+        <li><strong>效率损失</strong>：保险扭曲激励——失业保险降低了休闲的机会成本，人们工作更少、休闲更多，偏离社会最优配置，产生无谓损失；</li>
+        <li><strong>税收上升</strong>：更多人不工作 → 需要向仍在工作的人征更高的税来支付福利 → 更高的税进一步抑制工作积极性，恶性循环。</li>
+      </ol>
+
+      <h3>3.6 根本权衡：保障 vs 激励（美国 vs 荷兰）</h3>
+      <p>社会保险设计的根本权衡：一方面需要保险平滑消费、防止人们因失业/疾病/年老陷入绝境（且逆向选择使私人市场无法有效提供）；另一方面保险引发道德风险，带来效率损失与更高社会成本。最优制度是在两极之间找平衡：<strong>提供足够保障让人免于饥饿，又不慷慨到消除工作动机</strong>。</p>
+      <p>各国选择不同：美国的社保体系通过"<span class="term">精算调整</span><span class="term-en">（Actuarial Adjustment）</span>"激励延迟退休；荷兰过去极其慷慨的退休金制度导致 <strong>55 岁以上的人几乎都不再工作</strong>。细节设计极大影响政策效果——这正是公共政策（如 MIT 14.41）的复杂所在。</p>
+
+      <!-- ==================== L26 医疗经济学 ==================== -->
+      <h2>四、医疗经济学（Health Economics）：四条线的汇合点</h2>
+
+      <h3>4.1 花最多的钱，得两极分化的结果</h3>
+      <p>这是本课程最后一讲，把整学期工具应用到一个现实话题。背景事实：在所有发达国家中，美国医疗花费<strong>遥遥领先</strong>——约占 GDP 的 <strong>17.5%</strong>，相当于每个美国人每年近 10,000 美元。典型欧洲国家约为美国的三分之二，英国不到一半。</p>
+
+      <div id="fig-health-spending"></div>
+      <p><strong>图 6 解读：</strong>医疗支出占 GDP 比重对比——美国 17.5%，典型欧洲国家约 11.7%（美国的 2/3），英国约 8.5%（不到美国一半）。医疗保健在美国经济中的份额之大，让"钱花到哪去了、买到什么"成为必须回答的问题。</p>
+
+      <p>那买到了什么？常见指标（婴儿死亡率、预期寿命排世界第 20 位左右）说美国"钱花冤枉了"，但这些指标<strong>具有误导性</strong>——美国拥有世界上最不平等的医疗体系。正确方式是区分"体系内"与"体系外"：</p>
+      <ul>
+        <li><strong>体系内</strong>（拥有良好保险的人）：可能是世界上最好的医疗。经济学家的判据是看人们用脚投票——每年有 <strong>100 万人</strong>来美国治病，没人离开美国去英国做手术；</li>
+        <li><strong>体系外</strong>：世界上最差的医疗之一。今天在美国出生的白人婴儿第一年死亡概率略高于 0.5%，与北欧相当；但黑人婴儿约为白人婴儿的<strong>两倍</strong>，比巴巴多斯还糟。</li>
+      </ul>
+      <p>结论：<strong>美国医疗的问题不是平均水平差，而是不平等</strong>。两大根本问题：支出太高、可及性（Access）太不平等。</p>
+
+      <h3>4.2 为什么关心无保险者：市场失灵 + 再分配</h3>
+      <p>2014 年之前，美国约 <strong>5000 万人</strong>没有医疗保险——是唯一有大量无保险人口的发达国家。"5000 万人没有保险"本身是不是问题？更多人也没有平板电视。我们只在两种情况下关心：<strong>存在市场失灵，或出于再分配考虑</strong>——而医疗保险两者全占：逆向选择使市场无法良好运作（市场失灵）；无保险者往往比有保险者穷得多（再分配）。有趣的是，无保险者通常不是最穷的人（他们有 Medicaid 兜底），而是所谓"近贫者"。</p>
+
+      <h3>4.3 ACA 之前的保险结构</h3>
+
+      <div id="fig-coverage-pie"></div>
+      <p><strong>图 7 解读：</strong>ACA（2014 年生效）之前美国医保覆盖结构：约 60% 雇主赞助保险、约 20% 政府项目（Medicare + Medicaid）、约 6% 个人市场，其余约 14%（≈5000 万人）无保险。每一块的存在与大小都能用本课程的工具解释。</p>
+      <ul>
+        <li><strong>雇主赞助保险</strong><span class="term-en">（Employer-Sponsored Insurance, ESI）</span>（≈60%）：为什么雇主成为保险入口？<span class="term">大数法则</span><span class="term-en">（Law of Large Numbers）</span>——MIT 这样约 10,000 名员工的大雇主来投保，保险公司能精确预测群体成本，再加价盈利；雇佣关系天然把健康者体弱者捆在一起，<strong>绕开了逆向选择</strong>；</li>
+        <li><strong>个人/非团体市场</strong>（≈6%）：极小，原因正是逆向选择——个人上门买保险，保险公司立刻警惕"你为什么自己买？是不是知道自己身体不好？"于是收取高昂保费，鲜有人购买。更糟的是两种当时完全合法的做法：<span class="term">既往病症排除条款</span><span class="term-en">（Pre-existing Conditions Exclusions）</span>——你过去得过癌症或哮喘，保险公司可以承保但"任何与既往病症相关的费用一概不赔"（实为部分保险）；<span class="term">医疗核保</span><span class="term-en">（Medical Underwriting）</span>——体检后发现生病就直接拒保，或收取比健康人高百倍的保费。这些是保险公司对逆向选择的理性回应，却导致个人市场严重失能；</li>
+        <li><strong>政府项目</strong>（≈20%）：两大项目别记混——<span class="term">Medicare</span><span class="term-en">（联邦医疗保险）</span>给<strong>老人</strong>，<span class="term">Medicaid</span><span class="term-en">（医疗补助）</span>给<strong>穷人</strong>。</li>
+      </ul>
+
+      <h3>4.4 ACA 及之后（讲义截断，按公开资料补全）</h3>
+      <p><em>【注：26 讲讲义原文在介绍 Medicare / Medicaid 处截断。本节按公开资料（CMS、CBO、KFF 等）补全，供参考。】</em></p>
+      <p>《平价医疗法案》（Affordable Care Act, ACA，又称 Obamacare）2010 年立法、核心条款 2014 年生效，其设计几乎是对本篇三讲的逐条应用：</p>
+      <ul>
+        <li><strong>针对逆向选择 → 三支柱结构</strong>：①禁止既往病症排除与医疗核保（<span class="term">保证承保</span> Guaranteed Issue + 限制定价差异的<span class="term">社区费率</span> Community Rating）——但只禁止歧视会诱发更严重的逆向选择（大家都等生病才买），所以配套②<span class="term">个人强制令</span><span class="term-en">（Individual Mandate）</span>要求人人投保（2019 年起联邦罚款归零），以及③保费补贴（税收抵免）让健康者也买得起——正是 3.4 节"强制 + 补贴"的组合；</li>
+        <li><strong>保险交易所</strong><span class="term-en">（Health Insurance Exchanges/Marketplaces）</span>：为个人市场建立标准化比价平台，降低交易成本、增强竞争（呼应完全竞争三条件中的"信息完全 + 低交易成本"）；</li>
+        <li><strong>Medicaid 扩张</strong>：把低收入成年人纳入保障（各州可选，最高法院裁定后）；允许 26 岁以下年轻人留在父母保单上；</li>
+        <li><strong>效果</strong>：无保险率从 ACA 前的约 16%（≈5000 万人）降至近年约 8%（≈2600 万人）；成本曲线弯曲（bending the cost curve）与质量激励仍是未完成的议程。</li>
+      </ul>
+
+      <!-- ==================== 收官 ==================== -->
+      <h2>五、收官：整门课的"市场失灵地图"</h2>
+      <p>医疗这一个问题，让本课程四条政府干预的理由线全部交汇——这就是 14.01 的完整地图：</p>
+      <table>
+        <thead>
+          <tr><th>市场失灵 / 干预理由</th><th>在医疗中的体现</th><th>对应政策工具</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>不完全竞争（Imperfect Competition）</td><td>医院合并、药企专利垄断抬高价格；保险公司议价能力悬殊</td><td>反垄断、交易所比价、价格谈判与管制</td></tr>
+          <tr><td>外部性（Externality）</td><td>疫苗接种的正外部性；传染病、二手烟的负外部性；研发外溢（他汀案例）</td><td>矫正税/补贴、强制接种、公共研发资助</td></tr>
+          <tr><td>信息不对称（Information Asymmetry）</td><td>逆向选择（个人市场崩溃、既往病症排除）+ 道德风险（保险改变就医行为）</td><td>强制购买、补贴、政府直接提供（Medicare/Medicaid）</td></tr>
+          <tr><td>公平 / 再分配（Redistribution）</td><td>无保险者多为低收入者；黑人婴儿死亡率两倍于白人——问题是不平等而非平均</td><td>Medicaid、保费补贴、累进税筹资</td></tr>
+        </tbody>
+      </table>
+      <p>从第一讲的供给需求到最后一讲的医疗政策，14.01 的思想链路是：<strong>先建立"市场有效"的基准（第一福利定理），再系统地枚举它失效的每一种方式，并为每种失效匹配对应的政府工具</strong>。市场失灵地图既是复习提纲，也是分析任何现实政策问题的检查清单。</p>
+
+      <h2>六、收尾对比表</h2>
+      <h3>6.1 四类外部性 2×2 表</h3>
+      <table>
+        <thead>
+          <tr><th></th><th>负外部性（Negative）</th><th>正外部性（Positive）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>生产端</strong></td>
+            <td>钢铁厂淤泥害渔民：SMC = PMC + MD &gt; PMC → <strong>过度生产</strong>（Q₁ &gt; Q₂，图 1）→ 对策：庇古税</td>
+            <td>企业研发知识外溢（他汀案例）：SMC &lt; PMC → <strong>投资不足</strong>（Q₁ &lt; Q₂，图 3）→ 对策：矫正补贴</td>
+          </tr>
+          <tr>
+            <td><strong>消费端</strong></td>
+            <td>吸烟（二手烟/医保分摊/火灾）：SMB &lt; PMB → <strong>过度消费</strong>（图 2）→ 对策：香烟税、宣传、惩罚</td>
+            <td>邻居园艺（我获益 500 他不知情）：SMB &gt; PMB → <strong>消费不足</strong> → 对策：补贴或科斯式私人谈判（付 201 美元）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>6.2 逆向选择 vs 道德风险</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>逆向选择（Adverse Selection）</th><th>道德风险（Moral Hazard）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>发生时点</td><td><strong>签约前</strong>（隐藏类型）</td><td><strong>签约后</strong>（隐藏行为）</td></tr>
+          <tr><td>信息优势方</td><td>投保人（买方）比保险公司更了解自己的风险类型</td><td>投保人（被保方）比保险公司更清楚自己的谨慎程度</td></tr>
+          <tr><td>机制</td><td>高风险者最积极投保 → 池子恶化 → 死亡螺旋</td><td>有保险 → 行为更不慎 / 更不努力 → 索赔增加</td></tr>
+          <tr><td>本课例子</td><td>MIT 毕业生算例：定价 1500，健康者退出，平均成本 1727 → 2333</td><td>工伤福利提高 → 工伤报告增加；失业救济提高 → 失业期变长</td></tr>
+          <tr><td>对策</td><td>补贴、强制购买、政府直接提供；大数法则（雇主团体保险）</td><td>共付额/免赔额等分担机制；保障与激励的权衡设计（美国精算调整 vs 荷兰教训）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（市场何时失灵、政府何时该出手）→ 简化模型（SMC = PMC + MD；柠檬市场与投保池算例；双岛保险）→ 推导（私人最优 ≠ 社会最优 → DWL；逆向选择 → 死亡螺旋；完美信息 → 保险消失）→ 实际应用（碳税与京都/巴黎、酒驾、毒品辩论、社保三对策、ACA 三支柱）→ 局限性（外部性难以定量、科斯谈判交易成本、道德风险无法根除——只能在保障与激励之间权衡）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/16-market-failures.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：负生产外部性（钢铁厂）—— PMC: P=0.5Q, SMC=PMC+100, D: P=400-0.5Q =====
+    // A = PMC∩D = (400,200); C = SMC∩D = (300,250); B = SMC(Q1) = (400,300); DWL = ½×100×100 = 5000
+    Charts.xy(document.getElementById('fig-neg-prod'), {
+      xLabel: '钢铁数量 Q',
+      yLabel: '价格 / 成本（美元）',
+      xMax: 500, yMax: 400, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：负生产外部性 —— SMC = PMC + MD（MD = 100），市场过度生产，DWL = 三角 ABC = 5000',
+      areas: [
+        { points: [[300, 250], [400, 200], [400, 300]], color: '#dc2626', opacity: 0.18, label: 'DWL' },
+      ],
+      series: [
+        { points: [[0, 400], [500, 150]], type: 'linear', color: '#dc2626', label: 'D = PMB = SMB = 400 − 0.5Q' },
+        { points: [[0, 0], [500, 250]], type: 'linear', color: '#2563eb', label: 'PMC = 0.5Q（市场供给 S）' },
+        { points: [[0, 100], [400, 300]], type: 'linear', color: '#9333ea', label: 'SMC = PMC + 100' },
+      ],
+      markers: [
+        { x: 400, y: 200, label: 'A：市场均衡（Q₁ = 400，P₁ = 200）', color: '#2563eb', legend: '市场均衡点 A', guides: true, gxLabel: 'Q₁ = 400', gyLabel: 'P₁ = 200', labelDx: -226, labelDy: 30 },
+        { x: 300, y: 250, label: 'C：社会最优（SMC = SMB，Q₂ = 300）', color: '#15803d', legend: '社会最优点 C', guides: true, gxLabel: 'Q₂ = 300', labelDx: -196, labelDy: -18 },
+        { x: 400, y: 300, label: 'B：SMC(Q₁) = 300', color: '#6b7280', legend: 'B：SMC 在 Q₁ 处', labelDx: 14, labelDy: 6 },
+      ],
+    });
+
+    // ===== 图2：负消费外部性（吸烟）—— S: P=0.4Q, PMB: P=320-0.4Q, SMB: P=200-0.4Q =====
+    // A = PMB∩S = (400,160); C = SMB∩S = (250,100); SMB(Q1) = 40; DWL = ½×150×120 = 9000
+    Charts.xy(document.getElementById('fig-neg-cons'), {
+      xLabel: '香烟消费量 Q',
+      yLabel: '价格 / 收益（美元）',
+      xMax: 500, yMax: 320, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：负消费外部性（吸烟）—— SMB = PMB − 120，过度消费 Q₁ = 400 > Q₂ = 250，DWL = 9000',
+      areas: [
+        { points: [[250, 100], [400, 160], [400, 40]], color: '#9333ea', opacity: 0.15, label: 'DWL' },
+      ],
+      series: [
+        { points: [[0, 320], [500, 120]], type: 'linear', color: '#dc2626', label: 'PMB = 320 − 0.4Q（私人需求）' },
+        { points: [[0, 200], [400, 40]], type: 'linear', color: '#9333ea', label: 'SMB = PMB − 120（对他人损害）' },
+        { points: [[0, 0], [500, 200]], type: 'linear', color: '#2563eb', label: 'S = PMC = SMC = 0.4Q（生产无污染）' },
+      ],
+      markers: [
+        { x: 400, y: 160, label: 'A：私人最优（Q₁ = 400，P = 160）', color: '#dc2626', legend: '私人最优点 A', guides: true, gxLabel: 'Q₁ = 400', gyLabel: 'P₁ = 160', labelDx: -200, labelDy: -16 },
+        { x: 250, y: 100, label: 'C：社会最优（SMB = SMC，Q₂ = 250）', color: '#15803d', legend: '社会最优点 C', guides: true, gxLabel: 'Q₂ = 250', gyLabel: 'P₂ = 100', labelDx: -182, labelDy: 28 },
+        { x: 400, y: 40, label: 'SMB(Q₁) = 40', color: '#9333ea', labelDx: -140, labelDy: 24 },
+      ],
+    });
+
+    // ===== 图3：正生产外部性（研发）—— PMC: P=0.5Q, SMC=PMC-100, D: P=400-0.5Q =====
+    // A = PMC∩D = (400,200); C = SMC∩D = (500,150); SMC(Q1) = 100; DWL = ½×100×100 = 5000
+    Charts.xy(document.getElementById('fig-pos-prod'), {
+      xLabel: '研发数量 Q',
+      yLabel: '价格 / 成本（美元）',
+      xMax: 600, yMax: 400, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：正生产外部性（研发）—— SMC = PMC − 100（知识外溢），市场投资不足 Q₁ = 400 < Q₂ = 500，DWL = 5000',
+      areas: [
+        { points: [[400, 200], [400, 100], [500, 150]], color: '#15803d', opacity: 0.15, label: 'DWL' },
+      ],
+      series: [
+        { points: [[0, 400], [600, 100]], type: 'linear', color: '#dc2626', label: 'D = PMB = SMB = 400 − 0.5Q' },
+        { points: [[0, 0], [600, 300]], type: 'linear', color: '#2563eb', label: 'PMC = 0.5Q（私人研发成本）' },
+        { points: [[200, 0], [600, 200]], type: 'linear', color: '#15803d', label: 'SMC = PMC − 100（外溢收益）' },
+      ],
+      markers: [
+        { x: 400, y: 200, label: 'A：市场均衡（Q₁ = 400，P₁ = 200）', color: '#2563eb', legend: '市场均衡点 A', guides: true, gxLabel: 'Q₁ = 400', gyLabel: 'P₁ = 200', labelDx: -226, labelDy: -16 },
+        { x: 500, y: 150, label: 'C：社会最优（Q₂ = 500）', color: '#15803d', legend: '社会最优点 C', guides: true, gxLabel: 'Q₂ = 500', labelDx: -190, labelDy: 30 },
+        { x: 400, y: 100, label: 'SMC(Q₁) = 100', color: '#6b7280', labelDx: -150, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图4：逆向选择死亡螺旋 —— 保费 vs 投保池平均成本 =====
+    Charts.bar(document.getElementById('fig-death-spiral'), {
+      categories: ['第 0 轮：全员投保（设想）', '第 1 轮：定价 1500', '第 2 轮：提价至 2000'],
+      yLabel: '美元 / 人·年',
+      yMax: 2500,
+      legendPosition: 'top',
+      caption: '图 4：死亡螺旋 —— 健康者退出使池子平均成本（红）不断超过保费（蓝），螺旋升级直至市场瓦解',
+      series: [
+        { label: '保费', color: '#2563eb', values: [1500, 1500, 2000] },
+        { label: '投保池平均成本', color: '#dc2626', values: [1400, 1727, 2333] },
+      ],
+    });
+
+    // ===== 图5：阿罗双岛悖论 —— 无信息+保险 vs 完美信息无保险 =====
+    Charts.bar(document.getElementById('fig-arrow-islands'), {
+      categories: ['A 岛农民', 'B 岛农民'],
+      yLabel: '收成',
+      yMax: 120,
+      legendPosition: 'top',
+      caption: '图 5：阿罗完美信息悖论 —— 无知之幕下保险让双方都锁定 50；完美信息摧毁保险，A 岛颗粒无收',
+      series: [
+        { label: '无信息 + 互助保险（各得 50）', color: '#15803d', values: [50, 50] },
+        { label: '完美信息（保险消失，A 饿死）', color: '#dc2626', values: [0, 100] },
+      ],
+    });
+
+    // ===== 图6：医疗支出占 GDP 比重对比 =====
+    Charts.bar(document.getElementById('fig-health-spending'), {
+      categories: ['美国', '典型欧洲国家', '英国'],
+      yLabel: '医疗支出占 GDP（%）',
+      yMax: 20,
+      legendPosition: 'top',
+      caption: '图 6：医疗支出占 GDP 比重 —— 美国 17.5%，约为典型欧洲的 1.5 倍、英国的两倍多',
+      series: [
+        { label: '医疗支出占 GDP（%）', color: '#2563eb', values: [17.5, 11.7, 8.5] },
+      ],
+    });
+
+    // ===== 图7：ACA 前美国医保覆盖结构 =====
+    Charts.pie(document.getElementById('fig-coverage-pie'), {
+      caption: '图 7：ACA 前（2014 年前）美国医保覆盖结构 —— 雇主赞助约 60%，个人市场仅约 6%，约 5000 万人无保险',
+      items: [
+        { label: '雇主赞助保险（ESI）', value: 60, color: '#2563eb' },
+        { label: '政府项目（Medicare + Medicaid）', value: 20, color: '#0d9488' },
+        { label: '个人/非团体市场', value: 6, color: '#d97706' },
+        { label: '无保险（≈5000 万人）', value: 14, color: '#dc2626' },
+      ],
+    });
+  </script>
+</body>
+</html>

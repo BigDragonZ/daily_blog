@@ -6,6 +6,7 @@
  * Charts.sd(container, opts)          xy 的别名，用于供给-需求图
  * Charts.circularFlow(container, opts) 循环流量图
  * Charts.pie(container, opts)         饼图
+ * Charts.bar(container, opts)         柱状图（单系列或分组）
  *
  * 所有图表统一输出：SVG + 图例(.legend) + 可选标题，挂载到给定容器。
  */
@@ -396,5 +397,65 @@ window.Charts = (function () {
     })));
   }
 
-  return { xy, ppf: xy, sd: xy, circularFlow, pie };
+  /**
+   * 柱状图（单系列或多系列分组）
+   * opts:
+   *  - categories: [label,...]           x 轴类目
+   *  - series: [{ label, color, values: [..] }]  每个系列一组柱
+   *  - xLabel, yLabel, yMax, yStep       轴与刻度（yStep 默认 yMax/5）
+   *  - width, height                     可选（默认 640x420）
+   *  - valueLabels                       柱顶数值标签（可选，默认 true）
+   *  - caption                           图标题（可选）
+   *  - legendPosition: 'top'             图例位置（可选，默认图上方）
+   */
+  function bar(container, opts) {
+    const W = opts.width || 640;
+    const H = opts.height || 420;
+    const M = { top: 30, right: 24, bottom: 56, left: 64 };
+    const iw = W - M.left - M.right;
+    const ih = H - M.top - M.bottom;
+    const yMax = opts.yMax;
+    const sy = (v) => M.top + ih - (v / yMax) * ih;
+    const cats = opts.categories || [];
+    const series = opts.series || [];
+    const n = Math.max(series.length, 1);
+    const slot = iw / Math.max(cats.length, 1);
+    const groupW = slot * 0.62;
+    const barW = groupW / n;
+
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' });
+    el('line', { x1: M.left, y1: M.top, x2: M.left, y2: M.top + ih, stroke: '#9ca3af', 'stroke-width': 1.5 }, svg);
+    el('line', { x1: M.left, y1: M.top + ih, x2: M.left + iw, y2: M.top + ih, stroke: '#9ca3af', 'stroke-width': 1.5 }, svg);
+
+    ticks(yMax, opts.yStep || yMax / 5).forEach((v) => {
+      el('line', { x1: M.left, y1: sy(v), x2: M.left + iw, y2: sy(v), stroke: '#e5e7eb', 'stroke-width': 1 }, svg);
+      text(svg, M.left - 10, sy(v) + 4, v, { 'text-anchor': 'end', 'font-size': 11, fill: '#6b7280' });
+    });
+
+    if (opts.xLabel) text(svg, M.left + iw / 2, H - 10, opts.xLabel, { 'text-anchor': 'middle', 'font-weight': 600 });
+    if (opts.yLabel) {
+      const yl = text(svg, 16, M.top + ih / 2, opts.yLabel, { 'text-anchor': 'middle', 'font-weight': 600 });
+      yl.setAttribute('transform', `rotate(-90 16 ${M.top + ih / 2})`);
+    }
+
+    cats.forEach((cat, i) => {
+      const gx = M.left + i * slot + (slot - groupW) / 2;
+      series.forEach((s, j) => {
+        const v = s.values[i];
+        const x = gx + j * barW;
+        el('rect', {
+          x: x + 2, y: sy(v), width: barW - 4, height: M.top + ih - sy(v),
+          fill: s.color, 'fill-opacity': 0.85,
+        }, svg);
+        if (opts.valueLabels !== false) {
+          text(svg, x + barW / 2, sy(v) - 6, v, { 'text-anchor': 'middle', 'font-size': 12, 'font-weight': 700, fill: s.color });
+        }
+      });
+      text(svg, M.left + i * slot + slot / 2, M.top + ih + 20, cat, { 'text-anchor': 'middle', 'font-size': 12, fill: '#374151' });
+    });
+
+    mount(container, svg, opts.caption, series.map((s) => ({ label: s.label, color: s.color, style: 'dot' })), opts.legendPosition || 'top');
+  }
+
+  return { xy, ppf: xy, sd: xy, circularFlow, pie, bar };
 })();

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14 不确定性 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>14 不确定性：预期效用、风险与保险</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 20 讲（L20）：从一个"期望值明明为正、大多数人却不敢赌"的硬币赌局出发，区分<span class="term">期望值</span>与<span class="term">预期效用</span>；用凹效用函数解释<span class="term">风险规避</span>与<span class="term">风险溢价</span>；再用这一工具解释两个巨大的现实市场——为什么<span class="term">保险</span>是 1.5 万亿美元的产业，以及期望回报只有 50% 的<span class="term">彩票</span>为何畅销。</p>
+
+      <!-- ==================== 引入与预期效用 ==================== -->
+      <h2>一、引入：期望值是正的，你为什么不敢赌？</h2>
+
+      <h3>1.1 反直觉开场：正面我输你 125、反面你输我 100</h3>
+      <p><strong>反直觉开场：</strong>教授在课堂上提出一个赌局：抛一枚公平的硬币，正面朝上你赢得 125 美元，反面朝上你输掉 100 美元。愿意接受的人请举手——结果只有约 40%（往届通常只有 20%–25%）。</p>
+      <p>举手的人大概在心里算了<span class="term">期望值</span><span class="term-en">（Expected Value, EV）</span>：任何赌局的期望值 =（获胜概率 × 获胜收益）+（失败概率 × 失败损失）：</p>
+      <p style="text-align:center;">EV = 0.5 × $125 + 0.5 × (−$100) = <strong>+$12.50</strong></p>
+      <p>期望值为正，在经济学里这叫<span class="term">优于公平的赌局</span><span class="term-en">（More than Fair Bet）</span>——期望值为零的赌局才叫<span class="term">公平赌局</span><span class="term-en">（Fair Bet）</span>。<strong>反直觉之处在于：一个"平均来说你会赚钱"的赌局，超过一半的人理性地拒绝了它。</strong>这不意味着拒绝的人算错了，而是说明<strong>期望值不是思考这个问题的正确方式</strong>。</p>
+
+      <h3>1.2 预期效用理论：你关心的不是金钱，而是效用</h3>
+      <p>正确的工具是<span class="term">预期效用理论</span><span class="term-en">（Expected Utility Theory, EUT）</span>：金钱本身没有意义，作为消费者你关心的是<span class="term">效用</span><span class="term-en">（Utility）</span>。所以不该算期望值，而该算<span class="term">预期效用</span><span class="term-en">（Expected Utility, EU）</span>：</p>
+      <p style="text-align:center;"><strong>EU =（获胜概率 × 获胜时的效用）+（失败概率 × 失败时的效用）</strong></p>
+      <p>与期望值的关键差别：效用不是金钱的线性函数，而是金钱的<span class="term">凹函数</span><span class="term-en">（Concave Function）</span>——表现出<span class="term">边际效用递减</span><span class="term-en">（Diminishing Marginal Utility）</span>：下一个一美元带给你的价值小于前一个一美元（就像下一片披萨不如前一片好吃）。因此，<strong>失去一美元让你感到的悲伤，要多于赢得一美元让你感到的快乐</strong>。</p>
+      <p>用消费者理论里的典型效用函数 <strong>U = √C</strong>（C 为消费，假设花掉全部收入）来算这笔账。设你最初的消费 C₀ = 100 美元，初始效用 U₀ = √100 = <strong>10</strong>。接受赌局后：</p>
+      <ul>
+        <li>赢了：消费变为 100 + 125 = 225，效用 √225 = <strong>15</strong>（点 B）；</li>
+        <li>输了：消费变为 100 − 100 = 0，效用 √0 = <strong>0</strong>（原点）；</li>
+        <li>预期效用 EU = 0.5 × 15 + 0.5 × 0 = <strong>7.5</strong>。</li>
+      </ul>
+      <p>EU = 7.5 &lt; U₀ = 10——<strong>这个赌局让你的预期效用低于现状，所以你不该接受</strong>。这就是多数人拒绝的原因：他们是<span class="term">风险规避者</span><span class="term-en">（Risk Averse）</span>。风险对我们有内在的负价值：一个确定的一美元，比一个不确定的一美元更值钱（正如今天的一美元比明天的一美元更值钱）。</p>
+
+      <div id="fig-eu"></div>
+      <p><strong>图 1 解读：</strong>蓝色凹曲线是效用函数 U = √C（每多一美元仍增加效用，但增幅越来越小）。灰色虚线是赌局两种结果 (0, 0) 与 B(225, 15) 之间的弦。由于两种结果各占 50%，赌局的预期效用是弦的<strong>中点</strong>★(112.5, 7.5)——它低于现状点 A(100, 10) 的效用。从 100 降到 0 的痛苦（效用 −10），远远超过从 100 升到 225 的快乐（效用 +5），这正是边际效用递减的几何含义。绿色点 (56.25, 7.5) 是<span class="term">确定性等价</span><span class="term-en">（Certainty Equivalent, CE）</span>：直接给你 56.25 美元的确定财富，效用同样是 7.5（√56.25 = 7.5），与参与赌局一样好。</p>
+      <p><strong>预期效用模型的优缺点：</strong>优点是只用"效用函数 + 概率"两个输入，就把"该不该赌、愿付多少保费"这类模糊问题变成可计算的比较，解释力极强；缺点是它假设人们能一致地按 EU 最大化行事，后文的小赌注悖论与损失规避表明，真实人类会系统性地偏离它。</p>
+
+      <h3>1.3 风险溢价：你愿意付多少钱来"不赌"？</h3>
+      <p>用图 1 可以回答一个更实际的问题：你最多愿意付多少钱来<strong>避免</strong>这个赌局？赌局的 EU = 7.5，对应确定财富 7.5² = 56.25 美元。也就是说，你宁愿手里确定地拿着 56.25 美元，也不愿参与这个期望货币值高达 112.5 美元（0.5 × 225 + 0.5 × 0）的赌局。于是你愿意支付 100 − 56.25 = <strong>43.75 美元</strong>来躲开它——这就是你的<span class="term">风险溢价</span><span class="term-en">（Risk Premium, RP）</span>：为了消除风险，你甘愿放弃的期望财富。</p>
+      <p>反过来问：要让你自愿接受"输 100"的赌局，赢的金额 X 需要多大？令预期效用不低于现状效用 10：</p>
+      <p style="text-align:center;">0.5 × √(100 + X) + 0.5 × √0 = 10　→　√(100 + X) = 20　→　100 + X = 400　→　<strong>X = 300</strong></p>
+      <p><strong>"输 100 需赢 300 才肯赌"</strong>——赔率要开到 3 倍，风险规避者才点头。期望值只要求赢 100 就算公平，预期效用却要求赢 300，这 200 美元的差距就是风险厌恶的货币度量。</p>
+
+      <!-- ==================== 三种风险态度 ==================== -->
+      <h2>二、三种风险态度：规避、中性、偏好</h2>
+      <p>风险态度完全由效用函数的形状决定。换两个函数，同一个赌局的结论就会反转（初始财富仍为 100，三个函数都满足 U(100) = 10）：</p>
+      <ul>
+        <li><span class="term">风险规避</span><span class="term-en">（Risk Averse）</span>：凹函数，如 U = √C。边际效用递减，EU = 0.5 × 15 + 0.5 × 0 = <strong>7.5 &lt; 10</strong>，拒绝优于公平的赌局；</li>
+        <li><span class="term">风险中性</span><span class="term-en">（Risk Neutral）</span>：线性函数，如 U = 0.1C。没有边际效用递减，EU = 0.5 × 22.5 + 0.5 × 0 = <strong>11.25 &gt; 10</strong>，接受。风险中性者只关心期望值，永远接受优于公平的赌局；</li>
+        <li><span class="term">风险偏好</span><span class="term-en">（Risk Loving）</span>：凸函数，如 U = C²/1000。边际效用<strong>递增</strong>（下一片披萨比上一片更让你快乐），EU = 0.5 × (225²/1000) + 0 ≈ <strong>25.3 &gt; 10</strong>，必然接受——这种人甚至会接受不公平的赌局。</li>
+      </ul>
+
+      <div id="fig-three"></div>
+      <p><strong>图 2 解读：</strong>三条曲线都经过共同起点 (100, 10)，但形状不同：蓝色凹曲线（√C）越来越平，效用的弦中点 EU = 7.5 落在曲线下方；绿色直线（0.1C）上，弦与曲线重合，EU = 11.25 恰好等于期望值的效用；红色凸曲线（C²/1000，在 C ≈ 158 处超出纵轴上限 25）越来越陡，EU ≈ 25.3 远高于现状。凹 → 拒绝赌局，线性 → 只看期望值，凸 → 热爱赌局。</p>
+
+      <!-- ==================== 赌注大小与损失规避 ==================== -->
+      <h2>三、小赌注悖论与损失规避</h2>
+      <p>把赌局缩小 10 倍：赢 12.5 美元、输 10 美元。用同一个凹效用函数 U = √C 计算：</p>
+      <p style="text-align:center;">EU = 0.5 × √112.5 + 0.5 × √90 ≈ 0.5 × 10.61 + 0.5 × 9.49 = <strong>10.05 &gt; 10</strong></p>
+      <p>预期效用略高于现状，风险规避者也<strong>应该</strong>接受。发生了什么变化？<strong>当赌注相对于初始财富越来越小时，人的行为越来越接近风险中性</strong>——因为凹曲线在一个很小的局部内可以近似看成直线（弦几乎贴在曲线上，中点不再明显低于曲线）。</p>
+
+      <div id="fig-small-bet"></div>
+      <p><strong>图 3 解读：</strong>把图 1 的曲线放大到财富 80–130 的局部，蓝色 U = √C 与灰色弦几乎重合：赌局结果 (90, 9.49) 与 (112.5, 10.61) 的弦中点 ★EU ≈ 10.05 不再明显低于、反而略高于现状效用 U(100) = 10。这就是"小赌注近似风险中性"的几何含义：局部上凹曲线接近直线，赌不赌的差别缩小到小数点后两位。</p>
+      <p>但现实中，<strong>即使是这样的小赌注，仍有很多人拒绝</strong>——预期效用理论解释不了这一点。行为经济学给出的答案是<span class="term">损失规避</span><span class="term-en">（Loss Aversion）</span>：人类不仅是风险规避的，还有一种非理性的行为偏见——<strong>"失去"本身就会让我们痛苦</strong>，拿走我们已有的东西，比给我们新东西更能影响情绪。</p>
+      <p>经典的<span class="term">马克杯实验</span><span class="term-en">（Mug Experiment）</span>：随机把人分成两组——问第一组"你愿意花多少钱买这个马克杯？"；把马克杯<strong>免费送给</strong>第二组，再问"你愿意以多少钱卖掉它？"。结果：平均买价约 <strong>3 美元</strong>，平均卖价约 <strong>7 美元</strong>。同一个杯子，仅仅因为"已经在我手里"，估值就翻了一倍多。这在标准经济模型里毫无意义（估值不应取决于你恰好是否拥有它），却揭示了一个事实：<strong>人的决策取决于起始点（参考点），损失和收益是不对称的</strong>。</p>
+
+      <!-- ==================== 应用一：保险 ==================== -->
+      <h2>四、应用一：保险 —— 1.5 万亿美元的产业为什么存在</h2>
+      <p>风险规避最重要的应用是<span class="term">保险</span><span class="term-en">（Insurance）</span>。在美国，个人每年在保险产品上的花费高达 <strong>1.5 万亿美元</strong>，约占 GDP 的 10%。为什么人们心甘情愿地买"期望值为负"的产品？因为人们是风险规避的。</p>
+      <p>算例：一个 25 岁的健康男性，年收入 4 万美元。他每年有 <strong>1%</strong> 的概率被车撞，一旦出事将产生 <strong>3 万美元</strong>的医疗费用（出事后的财富只剩 1 万美元）。效用函数仍为 U = √C：</p>
+      <ul>
+        <li><strong>没有保险</strong>：EU = 0.99 × √40000 + 0.01 × √10000 = 0.99 × 200 + 0.01 × 100 = 198 + 1 = <strong>199</strong>；</li>
+        <li><strong>有保险</strong>：设保费为 X，无论是否出事，财富都确定为 40000 − X，效用为 √(40000 − X)。</li>
+      </ul>
+      <p>他愿意支付的最高保费，令两种情况效用相等：</p>
+      <p style="text-align:center;">√(40000 − X) = 199　→　40000 − X = 199² = 39601　→　<strong>X = 399 美元</strong></p>
+      <p>注意：这个风险的<span class="term">期望成本</span><span class="term-en">（Expected Cost）</span>只有 0.01 × 30000 = <strong>300 美元</strong>。他愿意多付的 99 美元就是风险溢价——保险公司正是在这 99 美元的空间里定价、赚钱、养活一个 1.5 万亿美元的产业。<strong>保险对买家是"期望值为负、预期效用为正"的交易</strong>，买卖双方同时获益。</p>
+
+      <div id="fig-insurance"></div>
+      <p><strong>图 4 解读：</strong>蓝色凹曲线仍是 U = √C，但横轴换成了 4 万美元量级的财富。两个端点：健康时 (40000, 200)，出事故时 (10000, 100)。由于出事故的概率只有 1%，预期效用 ★(39700, 199) 几乎贴着"健康"一端（0.99 的权重），但仍低于确定的 200。图中与 EU = 199 等高的确定财富是 199² = 39601——这就是他付完最高保费 399 美元后的财富。期望成本 300 与愿付保费 399 之间的 99 美元差额，就是风险溢价。</p>
+      <p>风险溢价的大小取决于<strong>风险相对于收入的大小</strong>：风险越大、或收入越低，风险溢价越高，越愿意买保险。这就是为什么对昂贵的汽车音响，低收入者可能比高收入者更愿意购买延长保修（本质上也是一种保险）。</p>
+
+      <!-- ==================== 应用二：彩票 ==================== -->
+      <h2>五、应用二：彩票 —— 期望回报 50% 为何畅销？</h2>
+      <p>另一个应用是<span class="term">彩票</span><span class="term-en">（Lottery）</span>。从期望值看，彩票完全是个"骗局"：期望回报率大约只有 <strong>50%</strong>——你投入的每一美元，平均只能拿回 5 角，是一个远差于公平的赌局。然而彩票异常畅销。为什么？有四种理论：</p>
+      <ol>
+        <li><strong>人们是风险偏好的</strong>：这个理论直接被证伪——如果人们是风险偏好的，他们就不会买保险。同一个人既买保险（风险规避的证据）又买彩票，单用"风险偏好"解释不通；</li>
+        <li><span class="term">弗里德曼-萨维奇偏好</span><span class="term-en">（Friedman-Savage Preferences）</span>：人们在小赌注上风险规避，但在可能带来巨额财富的大赌注上风险偏好（效用函数先凹后凸）。它能解释"超级百万（Mega Millions）"式的大奖彩票，但解释不了<strong>绝大多数彩票消费是小额刮刮乐</strong>——人们在小赌注上也表现出风险偏好，与该理论矛盾；</li>
+        <li><strong>娱乐价值</strong>：人们从等待开奖的刺激、幻想中奖的过程中获得效用。花几美元买一段"做梦的时间"。从这个角度看，彩票是一种<span class="term">"自愿税"</span><span class="term-en">（Voluntary Tax）</span>——政府通过出售娱乐来筹集资金；</li>
+        <li><strong>无知</span>：俗话说"彩票是<span class="term">向愚蠢的人征收的税</span><span class="term-en">（Tax on Stupidity）</span>"——人们可能根本不理解这是一笔多么糟糕的交易。</li>
+      </ol>
+
+      <div id="fig-lottery"></div>
+      <p><strong>图 5 解读：</strong>彩票收入的每一美元中，只有约 50% 以奖金形式返还给买家（蓝色），其余约 50% 成为政府收入与运营成本（红色）。对比赌场轮盘赌约 95% 的返还率，彩票是主流赌博中期望回报最低的一种——这正是"远差于公平的赌局"的含义。</p>
+      <p><strong>为什么答案重要：</strong>我们并不确定"娱乐价值"和"无知"哪个是对的，但它们导向<strong>截然相反的政策</strong>。如果彩票是娱乐，政府发行彩票是在增进社会福利（你情我愿的消费）；如果彩票源于无知，政府就应该阻止人们浪费金钱。这不是书斋里的问题——在许多低收入社区，彩票支出占收入的相当大一部分。</p>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>六、收尾对比：三种风险态度</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>风险规避（Risk Averse）</th><th>风险中性（Risk Neutral）</th><th>风险偏好（Risk Loving）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>效用函数形状</td><td>凹函数（如 U = √C）</td><td>线性（如 U = 0.1C）</td><td>凸函数（如 U = C²/1000）</td></tr>
+          <tr><td>边际效用</td><td>递减：下一美元不如上一美元值钱</td><td>不变：每美元价值相同</td><td>递增：下一美元更值钱</td></tr>
+          <tr><td>对公平赌局（EV = 0）</td><td><strong>拒绝</strong>（EU &lt; 现状效用）</td><td>无所谓（EU = 现状效用）</td><td><strong>接受</strong>（EU &gt; 现状效用）</td></tr>
+          <tr><td>对优于公平赌局（赢 125 / 输 100）</td><td>拒绝：EU = 7.5 &lt; 10</td><td>接受：EU = 11.25 &gt; 10</td><td>接受：EU ≈ 25.3 &gt; 10</td></tr>
+          <tr><td>风险溢价</td><td>为正（愿付 43.75 美元躲避赌局）</td><td>为零</td><td>为负（愿付钱"买"风险）</td></tr>
+          <tr><td>现实对应行为</td><td>买保险（付 399 躲 300 的期望损失）</td><td>只看期望值的投资者/企业</td><td>买彩票、赌场的部分行为</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（不确定性下如何做决策——复习、带伞、抵押贷、保险、择校）→ 简化模型（预期效用理论：EU = Σ 概率 × 效用，效用是金钱的凹函数）→ 推导（凹函数 → 风险规避 → 风险溢价 43.75 / 保费上限 399；线性与凸函数 → 中性与偏好）→ 实际应用（保险业的 1.5 万亿美元、彩票的四理论之争与相反的政策结论）→ 局限性（小赌注仍被拒 → 损失规避与参考点依赖，预期效用理论无法完全描述真实人类）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/14-uncertainty.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // 函数曲线采样：[x, f(x)] 路径点
+    function curve(f, xs) {
+      return xs.map(function (x) { return [x, +(f(x)).toFixed(2)]; });
+    }
+    var sqrtU = function (c) { return Math.sqrt(c); };          // U = √C（风险规避）
+
+    // ===== 图1：预期效用 —— U=√C 凹曲线 + 弦中点 EU=7.5 < 现状效用 10 =====
+    Charts.xy(document.getElementById('fig-eu'), {
+      xLabel: '财富 / 消费 C（美元）',
+      yLabel: '效用 U',
+      xMax: 250, yMax: 16, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：U = √C —— 赌局 EU = 7.5（弦中点）低于现状效用 10；确定性等价 56.25，风险溢价 43.75',
+      series: [
+        { points: curve(sqrtU, [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 250]), type: 'spline', color: '#2563eb', label: 'U = √C（风险规避，凹函数）' },
+        { points: [[0, 0], [225, 15]], type: 'linear', color: '#6b7280', dash: true, label: '赌局结果的弦（中点 = 预期效用）' },
+      ],
+      markers: [
+        { x: 100, y: 10, label: 'A：现状 (100, 10)', color: '#2563eb', legend: '关键点', guides: true, gxLabel: 'C₀ = 100', gyLabel: 'U₀ = 10', labelDx: 12, labelDy: -14 },
+        { x: 225, y: 15, label: 'B：赢 125 → (225, 15)', color: '#15803d', guides: true, gxLabel: '225', gyLabel: '15', labelDx: -176, labelDy: -14 },
+        { x: 0, y: 0, label: '输 100 → (0, 0)', color: '#15803d', labelDx: 10, labelDy: -12 },
+        { x: 112.5, y: 7.5, shape: 'star', label: 'EU = 7.5 < 10：拒绝赌局', color: '#dc2626', legend: '预期效用', labelDx: 16, labelDy: -10 },
+        { x: 56.25, y: 7.5, label: '确定等价 (56.25, 7.5)', color: '#0d9488', legend: '确定性等价 CE', guides: true, gxLabel: 'CE = 56.25', gyLabel: '7.5', labelDx: 12, labelDy: 20 },
+      ],
+    });
+
+    // ===== 图2：三种风险态度 —— 凹 √C / 线性 0.1C / 凸 C²/1000，共点 (100,10) =====
+    Charts.xy(document.getElementById('fig-three'), {
+      xLabel: '财富 / 消费 C（美元）',
+      yLabel: '效用 U',
+      xMax: 225, yMax: 25, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：三种效用函数同过 (100, 10) —— 凹：拒绝赌局（EU=7.5）；线性：只看期望值（EU=11.25）；凸：热爱赌局（EU≈25.3）',
+      series: [
+        { points: curve(sqrtU, [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225]), type: 'spline', color: '#2563eb', label: '风险规避：U = √C（凹）' },
+        { points: [[0, 0], [225, 22.5]], type: 'linear', color: '#15803d', label: '风险中性：U = 0.1C（线性）' },
+        { points: curve(function (c) { return c * c / 1000; }, [0, 10, 25, 40, 60, 80, 100, 120, 140, 158]), type: 'spline', color: '#dc2626', label: '风险偏好：U = C²/1000（凸）' },
+      ],
+      markers: [
+        { x: 100, y: 10, label: '共同起点 (100, 10)', color: '#7c3aed', legend: '初始财富点', guides: true, gxLabel: 'C₀ = 100', gyLabel: 'U₀ = 10', labelDx: -120, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图3：小赌注 —— 局部近似线性，EU=10.05 > 10，风险规避者也该接受 =====
+    Charts.xy(document.getElementById('fig-small-bet'), {
+      xLabel: '财富 / 消费 C（美元）',
+      yLabel: '效用 U',
+      xMax: 130, yMax: 12, xTicks: [80, 90, 100, 110, 120, 130], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：小赌注（赢 12.5 / 输 10）—— 局部上凹曲线接近直线，EU ≈ 10.05 略高于现状效用 10',
+      series: [
+        { points: curve(sqrtU, [80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130]), type: 'spline', color: '#2563eb', label: 'U = √C（局部放大）' },
+        { points: [[90, 9.49], [112.5, 10.61]], type: 'linear', color: '#6b7280', dash: true, label: '赌局结果的弦（几乎贴着曲线）' },
+      ],
+      markers: [
+        { x: 90, y: 9.49, label: '输 10 → (90, 9.49)', color: '#15803d', legend: '赌局结果', guides: true, gxLabel: '90', gyLabel: '9.49', labelDx: 12, labelDy: 20 },
+        { x: 112.5, y: 10.61, label: '赢 12.5 → (112.5, 10.61)', color: '#15803d', guides: true, gxLabel: '112.5', gyLabel: '10.61', labelDx: -172, labelDy: -14 },
+        { x: 100, y: 10, label: '现状 U(100) = 10', color: '#2563eb', legend: '现状点', guides: true, gxLabel: '100', gyLabel: '10', labelDx: -118, labelDy: 22 },
+        { x: 101.25, y: 10.05, shape: 'star', label: 'EU ≈ 10.05 > 10：接受', color: '#dc2626', legend: '预期效用', labelDx: 14, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图4：保险 —— 1% 概率损失 3 万，EU=199，愿付保费至 399（期望成本仅 300） =====
+    Charts.xy(document.getElementById('fig-insurance'), {
+      xLabel: '财富（美元）',
+      yLabel: '效用 U',
+      xMax: 42000, yMax: 210,
+      xTicks: [{ v: 0, label: '0' }, { v: 10000, label: '1万' }, { v: 20000, label: '2万' }, { v: 30000, label: '3万' }, { v: 40000, label: '4万' }],
+      yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：保险 —— EU = 199 对应确定财富 39601，故愿付保费至 399（期望成本仅 300，差额 99 = 风险溢价）',
+      series: [
+        { points: curve(sqrtU, [0, 1000, 2500, 5000, 8000, 12000, 16000, 20000, 25000, 30000, 35000, 40000]), type: 'spline', color: '#2563eb', label: 'U = √C' },
+        { points: [[10000, 100], [40000, 200]], type: 'linear', color: '#6b7280', dash: true, label: '两种结果的弦（1% 权重在左端）' },
+      ],
+      markers: [
+        { x: 40000, y: 200, label: '健康（99%）：U(40000) = 200', color: '#15803d', legend: '两种结果', guides: true, gxLabel: '40000', gyLabel: '200', labelDx: -186, labelDy: -14 },
+        { x: 10000, y: 100, label: '出事故（1%）：U(10000) = 100', color: '#dc2626', guides: true, gxLabel: '10000', gyLabel: '100', labelDx: 14, labelDy: -14 },
+        { x: 39700, y: 199, shape: 'star', label: 'EU = 199（≈ 确定财富 39601，保费上限 40000 − 39601 = 399）', color: '#7c3aed', legend: '预期效用', labelDx: -290, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图5：彩票每一美元的去向 —— 期望回报仅约 50% =====
+    Charts.pie(document.getElementById('fig-lottery'), {
+      size: 320,
+      caption: '图 5：彩票收入的每一美元 —— 仅约 50% 以奖金返还，期望回报远低于公平赌局',
+      items: [
+        { label: '奖金返还（期望回报 ≈ 50%）', value: 50, color: '#2563eb' },
+        { label: '政府收入与运营成本（≈ 50%）', value: 50, color: '#dc2626' },
+      ],
+    });
+  </script>
+</body>
+</html>

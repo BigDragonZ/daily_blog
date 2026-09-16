@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15 公平、效率与政府再分配 - MIT 微观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>15 公平、效率与政府再分配</h1>
+      <p>本篇覆盖 MIT 14.01《微观经济学原理》第 21、22 两讲（L21+L22）：从"完全竞争和榨干每一分钱的垄断者竟然同样好"这个反直觉结论出发，引入<span class="term">公平</span><span class="term-en">（Equity）</span>与<span class="term">效率</span><span class="term-en">（Efficiency）</span>的权衡；用<span class="term">社会福利函数</span>整理四种价值观，用美国不平等的惊人事实说明再分配为何必要，再拆解"漏桶"的三处泄漏；最后进入税收与转移支付的实操——<span class="term">税收归宿</span>为何与"谁开支票"无关、弹性如何决定一切，以及 EITC 这个"给漏桶打补丁"的政策成功故事。</p>
+
+      <!-- ==================== L21 ==================== -->
+      <h2>一、L21 效率与公平（Efficiency and Equity）</h2>
+
+      <h3>1.1 引入：完全竞争和"榨干每一分钱"的垄断者竟然同样好？</h3>
+      <p><strong>反直觉开场：</strong>回忆 P08 垄断一讲留下的伏笔：<span class="term">完全价格歧视</span><span class="term-en">（Perfect Price Discrimination）</span>的垄断者把产量一直推到需求与边际成本相交处——<strong>没有无谓损失，总剩余最大化</strong>，效率和完全竞争一模一样！区别只在分配：完全竞争下剩余由消费者和生产者分享，完全价格歧视下垄断者拿走<strong>全部</strong>剩余。一种是"苹果公司拿走我们所有的钱"，一种是"苹果公司拿走一部分、我们也留一部分"——说我们对这两种结果<strong>无差别</strong>，显然很奇怪。</p>
+      <p>问题在于：我们这学期几乎只用<strong>效率</strong>的语言说话——比三角形和正方形的总面积，却从不问"谁得到了什么"。仅凭效率语言，无法在无数"效率相同、分配不同"的结果之间做选择。更常见、也更棘手的情形是<span class="term">公平与效率的权衡</span><span class="term-en">（Equity-Efficiency Trade-off）</span>：让分配更平等的行为本身，就会在系统中引入无效率。</p>
+
+      <h3>1.2 奥肯漏桶（Leaky Bucket）思想实验</h3>
+      <p>思考这个权衡最好的方式是经济学家<strong>阿瑟·奥肯</strong>（Arthur Okun）的<span class="term">漏桶</span><span class="term-en">（Leaky Bucket）</span>思想实验：想象政府再分配的方式，是真的让比尔·盖茨把 100 个便士放进一个桶里，提着桶倒在无家可归者面前。</p>
+      <ul>
+        <li>若桶<strong>不漏</strong>：盖茨的 1 美元原封不动变成穷人的 1 美元——绝大多数人觉得这没问题，那 1 美元对穷人显然更珍贵；</li>
+        <li>若桶<strong>有洞</strong>：漏掉 1 个便士，你大概不改主意；漏掉 20 个呢？50 个呢？<strong>100 个全漏光</strong>呢？</li>
+      </ul>
+      <p>在哪个漏损节点上你会说"这不是个好主意了"？你的答案就定义了你愿意为了公平放弃多少效率。本讲的框架分四步：<strong>价值判断</strong>（社会如何评价不同人的效用）→ <strong>事实</strong>（美国不平等有多严重）→ <strong>泄漏的来源</strong>（桶为什么漏）→ <strong>转移机制的实例</strong>（现实中的桶漏多少）。</p>
+
+      <h3>1.3 社会福利函数与等福利曲线</h3>
+      <p>要对"从 A 君拿钱给 B 君"这类结果排序，我们沿用老方法——<strong>约束最大化</strong>，只不过效用函数要升级成<span class="term">社会福利函数</span><span class="term-en">（Social Welfare Function, SWF）</span>：W = f(U₁, U₂, …, U₃.₅亿），即社会对所有成员效用的某种加总方式，相当于"社会的效用函数"。</p>
+      <p>把社会简化成两个人——<strong>荷马</strong>（Homer）和<strong>内德</strong>（Ned），横轴是荷马的效用 U_H、纵轴是内德的效用 U_N，就能画出<span class="term">等福利曲线</span><span class="term-en">（Iso-welfare Curves）</span>：社会的"无差异曲线"。同一条曲线上的所有 (U_H, U_N) 组合给社会带来相同的福利；和任何无差异曲线一样，<strong>离原点越远越好</strong>。曲线的形状完全取决于你信奉哪种价值观——下面两图对比最经典的两种。</p>
+
+      <div class="figure-pair">
+        <div id="fig-iso-util"></div>
+        <div id="fig-iso-rawls"></div>
+      </div>
+      <p><strong>图 1 / 图 2 解读：</strong>左图是<span class="term">功利主义</span>的等福利曲线：W = U_H + U_N，斜率为 −1 的平行直线。点 X = (50, 10) 与点 Y = (30, 30) 都在 W = 60 的直线上——功利主义对"荷马 50、内德 10"和"两人各 30"<strong>完全无差别</strong>，它只看总量不看分配。右图是<span class="term">罗尔斯主义</span>的等福利曲线：W = min(U_H, U_N)，呈 L 形，折点落在 45° 线（U_H = U_N，灰色虚线）上。X 点 W = min(50, 10) = 10，Y 点 W = min(30, 30) = 30——罗尔斯主义<strong>强烈偏好</strong>更平等的 Y。L 形还意味着：把荷马从 50 削到 10（内德不变），社会福利一动不动——罗尔斯主义者愿意"摧毁财富"而不觉得损失。</p>
+
+      <h3>1.4 四种价值观谱系</h3>
+      <p>等福利曲线的形状就是价值观的形状。从"最看重总量"到"最看重分配"，谱系上有四种经典立场：</p>
+      <ol>
+        <li><span class="term">功利主义</span><span class="term-en">（Utilitarian）</span>：源于哲学家<strong>杰里米·边沁</strong>（Jeremy Bentham，他的头颅曾在伦敦大学学院展出，据说被学生拿去踢足球才被收起来）。函数形式最简单：<strong>W = U₁ + U₂ + … + Uₙ</strong>，对盖茨和无家可归者一视同仁。但注意："一视同仁"不等于"反对再分配"——因为<span class="term">边际效用递减</span>，下一美元对盖茨几乎无价值、对穷人价值连城。推论相当激进：<strong>若社会总资源固定且人人效用函数相同，最优分配是完全平等</strong>（再分配持续到所有人的边际效用相等）——这超出任何国家的实践，却自然地从最朴素的福利函数中推出来。</li>
+        <li><span class="term">罗尔斯主义</span><span class="term-en">（Rawlsian）</span>：哈佛哲学家<strong>约翰·罗尔斯</strong>（John Rawls）提出，社会目标是<strong>最大化最贫困成员的福祉</strong>：<strong>W = min(U₁, U₂, …, Uₙ)</strong>。出发点是<span class="term">无知之幕</span><span class="term-en">（Veil of Ignorance）</span>：出生前你不知道自己会生在富裕还是贫穷、健康还是多病的家庭，站在幕后的你最想确保的是"无论抽到哪种人生都过得去"。极端推论：若全班只有帕特里夏多 4 万美元、我比其他人少 1 美元，罗尔斯主义乐意拿走她的 4 万只为给我 1 美元——为了最穷者的一点改善，可以摧毁富人再多的钱。</li>
+        <li><span class="term">诺齐克主义</span><span class="term-en">（Nozickian）</span>：哲学家<strong>罗伯特·诺齐克</strong>（Robert Nozick）主张最保守的一极：<strong>永远不再分配收入，只再分配机会</strong>。只要人人机会均等，就掷骰子让结果顺其自然——你们自愿每节课付我 10 美元听课，自愿花钱看勒布朗·詹姆斯打球，凭什么再把钱征回去？两个致命问题：其一，<strong>"机会均等"本身无法定义</strong>——勒布朗的身高臂展是基因机会，我生在富裕家庭上好学区而新泽西贫困镇的孩子没有，前提从一开始就不成立；其二，它<strong>忽略运气</strong>——即使机会均等，贫富差异的很大一部分来自运气而非技能，而我们似乎不该让幸运的人比不幸的人更富有。</li>
+        <li><span class="term">商品平均主义</span><span class="term-en">（Commodity Egalitarianism）</span>：完全不同的思路——你相对我有多少钱不重要，重要的是<strong>绝对资源</strong>：保证每个人都有食物、住所、医疗等基本必需品，过上体面生活；在此之上，谁在乎贫富差距？它是罗尔斯与诺齐克的混合体：管最低保障，之上交给市场。它自然引出一个政策问题：给穷人<strong>钱</strong>还是<strong>实物</strong>？商品平均主义倾向后者——这正是 L22 实物转移支付的伏笔。</li>
+      </ol>
+      <p>需要强调：这四种观点<strong>没有哪种绝对正确</strong>，它们是思考同一权衡的不同框架。你选的框架不同，同一个再分配政策的评价就完全不同。</p>
+
+      <h3>1.5 不平等的事实：为什么再分配值得讨论</h3>
+      <ul>
+        <li><strong>五分位份额</strong>：把美国人口按收入五等分，若完全平等，每个五分位应占国民收入 20%。现实：1967 年收入最高的 20% 人群收入约为最低 20% 的 <strong>10 倍</strong>；到 1980 年差距有所缩小；但此后急剧扩大——到 2013 年，最富的 20% 赚走<strong>超过一半</strong>的国民收入，最穷的 20% 只赚约 <strong>3%</strong>。</li>
+        <li><strong>前 1% 的 U 形</strong>：收入最高 1% 人群的份额，20 世纪初接近 <strong>20%</strong>，70 年代初降到约 <strong>10%</strong>，如今回升到约 <strong>25%</strong>——比一百年前还高。</li>
+        <li><strong>国际比较</strong>：在发达国家中，美国是最不平等的国家之一（仅好于墨西哥和土耳其）；而且这是<strong>税前、转移支付前</strong>的口径——算上税收与转移支付后美国相对更糟，因为其体系累进性不如多数国家。</li>
+        <li><strong>贫困线的由来与失真</strong>：相对不平等之外，更应关心<span class="term">绝对剥夺</span><span class="term-en">（Absolute Deprivation）</span>。美国的<span class="term">贫困线</span><span class="term-en">（Poverty Line）</span>由公务员<strong>莫莉·奥珊斯基</strong>（Mollie Orshansky）在 1960 年代发明：一个营养充足食物篮子的成本 × 3（当时食物约占家庭预算三分之一），此后只按 CPI 调通胀。2015 年单身人士贫困线约 <strong>$11,770</strong>，四口之家约 <strong>$24,250</strong>。失真之处：<strong>不按地区生活成本调整</strong>（$25,000 在波士顿几乎活不下去，在密西西比农村或许可以）；食物占预算之比已降到约 <strong>20%</strong>，住房与医疗成本却飙升。但因贫困线挂钩<strong>超过一万亿美元</strong>的福利分配，政治上一动就翻天，至今无法修改。</li>
+        <li><strong>贫困率五十年原地踏步</strong>：1960 年代"向贫困宣战"期间各群体贫困率大降；老年人持续下降，从最贫困群体变成最不贫困群体；但<strong>儿童贫困率反弹</strong>，如今几乎和 60 年代初一样高。</li>
+        <li><strong>巴尔的摩三英里</strong>：因警察暴力致死的弗雷迪·格雷（Freddie Gray）来自 Sandtown-Winchester 社区，仅三英里外是富裕的 Roland Park。Roland Park：预期寿命 <strong>84 岁</strong>（高于全美平均），平均收入 <strong>$107,000</strong>，儿童贫困率 <strong>2.5%</strong>；Sandtown：预期寿命 <strong>67 岁</strong>（低于朝鲜，相当于美国二战时期水平），平均收入 <strong>$24,000</strong>（低于四口之家贫困线），儿童贫困率 <strong>55%</strong>。同一座城市，三英里，十七年寿命。</li>
+      </ul>
+      <p>这些事实与政治立场无关——它们足以让任何人认真思考政府再分配的角色。</p>
+
+      <h3>1.6 桶为什么漏：泄漏的三个来源与一个算例</h3>
+      <p>奥肯的桶到底漏在哪？三个来源：</p>
+      <ol>
+        <li><strong>行政成本</strong>：得花钱雇人"提桶"（官僚体系）。这部分小但不可忽略；</li>
+        <li><strong>税收的效率成本</strong>：征税降低工作回报，人们可能少工作。极端情形：100% 税率实现完全均等 → 没人工作；</li>
+        <li><strong>转移支付的效率成本</strong>：无条件给钱也降低工作意愿——只要休闲是正常品，"政府寄支票，为什么还要上班？"</li>
+      </ol>
+      <p><strong>算例</strong>（把三种泄漏具象化）：某人时薪 $20，最多 2,000 小时可分配于工作与休闲，原预算线从 (0 休闲, $40,000) 到 (2,000 休闲, $0)。现在引入福利体系：<strong>保底收入 $10,000</strong>（收入不足 1 万政府补足差额）+ <strong>对超过 $20,000 的收入征 20% 边际税</strong>。预算线被扭折成四段，四类人做出四种反应：</p>
+      <ul>
+        <li><strong>A 类</strong>（原收入低于 1 万，如 $5,000）：收入每多 1 元补贴就少 1 元——<strong>隐性税率 100%</strong>，工作完全无回报。他直接停工，从 A 点移到 D 点：休闲 <em>和</em> 消费同时增加；</li>
+        <li><strong>B 类</strong>（原收入略高于 1 万，如 $12,000）：辞职只损失 $2,000 消费，却换来 600 小时休闲——对他而言辞职拿保底（D 点）优于继续工作；</li>
+        <li><strong>C 类</strong>（收入远高于 2 万，如 $30,000）：20% 边际税使有效时薪从 $20 降到 $16。<span class="term">替代效应</span>（工作回报降 → 少工作）与<span class="term">收入效应</span>（变穷了 → 多工作）方向相反；通常假设替代效应主导，于是他减少工作时间（C → C′，休闲 500 → 650 小时）；</li>
+        <li><strong>D 点</strong>（2,000 小时休闲、$10,000 消费）成了 A、B 两类人的共同归宿。</li>
+      </ul>
+
+      <div id="fig-leaky-budget"></div>
+      <p><strong>图 3 解读：</strong>灰色虚线是原预算线 C = 40,000 − 20L（时薪 $20 × 2,000 小时禀赋）；蓝色扭折线是福利体系后的预算线：收入低于 $10,000 段被保底"熨平"（休闲 1,500–2,000 小时段水平于 $10,000，隐性税率 100%），$10,000–$20,000 段斜率不变（−20），超过 $20,000 段因 20% 边际税变平缓（斜率 −16，有效时薪 $16）。A（休闲 1,750、消费 $5,000）与 B（1,400、$12,000）都移向 D（2,000、$10,000）；C（500、$30,000）沿扭折线退到 C′（650、$25,600）。穷人停工、富人少干——社会总产出萎缩。宏观上看，这表现为<strong>劳动供给曲线内移</strong>（S₁ → S₂），产生的<span class="term">无谓损失</span><span class="term-en">（Deadweight Loss, DWL）</span>就是奥肯桶里漏出去的水。</p>
+      <p>于是我们面对清晰的权衡：一边是不平等触目惊心、再分配能显著改善穷人生活；另一边是再分配扭曲激励、缩小整个经济蛋糕。值不值得？这正是社会福利函数的用武之地——它提供数学框架，评估"为了更公平地切蛋糕、让蛋糕变小"是否划算。<strong>漏桶模型的优缺点：</strong>优点是把"公平 vs 效率"这个哲学争论转化为可量化的工程问题（漏多少、你能容忍多少），且算例精确展示了隐性税率这一常被忽视的机制；缺点是它把泄漏全部归结为劳动供给反应，忽略了行政成本之外的现实复杂度（如申领耻辱、跨代影响），且"漏多少"高度依赖劳动供给弹性的实证取值，模型本身给不出答案。</p>
+
+      <!-- ==================== L22 ==================== -->
+      <h2>二、L22 政府再分配与税收（Government Redistribution and Taxation）</h2>
+
+      <h3>2.1 引入：政府宣布"汽油税由石油公司承担"——你可以高枕无忧吗？</h3>
+      <p><strong>反直觉开场：</strong>政府宣布对汽油每加仑征 50 美分税，<strong>支票由石油公司开</strong>。作为消费者，你是不是可以松口气："太好了，是那些卖油的家伙在承担税负"？错了。在公共财政（Public Finance）领域，这个问题叫<span class="term">税收归宿</span><span class="term-en">（Tax Incidence）</span>——而它的第一个洞见就是：<strong>给政府开支票的人 ≠ 承担税负的人</strong>。</p>
+
+      <h3>2.2 税收归宿：税收楔子如何把税负劈成两半</h3>
+      <p>汽油市场初始状态：1,000 亿加仑以每加仑 $1.50 成交。对供应商每加仑征 50 美分税：</p>
+      <ul>
+        <li>需求曲线<strong>不动</strong>（你对边际一加仑的支付意愿没变）；供给曲线 = 边际成本曲线，每加仑成本多了 50 美分 → <strong>供给平行上移 $0.50</strong>（S₁ → S₂）；</li>
+        <li>若仍按 $1.50 出售：人们想买 1,000 亿加仑，公司只愿意卖 800 亿——失衡，价格沿新供给曲线上爬；</li>
+        <li>新均衡 D：<strong>900 亿加仑、$1.80</strong>。</li>
+      </ul>
+      <p>归宿分析：<strong>消费者</strong>过去付 $1.50、现在付 $1.80——虽没给政府寄过一分钱支票，实际承担了 <strong>30 美分</strong>。<strong>生产者</strong>名义上每加仑寄 50 美分支票，但他们现在收 $1.80，净得 $1.80 − $0.50 = <strong>$1.30</strong>，比过去少拿 <strong>20 美分</strong>。含税价与税后实收价之间的差额叫<span class="term">税收楔子</span><span class="term-en">（Tax Wedge）</span>（此处 = 50 美分），市场自动把它劈成 30/20 两半——与"谁开支票"毫无关系。</p>
+
+      <div id="fig-gas-tax"></div>
+      <p><strong>图 4 解读：</strong>需求 D 与税前供给 S₁ 交于初始均衡 (100, $1.50)（单位：十亿加仑）。50 美分从量税使供给上移至 S₂（= S₁ + $0.50），新均衡 (90, $1.80)。橙色矩形（$1.50–$1.80 × 90）是消费者承担的 30 美分；蓝色矩形（$1.30–$1.50 × 90）是生产者承担的 20 美分；灰色三角形（Q 从 100 缩到 90）是税收造成的无谓损失。点 (90, $1.30) 是生产者的税后净价：$1.80 − $0.50 的"税收楔子"清晰可见。</p>
+
+      <h3>2.3 对消费者征税结果相同：报纸头条全错</h3>
+      <p><strong>第二个大胆论断：谁给政府寄支票根本不重要。</strong>改为对消费者征同样的 50 美分税——想象报纸头条："政府为偏袒石油公司而压榨小人物！"哗然一片。但经济学说：<strong>这些头条全错</strong>。</p>
+      <ul>
+        <li>供给不动，<strong>需求曲线下移 50 美分</strong>：你每买一加仑要另寄 50 美分支票，支付意愿自然降 50 美分；</li>
+        <li>新均衡成交量仍是 <strong>900 亿加仑</strong>，与对生产者征税一模一样；市价跌到 <strong>$1.30</strong>；</li>
+        <li>消费者净负担：付 $1.30 + 寄 $0.50 = $1.80，比过去多花 <strong>30 美分</strong>；生产者收 $1.30，比过去少拿 <strong>20 美分</strong>。<strong>完全相同。</strong></li>
+      </ul>
+      <p>一般原理：给定税收楔子大小与供需曲线形状，归宿由市场均衡唯一决定；对哪一方名义征税，市场通过价格调整完全抵消。所以下次读到"此税好因为它针对公司 / 此税坏因为它针对人民"，正确的反应是问：<strong>楔子多大？供需长什么样？</strong></p>
+
+      <h3>2.4 税收显著性（Tax Salience）：行为经济学的修正</h3>
+      <p>上述分析基于标准理性框架，偏离它就可能失效——关键是<span class="term">税收显著性</span><span class="term-en">（Tax Salience）</span>：人们对"看得见"的税反应更大。</p>
+      <ul>
+        <li><strong>加州超市实验</strong>：随机地把部分货架标价直接加上销售税（含税标价），其余保持"收银台才加税"。最终支付总价完全相同，但<strong>含税标价的商品卖得更少</strong>——税越显著，需求越低；</li>
+        <li><strong>E-ZPass 研究</strong>（Amy Finkelstein）：高速过路费从排队付现金（每次都肉痛）改为电子自动扣款（月底一张账单，几乎无感）后，各州<strong>迅速提高了过路费</strong>——因为选民不那么在意了。</li>
+      </ul>
+
+      <h3>2.5 弹性决定归宿：谁没退路谁买单</h3>
+      <p><strong>第三个论断：一切都与弹性有关。</strong>给定楔子，归宿完全由供需弹性决定：<strong>缺乏弹性的一方被税负"困住"，富有弹性的一方把税负推给对方</strong>。直觉是"谈判能力"：你没有替代品可走，对方就知道能把税全转嫁给你。</p>
+
+      <div class="figure-pair">
+        <div id="fig-elastic-vert"></div>
+        <div id="fig-elastic-horiz"></div>
+      </div>
+      <p><strong>图 5 / 图 6 解读：</strong>左图需求<strong>完全无弹性</strong>（垂直，如胰岛素——无论价格多少都必须买）：供给上移 50 美分后，价格从 $1.50 涨足到 $2.00，销量不变，<strong>消费者承担全部 50 美分</strong>——生产者虽开支票，却通过涨价全额收回。右图需求<strong>完全有弹性</strong>（水平，如汉堡——涨一分钱就全跑去买热狗披萨）：生产者若转嫁一分钱顾客就消失，只能自己扛，价格维持 $1.50、销量降到 67，<strong>生产者净价 $1.00，承担全部 50 美分</strong>。</p>
+      <p><strong>现实案例——Airbnb：</strong>Airbnb 进入市场后，住宿替代品大增，消费者对酒店价格的需求变得更有弹性。按上述原理，酒店税应更多由酒店所有者承担、更少转嫁给消费者——研究证实：<strong>Airbnb 进入后，酒店税更少地反映在酒店价格上</strong>。弹性变了，归宿就跟着变，税法条文一个字没改。</p>
+
+      <h3>2.6 所得税 vs 消费税：一场 17 世纪的辩论</h3>
+      <p>应该对收入（产出）还是消费征税？这场辩论可追溯到 17 世纪的托马斯·霍布斯（Thomas Hobbes），至今鲜活：美国主要依赖所得税，欧洲更依赖消费税如<span class="term">增值税</span><span class="term-en">（Value-Added Tax, VAT）</span>。</p>
+      <ul>
+        <li><strong>效率方</strong>：Y = C + S（收入不是消费就是储蓄），而储蓄是增长的引擎（形成资本池、压低利率、促进投资）。所得税同时征了消费和储蓄；消费税放过储蓄 → 相对鼓励储蓄与长期增长；</li>
+        <li><strong>公平方</strong>：社会上几乎所有储蓄都由最富的人完成。中低收入家庭几乎没有储蓄，两种税对他们差别不大；但对富人，消费税是巨额优惠（储蓄全免税）→ 财富从穷人向富人大规模再分配；</li>
+        <li><strong>理论补丁</strong>：<span class="term">遗产税</span><span class="term-en">（Estate Tax，被反对派称为"死亡税"）</span>——富人去世时把遗留储蓄视为"最终消费"征税，可缓解公平问题。但现实是：美国遗产税只影响极少数最富的人，且只覆盖其资产的一小部分。辩论仍在继续。</li>
+      </ul>
+
+      <h3>2.7 转移支付的困境：隐性税与 UBI</h3>
+      <p>漏桶的另一边是转移支付。上一节的算例已经揭示核心困境：项目规定"补贴 = $10,000 − 你的收入"，相当于对收入低于 1 万的人征收 <strong>100% 的<span class="term">隐性税</span><span class="term-en">（Implicit Tax）</span></strong>——每多赚 1 元，补贴少 1 元。</p>
+      <p>那不如给每个人（包括富人）都发 $10,000？这就是<span class="term">全民基本收入</span><span class="term-en">（Universal Basic Income, UBI）</span>。它消除了替代效应（边际工作回报不变），但收入效应仍在（白得一笔钱，休闲是正常品，工作意愿下降），而且<strong>成本极其高昂</strong>。困境的本质：<strong>想把援助限定给穷人，就必须在他们变富时收回援助，而"收回"本身就是税。</strong></p>
+
+      <h3>2.8 给漏桶打的两个补丁：分类转移与实物转移</h3>
+      <ul>
+        <li><span class="term">分类转移支付</span><span class="term-en">（Categorical Transfers）</span>：把援助给"特征无法轻易改变"的群体，从源头上避免行为扭曲。例：<strong>SSI</strong>（给有残疾儿童的低收入家庭现金补助）、<strong>TANF</strong>（给低收入单亲家庭）。逻辑：若能按"天生低技能"发钱，高技能者没法假装低技能来骗补。现实难点是分类：残疾（尤其肌肉骨骼或精神类）很难评估，有证据表明政府提供残疾福利后声称残疾的人数上升；相比之下，给单身母亲发福利并未显著导致更多女性选择成为单身母亲。权衡：<strong>分类越严格，扭曲越小但漏掉的穷人越多；越宽泛，覆盖面越大但钻空子越多。</strong></li>
+        <li><span class="term">实物转移支付</span><span class="term-en">（In-Kind Transfers）</span>：不给现金，给"穷人需要、富人看不上"的东西——普通公共住房、政府医疗、食品券。妙处是<span class="term">自我筛选</span><span class="term-en">（Self-selection）</span>：富人不会为一套普通公寓假装穷人，无家可归者却很乐意接受——福利的设计本身让人们"自我暴露"是否真需要帮助。政客偏爱实物转移的另一原因是<span class="term">家长式作风</span><span class="term-en">（Paternalism）</span>：担心穷人拿现金买毒品酒精。因此美国绝大多数转移支付是实物形式，尤其医疗，价值远超现金援助。</li>
+      </ul>
+
+      <h3>2.9 EITC：一个反向漏水的桶</h3>
+      <p>压轴是成功故事。<span class="term">劳动所得税抵免</span><span class="term-en">（Earned Income Tax Credit, EITC）</span>是一种<strong>有条件的转移支付</strong>，也可看作<strong>工资补贴</strong>：只有工作才能拿钱。它分三个阶段（下图为有两个孩子的单亲家庭 2015 年参数）：</p>
+      <ol>
+        <li><span class="term">递增阶段</span><span class="term-en">（Phase-in）</span>：收入 $0–$13,870，每赚 $1 政府<strong>额外给 $0.40</strong>——相当于 <strong>−40% 的负税率</strong>，边际上工作回报比工资还高。对一个原本不工作的人，只有替代效应（休闲变贵）没有收入效应 → <strong>明确激励进入劳动力市场</strong>；</li>
+        <li><span class="term">平台阶段</span><span class="term-en">（Plateau）</span>：约 $13,870–$18,110，抵免封顶在 <strong>$5,548</strong>。边际工资不变，但你比没有 EITC 时更富 → 只有收入效应，理论上略微减少工作；</li>
+        <li><span class="term">递减阶段</span><span class="term-en">（Phase-out）</span>：之后每多赚 $1 抵免少 $0.21——相当于 <strong>21% 的正税率</strong>（至约 $44,454 抵免归零）。替代效应与收入效应同向，理论上减少工作。</li>
+      </ol>
+
+      <div id="fig-eitc"></div>
+      <p><strong>图 7 解读：</strong>蓝色折线是 EITC 抵免额随劳动收入的变化：递增段斜率 +0.40（每多赚 $1 多拿 $0.40，即边际税率 −40%），在 ($13,870, $5,548) 处封顶；平台段水平于 $5,548 直至约 $18,110；递减段斜率 −0.21（每多赚 $1 少拿 $0.21，即 21% 正税率），在约 ($44,454, $0) 处归零。三段斜率 −40% → 0% → +21% 已在图中标注。</p>
+      <p><strong>理论与实证的分歧：</strong>理论上三阶段效应互相抵消、总体模糊；但实证研究一致表明 <strong>EITC 极大地增加了劳动供给</strong>——尤其单身母亲群体，大量原本不工作的人因此就业；同时并未显著减少已在职者的工时。一个解释正是税收显著性：人们清楚地看到"去工作就能拿到一张大支票"，却不太理解递减段复杂的边际税率。<strong>EITC 是一个"反向漏水的桶"：钱转移给了穷人，经济蛋糕反而变大了</strong>——公平与效率罕见地同向。局限也明显：它帮不到完全无工作能力的人（还得靠 SSI/TANF 等分类转移兜底）。</p>
+
+      <h2>三、收尾对比</h2>
+
+      <h3>3.1 四种社会福利函数对比</h3>
+      <table>
+        <thead>
+          <tr><th>价值观</th><th>函数形式</th><th>核心主张</th><th>等福利曲线形状</th><th>极端推论 / 问题</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="term">功利主义</span><span class="term-en">（Utilitarian）</span>（边沁）</td><td>W = ΣUᵢ</td><td>人人平等地计入总量；边际效用递减 → 倾向再分配</td><td>斜率 −1 的平行直线</td><td>资源固定 + 效用函数相同 → <strong>完全平等</strong>；只看总量，对 (50,10) 与 (30,30) 无差别</td></tr>
+          <tr><td><span class="term">罗尔斯主义</span><span class="term-en">（Rawlsian）</span>（罗尔斯）</td><td>W = min(Uᵢ)</td><td>只关心最贫困成员（无知之幕）</td><td>L 形，折点在 45° 线上</td><td>愿为给穷人 $1 而摧毁富人 $40,000</td></tr>
+          <tr><td><span class="term">诺齐克主义</span><span class="term-en">（Nozickian）</span>（诺齐克）</td><td>无（不评价结果分配）</td><td>只再分配<strong>机会</strong>，结果交给市场</td><td>—</td><td>"机会均等"无法定义（基因+环境）；忽略运气</td></tr>
+          <tr><td><span class="term">商品平均主义</span><span class="term-en">（Commodity Egalitarianism）</span></td><td>保障底线，之上不评价</td><td>绝对资源而非相对收入：人人有食物、住所、医疗</td><td>底线之下 L 形，之上不在意</td><td>引发"给钱还是给实物"之辩（→ 实物转移支付）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3.2 EITC vs 传统福利 vs UBI</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>传统福利（保底 + 扣减）</th><th><span class="term">UBI</span><span class="term-en">（Universal Basic Income）</span></th><th><span class="term">EITC</span><span class="term-en">（Earned Income Tax Credit）</span></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>边际工作激励</td><td>隐性税率可达 <strong>100%</strong>（赚 $1 补贴少 $1），强烈打击工作</td><td>边际税率不变（无替代效应），但收入效应减少工作</td><td>递增段 <strong>−40% 负税率</strong>，边际上奖励工作</td></tr>
+          <tr><td>对不工作者</td><td>可领取（兜底）</td><td>可领取（兜底）</td><td><strong>一分没有</strong>——只补贴劳动收入</td></tr>
+          <tr><td>财政成本</td><td>中等（只发穷人）</td><td><strong>极高</strong>（人人有份）</td><td>较低（只发低收入工作者）</td></tr>
+          <tr><td>漏桶泄漏（DWL）</td><td>大：穷人停工 + 富人少干，劳动供给内移</td><td>中：仅收入效应，但税基筹资仍有扭曲</td><td><strong>反向</strong>：实证上增大劳动供给，蛋糕变大</td></tr>
+          <tr><td>主要短板</td><td>制造"贫困陷阱"（A/B 类人都涌向 D 点）</td><td>成本与收入效应</td><td>帮不到无工作能力者；递减段 21% 正税仍有扭曲</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（效率相同的结果分配迥异，且追求公平会损耗效率——漏多少可容忍？）→ 简化模型（社会福利函数 + 等福利曲线把价值观数学化；奥肯漏桶把权衡量化）→ 推导（功利 W=ΣUᵢ 的完全平等推论 → 福利算例的预算线扭折与 A/B/C/D 反应 → 税收楔子 30/20 劈分与"开支票者无关"定理 → 弹性决定归宿）→ 实际应用（汽油税、含税标价实验、E-ZPass、Airbnb、所得税 vs 消费税、SSI/TANF/实物转移、EITC 三阶段）→ 局限性（价值观无标准答案、泄漏大小依赖实证弹性、显著性等行为因素使纸面归宿失真、EITC 覆盖不了无工作能力者）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-micro/15-equity-redistribution.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1（左）：功利主义等福利曲线 W = U_H + U_N —— X(50,10) 与 Y(30,30) 无差别 =====
+    Charts.xy(document.getElementById('fig-iso-util'), {
+      xLabel: '荷马的效用 U_H',
+      yLabel: '内德的效用 U_N',
+      xMax: 60, yMax: 60, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1：功利主义等福利曲线（W = U_H + U_N）—— 斜率 −1，X 与 Y 同在 W = 60 上',
+      series: [
+        { points: [[0, 30], [30, 0]], type: 'linear', color: '#93c5fd', label: 'W = 30' },
+        { points: [[0, 60], [60, 0]], type: 'linear', color: '#2563eb', label: 'W = 60' },
+        { points: [[30, 60], [60, 30]], type: 'linear', color: '#93c5fd', label: 'W = 90' },
+      ],
+      markers: [
+        { x: 50, y: 10, label: 'X：(50, 10)，W = 60', color: '#dc2626', legend: '分配组合点', guides: true, gxLabel: '50', gyLabel: '10', labelDx: -150, labelDy: 24 },
+        { x: 30, y: 30, label: 'Y：(30, 30)，W = 60', color: '#15803d', guides: true, gxLabel: '30', gyLabel: '30', labelDx: 14, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图2（右）：罗尔斯主义等福利曲线 W = min(U_H, U_N) —— L 形，折点在 45° 线 =====
+    Charts.xy(document.getElementById('fig-iso-rawls'), {
+      xLabel: '荷马的效用 U_H',
+      yLabel: '内德的效用 U_N',
+      xMax: 60, yMax: 60, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：罗尔斯主义等福利曲线（W = min）—— L 形；Y(W=30) 远优于 X(W=10)',
+      series: [
+        { points: [[0, 0], [60, 60]], type: 'linear', color: '#6b7280', dash: true, label: '45° 线 U_H = U_N（折点所在）' },
+        { points: [[60, 10], [10, 10], [10, 60]], type: 'linear', color: '#93c5fd', label: 'W = 10（X 所在）' },
+        { points: [[60, 30], [30, 30], [30, 60]], type: 'linear', color: '#2563eb', label: 'W = 30（Y 所在）' },
+        { points: [[60, 50], [50, 50], [50, 60]], type: 'linear', color: '#93c5fd', label: 'W = 50' },
+      ],
+      markers: [
+        { x: 50, y: 10, label: 'X：(50, 10)，W = min = 10', color: '#dc2626', legend: '分配组合点', guides: true, gxLabel: '50', gyLabel: '10', labelDx: -166, labelDy: 24 },
+        { x: 30, y: 30, label: 'Y：(30, 30)，W = min = 30', color: '#15803d', labelDx: 14, labelDy: -16 },
+      ],
+    });
+
+    // ===== 图3：福利项目算例 —— 保底 $10,000 + 超 $20,000 征 20% 边际税，预算线扭折 =====
+    Charts.xy(document.getElementById('fig-leaky-budget'), {
+      xLabel: '休闲 L（小时）',
+      yLabel: '消费 C（美元）',
+      xMax: 2000, yMax: 40000,
+      xTicks: [{ v: 1000, label: '1,000' }, { v: 1500, label: '1,500' }, { v: 2000, label: '2,000' }],
+      yTicks: [{ v: 10000, label: '10,000' }, { v: 20000, label: '20,000' }, { v: 30000, label: '30,000' }, { v: 40000, label: '40,000' }],
+      legendPosition: 'top',
+      caption: '图 3：福利体系扭折预算线 —— 保底 $10,000（隐性税 100%）+ 20% 边际税；A、B → D，C → C′',
+      series: [
+        { points: [[0, 40000], [2000, 0]], type: 'linear', color: '#6b7280', dash: true, label: '原预算线：时薪 $20（C = 40,000 − 20L）' },
+        { points: [[0, 36000], [1000, 20000], [1500, 10000], [2000, 10000]], type: 'linear', color: '#2563eb', label: '福利后预算线（扭折，> $20,000 段斜率 −16）' },
+      ],
+      markers: [
+        { x: 1750, y: 5000, label: 'A：(1,750, $5,000)', color: '#dc2626', legend: 'A/B/C：原始选择', lineTo: [2000, 10000], labelDx: -168, labelDy: 26 },
+        { x: 1400, y: 12000, label: 'B：(1,400, $12,000)', color: '#d97706', lineTo: [2000, 10000], labelDx: -180, labelDy: -16 },
+        { x: 500, y: 30000, label: 'C：(500, $30,000)', color: '#15803d', lineTo: [650, 25600], labelDx: 14, labelDy: -16 },
+        { x: 650, y: 25600, label: "C′：(650, $25,600)", color: '#0d9488', legend: '移动后选择', labelDx: 16, labelDy: 26 },
+        { x: 2000, y: 10000, label: 'D：(2,000, $10,000) 停工拿保底', color: '#7c3aed', guides: true, gxLabel: '2,000', gyLabel: '10,000', labelDx: -236, labelDy: 30 },
+      ],
+    });
+
+    // ===== 图4：汽油 50 美分从量税 —— 税收楔子劈成消费者 30¢ / 生产者 20¢ =====
+    // 需求 P = 4.5 − 0.03Q；S1: P = 0.02Q − 0.5；S2 = S1 + 0.5
+    // 初始均衡 (100, 1.5)；新均衡 (90, 1.8)；生产者净价 (90, 1.3)
+    Charts.xy(document.getElementById('fig-gas-tax'), {
+      xLabel: '汽油数量 Q（十亿加仑）',
+      yLabel: '价格 P（美元/加仑）',
+      xMax: 120, yMax: 3, xTicks: [],
+      yTicks: [{ v: 1.3, label: '$1.30' }, { v: 1.5, label: '$1.50' }, { v: 1.8, label: '$1.80' }],
+      legendPosition: 'top',
+      caption: '图 4：对生产者征 50¢ 汽油税 —— 消费者担 30¢、生产者担 20¢，灰色三角为 DWL',
+      areas: [
+        { points: [[0, 1.5], [90, 1.5], [90, 1.8], [0, 1.8]], color: '#d97706', opacity: 0.25, label: '消费者 30¢' },
+        { points: [[0, 1.3], [90, 1.3], [90, 1.5], [0, 1.5]], color: '#2563eb', opacity: 0.18, label: '生产者 20¢' },
+        { points: [[90, 1.3], [90, 1.8], [100, 1.5]], color: '#6b7280', opacity: 0.3, label: 'DWL' },
+      ],
+      series: [
+        { points: [[50, 3], [120, 0.9]], type: 'linear', color: '#dc2626', label: '需求 D（P = 4.5 − 0.03Q）' },
+        { points: [[25, 0], [120, 1.9]], type: 'linear', color: '#2563eb', label: 'S₁（税前供给）' },
+        { points: [[0, 0], [120, 2.4]], type: 'linear', color: '#0d9488', label: 'S₂ = S₁ + $0.50（税后）' },
+      ],
+      markers: [
+        { x: 100, y: 1.5, label: '初始均衡 (100, $1.50)', color: '#2563eb', legend: '均衡点', guides: true, gxLabel: '100', gyLabel: '$1.50', labelDx: 12, labelDy: 22 },
+        { x: 90, y: 1.8, label: '新均衡 (90, $1.80)', color: '#dc2626', guides: true, gxLabel: '90', gyLabel: '$1.80', labelDx: -150, labelDy: -14 },
+        { x: 90, y: 1.3, label: '生产者净价 $1.30（楔子 50¢）', color: '#0d9488', legend: '税收楔子下端', guides: true, gyLabel: '$1.30', labelDx: -186, labelDy: 24 },
+      ],
+    });
+
+    // ===== 图5（左）：需求完全无弹性（垂直）—— 消费者承担全部 50¢ =====
+    Charts.xy(document.getElementById('fig-elastic-vert'), {
+      xLabel: '数量 Q（十亿加仑）',
+      yLabel: '价格 P（美元）',
+      xMax: 140, yMax: 3, xTicks: [],
+      yTicks: [{ v: 1.5, label: '$1.50' }, { v: 2, label: '$2.00' }],
+      legendPosition: 'top',
+      caption: '图 5：需求完全无弹性（如胰岛素）—— 价格涨足 50¢，消费者全担',
+      series: [
+        { points: [[100, 0], [100, 3]], type: 'linear', color: '#dc2626', label: '需求（完全无弹性，垂直）' },
+        { points: [[0, 0], [140, 2.1]], type: 'linear', color: '#2563eb', label: 'S₁（税前）' },
+        { points: [[0, 0.5], [140, 2.6]], type: 'linear', color: '#0d9488', label: 'S₂ = S₁ + $0.50' },
+      ],
+      markers: [
+        { x: 100, y: 1.5, label: '初始 (100, $1.50)', color: '#2563eb', legend: '均衡点', guides: true, gxLabel: '100', gyLabel: '$1.50', labelDx: 12, labelDy: 24 },
+        { x: 100, y: 2, label: '新均衡 (100, $2.00)：消费者全担 50¢', color: '#dc2626', guides: true, gyLabel: '$2.00', labelDx: -208, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图6（右）：需求完全有弹性（水平）—— 生产者承担全部 50¢ =====
+    Charts.xy(document.getElementById('fig-elastic-horiz'), {
+      xLabel: '数量 Q（十亿加仑）',
+      yLabel: '价格 P（美元）',
+      xMax: 140, yMax: 3, xTicks: [],
+      yTicks: [{ v: 1, label: '$1.00' }, { v: 1.5, label: '$1.50' }],
+      legendPosition: 'top',
+      caption: '图 6：需求完全有弹性（如汉堡）—— 价格不变，生产者全担 50¢',
+      series: [
+        { points: [[0, 1.5], [140, 1.5]], type: 'linear', color: '#dc2626', label: '需求（完全有弹性，水平）' },
+        { points: [[0, 0], [140, 2.1]], type: 'linear', color: '#2563eb', label: 'S₁（税前）' },
+        { points: [[0, 0.5], [140, 2.6]], type: 'linear', color: '#0d9488', label: 'S₂ = S₁ + $0.50' },
+      ],
+      markers: [
+        { x: 100, y: 1.5, label: '初始 (100, $1.50)', color: '#2563eb', legend: '均衡点', guides: true, gxLabel: '100', gyLabel: '$1.50', labelDx: 12, labelDy: -14 },
+        { x: 66.7, y: 1.5, label: '新均衡 (67, $1.50)：价格不变', color: '#dc2626', guides: true, gxLabel: '67', labelDx: -186, labelDy: -14 },
+        { x: 66.7, y: 1, label: '生产者净价 $1.00：全担 50¢', color: '#0d9488', legend: '税收楔子下端', guides: true, gyLabel: '$1.00', labelDx: 12, labelDy: 24 },
+      ],
+    });
+
+    // ===== 图7：EITC 三阶段 —— 递增 −40% → 平台 $5,548 → 递减 +21% =====
+    Charts.xy(document.getElementById('fig-eitc'), {
+      xLabel: '劳动收入（美元）',
+      yLabel: 'EITC 抵免额（美元）',
+      xMax: 45000, yMax: 6000,
+      xTicks: [{ v: 13870, label: '13,870' }, { v: 18110, label: '18,110' }, { v: 44454, label: '44,454' }],
+      yTicks: [{ v: 5548, label: '5,548' }],
+      legendPosition: 'top',
+      caption: '图 7：EITC 三段折线 —— 递增段 −40%（负税率）→ 平台 $5,548 → 递减段 +21%（正税率）',
+      series: [
+        { points: [[0, 0], [13870, 5548], [18110, 5548], [44454, 0]], type: 'linear', color: '#2563eb', label: 'EITC 抵免额（2015 年，两个孩子的单亲家庭）' },
+      ],
+      markers: [
+        { x: 6935, y: 2774, label: '递增段：每多赚 $1 多拿 $0.40（边际税率 −40%）', color: '#15803d', legend: '三段斜率标注', labelDx: -260, labelDy: 34 },
+        { x: 15990, y: 5548, label: '平台段：封顶 $5,548（$13,870–$18,110）', color: '#d97706', guides: true, gyLabel: '5,548', labelDx: -190, labelDy: -18 },
+        { x: 31282, y: 2774, label: '递减段：每多赚 $1 少拿 $0.21（+21%）', color: '#dc2626', labelDx: -170, labelDy: 34 },
+        { x: 44454, y: 0, label: '($44,454, $0) 抵免归零', color: '#6b7280', legend: '抵免归零', labelDx: -200, labelDy: -18 },
+      ],
+    });
+  </script>
+</body>
+</html>
