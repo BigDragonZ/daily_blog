@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08 增长事实与索洛模型 - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>08 增长事实与索洛模型：资本积累</h1>
+      <p>本篇覆盖 MIT 14.02《宏观经济学原理》第 13、14 两讲（L13+L14）：课程视角正式从"短期商业周期"切换到"长期经济增长"。先看 L13 的<span class="term">增长事实</span><span class="term-en">（The Facts of Growth）</span>——1890-2017 年美国实际 GDP 增长 50 倍、大萧条在图上只是一个小坑；跨国比较要做<span class="term">购买力平价</span>校正；穷国增长更快的<span class="term">趋同</span>现象在 OECD 与亚洲成立、在非洲失效；持续增长其实只有两百年历史。再看 L14 的第一个增长模型——<span class="term">索洛增长模型</span><span class="term-en">（Solow Growth Model）</span>：资本如何经由"产出 → 储蓄 → 投资 → 资本积累"的循环推动增长，为什么无论从哪里出发经济都会收敛到<span class="term">稳态</span>，为什么储蓄率提高只提升收入水平而不提升长期增长率，以及使消费最大化的<span class="term">黄金法则储蓄率</span>在哪里。</p>
+
+      <!-- ==================== L13 ==================== -->
+      <h2>一、L13 增长事实（The Facts of Growth）</h2>
+
+      <h3>1.1 引入：1950 年台湾和刚果一样穷</h3>
+      <p><strong>反直觉开场：</strong>1950 年，台湾和刚果民主共和国的人均 GDP 几乎处于同一水平——都是世界上最穷的经济体之一。70 年后，台湾的人均 GDP 增长了约 <strong>30 倍</strong>，跻身世界最富经济体之列；而刚果的人均 GDP 比 1950 年<strong>还要低</strong>。同样的起点，70 年足以拉开 30 倍的差距——差距的全部来源不是资源、不是地理位置，而是<strong>一个经济体实现了持续增长，另一个陷入了停滞</strong>。香港、台湾、新加坡、韩国这"亚洲四小龙"的崛起，就是这种增长奇迹的著名样本。为什么有的经济体持续增长、有的停滞？穷国能不能追上富国？这正是增长理论要回答的问题。</p>
+
+      <h3>1.2 转向长期之前：加息周期史上多次"弄坏东西"</h3>
+      <p>在告别短期与中期分析之前，教授补了一条政策告诫：金融危机中政策要<strong>快且大</strong>（甩卖发生时没有公司来得及调整）；但加息周期中恰恰相反，主流是<strong>渐进主义</strong>——因为足够大的调整总会"弄坏某些东西"。美国历史上几次主要加息周期几乎无一例外：</p>
+      <ul>
+        <li><strong>1980 年代初激进加息</strong> → 流向新兴市场的资本骤然消失，拉美陷入<span class="term">失落的十年</span><span class="term-en">（Lost Decade）</span>——教授当时在智利读书，亲历了资本流入一夜蒸发的危机；</li>
+        <li><strong>1980 年代末加息</strong> → 小型区域性银行撑不住利率急升，引爆<span class="term">储贷危机</span><span class="term-en">（Savings and Loan Crisis）</span>；同一背景下日本房地产泡沫破裂，从此"再也未能像以前那样增长"；</li>
+        <li><strong>1994 年加息</strong> → 墨西哥债券市场崩溃，爆发<span class="term">龙舌兰危机</span><span class="term-en">（Tequila Crisis）</span>；</li>
+        <li><strong>2004-06 年连续加息</strong> → 房价由升转跌，围绕住房财富构建的金融资产连环暴雷，最终酿成 2008 全球金融危机与<span class="term">大衰退</span><span class="term-en">（Great Recession）</span>。</li>
+      </ul>
+      <p>共同线索是<strong>银行</strong>：银行的<span class="term">杠杆率</span><span class="term-en">（Leverage）</span>极高、自有资本相对于资产很少，资产价格的微小变动就足以抹掉资本。所以你不知道什么会爆炸，但通常会有东西爆炸，而且往往与最热门的金融市场有关。这就是为什么通胀再高，央行也不敢无限激进。</p>
+
+      <h3>1.3 量级震撼：50 倍增长面前，大萧条只是个小坑</h3>
+      <p>看美国 1890-2017 年的实际 GDP（以 2012 年不变价格计算）：2017 年的 GDP 是 1890 年的约 <strong>50 倍</strong>。对比一下：讨论商业周期时，我们谈的是上下 2.5%-3% 的波动；而这里是 50 倍。<strong>在几十年的时间尺度上，商业周期几乎可以忽略，一切都关乎长期趋势</strong>。图中唯一肉眼可见偏离趋势的波动是大萧条——但即便是大萧条，相对于长期趋势也不过是一个小坑。影响一个国家的长期趋势非常困难，可这个趋势对国民福祉的影响远远超过任何一次衰退。</p>
+
+      <div id="fig-longrun-gdp"></div>
+      <p><strong>图 1 解读：</strong>美国实际 GDP（对数刻度，2012 年不变美元），1890 年约 0.39 万亿 → 2017 年约 19.5 万亿，增长约 50 倍。对数坐标下稳定增长的曲线接近一条直线——说明美国经济的长期增长率相当稳定。整条曲线上唯一显著下凹的地方是 1929-1933 年大萧条（从约 1.1 万亿跌到约 0.8 万亿），但放在 50 倍的增长面前，它只是趋势线旁的一个小坑；2008-09 年大衰退更是几乎看不见。</p>
+
+      <h3>1.4 人均修正：蛋糕大 50 倍，分蛋糕的人也多了 5 倍</h3>
+      <p>50 倍里有多大一部分只是"人变多了"？同一时期美国人口从 <strong>6300 万增加到 3.2 亿</strong>——原则上经济中有了更多工人。所以在长期分析中，我们一般不看 GDP 总量，而看<span class="term">人均 GDP</span><span class="term-en">（GDP per Capita）</span>：商业周期频率上人口变化可以忽略，长期内绝不行。修正之后，2017 年的人均 GDP 约是 1890 年的 <strong>10 倍</strong>——依然巨大，依然主导画面，但不再是 50 倍。附带一提：当今世界许多重要地区（日本、韩国、中国、欧洲大陆大部）人口已不再增长甚至负增长，这是全球经济正在经历的一次深层转折。</p>
+
+      <h3>1.5 跨国比较必须先做 PPP 校正</h3>
+      <p>在同一个国家内部，实际人均 GDP 是不错的福利度量；但跨国直接用汇率换算的 GDP 比较，会非常误导——因为各国价格水平不同。校正方法是<span class="term">购买力平价</span><span class="term-en">（Purchasing Power Parity, PPP）</span>。用讲义的美俄例子走一遍：</p>
+      <ul>
+        <li><strong>美国消费者</strong>：每年买 1 辆车（1 万美元）+ 一篮子食物（1 万美元），总消费 2 万美元；</li>
+        <li><strong>俄罗斯消费者</strong>：每年买 0.07 辆车（4 万卢布）+ 同样一篮子食物（8 万卢布），总支出 12 万卢布；</li>
+        <li>按汇率 1 美元 = 60 卢布换算，俄罗斯家庭消费 = 12 万 / 60 = <strong>2000 美元</strong>——难道俄罗斯比美国穷 10 倍？</li>
+        <li>用<strong>同一套价格</strong>（美国价格）重新衡量俄罗斯的消费：0.07 辆车 × 1 万美元 = 700 美元，加上一篮子食物 1 万美元，合计 <strong>10,700 美元</strong>，约为美国消费的 53%。</li>
+      </ul>
+      <p>俄罗斯家庭确实更穷，但不是穷 10 倍——穷国很多东西（尤其食物）便宜得多。几乎所有用于增长分析的跨国人均 GDP 数据都经过 PPP 调整，标准数据来源是<span class="term">宾大世界表</span><span class="term-en">（Penn World Table, PWT）</span>。</p>
+
+      <h3>1.6 趋同事实：穷国增长更快——在 OECD 与亚洲成立，在非洲失效</h3>
+      <p>看发达经济体 1950-2017 年的年均增长率：法国 2.6%、日本 4.1%、英国 2.1%、美国 2.0%，平均约 2.7%。增长率的微小差异在长期复利下产生巨大差别：法国人均 GDP 增长了 5.6 倍，而增长率最低的美国只增长了 3.6 倍。规律清晰可见：<strong>1950 年越富的国家增长越慢，越穷的国家增长越快</strong>——1950 年最富的美国增长率最低，最穷的日本增长率最高。各国人均 GDP 水平随时间趋于接近，这个现象称为<span class="term">趋同</span><span class="term-en">（Convergence）</span>。</p>
+
+      <div id="fig-convergence"></div>
+      <p><strong>图 2 解读：</strong>横轴是 1950 年人均 GDP（PPP，千美元），纵轴是随后几十年的年均增长率。蓝色 OECD 国家呈现清晰的负相关（灰色虚线趋势线）：美国起点最高、增长最慢（约 2%），日本起点最低、增长最快（约 4.1%）；绿色亚洲经济体起点更低、增长更快（亚洲四小龙 5% 上下）。但灰色非洲经济体完全不服从这条线——战乱与政治冲突等非经济因素破坏了趋同背后的经济力量。我们接下来要建的模型，解释的正是"经济力量能正常发挥作用"国家身上的趋同。</p>
+
+      <h3>1.7 马尔萨斯时代：持续增长只有两百年历史</h3>
+      <p>把镜头拉到最长：世界人均 GDP 的千年历史显示，人类绝大部分时间处于<span class="term">马尔萨斯时代</span><span class="term-en">（Malthusian Era）</span>——人口增长与粮食收成紧密绑定，人均产出几乎原地不动。如果你生活在公元 1000 年或文艺复兴时期，没有人会谈论"经济增长"。我们今天习以为常的持续增长，是工业革命之后才出现的现象，<strong>只有约两百年历史</strong>。</p>
+
+      <div id="fig-hockey-stick"></div>
+      <p><strong>图 3 解读：</strong>世界人均 GDP（公元 1000 年至今，示意数据）。从公元 1000 年到 1800 年的八百年间，人均产出在极低水平近乎平躺（马尔萨斯时代）；1820 年前后曲线开始抬头，随后两百年陡直上升——整条曲线像一根"曲棍球杆"。持续增长不是人类历史的常态，而是一个年轻的、需要被解释的例外。</p>
+
+      <h3>1.8 建模起点：生产函数与增长的两个来源</h3>
+      <p>短期分析关注总需求；中期引入供给侧，但生产函数简单到"产出 = 劳动"；长期分析必须明确考虑<span class="term">资本</span><span class="term-en">（Capital, K）</span>，因为资本积累是增长的核心。我们使用总<span class="term">生产函数</span><span class="term-en">（Production Function）</span> <strong>Y = F(K, N)</strong>（Y 产出、K 资本、N 劳动），它有两个关键性质：</p>
+      <ol>
+        <li><span class="term">规模报酬不变</span><span class="term-en">（Constant Returns to Scale, CRS）</span>：所有要素同比例扩大 x 倍，产出也扩大 x 倍——x·Y = F(x·K, x·N)；</li>
+        <li><strong>边际报酬递减</strong>：劳动固定时增加资本，产出增加但增幅越来越小（<span class="term">资本的边际产出递减</span><span class="term-en">（Decreasing Marginal Product of Capital）</span>）；对称地，劳动的边际报酬也递减。原因是两种要素互补：只增加一种，另一种就变得相对稀缺。</li>
+      </ol>
+      <p>利用 CRS，令 x = 1/N：Y/N = F(K/N, 1)——<strong>人均产出只是人均资本的函数</strong>。记 y = Y/N、k = K/N，就得到人均形式的生产函数 <strong>y = f(k)</strong>：一条递增但凹的曲线。由此，人均产出增长<strong>只有两个可能来源</strong>：</p>
+      <ul>
+        <li><span class="term">资本积累</span><span class="term-en">（Capital Accumulation）</span>：k 增加，经济<strong>沿着</strong>固定的 f(k) 曲线移动；</li>
+        <li><span class="term">技术进步</span><span class="term-en">（Technological Progress）</span>：函数 f 本身<strong>上移</strong>——同样的 k 生产更多的 y。</li>
+      </ul>
+      <p>分工预告：本篇（L14）集中讲资本积累这个渠道；技术进步留到下一篇（L15）。</p>
+
+      <!-- ==================== L14 ==================== -->
+      <h2>二、L14 储蓄、资本积累与产出（Saving, Capital Accumulation, and Output）</h2>
+
+      <h3>2.1 引入：把 100% 收入都拿去投资的国家，消费是零</h3>
+      <p><strong>反直觉开场：</strong>储蓄率越高，资本积累越快，经济越富——那"最会存钱"的 100% 储蓄率岂不是最优？可是储蓄率 100% 意味着全部产出都拿去投资，<strong>消费是零</strong>：经济很"富"，却没人过得好。反过来储蓄率 0 也没有资本、没有产出、消费同样是零。两端都是零，中间必有某个使消费最大化的"最佳储蓄率"——它在哪里？回答这个问题，需要先把"储蓄如何变成增长"的机制讲清楚。</p>
+
+      <h3>2.2 索洛其人</h3>
+      <p>接下来几讲的内容基本都出自一个人：<span class="term">罗伯特·索洛</span><span class="term-en">（Robert Solow）</span>——MIT 荣誉教授，与保罗·萨缪尔森（Paul Samuelson）一起建立了 MIT 经济学系，1987 年因经济增长研究获诺贝尔经济学奖。今天讲的模型就是以他命名的<span class="term">索洛增长模型</span><span class="term-en">（Solow Growth Model）</span>。</p>
+
+      <h3>2.3 核心循环：K → Y → S = sY → I → ΔK</h3>
+      <p>长期增长的核心机制与短期凯恩斯交叉的乘数完全不同。任何时刻，经济体拥有生产要素：劳动数量大体固定（或随人口增长），难以用经济手段控制；<strong>资本存量却会随时间变化，且取决于经济决策</strong>。循环如下：资本与劳动结合生产出产出；产出即收入，收入的一部分被储蓄；储蓄用于投资；投资就是资本积累；资本变多又提高未来的产出与收入——如此循环往复。这个过程<strong>非常缓慢</strong>，因为资本存量只能一点点积累。</p>
+
+      <div id="fig-solow-cycle"></div>
+      <p><strong>图 4 解读：</strong>索洛模型的核心循环。资本存量 K 经生产函数 Y = F(K, N) 产出收入 Y；收入按固定比例 s 被储蓄（S = s·Y）；封闭经济中储蓄等于投资（S = I）；投资补充折旧后改变资本存量（ΔK = I − δK）；新的资本存量又进入下一轮生产。整个索洛模型就是围绕这个缓慢转动的循环展开的。</p>
+
+      <h3>2.4 模型假设</h3>
+      <ol>
+        <li><span class="term">封闭经济</span><span class="term-en">（Closed Economy）</span>：暂不讨论国际贸易与资本流动；</li>
+        <li><strong>政府预算平衡</strong>：G = T，没有公共赤字——于是私人储蓄等于投资（S = I），这正是当初推导 IS 曲线的基础；</li>
+        <li><strong>人口不变</strong>：N 固定，暂不讨论失业（人口增长在 2.10 节加入）；</li>
+        <li><strong>储蓄率恒定</strong>：S = s·Y。注意这与短期模型的消费函数 C = c₀ + c₁(Y−T) 不同——短期里 c₀ 代表财富、房价等与当期收入无关的因素；长期中这些因素大体与产出同步增长，把储蓄设为收入的固定比例是合理的简化。由 S = I，投资也与收入成正比：I = s·Y。</li>
+      </ol>
+
+      <h3>2.5 资本动态方程：从总量到人均</h3>
+      <p>资本存量因投资而增加、因<span class="term">折旧</span><span class="term-en">（Depreciation, δ）</span>而减少（设备比建筑折旧快，这里不作区分，统一用折旧率 δ）：</p>
+      <p><strong>K<sub>t+1</sub> = (1 − δ)·K<sub>t</sub> + I<sub>t</sub></strong></p>
+      <p>两边同除以不变的人口 N，并把 I<sub>t</sub> = s·Y<sub>t</sub> 代入：</p>
+      <p><strong>K<sub>t+1</sub>/N − K<sub>t</sub>/N = s·(Y<sub>t</sub>/N) − δ·(K<sub>t</sub>/N)</strong></p>
+      <p>最后把人均产出 Y/N 换成生产函数 f(K/N)，得到<strong>索洛模型的基本方程</strong>：</p>
+      <p><strong>Δ(K/N) = s·f(K/N) − δ·(K/N)</strong></p>
+      <p>人均资本的变化 = 人均投资 − 人均折旧。折旧 δ·(K/N) 是人均资本的<strong>线性</strong>函数（资本越多折旧绝对量越大）；投资 s·f(K/N) 则是<strong>凹</strong>函数（继承自凹的生产函数）。经济要维持现有的人均资本水平，投资至少要能弥补折旧，这部分投资称为<span class="term">持平投资</span><span class="term-en">（Break-even Investment）</span>：实际投资超过持平投资，人均资本就增加；反之就减少。由于边际报酬递减，投资曲线爬升越来越慢而折旧线匀速上升，两者必然相交——交点处 Δ(K/N) = 0，人均资本不再变化，这就是<span class="term">稳态</span><span class="term-en">（Steady State）</span>。</p>
+
+      <h3>2.6 索洛图：本模型的"IS-LM 图"</h3>
+      <p>下面这张图在增长模型中的地位，相当于短期分析中的 IS-LM 图。横轴是人均资本 k = K/N，纵轴是人均量。三条曲线：生产函数 y = f(k)（蓝色凹曲线）、投资/储蓄函数 s·f(k)（绿色，生产函数按比例 s 压缩）、持平投资线 δ·k（红色直线，斜率为折旧率）。取具体数值：f(k) = √k、s = 0.3、δ = 0.1，稳态条件 s·√k* = δ·k* 解出 <strong>k* = (s/δ)² = 9，y* = 3</strong>，交点处 s·f(9) = 0.9 = δ×9。</p>
+
+      <div id="fig-solow-diagram"></div>
+      <p><strong>图 5 解读（核心图）：</strong>蓝色 f(k) = √k 是生产函数，绿色 s·f(k)（s = 0.3）是人均投资，红色直线 δk（δ = 0.1）是持平投资。绿线与红线相交于稳态：k* = 9，此处投资恰好弥补折旧（都是 0.9）；从 k* 向上读到蓝线得稳态人均产出 y* = 3。<strong>动态箭头</strong>显示必然收敛：k &lt; k*（如 k = 2）时投资高于折旧，人均资本增加、经济右移；k &gt; k*（如 k = 16）时折旧超过投资，人均资本减少、经济左移。无论起点在哪，经济最终都收敛到 k*——离稳态越远，调整力越强；越接近，速度越慢。</p>
+
+      <h3>2.7 过渡性增长：趋同现象的解释</h3>
+      <p>当经济的人均资本低于稳态水平时，它会经历一段资本与产出共同增长的时期——<span class="term">过渡性增长</span><span class="term-en">（Transitional Growth）</span>。这种增长不是永久的，只是经济向长期均衡收敛的过程。这立刻解释了 L13 的趋同事实：<strong>穷国通常人均资本低，离稳态远，资本的边际产出高，所以增长快</strong>；发达经济体大多已接近自己的稳态，追赶空间小、增长自然慢。OECD 与亚洲数据里"起点越低增长越快"的负相关，主要就是这么来的。</p>
+
+      <h3>2.8 储蓄率实验：s↑ 提高的是"水平"，不是"增长率"</h3>
+      <p>思想实验：储蓄率 s 永久性提高（从 0.2 提到 0.4），会发生什么？生产函数不动、折旧线不动，只有投资曲线上移。在旧稳态的人均资本上，新投资高于折旧，人均资本开始增长——经济进入一段过渡期，直到抵达更高的新稳态。用 f(k) = √k、δ = 0.1 计算：s = 0.2 时 k* = 4、y* = 2；s = 0.4 时 k* = 16、y* = 4。注意：储蓄率翻倍，长期人均产出翻倍，但人均资本要翻<strong>两番</strong>（×4）——边际报酬递减的体现。</p>
+
+      <div id="fig-saving-experiment"></div>
+      <p><strong>图 6 解读：</strong>蓝色生产函数与红色折旧线不动；储蓄率从 0.2 提高到 0.4，绿色投资曲线整体上移为紫色虚线。旧稳态 k*₀ = 4（投资 = 折旧 = 0.4），新稳态 k*₁ = 16（投资 = 折旧 = 1.6），对应稳态人均产出从 y*₀ = 2 升到 y*₁ = 4。底部箭头是过渡期：经济从 k*₀ 向 k*₁ 缓慢爬行——投资与折旧的差距初期最大、增长最快，随后逐渐减速。</p>
+      <p><strong>三个重要结论：</strong></p>
+      <ol>
+        <li>提高储蓄率<strong>不改变长期增长率</strong>——没有技术进步的索洛模型里，稳态增长率恒为零；</li>
+        <li>提高储蓄率<strong>提高长期人均产出水平</strong>（y* 更高）；</li>
+        <li>提高储蓄率触发一个<strong>增长率暂时升高的过渡期</strong>——而这个过渡期可能长达 <strong>50 年</strong>。</li>
+      </ol>
+      <p>这很好描述了 20 世纪六、七十年代"亚洲奇迹"的部分原因：极高的储蓄率驱动快速资本积累。中国过去几十年的高增长，部分也来自极高储蓄率 + 低初始资本存量；但随着经济越来越接近稳态，靠资本积累的"简单增长"正在耗尽，维持高增速越来越难。</p>
+
+      <h3>2.9 黄金法则储蓄率：消费最大化的 s 在哪里</h3>
+      <p>回到 2.1 节的问题。人均消费 c = (1−s)·y，提高储蓄率有两个方向相反的效应：<strong>直接负效应</strong>——(1−s) 下降，收入不变时消费减少；<strong>间接正效应</strong>——s 提高通过资本积累抬升长期收入 y，从而促进消费。净效果取决于初始储蓄率：s 很低时，收入效应占优，提高 s 增加长期消费；s 已经很高时，维持高资本存量所需的巨额储蓄挤占消费，再提高 s 反而降低长期消费。因此存在一个使长期消费最大化的储蓄率——<span class="term">黄金法则储蓄率</span><span class="term-en">（Golden Rule Saving Rate）</span>。</p>
+      <p>用<span class="term">柯布-道格拉斯生产函数</span><span class="term-en">（Cobb-Douglas Production Function）</span> Y = K<sup>1/2</sup>·N<sup>1/2</sup>（人均形式 y = √k）算一遍，δ = 0.1。稳态：k* = (s/δ)²，y* = s/δ，c* = (1−s)·s/δ：</p>
+      <table>
+        <thead>
+          <tr><th>储蓄率 s</th><th>稳态人均资本 k* = (s/δ)²</th><th>稳态人均产出 y* = s/δ</th><th>稳态人均消费 c* = (1−s)·y*</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.1</td><td>1</td><td>1</td><td>0.9</td></tr>
+          <tr><td>0.2</td><td>4</td><td>2</td><td>1.6</td></tr>
+          <tr><td><strong>0.5（黄金法则）</strong></td><td><strong>25</strong></td><td><strong>5</strong></td><td><strong>2.5（峰值）</strong></td></tr>
+          <tr><td>0.6</td><td>36</td><td>6</td><td>2.4（开始下降）</td></tr>
+          <tr><td>1.0</td><td>100</td><td>10</td><td>0</td></tr>
+        </tbody>
+      </table>
+
+      <div id="fig-golden-rule"></div>
+      <p><strong>图 7 解读：</strong>稳态人均消费 c* 对储蓄率 s 的倒 U 曲线（δ = 0.1，c* = 10s(1−s)）。两个端点都是零：s = 0 没有资本没有产出，s = 1 全部产出用于投资、消费为零。峰值在黄金法则点 s_gold = 0.5、c*_max = 2.5（星标）。峰值左侧，提高 s 的收入效应占优（s = 0.1 → c* = 0.9 升到 s = 0.5 → c* = 2.5）；峰值右侧，储蓄挤出效应占优（s = 0.6 时 c* 已回落到 2.4）。"最会存钱"的经济体不是消费最旺的经济体。</p>
+
+      <h3>2.10 加入人口增长：持平投资线变陡</h3>
+      <p>最后把<span class="term">人口增长</span><span class="term-en">（Population Growth, g<sub>N</sub>）</span>放进模型：人口以速率 g<sub>N</sub> 增长。要维持人均资本 K/N 不变，投资现在不仅要弥补折旧 δK，还要为<strong>新增工人</strong>配备资本 g<sub>N</sub>·K——持平投资变成 (δ + g<sub>N</sub>)·K。人均动态方程变为：</p>
+      <p><strong>Δ(K/N) ≈ s·f(K/N) − (δ + g<sub>N</sub>)·(K/N)</strong></p>
+      <p>图形上，人口增长的效果等同于提高折旧率：持平投资线斜率从 δ 变为 (δ + g<sub>N</sub>)，直线更陡，与投资曲线的交点更靠左——<strong>人口增长越快，稳态人均资本与人均产出越低</strong>。在稳态下，人均产出保持不变，但总量产出 Y 以人口增长率 g<sub>N</sub> 增长——人类历史很长一段时期里，人口增长正是总量增长的主要驱动力。反过来，今天许多经济体面临人口负增长，这成了增长的新挑战。</p>
+
+      <h3>2.11 收尾对比：储蓄率 vs 人口增长两个实验</h3>
+      <table>
+        <thead>
+          <tr><th>实验</th><th>曲线变化</th><th>稳态人均产出 y*</th><th>长期人均增长率</th><th>过渡期</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>储蓄率 s↑</strong></td>
+            <td>投资曲线 s·f(k) 上移；折旧线不动</td>
+            <td>提高（水平效应）</td>
+            <td>不变（仍为零）</td>
+            <td>增长率暂时升高，可达约 50 年（亚洲奇迹）</td>
+          </tr>
+          <tr>
+            <td><strong>人口增长 g<sub>N</sub>↑</strong></td>
+            <td>持平投资线变陡（δ → δ+g<sub>N</sub>）；投资曲线不动</td>
+            <td>降低</td>
+            <td>不变（人均为零；总量以 g<sub>N</sub> 增长）</td>
+            <td>人均产出向下调整至更低稳态</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>索洛模型（资本积累版）的优缺点：</strong>优点是用一条动态方程 Δ(K/N) = s·f(K/N) − δ·(K/N) 就统一解释了趋同（穷国追赶稳态）、亚洲奇迹（高储蓄率的过渡性增长）与中国增速放缓（逼近稳态），并且清晰地分离出"水平效应"与"增长率效应"；缺点是没有技术进步时稳态增长率为零——无法解释发达国家两百年来人均产出持续增长这一最基本的事实，也不能解释各国稳态为何天差地别（非洲为什么不趋同）。补上技术进步这块拼图，是下一篇（L15+L16）的任务。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（为什么有的国家持续增长、有的停滞？穷国能否追上富国？储蓄率多高才合适？）→ 简化模型（CRS + 边际报酬递减 → 人均形式 y = f(k)；S = s·Y、S = I）→ 推导（Δ(K/N) = s·f(K/N) − δ·(K/N)，凹曲线与直线必相交 → 稳态必然收敛）→ 实际应用（解释 OECD/亚洲趋同、亚洲奇迹的过渡性增长、中国增速放缓、黄金法则储蓄率）→ 局限性（无技术进步 → 稳态零增长，解释不了两百年持续增长；解释不了跨国稳态差异——留待技术进步与趋同一讲）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/08-growth-solow.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：美国实际 GDP 1890-2017（对数刻度）—— 50 倍增长，大萧条只是小坑 =====
+    var gdpData = [ // [年份, 实际GDP（万亿，2012年美元）]，2017/1890 ≈ 50 倍
+      [1890, 0.39], [1900, 0.52], [1910, 0.75], [1920, 0.98], [1929, 1.10],
+      [1933, 0.82], [1940, 1.60], [1945, 3.00], [1950, 2.30], [1960, 3.30],
+      [1970, 5.40], [1980, 7.20], [1990, 9.40], [2000, 13.10], [2007, 15.90],
+      [2009, 15.20], [2017, 19.50],
+    ];
+    var logPoints = gdpData.map(function (d) { return [d[0], +Math.log10(d[1]).toFixed(3)]; });
+    Charts.xy(document.getElementById('fig-longrun-gdp'), {
+      xLabel: '年份',
+      yLabel: '实际 GDP（对数刻度）',
+      xMin: 1890, xMax: 2017, yMin: -0.55, yMax: 1.45,
+      xTicks: [1890, 1910, 1930, 1950, 1970, 1990, 2010],
+      yTicks: [
+        { v: -0.30, label: '0.5万亿' }, { v: 0, label: '1万亿' }, { v: 0.30, label: '2万亿' },
+        { v: 0.70, label: '5万亿' }, { v: 1.00, label: '10万亿' }, { v: 1.30, label: '20万亿' },
+      ],
+      legendPosition: 'top',
+      caption: '图 1：美国实际 GDP 1890-2017（对数刻度，2012 年不变美元）—— 增长约 50 倍，大萧条只是小坑',
+      series: [
+        { points: logPoints, type: 'spline', color: '#2563eb', label: '美国实际 GDP（log10）' },
+      ],
+      markers: [
+        { x: 1890, y: -0.41, label: '1890：约 0.39 万亿', color: '#6b7280', legend: '关键点位', labelDx: 10, labelDy: 20 },
+        { x: 2017, y: 1.29, label: '2017：约 19.5 万亿（≈ 50×）', color: '#2563eb', legend: '样本末期', labelDx: -200, labelDy: -12 },
+        { x: 1933, y: -0.09, label: '大萧条（1929-33）—— 唯一显著偏离趋势的波动', color: '#dc2626', legend: '大萧条谷底', labelDx: 14, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图2：趋同散点 —— 1950 收入 vs 其后增长率；OECD/亚洲负相关，非洲失效 =====
+    Charts.xy(document.getElementById('fig-convergence'), {
+      xLabel: '1950 年人均 GDP（PPP，千美元）',
+      yLabel: '1950 年后年均增长率（%）',
+      xMax: 11, yMin: -1, yMax: 6.5,
+      xTicks: [0, 2, 4, 6, 8, 10], yTicks: [-1, 0, 1, 2, 3, 4, 5, 6],
+      legendPosition: 'top',
+      caption: '图 2：趋同事实 —— 1950 年越穷增长越快；OECD/亚洲成立，非洲失效',
+      series: [
+        { points: [[1.5, 4.3], [10.2, 1.9]], type: 'linear', color: '#9ca3af', dash: true, label: 'OECD 趋势线（负相关）' },
+      ],
+      markers: [
+        { x: 9.6, y: 2.0, label: '美国', color: '#2563eb', legend: 'OECD 国家', labelDx: 8, labelDy: 14 },
+        { x: 6.9, y: 2.1, label: '英国', color: '#2563eb', labelDx: 8, labelDy: 14 },
+        { x: 5.2, y: 2.6, label: '法国', color: '#2563eb', labelDx: 8, labelDy: -12 },
+        { x: 3.5, y: 3.0, label: '意大利', color: '#2563eb', labelDx: -46, labelDy: 2 },
+        { x: 1.9, y: 4.1, label: '日本', color: '#2563eb', labelDx: 8, labelDy: 14 },
+        { x: 1.2, y: 5.4, label: '台湾', color: '#15803d', legend: '亚洲经济体', labelDx: 8, labelDy: -10 },
+        { x: 1.0, y: 4.8, label: '韩国', color: '#15803d', labelDx: -40, labelDy: 2 },
+        { x: 2.8, y: 4.6, label: '新加坡', color: '#15803d', labelDx: 8, labelDy: 12 },
+        { x: 2.9, y: 5.2, label: '香港', color: '#15803d', labelDx: 8, labelDy: -12 },
+        { x: 0.9, y: 1.6, label: '尼日利亚', color: '#9ca3af', legend: '非洲经济体（趋同失效）', labelDx: 8, labelDy: -10 },
+        { x: 0.8, y: 1.9, label: '肯尼亚', color: '#9ca3af', labelDx: 8, labelDy: 14 },
+        { x: 1.1, y: -0.3, label: '刚果（金）', color: '#9ca3af', labelDx: 8, labelDy: 2 },
+        { x: 1.4, y: 0.4, label: '赞比亚', color: '#9ca3af', labelDx: 8, labelDy: -12 },
+        { x: 0.7, y: 0.8, label: '尼日尔', color: '#9ca3af', labelDx: -44, labelDy: 2 },
+      ],
+    });
+
+    // ===== 图3：世界人均 GDP 曲棍球杆 —— 持续增长仅两百年 =====
+    Charts.xy(document.getElementById('fig-hockey-stick'), {
+      xLabel: '年份（公元）',
+      yLabel: '世界人均 GDP（国际元）',
+      xMin: 1000, xMax: 2020, yMax: 9000,
+      xTicks: [1000, 1200, 1400, 1600, 1800, 2000], yTicks: [0, 2000, 4000, 6000, 8000],
+      legendPosition: 'top',
+      caption: '图 3：世界人均 GDP 的千年历史 —— 马尔萨斯时代平躺八百年，工业革命后陡直上升',
+      series: [
+        { points: [[1000, 450], [1200, 470], [1400, 520], [1500, 570], [1600, 590], [1700, 600], [1820, 670], [1870, 870], [1913, 1500], [1950, 2100], [1973, 4100], [2000, 6000], [2016, 8600]], type: 'spline', color: '#2563eb', label: '世界人均 GDP（示意）' },
+      ],
+      markers: [
+        { x: 1200, y: 470, label: '马尔萨斯时代：八百年近乎平躺', color: '#6b7280', legend: '马尔萨斯时代', labelDx: 20, labelDy: 26 },
+        { x: 1820, y: 670, label: '约 1820：工业革命，持续增长开始', color: '#dc2626', legend: '增长起点', labelDx: -60, labelDy: 30 },
+      ],
+    });
+
+    // ===== 图4：索洛核心循环 —— K → Y → S=sY → I → ΔK =====
+    Charts.cycle(document.getElementById('fig-solow-cycle'), {
+      nodes: ['资本存量 K', '产出/收入 Y', '储蓄 S = s·Y', '投资 I → ΔK'],
+      notes: ['生产 Y = F(K, N)', '按比例 s 储蓄', 'S = I（封闭经济）', '积累 − 折旧 δK'],
+      color: '#2563eb',
+      caption: '图 4：索洛模型核心循环 —— 资本决定产出，产出产生储蓄，储蓄变成投资，投资积累资本',
+    });
+
+    // ===== 图5：索洛图（核心）—— f(k)、s·f(k)、δk 三线，交点=稳态，动态箭头必收敛 =====
+    // f(k)=√k, s=0.3, δ=0.1 → k*=(s/δ)²=9, y*=3, s·f(9)=δ·9=0.9
+    var ks = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    var fPts = ks.map(function (k) { return [k, +Math.sqrt(k).toFixed(2)]; });
+    var sfPts = ks.map(function (k) { return [k, +(0.3 * Math.sqrt(k)).toFixed(2)]; });
+    Charts.xy(document.getElementById('fig-solow-diagram'), {
+      xLabel: '人均资本 k = K/N',
+      yLabel: '人均量（y、投资、折旧）',
+      xMax: 20, yMax: 5,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5：索洛图 —— 投资曲线与折旧线相交于稳态 k* = 9、y* = 3；两侧动态箭头显示必然收敛',
+      series: [
+        { points: fPts, type: 'spline', color: '#2563eb', label: '生产函数 y = f(k) = √k' },
+        { points: sfPts, type: 'spline', color: '#15803d', label: '人均投资 s·f(k)（s = 0.3）' },
+        { points: [[0, 0], [20, 2]], type: 'linear', color: '#dc2626', label: '持平投资线 δ·k（δ = 0.1）' },
+      ],
+      markers: [
+        { x: 9, y: 0.9, label: '稳态交点：s·f(k*) = δk* = 0.9', color: '#dc2626', legend: '稳态（Δk = 0）', guides: true, gxLabel: 'k* = 9', gyLabel: '0.9', labelDx: 12, labelDy: 26 },
+        { x: 9, y: 3, label: 'y* = f(k*) = 3', color: '#2563eb', legend: '稳态人均产出', guides: true, gyLabel: 'y* = 3', labelDx: 12, labelDy: -12 },
+      ],
+      arrows: [
+        { from: [2, 0.35], to: [7.5, 0.35], color: '#d97706', label: 'k < k*：s·f(k) > δk → k 增加', labelDy: 18 },
+        { from: [16, 0.35], to: [10.5, 0.35], color: '#7c3aed', label: 'k > k*：δk > s·f(k) → k 减少', labelDy: -14 },
+      ],
+    });
+
+    // ===== 图6：储蓄率实验 —— s: 0.2→0.4，投资曲线上移，稳态 k* 4→16、y* 2→4 =====
+    var sf0 = ks.map(function (k) { return [k, +(0.2 * Math.sqrt(k)).toFixed(2)]; });
+    var sf1 = ks.map(function (k) { return [k, +(0.4 * Math.sqrt(k)).toFixed(2)]; });
+    Charts.xy(document.getElementById('fig-saving-experiment'), {
+      xLabel: '人均资本 k = K/N',
+      yLabel: '人均量（y、投资、折旧）',
+      xMax: 20, yMax: 5,
+      xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 6：储蓄率提高（0.2 → 0.4）—— 投资曲线上移，新稳态 k*₁ = 16、y*₁ = 4；长期增长率不变',
+      series: [
+        { points: fPts, type: 'spline', color: '#2563eb', label: '生产函数 y = f(k) = √k（不动）' },
+        { points: sf0, type: 'spline', color: '#15803d', label: '原投资曲线 0.2·f(k)' },
+        { points: sf1, type: 'spline', color: '#7c3aed', dash: true, label: '新投资曲线 0.4·f(k)（上移）' },
+        { points: [[0, 0], [20, 2]], type: 'linear', color: '#dc2626', label: '持平投资线 δ·k（δ = 0.1，不动）' },
+      ],
+      markers: [
+        { x: 4, y: 0.4, label: '旧稳态 k*₀ = 4', color: '#15803d', legend: '稳态交点', guides: true, gxLabel: 'k*₀ = 4', gyLabel: '0.4', labelDx: -60, labelDy: 24 },
+        { x: 16, y: 1.6, label: '新稳态 k*₁ = 16', color: '#7c3aed', guides: true, gxLabel: 'k*₁ = 16', gyLabel: '1.6', labelDx: 10, labelDy: 26 },
+        { x: 4, y: 2, label: 'y*₀ = 2', color: '#2563eb', legend: '稳态人均产出', guides: true, gyLabel: 'y*₀ = 2', labelDx: -70, labelDy: -10 },
+        { x: 16, y: 4, label: 'y*₁ = 4', color: '#2563eb', guides: true, gyLabel: 'y*₁ = 4', labelDx: 10, labelDy: -12 },
+      ],
+      arrows: [
+        { from: [5, 0.25], to: [14.5, 0.25], color: '#d97706', label: '过渡期：k 从 k*₀ 爬向 k*₁（可达约 50 年）', labelDy: 18 },
+      ],
+    });
+
+    // ===== 图7：黄金法则 —— c* 对 s 的倒 U 曲线（δ=0.1，c*=10s(1−s)），峰值 s=0.5、c*=2.5 =====
+    var sGrid = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
+    var cPts = sGrid.map(function (s) { return [s, +(10 * s * (1 - s)).toFixed(2)]; });
+    Charts.xy(document.getElementById('fig-golden-rule'), {
+      xLabel: '储蓄率 s',
+      yLabel: '稳态人均消费 c* = (1−s)·y*',
+      xMax: 1, yMax: 3,
+      xTicks: [0, 0.2, 0.4, 0.6, 0.8, 1.0], yTicks: [0, 0.5, 1, 1.5, 2, 2.5, 3],
+      legendPosition: 'top',
+      caption: '图 7：黄金法则储蓄率 —— c* 对 s 呈倒 U；黄金法则点 s_gold = 0.5、c*_max = 2.5',
+      series: [
+        { points: cPts, type: 'spline', color: '#2563eb', label: '稳态人均消费 c* = 10s(1−s)（δ = 0.1）' },
+      ],
+      markers: [
+        { x: 0.5, y: 2.5, label: '黄金法则点（s = 0.5, c* = 2.5）', color: '#d97706', shape: 'star', legend: '黄金法则点（消费最大）', guides: true, gxLabel: 's_gold = 0.5', gyLabel: 'c*_max = 2.5', labelDx: 12, labelDy: -14 },
+        { x: 0.1, y: 0.9, label: 's = 0.1 → c* = 0.9', color: '#15803d', legend: '低储蓄（收入效应占优区）', labelDx: -30, labelDy: -16 },
+        { x: 1.0, y: 0, label: 's = 1 → c* = 0（全部产出用于投资）', color: '#dc2626', legend: '极端储蓄', labelDx: -240, labelDy: -14 },
+      ],
+    });
+  </script>
+</body>
+</html>

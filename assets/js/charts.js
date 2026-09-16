@@ -6,6 +6,7 @@
  * Charts.sd(container, opts)          xy 的别名，用于供给-需求图
  * Charts.circularFlow(container, opts) 循环流量图
  * Charts.cycle(container, opts)        循环图（N 方块 + 圆外弧线箭头）
+ * Charts.stateFlows(container, opts)   三状态双向流动图（劳动力市场流量等）
  * Charts.pie(container, opts)         饼图
  * Charts.bar(container, opts)         柱状图（单系列或分组）
  *
@@ -81,6 +82,7 @@ window.Charts = (function () {
    *      guides: true             画到两条坐标轴的虚线参考线(可选)
    *      gxLabel, gyLabel         参考线在坐标轴上的标签(可选，如 'Q*'、'P*')
    *    }]
+   *  - arrows: [{ from: [x,y], to: [x,y], color, label, labelDx, labelDy }]（可选，动态方向箭头）
    *  - legend: [{ label, color, style: 'line'|'dashed'|'dot'|'star' }]（可选，默认由 series/markers 自动生成）
    *  - legendPosition: 'top'      图例放在图上方（可选，默认在图下方）
    */
@@ -177,6 +179,34 @@ window.Charts = (function () {
           m.label, { 'font-size': 12, fill: m.color, 'font-weight': 600 });
       }
     });
+
+    // 箭头（可选，用于动态方向标注）：[{ from: [x,y], to: [x,y], color, label, labelDx, labelDy }]
+    if ((opts.arrows || []).length) {
+      const defs = el('defs', null, svg);
+      const seenColors = {};
+      opts.arrows.forEach((a) => {
+        const color = a.color || '#6b7280';
+        const markerId = 'xy-arrow-' + color.replace(/[^a-zA-Z0-9]/g, '');
+        if (!seenColors[markerId]) {
+          seenColors[markerId] = true;
+          const marker = el('marker', {
+            id: markerId, markerWidth: 10, markerHeight: 10, refX: 8, refY: 3,
+            orient: 'auto', markerUnits: 'strokeWidth',
+          }, defs);
+          el('path', { d: 'M0,0 L8,3 L0,6 Z', fill: color }, marker);
+        }
+        const [x0, y0] = [sx(a.from[0]), sy(a.from[1])];
+        const [x1, y1] = [sx(a.to[0]), sy(a.to[1])];
+        el('line', {
+          x1: x0, y1: y0, x2: x1, y2: y1,
+          stroke: color, 'stroke-width': 2, 'marker-end': `url(#${markerId})`,
+        }, svg);
+        if (a.label) {
+          text(svg, (x0 + x1) / 2 + (a.labelDx || 0), (y0 + y1) / 2 + (a.labelDy || 0),
+            a.label, { 'text-anchor': 'middle', 'font-size': 12, fill: color, 'font-weight': 600 });
+        }
+      });
+    }
 
     mount(container, svg, opts.caption, opts.legend || autoLegend(opts), opts.legendPosition);
   }
@@ -527,5 +557,111 @@ window.Charts = (function () {
     mount(container, svg, opts.caption, opts.legend, 'top');
   }
 
-  return { xy, ppf: xy, sd: xy, circularFlow, cycle, pie, bar };
+  /**
+   * 三状态双向流动图（如劳动力市场：就业 / 失业 / 非劳动力）
+   * 三个方块呈三角排列（顺序：上、左下、右下）；每对节点之间两条反向
+   * 弧线箭头，全部沿方块外侧走线（端点停在方块边缘外，不进入方块区域）；
+   * 支持自循环（from === to，弧线画在方块外侧）。
+   * opts:
+   *  - nodes: [label0, label1, label2]   顺序：上、左下、右下
+   *  - flows: [{ from, to, label, color, labelT }]  有向流量；
+   *      from===to 为自循环；labelT（可选，0~1，默认 0.5）控制标签沿弧线的位置
+   *  - caption                图标题（可选）
+   *  - legend: [...]          覆盖图例（可选，默认按 flows 颜色去重、取首条 label）
+   */
+  function stateFlows(container, opts) {
+    opts = opts || {};
+    const W = 660, H = 520;
+    const boxW = 170, boxH = 56;
+    const nodes = opts.nodes || [];
+    const flows = opts.flows || [];
+    const centers = [[330, 118], [160, 412], [500, 412]];
+
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' });
+
+    // 每种颜色一个箭头 marker
+    const defs = el('defs', null, svg);
+    const markerOf = {};
+    let markerIdx = 0;
+    flows.forEach((f) => {
+      if (markerOf[f.color]) return;
+      const id = 'sf-arrow-' + markerIdx++;
+      const marker = el('marker', {
+        id, markerWidth: 10, markerHeight: 10, refX: 8, refY: 3,
+        orient: 'auto', markerUnits: 'strokeWidth',
+      }, defs);
+      el('path', { d: 'M0,0 L8,3 L0,6 Z', fill: f.color }, marker);
+      markerOf[f.color] = id;
+    });
+
+    // 射线 P + off + d·s 离开方块（中心 P、半宽 boxW/2、半高 boxH/2）的最小 s（留 5px 间隙）
+    const edgeDist = (P, d, off) => {
+      let best = Infinity;
+      if (Math.abs(d[0]) > 1e-9) {
+        const s = (Math.sign(d[0]) * (boxW / 2) - off[0]) / d[0];
+        if (s > 0) best = Math.min(best, s);
+      }
+      if (Math.abs(d[1]) > 1e-9) {
+        const s = (Math.sign(d[1]) * (boxH / 2) - off[1]) / d[1];
+        if (s > 0) best = Math.min(best, s);
+      }
+      return best + 5;
+    };
+
+    // 先画箭头（方块后画、覆盖其上，双保险保证箭头不进入方块区域）
+    flows.forEach((f) => {
+      const color = f.color;
+      const K = 24; // 箭头相对两方框连线的侧向偏移
+      let dAttr, labelPos;
+      if (f.from === f.to) {
+        // 自循环：在方块外侧（上方节点画在上方）画 C 形弧
+        const [cx, cy] = centers[f.from];
+        const topY = cy - boxH / 2 - 6;
+        const apexY = cy - boxH / 2 - 90;
+        dAttr = `M ${cx - 60} ${topY} C ${cx - 65} ${apexY} ${cx + 65} ${apexY} ${cx + 60} ${topY}`;
+        labelPos = [cx, apexY + 8];
+      } else {
+        const A = centers[f.from], B = centers[f.to];
+        const dx = B[0] - A[0], dy = B[1] - A[1];
+        const len = Math.hypot(dx, dy);
+        const d = [dx / len, dy / len];
+        const n = [-d[1], d[0]];
+        const off = [n[0] * K, n[1] * K];
+        const sA = edgeDist(A, d, off);
+        const sB = edgeDist(B, [-d[0], -d[1]], off);
+        const p0 = [A[0] + off[0] + d[0] * sA, A[1] + off[1] + d[1] * sA];
+        const p1 = [B[0] + off[0] - d[0] * sB, B[1] + off[1] - d[1] * sB];
+        const ctrl = [(p0[0] + p1[0]) / 2 + n[0] * K * 0.8, (p0[1] + p1[1]) / 2 + n[1] * K * 0.8];
+        dAttr = `M ${p0[0].toFixed(1)} ${p0[1].toFixed(1)} Q ${ctrl[0].toFixed(1)} ${ctrl[1].toFixed(1)} ${p1[0].toFixed(1)} ${p1[1].toFixed(1)}`;
+        const t = f.labelT != null ? f.labelT : 0.5;
+        labelPos = [
+          p0[0] + (p1[0] - p0[0]) * t + n[0] * (K * 0.8 + 18),
+          p0[1] + (p1[1] - p0[1]) * t + n[1] * (K * 0.8 + 18),
+        ];
+      }
+      el('path', {
+        d: dAttr, fill: 'none', stroke: color, 'stroke-width': 2.5,
+        'marker-end': `url(#${markerOf[color]})`,
+      }, svg);
+      if (f.label) {
+        text(svg, labelPos[0], labelPos[1] + 4, f.label, {
+          'text-anchor': 'middle', 'font-size': 12, fill: color, 'font-weight': 600,
+        });
+      }
+    });
+
+    // 再画方块（覆盖箭头任何越界部分）
+    nodes.forEach((label, i) => {
+      const [bx, by] = centers[i];
+      el('rect', {
+        x: bx - boxW / 2, y: by - boxH / 2, width: boxW, height: boxH, rx: 8,
+        fill: '#eff6ff', stroke: '#1d4ed8', 'stroke-width': 1.5,
+      }, svg);
+      text(svg, bx, by + 5, label, { 'text-anchor': 'middle', 'font-weight': 700, 'font-size': 15 });
+    });
+
+    mount(container, svg, opts.caption, opts.legend, 'top');
+  }
+
+  return { xy, ppf: xy, sd: xy, circularFlow, cycle, stateFlows, pie, bar };
 })();

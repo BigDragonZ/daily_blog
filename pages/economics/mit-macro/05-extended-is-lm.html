@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 扩展的 IS-LM - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>05 扩展的 IS-LM：实际利率与风险溢价</h1>
+      <p>本篇覆盖 MIT 14.02《宏观经济学原理》第 7 讲（L07），并在末尾附上第 10 讲（L10）Quiz 1 复习的知识清单。L05-L06 建立的基本 IS-LM 模型里只有一个利率、且价格固定；本篇给模型补上两块现实拼图：<span class="term">名义利率与实际利率之分</span><span class="term-en">（Nominal vs Real Interest Rate）</span>，以及<span class="term">风险溢价</span><span class="term-en">（Risk Premium, x）</span>。两个扩展合起来，就能解释 2008 年最诡异的一幕——美联储把利率砍到零，企业的真实借贷成本却不降反升；也能解释 2021-2023 年"负实际利率催生资产暴涨、Jackson Hole 鹰派讲话引爆股市回调"的完整剧情。</p>
+
+      <!-- ==================== 一、引入 ==================== -->
+      <h2>一、引入：油门踩到底，车为什么还在减速？</h2>
+      <p><strong>反直觉开场：</strong>2008 年金融危机，美联储把<span class="term">名义利率</span>一路砍到零——按上一篇的说法，这等于油门踩到底、弹药打光。常理推断：借钱不要利息了，企业应该疯狂投资才对。但现实恰恰相反：企业投资崩了，经济陷入大衰退（Great Recession）以来最深的萎缩。<strong>零利率居然还"不够低"——企业的真实借贷成本不降反升。</strong>问题出在哪？出在基本模型的两个简化假设上：第一，它假设没有通胀，名义利率就是实际利率；第二，它假设经济中只有一个利率，企业能按国债利率借到钱。两个假设在大衰退中同时崩塌，这就是本篇要修复的东西。</p>
+
+      <!-- ==================== 二、名义 vs 实际 ==================== -->
+      <h2>二、名义利率与实际利率：企业真正关心 r</h2>
+
+      <h3>2.1 两个利率的区别：美元计价 vs 商品计价</h3>
+      <p><span class="term">名义利率</span><span class="term-en">（Nominal Interest Rate, i）</span>是以<strong>美元</strong>计价的利率：名义利率 10%，你今天买一张债券，一年后拿回本金加 10% 的美元。<span class="term">实际利率</span><span class="term-en">（Real Interest Rate, r）</span>则是以<strong>一篮子商品</strong>（如 CPI 篮子）计价的利率：你今天放弃一篮子商品，一年后能换回多少篮子商品。如果价格永远不变，两者毫无区别——这正是前四讲"价格固定"假设下可以混用的原因。但只要存在通胀预期，两者就会分叉。</p>
+      <p>为什么企业做<span class="term">实体投资</span><span class="term-en">（Physical Investment）</span>决策时关心的是 r 而不是 i？因为企业投资是为了在未来生产并卖出更多商品。如果名义利率高达 10%，但你卖的商品价格也会涨 10%，你的投资决策跟名义利率 0%、通胀 0% 时<strong>完全一样</strong>——涨价的收益恰好抵消了借贷的名义成本。真正决定投资机会成本的，是"借贷成本"与"卖出商品的实际回报"之间的差额，也就是实际利率。</p>
+
+      <h3>2.2 费雪方程推导：r ≈ i − π^e</h3>
+      <p>用一单位商品走两条投资路径，让回报相等：</p>
+      <ol>
+        <li><strong>直接借出商品</strong>：今天借出 1 单位商品，一年后收回 1 + r 单位商品；</li>
+        <li><strong>绕道名义债券</strong>：1 单位商品值 P_t 美元，拿去买名义债券，一年后拿到 (1 + i)·P_t 美元；再按一年后的价格换回商品。问题是今天不知道明年的价格，只能用<span class="term">预期价格</span> P^e_{t+1}，于是预期换回 (1 + i)·(P_t / P^e_{t+1}) 单位商品。</li>
+      </ol>
+      <p>均衡时两条路径的预期回报必须相等（否则存在套利空间）：</p>
+      <p><strong>1 + r = (1 + i)·(P_t / P^e_{t+1})</strong></p>
+      <p>定义<span class="term">预期通货膨胀率</span><span class="term-en">（Expected Inflation, π^e）</span>：π^e = (P^e_{t+1} − P_t)/P_t，即 P^e_{t+1} = P_t·(1 + π^e)。代入上式：</p>
+      <p><strong>1 + r = (1 + i)/(1 + π^e)</strong></p>
+      <p>当利率和通胀率都不太高时，交叉项 r·π^e 很小可以忽略，就近似得到著名的<span class="term">费雪方程</span><span class="term-en">（Fisher Equation）</span>：</p>
+      <p><strong>r ≈ i − π^e</strong>（实际利率 ≈ 名义利率 − 预期通胀率）</p>
+      <p>一个数例：名义利率 6%、预期通胀 3%，实际利率大约只有 3%。注意式子里是<strong>预期</strong>通胀而非实际通胀——投资决策是做在事前（ex-ante）的，做决策那一刻未来通胀还不知道，能依据的只有预期。</p>
+
+      <h3>2.3 大衰退的诡异一幕：实际利率反超名义利率</h3>
+      <p>通常情况下，名义利率线在实际上方——大多数发达经济体的人预期通胀为正，i &gt; r。但 2008-09 年出现了刺眼的例外：<strong>美联储猛砍名义利率的同时，实际利率反而飙升到名义利率之上</strong>。答案就藏在费雪方程里：深度衰退中，预期通胀从约 2% 崩到接近 <strong>−4%</strong>——市场开始预期<span class="term">通货紧缩</span><span class="term-en">（Deflation）</span>。代入费雪方程：i 降到约 0%，π^e 约 −4%，于是 r ≈ 0 − (−4%) = <strong>+4%</strong>。名义利率越低（分母端的 π^e 崩得更快），实际利率反而越高，投资被死死压住。通缩预期的可怕之处正在于此：它能把央行的全部降息努力变成一场空。</p>
+
+      <div id="fig-rates-gr"></div>
+      <p><strong>图 1 解读：</strong>蓝线是名义利率 i（2007 年约 4.5%，危机中被砍到约 0%），灰色虚线是预期通胀 π^e（从约 2% 崩到 2008 年下半年的约 −4%），橙色线是实际利率 r = i − π^e。注意 2008 下半年那个交叉：<strong>橙线（r ≈ 5%）反超蓝线（i ≈ 1%→0%）</strong>——央行在降息，企业的真实借贷成本却在上升。2010 年后 π^e 回到约 2%，r 回落到约 −2%，融资条件才真正宽松下来。</p>
+
+      <!-- ==================== 三、风险溢价 ==================== -->
+      <h2>三、风险溢价 x：企业的真实借贷成本 = r + x</h2>
+
+      <h3>3.1 波音案例：国债 4%，波音 7%</h3>
+      <p>第二个简化假设是"经济中只有一个利率"。现实中利率是一个家族：除了期限之分（1 年期、10 年期、30 年期），还有<span class="term">风险</span><span class="term-en">（Riskiness）</span>之分。美国短期国债被视为无风险资产，但企业做不到按国债利率借钱。教授课上举的例子：十年期美国国债利率接近 <strong>4%</strong>，波音公司（Boeing）想借一笔十年期贷款，可能要付 <strong>7%</strong>——多出来的 3 个百分点就是<span class="term">风险溢价</span><span class="term-en">（Risk Premium, x）</span>，也叫<span class="term">信用利差</span><span class="term-en">（Credit Spread）</span>。</p>
+      <p>x 由两个因素决定：一是<span class="term">违约概率</span><span class="term-en">（Probability of Default）</span>——市场认为借钱给波音比借钱给美国政府风险大多少；二是债券持有者的<span class="term">风险厌恶程度</span><span class="term-en">（Degree of Risk Aversion）</span>——投资者有多害怕。企业真正面对的借贷成本因此是 <strong>r + x</strong>：无风险的实际利率，加上属于它自己的那一份风险加价。</p>
+
+      <div id="fig-boeing"></div>
+      <p><strong>图 2 解读：</strong>同样借十年，美国政府付 4%、波音付 7%，中间 3 个百分点的差距就是信用利差 x。它不是"冤枉钱"，而是市场对违约风险的定价：经济好时大家觉得波音还得起，x 收窄；经济差时恐慌蔓延，x 飙升。</p>
+
+      <h3>3.2 2008：高收益债利差飙到 20%</h3>
+      <p>衰退尤其是金融危机引发的衰退中，x 的两个决定因素会<strong>同时恶化</strong>：企业盈利下滑 → 违约概率上升；恐慌情绪蔓延 → 风险厌恶加剧。2008 年，高收益（高评级以下）公司债相对国债的利差一度飙到约 <strong>20%</strong>——对这些企业来说，央行把无风险利率降到零毫无意义，因为它们根本借不到"无风险"的钱。这就在美联储与企业之间撕开了一道口子：央行能控制 i，却控制不了 x。</p>
+
+      <div id="fig-spread"></div>
+      <p><strong>图 3 解读：</strong>大衰退期间高收益公司债的信用利差 x。危机前（2007 年）只有约 3%，市场风平浪静；2008 年雷曼倒闭后一路狂飙，峰值约 20%——企业融资市场实际上已经冻结；2009 年后随着救助与复苏逐步回落。这条曲线就是"金融危机"四个字在资金价格上的形状。</p>
+
+      <!-- ==================== 四、扩展的 IS-LM ==================== -->
+      <h2>四、扩展的 IS-LM：IS 曲线多了两个移动因子</h2>
+
+      <h3>4.1 扩展的 IS 关系：I(Y, i − π^e + x)</h3>
+      <p>现在把两个扩展装进模型。<strong>LM 不变</strong>：央行设定的仍然是名义政策利率 i，LM 仍是高度 ī 的水平线。<strong>变的是 IS</strong>：投资不再取决于名义利率，而取决于企业面对的真实借贷成本 r + x，代入费雪方程 r ≈ i − π^e：</p>
+      <p><strong>Y = C(Y − T) + I(Y, i − π^e + x) + G</strong></p>
+      <p>对比基本版 IS，现在给定央行钉住的 i，影响总需求的除了 G、T、c₀ 这些老面孔，还多了两个新参数：</p>
+      <ul>
+        <li><strong>预期通胀 π^e↑</strong>：给定 i，实际利率 r = i − π^e 下降 → 借贷更便宜 → 投资↑ → <strong>IS 右移，等效于扩张性货币政策</strong>（央行没动，宽松却自己来了）；</li>
+        <li><strong>风险溢价 x↓</strong>：借贷成本 r + x 下降 → 投资↑ → <strong>IS 右移，同样等效宽松</strong>。</li>
+      </ul>
+      <p>反方向自然也成立：π^e↓ 或 x↑ → IS 左移，等效紧缩。这就是为什么央行和市场的神经不仅盯着政策利率，还盯着通胀预期调查和债券利差——这两个变量一动，整条 IS 就跟着动。</p>
+
+      <h3>4.2 2008 双重打击：x↑ + π^e↓，IS 大幅左移</h3>
+      <p>大衰退中，两个新因子不是分别动，而是<strong>朝着最坏的方向一起动</strong>：信用利差 x 飙到 20%（图 3），预期通胀 π^e 崩到 −4%（图 1）。两者叠加，任何名义利率下企业的真实借贷成本都大幅上升，IS 曲线大规模左移。央行的标准应对是降 i 来对冲——x 涨多少、π^e 跌多少，就把 i 降多少，保持 r + x 不变。理论上完全对冲需要把 i 降到<strong>零下</strong>，但利率碰到<span class="term">零利率下限</span><span class="term-en">（Zero Lower Bound, ZLB）</span>就降不动了：i 最多降到 0，对冲只做了一半，产出照样大跌。这就是图 4 里"油门踩到底、车还在减速"的模型化表达。</p>
+
+      <div id="fig-double-hit"></div>
+      <p><strong>图 4 解读：</strong>蓝色 IS：i = 10 − 0.04Y，与 LM（央行钉住 ī = 4%）交于衰退前的均衡 A（Y = 150, i = 4%）。x↑ + π^e↓ 的双重打击使 IS 大幅左移到红色 IS′：i = 4 − 0.04Y。央行把利率降到 ZLB（紫色 LM′，i = 0），均衡滑到 B（Y′ = 100, i = 0%），产出仍降了 50。灰色虚线标出了症结：要让 IS′ 回到 Y = 150，需要 i = <strong>−2%</strong>——在 ZLB 之下，常规货币政策够不着。</p>
+
+      <h3>4.3 ZLB 卡死之后：直接干预 x——非常规政策的精确逻辑</h3>
+      <p>上一篇讲 QE 时，非常规政策还只是"利率归零后去买长期资产"的笼统描述；有了扩展模型，它的逻辑变得<strong>精确</strong>：IS 左移的元凶之一是 x 飙升，而 i 已降无可降——那就<strong>绕开 i，直接压 x</strong>。美联储在大衰退和 COVID 期间设立专门工具直接购买公司债券（甚至包括疫情中陷入困境的"堕落天使"债券），这种<span class="term">大规模资产购买</span><span class="term-en">（Large-Scale Asset Purchases, LSAP）</span>提高了公司债的需求与价格，直接压低风险溢价 x，企业借贷成本 r + x 随之下降——相当于在降不动 i 的情况下，把左移的 IS 曲线<strong>推回去</strong>。非常规货币政策不是乱枪打鸟，而是对扩展 IS 方程中那个失控变量 x 的定点干预。</p>
+
+      <!-- ==================== 五、2021-2023 反转 ==================== -->
+      <h2>五、2021-2023 反转：负实际利率与 Jackson Hole</h2>
+      <p>COVID 初期的剧情开头很像 2008：名义利率归零、实际利率一度飙升。但之后走向完全不同。复苏叠加供应链瓶颈，通胀高企，预期通胀 π^e 大幅上升——而名义利率 i 还钉在零附近。费雪方程给出：<strong>r ≈ 0 − 3% ≈ −3%</strong>，实际利率深度为负。借钱的真实成本是负的——借来还回去的购买力比借到的还少——这是资产价格的火箭燃料，2021 年股市等资产市场暴涨。</p>
+      <p>高通胀变得顽固后，美联储从 2022 年起激进加息，名义利率陡峭上升。起初 π^e 仍高，r 的上升很温和；真正的转折点是 2022 年 8 月的杰克逊霍尔（Jackson Hole）央行年会——美联储主席展现出强硬的<span class="term">鹰派</span><span class="term-en">（Hawkish）</span>立场，市场相信了它不惜代价压通胀的决心，π^e 应声回落。<strong>i↑ 与 π^e↓ 同向挤压</strong>，实际利率急升转正，股市应声回调。这还没完：近期美联储继续加息，π^e 却再度抬头、信用利差一度收窄，r 不升反降，<span class="term">金融条件</span><span class="term-en">（Financial Conditions）</span>反而放松——与央行收紧的意图背道而驰。扩展模型的两个新变量，每天都在和政策制定者玩猫鼠游戏。</p>
+
+      <div id="fig-reversal"></div>
+      <p><strong>图 5 解读：</strong>2020-2023 的三条线：名义利率 i（蓝，2022 年起陡峭加息）、预期通胀 π^e（灰虚线）、实际利率 r = i − π^e（橙）。2021 年 i ≈ 0 而 π^e ≈ 3%，r 跌到约 <strong>−3%</strong>（左侧橙点），资产暴涨；2022 年 Jackson Hole 之后 i↑ 叠加 π^e↓，r 快速升破灰色零线、到 2023 年约 +3%（右侧橙点），股市回调。整条橙线就是"央行信誉如何变成实际利率"的轨迹。</p>
+
+      <h3>5.1 扩展 IS-LM 的优缺点</h3>
+      <p><strong>优点：</strong>只加了两个参数（π^e、x），就同时解释了 2008 年"零利率失灵"、非常规政策为何直接买公司债、2021 年负实际利率下的资产暴涨、以及 Jackson Hole 讲话为何能撼动市场——知识投资回报极高；它还把"通胀预期"第一次请进模型，为后面把通胀内生化（PC 曲线）铺路。<strong>缺点：</strong>π^e 和 x 仍是外生给定的参数（模型解释它们变化带来的后果，却不解释它们为何变化）；价格依然固定，通胀从何而来仍无答案；预期被当成单一数字，现实中预期的形成与锚定要复杂得多（这恰恰是后面菲利普斯曲线篇的核心战场）。</p>
+
+      <p><strong>本篇思想链路：</strong>核心问题（利率砍到零，企业借贷成本为何反升？）→ 简化模型（费雪方程 r ≈ i − π^e；借贷成本 = r + x；扩展 IS：Y = C(Y−T) + I(Y, i−π^e+x) + G）→ 推导（π^e↑ 或 x↓ → 借贷成本↓ → IS 右移等效宽松；反向则左移）→ 实际应用（2008 双重打击 + ZLB 卡死 → 直接买公司债压 x；2021 负 r 催生资产暴涨；Jackson Hole 鹰派 → r 急升 → 股市回调）→ 局限性（π^e、x 外生，价格仍固定——通胀的决定要等 IS-LM-PC 完全体）。</p>
+
+      <!-- ==================== 附：L10 知识清单 ==================== -->
+      <h2>附：L10 知识清单（Quiz 1 复习）</h2>
+      <p>第 10 讲是 Quiz 1 的串讲复习，覆盖 L02-L07 全部内容。教授反复强调：测验约三分之二围绕 IS-LM。下面两张表是应试浓缩版。</p>
+
+      <h3>附.1 核心公式卡</h3>
+      <table>
+        <thead>
+          <tr><th>公式</th><th>含义与要点</th><th>出处</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Y = [1/(1−c₁)]·A</strong>，其中 A = c₀ − c₁T + I + G</td>
+            <td>商品市场均衡产出。1/(1−c₁) 是<span class="term">乘数</span><span class="term-en">（Multiplier）</span>：c₁ = 0.5 → 乘数 2；c₁ 越接近 1 乘数越大。任何自发需求 A 的变化都会被乘数放大</td>
+            <td>L03</td>
+          </tr>
+          <tr>
+            <td><strong>r ≈ i − π^e</strong>；企业借贷成本 <strong>r + x ≈ i − π^e + x</strong></td>
+            <td>费雪方程（Fisher Equation）+ 风险溢价。投资决策看 r + x，不看 i；π^e 与 x 因此成为 IS 的移动因子</td>
+            <td>L07（本篇）</td>
+          </tr>
+          <tr>
+            <td><strong>i ≈ (100 − P_B)/P_B</strong></td>
+            <td>一年期零息债券的利率与价格关系：债券价格 P_B 与利率 i <strong>反向</strong>。央行买债 → P_B↑ → i↓，这就是公开市场操作降息的机制</td>
+            <td>L04/L06</td>
+          </tr>
+          <tr>
+            <td><strong>u_n 决定式（预告）</strong>：P^e = P 时，F(u_n, z) = 1/(1+m)</td>
+            <td>工资设定 W = P^e·F(u, z) 与价格设定 P = (1+m)W 联立，预期正确（P^e = P）时定出<span class="term">自然失业率</span><span class="term-en">（Natural Rate of Unemployment, u_n）</span>。z↑ 或 m↑ → u_n↑。详细推导见 L08/L09 篇</td>
+            <td>L08/L09 预告</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>附.2 "冲击 → 哪条曲线移动 → 均衡变化"决策表（L02-L07）</h3>
+      <p>判读口诀：<strong>利率变 → 沿曲线动；其他变 → 曲线动。财政是 IS 政策，货币是 LM 政策，π^e 与 x 是扩展 IS 的移动因子。</strong></p>
+      <table>
+        <thead>
+          <tr><th>冲击 / 政策</th><th>哪条曲线移动</th><th>均衡变化</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>自主消费 c₀↑（消费者信心增强）</td><td>IS 右移</td><td>Y↑（乘数放大），i 不变（央行守 ī）</td></tr>
+          <tr><td>储蓄意愿↑（c₀↓，节俭悖论 Paradox of Saving）</td><td>IS 左移</td><td>Y↓——个人想多储蓄，全社会收入反而下降</td></tr>
+          <tr><td>政府支出 G↑</td><td>IS 右移</td><td>Y↑（乘数放大），i 不变</td></tr>
+          <tr><td>税收 T↑</td><td>IS 左移</td><td>Y↓，i 不变</td></tr>
+          <tr><td>G 与 T 同额减少（平衡预算紧缩）</td><td>IS 左移（净效应：G 的系数 1 &gt; T 的系数 c₁）</td><td>Y↓</td></tr>
+          <tr><td>央行下调目标利率 ī</td><td>LM 水平线<strong>下移</strong>（IS 不动，沿 IS 滑动）</td><td>Y↑，i↓；货币扩张经 OMO 买债实现（P_B↑ → i↓）</td></tr>
+          <tr><td>预期通胀 π^e↑</td><td>扩展 IS 右移（r = i − π^e ↓）</td><td>Y↑——等效宽松，央行没动利率也会发生</td></tr>
+          <tr><td>预期通胀 π^e↓（通缩预期，如 2008-09 的 2%→−4%）</td><td>扩展 IS 左移（r 被动上升）</td><td>Y↓——降息效果被通缩预期吃掉</td></tr>
+          <tr><td>风险溢价 x↑（利差飙升，如 2008 的 20%）</td><td>扩展 IS 左移（r + x ↑）</td><td>Y↓——企业融资冻结，投资崩塌</td></tr>
+          <tr><td>央行购买公司债压 x（ZLB 处的非常规政策）</td><td>x↓，扩展 IS 右移（把左移的 IS 推回）</td><td>Y 回升——降不动 i 就直接干预 x</td></tr>
+        </tbody>
+      </table>
+      <p>答题三步走：<strong>① 它动哪条曲线（还是沿曲线滑动）？② 往哪个方向移？③ 新交点的 Y 与 i 怎么变？</strong>凡是问"产出为什么变"的题，先问自己冲击落在 A（自发需求）、i、π^e、x 中的哪一个上。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/05-extended-is-lm.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：大衰退 名义 i vs 预期通胀 π^e vs 实际 r = i − π^e =====
+    (function () {
+      var tGr = [2007, 2007.5, 2008, 2008.5, 2009, 2009.5, 2010, 2010.5];
+      var iGr = [4.5, 4.5, 3, 1, 0.2, 0.15, 0.15, 0.15];   // 名义利率（美联储砍到 ≈0）
+      var pGr = [2, 2, 1.5, -4, -1, 1.5, 2, 2];             // 预期通胀（2% → −4%）
+      var pts = function (arr) { return arr.map(function (v, k) { return [tGr[k], v]; }); };
+      var rGr = iGr.map(function (v, k) { return +(v - pGr[k]).toFixed(2); }); // r = i − π^e
+      Charts.xy(document.getElementById('fig-rates-gr'), {
+        xLabel: '年份',
+        yLabel: '利率（%）',
+        xMin: 2007, xMax: 2011, yMin: -6, yMax: 8,
+        xTicks: [{ v: 2007, label: '2007' }, { v: 2008, label: '2008' }, { v: 2009, label: '2009' }, { v: 2010, label: '2010' }],
+        yTicks: [-6, -4, -2, 0, 2, 4, 6, 8],
+        legendPosition: 'top',
+        caption: '图 1：大衰退期间 名义利率 vs 实际利率 —— 2008-09 实际反超名义（π^e 从 2% 崩到 −4%）',
+        series: [
+          { points: pts(iGr), type: 'spline', color: '#2563eb', label: '名义利率 i（美联储砍到 ≈0）' },
+          { points: pts(pGr), type: 'spline', color: '#6b7280', dash: true, label: '预期通胀 π^e（2% → −4%）' },
+          { points: pts(rGr), type: 'spline', color: '#d97706', label: '实际利率 r = i − π^e' },
+        ],
+        markers: [
+          { x: 2008.5, y: 5, label: 'r 峰值 ≈ +5%：实际反超名义', color: '#d97706', legend: '关键点', guides: true, gyLabel: '5', labelDx: 14, labelDy: -12 },
+          { x: 2008.5, y: -4, label: 'π^e 崩到 ≈ −4%（通缩预期）', color: '#6b7280', guides: true, gyLabel: '−4', labelDx: 14, labelDy: 22 },
+          { x: 2009.5, y: 0.15, label: 'i ≈ 0%（ZLB，降息失效）', color: '#2563eb', guides: true, gyLabel: '0', labelDx: -60, labelDy: 26 },
+        ],
+      });
+    })();
+
+    // ===== 图2：波音案例 —— 国债 4% vs 波音 7%，利差 x = 3% =====
+    Charts.bar(document.getElementById('fig-boeing'), {
+      categories: ['10 年期美国国债（无风险）', '波音公司债（同期限）'],
+      series: [{ label: '借贷利率（%）', color: '#2563eb', values: [4, 7] }],
+      yLabel: '年利率（%）',
+      yMax: 8, yStep: 2,
+      caption: '图 2：波音案例 —— 国债 4% vs 波音 7%，中间 3 个百分点 = 风险溢价 x',
+    });
+
+    // ===== 图3：2008 信用利差 —— 高收益债利差飙至约 20% =====
+    Charts.xy(document.getElementById('fig-spread'), {
+      xLabel: '年份',
+      yLabel: '信用利差 x（%）',
+      xMin: 2007, xMax: 2011, yMax: 22,
+      xTicks: [{ v: 2007, label: '2007' }, { v: 2008, label: '2008' }, { v: 2009, label: '2009' }, { v: 2010, label: '2010' }],
+      yTicks: [0, 5, 10, 15, 20],
+      legendPosition: 'top',
+      caption: '图 3：大衰退的信用利差 —— 2008 年高收益公司债利差飙至约 20%',
+      series: [
+        { points: [[2007, 3], [2007.5, 3.5], [2008, 6], [2008.4, 12], [2008.8, 20], [2009.2, 14], [2009.6, 9], [2010, 5.5], [2010.5, 4.5]], type: 'spline', color: '#dc2626', label: '高收益公司债相对国债的利差 x' },
+      ],
+      markers: [
+        { x: 2008.8, y: 20, label: '2008 峰值 ≈ 20%：融资市场冻结', color: '#dc2626', legend: '关键点', guides: true, gyLabel: '20', labelDx: -180, labelDy: -12 },
+        { x: 2007, y: 3, label: '危机前 ≈ 3%', color: '#6b7280', legend: '危机前水平', guides: true, gyLabel: '3', labelDx: 14, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图4：2008 双重打击 —— IS 大幅左移，ZLB 卡死 =====
+    Charts.xy(document.getElementById('fig-double-hit'), {
+      xLabel: '产出 Y',
+      yLabel: '名义利率 i（%）',
+      xMax: 200, yMin: -3, yMax: 12, xTicks: [],
+      yTicks: [{ v: -2, label: '−2' }, { v: 0, label: '0' }, { v: 4, label: '4' }, { v: 8, label: '8' }],
+      legendPosition: 'top',
+      caption: '图 4：2008 双重打击 —— x↑ + π^e↓ 使 IS 大幅左移，ZLB 卡死，完全对冲需 i = −2%（不可得）',
+      series: [
+        { points: [[0, 10], [200, 2]], type: 'linear', color: '#2563eb', label: 'IS：i = 10 − 0.04Y（危机前）' },
+        { points: [[0, 4], [100, 0]], type: 'linear', color: '#dc2626', label: "IS′：i = 4 − 0.04Y（x↑ + π^e↓ 双重打击后左移）" },
+        { points: [[0, 4], [200, 4]], type: 'linear', color: '#0d9488', label: 'LM：央行钉住 ī = 4%（危机前）' },
+        { points: [[0, 0], [200, 0]], type: 'linear', color: '#7c3aed', label: "LM′：ī′ = 0%（降到 ZLB，降无可降）" },
+        { points: [[0, -2], [200, -2]], type: 'linear', color: '#6b7280', dash: true, label: '完全对冲所需 i = −2%（ZLB 之下，不可得）' },
+      ],
+      markers: [
+        { x: 150, y: 4, label: 'A（Y = 150, i = 4%）：危机前', color: '#2563eb', legend: '均衡点', guides: true, gxLabel: 'Y = 150', gyLabel: '4', labelDx: 12, labelDy: -14 },
+        { x: 100, y: 0, label: "B（Y′ = 100, i = 0%）：ZLB 卡死，Y 仍降 50", color: '#dc2626', guides: true, gxLabel: "Y′ = 100", gyLabel: '0', labelDx: -160, labelDy: -16 },
+        { x: 150, y: -2, label: '（150, −2%）：回到 Y = 150 所需的利率，在零下', color: '#6b7280', shape: 'star', legend: '不可得的政策点', labelDx: -200, labelDy: 26 },
+      ],
+    });
+
+    // ===== 图5：2021-2023 反转 —— r 深度为负 → Jackson Hole 后急升 =====
+    (function () {
+      var tRv = [2020, 2020.5, 2021, 2021.5, 2022, 2022.5, 2023, 2023.5];
+      var iRv = [0.1, 0.1, 0.1, 0.1, 1, 3.5, 5.3, 5.4];   // 名义利率（2022 起激进加息）
+      var pRv = [1, 2, 3, 3.2, 3, 2.5, 2.2, 2.1];          // 预期通胀
+      var pts = function (arr) { return arr.map(function (v, k) { return [tRv[k], v]; }); };
+      var rRv = iRv.map(function (v, k) { return +(v - pRv[k]).toFixed(2); }); // r = i − π^e
+      Charts.xy(document.getElementById('fig-reversal'), {
+        xLabel: '年份',
+        yLabel: '利率（%）',
+        xMin: 2020, xMax: 2024, yMin: -4, yMax: 6,
+        xTicks: [{ v: 2020, label: '2020' }, { v: 2021, label: '2021' }, { v: 2022, label: '2022' }, { v: 2023, label: '2023' }],
+        yTicks: [-4, -2, 0, 2, 4, 6],
+        legendPosition: 'top',
+        caption: '图 5：2021-2023 反转 —— r 深度为负（资产暴涨）→ Jackson Hole 鹰派后 r 急升转正（股市回调）',
+        series: [
+          { points: pts(iRv), type: 'spline', color: '#2563eb', label: '名义利率 i（2022 起激进加息）' },
+          { points: pts(pRv), type: 'spline', color: '#6b7280', dash: true, label: '预期通胀 π^e' },
+          { points: pts(rRv), type: 'spline', color: '#d97706', label: '实际利率 r = i − π^e' },
+          { points: [[2020, 0], [2023.5, 0]], type: 'linear', color: '#9ca3af', dash: true, label: 'r = 0 分界线' },
+        ],
+        markers: [
+          { x: 2021.5, y: -3.1, label: '2021：r ≈ −3%，借钱真实成本为负 → 资产暴涨', color: '#d97706', legend: '关键点', guides: true, gyLabel: '−3', labelDx: -120, labelDy: -14 },
+          { x: 2022.6, y: 1.3, label: 'Jackson Hole（2022.8）鹰派后：i↑ + π^e↓ → r 急升转正 → 股市回调', color: '#dc2626', legend: 'Jackson Hole 转折', labelDx: -260, labelDy: -18 },
+          { x: 2023.5, y: 3.3, label: '2023：r ≈ +3%', color: '#d97706', labelDx: -90, labelDy: -14 },
+        ],
+      });
+    })();
+  </script>
+</body>
+</html>

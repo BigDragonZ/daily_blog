@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 劳动力市场与菲利普斯曲线 - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>06 劳动力市场与菲利普斯曲线</h1>
+      <p>本篇覆盖 MIT 14.02《宏观经济学原理》第 8、9 两讲（L08+L09）：从"失业率创 60 年新低、劳动者好日子来了，美联储却夜不能寐"的反直觉事实出发，先走进<span class="term">劳动力市场</span>看存量与流量的基本事实，再用<span class="term">工资设定</span><span class="term-en">（Wage-Setting, WS）</span>与<span class="term">价格设定</span><span class="term-en">（Price-Setting, PS）</span>两条曲线定出<span class="term">自然失业率</span><span class="term-en">（Natural Rate of Unemployment, u<sub>n</sub>）</span>；然后登上宏观经济学最著名的曲线——<span class="term">菲利普斯曲线</span><span class="term-en">（Phillips Curve, PC）</span>：它如何在 1960 年代被当作"政策菜单"、1970 年代崩盘、1990 年代复活，以及为什么教授断言"通胀之战的胜负系于预期二字"。</p>
+
+      <!-- ==================== L08 ==================== -->
+      <h2>一、L08 劳动力市场（The Labor Market）</h2>
+
+      <h3>1.1 引入：失业率 3.4% 创 60 年新低，为何让美联储夜不能寐？</h3>
+      <p><strong>反直觉开场：</strong>2023 年初，美国失业率降到 <strong>3.4%</strong>——自 1969 年以来从未见过的低水平。找工作容易、工资猛涨，餐饮等行业老板为留住员工竞相加薪，这明明是劳动者的黄金时代。可每当<span class="term">联邦公开市场委员会</span><span class="term-en">（Federal Open Market Committee, FOMC）</span>的委员出来解释"为什么利率这么高、而且可能长期保持高位"时，他们说的都是同一句话：<strong>"通胀高得令人不安，而劳动力市场状况非常紧张（tight）。"</strong> 失业率低、人人有工作，怎么反而成了加息的理由？"紧张的劳动力市场为什么会预示通胀的走向"，正是这两讲要回答的核心问题。</p>
+
+      <h3>1.2 转型宣告：价格粘性假设失效，任务是把通胀内生化</h3>
+      <p>先回顾我们走到了哪里。此前几讲的 <span class="term">IS-LM 模型</span>是理解衰退与政策组合的绝佳起点，但它有两个基本假设：<strong>价格完全粘性</strong>（根本不动），以及<strong>产出完全由总需求决定</strong>（需求多少，企业就按既定价格生产多少）。当经济供给侧开始吃紧，这套假设就站不住了——餐馆老板会说："你想来吃很多顿饭，但我招不到服务员，那我只能涨价，用更少的桌子应付。" 企业招不到工人时，既难以扩大产量，也不再愿意保持价格不变。</p>
+      <p>因此课程的重心从此转向：把供给面的紧张如何推高价格、价格变化又如何反馈到均衡产出，一步步建模——用教授的话说，接下来几讲的主要任务就是<strong>把通货膨胀率内生化</strong>（此前价格一直是外生固定的）。而这个故事，必须从劳动力市场讲起，因为劳动力市场状况正是通胀率的主要驱动因素之一。</p>
+
+      <h3>1.3 存量图：3.3 亿人口如何层层筛出 600 万失业者</h3>
+      <p>先看某个时点（2018 年）美国劳动力市场的静态快照，它是一条层层收窄的漏斗：</p>
+      <table>
+        <thead>
+          <tr><th>层级</th><th>人数</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>总人口</td><td>约 <strong>3.3 亿</strong></td><td>美国全部人口</td></tr>
+          <tr><td><span class="term">非制度平民人口</span><span class="term-en">（Non-institutional Civilian Population）</span></td><td>约 <strong>2.6 亿</strong></td><td>原则上可以工作的人：剔除 16 岁以下、在押人员与现役军人</td></tr>
+          <tr><td><span class="term">平民劳动力</span><span class="term-en">（Civilian Labor Force, L）</span></td><td>约 <strong>1.62 亿</strong></td><td>其中想工作的人（约为总人口的一半）；其余为"非劳动力"（Not in the Labor Force）——只是此刻不想工作，并非永远退出</td></tr>
+          <tr><td><span class="term">就业者</span><span class="term-en">（Employed, N）</span></td><td>约 <strong>1.56 亿</strong></td><td>想工作且有工作</td></tr>
+          <tr><td><span class="term">失业者</span><span class="term-en">（Unemployed, U）</span></td><td>约 <strong>600 万</strong></td><td>想工作但没有工作</td></tr>
+        </tbody>
+      </table>
+      <p>关键定义：<span class="term">失业率</span><span class="term-en">（Unemployment Rate, u）</span> = 失业人数 ÷ 平民劳动力（U/L），<strong>而不是除以总人口</strong>。配套指标还有<span class="term">劳动参与率</span><span class="term-en">（Labor Force Participation Rate，约 62.5%）</span>和<span class="term">就业人口比率</span><span class="term-en">（Employment-to-Population Ratio，约 60%）</span>——疫情后人口在劳动力市场内外大量流动，失业率有时不太可靠，这两个比率成了重要旁证：就业率至今没回到疫情前趋势线，也是"劳动力市场紧张"的证据之一。</p>
+      <p>一个极易误读的细节：2023 年 1 月失业人数只减少了 2.8 万，但<strong>并不是只有 2.8 万人找到工作</strong>——当月就业增加了 89.4 万、劳动力同时增加了 86.6 万。失业的"净减少"背后，是数十倍规模的人口流入流出。这就引出了存量快照看不见的东西：流量。</p>
+
+      <h3>1.4 流量事实：每月数百万人换状态</h3>
+      <p>美国劳动力市场极其活跃。某个典型月份里：<strong>约 300 万人从一份工作直接跳到另一份工作</strong>（就业→就业），约 180 万人从就业变成失业，约 200 万人从失业变成就业；跨越劳动力边界的流动同样巨大——约 340 万人从"非劳动力"直接就业，约 370 万人退出就业离开劳动力市场，失业与非劳动力之间也有双向流动（人们储蓄耗尽后会从市场外直接进入失业、开始找工作）。</p>
+
+      <div id="fig-flows"></div>
+      <p><strong>图 1 解读（六向流动图）：</strong>三个方块是劳动力市场的三种状态——就业（上）、失业（左下）、非劳动力（右下）；箭头是每月的状态迁移，端点都停在方块外侧。蓝色一对：就业→失业约 180 万/月、失业→就业约 200 万/月；绿色一对：就业→非劳动力约 370 万/月、非劳动力→就业约 340 万/月（疫情期间退出方向曾急剧放大，而回流不及预期，这正是复苏中劳动力短缺的一个来源）；橙色一对：失业与非劳动力之间的双向流动；灰色自循环：约 300 万/月的跳槽（就业→就业）。要点：<strong>存量（600 万失业者）很小，流量（每月数百万）极大</strong>——失业池子每天都在快速换水，这是理解后面工资谈判力量的前提。</p>
+
+      <h3>1.5 高失业的双重恐怖：工人怕两件事，企业恰恰相反</h3>
+      <p>数据还显示：失业率与"失业者找到工作的比例"之间存在紧密的负相关——失业率越高，失业者越难脱身。于是高失业对工人是<strong>双重恐怖</strong>：</p>
+      <ol>
+        <li><strong>失业风险上升</strong>：高失业通常伴随衰退，在职工人被解雇的概率更大；</li>
+        <li><strong>再就业周期拉长</strong>：一旦掉进失业池，爬出来要花更长时间。</li>
+      </ol>
+      <p>企业的视角正好镜像：失业率高时，门外排着长队，替换一名离职员工轻而易举，企业毫不担心；失业率像今天这样极低时，企业非常怕失去员工（餐饮业尤甚）——于是毫不奇怪，这些行业的工资正在大幅上涨。工人与企业的这种<span class="term">议价能力</span><span class="term-en">（Bargaining Power）</span>对比，就是下两节工资与价格设定的微观基础。</p>
+
+      <h3>1.6 工资设定（Wage-Setting, WS）：W = P^e · F(u, z)</h3>
+      <p>先建立一个事实：工人的工资通常高于其<span class="term">保留工资</span><span class="term-en">（Reservation Wage，让他们在就业与失业间无差异的工资水平）</span>——高出的部分取决于劳动力市场状况。把 1.5 节的直觉加总到宏观层面，得到<span class="term">工资设定</span><span class="term-en">（Wage-Setting, WS）</span>关系：</p>
+      <p style="text-align:center"><strong>W = P<sup>e</sup> · F(u, z)</strong></p>
+      <ul>
+        <li><strong>预期价格水平 P<sup>e</sup>（+）</strong>：工资合同通常管一年左右。工人预期未来物价上涨，今天就会要求更高的名义工资来保住购买力；</li>
+        <li><strong>失业率 u（−）</strong>：失业率越高，失业越可怕、再就业越难，工人议价能力越弱，工资要求越低；</li>
+        <li><strong>制度变量 z（+）</strong>：一切增强工人议价能力的因素的综合体，如失业保险（失业金越丰厚，工人越不怕失业）、雇佣保护法等。</li>
+      </ul>
+
+      <h3>1.7 价格设定（Price-Setting, PS）：Y = N → P = (1+m)W → W/P = 1/(1+m)</h3>
+      <p>再看企业一方。从<span class="term">生产函数</span>出发并做最简假设：产出只依赖劳动且线性，<strong>Y = A·N</strong>；再令劳动生产率 A = 1，得 <strong>Y = N</strong>——生产一单位商品恰好需要一名工人。于是每多生产一单位的<span class="term">边际成本</span><span class="term-en">（Marginal Cost）</span>就是多雇一名工人的成本，即名义工资 W。</p>
+      <p>企业的定价规则是在边际成本之上加一个<span class="term">加成</span><span class="term-en">（Markup, m）</span>：<strong>P = (1+m)·W</strong>。m 是反映企业市场势力的正数（例：工资 100、m = 0.2，则价格 120）。把它改写成实际工资形式，就是<span class="term">价格设定</span><span class="term-en">（Price-Setting, PS）</span>关系：</p>
+      <p style="text-align:center"><strong>W/P = 1/(1+m)</strong></p>
+      <p>含义：企业愿意支付的实际工资完全由加成 m 决定——加成越高（市场势力越强），愿意支付的实际工资越低；并且在这个简单模型里，<strong>它与失业率无关</strong>。</p>
+
+      <h3>1.8 自然失业率 u_n：WS 下斜线与 PS 水平线的交点</h3>
+      <p>现在引入宏观经济学最重要的概念之一：<span class="term">自然失业率</span><span class="term-en">（Natural Rate of Unemployment, u<sub>n</sub>）</span>。教授先给出警告：它毫无"自然"之处——不是上帝赐予的，也不是理想状态。本课的定义是：<strong>当预期价格等于实际价格（P<sup>e</sup> = P）时通行的失业率</strong>。由于人们的预期在中期平均而言是准确的，自然失业率也可以理解为经济在较长时期的平均失业率。</p>
+      <p>把 P<sup>e</sup> = P 代入 WS 方程：W/P = F(u<sub>n</sub>, z)；PS 方程给出 W/P = 1/(1+m)。两式相等，得均衡条件 <strong>F(u<sub>n</sub>, z) = 1/(1+m)</strong>。画图：以失业率 u 为横轴、实际工资 W/P 为纵轴，WS 是向下倾斜的线（失业率越高、议价能力越弱、实际工资要求越低），PS 是高度为 1/(1+m) 的水平线。两线交点即自然失业率 u<sub>n</sub>：<strong>实际工资完全由 PS（企业加成）决定，失业率必须调整到恰好让工人愿意接受这个实际工资的水平</strong>。</p>
+
+      <div id="fig-ws-ps"></div>
+      <p><strong>图 2 解读（WS-PS 图，本篇核心配图）：</strong>蓝色下斜线是工资设定关系 WS：W/P = 1.1 − 0.06u（取 F 为线性、z = 0.1）；青色水平线是价格设定关系 PS：W/P = 1/(1+0.25) = 0.8。两线交于 A 点（u<sub>n</sub> = 5%，W/P = 0.8）。注意均衡的逻辑方向：企业愿意给的实际工资被 m 钉死在 0.8，<strong>调整的是失业率</strong>——若失业率低于 5%，工人议价能力太强、要求的实际工资高于 0.8，企业不肯付；失业率必须上升到 5%，工人才"就范"。</p>
+
+      <h3>1.9 比较静态：z↑ 移 WS，m↑ 移 PS，两者都推高 u_n</h3>
+      <p>用这个框架做两个经典实验（这也是菲利普斯曲线里 m 与 z 反复登场的预演）：</p>
+      <ol>
+        <li><strong>制度变量 z 上升</strong>（如失业救济更丰厚）：任何给定失业率下工人都要求更高的实际工资 → <strong>WS 线上移</strong>；PS 不动，企业愿付的实际工资没变。恢复均衡只能靠失业率上升来削弱议价能力，直到工人重新接受原工资 → <strong>u<sub>n</sub> 上升（5% → 6.7%）</strong>，实际工资不变。这正是 1980 年代欧洲大陆、尤其是法国的故事；</li>
+        <li><strong>加成 m 上升</strong>（如市场竞争减弱、企业市场势力增强）：企业愿付的实际工资降低 → <strong>PS 线下移</strong>（0.8 → 0.7）；在原有失业率下工人不接受更低的工资，均衡同样要求失业率上升来压服工人 → <strong>u<sub>n</sub> 上升（5% → 6.7%）</strong>，且实际工资更低。</li>
+      </ol>
+
+      <div class="figure-pair">
+        <div id="fig-shift-z"></div>
+        <div id="fig-shift-m"></div>
+      </div>
+      <p><strong>图 3（左）解读：</strong>z 从 0.1 升到 0.2，蓝色 WS（W/P = 1.1 − 0.06u）上移到红色 WS′（W/P = 1.2 − 0.06u）；青色 PS 水平线不动。均衡从 A（u<sub>n</sub> = 5%）沿 PS 右移到 B（u<sub>n</sub>′ ≈ 6.7%）——实际工资仍是 0.8，自然失业率更高。<strong>图 4（右）解读：</strong>m 从 0.25 升到 0.43，PS 从 0.8 下移到紫色 PS′（0.7）；蓝色 WS 不动。均衡从 A（5%, 0.8）沿 WS 滑到 B（u<sub>n</sub>′ ≈ 6.7%, W/P = 0.7）——自然失业率更高，且实际工资被压得更低。两实验对照着看：<strong>z↑ 只牺牲就业，m↑ 既牺牲就业又牺牲工资</strong>。</p>
+      <p><strong>WS-PS 模型的优缺点：</strong>优点是用两条线就把"工人议价逻辑（WS）"与"企业定价逻辑（PS）"分开，自然失业率由结构性因素（z、m）清晰决定，比较静态一目了然，还直接解释了法国 80 年代高失业这类跨国差异；缺点是只决定中期的实际工资与自然失业率，<strong>完全没说名义工资和价格水平如何动态调整</strong>（通胀还没登场），且生产函数 Y = N、加成 m 固定都是强简化。名义动态的缺失，正是下一节菲利普斯曲线要补的课。</p>
+
+      <!-- ==================== L09 ==================== -->
+      <h2>二、L09 菲利普斯曲线与通胀（The Phillips Curve and Inflation）</h2>
+
+      <h3>2.1 引入：一条 1958 年的经验曲线，如何变成央行的噩梦</h3>
+      <p>1958 年，伦敦政经学院（LSE）的经济学家 A.W. Phillips 用美国截至 1950 年代的历史数据发现一条经验规律：<strong>失业率与通胀率负相关</strong>。MIT 自己的保罗·萨缪尔森（Paul Samuelson）和罗伯特·索洛（Robert Solow）随后把这条关系命名为<span class="term">菲利普斯曲线</span><span class="term-en">（Phillips Curve, PC）</span>以致敬 Phillips。如今它是宏观经济学的中心概念——鲍威尔主席口中的"劳动力市场紧张"，就是用这条曲线的语言在说话。</p>
+
+      <h3>2.2 历史三幕：负相关 → 政策菜单 → 崩盘 → 复活</h3>
+      <ol>
+        <li><strong>1960 年代：清晰的负相关</strong>。失业率很低时通胀往往很高；失业率很高时通胀很低甚至通缩（样本期还包含大萧条）。萨缪尔森和索洛当时正为美国政府当顾问，他们建议<strong>把这条曲线当"政策菜单"来利用</strong>：多忍一点通胀，换更低的失业。起初这笔交易很划算——曲线很平，降失业几乎不惹通胀；但越往后曲线越陡，再压失业就要付出越来越高的通胀代价；</li>
+        <li><strong>1970–1995：关系崩盘</strong>。数据点散成一锅粥，看不到任何负相关——教授调侃：Phillips 要是晚生几十年，他什么规律也发现不了，也就不会有以他命名的曲线了；</li>
+        <li><strong>1996 年至今：负相关复活</strong>。画 1996 年以后的数据，下斜关系重新出现。这是货币政策的一次伟大胜利（原因见 2.5 节的预期再锚定）。</li>
+      </ol>
+
+      <div id="fig-pc-eras"></div>
+      <p><strong>图 5 解读（三时期散点一组）：</strong>蓝点是 1960 年代——失业率从约 6.7% 一路降到 3.5%，通胀从约 1% 升到 5.5%，沿蓝色虚线拟合线呈漂亮的负相关；红点是 1970–1995——同一失业率可以对应 2% 到 13% 的任意通胀，负相关完全消失（两次石油冲击的高通胀点把整片云顶了上去）；绿点是 1996 年以后——点群重新聚拢成温和的下斜带。三幕历史用一张图讲完：<strong>菲利普斯关系不是铁律，它的存废取决于背后有没有别的东西在动</strong>。</p>
+
+      <h3>2.3 推导链：WS + PS → π_t ≈ π^e_t + m + z − α·u_t</h3>
+      <p>菲利普斯曲线不必停留在经验规律，用 L08 的两块理论积木就能推导出来。把 F 取为（至少是局部的）线性形式 <strong>F(u, z) = 1 − αu + z</strong>（对 u 递减、对 z 递增，理由正是 1.5 节的双重恐怖），依次代入：</p>
+      <ol>
+        <li>工资设定：W = P<sup>e</sup>·(1 − αu + z)；</li>
+        <li>代入价格设定 P = (1+m)W，得价格水平方程：<strong>P = P<sup>e</sup>·(1+m)·(1 − αu + z)</strong>——给定预期价格，价格对 u 递减、对 z 和 m 递增（失业↑ → 工资↓ → 成本↓ → 加成不变故价格↓）；</li>
+        <li>但菲利普斯曲线是<strong>通胀率</strong>（P 的变化率）与失业的关系，不是价格水平——要"高一阶导数"。两边同除上一期价格 P<sub>t−1</sub>：左边 P<sub>t</sub>/P<sub>t−1</sub> = 1 + π<sub>t</sub>；右边第一项 P<sup>e</sup><sub>t</sub>/P<sub>t−1</sub> = 1 + π<sup>e</sup><sub>t</sub>（形成预期时 P<sub>t−1</sub> 已知，所以分母是实际值），得 1 + π<sub>t</sub> = (1 + π<sup>e</sup><sub>t</sub>)(1 + m)(1 − αu<sub>t</sub> + z<sub>t</sub>)；</li>
+        <li>各比率都是小数时取对数并用 log(1+x) ≈ x（"我们不在阿根廷"），得：<br><strong>π<sub>t</sub> ≈ π<sup>e</sup><sub>t</sub> + m + z − α·u<sub>t</sub></strong></li>
+      </ol>
+      <p>这就有了理论与经验的对接：给定预期通胀、加成与制度变量，<strong>失业率越高、通胀越低</strong>。经济学机制和前面一模一样——失业高压低工资诉求、压低价格与通胀；推导只是代数，直觉没有新增。</p>
+
+      <h3>2.4 预期的角色：锚定（θ≈0）vs 脱锚（θ→1），以及石油冲击 = m↑</h3>
+      <p>2.3 的方程里，常数项是 π<sup>e</sup> + m + z——<strong>这三者任何一个在动，整条曲线就在动</strong>。这正是三幕历史的钥匙：</p>
+      <ul>
+        <li><strong>预期锚定（Anchored Expectations，θ≈0）</strong>：假设预期通胀恒等于某个低常数 π̄（如 2%）——哪怕某年因油价冲击通胀偏高，人们也相信它会回到正常水平（1.8% 也好、2.3% 也罢，大家都预期明年还是 2%）。此时曲线退化为 π<sub>t</sub> = (π̄ + m + z) − αu<sub>t</sub>，一条稳定的下斜直线——这就是 1960 年代看到的关系；</li>
+        <li><strong>石油冲击 = m 上升</strong>：1970 年代两次石油危机，能源成本暴涨，企业为覆盖成本提高加成——用模型语言就是 m↑，<strong>整条菲利普斯曲线上移</strong>：任何失业率都对应更高的通胀。这是 1970–95 那锅粥的第一味料；</li>
+        <li><strong>预期脱锚（De-anchoring，θ→1）</strong>：更凶险的第二味料。把预期形成写成一般形式 <strong>π<sup>e</sup><sub>t</sub> = (1−θ)·π̄ + θ·π<sub>t−1</sub></strong>——长期锚 π̄ 与上期实际通胀的加权平均，θ 衡量人们盯着近期通胀的程度。1960 年代 θ 基本是 0；随着 70 年代通胀又高又持久，θ 一路升向 1——人们不再信 2%，开始"今年 5%、明年大概也 5%"。预期跟着数据跑，曲线上下乱飞，负相关自然消失。教授强调：<strong>这正是今天美联储最恐惧的场景</strong>——通胀远高于 2%，他们最怕的就是 θ 再度抬头。</li>
+      </ul>
+
+      <h3>2.5 加速主义菲利普斯曲线与 Volcker 紧缩</h3>
+      <p>当 θ = 1（预期完全等于上期通胀）时，代入 PC 方程：<strong>π<sub>t</sub> − π<sub>t−1</sub> = (m + z) − α·u<sub>t</sub></strong>。这就是<span class="term">加速主义菲利普斯曲线</span><span class="term-en">（Accelerationist Phillips Curve）</span>——关系变成<strong>通胀的"变化量"</strong>与失业<strong>水平</strong>之间：失业率很低时，不仅通胀高，而且通胀逐年加速上升。用它拟合 70、80 年代数据，负相关果然回来了。对央行这是极其凶险的局面——通胀像失控的列车，容易一路加速。</p>
+      <p>结局众所周知：1980 年代保罗·沃尔克（Paul Volcker）在美国推行极其激进的紧缩（被全世界央行效仿），付出高失业的代价把通胀打了下来；到 1990 年代中期，通胀预期被重新锚定在央行 2% 的目标附近——θ 重回 0 附近，原始的下斜菲利普斯曲线于是复活（图 5 的绿点）。</p>
+
+      <h3>2.6 现代形式：π_t − π^e_t = −α(u_t − u_n)，"紧张"= u &lt; u_n</h3>
+      <p>最后一步，把菲利普斯曲线与 L08 的自然失业率接通——这也是政策制定者（如鲍威尔）日常使用的写法。回忆定义：自然失业率是 P = P<sup>e</sup>（从而 π = π<sup>e</sup>）时的失业率。在 π<sub>t</sub> = π<sup>e</sup><sub>t</sub> + (m + z) − αu<sub>t</sub> 中令 π<sub>t</sub> = π<sup>e</sup><sub>t</sub>，解得 <strong>u<sub>n</sub> = (m + z)/α</strong>——与 1.9 节结论一致：m 或 z 上升都推高自然失业率。再用 α·u<sub>n</sub> = m + z 把 PC 方程中的 m + z 替换掉：</p>
+      <p style="text-align:center"><strong>π<sub>t</sub> − π<sup>e</sup><sub>t</sub> = −α·(u<sub>t</sub> − u<sub>n</sub>)</strong></p>
+      <p>含义：<strong>通胀对预期的偏离，正比于</strong><span class="term">失业缺口</span><span class="term-en">（Unemployment Gap, u<sub>t</sub> − u<sub>n</sub>）</span>。鲍威尔说劳动力市场"紧张"，翻译过来就是：实际失业率很可能低于自然失业率（u &lt; u<sub>n</sub>，负缺口），对通胀形成上行压力。麻烦在于 u<sub>n</sub> 无法直接观测，只能估计。</p>
+
+      <div id="fig-un-gap"></div>
+      <p><strong>图 6 解读（u_n 估计线 vs 实际失业率）：</strong>蓝色是自然失业率的一个估计（随结构缓慢变化，从 2000 年约 5.2% 降到近年约 4.4%），红色是实际失业率。浅蓝阴影是<strong>正缺口</strong>（u &gt; u<sub>n</sub>）：2008 金融危机后，实际失业率飙升至 2010 年约 9.6%，远高于 u<sub>n</sub> ≈ 5.4%——通胀承受下行压力，期间甚至出现过轻微通缩。浅红阴影是<strong>负缺口</strong>（u &lt; u<sub>n</sub>）：2017–2019 年失业率跌破 u<sub>n</sub> 而通胀却没怎么起来（曾是个谜，暗示 u<sub>n</sub> 本身在下降）；2022 年后失业率约 3.4–3.6% 而 u<sub>n</sub> ≈ 4.4%——负缺口很大，正是当前高通胀压力的来源，也是 1.1 节 FOMC 那句话的模型化表达。</p>
+
+      <h3>2.7 思想链路收尾：通胀之战，胜负在预期</h3>
+      <p><strong>核心问题</strong>（劳动力市场紧张为什么预示通胀？）→ <strong>简化模型</strong>（WS：W = P<sup>e</sup>·(1 − αu + z)；PS：P = (1+m)W）→ <strong>推导</strong>（除以 P<sub>t−1</sub>、log 近似 → π<sub>t</sub> ≈ π<sup>e</sup><sub>t</sub> + m + z − αu<sub>t</sub>；令 π = π<sup>e</sup> 得 u<sub>n</sub> = (m+z)/α；代回得现代形式 π − π<sup>e</sup> = −α(u − u<sub>n</sub>)）→ <strong>实际应用</strong>（三幕历史、失业缺口判读、当前负缺口与高通胀）→ <strong>局限性</strong>（u<sub>n</sub> 不可观测只能估计；线性 F 是局部近似；θ 会随环境内生变化——模型最大的敌人是它自己描述的预期）。</p>
+      <p>由此得到全篇最重要的政策论断（教授在问答中的原话逻辑）：<strong>通胀之战的胜负系于预期这一项</strong>——</p>
+      <ul>
+        <li><strong>若预期保持锚定（θ ≈ 0）</strong>：要让通胀回到 2% 目标，央行只需把失业率抬回自然失业率、弥合当前并不算大的负缺口——代价相对小，<strong>软着陆有望</strong>；</li>
+        <li><strong>若预期脱锚（θ → 1，π<sup>e</sup> 升到比如 6%）</strong>：把失业率抬到 u<sub>n</sub> 也只能把通胀压到 6%；想回到 2%，必须把失业率推到<strong>远高于</strong> u<sub>n</sub> 的水平——也就是<strong>必须制造一场衰退</strong>，正如 Volcker 当年所做的。这正是"央行信誉 = 降低稳定成本"的含义。</li>
+      </ul>
+      <p>课堂上还有两个补充判断：其一，"修复通胀是否只能增加失业"存在两派——一派盯着曲线说"需要一场衰退"（当时渐成主流）；另一派（美联储一度采纳）认为就业↔失业的流量等其他紧张度指标在好转、供应链成本推动也在消退，通胀可以在失业不大幅上升的情况下回落。其二，供给端对比：2022 年夏美欧通胀都在 10% 左右，但美国约三分之二是总需求过剩（战争结束也救不了，经济太热），欧洲约三分之二是供给面（俄乌战争与能源）。提高劳动参与率与移民流入（增加劳动供给、压低工资压力）是不靠衰退也能给劳动力市场降温的重要边际。</p>
+
+      <h3>2.8 收尾对比：z↑ vs m↑ 两个实验</h3>
+      <table>
+        <thead>
+          <tr><th>实验</th><th>移动哪条线</th><th>实际工资 W/P</th><th>自然失业率 u<sub>n</sub></th><th>现实案例</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>制度变量 z↑</strong>（失业救济更丰厚、雇佣保护加强）</td>
+            <td>WS 线上移（任何 u 下工人要求更高工资）；PS 不动</td>
+            <td>不变（仍被 m 钉在 1/(1+m)）</td>
+            <td>上升（图 3：5% → 6.7%）</td>
+            <td>1980 年代欧洲大陆、尤其法国的高失业</td>
+          </tr>
+          <tr>
+            <td><strong>加成 m↑</strong>（竞争减弱、市场势力增强；石油冲击等价于成本推动的 m↑）</td>
+            <td>PS 线下移（企业愿付工资更低）；WS 不动</td>
+            <td>下降（图 4：0.8 → 0.7）</td>
+            <td>上升（图 4：5% → 6.7%）</td>
+            <td>1970 年代两次石油冲击（整条菲利普斯曲线上移）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>菲利普斯曲线（PC）的优缺点：</strong>优点是把通胀内生化的第一步——通胀由预期、供给因素（m、z）与劳动力市场紧张度（u − u<sub>n</sub>）三块构成，直接就是央行行长的语言，还优雅地解释了三幕历史（锚定→曲线稳定；脱锚或 m 动→曲线漂移）；缺点是 u<sub>n</sub> 与 θ 都不可直接观测、线性化只是局部近似，而且它还只是"半模型"——失业（产出）与通胀之间如何经货币政策联动，要等 IS-LM-PC 模型把它与 IS-LM 拼接后才完整。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/06-labor-market-phillips.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：劳动力市场六向流动（就业/失业/非劳动力，每月百万人换状态） =====
+    Charts.stateFlows(document.getElementById('fig-flows'), {
+      nodes: ['就业（约 1.56 亿）', '失业（约 600 万）', '非劳动力（约 1 亿）'],
+      flows: [
+        { from: 0, to: 0, label: '跳槽（就业→就业）：300 万/月', color: '#6b7280' },
+        { from: 0, to: 1, label: '180 万/月', color: '#2563eb' },
+        { from: 1, to: 0, label: '200 万/月', color: '#2563eb', labelT: 0.35 },
+        { from: 0, to: 2, label: '370 万/月', color: '#0d9488', labelT: 0.35 },
+        { from: 2, to: 0, label: '340 万/月', color: '#0d9488' },
+        { from: 1, to: 2, label: '双向流动', color: '#d97706' },
+        { from: 2, to: 1, color: '#d97706' },
+      ],
+      legend: [
+        { label: '就业 ↔ 失业：180 / 200 万每月', color: '#2563eb', style: 'line' },
+        { label: '就业 ↔ 非劳动力：370 / 340 万每月', color: '#0d9488', style: 'line' },
+        { label: '失业 ↔ 非劳动力：双向（规模可观）', color: '#d97706', style: 'line' },
+        { label: '就业 → 就业（跳槽）：300 万/月', color: '#6b7280', style: 'line' },
+      ],
+      caption: '图 1：劳动力市场六向流动 —— 存量很小、流量极大（美国某典型月份）',
+    });
+
+    // ===== 图2：WS-PS 图 —— 自然失业率 u_n = WS ∩ PS =====
+    Charts.xy(document.getElementById('fig-ws-ps'), {
+      xLabel: '失业率 u（%）',
+      yLabel: '实际工资 W/P',
+      xMax: 14, yMax: 1.2, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 2：WS-PS 模型 —— 自然失业率 u_n = 5%（WS 下斜线与 PS 水平线的交点 A）',
+      series: [
+        { points: [[0, 1.1], [14, 0.26]], type: 'linear', color: '#2563eb', label: 'WS：W/P = 1.1 − 0.06u（工资设定，z = 0.1）' },
+        { points: [[0, 0.8], [14, 0.8]], type: 'linear', color: '#0d9488', label: 'PS：W/P = 1/(1+0.25) = 0.8（价格设定，m = 0.25）' },
+      ],
+      markers: [
+        { x: 5, y: 0.8, label: 'A（u_n = 5%，W/P = 0.8）', color: '#dc2626', legend: '自然失业率（P^e = P 时）', guides: true, gxLabel: 'u_n = 5%', gyLabel: '0.8', labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图3：z↑ —— WS 上移，PS 不动，u_n 5%→6.7%、实际工资不变 =====
+    Charts.xy(document.getElementById('fig-shift-z'), {
+      xLabel: '失业率 u（%）',
+      yLabel: '实际工资 W/P',
+      xMax: 14, yMax: 1.2, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：z↑（失业救济更丰厚）—— WS 上移，u_n 5%→6.7%，实际工资不变',
+      series: [
+        { points: [[0, 1.1], [14, 0.26]], type: 'linear', color: '#2563eb', label: 'WS：W/P = 1.1 − 0.06u（z = 0.1）' },
+        { points: [[0, 1.2], [14, 0.36]], type: 'linear', color: '#dc2626', label: "WS′：W/P = 1.2 − 0.06u（z′ = 0.2，上移）" },
+        { points: [[0, 0.8], [14, 0.8]], type: 'linear', color: '#0d9488', label: 'PS：W/P = 0.8（不动）' },
+      ],
+      markers: [
+        { x: 5, y: 0.8, label: 'A（u_n = 5%）', color: '#2563eb', legend: '原均衡', guides: true, gxLabel: 'u_n = 5%', gyLabel: '0.8', labelDx: 10, labelDy: -14 },
+        { x: 6.67, y: 0.8, label: "B（u_n′ ≈ 6.7%）", color: '#dc2626', legend: '新均衡（u_n 上升）', guides: true, gxLabel: "u_n′ ≈ 6.7%", labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图4：m↑ —— PS 下移，WS 不动，u_n 5%→6.7%、实际工资 0.8→0.7 =====
+    Charts.xy(document.getElementById('fig-shift-m'), {
+      xLabel: '失业率 u（%）',
+      yLabel: '实际工资 W/P',
+      xMax: 14, yMax: 1.2, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 4：m↑（市场势力增强/石油冲击）—— PS 下移，u_n 5%→6.7%，实际工资 0.8→0.7',
+      series: [
+        { points: [[0, 1.1], [14, 0.26]], type: 'linear', color: '#2563eb', label: 'WS：W/P = 1.1 − 0.06u（不动）' },
+        { points: [[0, 0.8], [14, 0.8]], type: 'linear', color: '#0d9488', label: 'PS：W/P = 0.8（m = 0.25）' },
+        { points: [[0, 0.7], [14, 0.7]], type: 'linear', color: '#7c3aed', label: "PS′：W/P = 0.7（m′ ≈ 0.43，下移）" },
+      ],
+      markers: [
+        { x: 5, y: 0.8, label: 'A（u_n = 5%，W/P = 0.8）', color: '#2563eb', legend: '原均衡', guides: true, gxLabel: 'u_n = 5%', gyLabel: '0.8', labelDx: 10, labelDy: -14 },
+        { x: 6.67, y: 0.7, label: "B（u_n′ ≈ 6.7%，W/P = 0.7）", color: '#7c3aed', legend: '新均衡（u_n 上升、工资下降）', guides: true, gxLabel: "u_n′ ≈ 6.7%", gyLabel: '0.7', labelDx: 12, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图5：菲利普斯曲线三时期散点 —— 1960s 负相关 / 1970-95 崩盘 / 1996+ 复活 =====
+    function dots(list, color, legendText) {
+      return list.map(function (p, i) {
+        return { x: p[0], y: p[1], color: color, legend: i === 0 ? legendText : undefined };
+      });
+    }
+    var pc60s = dots([[6.7, 1.1], [5.6, 1.2], [5.6, 1.3], [5.2, 1.3], [4.5, 1.6], [3.8, 2.9], [3.8, 3.1], [3.6, 4.3], [3.5, 5.5]], '#2563eb', '1960 年代：负相关清晰');
+    var pc7095 = dots([[4.9, 5.8], [5.9, 6.5], [5.6, 11.0], [4.9, 12.3], [7.1, 9.1], [8.5, 7.6], [7.7, 6.5], [7.1, 6.0], [9.7, 7.6], [9.6, 5.8], [7.5, 3.2], [7.0, 4.3], [6.2, 3.6], [5.6, 3.0], [6.8, 2.5], [5.4, 4.2]], '#dc2626', '1970–1995：关系崩盘（石油冲击 m↑ + 预期脱锚 θ→1）');
+    var pc96up = dots([[5.4, 3.0], [4.9, 2.3], [4.5, 1.6], [4.2, 2.2], [4.0, 3.4], [4.7, 1.6], [5.8, 2.4], [6.0, 2.3], [5.5, 3.2], [5.1, 3.8]], '#15803d', '1996 年以后：预期再锚定，负相关复活');
+    Charts.xy(document.getElementById('fig-pc-eras'), {
+      xLabel: '失业率 u（%）',
+      yLabel: '通胀率 π（%）',
+      xMax: 11, yMax: 14,
+      xTicks: [0, 2, 4, 6, 8, 10], yTicks: [0, 2, 4, 6, 8, 10, 12, 14],
+      legendPosition: 'top',
+      caption: '图 5：菲利普斯曲线三幕 —— 1960s 负相关 / 1970–95 崩盘 / 1996+ 复活（美国年度数据散点）',
+      series: [
+        { points: [[3.2, 6.3], [7, 0.6]], type: 'linear', color: '#2563eb', dash: true, label: '1960 年代拟合线（θ ≈ 0 时的稳定 PC）' },
+      ],
+      markers: pc60s.concat(pc7095, pc96up),
+    });
+
+    // ===== 图6：自然失业率估计 vs 实际失业率 —— 正缺口（2008 后）与负缺口（当前） =====
+    var years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
+    var uActual = [4.0, 4.7, 5.8, 6.0, 5.5, 5.1, 4.6, 4.6, 5.8, 9.3, 9.6, 8.9, 8.1, 7.4, 6.2, 5.3, 4.9, 4.4, 3.9, 3.7, 8.1, 5.4, 3.6, 3.6];
+    var uNat = [5.2, 5.1, 5.0, 5.0, 5.0, 5.0, 4.9, 4.8, 4.9, 5.1, 5.4, 5.6, 5.7, 5.6, 5.4, 5.2, 4.9, 4.7, 4.5, 4.4, 4.4, 4.4, 4.4, 4.4];
+    function zip(xs, ys) { return xs.map(function (x, i) { return [x, ys[i]]; }); }
+    Charts.xy(document.getElementById('fig-un-gap'), {
+      xLabel: '年份',
+      yLabel: '失业率（%）',
+      xMax: 2024, yMax: 10,
+      xTicks: [2000, 2005, 2010, 2015, 2020, 2023], yTicks: [0, 2, 4, 6, 8, 10],
+      legendPosition: 'top',
+      caption: '图 6：自然失业率估计 vs 实际失业率 —— 2008 后正缺口（通胀下行）、当前负缺口（通胀上行）',
+      areas: [
+        { points: [[2008, 5.8], [2009, 9.3], [2010, 9.6], [2011, 8.9], [2012, 8.1], [2013, 7.4], [2014, 6.2], [2014, 5.4], [2013, 5.6], [2012, 5.7], [2011, 5.6], [2010, 5.4], [2009, 5.1], [2008, 4.9]], color: '#2563eb', opacity: 0.10, label: '正缺口' },
+        { points: [[2017, 4.4], [2018, 3.9], [2019, 3.7], [2019, 4.4], [2018, 4.5], [2017, 4.7]], color: '#dc2626', opacity: 0.10 },
+        { points: [[2021.6, 4.4], [2022, 3.6], [2023, 3.6], [2023, 4.4], [2022, 4.4]], color: '#dc2626', opacity: 0.10, label: '负缺口' },
+      ],
+      series: [
+        { points: zip(years, uActual), type: 'spline', color: '#dc2626', label: '实际失业率 u' },
+        { points: zip(years, uNat), type: 'spline', color: '#2563eb', label: '自然失业率估计 u_n' },
+      ],
+      markers: [
+        { x: 2010, y: 9.6, label: '2010：u ≈ 9.6% ≫ u_n ≈ 5.4%（通胀下行，曾现通缩）', color: '#2563eb', legend: '正缺口（u > u_n）', labelDx: -60, labelDy: -14 },
+        { x: 2023, y: 3.6, label: '当前：u ≈ 3.4–3.6% < u_n ≈ 4.4%（通胀上行）', color: '#dc2626', legend: '负缺口（u < u_n）', labelDx: -300, labelDy: -16 },
+      ],
+    });
+  </script>
+</body>
+</html>

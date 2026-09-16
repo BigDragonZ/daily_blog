@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07 IS-LM-PC 模型 - MIT 宏观经济学原理 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .figure-pair { display: flex; gap: 20px; align-items: flex-start; }
+    .figure-pair > div { flex: 1; min-width: 0; }
+    @media (max-width: 960px) { .figure-pair { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>07 IS-LM-PC 模型：短期到中期</h1>
+      <p>本篇覆盖 MIT 14.02《宏观经济学原理》第 11、12 两讲（L11+L12），并附 L18 测验复习的知识清单：<span class="term">IS-LM-PC 模型</span><span class="term-en">（IS-LM-PC Model）</span>把 IS-LM 与菲利普斯曲线焊接在一起，让我们第一次能同时讨论<strong>短期</strong>（几周、几个月，IS-LM 的世界）和<strong>中期</strong>（一两年，产出回归潜在水平的过程）。教授称它"或许是本课程最重要的模型"。页面以 2023 年 3 月<span class="term">硅谷银行</span><span class="term-en">（Silicon Valley Bank, SVB）</span>倒闭案开场——一家买了"最安全资产"的银行为何 48 小时内猝死；然后组装模型、定义<span class="term">自然利率</span>、推演中期回归机制与<span class="term">货币中性</span>；最后用完整模型分析<span class="term">通缩陷阱</span>、需求冲击、供给冲击与 SVB 事件的余波。</p>
+
+      <!-- ==================== L11 ==================== -->
+      <h2>一、L11 IS-LM-PC 模型（The IS-LM-PC Model）：组装与中期</h2>
+
+      <h3>1.1 引入：买了"最安全资产"的银行，为何 48 小时内猝死</h3>
+      <p><strong>反直觉开场：</strong>银行倒闭，我们通常想到的是乱放贷、高杠杆、垃圾资产。硅谷银行偏偏相反——它买了你能想象到的最安全的资产：<strong>美国国债</strong>。它没有疯狂放贷、没有尽职调查丑闻，资产端干干净净。然而 2023 年 3 月，这家美国第 16 大银行（资产 2090 亿美元，与大衰退期间倒闭的最大银行华盛顿互惠银行规模相当）在周四股价崩盘、周五被<span class="term">联邦存款保险公司</span><span class="term-en">（Federal Deposit Insurance Corporation, FDIC）</span>关闭。买最安全的资产，怎么反而死了？</p>
+      <p>解剖全过程，链条有五个环节：</p>
+      <ol>
+        <li><strong>时机错误的国债投资</strong>：SVB 的存款在两三年内几乎翻倍，它把大量资金买入十年期国债——时间点恰好卡在 2022 年利率开始上升之前。利率↑ → 债券价格↓（第四讲的关系），账面出现大量<span class="term">未实现损失</span><span class="term-en">（Unrealized Losses）</span>。按监管规则，只要持有到期就不必确认损失——所以报表上它看起来依然健康；</li>
+        <li><strong>小规模存款外流引爆确认</strong>：科技行业融资环境恶化，初创公司客户开始提取存款。为兑付取款，SVB 被迫<strong>出售</strong>国债——未实现损失瞬间变成已实现损失，CEO 宣布需筹资 25 亿美元补窟窿。注意：对一家 2000 多亿资产的银行，这点亏损本身并不大；</li>
+        <li><strong>95% 的存款没有保险</strong>：美国存款保险上限 25 万美元，这个机制本为防挤兑而设计——小储户知道自己稳拿回钱，就不会去挤。但 SVB 的储户是科技初创公司，存款远超上限，<strong>接近 95% 不受 FDIC 保护</strong>。无保险储户的算计完全不同：一旦怀疑银行要倒，最优策略就是立刻电汇走人——转账太容易，为什么要冒险等待？</li>
+        <li><strong>风投电话挤兑</strong>：这些初创公司背后是少数<span class="term">风险投资</span><span class="term-en">（Venture Capital, VC）</span>基金。风投一察觉问题，立刻给所有被投公司打电话："把钱取出来。"于是挤兑不是散兵游勇，而是被行业巨头有组织地发动，速度快到以小时计；</li>
+        <li><strong>协调失灵</strong><span class="term-en">（Coordination Failure）</span>：如果所有人都保持冷静、谁都不取钱，风波过去后大家都安全。但我不相信你會把钱留着，你也不相信我——我们都只在<strong>自己取完之后</strong>才打电话劝别人冷静。于是挤兑自我实现。这与我们学过的多重均衡、投机性攻击是同一逻辑。</li>
+      </ol>
+      <p>从本课程视角，这是<span class="term">风险溢价</span><span class="term-en">（Risk Premium, x）</span>上升的教科书实例：恐慌指标 VIX 周四周五飙升，信用利差全面走阔，与金融系统（尤其小银行）联系越紧的债券利差越大。周末政府的处置也极具教科书色彩——FDIC 宣布担保<strong>全部</strong>存款（不限 25 万），美联储设立信贷额度让银行抵押债券换现金而无需按市价确认损失。而市场的反应预告了 L12 的内容：投资者立刻重新定价美联储的加息路径——这正是"市场懂 IS-LM"的证据（详见 2.5 节）。</p>
+
+      <h3>1.2 模型组装：央行定实际利率 + 菲利普斯曲线</h3>
+      <p>IS-LM-PC 就是两块旧积木的拼接。第一块是 IS-LM，但做一个简化：假设央行直接设定<strong>实际利率</strong> r̄（而非名义利率），LM 写成水平线 <strong>r = r̄</strong>。只要没触及零利率下限，央行总能通过调整名义利率实现想要的实际利率，而央行真正关心的本来就是实际利率是否合适。图形因此干净很多。</p>
+      <p>第二块是菲利普斯曲线，但它活在 (u, π) 空间，IS-LM 活在 (Y, r) 空间——三个内生变量画不到一张图上。解决办法：把失业换成产出。用最简生产函数 <strong>Y = N = L(1−u)</strong>，定义<span class="term">潜在产出</span><span class="term-en">（Potential Output, Y<sub>n</sub>）</span>为失业率等于自然失业率时的产出：<strong>Y<sub>n</sub> = L(1−u<sub>n</sub>)</strong>。两式相减得<span class="term">产出缺口</span><span class="term-en">（Output Gap）</span>与失业缺口的关系：</p>
+      <p style="text-align:center"><strong>Y − Y<sub>n</sub> = −L(u − u<sub>n</sub>)</strong></p>
+      <p>代入菲利普斯曲线 π − π<sup>e</sup> = −α(u − u<sub>n</sub>)，得到产出空间的 PC：</p>
+      <p style="text-align:center"><strong>π − π<sup>e</sup> = (α/L)(Y − Y<sub>n</sub>)</strong></p>
+      <p>产出高于潜在产出（正产出缺口）→ 失业率低于自然率 → 工资与价格压力 → <strong>通胀超过预期通胀</strong>。再补上预期形成假设——先考虑央行最头疼的<span class="term">脱锚</span><span class="term-en">（Unanchored）</span>情形 π<sup>e</sup> = π<sub>t−1</sub>（人们按上期通胀预期本期）——PC 就变成"通胀的<strong>变化</strong>对产出缺口"的向上倾斜曲线。</p>
+
+      <div id="fig-islm-top"></div>
+      <p><strong>图 1 解读（双图系统·上：IS-LM）：</strong>蓝色 IS 曲线 r = 8 − 0.04Y 与青色水平线 r̄ = 3%（央行钉住的实际利率）交于均衡点 A（Y = 125, r = 3%）。红色虚线是潜在产出 Y<sub>n</sub> = 100 的垂线——<strong>短期内均衡产出完全由上图决定，它不必等于 Y<sub>n</sub></strong>。这里 Y = 125 &gt; Y<sub>n</sub> = 100，经济过热（正产出缺口 25）。IS 曲线与 Y<sub>n</sub> 垂线的交点给出自然利率 r<sub>n</sub> = 4%（1.3 节展开）。</p>
+
+      <div id="fig-pc-bottom"></div>
+      <p><strong>图 2 解读（双图系统·下：产出空间的 PC）：</strong>横轴与上图对齐。红色虚线仍是 Y<sub>n</sub> = 100 垂线，橙色 PC 曲线 π − π<sub>t−1</sub> = 0.08(Y − 100) 向上倾斜：产出每超过潜在水平 1 单位，通胀加速 0.08 个百分点。上图的均衡 Y = 125 垂直到下图点 A（Y = 125, π − π<sub>t−1</sub> = +2%）——<strong>任何偏离 Y<sub>n</sub> 的均衡都在通胀上产生后果</strong>：这里通胀每期上升 2 个百分点。灰色零线是 π = π<sub>t−1</sub>（通胀不变）的基准，其下方是通缩压力区。这正是美国近年的处境：疫情后供给冲击、大规模财政支持、被压抑的需求释放，产出缺口为正而实际利率过低，通胀一路走高。</p>
+
+      <h3>1.3 自然利率：四个名字，一个东西</h3>
+      <p>图 1 中 IS 曲线与 Y<sub>n</sub> 垂线的交点，定义了一个关键利率——使均衡产出恰好等于潜在产出的那个实际利率。它有四个常用名字，指的都是同一个东西：</p>
+      <ul>
+        <li><span class="term">自然利率</span><span class="term-en">（Natural Rate of Interest, r<sub>n</sub>）</span>；</li>
+        <li><span class="term">中性利率</span><span class="term-en">（Neutral Rate）</span>——设在这里，经济既不扩张也不收缩；</li>
+        <li><span class="term">维克塞尔利率</span><span class="term-en">（Wicksellian Rate）</span>——纪念最早提出这一思想的瑞典经济学家维克塞尔；</li>
+        <li><span class="term">R 星</span><span class="term-en">（R-star, r*）</span>——央行文件与财经媒体最常用的记号。</li>
+      </ul>
+      <p>r<sub>n</sub> 不是央行定的，而是由经济的真实结构（储蓄、投资需求、财政立场等决定 IS 位置的因素，以及决定 Y<sub>n</sub> 的供给面因素）隐含决定。央行的本事只在于<strong>选择 r̄ 偏离还是靠近 r<sub>n</sub></strong>——而偏离是有代价的，下一节就是代价的账。</p>
+
+      <h3>1.4 中期回归机制：通胀螺旋如何被利率刹车</h3>
+      <p>图 1-2 的 A 点不是终点。Y &gt; Y<sub>n</sub> 使通胀每期加速（2%→4%→6%→9%……，因为 π<sup>e</sup> = π<sub>t−1</sub> 让预期不断追赶现实）。谁会出手？中央银行。负责任的央行看到通胀加速，自然反应就是加息：r̄ 上调 → 沿 IS 曲线上移 → Y 下降 → 产出缺口收窄 → 通胀减速。<strong>这个过程只有在 Y 回到 Y<sub>n</sub>、即 r̄ 升到 r<sub>n</sub> 时才会停止</strong>。所以中期均衡里，实际利率必然等于自然利率，产出必然等于潜在产出——央行的利率决策短期是"因"，中期却变成了"果"：它必须适应经济的真实结构。</p>
+
+      <h3>1.5 货币中性：中期实际变量不归央行管</h3>
+      <p>上述机制的直接推论是<span class="term">货币中性</span><span class="term-en">（Neutrality of Money）</span>：<strong>在中期，实际变量（产出 Y<sub>n</sub>、自然失业率 u<sub>n</sub>、自然利率 r<sub>n</sub>）由经济的真实结构决定，货币政策只影响名义变量（通胀率、名义利率）</strong>。央行若硬要设一个与通胀稳定不符的 r̄，最终不得不调整回来。但注意<strong>时间维度的分工</strong>：短期内货币政策是影响实际经济活动最有力的工具——"短期非中性、中期中性"，这正是 IS-LM-PC 比单纯 IS-LM 多出的整个维度。</p>
+
+      <h3>1.6 脱锚 vs 锚定：央行信誉就是降低稳定成本</h3>
+      <p>通胀已经超调到 9% 之后，<span class="term">预期锚定</span><span class="term-en">（Anchored Expectations）</span>与否，决定了纠偏的代价天差地别：</p>
+      <ul>
+        <li><strong>脱锚（π<sup>e</sup> = π<sub>t−1</sub>）</strong>：把 r̄ 加到 r<sub>n</sub>、让 Y 回到 Y<sub>n</sub>，只是让通胀<strong>停在 9%</strong>。要把它降回 2% 目标，央行必须把利率推到 r<sub>n</sub> <strong>之上</strong>，制造负产出缺口——也就是<strong>故意制造一场衰退</strong>，用失业把通胀压下来。这就是沃尔克 80 年代初做的事；</li>
+        <li><strong>锚定（π<sup>e</sup> = π*，如 2%）</strong>：即使通胀暂时冲到 9%，只要人们相信长期会回到 2%，PC 方程 π − π* = (α/L)(Y − Y<sub>n</sub>) 保证：央行只需把 r̄ 加到 r<sub>n</sub>、让 Y 回到 Y<sub>n</sub>，通胀就<strong>自动</strong>回落到 π*——不需要衰退。这就是人们谈论<span class="term">软着陆</span><span class="term-en">（Soft Landing）</span>时的意思。</li>
+      </ul>
+
+      <div id="fig-anchored"></div>
+      <p><strong>图 3 解读（纠偏代价对比）：</strong>同一条 IS（r = 8 − 0.04Y）与 Y<sub>n</sub> = 100 垂线（交点即 r<sub>n</sub> = 4%）。起点 A（Y = 125, r = 3%）经济过热、通胀已超调。<strong>锚定情形</strong>只需走到 B：r̄ 加到 r<sub>n</sub> = 4%，Y 回到 Y<sub>n</sub>，通胀自动回落目标。<strong>脱锚情形</strong>必须走到 C：r̄ 推高到 5.5%（高于 r<sub>n</sub>），产出压到 62.5（远低于 Y<sub>n</sub>）——一场人为衰退，才能把通胀惯性打断。B 与 C 的产出差 37.5，就是<strong>央行信誉的宏观价值</strong>：信誉=低成本的稳定器，这就是央行拼命维护通胀信誉的原因。</p>
+
+      <h3>1.7 IS-LM-PC 模型的优点和缺点</h3>
+      <p><strong>优点</strong>：第一次把需求面（IS-LM）与供给面（PC）焊进同一个框架，短期与中期各有位置——短期看 IS-LM 定产出，中期看经济必然回归 Y<sub>n</sub> 与 r<sub>n</sub>；通胀被内生化，"过热为什么产生通胀"有了闭环解释；政策讨论（加息路径、软着陆、信誉）几乎全部可以在这个图上进行。<strong>缺点</strong>：Y<sub>n</sub> 与 r<sub>n</sub> 都<strong>不可直接观测</strong>，现实中央行只能靠通胀数据猜自己在缺口哪一边；模型里利率一变产出立刻调整，无视"漫长而可变的滞后"（2.2 节）；预期形成只有锚定/脱锚两种极端，现实中的预期管理远比这细腻；它依然是封闭经济、单一利率的世界。</p>
+
+      <!-- ==================== L12 ==================== -->
+      <h2>二、L12 IS-LM-PC 续（IS-LM-PC, continued）：通缩陷阱与冲击分析</h2>
+
+      <h3>2.1 通缩陷阱：降息降到零，实际利率反而上升</h3>
+      <p><strong>反直觉开场：</strong>央行降息是在放松银根，对吗？1930 年代的美联储把名义利率从 5% 一路降到接近零，货币政策看起来越来越宽松——但同期实际利率却从 5% <strong>升</strong>到 6.5%、再到两位数，货币政策实际在<strong>收紧</strong>。降息怎么会越降越紧？</p>
+      <p>这就是<span class="term">通缩陷阱</span><span class="term-en">（Deflationary Trap）</span>。设定：通胀已降到零附近，而由于某种原因<span class="term">自然利率</span> r<sub>n</sub> &lt; 0（经济需要负实际利率才能回到潜在产出）。但<span class="term">零利率下限</span><span class="term-en">（Zero Lower Bound, ZLB）</span>卡住名义利率：最好也只能 i = 0。通胀为零时实际利率也是零——仍高于负的 r<sub>n</sub>，产出继续低于潜力，产生通缩压力。一旦通胀变负，恶性循环启动：r = i − π<sup>e</sup>，i 钉在零，π 越负，<strong>实际利率越正</strong> → 需求进一步被压制 → 产出更低 → 通缩更深 → 实际利率更高……经济被拖向深渊。</p>
+      <p><span class="term">大萧条</span><span class="term-en">（Great Depression）</span>就是实证：1929 年起失业率从约 3% 飙升，美联储降息追赶，但通胀掉得更快、转为通缩。名义利率 5%→4% 的同时通胀到了 −2.5%，实际利率反而 <strong>升</strong>到 6.5%；通缩最深达 −10%，实际利率冲到两位数，失业率最终逼近 25%。最终把美国拖出大萧条的不是货币政策，而是大规模财政扩张。日本后来数十年反复陷入同类困境。</p>
+
+      <div id="fig-depression"></div>
+      <p><strong>图 4 解读（大萧条四线）：</strong>灰色名义利率从 5% 一路下调到 1.5%（央行的"宽松"动作）；红色通胀线 1930 年转负、1932 年深达 −10%；两者之差——紫色实际利率——不降反升，1930 年已达 6.5%（名义 4% − 通胀 −2.5%），1931-32 年维持在 12% 高位；蓝色失业率随实际利率攀升而恶化，1933 年逼近 25%。四条线讲同一个教训：<strong>通缩环境中，名义利率降到底也可能等于收紧</strong>，货币政策瘫痪，只剩财政政策一根支柱。</p>
+
+      <h3>2.2 软着陆与弗里德曼的政策困境</h3>
+      <p>回看 1.6 节，<span class="term">软着陆</span><span class="term-en">（Soft Landing）</span>的精确定义是：<strong>不引发大衰退就把通胀降回目标</strong>——它可行的条件正是预期保持锚定。若预期脱锚，央行只能"通过制造衰退来投资于降低通胀预期"，这就是央行对失去信誉近乎神经质的原因。</p>
+      <p>但"把 r̄ 迅速调到 r<sub>n</sub>"说着容易做着难。米尔顿·弗里德曼（Milton Friedman）的名言：货币政策的影响存在<span class="term">漫长而可变的滞后</span><span class="term-en">（Long and Variable Lags）</span>。两重困难：其一，Y<sub>n</sub>、u<sub>n</sub>、r<sub>n</sub> 在任何时点都无法确知，通胀数据是判断自己在缺口哪一边的主要仪表盘；其二，模型里利率一变产出立刻到位，现实中加息的全部效果要几个季度甚至几年才显现。2023 年初美联储的两难正在于此：通胀仍过高，但已激进加息很多——若滞后效应集中显现，可能压出一场不必要的衰退；而金融体系又突然出事（SVB），经济可能自己快速减速。<strong>真实政策比图上的三行推导复杂得多：滞后、不确定性与非线性无处不在。</strong></p>
+
+      <h3>2.3 需求冲击全流程：财政紧缩的短期与中期</h3>
+      <p>用完整模型跑第一个标准实验：<span class="term">财政紧缩</span><span class="term-en">（Fiscal Consolidation）</span>——政府为削减赤字而减支或增税。经济起点是中期均衡 A（Y = Y<sub>n</sub>, r = r<sub>n</sub>）。</p>
+      <ol>
+        <li><strong>移动哪条曲线？</strong>财政政策 → IS 左移（LM/利率线由央行决定，短期不动）；</li>
+        <li><strong>短期</strong>：新均衡 B，产出跌到 Y<sub>n</sub> 以下（下图点 B）——与旧 IS-LM 结论一致，但 PC 图多给一个信息：<strong>通胀开始下降</strong>（通缩压力）；</li>
+        <li><strong>中期</strong>：央行看到通胀下行、产出低迷，持续降息，直到 Y 回到 Y<sub>n</sub>（点 C）。</li>
+      </ol>
+      <p>中期结论反直觉却重要：<strong>财政紧缩在中期不改变产出，只降低实际利率</strong>（r<sub>n</sub> 随 IS 左移而下降）。产出回到原位，但均衡实际利率更低。短期到中期的调整过程可能很痛苦（一场衰退），现实中大量政策争论争的就是这个过程的<strong>速度与代价</strong>。</p>
+
+      <div id="fig-demand-islm"></div>
+      <p><strong>图 5 解读（需求冲击·上：IS-LM）：</strong>起点 A（Y = Y<sub>n</sub> = 100, r = r<sub>n</sub> = 4%）。财政紧缩使蓝色 IS（r = 8 − 0.04Y）左移为红色 IS′（r = 6 − 0.04Y），央行短期不动利率，经济滑到 B（Y = 50, r = 4%）——衰退。中期央行降息，利率线从 4% 下移到紫色 r̄′ = 2%，经济到达 C（Y = 100, r = 2%）：产出复原，实际利率比原来低 2 个百分点（IS 左移使新的自然利率降为 2%）。</p>
+
+      <div id="fig-demand-pc"></div>
+      <p><strong>图 6 解读（需求冲击·下：PC）：</strong>横轴与上图对齐。A（100, 0）通胀稳定；B（50, −4%）负产出缺口带来通缩压力，通胀每期降 4 个百分点——这是央行降息的信号；中期回到 C（100, 0），通胀在更低水平上重新稳定。把两图合看：短期"产出↓ + 通胀↓"，中期"产出回 Y<sub>n</sub> + 利率更低"，正是 2.3 节三步的图形版。</p>
+
+      <h3>2.4 供给冲击：加成上升、滞胀与更高的自然利率</h3>
+      <p>第二类冲击不走需求面，走供给面：石油危机式的成本冲击，建模为<span class="term">加成</span><span class="term-en">（Markup, m）</span>上升。由 u<sub>n</sub> = (m+z)/α，m↑ → <strong>自然失业率上升 → 潜在产出 Y<sub>n</sub> 下降</strong>。注意这次 IS-LM 图一条线都不动，动的是 PC 图：Y<sub>n</sub> 垂线左移，整条 PC 左移。</p>
+      <p>推演：经济原在 A（Y = Y<sub>n</sub>）。冲击后短期产出尚未变，但原来能稳定通胀的产出水平，现在高于新的潜在产出——<strong>通胀突然上升而产出停滞</strong>，这就是<span class="term">滞胀</span><span class="term-en">（Stagflation，stagnation + inflation）</span>，1970-80 年代反复上演的噩梦。若冲击持续，央行必须加息：新的更低 Y<sub>n</sub>′ 对应一个<strong>更高</strong>的自然利率 r<sub>n</sub>′，央行只能追随它，把经济引导到更低的产出水平——供给冲击面前央行没有"保产出"的选项，只有"承认新的更穷的现实"。</p>
+
+      <div id="fig-supply-pc"></div>
+      <p><strong>图 7 解读（供给冲击·PC 左移）：</strong>灰色虚线是原 Y<sub>n</sub> = 100 垂线与原 PC（π − π<sub>t−1</sub> = 0.08(Y − 100)），均衡 A（100, 0）。加成上升使 Y<sub>n</sub> 降到 80：红色 Y<sub>n</sub>′ 垂线左移，PC 左移为橙色 PC′（0.08(Y − 80)）。短期产出未动，经济落在 B（Y = 100, π − π<sub>t−1</sub> = +1.6%）——同样的产出，通胀却开始加速：<strong>滞胀</strong>。央行加息压低需求，中期到达 C（Y = 80, 0）：产出永久性地更低，通胀重新稳定。</p>
+      <p><strong>当下对照</strong>：疫情后美国先受的是供给型冲击——不是能源（能源冲击后来才到），而是供应链、运输成本与劳动力参与率恢复缓慢。当时判断"是暂时的"，希望 PC 自己移回去，结果它迟迟不归，经济在过热状态停得太久，成为通胀蔓延的主因之一——美国通胀是需求与供给的混合，但<strong>需求主导</strong>；欧洲则遭遇了巨大的能源冲击，PC 大幅上移，通胀是<strong>供给主导</strong>。同样的高通胀，病根不同，药也不同。</p>
+
+      <h3>2.5 SVB 模型化：x 上升、IS 左移与市场的抢跑</h3>
+      <p>回到 1.1 节的 SVB。用模型语言，它是一个信用冲击：<span class="term">风险溢价</span><span class="term-en">（Risk Premium, x）</span>上升。对任何给定的安全实际利率，企业借贷成本 r + x 上升 → 投资下降 → <strong>IS 左移</strong>（与 2.3 节财政紧缩同一张图）→ 通缩压力。央行的标准应对是降息对冲 x 的上升；在当时的美国，这至少意味着<strong>放慢加息步伐</strong>。</p>
+      <p>精彩之处在于：<strong>市场不等央行开会</strong>。产出和通胀不会当天崩溃（滞后存在），但交易员预期到冲击的后果与美联储的反应，提前交易：</p>
+      <ul>
+        <li><span class="term">盈亏平衡通胀率</span><span class="term-en">（Inflation Breakeven）</span>——从国债价格反推出的市场预期通胀——在冲击前因数据火热而攀升，冲击后应声暴跌约 30 个基点：人们预期经济收缩、通胀降温；</li>
+        <li><strong>加息预期崩塌</strong>：冲击前市场交易 3 月 22 日会议加息 50 个<span class="term">基点</span><span class="term-en">（Basis Point, bp）</span>的概率很大（隐含约 40+bp）；SVB 出事后预期直落到约 13bp——加 25bp 与不加息五五开，几天前还几乎没人相信会暂停；</li>
+        <li>更远期的利率路径整体改写：从"6 月见顶 5.3%、年内维持高位"变成"更早见顶、年内激进降息"。高通胀反而给了美联储降息空间——名义利率降到零，5% 的通胀意味着 −5% 的实际利率，本身就是强力刺激。</li>
+      </ul>
+
+      <div id="fig-svb-market"></div>
+      <p><strong>图 8 解读（市场抢跑）：</strong>横轴为 2023 年 3 月的日期，纵轴统一用基点（bp）。橙色线是市场交易的预期通胀（盈亏平衡通胀率），3 月 8 日尚在约 230bp 且随火热数据上行，SVB 出事后一周内跌到约 200bp；紫色线是市场对 3 月 22 日会议的加息预期，3 月 8 日高达 42bp（主流押注 50bp），3 月 13 日崩到 13bp。两条线同步跳水说明：<strong>市场理解了 x↑ → IS 左移 → 通缩压力 → 央行转鸽这条链</strong>，并抢在美联储之前完成了定价。</p>
+      <p>如果风波一周平息，宏观后果有限；但棘手的是第二轮效应：储户把钱从小银行、地区性银行搬去摩根大通等大银行——<span class="term">安全资产转移</span><span class="term-en">（Flight to Quality）</span>。而小银行承担了美国超过 50% 的工商业贷款和约 80% 的抵押贷款，它们失血意味着信贷供给收缩——<span class="term">信贷紧缩</span><span class="term-en">（Credit Crunch）</span>，x 可能在相当长时期维持高位。几天后瑞士信贷（Credit Suisse）股价暴跌 35%、其 CDS（信用违约互换）价格飙升，VIX 再度飙升——恐慌跨过大西洋，验证这远不是一家银行的故事。</p>
+
+      <h3>2.6 收尾对比：需求冲击 vs 供给冲击</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>需求冲击（如财政紧缩、x↑）</th><th>供给冲击（如石油危机，m↑）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>移动哪条曲线</strong></td><td>IS 左移（LM/利率线短期不动）</td><td>PC 左移（Y<sub>n</sub> 垂线左移，IS-LM 不动）</td></tr>
+          <tr><td><strong>短期</strong></td><td>Y↓ 跌破 Y<sub>n</sub>；通胀↓（通缩压力）</td><td>Y 暂未变；通胀↑——滞胀（Stagflation）</td></tr>
+          <tr><td><strong>中期</strong></td><td>Y 回到原 Y<sub>n</sub>；实际利率 r<sub>n</sub> 更低；通胀在低位重新稳定</td><td>Y 降到更低的新 Y<sub>n</sub>′（永久性损失）；r<sub>n</sub>′ 更高；通胀重新稳定</td></tr>
+          <tr><td><strong>央行应对</strong></td><td>降息，把 r̄ 降到新的更低 r<sub>n</sub>（可对冲冲击）</td><td>加息，追随更高的 r<sub>n</sub>′（只能承认更穷的现实，无法保产出）</td></tr>
+          <tr><td><strong>历史案例</strong></td><td>大萧条（叠加 ZLB 与通缩陷阱）、2023 SVB 信用冲击、赤字巩固</td><td>1970-80 年代石油危机、疫情后供应链冲击（美国混合型 vs 欧洲能源供给主导）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（政策冲击之后，经济随时间怎么走？通胀从哪来、到哪去？）→ 简化模型（央行定 r̄ 的水平 LM + 产出空间的 PC + 预期形成假设）→ 推导（Y−Y<sub>n</sub>=−L(u−u<sub>n</sub>) → π−π<sup>e</sup>=(α/L)(Y−Y<sub>n</sub>)；中期必回 Y<sub>n</sub> 与 r<sub>n</sub>）→ 实际应用（脱锚的沃尔克式衰退 vs 锚定的软着陆、大萧条通缩陷阱、财政紧缩与石油冲击两大实验、SVB 的市场抢跑）→ 局限性（Y<sub>n</sub>/r<sub>n</sub> 不可观测、漫长可变的滞后、预期只有两种极端——政策艺术正藏在模型留白处）。</p>
+
+      <!-- ==================== L18 知识清单 ==================== -->
+      <h2>三、L18 知识清单（Quiz 2 Review）</h2>
+
+      <h3>3.1 菲利普斯曲线三形式公式卡</h3>
+      <table>
+        <thead>
+          <tr><th>形式</th><th>公式</th><th>预期假设 / 用途</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>原始形式</td>
+            <td><strong>π<sub>t</sub> = π<sup>e</sup><sub>t</sub> + (m+z) − αu<sub>t</sub></strong></td>
+            <td>通用。通胀随预期通胀、加成 m、制度 z 上升，随失业率下降</td>
+          </tr>
+          <tr>
+            <td>加速主义形式</td>
+            <td><strong>π<sub>t</sub> − π<sub>t−1</sub> = (m+z) − αu<sub>t</sub></strong></td>
+            <td>脱锚（θ→1，π<sup>e</sup> = π<sub>t−1</sub>）。低失业 → 通胀持续<strong>加速</strong>，70 年代的现实</td>
+          </tr>
+          <tr>
+            <td>失业缺口形式</td>
+            <td><strong>π<sub>t</sub> − π<sup>e</sup><sub>t</sub> = −α(u<sub>t</sub> − u<sub>n</sub>)</strong>，其中 u<sub>n</sub> = (m+z)/α</td>
+            <td>本课主力。u &lt; u<sub>n</sub>（劳动力市场紧张）→ 通胀超预期</td>
+          </tr>
+          <tr>
+            <td>产出缺口形式（IS-LM-PC 用）</td>
+            <td><strong>π<sub>t</sub> − π<sup>e</sup><sub>t</sub> = (α/L)(Y<sub>t</sub> − Y<sub>n</sub>)</strong>，其中 Y−Y<sub>n</sub> = −L(u−u<sub>n</sub>)</td>
+            <td>把 PC 搬进 (Y, π) 空间与 IS-LM 拼接；正产出缺口 → 通胀超预期</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3.2 锚定 vs 脱锚判定表</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>锚定（Anchored）</th><th>脱锚（Unanchored）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>预期模型</td><td>π<sup>e</sup> = π̄（常数，如 2% 目标），θ ≈ 0</td><td>π<sup>e</sup> = π<sub>t−1</sub>（跟着上期通胀走），θ ≈ 1</td></tr>
+          <tr><td>PC 形态</td><td>(u, π) 空间稳定的向下倾斜曲线（60 年代、1996 年后）</td><td>通胀<strong>变化</strong>与失业相关：低失业 → 通胀加速（70 年代）</td></tr>
+          <tr><td>通胀超调后纠偏</td><td>只需 r̄ → r<sub>n</sub>、Y → Y<sub>n</sub>，通胀自动回目标（软着陆可行）</td><td>必须 r̄ &gt; r<sub>n</sub>、制造负产出缺口（衰退）才能降通胀</td></tr>
+          <tr><td>政策含义</td><td>央行信誉 = 低成本稳定器</td><td>稳定代价高昂；须"制造衰退来投资信誉"（沃尔克紧缩）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3.3 索洛模型平衡增长路径预告表</h3>
+      <p>L18 复习同时预告了增长模块（L13-L16）的核心结论。索洛模型（Solow Growth Model）以 Y = F(K, A·N) 建模，在<span class="term">平衡增长路径</span><span class="term-en">（Balanced Growth Path）</span>上各变量的增长率为：</p>
+      <table>
+        <thead>
+          <tr><th>变量</th><th>平衡增长路径上的增长率</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>人均有效产出 Y/(A·N)、人均有效资本 K/(A·N)</td><td><strong>0</strong></td><td>稳态：收支平衡投资 (δ+g<sub>A</sub>+g<sub>N</sub>)k 恰等于 s·f(k)</td></tr>
+          <tr><td>人均产出 Y/N、人均资本 K/N</td><td><strong>g<sub>A</sub></strong>（技术进步率）</td><td>长期人均增长<strong>完全</strong>由技术进步决定</td></tr>
+          <tr><td>总产出 Y、总资本 K</td><td><strong>g<sub>A</sub> + g<sub>N</sub></strong></td><td>总量 = 人均增长 + 人口增长 g<sub>N</sub></td></tr>
+          <tr><td>储蓄率 s、人口增长 g<sub>N</sub>、人力资本</td><td>只影响<strong>水平</strong>，不影响长期增长率</td><td>s↑ → 更高稳态与过渡期增长（亚洲奇迹），但长期增长率不变</td></tr>
+        </tbody>
+      </table>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/economics/mit-macro/07-is-lm-pc.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：双图系统·上 IS-LM —— r̄=3% 决定 Y=125 > Yn=100，自然利率 rn=4% =====
+    Charts.xy(document.getElementById('fig-islm-top'), {
+      xLabel: '产出 Y',
+      yLabel: '实际利率 r（%）',
+      xMax: 160, yMax: 8, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 1（双图系统·上）：IS-LM —— 央行钉住 r̄ = 3%，短期均衡 Y = 125 高于潜在产出 Yn = 100',
+      series: [
+        { points: [[0, 8], [160, 1.6]], type: 'linear', color: '#2563eb', label: 'IS：r = 8 − 0.04Y' },
+        { points: [[0, 3], [160, 3]], type: 'linear', color: '#0d9488', label: 'LM：央行钉住 r̄ = 3%（水平）' },
+        { points: [[100, 0], [100, 8]], type: 'linear', color: '#dc2626', dash: true, label: 'Yn = 100（潜在产出垂线）' },
+      ],
+      markers: [
+        { x: 125, y: 3, label: 'A（Y = 125, r = 3%）：短期均衡，过热', color: '#2563eb', legend: '短期均衡点', guides: true, gxLabel: 'Y = 125', gyLabel: 'r̄ = 3', labelDx: 12, labelDy: 20 },
+        { x: 100, y: 4, label: '（Yn = 100, rn = 4%）：自然利率', color: '#dc2626', legend: '自然利率 rn', guides: true, gyLabel: 'rn = 4', labelDx: 10, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图2：双图系统·下 PC —— 产出缺口→通胀变化，A 点通胀每期 +2% =====
+    Charts.xy(document.getElementById('fig-pc-bottom'), {
+      xLabel: '产出 Y',
+      yLabel: '通胀变化 π − π(t−1)（%）',
+      xMax: 160, yMin: -4, yMax: 4, xTicks: [], yTicks: [-4, -2, 0, 2, 4],
+      legendPosition: 'top',
+      caption: '图 2（双图系统·下）：产出空间的菲利普斯曲线 —— 正产出缺口 25 → 通胀每期加速 +2%',
+      series: [
+        { points: [[50, -4], [150, 4]], type: 'linear', color: '#d97706', label: 'PC：π − π(t−1) = 0.08(Y − 100)' },
+        { points: [[100, -4], [100, 4]], type: 'linear', color: '#dc2626', dash: true, label: 'Yn = 100（与上图同一条垂线）' },
+        { points: [[0, 0], [160, 0]], type: 'linear', color: '#6b7280', dash: true, label: '零线：π = π(t−1)（通胀不变），下方为通缩压力区' },
+      ],
+      markers: [
+        { x: 125, y: 2, label: 'A（Y = 125, +2%）：通胀每期加速 2 个百分点', color: '#d97706', legend: '短期均衡的通胀后果', guides: true, gxLabel: 'Y = 125', gyLabel: '+2', labelDx: -30, labelDy: -18 },
+      ],
+    });
+
+    // ===== 图3：脱锚 vs 锚定的纠偏代价 —— B 只回 Yn，C 须制造衰退 =====
+    Charts.xy(document.getElementById('fig-anchored'), {
+      xLabel: '产出 Y',
+      yLabel: '实际利率 r（%）',
+      xMax: 160, yMax: 8, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 3：纠偏代价对比 —— 锚定只需 B（r = rn = 4%），脱锚必须 C（r = 5.5% > rn，Y = 62.5 < Yn）',
+      series: [
+        { points: [[0, 8], [160, 1.6]], type: 'linear', color: '#2563eb', label: 'IS：r = 8 − 0.04Y' },
+        { points: [[100, 0], [100, 8]], type: 'linear', color: '#dc2626', dash: true, label: 'Yn = 100（潜在产出垂线）' },
+        { points: [[0, 3], [160, 3]], type: 'linear', color: '#6b7280', dash: true, label: 'r̄ = 3%（过热时的政策利率）' },
+        { points: [[0, 4], [160, 4]], type: 'linear', color: '#0d9488', label: 'rn = 4%（自然利率，锚定只需加到这里）' },
+        { points: [[0, 5.5], [160, 5.5]], type: 'linear', color: '#7c3aed', label: 'r̄′ = 5.5%（脱锚：须高于 rn 制造衰退）' },
+      ],
+      markers: [
+        { x: 125, y: 3, label: 'A（125, 3%）：通胀已超调', color: '#2563eb', legend: '路径节点', guides: true, gxLabel: '125', gyLabel: '3', labelDx: 12, labelDy: 20 },
+        { x: 100, y: 4, label: 'B（100, 4%）：锚定——只回 Yn，通胀自动回落', color: '#0d9488', labelDx: 10, labelDy: 20 },
+        { x: 62.5, y: 5.5, label: 'C（62.5, 5.5%）：脱锚——人为衰退', color: '#7c3aed', legend: '脱锚的衰退代价', guides: true, gxLabel: '62.5', gyLabel: '5.5', labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图4：大萧条通缩陷阱 —— 名义利率降、实际利率反升、失业率飙 =====
+    Charts.xy(document.getElementById('fig-depression'), {
+      xLabel: '年份',
+      yLabel: '百分比（%）',
+      xMin: 1929, xMax: 1933, yMin: -12, yMax: 28,
+      xTicks: [{ v: 1929, label: '1929' }, { v: 1930, label: '1930' }, { v: 1931, label: '1931' }, { v: 1932, label: '1932' }, { v: 1933, label: '1933' }],
+      yTicks: [-10, 0, 10, 20],
+      legendPosition: 'top',
+      caption: '图 4：大萧条通缩陷阱 —— 名义利率 5%→1.5%，实际利率反而 5%→12%，失业率飙至约 25%',
+      series: [
+        { points: [[1929, 5], [1930, 4], [1931, 3], [1932, 2], [1933, 1.5]], type: 'spline', color: '#6b7280', label: '名义利率 i' },
+        { points: [[1929, 0], [1930, -2.5], [1931, -9], [1932, -10], [1933, -5]], type: 'spline', color: '#dc2626', label: '通胀 π（1930 年转入通缩）' },
+        { points: [[1929, 5], [1930, 6.5], [1931, 12], [1932, 12], [1933, 6.5]], type: 'spline', color: '#7c3aed', label: '实际利率 r = i − π（不降反升）' },
+        { points: [[1929, 3], [1930, 9], [1931, 16], [1932, 24], [1933, 25]], type: 'spline', color: '#2563eb', label: '失业率 u' },
+      ],
+      markers: [
+        { x: 1930, y: 6.5, label: '1930：i = 4%、π = −2.5% → r = 6.5%', color: '#7c3aed', legend: '关键点', guides: true, gyLabel: '6.5', labelDx: -20, labelDy: -18 },
+        { x: 1932, y: -10, label: '通缩最深 −10%', color: '#dc2626', labelDx: -30, labelDy: 22 },
+        { x: 1933, y: 25, label: '失业率逼近 25%', color: '#2563eb', labelDx: -140, labelDy: -12 },
+      ],
+    });
+
+    // ===== 图5：需求冲击·上 IS-LM —— 财政紧缩 IS 左移，中期央行降息 Y 回 Yn、r 更低 =====
+    Charts.xy(document.getElementById('fig-demand-islm'), {
+      xLabel: '产出 Y',
+      yLabel: '实际利率 r（%）',
+      xMax: 160, yMax: 8, xTicks: [], yTicks: [],
+      legendPosition: 'top',
+      caption: '图 5（需求冲击·上）：财政紧缩 IS 左移 —— 短期 B（50, 4%）衰退，中期 C（100, 2%）产出复原、利率更低',
+      series: [
+        { points: [[0, 8], [160, 1.6]], type: 'linear', color: '#2563eb', label: 'IS：r = 8 − 0.04Y（紧缩前）' },
+        { points: [[0, 6], [150, 0]], type: 'linear', color: '#dc2626', label: "IS′：r = 6 − 0.04Y（财政紧缩左移）" },
+        { points: [[100, 0], [100, 8]], type: 'linear', color: '#6b7280', dash: true, label: 'Yn = 100（潜在产出不变）' },
+        { points: [[0, 4], [160, 4]], type: 'linear', color: '#0d9488', label: 'r̄ = 4%（短期央行不动）' },
+        { points: [[0, 2], [160, 2]], type: 'linear', color: '#7c3aed', label: "r̄′ = 2%（中期央行降息，新 rn）" },
+      ],
+      markers: [
+        { x: 100, y: 4, label: 'A（100, 4%）：原中期均衡', color: '#2563eb', legend: '均衡路径 A→B→C', guides: true, gxLabel: 'Yn = 100', gyLabel: '4', labelDx: 10, labelDy: -14 },
+        { x: 50, y: 4, label: 'B（50, 4%）：短期衰退', color: '#dc2626', guides: true, gxLabel: '50', labelDx: 12, labelDy: 20 },
+        { x: 100, y: 2, label: 'C（100, 2%）：中期 Y 回 Yn，r 更低', color: '#7c3aed', guides: true, gyLabel: '2', labelDx: 10, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图6：需求冲击·下 PC —— B 点通缩压力 −4%，中期回 C =====
+    Charts.xy(document.getElementById('fig-demand-pc'), {
+      xLabel: '产出 Y',
+      yLabel: '通胀变化 π − π(t−1)（%）',
+      xMax: 160, yMin: -6, yMax: 4, xTicks: [], yTicks: [-6, -4, -2, 0, 2, 4],
+      legendPosition: 'top',
+      caption: '图 6（需求冲击·下）：PC 视角 —— B（50, −4%）通缩压力触发央行降息，中期回 C（100, 0）',
+      series: [
+        { points: [[25, -6], [150, 4]], type: 'linear', color: '#d97706', label: 'PC：π − π(t−1) = 0.08(Y − 100)' },
+        { points: [[100, -6], [100, 4]], type: 'linear', color: '#6b7280', dash: true, label: 'Yn = 100 垂线' },
+        { points: [[0, 0], [160, 0]], type: 'linear', color: '#9ca3af', dash: true, label: '零线：π = π(t−1)' },
+      ],
+      markers: [
+        { x: 100, y: 0, label: 'A = C（100, 0）：起点与中期终点重合', color: '#2563eb', legend: '均衡路径 A→B→C', guides: true, gxLabel: 'Yn = 100', labelDx: 10, labelDy: -14 },
+        { x: 50, y: -4, label: 'B（50, −4%）：通胀每期降 4 个百分点', color: '#dc2626', guides: true, gxLabel: '50', gyLabel: '−4', labelDx: 12, labelDy: -14 },
+      ],
+    });
+
+    // ===== 图7：供给冲击 —— m↑ 使 Yn 左移、PC 左移，短期滞胀 B，中期 C 产出永久更低 =====
+    Charts.xy(document.getElementById('fig-supply-pc'), {
+      xLabel: '产出 Y',
+      yLabel: '通胀变化 π − π(t−1)（%）',
+      xMax: 160, yMin: -3, yMax: 4, xTicks: [], yTicks: [-2, 0, 2, 4],
+      legendPosition: 'top',
+      caption: '图 7：供给冲击（加成 m↑）—— Yn 100→80，PC 左移，短期 B 滞胀（+1.6%），中期 C（80, 0）',
+      series: [
+        { points: [[62.5, -3], [150, 4]], type: 'linear', color: '#9ca3af', dash: true, label: '原 PC：0.08(Y − 100)' },
+        { points: [[42.5, -3], [130, 4]], type: 'linear', color: '#d97706', label: "PC′：0.08(Y − 80)（m↑ 后左移）" },
+        { points: [[100, -3], [100, 4]], type: 'linear', color: '#9ca3af', dash: true, label: '原 Yn = 100 垂线' },
+        { points: [[80, -3], [80, 4]], type: 'linear', color: '#dc2626', dash: true, label: "新 Yn′ = 80 垂线（un↑ → Yn↓）" },
+        { points: [[0, 0], [160, 0]], type: 'linear', color: '#d1d5db', dash: true, label: '零线：π = π(t−1)' },
+      ],
+      markers: [
+        { x: 100, y: 0, label: 'A（100, 0）：冲击前均衡', color: '#2563eb', legend: '均衡路径 A→B→C', guides: true, gxLabel: '100', labelDx: 10, labelDy: 20 },
+        { x: 100, y: 1.6, label: 'B（100, +1.6%）：滞胀——产出未变、通胀加速', color: '#d97706', guides: true, gyLabel: '+1.6', labelDx: 10, labelDy: -14 },
+        { x: 80, y: 0, label: "C（80, 0）：中期——产出永久更低", color: '#dc2626', guides: true, gxLabel: "80", labelDx: -170, labelDy: 22 },
+      ],
+    });
+
+    // ===== 图8：SVB 市场抢跑 —— 盈亏平衡通胀率与加息预期同步跳水 =====
+    Charts.xy(document.getElementById('fig-svb-market'), {
+      xLabel: '2023 年 3 月',
+      yLabel: '基点（bp）',
+      xMin: 6, xMax: 15, yMax: 260,
+      xTicks: [{ v: 6, label: '3/6' }, { v: 8, label: '3/8' }, { v: 10, label: '3/10' }, { v: 13, label: '3/13' }, { v: 15, label: '3/15' }],
+      yTicks: [0, 50, 100, 150, 200, 250],
+      legendPosition: 'top',
+      caption: '图 8：SVB 冲击后市场抢跑 —— 加息预期 42bp→13bp，盈亏平衡通胀率约 230bp→200bp',
+      series: [
+        { points: [[6, 228], [7, 230], [8, 232], [9, 225], [10, 212], [13, 200], [15, 198]], type: 'spline', color: '#d97706', label: '盈亏平衡通胀率（市场预期通胀）' },
+        { points: [[6, 30], [7, 36], [8, 42], [9, 40], [10, 20], [13, 13], [15, 13]], type: 'spline', color: '#7c3aed', label: '3 月 22 日会议加息预期（隐含 bp）' },
+      ],
+      markers: [
+        { x: 8, y: 42, label: '冲击前 42bp（主流押注 50bp）', color: '#7c3aed', legend: '关键点', guides: true, gyLabel: '42', labelDx: -40, labelDy: -16 },
+        { x: 13, y: 13, label: '冲击后 13bp（加息与否五五开）', color: '#dc2626', guides: true, gyLabel: '13', labelDx: 10, labelDy: 20 },
+        { x: 13, y: 200, label: '盈亏平衡通胀率暴跌约 30bp', color: '#d97706', guides: true, gyLabel: '200', labelDx: -60, labelDy: 24 },
+      ],
+    });
+  </script>
+</body>
+</html>
