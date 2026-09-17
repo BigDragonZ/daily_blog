@@ -78,6 +78,12 @@ const MENU = [
           { title: '01 会计基础与四大报表', link: 'pages/accounting/financial-accounting/01-basics-and-statements.html' },
         ],
       },
+      {
+        title: '管理会计',
+        children: [
+          { title: '01 导论：管理会计 vs 财务会计 + 成本分类', link: 'pages/accounting/managerial-accounting/01-intro-and-cost-classification.html' },
+        ],
+      },
     ],
   },
 ];

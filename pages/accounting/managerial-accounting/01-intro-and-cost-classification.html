@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 导论：管理会计 vs 财务会计 + 成本分类 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>01 导论：管理会计 vs 财务会计 + 成本分类</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）开篇三讲：MA1 管理会计基础、MA2 分类练习、MA3 成本分类例题（外加课程导览）。这门课也叫成本会计（Cost Accounting）或会计学原理 II，与上一门《财务会计》构成完整学年序列——讲师把章节连续编号：财务会计 Ch1–Ch12，管理会计 <strong>Ch13–Ch25</strong>。其中 Ch13（现金流量表）与 Ch14（报表分析）两门课都讲得通，本课程放在 P02–P04，整页标注【与财务会计重叠】。讲师的风格是<strong>解题导向</strong>：概念从简，大量刷题，例题可在其网站下载。本篇解决两件事：看清管理会计与财务会计的分工，以及学会给成本分类——成本是本课前半段的核心概念。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、管理会计 vs 财务会计</h2>
+
+      <h3>1.1 引入：没有投资者、没有贷款，为什么还要编财务报表？</h3>
+      <p><strong>反直觉开场：</strong>讲师自问自答——"我经营自己的网站和 YouTube 频道，没有外部投资者，也不需要为自己编报表；假如我一分钱的债都没有，连银行也不需要看我的报表。那我为什么还要编财务报表？"答案是：<strong>政府</strong>。即使没有投资者和贷款人，政府也要据此征税。所以<span class="term">财务会计</span><span class="term-en">（Financial Accounting, FA）</span>的存在理由是为<strong>外部人士</strong>服务：投资者、贷款人、政府，他们据此做出"<strong>关于</strong>公司"的决策——买不买股票、放不放贷款、征多少税。</p>
+      <p>但另一面立刻浮现：假如你是温哥华市中心一家苹果店的经理，某天你想把 iPad 陈列区从店的后部移到前部——翻开公司年报，对此<strong>一点用都没有</strong>。你需要的是调整前后该店 iPad 与耳机的销量对比，据此判断这是个好决策还是坏决策。这是"<strong>为了</strong>公司"的决策，服务它的就是<span class="term">管理会计</span><span class="term-en">（Managerial Accounting, MA）</span>。而且管理会计的理念全球通用，不受 GAAP/IFRS 属地约束。</p>
+
+      <h3>1.2 六维对比：一张表说清 FA 与 MA</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>财务会计（FA）</th><th>管理会计（MA）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>使用者</td><td><strong>外部人士</strong>：投资者、贷款人、政府</td><td><strong>内部人士</strong>：各级管理者</td></tr>
+          <tr><td>决策类型</td><td>"<strong>关于</strong>"公司（投资/放贷/征税）</td><td>"<strong>为了</strong>"公司（陈列调整、定价、编制预算）</td></tr>
+          <tr><td>报告范围</td><td><strong>整个公司</strong>（苹果公司总利润）</td><td><strong>局部细分</strong>（温哥华某店的 iPad Pro 销量）</td></tr>
+          <tr><td>规则约束</td><td><strong>强制</strong>：GAAP / IFRS / SEC，保护外部人</td><td><strong>灵活可选</strong>：追踪什么、怎么算，公司自定</td></tr>
+          <tr><td>时间焦点</td><td><strong>历史</strong>导向：报告已发生的事</td><td><strong>未来</strong>导向：计划、预算、预测（也用历史数据）</td></tr>
+          <tr><td>报告速度</td><td><strong>慢</strong>：期末后数周至数月，需审计</td><td><strong>快</strong>：管理者要实时数据支持决策</td></tr>
+        </tbody>
+      </table>
+      <p>这张表就是本节的骨架，也是收尾对比——记住它，MA 与 FA 的判断题都是送分题。</p>
+
+      <h3>1.3 分类练习（MA2）：五个活动归哪边？</h3>
+      <p>用六个维度实战五道题——</p>
+      <ol>
+        <li><strong>编制人员配置预算</strong>（staffing budget）→ <strong>MA</strong>。买苹果股票的人不关心某家店下周二谁上班，这是局部、未来、内部信息；</li>
+        <li><strong>编制现金流量表</strong> → <strong>FA</strong>。外部投资者当然关心公司现金流；</li>
+        <li><strong>编制年末调整分录</strong> → <strong>FA</strong>。分录服务于对外财务报表；</li>
+        <li><strong>为未来合同准备投标</strong> → <strong>MA</strong>。投标面向尚未发生、可能发生也可能不发生的事——财务会计只记录已发生的；</li>
+        <li><strong>在年报中撰写"管理层讨论与分析"</strong>（Management Discussion and Analysis, MD&amp;A）→ <strong>FA</strong>。<strong>陷阱题</strong>：别被"管理层"三个字骗了——年报整体是给外部人看的，内部人反而不用年报。</li>
+      </ol>
+
+      <h3>1.4 课程地图：从 FA 到 MA</h3>
+      <p>讲师的两门课共用连续章节号：<strong>财务会计 Ch1–Ch12</strong>（导论、记录交易、调整分录与会计循环、货币时间价值、商业活动、现金与内控、存货 LIFO/FIFO、应收与坏账、长期资产、流动负债、长期负债与债券、股权）→ <strong>管理会计 Ch13–Ch25</strong>。Ch13 现金流量表与 Ch14 财务报表分析是两课之间的过渡带（本课程 P02–P04 处理，与财务会计内容重叠处会锚链回去）；Ch15 起进入管理会计核心：分批/分步成本法、作业成本法、本量利分析、预算、标准成本与差异、资本预算、相关成本决策——对应本站 P05–P15。成本（Cost）是前半段的主角：看似简单，实则相当复杂，下一节就开箱。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、成本分类</h2>
+
+      <h3>2.1 引入：同一条装配线的折旧，是成本还是不是成本？</h3>
+      <p><strong>反直觉开场：</strong>同一条装配线的折旧——如果你问"多生产一件卡车的代价是什么"，它是<strong>无关</strong>的（不多花一分钱）；如果你问"今年赚没赚钱"，它又是<strong>关键</strong>成本。同一笔成本，答案取决于你问什么问题。所以成本分类不是贴标签游戏，而是<strong>先明确问题，再选择分类维度</strong>。管理会计常用的三个问题是：随业务量变吗？进存货吗？能直接追溯到产品吗？</p>
+
+      <h3>2.2 三个问题，三套分类</h3>
+      <ul>
+        <li><strong>问题一：随业务量变动吗？</strong>→ <span class="term">变动成本</span><span class="term-en">（Variable Cost, VC）</span>（产量增减它等比增减，如材料）/ <span class="term">固定成本</span><span class="term-en">（Fixed Cost, FC）</span>（不动，如工厂房产税 $10,000/年）/ <span class="term">混合成本</span><span class="term-en">（Mixed Cost）</span>（有基数又增长，如电费，P09 专讲拆解）；</li>
+        <li><strong>问题二：发生在工厂里吗（进存货吗）？</strong>→ <span class="term">产品成本</span><span class="term-en">（Product Cost）</span>先计入存货（资产），卖出时才变费用（COGS）；<span class="term">期间成本</span><span class="term-en">（Period Cost）</span>当期直接费用化，再细分销售/管理/研发；</li>
+        <li><strong>问题三：能直接追溯到产品吗？</strong>（仅对产品成本继续追问）→ <span class="term">直接材料</span><span class="term-en">（Direct Materials, DM）</span> / <span class="term">直接人工</span><span class="term-en">（Direct Labor, DL）</span> / <span class="term">制造费用</span><span class="term-en">（Manufacturing Overhead, MOH）</span>。</li>
+      </ul>
+      <div id="fig-costtree"></div>
+      <p><strong>图 1 解读：</strong>这是后两个问题的分类树，也是讲师整节课反复使用的判断问句——<strong>"Did it happen in the factory?"（这事发生在工厂里吗？）</strong>工厂内 → 产品成本，再按可追溯性分 DM/DL/MOH；工厂外 → 期间成本，按用途分销售/管理/研发。产品成本的<strong>优点</strong>是与存货计价、利润确认无缝衔接（P05 展开 COGM/COGS 流转）；<strong>缺点</strong>是 MOH 是个"杂物桶"，间接成本归集的粗糙会造成成本扭曲（P08 作业成本法要解决的就是它）。</p>
+
+      <h3>2.3 判断口诀与汉堡小例</h3>
+      <ul>
+        <li><strong>salary（固定月薪）→ 默认固定成本；wages（一线计时工资）→ 默认变动成本。</strong>讲师承认实务中有争议，但入门课标准答案如此；</li>
+        <li><strong>直接人工的关键是"手直接接触产品"</strong>（hands on the product）：工厂主管也是人工，但不亲手做产品 → 间接人工 → 归 MOH，不是 DL；</li>
+        <li><strong>间接材料不是 DM</strong>：清洁用品是材料但不进入产品实体 → MOH；</li>
+        <li><strong>运费永远是销售费用</strong>（销货运费，发给客户）——"你会反复看到这一条"；</li>
+        <li><strong>汉堡小例</strong>：肉 $1 + 芝士 $0.25 = 变动 DM $1.25/个；厨师时薪 $20、做一个汉堡 6 分钟（0.1 小时）→ DL $2/个。一个汉堡的直接成本约 $3.25，其余成本（房租、收银、经理）都不直接进汉堡。</li>
+      </ul>
+
+      <h3>2.4 分类实战（MA3）：Big Rig Trucks 重卡制造</h3>
+      <p>例题 Problem 12A：重卡制造商 Big Rig Trucks 的 8 项成本，逐项三重分类（变动/固定 → 产品/期间 → 细分）。先自己归类，再对照下表：</p>
+      <table>
+        <thead>
+          <tr><th>成本项目</th><th>变动/固定</th><th>产品/期间</th><th>细分</th><th>判断要点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>卡车车身用铝（Aluminum）</td><td>变动</td><td>产品</td><td><strong>DM</strong></td><td>产量增减铝用量等比增减，直接进入产品实体</td></tr>
+          <tr><td>工厂主管薪资（$80,000/年）</td><td>固定</td><td>产品</td><td><strong>MOH</strong></td><td>salary 默认固定；在工厂但不"亲手"碰产品 → 间接人工</td></tr>
+          <tr><td>公司总裁薪资</td><td>固定</td><td>期间</td><td>管理费用</td><td>总裁在办公室，不在工厂</td></tr>
+          <tr><td>日常清洁用品</td><td>固定</td><td>产品</td><td><strong>MOH</strong></td><td>每天打扫一次与产量无关；默认<strong>工厂</strong>清洁（若办公室则归管理）；不进产品实体 → 间接材料</td></tr>
+          <tr><td>造发动机工人的计件工资</td><td>变动</td><td>产品</td><td><strong>DL</strong></td><td>wages 默认变动；手直接接触产品</td></tr>
+          <tr><td>专利律师费</td><td>固定</td><td>期间</td><td>研发费用</td><td>反直觉：像法律费用，但专利对应新产品线 → R&amp;D</td></tr>
+          <tr><td>会计服务费</td><td>固定</td><td>期间</td><td>管理费用</td><td>会计不造卡车</td></tr>
+          <tr><td>向客户发货的运费</td><td>变动</td><td>期间</td><td>销售费用</td><td>多造多送近似正比；运费永远归销售</td></tr>
+        </tbody>
+      </table>
+      <div class="callout warn">
+        <strong>资料质量提示：</strong>本例（MA3）的原始讲义是未精修的 YouTube 字幕碎片（逐句重复），本页内容已按其他讲次的精修风格提炼重写，分类结论与讲师口径一致。
+      </div>
+
+      <h3>2.5 收尾：两个组合成本</h3>
+      <p>三要素有两种常用打包方式，直接人工是两者的交集：</p>
+      <table>
+        <thead>
+          <tr><th>产品成本要素</th><th>主要成本（Prime Cost）= DM + DL</th><th>加工成本（Conversion Cost）= DL + MOH</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直接材料（DM）</td><td>✓</td><td>—</td></tr>
+          <tr><td>直接人工（DL）</td><td>✓</td><td>✓</td></tr>
+          <tr><td>制造费用（MOH）</td><td>—</td><td>✓</td></tr>
+          <tr><td>含义</td><td>"直接"投入产品的成本合计</td><td>把材料"转化"为产成品的成本合计</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（内部决策需要什么样的会计信息？成本该怎么归类？）→ 简化模型（FA/MA 六维分野；成本三问：变吗？进存货吗？可追溯吗？）→ 推导（工厂内→产品成本→DM/DL/MOH；工厂外→期间成本→销售/管理/研发；Prime 与 Conversion 的交集是 DL）→ 实际应用（MA2 五活动归类、Big Rig 八项成本实战）→ 局限性（salary/wages 口诀是入门简化；MOH 杂物桶会扭曲成本，P08 的 ABC 来修；分类永远服务于特定问题，没有"唯一正确"的标签）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/01-intro-and-cost-classification.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：成本分类决策树 —— 先问"发生在工厂里吗"，产品成本再分 DM/DL/MOH =====
+    Charts.tree(document.getElementById('fig-costtree'), {
+      width: 760,
+      layers: [
+        [{ id: 'q', label: '一项成本：它发生在工厂里吗？', width: 300, fill: '#f8fafc' }],
+        [
+          { id: 'prod', label: '产品成本（工厂内）→ 先入存货', color: '#1d4ed8', width: 260 },
+          { id: 'per', label: '期间成本（工厂外）→ 当期费用', color: '#b45309', fill: '#fff7ed', width: 260 },
+        ],
+        [
+          { id: 'dm', label: '直接材料 DM', color: '#1d4ed8', width: 110 },
+          { id: 'dl', label: '直接人工 DL', color: '#1d4ed8', width: 110 },
+          { id: 'moh', label: '制造费用 MOH', color: '#1d4ed8', width: 110 },
+          { id: 'sell', label: '销售费用', color: '#b45309', fill: '#fff7ed', width: 110 },
+          { id: 'adm', label: '管理费用', color: '#b45309', fill: '#fff7ed', width: 110 },
+          { id: 'rnd', label: '研发费用', color: '#b45309', fill: '#fff7ed', width: 110 },
+        ],
+      ],
+      edges: [
+        { from: 'q', to: 'prod', color: '#1d4ed8', label: '是 → 售出时才变费用(COGS)', labelDx: -108 },
+        { from: 'q', to: 'per', color: '#b45309', label: '否 → 当期直接费用化', labelDx: 104 },
+        { from: 'prod', to: 'dm', color: '#1d4ed8' },
+        { from: 'prod', to: 'dl', color: '#1d4ed8' },
+        { from: 'prod', to: 'moh', color: '#1d4ed8' },
+        { from: 'per', to: 'sell', color: '#b45309' },
+        { from: 'per', to: 'adm', color: '#b45309' },
+        { from: 'per', to: 'rnd', color: '#b45309' },
+      ],
+      caption: '图 1：成本分类决策树——先按"工厂内/外"分产品成本与期间成本，产品成本再按可追溯性分 DM/DL/MOH，期间成本按用途分销售/管理/研发',
+      legend: [
+        { label: '产品成本（= DM + DL + MOH）', color: '#1d4ed8', style: 'dot' },
+        { label: '期间成本（销售/管理/研发）', color: '#b45309', style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>
