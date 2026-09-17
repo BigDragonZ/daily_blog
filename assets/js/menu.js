@@ -63,6 +63,17 @@ const MENU = [
       },
     ],
   },
+  {
+    title: '会计学',
+    children: [
+      {
+        title: '财务会计基础',
+        children: [
+          { title: '01 为什么学会计：三大报表全景', link: 'pages/accounting/accounting-101/01-why-accounting.html' },
+        ],
+      },
+    ],
+  },
 ];
 
 /** 找到节点的第一个叶子页面 link */

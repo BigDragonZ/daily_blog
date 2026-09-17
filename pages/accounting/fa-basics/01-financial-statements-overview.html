@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 为什么学会计：三大报表全景 - 财务会计基础 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>01 为什么学会计：三大报表全景</h1>
+      <p>本篇覆盖 Accounting 101《财务会计基础》的课程宣言（A Preview）与第 1 讲（Session 1: The Financial Statements - An Overview）。你已经学完曼昆经济学原理与 MIT 微观、宏观经济学，对"机会成本""均衡""边际分析"耳熟能详——但从这一页开始，我们换一副眼镜：不再问"应该怎样"，而是问"账上记了什么"。好消息是，讲师 Damodaran（纽约大学估值大师）开宗明义：<strong>"我不是会计师，从来都不是，未来也不打算成为会计师。"</strong>一堂估值大师亲授的会计课，为什么反而以"反会计"开场？</p>
+
+      <!-- ==================== Preview 并入 ==================== -->
+      <h2>一、课程宣言：只学"够用的会计"</h2>
+      <p><strong>反直觉开场：</strong>通常我们会以为，越是大师开的课越应该"正宗""完整"。Damodaran 却反其道而行——他甚至说自己最好的朋友说"我的朋友是会计师"都是在撒谎，并且预告自己会在课上<strong>说会计的"坏话"、走捷径</strong>。他的理由非常务实：</p>
+      <ul>
+        <li>公司金融（Corporate Finance）与估值（Valuation）所需的<strong>原材料</strong>几乎全部来自会计报表，所以完全不懂会计寸步难行；</li>
+        <li>但一门完整的会计课程里，大部分内容（借方/贷方规则、分录技术细节）在金融与估值的语境下<strong>无关紧要或根本用不上</strong>；</li>
+        <li>因此这门课的目标是务实的：<strong>学会读报表，而不是学会做报表</strong>。用他的话说——"我只懂足够的会计知识（I know just enough accounting to get by）"，学完你也一样。</li>
+      </ul>
+      <p>课程路线图也由此确定：不陷入<span class="term">借方/贷方</span><span class="term-en">（Debit / Credit）</span>规则的泥潭，而是依次概览三张财务报表——<strong>利润表 → 资产负债表 → 现金流量表</strong>，每张表都问两件事：会计师试图衡量什么？他们做得好不好？最后再讲财务比率（Financial Ratios），但带一个转折：<strong>比率少即是多</strong>，五十个比率的表格不是信息而是噪音。如果你是会计纯粹主义者，讲师的原话是：请不要看这门课，它会让你感到恐惧。</p>
+
+      <!-- ==================== 会计的三重角色 ==================== -->
+      <h2>二、会计的三重角色：历史学家，而非预言家</h2>
+      <p>从外部使用者的视角，Damodaran 认为会计扮演的角色有三个（他特意说明：许多会计师可能并不同意这个清单）：</p>
+      <ol>
+        <li><span class="term">核实交易</span><span class="term-en">（Verify）</span>：确保被记录的交易真实发生过，不是凭空捏造；</li>
+        <li><span class="term">一致记录</span><span class="term-en">（Record）</span>：以一致的方式记录这些交易，使得不同年份、不同公司的账可以相互比较；</li>
+        <li><span class="term">可理解报告</span><span class="term-en">（Report）</span>：以我们能理解的方式把这些交易报告出来。</li>
+      </ol>
+      <div id="fig-roles"></div>
+      <p>注意这个清单里<strong>没有</strong>"预测未来"和"为资产估值"。Damodaran 的定性非常直白：<strong>会计师是历史学家（Historians）</strong>——他们的工作是记录已经发生的事情，而不是预言将要发生什么。这与他估值大师的身份形成鲜明对比：估值完全是面向未来的游戏，而会计完全是面向过去的记录。理解这一分工，是后面一切"会计批判"的出发点。这里埋一个伏笔：近年来兴起的<span class="term">公允价值会计</span><span class="term-en">（Fair Value Accounting）</span>正在迫使会计师去评估资产当前值多少钱——也就是去做"历史学家不该做的事"，由此产生的张力将在 S3（资产负债表）与 S5（会计不一致性）中展开。</p>
+
+      <!-- ==================== 三问与三表 ==================== -->
+      <h2>三、三个核心问题，驱动三张报表</h2>
+      <p>既然会计师是历史学家，那么我们读报表时到底想知道什么？Damodaran 说，面对任何企业——无论规模大小、上市与否——他都只需要三个问题的答案：</p>
+      <ol>
+        <li><strong>你拥有什么？</strong>企业的资产是什么？何时购入？现在价值几何？</li>
+        <li><strong>你亏欠什么？</strong>企业欠了多少钱？借了多少债？</li>
+        <li><strong>你去年赚了多少钱？</strong>这是一家赚钱的企业、亏钱的企业，还是仅仅在维持现状？</li>
+      </ol>
+      <p>这三个问题看似简单，却至关重要——而会计师正是通过三份主要的<span class="term">财务报表</span><span class="term-en">（Financial Statements）</span>来传达答案。三者与问题的对应关系，以及各自的盲区，汇总如下：</p>
+      <table>
+        <thead>
+          <tr><th>核心问题</th><th>对应报表</th><th>它回答什么</th><th>它答不好什么</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>你拥有什么？<br>你亏欠什么？</td>
+            <td><span class="term">资产负债表</span><span class="term-en">（Balance Sheet, BS）</span></td>
+            <td>特定<strong>时点</strong>上公司拥有的资产、欠下的负债，以及倒挤出的股东权益价值</td>
+            <td>资产"现在值多少钱"——账面多按历史成本记录，与当前价值可能相差甚远（S3 展开）</td>
+          </tr>
+          <tr>
+            <td>你去年赚了多少钱？</td>
+            <td><span class="term">利润表</span><span class="term-en">（Income Statement, IS）</span></td>
+            <td>一段<strong>期间</strong>内的销售额、成本，以及按会计口径算出的盈利</td>
+            <td>"赚钱"是否等于"收到现金"——会计盈利可以被规则腾挪（S2/S5 展开）</td>
+          </tr>
+          <tr>
+            <td>现金到底多了还是少了？<br>（"赚钱"问题的交叉验证）</td>
+            <td><span class="term">现金流量表</span><span class="term-en">（Statement of Cash Flows, CF）</span></td>
+            <td>一年中现金余额为何变化、变化多少：现金从哪流入、向哪流出</td>
+            <td>不直接告诉你盈利能力——有现金流入不等于有利润（如发债筹来的钱）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>这个映射表值得记住：三张表不是三选一，而是<strong>同一家公司的三个互补视角</strong>。要全面理解一家公司，必须三表同读，并寻找它们之间的联系——这正是第七节的主题。</p>
+
+      <!-- ==================== 资产负债表 ==================== -->
+      <h2>四、资产负债表（Balance Sheet, BS）：时点快照</h2>
+      <p>资产负债表回答"你拥有什么、你亏欠什么"。它是一份<strong>时点快照</strong>：记录公司在某一特定时点（如 12 月 31 日）所拥有和所亏欠的一切。它分为左右（或上下）两块：资产端与"负债 + 权益"端。</p>
+      <h3>4.1 资产端：四类资产</h3>
+      <ul>
+        <li><span class="term">固定资产</span><span class="term-en">（Fixed Assets）</span>：通常指有形资产——土地、建筑、设备、机器，使用寿命长达数年；</li>
+        <li><span class="term">流动资产</span><span class="term-en">（Current Assets）</span>：寿命较短（通常少于一年）的资产——存货、应收账款、现金；</li>
+        <li><span class="term">金融资产</span><span class="term-en">（Financial Assets）</span>：公司在其他公司的投资，如持有的股票或债券；</li>
+        <li><span class="term">无形资产</span><span class="term-en">（Intangible Assets）</span>：非会计专业人士会想到品牌、技术——但请注意，<strong>会计上对无形资产的定义与你的直觉可能大相径庭</strong>，这是 S3 的重头戏。</li>
+      </ul>
+      <h3>4.2 负债与权益端：三类负债 + 一个"轧差项"</h3>
+      <ul>
+        <li><span class="term">流动负债</span><span class="term-en">（Current Liabilities）</span>：一年内需偿还的债务，如应付账款、供应商信贷和即将到期的短期债务；</li>
+        <li><span class="term">长期负债</span><span class="term-en">（Long-term Debt）</span>：形式可以是银行贷款或公司债券；</li>
+        <li><span class="term">其他负债</span><span class="term-en">（Other Liabilities）</span>：会计师担心的潜在负债，如养老金义务、医疗保健义务，具体内容因地区而异；</li>
+        <li><span class="term">股东权益</span><span class="term-en">（Equity / Shareholders' Equity）</span>：在资产负债表中，权益是一个<strong>"补充"项目（轧差项）</strong>——它等于总资产减去非股权负债后的差额。</li>
+      </ul>
+      <p style="text-align:center;"><strong>股东权益（Equity） = 总资产 − 非股权负债</strong></p>
+      <p>"轧差项"三个字值得停顿一秒：会计师<strong>并不独立测量</strong>权益值多少钱，而是用资产减去负债"倒挤"出来。这意味着资产或负债的记账口径一旦扭曲（比如品牌没入表、或资产按几十年前的成本计价），权益数字会原封不动地继承全部误差。这为 S3 的"账面权益 vs 市值"大讨论埋下了引线。</p>
+
+      <!-- ==================== 利润表 ==================== -->
+      <h2>五、利润表（Income Statement, IS）：期间流量与五级阶梯</h2>
+      <p>利润表回答"你去年赚了多少钱"——注意它的答案是基于<strong>会计对"赚钱"的定义</strong>，即会计盈利。与资产负债表的时点快照不同，利润表记录的是一段<strong>期间</strong>（通常一个季度或一年）内的经营活动，因此经济学背景的你应该立刻意识到：这是<strong>流量（flow），不是存量（stock）</strong>。利润表从收入出发，逐级扣减，走下五级阶梯：</p>
+      <ol>
+        <li><span class="term">收入</span><span class="term-en">（Revenues）</span>：销售产品或服务所得；</li>
+        <li>− <span class="term">销售成本</span><span class="term-en">（Cost of Goods Sold, COGS）</span>：与生产这些产品或服务直接相关的成本 → 得 <span class="term">毛利</span><span class="term-en">（Gross Profit）</span>，衡量生产和销售活动的整体盈利能力；</li>
+        <li>− <span class="term">运营费用</span><span class="term-en">（Operating Expenses）</span>：营销、一般与行政费用等——与生产不直接相关，但企业运转必不可少 → 得 <span class="term">营业利润</span><span class="term-en">（Operating Profit）</span>，衡量整个业务的盈利能力；</li>
+        <li>− <span class="term">财务费用</span><span class="term-en">（Financial Expenses）</span>：主要是借款产生的利息支出；再加上来自非经营性资产（如对其他公司的投资、现金和有价证券）的收入 → 得 <span class="term">税前利润</span><span class="term-en">（Taxable Income）</span>；</li>
+        <li>− 税款 → 得 <span class="term">净利润</span><span class="term-en">（Net Income, NI）</span>。</li>
+      </ol>
+      <div id="fig-ladder"></div>
+      <p>图 2 用一个假设的示例公司把这五级阶梯画了出来：收入 100 出发，每下一级阶梯就剥掉一层成本。每一级"剩余"都回答一个不同的问题——毛利问"这门生意本身赚钱吗"，营业利润问"整个业务赚钱吗"，净利润问"扣完利息和税，股东最后剩下多少"。这条阶梯是 S2 的主线，届时每一级都会被拆开细审（收入何时确认？折旧怎么算？哪些费用被藏了起来？）。</p>
+
+      <!-- ==================== 现金流量表 ==================== -->
+      <h2>六、现金流量表（Statement of Cash Flows, CF）：最"诚实"的一张表</h2>
+      <p><strong>反直觉之处：</strong>三张表里，讲师最偏爱的是通常最少被仔细阅读的那一张。他的理由：现金流量表是所有会计报表中最"诚实"的一份——<strong>会计规则可以改变利润的算法，却无法改变现金的流入和流出</strong>。钱进来了就是进来了，付出去了就是付出去了。现金流量表分为三段：</p>
+      <ol>
+        <li><span class="term">经营活动现金流</span><span class="term-en">（Cash Flow from Operations, CFO）</span>：通常从净利润开始，加回非现金支出（如折旧和摊销），再根据营运资本的变化进行调整。它反映核心业务产生的现金；</li>
+        <li><span class="term">投资活动现金流</span><span class="term-en">（Cash Flow from Investing, CFI）</span>：用于投资的现金流，如购买土地、建筑、设备等资本性支出，以及用现金进行的收购；</li>
+        <li><span class="term">筹资活动现金流</span><span class="term-en">（Cash Flow from Financing, CFF）</span>：再分为两路——来自债务的现金流（新筹集的债务是流入，偿还旧债是流出）与来自股权的现金流（发行新股是流入，支付股息或股票回购是流出）。</li>
+      </ol>
+      <p style="text-align:center;"><strong>现金余额净变化 = CFO + CFI + CFF</strong></p>
+      <p>三段现金流加总，就是公司现金余额在一年内的净变化。这解释了为什么说它是"赚钱"问题的交叉验证：利润表说赚了钱，现金流量表可以告诉你钱是否真的到账了——利润与现金的裂口（以及为什么 Netflix 可以"净利润 19 亿美元、经营现金流为负"）正是 S4 的主题。</p>
+
+      <!-- ==================== 报表勾稽 ==================== -->
+      <h2>七、报表勾稽：三表如何联动</h2>
+      <p>三张报表并非相互独立，而是紧密咬合的。会计师把报表之间的这种对应关系称为"勾稽"。两条最重要的联动：</p>
+      <ul>
+        <li><strong>利润表 → 现金流量表</strong>：净利润是经营活动现金流的起点；利润表中作为费用扣掉的<span class="term">折旧和摊销</span><span class="term-en">（Depreciation &amp; Amortization, D&amp;A）</span>并不涉及现金流出，因此在现金流量表中被<strong>加回</strong>；</li>
+        <li><strong>现金流量表 → 资产负债表</strong>：现金流量表实际上反映了资产负债表项目<strong>逐年的变动</strong>——三段现金流的合计，恰好解释资产负债表现金科目从期初到期末的差额；</li>
+        <li><strong>资产负债表 → 利润表</strong>：反向的联动同样存在——资产负债表上的固定资产，会通过每年的折旧费用流进利润表，持续影响各期盈利。</li>
+      </ul>
+      <div id="fig-linkage"></div>
+      <p>这就是为什么"只读一张表"必然盲人摸象：利润表告诉你账面盈亏，却不告诉你钱到账没有；现金流量表告诉你钱的去向，却不直接告诉你生意是否盈利；资产负债表告诉你家底，却是一张按历史口径拍摄的老照片。三表同读、交叉验证，是这门课反复强调的基本功。</p>
+
+      <!-- ==================== 两套准则 ==================== -->
+      <h2>八、两套准则与"像会计师一样思考"</h2>
+      <p>会计是一个<strong>由规则驱动的过程</strong>，这些规则随时间被正式化。目前全球主要有两套会计准则：</p>
+      <ul>
+        <li><span class="term">美国通用会计准则</span><span class="term-en">（Generally Accepted Accounting Principles, GAAP）</span>：主要由美国公司遵循；</li>
+        <li><span class="term">国际财务报告准则</span><span class="term-en">（International Financial Reporting Standards, IFRS）</span>：被大多数国际公司采用。</li>
+      </ul>
+      <p>尽管存在两套准则，但它们随时间推移已经趋于融合——<strong>共同点远多于差异</strong>，如今世界各地的财务报表在结构和内容上都高度相似。对分析者而言，真正重要的不是背下两套规则的差异，而是接受一种思维方式的转换。讲师的原话值得抄在笔记本上：</p>
+      <p><strong>"别问'这是否合理'，要问'这在会计上是否合理'——这两者不必相同。"</strong></p>
+      <p>这对经济学出身的学习者尤其反直觉：我们已经习惯追问一项成本是不是真实的机会成本、一个价格是不是均衡价格；而读会计报表时，第一性问题暂时退居二线，先要弄清"按会计师的规则，这笔账被记在了哪里、为什么"。先把游戏规则搞清楚，再回头批判它——这正是 S5"会计不一致性"整讲的立场。同时要注意，会计本身也在不断演变：公允价值会计的兴起正促使会计师去预测未来、评估资产，这种转变给报表使用者带来了新的问题。</p>
+
+      <!-- ==================== 收尾对比 ==================== -->
+      <h2>九、收尾对比：三大报表横向总览</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>资产负债表（BS）</th><th>利润表（IS）</th><th>现金流量表（CF）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>回答什么问题</td><td>你拥有什么？你亏欠什么？</td><td>你去年赚了多少钱？</td><td>现金为何多了或少了？</td></tr>
+          <tr><td>时点还是期间</td><td><strong>时点</strong>快照（存量），如 12 月 31 日</td><td><strong>期间</strong>流量，如整个财年</td><td><strong>期间</strong>流量，与利润表同期</td></tr>
+          <tr><td>记账基础</td><td>资产/负债分类记录，权益 = 总资产 − 非股权负债（轧差项）</td><td>会计盈利口径：收入 → 毛利 → 营业利润 → 税前利润 → 净利润</td><td>纯现金口径：CFO + CFI + CFF = 现金净变化</td></tr>
+          <tr><td>最大软肋</td><td>账面多按历史成本，不答"现在值多少钱"；无形资产大量缺席</td><td>"赚钱"是会计定义，规则腾挪空间大，利润 ≠ 现金</td><td>看不出盈利能力——发债筹资也产生现金流入</td></tr>
+          <tr><td>深挖章节</td><td>S3 历史成本 vs 公允价值</td><td>S2 权责发生制与利润阶梯</td><td>S4 从净利润到自由现金流</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（读一家公司只需三问：拥有什么、亏欠什么、赚了多少）→ 简化框架（会计三重角色：核实 → 记录 → 报告；会计师是历史学家）→ 三表映射（BS 时点快照、IS 期间流量、CF 现金验证）→ 实际应用（三表同读、交叉验证；净利润是 CFO 起点、D&amp;A 加回、CF 解释 BS 逐年变动）→ 局限性（会计回答"会计上是否合理"而非"经济上是否合理"；公允价值化正在模糊历史学家与预言家的边界，S3/S5 展开）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/fa-basics/01-financial-statements-overview.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：会计的三重角色 —— 核实 → 记录 → 报告（流程循环图）=====
+    Charts.cycle(document.getElementById('fig-roles'), {
+      nodes: ['① 核实交易 Verify', '② 一致记录 Record', '③ 可理解报告 Report'],
+      notes: ['确保交易真实发生', '口径一致、跨期可比', '让外部人读得懂'],
+      color: '#2563eb',
+      caption: '图 1：会计的三重角色 —— 核实（Verify）→ 记录（Record）→ 报告（Report）；注意其中没有"预测未来"',
+      legend: [{ label: '会计处理流程（历史学家的事后记录，而非预言）', color: '#2563eb', style: 'line' }],
+    });
+
+    // ===== 图2：利润表五级阶梯（假设示例公司，单位：百万美元）=====
+    Charts.bar(document.getElementById('fig-ladder'), {
+      categories: ['收入', '毛利', '营业利润', '税前利润', '净利润'],
+      series: [
+        { label: '利润阶梯（假设示例：收入 100 − COGS 40 = 毛利 60 − 运营费用 35 = 营业利润 25 − 利息净额 5 = 税前 20 − 税 5 = 净利 15）', color: '#0d9488', values: [100, 60, 25, 20, 15] },
+      ],
+      yLabel: '金额（百万美元）',
+      yMax: 100, yStep: 20,
+      caption: '图 2：利润表五级阶梯（假设示例数值）—— 每下一级阶梯剥掉一层成本，每一级回答一个不同的问题',
+      legendPosition: 'top',
+    });
+
+    // ===== 图3：三大报表勾稽联动（箭头沿方块外侧走线）=====
+    Charts.stateFlows(document.getElementById('fig-linkage'), {
+      nodes: ['资产负债表 BS（时点）', '利润表 IS（期间）', '现金流量表 CF（期间）'],
+      flows: [
+        { from: 1, to: 2, label: '净利润是 CFO 起点；折旧摊销 D&A 在 CF 中加回', color: '#2563eb', labelT: 0.5 },
+        { from: 2, to: 0, label: 'CFO+CFI+CFF = 现金余额年度变动，并反映 BS 项目逐年变动', color: '#0d9488', labelT: 0.5 },
+        { from: 0, to: 1, label: '固定资产经折旧费用进入利润表', color: '#c2410c', labelT: 0.5 },
+      ],
+      caption: '图 3：三大报表勾稽联动 —— 三表同读、交叉验证，才是完整的公司图景',
+      legend: [
+        { label: 'IS → CF：净利润起点 + D&A 加回', color: '#2563eb', style: 'line' },
+        { label: 'CF → BS：解释现金余额及报表项目变动', color: '#0d9488', style: 'line' },
+        { label: 'BS → IS：资产经折旧进入各期费用', color: '#c2410c', style: 'line' },
+      ],
+    });
+  </script>
+</body>
+</html>

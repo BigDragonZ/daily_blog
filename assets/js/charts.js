@@ -9,6 +9,7 @@
  * Charts.stateFlows(container, opts)   三状态双向流动图（劳动力市场流量等）
  * Charts.pie(container, opts)         饼图
  * Charts.bar(container, opts)         柱状图（单系列或分组）
+ * Charts.tree(container, opts)        决策树/分层流程图（方框节点 + 直线箭头，箭头停在方框外）
  *
  * 所有图表统一输出：SVG + 图例(.legend) + 可选标题，挂载到给定容器。
  */
@@ -663,5 +664,89 @@ window.Charts = (function () {
     mount(container, svg, opts.caption, opts.legend, 'top');
   }
 
-  return { xy, ppf: xy, sd: xy, circularFlow, cycle, stateFlows, pie, bar };
+  /**
+   * 决策树/分层流程图（方框节点 + 直线箭头，箭头停在方框外）
+   * opts:
+   *  - layers: [[{ id, label, color?, width? }], ...]  自上而下分层；同层节点均分横排
+   *  - edges: [{ from, to, label?, color?, labelDx?, labelDy? }]
+   *      from/to 为节点 id；箭头从父框底边中点连向子框顶边中点，两端各留 4px 间隙
+   *  - width, height        画布尺寸（可选，高度默认按层数自适应）
+   *  - caption, legend      图标题与图例（可选，图例在图上方）
+   */
+  function tree(container, opts) {
+    opts = opts || {};
+    const W = opts.width || 680;
+    const layers = opts.layers || [];
+    const edges = opts.edges || [];
+    const boxH = 46;
+    const gapY = 64;                  // 层间距（含箭头与标签空间）
+    const top = 20, bottom = 20, side = 16;
+    const H = opts.height || top + bottom + layers.length * boxH + Math.max(layers.length - 1, 0) * gapY;
+    const iw = W - side * 2;
+
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' });
+
+    // 节点坐标：cx/cy 为方框中心
+    const pos = {};
+    layers.forEach((layer, i) => {
+      const slot = iw / Math.max(layer.length, 1);
+      layer.forEach((node, j) => {
+        pos[node.id] = {
+          cx: side + slot * (j + 0.5),
+          cy: top + i * (boxH + gapY) + boxH / 2,
+          w: Math.min(node.width || 150, slot - 12),
+        };
+      });
+    });
+
+    // 每种箭头颜色一个 marker
+    const defs = el('defs', null, svg);
+    const markerOf = {};
+    let markerIdx = 0;
+    edges.forEach((e) => {
+      const color = e.color || '#2563eb';
+      if (markerOf[color]) return;
+      const id = 'tree-arrow-' + markerIdx++;
+      const marker = el('marker', {
+        id, markerWidth: 10, markerHeight: 10, refX: 8, refY: 3,
+        orient: 'auto', markerUnits: 'strokeWidth',
+      }, defs);
+      el('path', { d: 'M0,0 L8,3 L0,6 Z', fill: color }, marker);
+      markerOf[color] = id;
+    });
+
+    // 先画箭头（方框后画、覆盖其上，双保险保证箭头不进入方框区域）
+    edges.forEach((e) => {
+      const a = pos[e.from], b = pos[e.to];
+      if (!a || !b) return;
+      const color = e.color || '#2563eb';
+      const x0 = a.cx, y0 = a.cy + boxH / 2 + 4;
+      const x1 = b.cx, y1 = b.cy - boxH / 2 - 4;
+      el('line', {
+        x1: x0, y1: y0, x2: x1, y2: y1,
+        stroke: color, 'stroke-width': 2, 'marker-end': `url(#${markerOf[color]})`,
+      }, svg);
+      if (e.label) {
+        text(svg, (x0 + x1) / 2 + (e.labelDx || 0), (y0 + y1) / 2 + (e.labelDy || 0),
+          e.label, { 'text-anchor': 'middle', 'font-size': 12, fill: color, 'font-weight': 600 });
+      }
+    });
+
+    // 再画方框
+    layers.forEach((layer) => {
+      layer.forEach((node) => {
+        const p = pos[node.id];
+        const color = node.color || '#1d4ed8';
+        el('rect', {
+          x: p.cx - p.w / 2, y: p.cy - boxH / 2, width: p.w, height: boxH, rx: 8,
+          fill: node.fill || '#eff6ff', stroke: color, 'stroke-width': 1.5,
+        }, svg);
+        text(svg, p.cx, p.cy + 5, node.label, { 'text-anchor': 'middle', 'font-weight': 700, 'font-size': 14 });
+      });
+    });
+
+    mount(container, svg, opts.caption, opts.legend, 'top');
+  }
+
+  return { xy, ppf: xy, sd: xy, circularFlow, cycle, stateFlows, pie, bar, tree };
 })();
