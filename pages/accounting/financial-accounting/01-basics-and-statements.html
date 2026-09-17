@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 会计基础与四大报表 - 财务会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>01 会计基础与四大报表</h1>
+      <p>本篇覆盖《财务会计》（Financial Accounting）Lesson 1 全部 15 讲（1.1–1.12 理论 + 3 个配套例题）。与上一门达摩达兰的 Accounting 101 不同，这门课是<strong>会计师的正规军训练</strong>：从企业组织形式讲起，建立六大账户类别的分类体系，然后逐一认识四大财务报表——<span class="term">利润表</span><span class="term-en">（Income Statement）</span>、<span class="term">留存收益表</span><span class="term-en">（Statement of Retained Earnings）</span>、<span class="term">资产负债表</span><span class="term-en">（Balance Sheet）</span>、<span class="term">现金流量表</span><span class="term-en">（Statement of Cash Flows）</span>——并以三个完整例题把"报表之间的数字如何流动"走通。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、企业组织类型与会计的目标</h2>
+
+      <h3>1.1 引入：年年"盈利"的公司为什么突然倒闭？</h3>
+      <p><strong>反直觉开场：</strong>一家公司利润表上年年盈利，某一天却突然倒闭——因为它付不出账单。利润是一种会计意见，现金才是生存事实；利润表说"赚钱了"，银行账户却可能已经见底。这个裂缝正是会计要管理的核心问题之一：<strong>用一种统一的语言，向企业外部的人讲清楚这家公司到底怎么样</strong>——既讲利润，也讲现金。这门课学的语言叫<span class="term">财务会计</span><span class="term-en">（Financial Accounting）</span>，它的"四句话"就是四大财务报表。现金与利润的两条线索如何在报表中分合，将在 Lesson 12 现金流量表处闭环。</p>
+
+      <h3>1.2 三种组织形式：一体还是独立法人</h3>
+      <p>创办企业首先要选择法律形式，而分水岭只有一条：<strong>企业与所有者在税法上是不是"同一个人"</strong>。独资与合伙是"一体"——企业盈亏直接计入所有者的个人纳税申报表，企业本身不单独纳税；公司制则是<span class="term">独立法人</span><span class="term-en">（Separate Legal Entity）</span>——企业自己报税、自己缴税，税后利润以股利形式分给股东时，股东再缴一次个人所得税，即<span class="term">双重征税</span><span class="term-en">（Double Taxation）</span>。</p>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>独资企业（Sole Proprietorship）</th><th>合伙企业（Partnership）</th><th>公司制（Corporation）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>所有者</td><td>1 人</td><td>2 人及以上（按合伙协议分账，协议无需向州备案）</td><td>1 人及以上，以持有股份体现所有权</td></tr>
+          <tr><td>法律地位</td><td>与所有者一体</td><td>与所有者一体</td><td><strong>独立法人</strong>，自身承担债务与法律责任</td></tr>
+          <tr><td>纳税方式</td><td>盈亏计入所有者个人税表</td><td>盈亏按份额计入各合伙人税表</td><td>公司缴公司税 + 股东缴股利个税（<strong>双重征税</strong>）</td></tr>
+          <tr><td>责任</td><td><strong>无限个人责任</strong>：店里客人滑倒，可追索你的房产与存款</td><td>同样无限个人责任</td><td><strong>有限责任</strong><span class="term-en">（Limited Liability）</span>：最多赔掉投资额</td></tr>
+          <tr><td>设立成本</td><td>几乎为零（顶多办个营业执照）</td><td>低</td><td>高：州注册费 + 年续期费 + 合规文书</td></tr>
+          <tr><td>融资与存续</td><td>弱；随所有者生灭</td><td>较弱</td><td>强：可公开发行股票；股份可转让，公司永续</td></tr>
+        </tbody>
+      </table>
+      <p>有限责任是人们甘愿忍受双重征税与繁琐程序的原因。州一级还有<span class="term">有限责任公司</span><span class="term-en">（LLC）</span>与<span class="term">有限责任合伙</span><span class="term-en">（LLP）</span>两种混合体——兼得有限责任保护与合伙制简便的税务处理，联邦税法并不单独承认它们。<strong>本课程全程以公司制（Corporation）为视角</strong>，把企业看作与所有者分离的独立实体。</p>
+
+      <h3>1.3 会计的目标：从数据到决策</h3>
+      <p>会计是一条流水线：获取<strong>数据</strong> → 会计<strong>处理</strong>（系统化地分析与记录，同类交易用统一方式处理）→ 汇总成<strong>信息</strong> → 供使用者做<strong>决策</strong>。会计分两大类，分界点是服务对象：</p>
+      <ul>
+        <li><span class="term">财务会计</span><span class="term-en">（Financial Accounting）</span>：服务<strong>外部用户</strong>——投资者与股东（决定买入/持有/卖出）、债权人（决定放贷/维持/收回）、董事、政府（征税核实）。产出是<strong>概括性</strong>的财务报表，按季度/年度定期发布；</li>
+        <li><span class="term">管理会计</span><span class="term-en">（Managerial Accounting）</span>：服务<strong>内部用户</strong>（管理者），内容具体到单个产品成本，按需生成（日报、仪表板），帮助内部降本增效。</li>
+      </ul>
+      <div class="callout">
+        <strong>为什么对外报表是"概括性"的？</strong>假设你的胶带进价 $2、售价 $3，竞争对手的进价是 $2.50——你的利润率是他们的两倍。如果报表细到披露单品成本，等于把竞争优势拱手送人。所以对外报表只给"足够决策、不致泄密"的颗粒度：可以公布 500 亿美元总销售额，绝不公布一件小商品成本 $3.25。<strong>本课程专注财务会计。</strong>
+      </div>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、六大账户类别与账户</h2>
+
+      <h3>2.1 六个"桶"：一切交易的归宿</h3>
+      <p>会计的核心是给数据分类。每一笔交易都必须归入六个基本类别之一——想象成六个桶：<span class="term">资产</span><span class="term-en">（Assets）</span>、<span class="term">负债</span><span class="term-en">（Liabilities）</span>、<span class="term">股东权益</span><span class="term-en">（Stockholders' Equity）</span>是三大核心；而<strong>股东权益又可细分为</strong><span class="term">收入</span><span class="term-en">（Revenues）</span>、<span class="term">费用</span><span class="term-en">（Expenses）</span>、<span class="term">股利</span><span class="term-en">（Dividends）</span>三个小桶。</p>
+      <div id="fig-buckets"></div>
+      <p><strong>图 1 解读：</strong>六桶的记忆钩子是股东权益公式——<strong>股东权益 = 投入资本 + 收入 − 费用 − 股利</strong>。投入资本（股本 Common Stock + 额外实收资本 Additional Paid-in Capital）是股东真金白银投进公司的；收入与费用的差额（净利润）减去分掉的股利，留在公司里的部分累积为<span class="term">留存收益</span><span class="term-en">（Retained Earnings）</span>。所以收入、费用、股利本质上是<strong>权益的年度流量细分</strong>：年末它们清零、净额结转入留存收益（Lesson 4 结账详述）。各桶定义要点：</p>
+      <ul>
+        <li><strong>资产</strong>：公司<strong>控制</strong>（不一定是法律拥有）并预期带来未来利益的资源——现金、设备、建筑物；</li>
+        <li><strong>负债</strong>：欠第三方的债务，偿还方式不止现金——礼品卡用<strong>商品</strong>清偿、预付租金用<strong>服务</strong>清偿；</li>
+        <li><strong>收入</strong>：日常经营活动赚得的款项。西南航空卖机票是收入，卖一架旧飞机<strong>不是</strong>收入（非日常业务，记为其他利得）；</li>
+        <li><strong>费用</strong>：为创造收入而消耗的资源（燃油、工资、租金），确认费用不要求已付现金；</li>
+        <li><strong>股利</strong>：利润的<strong>分配</strong>，不是费用——费用为赚钱而发生，股利是赚到钱之后的分法；公司无义务必须分红（Google、Amazon 长期不分红全部再投资），且分红的前提是有当期净利润或累积留存收益。</li>
+      </ul>
+
+      <h3>2.2 账户：大类之下的明细</h3>
+      <p>六个桶太粗——若所有开支都扔进"费用"桶，年末只知道总费用 $50,000，却答不上"钱具体花在哪儿"。于是每个类别下设若干<span class="term">账户</span><span class="term-en">（Accounts）</span>：资产类下有现金、<span class="term">应收账款</span><span class="term-en">（Accounts Receivable）</span>、存货、设备；负债类下有<span class="term">应付账款</span><span class="term-en">（Accounts Payable）</span>、<span class="term">应付票据</span><span class="term-en">（Notes Payable）</span>、应交销售税；费用类下有租金费用、<span class="term">销售成本</span><span class="term-en">（Cost of Goods Sold, COGS）</span>、工资费用等。类比：你在一家银行可以有支票、储蓄、信用卡等多个账户；会计里每个"大类银行"下也有多个明细账户。</p>
+      <p>学习纪律：<strong>见到任何账户，先问"它属于哪个类别"</strong>。陷阱预警——"应计费用（Accrued Expenses）"名字里有"费用"，实际是<strong>负债</strong>（已发生未支付的欠款）。类别归属是 Lesson 2 借贷记账的绝对前提。</p>
+
+      <h3>2.3 净利润：盈利能力的核心指标，但不是全部</h3>
+      <p style="text-align:center;"><strong>净利润（Net Income） = 收入（Revenues） − 费用（Expenses）</strong></p>
+      <p>净利润是衡量<span class="term">盈利能力</span><span class="term-en">（Profitability）</span>的核心指标，而盈利能力关系公司长期存续。但要把它当成<strong>验血报告里的一项指标</strong>：单项验血结果不能全面诊断健康，净利润也不能全面诊断公司。净利润为负（<span class="term">净亏损</span><span class="term-en">（Net Loss）</span>）不总是坏事——衰退期、初创期、大举投资期都可能亏损；亚马逊多年账面亏损，是把钱持续投回业务构筑护城河，为今天的盈利奠基。<strong>小例题（逆向求解）：</strong>A 公司收入 $25,400，CFO 宣布净利润 $12,500，费用是多少？$25,400 − 费用 = $12,500 → <strong>费用 = $12,900</strong>。这个公式将来会加长，但"收入 − 费用"的核心骨架永远不变。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、四大财务报表</h2>
+
+      <h3>3.1 总览：四张表、固定的编制顺序</h3>
+      <p>财务报表是一个四件套装，对外发布、刻意保持概括性（1.3 节的胶带案例）。四张表<strong>必须按固定顺序编制</strong>，因为数字在表间依次流动：</p>
+      <div id="fig-flow"></div>
+      <p><strong>图 2 解读：</strong>①先编<strong>利润表</strong>，算出净利润；②净利润流入<strong>留存收益表</strong>，决定多少分股利、多少留公司，算出期末留存收益；③期末留存收益更新<strong>资产负债表</strong>的股东权益部分；④最后<strong>现金流量表</strong>作为调节文件，专门解释资产负债表上"现金"科目从期初到期末的变动从何而来。跳过中间任何一步，后面的表都编不对——例题 3 会让你亲身体会。</p>
+      <p>报告频率：上市公司被<span class="term">美国证券交易委员会</span><span class="term-en">（Securities and Exchange Commission, SEC）</span>强制要求<strong>季度+年度</strong>报告；内部管理可做到月度。报告期可选<span class="term">日历年</span><span class="term-en">（Calendar Year）</span>或<span class="term">会计年度</span><span class="term-en">（Fiscal Year）</span>——零售业的年终常设在淡季：塔吉特、沃尔玛的会计年度截止在 1 月底，因为 12 月 31 日正是购物季高峰、1 月还有退货潮，没人手盘点编表。会计年度通常跟着<span class="term">商业周期</span><span class="term-en">（Business Cycle）</span>走。</p>
+
+      <h3>3.2 利润表：一段时期的经营成果</h3>
+      <p><span class="term">利润表</span><span class="term-en">（Income Statement）</span>汇总<strong>一段期间</strong>内全部收入与费用账户，只动六个桶里的两个（收入、费用），公式即"收入 − 费用 = 净利润"。看一份真实的——Facebook 2018 年合并利润表（Consolidated Statement of Income，利润表的另一种叫法；单位：百万美元，大公司报表惯例省去零头）：</p>
+      <table>
+        <thead>
+          <tr><th>Facebook 合并利润表（2018，百万美元）</th><th>金额</th><th>读法</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>收入（Revenues）</td><td>55,838</td><td>报表最顶端永远是收入</td></tr>
+          <tr><td>收入成本（Cost of Revenue）</td><td rowspan="4">合计 30,925</td><td rowspan="4">费用逐项列示：生产成本、研发（R&amp;D）、市场营销与销售、一般及行政（G&amp;A）</td></tr>
+          <tr><td>研发费用（R&amp;D）</td></tr>
+          <tr><td>市场营销与销售费用</td></tr>
+          <tr><td>一般及行政管理费用（G&amp;A）</td></tr>
+          <tr><td><strong>净利润（Net Income）</strong></td><td><strong>22,112</strong></td><td>上年 159 亿 → 今年 221 亿，上升趋势支撑"持有/买入"决策</td></tr>
+        </tbody>
+      </table>
+      <p><strong>利润 ≠ 现金（权责发生制预告）：</strong>利润表上的收入不等于同期收到的现金。可口可乐给塔吉特送一托盘可乐，司机不会当场收钱，而是月底开一张 20 万美元的总账单——货在 12 月交付，收入就记在 12 月，哪怕现金次年 1 月才到账。费用同理：员工年底最后一周的工资，公司 12 月就记费用，几周后才发钱。这套"交易发生即确认"的规则叫<span class="term">权责发生制</span><span class="term-en">（Accrual Accounting）</span>，是 Lesson 3 的主角。利润表的<strong>优点</strong>是直接回答"赚没赚钱、趋势如何"；<strong>缺点</strong>是它只动收入费用两个桶，对现金与资产负债状况一概不知——所以要四张表配套。</p>
+
+      <h3>3.3 留存收益表：利润的分配决议书</h3>
+      <p>赚到净利润后只有两个去向：分给股东（股利），或留在公司再投资（留存收益）。<span class="term">留存收益表</span><span class="term-en">（Statement of Retained Earnings）</span>记录这个分配决议：</p>
+      <p style="text-align:center;"><strong>期末留存收益 = 期初留存收益 + 净利润 − 股利</strong></p>
+      <p>三个易错点：①<strong>股利不是费用</strong>，不进利润表，只进留存收益表；②留存收益只是账面划分——留存的 $600 不会真的从银行账户挪到另一个账户，它是"留在公司里"的声明（可用于再投资，也可作为现金缓冲，即现金管理）；③<strong>当年亏损仍可分红</strong>，只要往年累积的留存收益足够（期初余额为正）。任何报表表头都有三要素：<strong>Who</strong>（公司名）、<strong>What</strong>（报表名）、<strong>When</strong>（期间）。</p>
+      <p><strong>配套例题 1（连续两年度编制）：</strong>A 公司 20X1 年 1 月 1 日开业，第一年净利润 $230,000、派息 $150,000；第二年净利润 $265,000、派息 $175,000。</p>
+      <table>
+        <thead>
+          <tr><th>A 公司留存收益表</th><th>20X1 年度</th><th>20X2 年度</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>期初留存收益</td><td>$0（新设公司）</td><td>$80,000（= 上年期末）</td></tr>
+          <tr><td>加：净利润</td><td>+230,000</td><td>+265,000</td></tr>
+          <tr><td>减：股利</td><td>−150,000</td><td>−175,000</td></tr>
+          <tr><td><strong>期末留存收益</strong></td><td><strong>$80,000</strong></td><td><strong>$170,000</strong></td></tr>
+        </tbody>
+      </table>
+      <p>20X2 年末的 $170,000 里，$80,000 来自第一年、$90,000（265,000−175,000）来自第二年。考题变体：不直接给净利润（给收入 $300,000、费用 $70,000 让你先算），或不直接给股利总额（给 150,000 股 × 每股 $1）——都是在考你公式之间的拼接。</p>
+
+      <h3>3.4 资产负债表：时点快照与会计等式</h3>
+      <p><span class="term">资产负债表</span><span class="term-en">（Balance Sheet）</span>是<strong>特定时点</strong>的快照（注意：日期写"20X1 年 12 月 31 日"某一天，而非"截至……年度"）。核心是一条恒等式——<span class="term">基本会计等式</span><span class="term-en">（Basic Accounting Equation）</span>：</p>
+      <p style="text-align:center;"><strong>资产（Assets） = 负债（Liabilities） + 股东权益（Shareholders' Equity）</strong></p>
+      <p>右端回答"资产的钱是谁出的"：负债是债权人的要求权，权益是所有者的要求权（= 投入资本 + 留存收益）。资产端按<span class="term">流动性</span><span class="term-en">（Liquidity，变现速度）</span>从高到低排列，现金永远排第一。等式的两种玩法：Facebook 总资产 $70 亿 = 负债 $40 亿 + 权益 $30 亿（知二求一）；你拿 $1,000 积蓄 + 借 $3,000 开公司 → 资产 $4,000 = 负债 $3,000 + 权益 $1,000。<strong>分析价值：</strong>负债相对权益的占比揭示财务风险——高负债公司在下行期偿债压力大；主要依赖权益融资的公司更稳健。这张表的<strong>优点</strong>是一眼看清财务结构与偿债能力；<strong>缺点</strong>是快照只定格一天，且资产以入账成本记录、未必等于现值（Accounting 101 已展开，本课 Lesson 9 再论折旧与账面价值）。</p>
+
+      <h3>3.5 现金流量表：回应开篇悬念</h3>
+      <p><span class="term">现金流量表</span><span class="term-en">（Statement of Cash Flows）</span>像一份银行对账单：从期初现金出发，把全年现金进出按三个"桶"分类汇总，得出期末现金：</p>
+      <ul>
+        <li><span class="term">经营活动</span><span class="term-en">（Operating Activities）</span>：日常核心业务的现金——售票收款、付工资水电、付货款。西南航空卖机票收款是经营，卖一架旧飞机<strong>不是</strong>（非日常，归投资）；</li>
+        <li><span class="term">投资活动</span><span class="term-en">（Investing Activities）</span>：买卖<strong>长期</strong>生产性资产（建筑物、设备、土地）与有价证券（国库券等）。一支笔寿命不足一年，买它算经营；一台用多年的 iPad 算投资；</li>
+        <li><span class="term">筹资活动</span><span class="term-en">（Financing Activities）</span>：与"出资人"的往来——借入/偿还贷款、股东注资、支付股利。</li>
+      </ul>
+      <p><strong>回到 1.1 的悬念——Facebook 2018：</strong>净利润高达 220 亿美元，现金却只净增约 19 亿（年初约 80 亿 → 年末约 101 亿）。另外 200 亿去哪了？现金流量表给出答案：筹资活动里<strong>回购自家股票约 130 亿</strong>；投资活动里购建物业设备约 130 亿、买卖有价证券净投约 20 亿。利润表永远答不出这个问题。<strong>公司破产的直接原因几乎都是现金枯竭</strong>，而非账面亏损——这正是现金流量表无可替代的原因。本课只需识别三段结构，编制方法（直接法/间接法）在 Lesson 12 展开。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、准则体系与职业道德</h2>
+
+      <h3>4.1 谁来定规则：FASB、IASB 与 SEC</h3>
+      <p>对外编报表必须守规则。美国规则由<span class="term">财务会计准则委员会</span><span class="term-en">（Financial Accounting Standards Board, FASB）</span>制定，即<span class="term">美国公认会计原则</span><span class="term-en">（US GAAP, Generally Accepted Accounting Principles）</span>——"公认"指行业总体认同，而非人人同意。国际上由<span class="term">国际会计准则理事会</span><span class="term-en">（International Accounting Standards Board, IASB）</span>制定 <span class="term">IFRS</span><span class="term-en">（International Financial Reporting Standards）</span>，加拿大、欧洲多国采用；全球化的诉求是让本田与福特的报表可以直接比较。SEC 则是监管者，强制上市公司季度披露。</p>
+      <p>GAAP 追求的质量特征分两层：<strong>核心层</strong>——<span class="term">相关性</span><span class="term-en">（Relevance，对决策有用：投资者关心销售成本，不关心总部到仓库的距离）</span>与<span class="term">忠实呈报</span><span class="term-en">（Faithful Representation，真实不粉饰）</span>；<strong>增强层</strong>——<span class="term">及时性</span><span class="term-en">（Timeliness，20X1 年的表拖到 20X2 年底才出就废了）</span>、<span class="term">可验证性</span><span class="term-en">（Verifiability，另一位会计师复核应得实质相同结论）</span>、<span class="term">可比性</span><span class="term-en">（Comparability，跨期一致 + 跨公司可比）</span>、<span class="term">可理解性</span><span class="term-en">（Understandability，具备合理商业知识的人能读懂）</span>。</p>
+
+      <h3>4.2 职业道德：信任是会计师的全部资产</h3>
+      <p>调查中<span class="term">注册会计师</span><span class="term-en">（Certified Public Accountant, CPA）</span>的信任度常居各类专业人士前列，<strong>仅次于医生</strong>——公众敢根据报表下注真金白银，全靠这份信任。<span class="term">道德</span><span class="term-en">（Ethics）</span>是判断是非的行为标准，<strong>不等于法律</strong>：它由职业准则（AICPA 职业行为守则）、个人信念与公众看法共同塑造。2001–02 年安然、世通等公司财务欺诈证明"行业自律"破产，国会遂通过《<span class="term">萨班斯-奥克斯利法案</span><span class="term-en">（Sarbanes-Oxley Act, SOX）</span>》：高管必须签字对报表准确性负责、公司必须建立并维护<span class="term">内部控制</span><span class="term-en">（Internal Controls）</span>、审计师轮换并测试内控，违反者面临监禁与罚款。SOX 与内部控制将在 Lesson 5 深入。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、配套例题：报表之间的数字如何流动</h2>
+
+      <h3>5.1 例题 2：勾稽关系求缺失值</h3>
+      <p>已知 A 公司：收入 $225、费用 $125、股利 $15、期初留存收益 $65、总负债 $43、普通股 $45；求三个缺失值——净利润（A）、总资产（B）、期末留存收益（C）。解题顺序就是报表编制顺序：</p>
+      <table>
+        <thead>
+          <tr><th>步骤</th><th>所用公式</th><th>计算</th><th>结果</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>① 利润表求 A</td><td>净利润 = 收入 − 费用</td><td>225 − 125</td><td><strong>A = $100</strong></td></tr>
+          <tr><td>② 留存收益表求 C</td><td>期末 = 期初 + 净利润 − 股利</td><td>65 + 100 − 15</td><td><strong>C = $150</strong></td></tr>
+          <tr><td>③ 资产负债表求 B</td><td>资产 = 负债 + 权益；权益 = 普通股 + 期末留存收益</td><td>43 + (45 + 150)</td><td><strong>B = $238</strong></td></tr>
+        </tbody>
+      </table>
+      <p>难点不在算术而在<strong>流程</strong>：净利润必须先算出来才能进留存收益表，期末留存收益必须算出来才能进资产负债表。链条不可颠倒。</p>
+
+      <h3>5.2 例题 3：从一堆账户到利润表 + 资产负债表</h3>
+      <p>A 公司 20X1 年 1 月 1 日成立，年末给出：现金 $45,000、应收账款 $22,000、物料 $8,900、设备 $21,000、应付账款 $36,900、普通股 $48,200、总收入 $84,000、运营费用 $72,200，本年未派股利。任务：编制利润表与资产负债表。<strong>第一步是筛选</strong>——利润表只收收入与费用两个桶（现金、应收、物料、设备是资产，应付是负债，普通股是权益，统统不进利润表）。于是利润表只有三行：总收入 $84,000 − 运营费用 $72,200 = <strong>净利润 $11,800</strong>（表头三要素：A 公司 / 利润表 / 截至 20X1 年 12 月 31 日的年度）。</p>
+      <p><strong>不可跳过的中间步：</strong>题目没要求留存收益表，但资产负债表权益端需要期末留存收益——期初 $0 + 净利润 $11,800 − 股利 $0 = <strong>$11,800</strong>。然后编资产负债表（资产按流动性排序）：</p>
+      <table>
+        <thead>
+          <tr><th colspan="2">A 公司 资产负债表（20X1 年 12 月 31 日）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>现金 / 应收账款 / 物料 / 设备</td><td>$45,000 / $22,000 / $8,900 / $21,000</td></tr>
+          <tr><td><strong>总资产</strong></td><td><strong>$96,900</strong></td></tr>
+          <tr><td>负债：应付账款</td><td>$36,900</td></tr>
+          <tr><td>股东权益：普通股 + 留存收益</td><td>$48,200 + $11,800 = $60,000</td></tr>
+          <tr><td><strong>负债与股东权益总计</strong></td><td><strong>$96,900 ✓ 平衡</strong></td></tr>
+        </tbody>
+      </table>
+      <p>编完顺手做两个分析判断：<strong>盈利吗？</strong>是——收入 $84,000 &gt; 费用 $72,200。<strong>有偿债能力吗？</strong>有——仅现金 $45,000 就超过全部负债 $36,900，且负债远低于权益 $60,000，非高杠杆经营。</p>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>六、收尾对比：四大报表一览</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>利润表（IS）</th><th>留存收益表（RE）</th><th>资产负债表（BS）</th><th>现金流量表（CF）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>回答什么问题</td><td>这段时期赚了多少？</td><td>利润分了多少、留了多少？</td><td>此刻拥有什么、欠什么、归谁？</td><td>现金为什么变了？</td></tr>
+          <tr><td>时点还是时期</td><td>时期</td><td>时期</td><td><strong>时点</strong>（具体某一天）</td><td>时期</td></tr>
+          <tr><td>涉及账户类别</td><td>收入、费用</td><td>净利润、股利、留存收益</td><td>资产、负债、股东权益</td><td>全部（现金视角重分类为三活动）</td></tr>
+          <tr><td>核心公式</td><td>收入 − 费用 = 净利润</td><td>期初 + 净利润 − 股利 = 期末</td><td>资产 = 负债 + 股东权益</td><td>经营 + 投资 + 筹资 = 现金净变动</td></tr>
+          <tr><td>最大软肋</td><td>利润 ≠ 现金（权责发生制）</td><td>只是分配决议，不代表银行账户变动</td><td>一天快照 + 历史成本</td><td>不讲盈利能力</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（如何向外部人讲清楚一家公司？）→ 简化模型（六桶分类 + 四大报表，数字按 IS→RE→BS→CF 顺序流动）→ 推导（净利润公式、留存收益公式、会计等式互相勾稽，知二求一）→ 实际应用（Facebook 利润与现金的 200 亿落差；例题 2/3 全流程求解）→ 局限性（报表刻意概括以防泄密；单一指标如单项验血；利润≠现金的裂缝要靠 Lesson 3 权责发生制与 Lesson 12 现金流量表彻底讲清）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/financial-accounting/01-basics-and-statements.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：六大账户类别结构树 —— 三大核心桶 + 股东权益细分三小桶 =====
+    Charts.tree(document.getElementById('fig-buckets'), {
+      width: 720,
+      layers: [
+        [{ id: 'root', label: '账户六大类别：每笔交易的归宿', width: 300, fill: '#f8fafc' }],
+        [
+          { id: 'a', label: '资产 Assets', color: '#1d4ed8' },
+          { id: 'l', label: '负债 Liabilities', color: '#b45309', fill: '#fff7ed' },
+          { id: 'e', label: '股东权益 Equity', color: '#0f766e', fill: '#f0fdfa' },
+        ],
+        [
+          null, null, null,
+          { id: 'r', label: '收入（增权益）', color: '#0f766e', fill: '#f0fdfa', width: 104 },
+          { id: 'x', label: '费用（减权益）', color: '#0f766e', fill: '#f0fdfa', width: 104 },
+          { id: 'd', label: '股利（减权益）', color: '#0f766e', fill: '#f0fdfa', width: 104 },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 'a', color: '#1d4ed8' },
+        { from: 'root', to: 'l', color: '#b45309' },
+        { from: 'root', to: 'e', color: '#0f766e' },
+        { from: 'e', to: 'r', color: '#0f766e' },
+        { from: 'e', to: 'x', color: '#0f766e' },
+        { from: 'e', to: 'd', color: '#0f766e', label: '权益 = 投入资本 + 收入 − 费用 − 股利', labelDx: -150, labelDy: -2 },
+      ],
+      caption: '图 1：六大账户类别——资产/负债/股东权益为三大核心，收入/费用/股利是股东权益的年度流量细分（年末清零、净额转入留存收益）',
+      legend: [
+        { label: '资产', color: '#1d4ed8', style: 'dot' },
+        { label: '负债', color: '#b45309', style: 'dot' },
+        { label: '股东权益及其细分（收入/费用/股利）', color: '#0f766e', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：四大报表编制顺序与勾稽 —— 数字沿 IS→RE→BS→CF 流动 =====
+    Charts.tree(document.getElementById('fig-flow'), {
+      width: 640,
+      layers: [
+        [{ id: 'is', label: '① 利润表 Income Statement', width: 320 }],
+        [{ id: 're', label: '② 留存收益表 Retained Earnings', width: 320 }],
+        [{ id: 'bs', label: '③ 资产负债表 Balance Sheet', width: 320 }],
+        [{ id: 'cf', label: '④ 现金流量表 Statement of Cash Flows', width: 360, fill: '#f0fdfa', color: '#0f766e' }],
+      ],
+      edges: [
+        { from: 'is', to: 're', label: '净利润流入', labelDx: 96 },
+        { from: 're', to: 'bs', label: '期末留存收益 → 权益端', labelDx: 150 },
+        { from: 'bs', to: 'cf', label: '现金科目变动由其解释核对', color: '#0f766e', labelDx: 176 },
+      ],
+      caption: '图 2：四大报表的编制顺序与勾稽——顺序固定不可跳步；现金流量表相对独立，专门解释资产负债表现金科目的变动',
+    });
+  </script>
+</body>
+</html>

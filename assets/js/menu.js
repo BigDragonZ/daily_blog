@@ -72,6 +72,12 @@ const MENU = [
           { title: '01 为什么学会计：三大报表全景', link: 'pages/accounting/accounting-101/01-why-accounting.html' },
         ],
       },
+      {
+        title: '财务会计',
+        children: [
+          { title: '01 会计基础与四大报表', link: 'pages/accounting/financial-accounting/01-basics-and-statements.html' },
+        ],
+      },
     ],
   },
 ];

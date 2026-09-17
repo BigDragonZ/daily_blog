@@ -15,6 +15,7 @@
  */
 window.Charts = (function () {
   const SVG_NS = 'http://www.w3.org/2000/svg';
+  let chartSeq = 0; // 每次绘图自增，用于 SVG id 加前缀防止同页多图 id 冲突
 
   function el(name, attrs, parent) {
     const node = document.createElementNS(SVG_NS, name);
@@ -580,13 +581,14 @@ window.Charts = (function () {
 
     const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' });
 
-    // 每种颜色一个箭头 marker
+    // 每种颜色一个箭头 marker（id 带本图序号前缀，避免跨图冲突）
+    const uid = 'sf' + (++chartSeq) + '-';
     const defs = el('defs', null, svg);
     const markerOf = {};
     let markerIdx = 0;
     flows.forEach((f) => {
       if (markerOf[f.color]) return;
-      const id = 'sf-arrow-' + markerIdx++;
+      const id = uid + markerIdx++;
       const marker = el('marker', {
         id, markerWidth: 10, markerHeight: 10, refX: 8, refY: 3,
         orient: 'auto', markerUnits: 'strokeWidth',
@@ -686,11 +688,12 @@ window.Charts = (function () {
 
     const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' });
 
-    // 节点坐标：cx/cy 为方框中心
+    // 节点坐标：cx/cy 为方框中心；null 占位跳过（用于让子层节点对齐父节点下方）
     const pos = {};
     layers.forEach((layer, i) => {
       const slot = iw / Math.max(layer.length, 1);
       layer.forEach((node, j) => {
+        if (!node) return;
         pos[node.id] = {
           cx: side + slot * (j + 0.5),
           cy: top + i * (boxH + gapY) + boxH / 2,
@@ -699,14 +702,15 @@ window.Charts = (function () {
       });
     });
 
-    // 每种箭头颜色一个 marker
+    // 每种箭头颜色一个 marker（id 带本图序号前缀，避免跨图冲突）
+    const uid = 'tree' + (++chartSeq) + '-';
     const defs = el('defs', null, svg);
     const markerOf = {};
     let markerIdx = 0;
     edges.forEach((e) => {
       const color = e.color || '#2563eb';
       if (markerOf[color]) return;
-      const id = 'tree-arrow-' + markerIdx++;
+      const id = uid + markerIdx++;
       const marker = el('marker', {
         id, markerWidth: 10, markerHeight: 10, refX: 8, refY: 3,
         orient: 'auto', markerUnits: 'strokeWidth',
@@ -735,6 +739,7 @@ window.Charts = (function () {
     // 再画方框
     layers.forEach((layer) => {
       layer.forEach((node) => {
+        if (!node) return;
         const p = pos[node.id];
         const color = node.color || '#1d4ed8';
         el('rect', {
