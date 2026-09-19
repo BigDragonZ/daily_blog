@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 分批成本法 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>06 分批成本法：批次成本单与预定制造费用分配率</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）Ch16 的 MA27–MA29 三讲：分批成本法的适用场景、分批成本单、预定制造费用分配率，以及从批次成本到毛利的完整演练。上一篇 <a href="05-product-costs-cogm-cogs.html">P05</a> 解决了"成本什么时候算费用"（RM → WIP → FG → COGS 的流转），本篇回答紧随其后的问题：<strong>当成千上万的成本流进在产品账户时，怎么知道"这一单"到底花了多少钱、赚了多少钱？</strong>答案取决于你的产品长什么样。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、适用场景：你的产品独一无二，还是千篇一律？</h2>
+
+      <h3>1.1 引入：定制家具厂与肥皂厂的成本难题</h3>
+      <p><strong>对比开场：</strong>街角的定制家具厂这个月接了三单：一套胡桃木书柜、一张白橡木餐桌、一组儿童床——木料不同、工时不同、难度不同，每单都是独一无二的。而城郊的肥皂厂日产十万块香皂，每一块和另一块没有任何区别。现在问同一个问题："你的<strong>单位成本</strong>是多少？"</p>
+      <p>肥皂厂好办：把全月总成本除以十万块，一块一个价。家具厂却犯了难——把三单的成本混在一起平均，等于说"书柜和儿童床成本一样"，据此报价必然有的亏、有的吓跑客户。<strong>"产品是独一无二还是千篇一律"这一个问题，决定了整套成本系统的设计。</strong></p>
+
+      <h3>1.2 两套成本制度的分工</h3>
+      <ul>
+        <li><span class="term">分批成本法</span><span class="term-en">（Job Order Costing，简称 Job Costing）</span>：适用于<strong>独特、可辨认批次</strong>的生产——定制家具、特殊订单（Special Order）、造船、建筑、影视制作、会计师事务所的每个审计项目。成本按<span class="term">批次</span><span class="term-en">（Job）</span>逐一归集，一批一本账；</li>
+        <li><span class="term">分步成本法</span><span class="term-en">（Process Costing）</span>：适用于<strong>同质化、连续大量</strong>的生产——肥皂、造纸、炼油、饮料。产品无法逐件区分，成本先按"工序/部门"归集，再平均摊到全部产量上（P07 专讲，核心是约当产量）。</li>
+      </ul>
+      <p>同一个工厂也可以两种混用（如家具厂的"标准款流水线"用分步、"定制车间"用分批），入门阶段先记住判据：<strong>能不能把成本有意义地归属到"这一单"？能 → 分批；不能 → 分步。</strong></p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、分批成本单：一个批次一本账</h2>
+
+      <h3>2.1 定义：批次成本怎么记</h3>
+      <p>分批成本法的记账中枢是<span class="term">分批成本单</span><span class="term-en">（Job Cost Sheet，也叫 Job Cost Card）</span>——每个批次一张"账本卡片"，上面只记三行：<strong>直接材料（DM）＋ 直接人工（DL）＋ 分配的制造费用（Applied MOH）</strong>。DM 凭领料单（Materials Requisition）追到具体批次，DL 凭工时单（Time Ticket）追到具体批次，唯独 MOH 无法直接追溯（折旧、水电、主管薪资是全厂共享的），只能用分配率"估算着分摊"——这是下一节的主题。</p>
+      <p>一张成本单走完，批次的全部信息就位：</p>
+      <p style="text-align:center;"><strong>批次总成本 = DM ＋ DL ＋ 分配的 MOH　　单位成本 = 批次总成本 ÷ 本批件数</strong></p>
+      <p>批次状态也一目了然：未完工 → 成本留在期末在产品（WIP）；完工未售 → 期末产成品（FG）；已售 → 转入销货成本（COGS）。<strong>期末 WIP、FG、COGS 全部由各张成本单加总而来</strong>——明细账与总账自动对上。</p>
+
+      <h3>2.2 例题（MA27，Lima 公司）：三张成本单</h3>
+      <p>Lima 公司投产第一个月（无期初库存），投产三个批次，制造费用按<strong>直接人工成本的 70%</strong> 分摊（这个 70% 的来历见第三节）：</p>
+      <table>
+        <thead>
+          <tr><th>成本项目</th><th>Job 101</th><th>Job 102</th><th>Job 103</th><th>合计</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直接材料（DM）</td><td style="text-align:right;">$2,200</td><td style="text-align:right;">$1,800</td><td style="text-align:right;">$1,700</td><td style="text-align:right;">$5,700</td></tr>
+          <tr><td>直接人工（DL）</td><td style="text-align:right;">3,600</td><td style="text-align:right;">2,700</td><td style="text-align:right;">2,300</td><td style="text-align:right;">8,600</td></tr>
+          <tr><td>分配的 MOH（DL × 70%）</td><td style="text-align:right;">2,520</td><td style="text-align:right;">1,890</td><td style="text-align:right;">1,610</td><td style="text-align:right;">6,020</td></tr>
+          <tr><td><strong>批次总成本</strong></td><td style="text-align:right;"><strong>8,320</strong></td><td style="text-align:right;"><strong>6,390</strong></td><td style="text-align:right;"><strong>5,610</strong></td><td style="text-align:right;"><strong>20,320</strong></td></tr>
+          <tr><td>期末状态</td><td>完工已售 → COGS</td><td>未完工 → 期末 WIP</td><td>完工未售 → 期末 FG</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p><strong>补充演算（讲义未给件数，此处自设）：</strong>若 Job 101 是一批 20 件定制书柜，则单位成本 = 8,320 ÷ 20 = <strong>$416/件</strong>——报价时这就是底线。三批成本全不一样，正是"分批"的意义所在：混着平均（20,320 ÷ 3 ≈ 6,773）对任何一批都是错的。</p>
+      <div class="callout">
+        <strong>与 P05 的衔接：</strong>MA27 中这批成本沿"原材料 → 在产品 → 产成品 → COGS"流转：完工的 Job 101、103 转出 COGM = 8,320 ＋ 5,610 = <strong>$13,930</strong>；Job 101 赊销 $12,500，确认 COGS <strong>$8,320</strong>、毛利 <strong>$4,180</strong>；期末余额——原材料 $2,200、WIP $6,390（Job 102）、FG $5,610（Job 103）。每一分钱都能在某张成本单上找到出处。
+      </div>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、预定制造费用分配率：MOH 怎么进成本单</h2>
+
+      <h3>3.1 引入：月底才出账的水电费，等得起吗？</h3>
+      <p><strong>反直觉开场：</strong>Job 101 本月 15 号就交货了，客户等着开票收款。可工厂的水电费账单、设备折旧汇总要到<strong>月底结账后</strong>才知道总数——难道让客户等半个月？而且就算等到了，"实际费率"也没法用：一月产量低，同样的折旧摊到更少批次上，费率飙升；七月产量高，费率骤降。<strong>两张一模一样的书桌，一月做的比七月做的"成本"高一截</strong>——这不是成本信息，这是噪音。</p>
+      <p>解决办法是<strong>不用实际费率，用事先估好的费率</strong>：<span class="term">预定制造费用分配率</span><span class="term-en">（Predetermined Overhead Rate, POHR）</span>：</p>
+      <p style="text-align:center;"><strong>POHR = 预计全年 MOH ÷ 预计全年分配基础总量<br>分配到某批次的 MOH = POHR × 该批次实际耗用的基础量</strong></p>
+      <p><span class="term">分配基础</span><span class="term-en">（Allocation Base）</span>是"驱动"制造费用的作业量，常用<span class="term">直接人工小时</span><span class="term-en">（Direct Labor Hours, DLH）</span>、直接人工成本、机器小时（Machine Hours, MH），个别公司用主要成本（Prime Cost = DM＋DL）。选基础的原则：<strong>与 MOH 因果相关最强</strong>——人工密集型工厂用 DLH/DL 成本，自动化工厂用机器小时。</p>
+      <p>用"预定"而非"实际"的两条理由，正好对应引入里的两个痛点：</p>
+      <ol>
+        <li><strong>及时性：</strong>批次一完工就能算成本、开账单、做定价，不必等期末出账；</li>
+        <li><strong>平滑波动：</strong>全年一个费率，剔除月度产量与季节性费用（冬季取暖费）造成的费率抖动，同样的产品任何月份成本一致。</li>
+      </ol>
+
+      <h3>3.2 例题（MA28，Mike Corp）：两种基础，两个费率</h3>
+      <p>Mike Corp 预计下月：直接材料 $411,000、直接人工 $343,000、制造费用 $221,000。两种候选基础各算一个 POHR：</p>
+      <table>
+        <thead>
+          <tr><th>分配基础</th><th>计算</th><th>预定分配率</th><th>含义</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直接人工成本</td><td>$221,000 ÷ $343,000</td><td style="text-align:right;"><strong>≈ 64.4%</strong></td><td>每 $1 直接人工，附加约 $0.64 制造费用</td></tr>
+          <tr><td>主要成本（DM＋DL = $754,000）</td><td>$221,000 ÷ $754,000</td><td style="text-align:right;"><strong>≈ 29.31%</strong></td><td>每 $1 主要成本，附加约 $0.29 制造费用</td></tr>
+        </tbody>
+      </table>
+      <p>注意：MOH 完全可能超过 DL（若预计 MOH 为 $500,000，按 DL 基础的费率将达 145.78%）——<strong>分配率超过 100% 并不异常</strong>，只说明这家工厂间接成本比直接人工还重。</p>
+      <p>采用主要成本基础为 <strong>Job 27</strong> 分配 MOH：Job 27 的 DM $11,200 ＋ DL $9,600 = 主要成本 $20,800，分配的 MOH = 20,800 × 29.31% ≈ <strong>$6,096</strong>（尾差为费率四舍五入所致）。于是 Job 27 总成本 = 11,200 ＋ 9,600 ＋ 6,096 = <strong>$26,896</strong>。</p>
+
+      <h3>3.3 优点与缺点</h3>
+      <ul>
+        <li><strong>优点：</strong>及时（不必等期末）、平滑（全年一率）、简单（一次估计，全年套用），报价与批次盈利分析随时可做；</li>
+        <li><strong>缺点：</strong>费率是<strong>估计</strong>，全年实际 MOH 与分配总额几乎必然对不上——差额即 P05 提到的多分摊/少分摊制造费用（Overapplied / Underapplied Overhead），期末需调整；且单一分配基础对间接成本结构复杂的工厂过于粗糙，会造成成本扭曲（P08 作业成本法 ABC 用多个成本动因来修）。</li>
+      </ul>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、成本归集全流程：三条线汇入成本单</h2>
+
+      <div id="fig-flow"></div>
+      <p><strong>图 1 解读：</strong>整张图的枢纽是中间的<strong>分批成本单</strong>（橙色）。左、中两条蓝色成本线可以直接追溯：DM 凭领料单、DL 凭工时单逐笔记到具体批次头上；右侧绿色成本线无法追溯，只能以 POHR × 实际基础量"估算着分摊"（MA27 用 DL 的 70%）——这正是预定分配率存在的理由。三条线加总得批次总成本，除以本批件数得单位成本。<strong>优点：</strong>追溯与分摊的分工一目了然，DM/DL 精确、MOH 近似；<strong>缺点：</strong>绿色那条线把"估计"画得像"事实"，分配基础选错时误差会悄无声息地进入每个批次的成本。</p>
+
+      <div id="fig-jobs"></div>
+      <p><strong>图 2 解读：</strong>Lima 公司三个批次的成本构成并排对比。三个批次 DM、DL、MOH 全不相同——Job 101 人工最重（$3,600），MOH 也相应最高（$2,520，始终是该批 DL 的 70%，所以绿柱与红柱等比例联动）；三批总成本分别为 $8,320、$6,390、$5,610。读图要点是：<strong>没有"平均的一批"</strong>，每批必须单独定价、单独考核盈利。柱顶数值即成本单上的数字，两相对照。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、从批次成本到利润（MA29，November 公司）</h2>
+
+      <h3>5.1 三张成本卡 + 毛利</h3>
+      <p>November 公司用分批成本法，MOH 估计为<strong>直接人工的 90%</strong>。三个批次全部完工，售出 Job 501（$11,200）与 Job 503（$9,500）。先补全三张成本卡：</p>
+      <table>
+        <thead>
+          <tr><th>成本项目</th><th>Job 501</th><th>Job 502</th><th>Job 503</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直接材料（DM）</td><td style="text-align:right;">$1,800</td><td style="text-align:right;">$1,700</td><td style="text-align:right;">$1,500</td></tr>
+          <tr><td>直接人工（DL）</td><td style="text-align:right;">3,500</td><td style="text-align:right;">2,800</td><td style="text-align:right;">2,900</td></tr>
+          <tr><td>分配的 MOH（DL × 90%）</td><td style="text-align:right;">3,150</td><td style="text-align:right;">2,520</td><td style="text-align:right;">2,610</td></tr>
+          <tr><td><strong>批次总成本</strong></td><td style="text-align:right;"><strong>8,450</strong></td><td style="text-align:right;"><strong>7,020</strong></td><td style="text-align:right;"><strong>7,010</strong></td></tr>
+          <tr><td>期末状态</td><td>已售（$11,200）</td><td>完工未售 → 期末 FG</td><td>已售（$9,500）</td></tr>
+        </tbody>
+      </table>
+      <p>毛利核算：销售收入 = 11,200 ＋ 9,500 = $20,700；COGS = 已售批次成本 = 8,450 ＋ 7,010 = $15,460；<strong>毛利 = 20,700 − 15,460 = $5,240</strong>。未售的 Job 502（$7,020）留在期末产成品里，等售出那期才进 COGS——分批成本法让"哪单赚了、哪单还压着"一清二楚：Job 501 单笔毛利 $2,750，Job 503 单笔毛利 $2,490。</p>
+
+      <h3>5.2 分批成本法的优点与缺点</h3>
+      <ul>
+        <li><strong>优点：</strong>每个独特批次的成本与盈利<strong>精确可见</strong>，直接支撑报价、投标与"这单接不接"的决策；期末 WIP/FG/COGS 自动由成本单加总，账实易核对；</li>
+        <li><strong>缺点：</strong>记账成本高——每批一张成本单、每笔领料与工时都要追到批次号，行政负担随批次数线性增长；MOH 环节仍是估算，费率失真则批次成本失真；对同质化大批量生产则完全无用武之地（那正是分步成本法的地盘）。</li>
+      </ul>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、收尾对比：分批成本法 vs 分步成本法</h2>
+
+      <div id="fig-choose"></div>
+      <p><strong>图 3 解读：</strong>成本制度的选择树——先问"产品是否同质化"。独一无二（定制）走左侧蓝色分支：分批成本法，成本归集到批次，典型如定制家具与特殊订单；千篇一律（同质量产）走右侧绿色分支：分步成本法，成本归集到工序再平均，典型如肥皂与造纸。判据只有一条：<strong>成本能否有意义地归属到"这一单"</strong>。</p>
+
+      <table>
+        <thead>
+          <tr><th>维度</th><th>分批成本法（Job Order Costing）</th><th>分步成本法（Process Costing）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>产品性质</td><td>独特、定制、可辨认批次</td><td>同质化、连续大量生产</td></tr>
+          <tr><td>成本归集对象</td><td><strong>每个批次</strong>（一张成本单）</td><td><strong>每个工序/部门</strong>，再按产量平均</td></tr>
+          <tr><td>单位成本算法</td><td>批次总成本（DM＋DL＋分配 MOH）÷ 本批件数</td><td>工序总成本 ÷ 约当产量（P07 展开）</td></tr>
+          <tr><td>典型行业</td><td>定制家具、造船、建筑、特殊订单、审计项目</td><td>肥皂、造纸、炼油、饮料、化工</td></tr>
+          <tr><td>优点</td><td>单批成本与盈利精确可见，支撑报价决策</td><td>处理海量同质产品，记账成本低</td></tr>
+          <tr><td>缺点</td><td>每批追账，行政负担重</td><td>只有平均成本，无法区分个体差异</td></tr>
+        </tbody>
+      </table>
+      <p>下一篇 P07 进入表的右列：分步成本法的核心难题是"月末做到一半的产品算几成"——<strong>约当产量</strong>（Equivalent Units）登场。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（怎么知道"这一单"花了多少钱？）→ 简化模型（产品独一无二 → 按批次归集 DM＋DL＋MOH，一批一张成本单；MOH 不可追溯 → 用预定分配率估算分摊）→ 推导（POHR = 预计 MOH ÷ 预计基础量；批次总成本 = 三项之和；单位成本 = 批次总成本 ÷ 件数；毛利 = 售价 − 已售批次成本）→ 实际应用（Lima 三批次成本单与期末余额、Mike Corp 两种基础的费率、November 三张成本卡与毛利 $5,240）→ 局限性（MOH 是估计，多/少分摊差异期末调整；单一分配基础对复杂工厂太粗，P08 ABC 来修；分批法对同质量产无效，P07 分步法接棒）。</p>
+      <div class="callout warn">
+        <strong>资料质量提示：</strong>MA27、MA28 讲义为中文精修版；MA29 原始讲义为未精修的英文自动字幕，本页已按精修风格提炼重写。所有数值均来自讲义并逐一复算（Lima：DM 合计 $5,700、DL 合计 $8,600、MOH 合计 $6,020、批次总成本 $8,320 / $6,390 / $5,610、毛利 $4,180；Mike Corp：主要成本 $754,000、Job 27 分配 MOH $6,096；November：批次总成本 $8,450 / $7,020 / $7,010、毛利 $5,240）。MA28 按 DL 基础的费率讲义记为 64.42%，精确复算为 64.43%，本页统一写 ≈64.4%。
+      </div>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/06-job-order-costing.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：分批成本归集流程 —— DM/DL 直接追溯 + MOH 预定率分摊，三条线汇入成本单 =====
+    var C_DIR = '#1d4ed8', C_DIR_FILL = '#eff6ff';
+    var C_MOH = '#15803d', C_MOH_FILL = '#f0fdf4';
+    var C_JOB = '#c2410c', C_JOB_FILL = '#fff7ed';
+    Charts.tree(document.getElementById('fig-flow'), {
+      width: 780,
+      layers: [
+        [
+          { id: 'dm', label: '直接材料 DM', color: C_DIR, width: 170 },
+          { id: 'dl', label: '直接人工 DL', color: C_DIR, width: 170 },
+          { id: 'moh', label: '制造费用 MOH', color: C_MOH, fill: C_MOH_FILL, width: 170 },
+        ],
+        [{ id: 'sheet', label: '分批成本单', color: C_JOB, fill: C_JOB_FILL, width: 240 }],
+        [{ id: 'total', label: '批次总成本', color: C_JOB, fill: C_JOB_FILL, width: 200 }],
+        [{ id: 'unit', label: '单位成本', color: C_JOB, fill: C_JOB_FILL, width: 200 }],
+      ],
+      edges: [
+        { from: 'dm', to: 'sheet', color: C_DIR, label: '领料单归集', labelDx: -52 },
+        { from: 'dl', to: 'sheet', color: C_DIR, label: '工时单归集', labelDx: 0, labelDy: -4 },
+        { from: 'moh', to: 'sheet', color: C_MOH, label: 'POHR×基础量', labelDx: 58 },
+        { from: 'sheet', to: 'total', color: C_JOB, label: 'DM+DL+MOH 加总', labelDx: 104 },
+        { from: 'total', to: 'unit', color: C_JOB, label: '÷ 本批件数', labelDx: 76 },
+      ],
+      caption: '图 1：分批成本归集流程——DM/DL 凭单据直接追溯到批次，MOH 用预定分配率（POHR）分摊，三条成本线汇入分批成本单',
+      legend: [
+        { label: '可直接追溯的成本（DM/DL）', color: C_DIR, style: 'dot' },
+        { label: '需估算分摊的成本（MOH）', color: C_MOH, style: 'dot' },
+        { label: '批次成本单及其汇总', color: C_JOB, style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：Lima 公司三批次成本构成（MA27）——分组柱状 =====
+    Charts.bar(document.getElementById('fig-jobs'), {
+      width: 760,
+      height: 420,
+      categories: ['Job 101（总成本 $8,320）', 'Job 102（总成本 $6,390）', 'Job 103（总成本 $5,610）'],
+      series: [
+        { label: '直接材料 DM', color: '#1d4ed8', values: [2200, 1800, 1700] },
+        { label: '直接人工 DL', color: '#c2410c', values: [3600, 2700, 2300] },
+        { label: '分配 MOH（DL×70%）', color: '#15803d', values: [2520, 1890, 1610] },
+      ],
+      yLabel: '成本（$）',
+      yMax: 4000,
+      yStep: 1000,
+      caption: '图 2：Lima 公司三个批次的成本构成——每批 DM/DL/MOH 全不相同，MOH 恒为该批 DL 的 70%（MA27 数据）',
+      legendPosition: 'top',
+    });
+
+    // ===== 图3：成本制度选择树 —— 分批 vs 分步 =====
+    var C_JOB2 = '#1d4ed8', C_JOB2_FILL = '#eff6ff';
+    var C_PROC = '#15803d', C_PROC_FILL = '#f0fdf4';
+    Charts.tree(document.getElementById('fig-choose'), {
+      width: 780,
+      layers: [
+        [{ id: 'q', label: '产品是否同质化？', color: '#374151', fill: '#f8fafc', width: 220 }],
+        [
+          { id: 'uniq', label: '独特 / 定制', color: C_JOB2, width: 170 },
+          { id: 'homo', label: '同质 / 量产', color: C_PROC, fill: C_PROC_FILL, width: 170 },
+        ],
+        [
+          { id: 'job', label: '分批成本法', color: C_JOB2, width: 180 },
+          { id: 'proc', label: '分步成本法', color: C_PROC, fill: C_PROC_FILL, width: 180 },
+        ],
+        [
+          { id: 'ex1', label: '定制家具', color: C_JOB2, width: 120 },
+          { id: 'ex2', label: '特殊订单', color: C_JOB2, width: 120 },
+          { id: 'ex3', label: '肥皂', color: C_PROC, fill: C_PROC_FILL, width: 120 },
+          { id: 'ex4', label: '造纸炼油', color: C_PROC, fill: C_PROC_FILL, width: 120 },
+        ],
+      ],
+      edges: [
+        { from: 'q', to: 'uniq', color: C_JOB2, label: '能归属到"这一单"', labelDx: -104 },
+        { from: 'q', to: 'homo', color: C_PROC, label: '无法逐件区分', labelDx: 100 },
+        { from: 'uniq', to: 'job', color: C_JOB2, label: '归集到批次', labelDx: -64 },
+        { from: 'homo', to: 'proc', color: C_PROC, label: '归集到工序', labelDx: 64 },
+        { from: 'job', to: 'ex1', color: C_JOB2 },
+        { from: 'job', to: 'ex2', color: C_JOB2 },
+        { from: 'proc', to: 'ex3', color: C_PROC },
+        { from: 'proc', to: 'ex4', color: C_PROC },
+      ],
+      caption: '图 3：成本制度选择树——产品独一无二走分批成本法，千篇一律走分步成本法（P07 主题）',
+      legend: [
+        { label: '分批成本法（Job Order Costing）', color: C_JOB2, style: 'dot' },
+        { label: '分步成本法（Process Costing）', color: C_PROC, style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>

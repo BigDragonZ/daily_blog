@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 成本性态与成本估计 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>09 成本性态与成本估计：高低点法与回归分析</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）第 37–38 讲：MA37 用高低点法做成本估计、MA38 用回归做成本估计。<strong>反直觉开场：</strong>看一眼公司的电费账单——产量翻倍的那个月，电费<strong>没有</strong>翻倍；产量归零，电费也<strong>不会</strong>归零。它既不完全固定，也不完全变动，而是两者的混合体。问题来了：预算和本量利分析（P10）都要求把成本拆成"固定 + 变动"两块，这笔混合成本怎么拆？更反直觉的是：讲师说，<strong>只用"最高"和"最低"两个数据点</strong>，就能估出个大概——这就是本篇的主角之一<span class="term">高低点法</span><span class="term-en">（High-Low Method）</span>；而它的升级版<span class="term">回归分析</span><span class="term-en">（Regression Analysis）</span>则用全部数据点换更高精度。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、先识别成本性态：三种成本，三种脾气</h2>
+
+      <h3>1.1 成本 A / B / C：看数字猜类型</h3>
+      <p><span class="term">成本性态</span><span class="term-en">（Cost Behavior）</span>指成本总额如何随业务量（产量、销量等活动水平）变化。讲师给出一家公司四种业务量水平下的三笔成本，先不给答案——</p>
+      <ul>
+        <li><strong>成本 A</strong>：0 → 700 → 1,400 → 2,100。业务量每上一档，它等比增长，业务量为零时它也为零——这正是<span class="term">变动成本</span><span class="term-en">（Variable Cost, VC）</span>的定义：总额随业务量增加而增加、减少而减少（单位变动成本 $7/件）；</li>
+        <li><strong>成本 B</strong>：每个业务量水平下金额完全相同——这是<span class="term">固定成本</span><span class="term-en">（Fixed Cost, FC）</span>的定义：总额不随业务量变动（如下图中示意的 $1,200）；</li>
+        <li><strong>成本 C</strong>：从一个不为零的基数开始，然后每次都往上涨——它身上同时有固定和变动两种成分，这是<span class="term">混合成本</span><span class="term-en">（Mixed Cost）</span>的定义。电费、水费、维修费通常都是它：基础用量收固定费，超出部分按量计价。</li>
+      </ul>
+      <div id="fig-behavior"></div>
+      <p><strong>图 1 解读：</strong>横轴为业务量，纵轴为总成本。成本 A（蓝线）过原点、斜率 $7/件，是纯变动成本；成本 B（绿线）是一条水平线，产量怎么变它都不动；成本 C（橙线）从纵轴 $500 的基数出发再向上倾斜——<strong>它与纵轴的交点就是固定成分，斜率就是单位变动成本</strong>。注意：讲义只给了成本 A 的具体数字（0/700/1,400/2,100），B、C 的数值为示意，形状才是重点。三分法的<strong>优点</strong>是一眼对应后续所有模型（CVP、预算都按此拆分）；<strong>缺点</strong>是现实成本未必线性——阶梯成本、批量折扣都会让线变弯，线性只在"相关范围"内成立。</p>
+
+      <h3>1.2 成本公式：把混合成本写成一条直线</h3>
+      <p>拆分混合成本的目标，是把它写成<span class="term">成本公式</span><span class="term-en">（Cost Formula）</span>：<strong>Y = FC + VC·X</strong>（统计里也写作 y = a + bx 或 y = mx + b）。其中 Y 是总成本（<span class="term">因变量</span><span class="term-en">（Dependent Variable）</span>），X 是业务量（<span class="term">自变量</span><span class="term-en">（Independent Variable）</span>），FC 是固定成本总额（直线在纵轴上的<span class="term">截距</span><span class="term-en">（Y-intercept）</span>），VC 是单位变动成本（直线的<span class="term">斜率</span><span class="term-en">（Slope）</span>）。成本估计的全部工作，就是<strong>用历史数据求出 FC 和 VC 这两个数</strong>。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、高低点法：只用两个点的快速估算</h2>
+
+      <h3>2.1 数据：九个月的产量与成本</h3>
+      <p>例题给出一家公司 4 月到 12 月共九个月的业务量（件数）与总成本：</p>
+      <table>
+        <thead>
+          <tr><th>月份</th><th>业务量 X（件）</th><th>总成本 Y（$）</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>4 月</td><td>100</td><td>5,600</td><td><strong>最低点</strong>（业务量最少）</td></tr>
+          <tr><td>5 月</td><td>105</td><td>5,238</td><td></td></tr>
+          <tr><td>6 月</td><td>120</td><td>5,100</td><td>⚠ 成本最低，但业务量不是最低——<strong>不能选它</strong></td></tr>
+          <tr><td>7 月</td><td>130</td><td>6,458</td><td></td></tr>
+          <tr><td>8 月</td><td>145</td><td>5,610</td><td></td></tr>
+          <tr><td>9 月</td><td>150</td><td>7,010</td><td></td></tr>
+          <tr><td>10 月</td><td>165</td><td>6,839</td><td></td></tr>
+          <tr><td>11 月</td><td>172</td><td>7,169</td><td></td></tr>
+          <tr><td>12 月</td><td>180</td><td>7,200</td><td><strong>最高点</strong>（业务量最多）</td></tr>
+        </tbody>
+      </table>
+      <div class="callout warn">
+        <strong>资料质量提示：</strong>原始讲义（YouTube 字幕）只口头给出了关键锚点——高点 180 件 / $7,200、低点 100 件 / $5,600、以及"诱惑项"最低成本 $5,100——未给出完整九个月数据表。表中中间七个月的数据按讲义锚点与 Excel 输出（斜率 25.232、截距 2,695、R² = 0.723）反推重构，代入回归后结果与讲义一致；所有考点数字均沿用讲义。
+      </div>
+      <p>要回答五个问题：① 单位变动成本？② 固定成本？③ 成本公式？④ 生产 180 件的总成本？⑤ 总成本 $8,000 时大约生产了多少件？</p>
+
+      <h3>2.2 五步计算：先选点，再求斜率，最后定截距</h3>
+      <div class="callout warn">
+        <strong>全场最大的坑：按业务量选高低点，不是按成本！</strong>6 月的 $5,100 是全表最低成本，但它的业务量（120 件）不是最低——选它就掉坑里了。高低点法选的是<strong>活动水平（件数）</strong>的最高与最低，再取这两点对应的成本。选错两个点，后面全盘皆错。
+      </div>
+      <table>
+        <thead>
+          <tr><th>步骤</th><th>做什么</th><th>计算</th><th>结果</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>① 选高低点</strong></td><td>按<strong>业务量</strong>找最高、最低</td><td>高点 12 月：180 件 / $7,200；低点 4 月：100 件 / $5,600</td><td>两个点</td></tr>
+          <tr><td><strong>② 算单位变动成本</strong></td><td>VC/单位 = Δ成本 ÷ Δ业务量</td><td>(7,200 − 5,600) ÷ (180 − 100) = 1,600 ÷ 80</td><td><strong>$20/件</strong></td></tr>
+          <tr><td><strong>③ 算固定成本</strong></td><td>FC = 总成本 − VC×业务量（高点低点任取，互相验证）</td><td>高点：7,200 − 20×180 = 7,200 − 3,600<br>低点：5,600 − 20×100 = 5,600 − 2,000</td><td><strong>$3,600</strong>（两路一致 ✓）</td></tr>
+          <tr><td><strong>④ 写成本公式</strong></td><td>Y = FC + VC·X</td><td colspan="2"><strong>Y = 3,600 + 20X</strong></td></tr>
+          <tr><td><strong>⑤ 预测与反解</strong></td><td>正算成本；反解业务量（代数倒推 X）</td><td>180 件：3,600 + 20×180；$8,000：X = (8,000 − 3,600) ÷ 20 = 4,400 ÷ 20</td><td><strong>$7,200</strong>（与高点数据吻合 ✓）；<strong>220 件</strong></td></tr>
+        </tbody>
+      </table>
+      <p>第②步的直觉：多生产 80 件，总成本多花 $1,600——这 $1,600 全是变动成本（固定成本不动），所以每件 $20。第③步：180 件的总成本 $7,200 里，变动部分占 180×20 = $3,600，剩下的 $3,600 就是雷打不动的固定部分。第⑤步的反解值得单独记：<strong>给成本求件数，就是把公式倒过来解 X</strong>——先减固定成本，再除以单位变动成本。</p>
+      <p><strong>方法优缺点：优点</strong>是快——两个点、三次四则运算，考试手算、开会心算都够用；<strong>缺点</strong>是它把九个数据点里的七个直接扔掉，估计精度完全押在两个点上；万一高点或低点恰是异常月份（罢工、设备检修），整条线就被带偏——它<strong>对异常值极度敏感</strong>。下一节的回归分析正是为治这个病而来。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、回归分析：用全部数据点拟合</h2>
+
+      <h3>3.1 思路：不再押注两点，让所有点投票</h3>
+      <p>MA38 用同一家公司（讲义中称 Yankee 公司）的同样九个月数据，改用回归重做五个问题。回归（这里是一元线性回归，最小二乘法）不再只取两点，而是<strong>把九个点全部画进散点图，找出一条与所有点整体最接近的直线</strong>。实务中两条最方便的路径（讲师在 Excel 上演示）：</p>
+      <ul>
+        <li><strong>散点图 + 趋势线</strong>：选中件数与成本两列 → 插入散点图 → 右键"添加趋势线"（线性）→ 勾选"显示公式"和"显示 R 平方值"，成本公式直接写在图上；</li>
+        <li><strong>SLOPE 与 INTERCEPT 函数</strong>：<code>SLOPE(成本列, 件数列)</code> 给出斜率 25.2323（单位变动成本），<code>INTERCEPT(成本列, 件数列)</code> 给出截距 2695.004（固定成本）。用单元格引用，后续预测不用手敲数字。考试则常用 BA-II Plus 计算器的统计模式，结果相同。</li>
+      </ul>
+      <p>得到的成本公式：<strong>Y = 2,695 + 25.23X</strong>——固定成本 $2,695，单位变动成本约 $25.23。与高低点法的 Y = 3,600 + 20X 相比：<strong>固定成本更低、单位变动成本更高</strong>，因为回归线要照顾中间那些偏离高低点连线的数据点。</p>
+
+      <h3>3.2 R 与 R²：这条线有多可信？</h3>
+      <ul>
+        <li><span class="term">相关系数</span><span class="term-en">（Correlation Coefficient, R）</span>衡量两个变量同向变动的程度，取值 −1 到 +1。本例 R = √0.723 ≈ <strong>0.85</strong>——强的正相关：件数越多，成本越高；</li>
+        <li><span class="term">判定系数</span><span class="term-en">（Coefficient of Determination, R²）</span> = R 的平方 = <strong>0.723</strong>，含义是：<strong>成本的所有波动中，约 72% 可以仅用"生产了多少件"来解释</strong>，剩下 28% 归其他因素（天气、电价、检修……）。R² 越接近 1，成本公式越可信；0.723 说明这个模型不错但谈不上完美——这也解释了为什么中间月份的数据点分散在回归线两侧。</li>
+      </ul>
+      <div id="fig-scatter"></div>
+      <p><strong>图 2 解读：</strong>绿色圆点是九个月的实际数据，注意 6 月（120 件，$5,100）这个"成本最低但业务量不是最低"的诱惑点明显偏离主线。橙色线只连接高点（180, $7,200）与低点（100, $5,600），斜率 $20/件、截距 $3,600——它严格穿过这两个绿点，却对其他点不管不顾。蓝色回归线由全部九个点共同决定，斜率更陡（$25.23/件）、截距更低（$2,695），整体从点群中央穿过。两线在纵轴上的截距差（$3,600 vs $2,695）和斜率差（$20 vs $25.23）就是两种方法估计差异的几何直观。</p>
+
+      <h3>3.3 用回归做同样的预测</h3>
+      <ul>
+        <li><strong>生产 180 件的总成本</strong>：Y = 2,695 + 25.232×180 = 2,695 + 4,541.76 ≈ <strong>$7,237</strong>（高低点法给 $7,200，实际值也是 $7,200——注意这只是因为 180 件恰是回归的"高点"数据之一，回归线不必穿过任何单点）；</li>
+        <li><strong>总成本 $8,000 对应的件数</strong>：8,000 − 2,695 = 5,305 = 25.232X → X = 5,305 ÷ 25.232 ≈ <strong>210.25 件</strong>（高低点法给 220 件）。</li>
+      </ul>
+      <p><strong>方法优缺点：优点</strong>是利用全部数据，单个异常月份的干扰被其他点稀释，且自带 R² 这个"可信度仪表"；<strong>缺点</strong>是手算不现实（依赖 Excel/计算器），而且同样假设线性——如果真实成本是曲线，回归只是把错误平均得更优雅。另外 R² = 0.723 提醒我们：即使回归，也有 28% 的成本波动解释不了。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、两种方法精度对比与收尾</h2>
+
+      <h3>4.1 预测结果并排看</h3>
+      <div id="fig-compare"></div>
+      <p><strong>图 3 解读：</strong>在 180 件处，高低点法报 $7,200（恰等于该月实际值，因为它就是拿这个点算的），回归报 $7,237——两者几乎打平；外推到 200 件，差距拉开到 $7,600 vs $7,741。规律是：<strong>在数据范围内插值，两法相近；越往外推，斜率差（$5.23/件）累积的偏差越大</strong>。两个答案都是"估计"，回归的 $7,237 旁边还站着 R² = 0.723 这个信心注脚。</p>
+
+      <h3>4.2 收尾对比表</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>高低点法（High-Low Method）</th><th>回归分析（Regression Analysis）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>数据用量</strong></td><td>只用 2 个点（业务量最高、最低）</td><td>用全部数据点</td></tr>
+          <tr><td><strong>精度</strong></td><td>粗糙，结果取决于恰好选中的两点</td><td>更准，且 R² 直接量化拟合优度（本例 0.723）</td></tr>
+          <tr><td><strong>易算性</strong></td><td>纸笔三步搞定，考试/估算首选</td><td>需 Excel（散点图趋势线、SLOPE/INTERCEPT）或 BA-II Plus</td></tr>
+          <tr><td><strong>异常值敏感度</strong></td><td><strong>极高</strong>——高低点任一是异常月份，全线失真</td><td>较低——单点异常被其余数据稀释</td></tr>
+          <tr><td><strong>本例结果</strong></td><td>Y = 3,600 + 20X；180 件 → $7,200；$8,000 → 220 件</td><td>Y = 2,695 + 25.23X；180 件 → $7,237；$8,000 → 210.25 件</td></tr>
+          <tr><td><strong>共同局限</strong></td><td colspan="2">都假设成本线性、都只用历史数据外推——超出历史业务量范围（如 250 件）时，两种方法的可信度都打折</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（混合成本怎么拆成固定 + 变动两块？）→ 简化模型（成本性态三分法；混合成本写成直线 Y = FC + VC·X）→ 推导（两点定一线得高低点法：VC/单位 = Δ成本 ÷ Δ业务量 = $20，FC = $3,600；全体点投票得回归线：斜率 $25.23、截距 $2,695、R² = 0.723）→ 实际应用（成本公式正算预算成本、反解业务量；Excel 两条落地路径）→ 局限性（高低点法押注两点、怕异常值；回归依赖工具且同样线性假设；R² = 0.723 说明近三成成本波动另有原因——成本估计是"够用就好"的决策工具，不是精确科学）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/09-cost-estimation.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：三种成本性态 —— A 过原点（VC）、B 水平（FC）、C 有基数再上倾（Mixed） =====
+    Charts.xy(document.getElementById('fig-behavior'), {
+      width: 720,
+      height: 460,
+      xLabel: '业务量（件）',
+      yLabel: '总成本（$）',
+      xMax: 320,
+      yMax: 2400,
+      xTicks: [0, 100, 200, 300],
+      yTicks: [0, 500, 1000, 1500, 2000],
+      series: [
+        { points: [[0, 0], [300, 2100]], type: 'linear', color: '#1d4ed8', label: '成本 A：变动成本（$7/件）' },
+        { points: [[0, 1200], [320, 1200]], type: 'linear', color: '#15803d', label: '成本 B：固定成本（示意 $1,200）' },
+        { points: [[0, 500], [320, 1780]], type: 'linear', color: '#b45309', label: '成本 C：混合成本（示意 $500 + $4/件）' },
+      ],
+      markers: [
+        { x: 100, y: 700, color: '#1d4ed8', label: '$700', labelDx: 8, labelDy: -10 },
+        { x: 200, y: 1400, color: '#1d4ed8', label: '$1,400', labelDx: 8, labelDy: -10 },
+        { x: 300, y: 2100, color: '#1d4ed8', label: '$2,100', labelDx: -54, labelDy: -12 },
+        { x: 0, y: 500, color: '#b45309', label: '固定基数 $500', labelDx: 10, labelDy: 18 },
+      ],
+      legendPosition: 'top',
+      legend: [
+        { label: '成本 A：变动成本 VC（0 → 700 → 1,400 → 2,100）', color: '#1d4ed8', style: 'line' },
+        { label: '成本 B：固定成本 FC（各业务量下不变，示意）', color: '#15803d', style: 'line' },
+        { label: '成本 C：混合成本 Mixed（固定基数 + 变动部分，示意）', color: '#b45309', style: 'line' },
+      ],
+      caption: '图 1：三种成本性态——A 随产量等比变动（VC），B 不随产量动（FC），C 有固定基数又随产量增长（Mixed）',
+    });
+
+    // ===== 图2：九个月散点 + 高低点连线（Y=3600+20X）+ 回归线（Y=2695+25.23X） =====
+    Charts.xy(document.getElementById('fig-scatter'), {
+      width: 720,
+      height: 500,
+      xLabel: '业务量 X（件）',
+      yLabel: '总成本 Y（$）',
+      xMax: 200,
+      yMax: 8000,
+      xTicks: [0, 50, 150, 200],
+      yTicks: [0, 2000, 4000, 6000, 8000],
+      series: [
+        { points: [[0, 3600], [200, 7600]], type: 'linear', color: '#b45309', label: '高低点法 Y = 3,600 + 20X' },
+        { points: [[0, 2695], [200, 7741]], type: 'linear', color: '#1d4ed8', label: '回归线 Y = 2,695 + 25.23X（R² = 0.723）' },
+      ],
+      markers: [
+        { x: 105, y: 5238, color: '#0f766e' },
+        { x: 120, y: 5100, color: '#0f766e', label: '6 月（120, $5,100）成本最低≠业务量最低', labelDx: -40, labelDy: 26 },
+        { x: 130, y: 6458, color: '#0f766e' },
+        { x: 145, y: 5610, color: '#0f766e' },
+        { x: 150, y: 7010, color: '#0f766e' },
+        { x: 165, y: 6839, color: '#0f766e' },
+        { x: 172, y: 7169, color: '#0f766e' },
+        {
+          x: 100, y: 5600, color: '#b45309', shape: 'star',
+          label: '低点（100, $5,600）', labelDx: -152, labelDy: -26,
+          guides: true, gxLabel: '100 件', gyLabel: '$5,600',
+        },
+        {
+          x: 180, y: 7200, color: '#b45309', shape: 'star',
+          label: '高点（180, $7,200）', labelDx: -136, labelDy: -14,
+          guides: true, gxLabel: '180 件', gyLabel: '$7,200',
+        },
+        { x: 0, y: 3600, color: '#b45309', label: '高低点截距 $3,600', labelDx: 10, labelDy: -10 },
+        { x: 0, y: 2695, color: '#1d4ed8', label: '回归截距 $2,695', labelDx: 10, labelDy: 16 },
+      ],
+      legendPosition: 'top',
+      legend: [
+        { label: '九个月实际数据点', color: '#0f766e', style: 'dot' },
+        { label: '高/低点（高低点法所选两点）', color: '#b45309', style: 'star' },
+        { label: '高低点法 Y = 3,600 + 20X', color: '#b45309', style: 'line' },
+        { label: '回归线 Y = 2,695 + 25.23X（R² = 0.723）', color: '#1d4ed8', style: 'line' },
+      ],
+      caption: '图 2：散点图 + 高低点连线 vs 回归线——高低点法只穿高低两点，回归线由全部九点拟合，两线斜率（20 vs 25.23）与截距（3,600 vs 2,695）均不同',
+    });
+
+    // ===== 图3：两种方法预测对比（180 件插值相近，200 件外推差距拉大） =====
+    Charts.bar(document.getElementById('fig-compare'), {
+      width: 640,
+      height: 420,
+      categories: ['180 件（插值）', '200 件（外推）'],
+      yMax: 8000,
+      yStep: 2000,
+      yLabel: '预测总成本（$）',
+      series: [
+        { label: '高低点法（Y = 3,600 + 20X）', color: '#b45309', values: [7200, 7600] },
+        { label: '回归分析（Y = 2,695 + 25.23X）', color: '#1d4ed8', values: [7237, 7741] },
+      ],
+      caption: '图 3：两种方法预测对比——180 件处几乎一致（$7,200 vs $7,237），外推到 200 件差距拉开（$7,600 vs $7,741）',
+    });
+  </script>
+</body>
+</html>

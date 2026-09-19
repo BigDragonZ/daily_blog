@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 预算编制：销售→生产→现金 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>12 预算编制：销售→生产→现金预算链条</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）预算章（Ch21）前四讲：MA45 销售预算、MA46/MA47 生产预算（两道例题）、MA48 现金预算。<span class="term">预算</span><span class="term-en">（Budget）</span>是<strong>用数字写成的计划</strong>——这句话听起来平淡，直到你看到现金预算的最后一行：有些月份利润表上明明赚钱，账上却可能连工资都发不出。本篇沿着总预算的流水线走一遍：先预测卖多少（销售预算），再决定生产多少（生产预算），最后回答最要命的问题——每个月现金够不够（现金预算）。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、总预算体系：一条从销售到现金的流水线</h2>
+
+      <h3>1.1 引入：计划为什么必须写成数字？</h3>
+      <p><strong>反直觉开场：</strong>"今年多卖点、成本控制一下"——这不叫计划，这叫愿望。愿望无法检验：年底回头看，你永远可以说"差不多做到了"。但一旦写成"十月卖 5,250 件、单价 $75、生产 5,800 件、月末现金不低于 $30,000"，每一个数字都可以在事后与实际对照，差异立刻暴露。预算的第一重价值不是预测准，而是<strong>把计划变成可考核的基准</strong>（为 P13 标准成本与差异分析埋下伏笔）。</p>
+
+      <h3>1.2 总预算（Master Budget）：分预算的衔接顺序</h3>
+      <p>一家制造企业的全套预算叫<span class="term">总预算</span><span class="term-en">（Master Budget）</span>，它不是一张表，而是一组分预算按<strong>固定顺序</strong>串起来的体系，分两大段：</p>
+      <ul>
+        <li><span class="term">经营预算</span><span class="term-en">（Operating Budget）</span>：从<span class="term">销售预算</span><span class="term-en">（Sales Budget）</span>出发——它是整个总预算的源头，"一切都建立在销售预算之上"（讲师原话）。销量定了才有<span class="term">生产预算</span><span class="term-en">（Production Budget）</span>；产量定了才能编直接材料预算（Direct Materials Budget）、直接人工预算（Direct Labor Budget）、制造费用预算（Manufacturing Overhead Budget），即 P01 学过的 DM/DL/MOH 三要素各自的采购与用量计划；</li>
+        <li><span class="term">财务预算</span><span class="term-en">（Financial Budget）</span>：经营预算全部就绪后，最后才编<span class="term">现金预算</span><span class="term-en">（Cash Budget）</span>——它要等各分预算把收款、采购付款、工资、费用都报上来才能汇总，所以是总预算里<strong>倒数</strong>编制的；现金预算之后再出预计利润表（Budgeted Income Statement）与预计资产负债表（Budgeted Balance Sheet）。</li>
+      </ul>
+      <div id="fig-masterbudget"></div>
+      <p><strong>图 1 解读：</strong>箭头方向就是数据流向：销售预算把"预计销量"交给生产预算（同时它的收款预测直接喂给现金预算）；生产预算把"预计产量"拆给 DM/DL/MOH 三个预算（分别对应买多少料、用多少工时、花多少制造费用）；三个要素预算再把各自的现金支出汇总进现金预算；最后现金预算结出期末现金，进入预计资产负债表，全部收支结果汇成预计利润表。<strong>顺序不能乱</strong>：销售预算是多米诺骨牌的第一张，它的预测误差会沿链条逐级放大——这就是"垃圾进，垃圾出"（Garbage In, Garbage Out, GIGO）。</p>
+      <p><strong>总预算体系的优点</strong>：强制各部门用同一套销售预测协调行动（生产、采购、人事、财务不再各说各话），并提供事后考核基准。<strong>缺点</strong>：① 编制链条长、工作量大，且高度依赖销售预测这一最不可靠的输入；② 年度预算在环境剧变时会迅速过时，可能反而固化思维——所以实务中发展出滚动预算（Rolling Budget）等补丁，入门课先掌握静态版。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、销售预算：一切从"量 × 价"开始</h2>
+
+      <h3>2.1 定义与公式</h3>
+      <p><span class="term">销售预算</span><span class="term-en">（Sales Budget）</span>是总预算的第一张分预算，公式简单到一行：<strong>预计销售收入 = 预计销量 × 单价</strong>。难点不在乘法，而在销量预测——讲师演示的入门做法是趋势外推：以上月实际销量为基数，按预计增长率逐月滚动。</p>
+
+      <h3>2.2 例题（MA45）：Modern Company，月增长 5%</h3>
+      <p>Modern Company 要为 10–12 月编销售预算：9 月实际销售 5,000 件，预计每月增长 5%，单价恒为 $75。</p>
+      <ul>
+        <li>10 月销量 = 5,000 × 1.05 = <strong>5,250 件</strong>；</li>
+        <li>11 月销量 = 5,250 × 1.05 = 5,512.5 → 取整 <strong>5,513 件</strong>（预算用整件数）；</li>
+        <li>12 月销量 = 5,513 × 1.05 ≈ <strong>5,788 件</strong>。</li>
+      </ul>
+      <div class="figure">
+        <table>
+          <thead>
+            <tr><th>Modern Company 销售预算</th><th>10 月</th><th>11 月</th><th>12 月</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>预计销量（件）＝上月 × 1.05</td><td>5,250</td><td>5,513</td><td>5,788</td></tr>
+            <tr><td>× 销售单价（$）</td><td>75</td><td>75</td><td>75</td></tr>
+            <tr><td><strong>预计销售收入（$）</strong></td><td><strong>393,750</strong></td><td><strong>413,475</strong></td><td><strong>434,100</strong></td></tr>
+          </tbody>
+        </table>
+        <p class="figure-caption">图 2：销售预算计算表（MA45）——销量按 5% 逐月复利式增长，单价不变，收入 = 量 × 价；验算：5,250 × 75 = 393,750；5,513 × 75 = 413,475；5,788 × 75 = 434,100</p>
+      </div>
+      <p><strong>图 2 解读：</strong>整张表只有两个输入假设（基数 5,000 件、增长率 5%）加一个价格，其余全部推导得出。讲师特意演示了模型的敏感性：增长率换成 2%（保守）或 10%（激进），全表数字立刻改写——所以销售预算表一定要做成"假设可调"的活模型，而不是死数字。</p>
+      <p><strong>销售预算的优点</strong>：结构极简、假设透明，改一个参数全表联动，便于做情景分析。<strong>缺点</strong>：固定增长率外推是纯机械假设——真实销量受季节、竞争、宏观景气影响，不会乖乖按 5% 复利爬行；且单价恒定忽略了促销与批量折扣。它是骨架，不是预言。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、生产预算：卖 5,000 件，为什么要生产 5,800 件？</h2>
+
+      <h3>3.1 反直觉引入：产量 ≠ 销量</h3>
+      <p><strong>反直觉开场：</strong>10 月预计卖 5,000 件，直觉是"那就生产 5,000 件"。但公司 10 月 1 日仓库里已经躺着 1,400 件存货（可以少生产），同时要求 10 月底必须囤够 11 月销量 40% 的安全垫（得多生产）。一进一出，10 月实际要生产 <strong>5,800 件</strong>——比销量多 800 件。<span class="term">生产预算</span><span class="term-en">（Production Budget）</span>就是把这种"存货缓冲"量化的工具：</p>
+      <p style="text-align:center"><strong>预计生产量 = 预计销量 + 目标期末存货 − 期初存货</strong></p>
+      <p>逻辑链：本月要满足两件事——<strong>卖掉</strong>的 + <strong>囤下</strong>的（目标期末存货，通常按下月销量的一定比例设定），合计是"总需要量"；其中一部分<strong>期初已有</strong>（期初存货），差口才需要本月生产。注意恒等式：<strong>本月期初存货 = 上月期末存货</strong>——这是月份之间的传动轴。</p>
+
+      <h3>3.2 例题（MA46）：Museum Company，期末存货 = 下月销量 × 40%</h3>
+      <p>Museum Company 预计销量：10 月 5,000 件、11 月 5,500 件、12 月 6,500 件、（明年）1 月 7,000 件。存货政策：<span class="term">期末存货</span><span class="term-en">（Ending Inventory）</span> = 下月销量的 40%；9 月末存货 1,400 件，即 10 月的<span class="term">期初存货</span><span class="term-en">（Beginning Inventory）</span>。编制 10–12 月生产预算：</p>
+      <div class="figure">
+        <table>
+          <thead>
+            <tr><th>Museum Company 生产预算</th><th>10 月</th><th>11 月</th><th>12 月</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>预计销量（件）</td><td>5,000</td><td>5,500</td><td>6,500</td></tr>
+            <tr><td>＋ 目标期末存货（下月销量 × 40%）</td><td>2,200</td><td>2,600</td><td>2,800</td></tr>
+            <tr><td>＝ 总需要量</td><td>7,200</td><td>8,100</td><td>9,300</td></tr>
+            <tr><td>− 期初存货（＝上月期末）</td><td>1,400</td><td>2,200</td><td>2,600</td></tr>
+            <tr><td><strong>＝ 预计生产量（件）</strong></td><td><strong>5,800</strong></td><td><strong>5,900</strong></td><td><strong>6,700</strong></td></tr>
+          </tbody>
+        </table>
+        <p class="figure-caption">图 3：生产预算计算表（MA46）——期末存货一行用的是<strong>下月</strong>销量（12 月用明年 1 月的 7,000 × 40% = 2,800）；期初存货一行是上月期末的接力：1,400 → 2,200 → 2,600</p>
+      </div>
+      <p><strong>图 3 解读：</strong>逐月验算：10 月 5,000 + 2,200 − 1,400 = 5,800；11 月 5,500 + 2,600 − 2,200 = 5,900；12 月 6,500 + 2,800 − 2,600 = 6,700。注意 10 月产量（5,800）比销量（5,000）多 800 件——因为存货要从 1,400 补到 2,200；而 11 月产量（5,900）只比销量（5,500）多 400，12 月（6,700）只多 200——缓冲垫逐级抬高，但抬升幅度在收窄。</p>
+      <div id="fig-sales-vs-prod"></div>
+      <p><strong>图 4 解读：</strong>把图 3 的首尾两行画成柱：每个月绿柱（产量）都高于蓝柱（销量），高出的部分正是"存货净增加"（期末 − 期初：10 月 +800、11 月 +400、12 月 +200）。整张图直观回答 3.1 的反直觉问题：只要公司在<strong>囤</strong>存货，产量就必然跑赢销量；反之去库存的月份产量会低于销量。</p>
+
+      <h3>3.3 再练一例（MA47）：Valco Inc.，存货政策 25%</h3>
+      <p>Valco Inc. 预计销量：1 月 3,500、2 月 4,100、3 月 5,300、4 月 5,000 件；期末存货 = 下月销量 × 25%；12 月末存货 400 件（即 1 月期初）。同一把公式再套一遍：</p>
+      <table>
+        <thead>
+          <tr><th>Valco Inc. 生产预算</th><th>1 月</th><th>2 月</th><th>3 月</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>预计销量（件）</td><td>3,500</td><td>4,100</td><td>5,300</td></tr>
+          <tr><td>＋ 目标期末存货（下月销量 × 25%）</td><td>1,025</td><td>1,325</td><td>1,250</td></tr>
+          <tr><td>− 期初存货（＝上月期末）</td><td>400</td><td>1,025</td><td>1,325</td></tr>
+          <tr><td><strong>＝ 预计生产量（件）</strong></td><td><strong>4,125</strong></td><td><strong>4,400</strong></td><td><strong>5,225</strong></td></tr>
+        </tbody>
+      </table>
+      <p>1 月最有教学味：销量只有 3,500，却要生产 4,125——因为期初存货（400）远低于目标期末存货（1,025），得把缓冲垫从 400 一口气补到 1,025。讲师还演示了政策参数的敏感性：25% 改成 10%，各月产量立减；改成 50%，产量立增——存货政策本身就是产量决策。</p>
+      <p><strong>生产预算的优点</strong>：把"别断货"和"别积压"两个相反目标压缩成一个可计算的存货比例，产量计划精确到件，直接驱动后续 DM/DL/MOH 预算。<strong>缺点</strong>：① 存货比例（40%、25%）是拍脑袋的政策参数，背后没有权衡缺货成本与持有成本的最优化（那是存货管理 EOQ 模型的地盘）；② 隐含假设产能随时可调，现实中月度产量大幅波动意味着加班、招工或闲置的成本。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、现金预算：账上赚钱的月份，可能发不出工资</h2>
+
+      <h3>4.1 反直觉引入：利润 ≠ 现金</h3>
+      <p><strong>反直觉开场：</strong>一家公司这个月利润表上净利润为正，财务却跑来报告"现金不够，要借钱发工资"——矛盾吗？一点也不。利润按<span class="term">应计制</span><span class="term-en">（Accrual Basis）</span>确认：货发出、收入就入账，不管客户三个月后才付款；现金按<span class="term">收付实现制</span><span class="term-en">（Cash Basis）</span>流动：钱没进账户，就一分也花不了。再叠加买设备、还贷款这类不进利润表却大笔吞现金的动作，"赚钱的月份缺现金"就再正常不过。利润与现金的系统性差异（折旧、应收应付、存货变动）在 <a href="02-cash-flow-statement.html">P02 现金流量表</a> 已专项拆解——那里是<strong>事后</strong>编报表解释差异，这里的<span class="term">现金预算</span><span class="term-en">（Cash Budget）</span>是<strong>事前</strong>预测差异、提前安排融资。</p>
+
+      <h3>4.2 结构与公式</h3>
+      <p style="text-align:center"><strong>期初现金 ＋ 现金收入 － 现金支出（含利息）＝ 初步余额 → ± 筹资（借款/还款）＝ 期末现金 ≥ 最低现金余额</strong></p>
+      <ul>
+        <li><span class="term">现金收入</span><span class="term-en">（Cash Receipts / Collections）</span>：来自销售预算的收款预测（赊销要按回款账期折算，本例简化为当月数）；</li>
+        <li><span class="term">现金支出</span><span class="term-en">（Cash Disbursements）</span>：来自 DM 采购付款、DL 工资、MOH 付现费用、销管费用、设备购置、股利等；</li>
+        <li><span class="term">最低现金余额</span><span class="term-en">（Minimum Cash Balance）</span>：公司政策设定的安全线。初步余额低于它 → 按缺口借款补足；高于它 → 用超额部分偿还贷款。期末现金不得跌破安全线。</li>
+      </ul>
+
+      <h3>4.3 例题（MA48）：McKinley Corp，含借款、利息与还款</h3>
+      <p>McKinley Corp：10 月 1 日期初现金 $30,000，尚有旧贷款余额 $10,000；贷款利率月息 1%，按<strong>月初贷款余额</strong>计息、当月支付；最低现金余额 $30,000；超出最低线的现金月末全部用于还款。</p>
+      <div class="figure">
+        <table>
+          <thead>
+            <tr><th>McKinley Corp 现金预算</th><th>10 月</th><th>11 月</th><th>12 月</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>期初现金余额（＝上月期末）</td><td>30,000</td><td>30,000</td><td>30,000</td></tr>
+            <tr><td>＋ 现金收入</td><td>150,000</td><td>170,000</td><td>165,000</td></tr>
+            <tr><td>＝ 可用现金合计</td><td>180,000</td><td>200,000</td><td>195,000</td></tr>
+            <tr><td>− 现金支出</td><td>160,000</td><td>155,000</td><td>125,000</td></tr>
+            <tr><td>− 贷款利息（月初贷款余额 × 1%）</td><td>100</td><td>201</td><td>53</td></tr>
+            <tr><td>＝ 现金支出合计</td><td>160,100</td><td>155,201</td><td>125,053</td></tr>
+            <tr><td>＝ 初步现金余额（筹资前）</td><td>19,900</td><td>44,799</td><td>69,947</td></tr>
+            <tr><td>筹资：借款＋ /（还款−）</td><td style="background:#fee2e2"><strong>＋10,100</strong></td><td>（14,799）</td><td>（5,301）</td></tr>
+            <tr><td><strong>＝ 期末现金余额</strong></td><td><strong>30,000</strong></td><td><strong>30,000</strong></td><td><strong>64,646</strong></td></tr>
+            <tr><td>月末贷款余额</td><td>20,100</td><td>5,301</td><td>0</td></tr>
+          </tbody>
+        </table>
+        <p class="figure-caption">图 5：现金预算月度表（MA48）——红底单元格即需借款的月份：10 月初步余额 $19,900 跌破 $30,000 安全线，须借入 $10,100 补齐；11、12 月转为还款，年底贷款清零</p>
+      </div>
+      <p><strong>图 5 解读：</strong>三个月串成一条完整的"融资周期"——</p>
+      <ol>
+        <li><strong>10 月（借钱）：</strong>可用现金 180,000 − 支出合计 160,100（含旧贷 $10,000 的月息 $100）= 初步 19,900，缺口 = 30,000 − 19,900 = <strong>借入 10,100</strong>，期末现金恰好踩线 30,000；贷款余额升到 20,100；</li>
+        <li><strong>11 月（还钱）：</strong>利息按新余额 20,100 × 1% = 201；初步余额 44,799，超出安全线 14,799，<strong>全额还款</strong>，期末回到 30,000；贷款余额降至 5,301；</li>
+        <li><strong>12 月（清零）：</strong>利息 5,301 × 1% ≈ 53；初步余额 69,947，足够<strong>还清全部余款 5,301</strong> 后还剩 64,646——不再需要把现金压回 30,000，因为无款可还了。年底：贷款 0，现金 64,646。</li>
+      </ol>
+      <p>注意利息虽小，但它使"月初贷款余额"成为每个月的必查项——忽略它，10 月会少算 $100 支出、误以为只需借 $10,000。另外现金预算的接力规则与生产预算一模一样：<strong>本月期初现金 = 上月期末现金</strong>（30,000 → 30,000 → 30,000），贷款余额同理逐月传递。</p>
+      <p><strong>现金预算的优点</strong>：把资金缺口<strong>提前到月份级</strong>暴露出来——10 月要借多少钱、哪个月能还清，开工前就算清楚了，企业得以从容安排信贷额度而非临时高息拆借；最低现金余额机制给出清晰的借/还触发规则。<strong>缺点</strong>：① 精度取决于收付款预测的账期假设，客户拖欠一天，全表失真；② 月度颗粒度可能掩盖月内的高峰（月初付款、月末收款的公司月中照样缺钱）；③ 借款"即借即还、利息按整月算"是教学简化，现实信贷有承诺费、复利与额度限制。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、收尾对比：利润表预算 vs 现金预算</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>预计利润表（利润表预算）</th><th>现金预算</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>确认基础</td><td><strong>应计制</strong>：权利义务发生时确认（发货即计收入、耗用即计费用）</td><td><strong>收付实现制</strong>：钱实际进出才记账</td></tr>
+          <tr><td>回答的问题</td><td>"照这个计划干，<strong>赚不赚钱</strong>？"（盈利能力）</td><td>"照这个计划干，<strong>哪个月缺钱、要借多少</strong>？"（流动性）</td></tr>
+          <tr><td>包含折旧摊销吗</td><td>包含（费用化但不动现金）</td><td>不包含（无现金流动）</td></tr>
+          <tr><td>包含设备购置/借还款吗</td><td>不包含（属资产负债表项目，仅利息进利润表）</td><td>包含（真金白银的进出）</td></tr>
+          <tr><td>在总预算中的位置</td><td>经营预算的汇总终点之一</td><td>财务预算的核心，<strong>最后编制</strong>的分预算</td></tr>
+          <tr><td>缺口应对</td><td>亏损 → 调整经营方案（提价、降本）</td><td>初步余额跌破最低线 → 借款补足；超额 → 还款</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（如何把明年的经营计划写成可执行、可考核、且不会中途断粮的数字方案？）→ 简化模型（总预算 = 经营预算 + 财务预算，销售预算是第一张多米诺骨牌）→ 推导（销售收入 = 量 × 价；产量 = 销量 + 期末存货 − 期初存货；期末现金 = 期初 + 收入 − 支出 ± 筹资，且每月期初接力上月期末）→ 实际应用（Modern 5% 增长外推、Museum/Valco 两档存货政策下的产量计划、McKinley 借款→还款→清零的完整融资周期）→ 局限性（一切误差源于销售预测；存货比例与最低现金线是政策参数而非最优解；应计利润与现金的背离提醒：看赚钱读利润表预算，看活命读现金预算——两张表一张都不能少）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/12-budgeting.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：总预算分预算衔接流程图 —— 经营预算(蓝) → 财务预算(绿) =====
+    var C_OP = '#1d4ed8', C_OP_FILL = '#eff6ff';
+    var C_FIN = '#15803d', C_FIN_FILL = '#f0fdf4';
+    Charts.tree(document.getElementById('fig-masterbudget'), {
+      width: 760,
+      layers: [
+        [{ id: 'sales', label: '销售预算', color: C_OP, width: 150 }],
+        [{ id: 'prod', label: '生产预算', color: C_OP, width: 150 }],
+        [
+          { id: 'dm', label: 'DM 预算', color: C_OP, width: 130 },
+          { id: 'dl', label: 'DL 预算', color: C_OP, width: 130 },
+          { id: 'moh', label: 'MOH 预算', color: C_OP, width: 130 },
+        ],
+        [{ id: 'cash', label: '现金预算', color: C_FIN, fill: C_FIN_FILL, width: 150 }],
+        [
+          { id: 'is', label: '预计利润表', color: C_FIN, fill: C_FIN_FILL, width: 170 },
+          { id: 'bs', label: '预计资产负债表', color: C_FIN, fill: C_FIN_FILL, width: 170 },
+        ],
+      ],
+      edges: [
+        { from: 'sales', to: 'prod', color: C_OP, label: '预计销量', labelDx: 64 },
+        { from: 'prod', to: 'dm', color: C_OP, label: '产量', labelDx: -40 },
+        { from: 'prod', to: 'dl', color: C_OP, label: '产量', labelDx: 40 },
+        { from: 'prod', to: 'moh', color: C_OP, label: '产量', labelDx: 44 },
+        { from: 'dm', to: 'cash', color: C_FIN, label: '采购付款', labelDx: -58 },
+        { from: 'dl', to: 'cash', color: C_FIN, label: '工资支付', labelDx: 56 },
+        { from: 'moh', to: 'cash', color: C_FIN, label: '费用支付', labelDx: 60 },
+        { from: 'cash', to: 'is', color: C_FIN, label: '收支汇总', labelDx: -58 },
+        { from: 'cash', to: 'bs', color: C_FIN, label: '期末现金', labelDx: 58 },
+      ],
+      caption: '图 1：总预算（Master Budget）分预算衔接图——销售预算是源头，销量驱动生产预算，产量驱动 DM/DL/MOH 预算，收支最终汇入现金预算，结出预计财务报表',
+      legend: [
+        { label: '经营预算（销售 → 生产 → DM/DL/MOH）', color: C_OP, style: 'dot' },
+        { label: '财务预算（现金预算 → 预计报表）', color: C_FIN, style: 'dot' },
+      ],
+    });
+
+    // ===== 图4：Museum Company 销量 vs 产量（MA46 数据） =====
+    Charts.bar(document.getElementById('fig-sales-vs-prod'), {
+      width: 680,
+      height: 400,
+      categories: ['10 月', '11 月', '12 月'],
+      series: [
+        { label: '预计销量（件）', color: '#1d4ed8', values: [5000, 5500, 6500] },
+        { label: '预计生产量（件）', color: '#15803d', values: [5800, 5900, 6700] },
+      ],
+      yMax: 7000,
+      yStep: 1000,
+      yLabel: '件数',
+      caption: '图 4：销量 vs 产量（MA46，Museum Company）——绿柱每月高出蓝柱的部分 = 当月存货净增加（+800 / +400 / +200），即"囤缓冲垫"的代价',
+    });
+  </script>
+</body>
+</html>

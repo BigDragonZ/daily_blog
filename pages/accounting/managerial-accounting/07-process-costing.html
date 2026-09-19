@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07 分步成本法与约当产量 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>07 分步成本法与约当产量</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）Ch17 的 MA31–MA33 三讲：约当产量的概念、材料与加工成本分开计量、加权平均法，以及用两份完整例题走通生产汇总四步法。上一篇 <a href="06-job-order-costing.html">P06</a> 的分批成本法解决的是"每件产品都不一样"（定制家具、特殊订单）的成本归集；本篇的<span class="term">分步成本法</span><span class="term-en">（Process Costing）</span>面向的是另一个极端——肥皂、砖块、炼油，<strong>成千上万件完全相同的产品</strong>，没人会去追踪"第 8,374 块砖"花了多少钱。但连续性生产带来一个分批法从来没有的难题：月末盘点时，流水线上总躺着一批做了一半的产品，<strong>它们的成本怎么算？</strong></p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入：半成品算不算"产出"？</h2>
+
+      <h3>1.1 反直觉开场：第一天完工 0 个篮子，难道大家白干了？</h3>
+      <p>学校募捐活动要赶制 50 个礼品篮。第一天，所有人把不怕放的东西——软糖、巧克力、爆米花、饼干——全部装好，整体进度 70%；第二天再放苹果、橙子、香蕉这些易腐水果，全部完工。按"完工个数"统计：<strong>第一天产出 0 个，第二天产出 50 个</strong>。这个统计显然有问题——它说第一天大家无所事事、第二天干了全部活，而真相是第一天的劳动强度远大于第二天。要公平地衡量"每天干了多少活"，必须发明一种新的产量单位。</p>
+      <p>这个新单位就是<span class="term">约当产量</span><span class="term-en">（Equivalent Units of Production, EUP）</span>：把半成品按完工百分比<strong>折算</strong>成"相当于多少个完工品"。第一天：50 个篮子 × 70% = <strong>35 个约当单位</strong>——做的工作量等价于从零开始完整做完 35 个；第二天：50 × 30% = <strong>15 个约当单位</strong>。两天合计 35 + 15 = 50，恰好等于实际完工总数——工作量没有凭空增减，只是被公允地分摊到了两天。最简口诀：<strong>10 件半成品 × 60% 完工 = 6 个约当单位</strong>。</p>
+      <div id="fig-baskets"></div>
+      <p><strong>图 1 解读：</strong>灰色柱是按实物口径统计的完工数（0、50），严重扭曲了两天的真实工作量；蓝色柱是约当产量（35、15），它计量的是"完成的工作量"而非"物理个数"。两口径两天加总都是 50——约当产量不改变总量，只改变归属期间。这正是分步成本法分配成本时的分母：<strong>成本 ÷ 约当产量</strong>，而不是成本 ÷ 完工个数。</p>
+
+      <h3>1.2 为什么分步成本法离不开约当产量</h3>
+      <p>分批成本法（Job-Order Costing）里，每批产品有独立的成本单，半成品 batch 的成本就挂在那个 batch 名下，天然分得清。分步成本法里产品完全同质、流水线不停，成本只能按"这个月整个车间一共花了多少"归集，再摊到"这个月一共干了多少活"上。而"干了多少活" = 完工品 + 半成品折算的部分 = <strong>约当产量</strong>。可以说，<strong>约当产量是分步成本法的地基</strong>——讲师反复强调：这一章的一切都建立在正确计算 EUP 之上。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、材料与加工成本：约当产量要算两遍</h2>
+
+      <h3>2.1 反直觉开场：同一批半成品，材料做完了、加工还没做完</h3>
+      <p>期末流水线上躺着 300 件半成品，问"它们完成了多少工作"，答案竟然不是一个数：<strong>材料可能 100% 投入了，人工和费用才做了一半</strong>。原因在生产工艺——材料常在<strong>开工时一次投入</strong>（比如开工就把整块布料裁进裁片，或把全部原料投入反应釜），而人工与设备加工是<strong>随进度均匀发生</strong>的。于是同一件半成品，对材料而言可能是"完工品"，对加工而言还是半成品。</p>
+      <p>因此分步成本法把成本拆成两路分别折算约当产量：<strong>直接材料</strong>（Direct Materials, DM）一路；直接人工与制造费用合并为<span class="term">加工成本</span><span class="term-en">（Conversion Cost, CC = DL + MOH）</span>一路——之所以合并，是因为制造费用通常按直接人工的进度分配，两者的完工百分比相同，分开算两遍没有意义。（顺带回忆 P01：若把材料与人工打包则称主要成本 Prime Cost = DM + DL，那是另一种组合，本章不用。）</p>
+      <p style="text-align:center;"><strong>EUP = 完工转出数量 × 100% + 期末在产品数量 × 完工%</strong><br>材料与加工成本<strong>各算一遍</strong>，完工% 各自给定。</p>
+
+      <h3>2.2 加权平均法：不管期初存货"做到哪了"</h3>
+      <p>计算 EUP 有两种方法：<span class="term">加权平均法</span><span class="term-en">（Weighted-Average Method）</span>与<span class="term">先进先出法</span><span class="term-en">（First-In, First-Out, FIFO）</span>。差别只在<strong>怎么对待期初在产品</strong>：FIFO 要追溯期初存货上月已完成的部分、本月只算"补做"的部分；加权平均法则把期初存货与本月新投入<strong>混在一起</strong>，一律只看"本月完工转出多少、期末在产品做到几成"，期初存货已完成的进度直接忽略。讲师明确：<strong>本课程只做加权平均法</strong>，FIFO 仅作对比了解——两种方法的最终数字通常差别不大（收尾有对比表）。</p>
+      <div class="callout">
+        <strong>计算纪律：</strong>先立"实物数量"账，再折算约当产量。实物数量核对公式与 P05 的存货流转同构：<strong>期初在产品 + 本期投入 = 可供加工数量；可供加工 − 完工转出 = 期末在产品</strong>。四个数知道任意三个，必能推出第四个——而且每道题给的位置可能不同，务必看清题目给的是"投入"还是"完工"。
+      </div>
+
+      <h3>2.3 例题（MA31，Romeo 公司）：头两个月的约当产量</h3>
+      <p>Romeo 公司采用分步成本法，投产头两个月数据如下，用加权平均法分别计算材料与加工成本的约当产量：</p>
+      <ul>
+        <li><strong>第 1 月：</strong>期初 0 件，本月投入 1,000 件，完工 700 件。期末在产品材料完工 40%、加工完工 55%；</li>
+        <li><strong>第 2 月：</strong>期初即上月期末存货，本月再投入 2,200 件，完工 2,000 件。期末在产品材料完工 65%、加工完工 75%。</li>
+      </ul>
+      <p><strong>第 1 月</strong>：实物数量核对——可供加工 0 + 1,000 = 1,000 件；完工转出 700 件，期末在产品 = 1,000 − 700 = <strong>300 件</strong>。</p>
+      <table>
+        <thead>
+          <tr><th>第 1 月</th><th>实物数量</th><th>材料完工%</th><th>材料 EU</th><th>加工完工%</th><th>加工 EU</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>完工并转出</td><td style="text-align:right;">700</td><td>100%</td><td style="text-align:right;">700</td><td>100%</td><td style="text-align:right;">700</td></tr>
+          <tr><td>期末在产品（WIP）</td><td style="text-align:right;">300</td><td>40%</td><td style="text-align:right;">120</td><td>55%</td><td style="text-align:right;">165</td></tr>
+          <tr><td><strong>约当产量合计（EUP）</strong></td><td style="text-align:right;"><strong>1,000</strong></td><td>—</td><td style="text-align:right;"><strong>820</strong></td><td>—</td><td style="text-align:right;"><strong>865</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>第 2 月</strong>：实物数量核对——可供加工 300 + 2,200 = 2,500 件；完工转出 2,000 件，期末在产品 = 2,500 − 2,000 = <strong>500 件</strong>。注意加权平均法的体现：期初 300 件上月已做到材料 40%、加工 55%，本月<strong>完全不追溯</strong>，只当它混在本月完工的 2,000 件里按 100% 计。</p>
+      <table>
+        <thead>
+          <tr><th>第 2 月</th><th>实物数量</th><th>材料完工%</th><th>材料 EU</th><th>加工完工%</th><th>加工 EU</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>完工并转出</td><td style="text-align:right;">2,000</td><td>100%</td><td style="text-align:right;">2,000</td><td>100%</td><td style="text-align:right;">2,000</td></tr>
+          <tr><td>期末在产品（WIP）</td><td style="text-align:right;">500</td><td>65%</td><td style="text-align:right;">325</td><td>75%</td><td style="text-align:right;">375</td></tr>
+          <tr><td><strong>约当产量合计（EUP）</strong></td><td style="text-align:right;"><strong>2,500</strong></td><td>—</td><td style="text-align:right;"><strong>2,325</strong></td><td>—</td><td style="text-align:right;"><strong>2,375</strong></td></tr>
+        </tbody>
+      </table>
+      <div id="fig-romeo"></div>
+      <p><strong>图 2 解读：</strong>两根柱子分别对应上两张表的合计行。两个细节值得玩味：其一，第 2 月实物完工只有 2,000 件，约当产量却高达 2,325 / 2,375——多出来的部分是对期末 500 件在产品"预做"的工作，下个月可以少做；其二，每个月加工 EU 都略高于材料 EU，因为期末在产品的加工完工%（55%、75%）高于材料完工%（40%、65%）——两路成本完工进度不同，所以 EUP 必须分开算，这正是 2.1 节的结论落在数字上的样子。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、生产汇总（Production Summary）四步法</h2>
+
+      <h3>3.1 全局框架：从"个数"到"金额"的四步流水线</h3>
+      <p>约当产量只是中间产物，分步成本法的最终产品是<span class="term">生产汇总</span><span class="term-en">（Production Summary）</span>——一份把本月全部制造成本在"完工转出"与"期末在产品"之间分完、并自我核对的报告。固定四步：</p>
+      <ol>
+        <li><strong>实物数量核对 + 汇总待分配成本</strong>：先把实物数量轧平（期初 + 投入 = 转出 + 期末），再把期初在产品成本与本期投入成本加总，得到"待分配总成本"——它是最后一步的核对锚点；</li>
+        <li><strong>计算约当产量（EUP）</strong>：回答"本月干了多少活"，材料、加工各一遍；</li>
+        <li><strong>计算单位约当成本</strong>：第 1 步的成本 ÷ 第 2 步的产量，材料、加工各一个单价，相加得总单位成本。<strong>务必保留至少四位小数</strong>——后面要乘几千件，提前四舍五入会积累出可观的误差；</li>
+        <li><strong>成本分配与核对</strong>：完工转出数量 × 总单位成本 = 完工转出成本（即 COGM）；期末在产品按材料、加工 EU 分别乘各自单价 = 期末 WIP 成本；两者相加必须<strong>精确等于</strong>第 1 步的待分配总成本。</li>
+      </ol>
+      <div id="fig-flow"></div>
+      <p><strong>图 3 解读：</strong>四步法的依赖关系一目了然——第 3 步把第 1 步（钱）和第 2 步（活）相除，第 4 步再乘回去。钱下去、活上来、再变回钱，两次换算的媒介就是约当产量。最后一步的核对不是可选项：<strong>分配出去的两块之和若不等于待分配总额，前面必有错误</strong>，这是分步成本法自带的验算机制。</p>
+
+      <h3>3.2 完整例题（MA32，四月）：$85,100 怎么分</h3>
+      <p>四月数据：期初在产品 200 件（材料成本 $1,800 + 加工成本 $2,100 = $3,900）；本月投入 3,700 件，投入材料 $36,400、加工成本 $44,800；期末在产品 380 件（材料完工 55%、加工完工 45%）。加权平均法，四步走：</p>
+      <table>
+        <thead>
+          <tr><th>步骤</th><th>项目</th><th>材料</th><th>加工成本</th><th>合计</th></tr>
+        </thead>
+        <tbody>
+          <tr><td rowspan="3">① 实物数量与待分配成本</td><td>实物数量：期初 200 + 投入 3,700 = 可供加工 3,900；完工转出 = 3,900 − 380 = <strong>3,520 件</strong>，期末 380 件</td><td colspan="3" style="text-align:center;">（实物数量不分成本类别）</td></tr>
+          <tr><td>期初在产品成本</td><td style="text-align:right;">$1,800</td><td style="text-align:right;">$2,100</td><td style="text-align:right;">$3,900</td></tr>
+          <tr><td>＋ 本月投入成本　＝ <strong>待分配总成本</strong></td><td style="text-align:right;">36,400</td><td style="text-align:right;">44,800</td><td style="text-align:right;"><strong>85,100</strong></td></tr>
+          <tr><td>② 约当产量（EUP）</td><td>完工转出 3,520（100%）＋ 期末 380 × 完工%</td><td style="text-align:right;">3,520 + 209<br><strong>= 3,729</strong></td><td style="text-align:right;">3,520 + 171<br><strong>= 3,691</strong></td><td style="text-align:center;">—</td></tr>
+          <tr><td>③ 单位约当成本</td><td>（期初 + 本月成本）÷ EUP，保留四位小数</td><td style="text-align:right;">38,200 ÷ 3,729<br><strong>= $10.2440</strong></td><td style="text-align:right;">46,900 ÷ 3,691<br><strong>= $12.7066</strong></td><td style="text-align:right;"><strong>$22.9506</strong></td></tr>
+          <tr><td rowspan="2">④ 成本分配</td><td>完工转出成本（COGM）= 3,520 × $22.9506</td><td colspan="2" style="text-align:center;">（材料 ≈ $36,059；加工 ≈ $44,727）</td><td style="text-align:right;"><strong>$80,786</strong></td></tr>
+          <tr><td>期末在产品成本 = EU × 各自单价</td><td style="text-align:right;">209 × 10.2440<br>≈ $2,141</td><td style="text-align:right;">171 × 12.7066<br>≈ $2,173</td><td style="text-align:right;"><strong>$4,314</strong></td></tr>
+        </tbody>
+      </table>
+      <p>核对：完工转出 $80,786 + 期末在产品 $4,314 = <strong>$85,100</strong>，与第 ① 步的待分配总成本分毫不差，轧平通过。其中完工转出部分的 $80,786 就是本月的<span class="term">制造成本</span><span class="term-en">（Cost of Goods Manufactured, COGM）</span>——P05 里用"期初 WIP + 投入 − 期末 WIP"倒挤的那个数，在分步成本法里改由约当产量正向算出，两条路殊途同归。</p>
+      <div id="fig-alloc"></div>
+      <p><strong>图 4 解读：</strong>把轧平关系画出来——第一组柱是待分配总成本（材料 $38,200、加工 $46,900），后两组是分往两个去向的金额。无论材料还是加工，"完工转出 + 期末 WIP"都恰好等于第一组的高度（38,200 = 36,059 + 2,141；46,900 = 44,727 + 2,173）。视觉上也能看出约当产量的作用：期末 380 件在产品虽然占实物数量的近 10%，只分走约 5% 的成本——因为它们还没做完。</p>
+
+      <h3>3.3 变式例题（MA33）：给"完工"反推"投入"，$180,000 整</h3>
+      <p>同一套四步法，换一副题目面孔：这次给的是期初 400 件、<strong>完工 4,200 件</strong>、期末 300 件（材料完工 80%、加工完工 60%），投入数量未知。先用实物数量核对<strong>倒推</strong>：可供加工 = 4,200 + 300 = 4,500 件 → 本月投入 = 4,500 − 400 = <strong>4,100 件</strong>。讲师特别提醒：上一题给"投入"、本题给"完工"，<strong>四个数的位置每题都可能轮换</strong>，套错位置全题皆错。成本：期初 WIP $6,800（材料）+ $8,700（加工）= $15,500；本月投入材料 $72,400、加工 $92,100 → 待分配总成本恰好 <strong>$180,000</strong> 整。</p>
+      <ul>
+        <li><strong>EUP：</strong>材料 = 4,200 + 300 × 80% = 4,200 + 240 = <strong>4,440</strong>；加工 = 4,200 + 300 × 60% = 4,200 + 180 = <strong>4,380</strong>；</li>
+        <li><strong>单位成本：</strong>材料 = 79,200 ÷ 4,440 = <strong>$17.8378</strong>；加工 = 100,800 ÷ 4,380 = <strong>$23.0137</strong>；合计 <strong>$40.8515</strong>；</li>
+        <li><strong>分配：</strong>COGM = 4,200 × 40.8515 ≈ <strong>$171,576</strong>；期末 WIP = 240 × 17.8378 + 180 × 23.0137 ≈ 4,281 + 4,142 = <strong>$8,424</strong>（按未舍入值合计再取整）；</li>
+        <li><strong>核对：</strong>171,576 + 8,424 = <strong>$180,000</strong> ✓。</li>
+      </ul>
+
+      <h3>3.4 方法的优点与缺点</h3>
+      <p><strong>优点：</strong>生产汇总四步法把连续性生产的成本分配变成机械流程——格式固定、可批量编制，且第四步自带轧平验算，错误无处藏身；约当产量让半成品成本计量有了统一标尺，期间之间的业绩比较（哪个月干活多）也变得公平。<strong>缺点：</strong>加权平均法把期初存货成本与本月成本混在一起平均，成本急剧波动时会抹平各月差异，不利于追踪本月的真实效率（FIFO 能保留这个区分，代价是计算更繁）；"加工成本随进度均匀发生"是简化假设，遇到工艺上前重后轻的生产会失真；完工百分比本身靠估计，盘点人员多估 10%，单位成本就跟着漂移。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、收尾对比：加权平均 vs FIFO</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>加权平均法（Weighted-Average）</th><th>先进先出法（FIFO）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>期初在产品的处理</td><td><strong>不追溯</strong>上月已完成进度，与本月投入混合平均</td><td><strong>单独追踪</strong>：先算补做期初存货耗费的工时，再算本月新开工完工的部分</td></tr>
+          <tr><td>EUP 公式</td><td>完工转出 × 100% + 期末 WIP × 完工%</td><td>期初 WIP ×（1 − 期初完工%）+ 本月新开工并完工 + 期末 WIP × 完工%</td></tr>
+          <tr><td>单位成本口径</td><td>（期初成本 + 本月成本）÷ EUP，混合均价</td><td>仅本月成本 ÷ 本月 EUP，反映当期水平</td></tr>
+          <tr><td>计算复杂度</td><td>低，四步机械执行</td><td>高，需区分三层数量</td></tr>
+          <tr><td>结果差异</td><td colspan="2" style="text-align:center;">通常不大（讲师口径）；成本稳定时两法趋同，成本剧烈波动时 FIFO 更能反映本月效率</td></tr>
+          <tr><td>本课程采用</td><td><strong>✓ 全部例题</strong></td><td>仅作对比了解</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（流水线月末总有半成品，它们该背多少成本？）→ 简化模型（约当产量：半成品 × 完工% 折成"等效完工品"；材料一次投入、加工均匀发生，故分两路折算）→ 推导（加权平均 EUP = 完工转出 + 期末 WIP × 完工%；单位成本 = 总成本 ÷ EUP；成本分配后两边必轧平）→ 实际应用（Romeo 两月 EUP、四月 $85,100 生产汇总、$180,000 反推投入变式）→ 局限性（加权平均抹平月间差异、完工% 靠估计、"均匀发生"是简化假设；FIFO 更精确但更繁，结果通常相差不大）。</p>
+      <div class="callout warn">
+        <strong>资料质量提示：</strong>MA31、MA33 的原始讲义为未精修的英文自动字幕（逐句重复），MA32 为精修稿；本页已统一按精修风格提炼重写，所有数值均来自讲义并逐一复算（复算过程见 changelog）。
+      </div>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/07-process-costing.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：礼品篮——实物完工口径扭曲工作量，约当产量公允分摊（35+15=50） =====
+    Charts.bar(document.getElementById('fig-baskets'), {
+      width: 640,
+      height: 400,
+      categories: ['第一天', '第二天'],
+      series: [
+        { label: '实际完工篮子（个）', color: '#9ca3af', values: [0, 50] },
+        { label: '约当产量（EU）', color: '#1d4ed8', values: [35, 15] },
+      ],
+      yMax: 60,
+      yStep: 10,
+      yLabel: '数量（个）',
+      caption: '图 1：50 个礼品篮两天赶制——实物口径说"第一天产出 0"，约当产量口径说"第一天干了 35 个的活"；两种口径两天合计都是 50',
+    });
+
+    // ===== 图2：Romeo 公司两月约当产量——材料与加工分开折算 =====
+    Charts.bar(document.getElementById('fig-romeo'), {
+      width: 640,
+      height: 420,
+      categories: ['第 1 月', '第 2 月'],
+      series: [
+        { label: '材料约当产量（EU）', color: '#15803d', values: [820, 2325] },
+        { label: '加工约当产量（EU）', color: '#c2410c', values: [865, 2375] },
+      ],
+      yMax: 2500,
+      yStep: 500,
+      yLabel: '约当产量（EU）',
+      caption: '图 2：Romeo 公司两月约当产量（加权平均法）——第 2 月实物完工仅 2,000 件，约当产量达 2,325/2,375，差额是对期末 500 件在产品预做的工作',
+    });
+
+    // ===== 图3：生产汇总四步法流程条 =====
+    Charts.tree(document.getElementById('fig-flow'), {
+      width: 720,
+      layers: [
+        [{ id: 's1', label: '① 实物数量与待分配成本', color: '#1d4ed8', width: 230 }],
+        [{ id: 's2', label: '② 计算约当产量 EUP', color: '#15803d', fill: '#f0fdf4', width: 230 }],
+        [{ id: 's3', label: '③ 计算单位约当成本', color: '#b45309', fill: '#fff7ed', width: 230 }],
+        [{ id: 's4', label: '④ 成本分配与核对', color: '#c2410c', fill: '#fff7ed', width: 230 }],
+      ],
+      edges: [
+        { from: 's1', to: 's2', color: '#1d4ed8', label: '期初+投入=可供加工；转出+期末=可供加工', labelDx: 185 },
+        { from: 's2', to: 's3', color: '#15803d', label: 'EUP = 完工转出 + 期末WIP×完工%（材料/加工各一遍）', labelDx: 195 },
+        { from: 's3', to: 's4', color: '#b45309', label: '单位成本 = 总成本 ÷ EUP（保留四位小数）', labelDx: 180 },
+      ],
+      caption: '图 3：生产汇总四步法——钱（①）÷ 活（②）= 单价（③），再乘回数量分配（④）；转出 + 期末 WIP 必须等于待分配总成本',
+      legend: [
+        { label: '数量与成本汇总', color: '#1d4ed8', style: 'dot' },
+        { label: '约当产量', color: '#15803d', style: 'dot' },
+        { label: '单位成本', color: '#b45309', style: 'dot' },
+        { label: '成本分配与轧平核对', color: '#c2410c', style: 'dot' },
+      ],
+    });
+
+    // ===== 图4：成本分配轧平——材料/加工各自"转出+期末=待分配" =====
+    Charts.bar(document.getElementById('fig-alloc'), {
+      width: 680,
+      height: 420,
+      categories: ['待分配总成本', '完工转出（COGM）', '期末在产品（WIP）'],
+      series: [
+        { label: '材料成本（$）', color: '#15803d', values: [38200, 36059, 2141] },
+        { label: '加工成本（$）', color: '#c2410c', values: [46900, 44727, 2173] },
+      ],
+      yMax: 50000,
+      yStep: 10000,
+      yLabel: '金额（$）',
+      caption: '图 4：四月成本分配轧平——材料 38,200 = 36,059 + 2,141；加工 46,900 = 44,727 + 2,173；合计 80,786 + 4,314 = 85,100，分毫不差',
+    });
+  </script>
+</body>
+</html>

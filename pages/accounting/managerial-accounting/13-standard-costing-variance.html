@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13 标准成本与差异分析 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>13 标准成本与差异分析</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）MA49–MA52 四讲：标准成本卡的编制、直接材料差异、直接人工差异、变动制造费用差异。核心工具只有一个——<strong>三栏模型</strong>：任何一项变动成本的差异，都可以拆成"价格类差异 + 用量类差异"两块，材料、人工、变动制造费用共用同一套模板。本篇假设读者已掌握 P01 的成本分类（DM / DL / MOH）与弹性预算思想。</p>
+
+      <!-- ==================== 引入 ==================== -->
+      <h2>引入：实际花 $130 万，标准说该花 $132 万——"省"了 2 万？</h2>
+      <p><strong>反直觉开场：</strong>Drew 公司按标准算，生产 8,000 件产品"应该"花 $1,320,000；月末一结账，实际花了 $1,300,000。老板的第一反应是：省了 $20,000，干得不错！<strong>先别急着发奖金。</strong>这 2 万只是<strong>净结果</strong>——它完全可能是"采购员买贵了材料（坏事）"与"车间用料特别省（好事）"互相抵消后的余额，也可能是反过来。只看总数，两件性质相反的事都被藏进了同一个数字里。</p>
+      <p>差异分析（Variance Analysis）要回答的正是这个问题：<strong>总差异 = 价格造成的差异 + 用量造成的差异</strong>。买贵了还是买便宜了？用多了还是用省了？这两个问题对应不同的责任人，也必须分开回答。在拆开之前，得先有"该花多少"的基准——这就是标准成本卡。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、标准成本卡（Standard Cost Card）</h2>
+
+      <h3>1.1 先定基准：一单位产品"应该"花多少钱</h3>
+      <p><span class="term">标准成本</span><span class="term-en">（Standard Cost）</span>是管理层为每单位产品预先设定的"目标成本"：每个成本要素都按"<strong>标准数量 × 标准价格</strong>"设定——<span class="term">标准数量</span><span class="term-en">（Standard Quantity, SQ）</span>是"做一件应该耗用多少投入"（几磅材料、几小时人工），<span class="term">标准价格</span><span class="term-en">（Standard Price, SP）</span>是"每单位投入应该付多少钱"。把三个要素的标准成本列在一张表上，就是<span class="term">标准成本卡</span><span class="term-en">（Standard Cost Card）</span>——它相当于产品的"单位成本身份证"。</p>
+
+      <h3>1.2 Drew 公司例题：一张卡算出 $165/件</h3>
+      <table>
+        <thead>
+          <tr><th>成本要素</th><th>标准数量</th><th>× 标准价格</th><th>= 单位标准成本</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直接材料（DM）</td><td>3 磅/件</td><td>$10/磅</td><td><strong>$30</strong></td></tr>
+          <tr><td>直接人工（DL）</td><td>2.5 工时/件</td><td>$22/工时</td><td><strong>$55</strong></td></tr>
+          <tr><td>变动制造费用（VMOH）</td><td>2.5 工时/件（按 DLH 分摊）</td><td>$32/工时</td><td><strong>$80</strong></td></tr>
+          <tr><td><strong>合计</strong></td><td>—</td><td>—</td><td><strong>$165/件</strong></td></tr>
+        </tbody>
+      </table>
+      <p>注意变动制造费用（Variable Manufacturing Overhead, VMOH）的"标准数量"直接借用直接人工工时（Direct Labor Hours, DLH）——因为它的分配基础就是 DLH，这一条在后面算效率差异时还会回来。</p>
+
+      <h3>1.3 拉开到 8,000 件：总标准成本 $132 万</h3>
+      <p>标准成本卡是<strong>单位</strong>预算；乘上计划产量，就得到该产量水平下的总标准成本（这正是弹性预算"按产量拉开"的思想）：</p>
+      <table>
+        <thead>
+          <tr><th>成本要素</th><th>总标准数量（8,000 件）</th><th>× 标准价格</th><th>= 总标准成本</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直接材料</td><td>8,000 × 3 磅 = <strong>24,000 磅</strong></td><td>$10/磅</td><td><strong>$240,000</strong></td></tr>
+          <tr><td>直接人工</td><td>8,000 × 2.5 时 = <strong>20,000 工时</strong></td><td>$22/工时</td><td><strong>$440,000</strong></td></tr>
+          <tr><td>变动制造费用</td><td>同 DLH = <strong>20,000 工时</strong></td><td>$32/工时</td><td><strong>$640,000</strong></td></tr>
+          <tr><td><strong>合计</strong></td><td>—</td><td>—</td><td><strong>$1,320,000</strong>（= $165 × 8,000 ✓）</td></tr>
+        </tbody>
+      </table>
+      <p>有了 $1,320,000 这个基准，$1,300,000 的实际成本才有了可比的对象。<strong>标准成本卡的优点</strong>：给定价、预算、绩效评估提供统一基准，单位口径可直接乘任何产量，比较与验证（$165 × 8,000 与分项加总互相轧平）都方便。<strong>缺点</strong>：标准是人定的——定得太松（宽松标准）失去约束力，定得太紧（理想标准）挫伤一线士气；市场涨价、工艺改进后不及时修订，基准本身就失真，后面算出的差异全都跟着失真。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、差异二分法：三栏模型</h2>
+
+      <h3>2.1 先分清"价格"与"成本"</h3>
+      <div class="callout warn">
+        <strong>术语警示：</strong>日常语言里"价格"和"成本"常混用，差异分析中必须严格区分——<strong>价格（Price）指单价</strong>（每磅 $15、每工时 $24），<strong>成本（Cost）指总额</strong>（数量 × 价格）。"实际数量 × 实际价格"得到实际<strong>总</strong>成本；"标准数量 × 标准价格"得到标准<strong>总</strong>成本。后面所有公式都在这条分界线上做文章。
+      </div>
+      <p>除 SQ、SP 外，再引入两个实际值：<span class="term">实际数量</span><span class="term-en">（Actual Quantity, AQ）</span>与<span class="term">实际价格</span><span class="term-en">（Actual Price, AP）</span>。注意 SQ 的确切含义是"<strong>在实际产量水平下</strong>按标准允许使用的数量"——例如实际生产 5,000 件、每件标准 4 磅，则 SQ = 20,000 磅，它是唯一需要现算的量。</p>
+
+      <h3>2.2 三栏模型：一块模板通吃所有变动成本</h3>
+      <p>任何<span class="term">成本差异</span><span class="term-en">（Cost Variance）</span>都放进同样的三栏里：</p>
+      <table>
+        <thead>
+          <tr><th>第一栏（实际成本）</th><th>第二栏（中间栏）</th><th>第三栏（标准成本）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>AQ × AP</strong></td><td><strong>AQ × SP</strong></td><td><strong>SQ × SP</strong></td></tr>
+          <tr><td colspan="3">左 − 中 = <strong>价格类差异</strong>（两栏只有价格不同，数量同为 AQ）；中 − 右 = <strong>用量类差异</strong>（两栏只有数量不同，价格同为 SP）</td></tr>
+        </tbody>
+      </table>
+      <p>中间栏的记忆口诀是"<strong>ASP</strong>"（Actual quantity × Standard Price）。它像一座桥：从左栏到中间栏只换价格，从中间栏到右栏只换数量，一次只动一个变量——这正是经济学里"其他条件不变（ceteris paribus）"的比较静态思想在会计里的翻版。</p>
+      <div id="fig-decomp"></div>
+      <p><strong>图 1 解读：</strong>横轴是数量、纵轴是单价，<strong>面积 = 数量 × 价格 = 总成本</strong>。蓝色大块是中间栏 AQ×SP（19,500 磅 × $15 = $292,500）；往上加一条红色薄带（价格从 SP $15 涨到 AP $15.40，多付 19,500 × $0.40 = <strong>$7,800</strong>），得到实际成本 $300,300；往右加一条绿色窄条（SQ 比 AQ 多允许 500 磅，按 SP 值 $15 计 <strong>$7,500</strong>），得到标准成本 $300,000。于是实际成本 = 蓝 + 红，标准成本 = 蓝 + 绿，两头的差（$300 U）恰好 = 红条 − 绿条。这张图材料、人工、变动 MOH 完全通用——换的只是轴上变量（磅 ↔ 工时）和价格的名字（单价 ↔ 工资率/分配率）。</p>
+      <p><strong>三栏模型的优点</strong>：不用背六个公式，一张模板从头推到尾；价格差异 + 用量差异必然等于总差异，自带轧平验证。<strong>缺点</strong>：① 严格地说存在价格与用量的"交叉项"（AP−SP）×（AQ−SQ），三栏法把它并进了价格差异（因为价格差异按 AQ 全额计），责任归属略有偏袒采购部门之嫌；② 它只回答"差多少、差在哪一类"，不回答"为什么"——原因仍要靠人去查。</p>
+
+      <h3>2.3 有利（F）还是不利（U）</h3>
+      <p>方向判定只有一条规则：<strong>实际比标准花得多 → <span class="term">不利差异</span><span class="term-en">（Unfavorable Variance, U）</span>；花得少 → <span class="term">有利差异</span><span class="term-en">（Favorable Variance, F）</span></strong>。两个提醒：① U 不等于"有人犯错"——原材料全球性涨价导致的价格 U 谁也拦不住；② F 不等于"好事"——买廉价材料换来的价格 F，可能伴随次品率上升的用量 U，要两条差异连起来读。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、直接材料差异（MA50，Knox 公司）</h2>
+      <p><strong>例题：</strong>Knox 公司只算材料一项。标准：每件 4 磅、每磅 $15；实际生产 5,000 件，实际耗用 19,500 磅，实际单价 $15.40。</p>
+      <p>先算唯一缺失的量：SQ = 5,000 件 × 4 磅/件 = <strong>20,000 磅</strong>。然后填三栏：</p>
+      <table>
+        <thead>
+          <tr><th>栏位</th><th>算式</th><th>金额</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>① 实际成本 AQ × AP</td><td>19,500 磅 × $15.40</td><td><strong>$300,300</strong></td></tr>
+          <tr><td>② 中间栏 AQ × SP</td><td>19,500 磅 × $15.00</td><td><strong>$292,500</strong></td></tr>
+          <tr><td>③ 标准成本 SQ × SP</td><td>20,000 磅 × $15.00</td><td><strong>$300,000</strong></td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li><span class="term">材料价格差异</span><span class="term-en">（Materials Price Variance, MPV）</span>= ① − ② = (AP − SP) × AQ = $0.40 × 19,500 = <strong>$7,800 U</strong>（买贵了）；</li>
+        <li><span class="term">材料用量差异</span><span class="term-en">（Materials Quantity Variance, MQV）</span>= ② − ③ = (AQ − SQ) × SP = −500 × $15 = <strong>$7,500 F</strong>（用料省）；</li>
+        <li>总材料差异 = ① − ③ = $300,300 − $300,000 = <strong>$300 U</strong>；验证：$7,800 U − $7,500 F = $300 U ✓ 轧平。</li>
+      </ul>
+      <p>这就是引入那段话的实证版：30 万的成本只差 $300，看似完美，底下却是"采购多付 $7,800"与"车间省料 $7,500"两条方向相反的大鱼。责任归属也不同：<strong>价格差异 → 采购部门</strong>，<strong>用量差异 → 生产部门</strong>。（严格做法中，价格差异按实际<strong>采购</strong>量、用量差异按实际<strong>投入</strong>量计算；本讲义简化为采购即耗用，共用同一 AQ。）</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、直接人工差异（MA51，Knox 公司）</h2>
+      <p>同一个三栏模型，只是换名字——讲师的原话是个"小秘密"：<strong>谈材料时叫价格与用量，谈人工时价格差异改叫<span class="term">工资率差异</span><span class="term-en">（Labor Rate Variance, LRV）</span>，用量差异（工时的用量）改叫<span class="term">效率差异</span><span class="term-en">（Labor Efficiency Variance, LEV）</span></strong>。效率的直觉：以为一件活要 3 小时，结果 2 小时干完，就是有效率。</p>
+      <p><strong>例题：</strong>标准每件 3 工时、每工时 $24；实际生产 4,000 件，实际耗用 12,600 工时，实际工资率 $24.60。SQ（标准工时）= 4,000 × 3 = 12,000 工时。</p>
+      <table>
+        <thead>
+          <tr><th>栏位</th><th>算式</th><th>金额</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>① AQ × AP</td><td>12,600 时 × $24.60</td><td><strong>$309,960</strong></td></tr>
+          <tr><td>② AQ × SP</td><td>12,600 时 × $24.00</td><td><strong>$302,400</strong></td></tr>
+          <tr><td>③ SQ × SP</td><td>12,000 时 × $24.00</td><td><strong>$288,000</strong></td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>工资率差异 = (AP − SP) × AQ = $0.60 × 12,600 = <strong>$7,560 U</strong>（付贵了）；</li>
+        <li>效率差异 = (AQ − SQ) × SP = 600 × $24 = <strong>$14,400 U</strong>（多花了 600 工时）；</li>
+        <li>总人工差异 = $309,960 − $288,000 = <strong>$21,960 U</strong>；验证：$7,560 + $14,400 = $21,960 ✓。</li>
+      </ul>
+      <div id="fig-labor"></div>
+      <p><strong>图 2 解读：</strong>三根柱从左到右就是三栏。左柱与中柱之间的高度差（$309.96k − $302.40k = $7.56k）全部来自工资率（$24.60 vs $24），是工资率差异；中柱与右柱之间（$302.40k − $288k = $14.4k）全部来自工时（12,600 vs 12,000），是效率差异。本例两项皆 U：工人单价更贵且干活更慢。责任上，<strong>工资率差异</strong>多归人事/排班（用了高工资级别工人、加班费率），<strong>效率差异</strong>归生产车间——但也可能是采购的廉价材料难加工所致，这正是各项差异要连起来读的又一例证。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、变动制造费用差异（MA52）</h2>
+      <p>变动制造费用没有"买价"可言，它是按分配基础（本例为 DLH）分摊进产品的。名字再换一次：价格类差异叫<span class="term">变动制造费用开支差异</span><span class="term-en">（Variable Overhead Spending/Rate Variance, VOH RV）</span>——实际分配率比标准高，说明水电、间接材料等每小时"开支"超标；用量类差异仍叫<span class="term">变动制造费用效率差异</span><span class="term-en">（Variable Overhead Efficiency Variance, VOH EV）</span>。</p>
+      <p><strong>例题：</strong>标准每件 5 工时、每工时 $18；实际生产 3,000 件，实际耗用 15,400 工时，实际分配率 $19/工时。SQ = 3,000 × 5 = 15,000 工时。中间栏还是口诀"ASP"（实际工时 × 标准分配率）。</p>
+      <table>
+        <thead>
+          <tr><th>栏位</th><th>算式</th><th>金额</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>① AQ × AP</td><td>15,400 时 × $19</td><td><strong>$292,600</strong></td></tr>
+          <tr><td>② AQ × SP</td><td>15,400 时 × $18</td><td><strong>$277,200</strong></td></tr>
+          <tr><td>③ SQ × SP</td><td>15,000 时 × $18</td><td><strong>$270,000</strong></td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>开支差异 = (AP − SP) × AQ = $1 × 15,400 = <strong>$15,400 U</strong>；</li>
+        <li>效率差异 = (AQ − SQ) × SP = 400 × $18 = <strong>$7,200 U</strong>；</li>
+        <li>总变动 MOH 差异 = $292,600 − $270,000 = <strong>$22,600 U</strong>；验证：$15,400 + $7,200 = $22,600 ✓。</li>
+      </ul>
+      <div id="fig-voh"></div>
+      <p><strong>图 3 解读：</strong>结构与图 2 完全相同——三栏模型第三次原样套用。要特别留意的是效率差异的<strong>动因</strong>：变动 MOH 本身并不会"用多"，是它的分配基础 DLH 超标了（15,400 vs 15,000 工时），按工时分摊的变动 MOH 才跟着超标。所以 <strong>VMOH 效率差异与人工效率差异同涨同落</strong>，两者都在质问同一件事：车间的工时为什么超了？开支差异则归消耗该项费用的各部门主管（电费、间接材料等每小时开支超了 $1）。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、责任归属与例外管理</h2>
+      <p>算出六组差异不是终点，目的是<strong>找人、找原因、做改进</strong>。典型责任归属：</p>
+      <table>
+        <thead>
+          <tr><th>差异</th><th>典型责任方</th><th>常见原因</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>材料价格差异</td><td>采购部门</td><td>市场价格波动、采购批量/议价、材料等级选择</td></tr>
+          <tr><td>材料用量差异</td><td>生产部门</td><td>工人熟练度、设备状态、材料质量（可能反过来追责采购）</td></tr>
+          <tr><td>人工工资率差异</td><td>人事 / 排班</td><td>用了高工资级别工人、加班费率</td></tr>
+          <tr><td>人工效率差异</td><td>生产部门</td><td>培训不足、机器故障、材料难加工</td></tr>
+          <tr><td>VMOH 开支差异</td><td>各部门主管</td><td>水电、间接材料等每小时开支超标</td></tr>
+          <tr><td>VMOH 效率差异</td><td>生产部门</td><td>与人工效率差异同源：DLH 超标</td></tr>
+        </tbody>
+      </table>
+      <p>但每个差异都查一遍，管理者会淹死在琐碎里。实务的对策是<span class="term">例外管理</span><span class="term-en">（Management by Exception, MBE）</span>：只调查<strong>重大</strong>差异（超过金额或百分比阈值），小差异视为正常噪声放过。</p>
+      <div id="fig-mbe"></div>
+      <p><strong>图 4 解读：</strong>例外管理的决策流程——算出差异后先过"阈值筛子"：超过阈值（红色路径）才启动调查、追查责任部门并改进；低于阈值（绿色路径）直接放过，不耗费管理精力。<strong>优点</strong>：管理注意力是稀缺资源，例外管理把它配置到改进空间最大的地方，符合边际收益 ≥ 边际成本的决策原则。<strong>缺点</strong>：① 阈值是主观划的，多个"刚好不超标"的小差异可能同源累积成大问题却被系统性漏掉；② 只盯不利差异会挫伤士气，重大<strong>有利</strong>差异同样值得调查——弄清了"为什么省"，才能把经验推广到全厂。</p>
+
+      <!-- ==================== 七 ==================== -->
+      <h2>七、收尾：六格公式汇总与横向对比</h2>
+      <table>
+        <thead>
+          <tr><th>成本要素</th><th>价格类差异（左 − 中）</th><th>用量类差异（中 − 右）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>直接材料</strong></td>
+            <td>价格差异 (AP − SP) × AQ<br>= $0.40 × 19,500 磅 = <strong>$7,800 U</strong></td>
+            <td>用量差异 (AQ − SQ) × SP<br>= −500 磅 × $15 = <strong>$7,500 F</strong></td>
+          </tr>
+          <tr>
+            <td><strong>直接人工</strong></td>
+            <td>工资率差异 (AP − SP) × AQ<br>= $0.60 × 12,600 时 = <strong>$7,560 U</strong></td>
+            <td>效率差异 (AQ − SQ) × SP<br>= 600 时 × $24 = <strong>$14,400 U</strong></td>
+          </tr>
+          <tr>
+            <td><strong>变动 MOH</strong></td>
+            <td>开支差异 (AP − SP) × AQ<br>= $1 × 15,400 时 = <strong>$15,400 U</strong></td>
+            <td>效率差异 (AQ − SQ) × SP<br>= 400 时 × $18 = <strong>$7,200 U</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>三个观察：① 六格公式完全同构，都是"(实际 − 标准) × 另一个变量"，区别只在名字；② <strong>人工与变动 MOH 的效率差异动因同为 DLH</strong>——工时每超 1 小时，人工效率差异按 $24 计、VMOH 效率差异按 $32（Drew 例）/$18（本例）计，一笔工时超支被算两次账，排查时先看工时；③ 材料的用量差异按 SP 计价、采购价波动不污染它，这正是中间栏"ASP"固定一个变量的意义。</p>
+      <div id="fig-summary"></div>
+      <p><strong>图 5 解读：</strong>六个差异的绝对值对比。红色系列是价格类差异（材料价格 / 人工工资率 / MOH 开支），蓝色系列是用量类差异（材料用量 / 人工效率 / MOH 效率）。方向注意：本页例题中<strong>除材料用量差异 $7,500 为有利（F）外，其余五个全为不利（U）</strong>——Knox 与例题公司的共性问题是"工时超标 + 费率超标"。金额上最大单项是 MOH 开支差异 $15.4k 与人工效率差异 $14.4k，按例外管理思路应优先调查。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（实际与预算的总差是一个混杂信号，如何拆成可追责、可行动的部分？）→ 简化模型（标准成本卡给出单位基准 SQ×SP；三栏模型 AQ×AP / AQ×SP / SQ×SP 一次只换一个变量）→ 推导（左−中=价格类差异，中−右=用量类差异，两者必轧平总差异）→ 实际应用（材料 / 人工 / 变动 MOH 三道例题，差异归属到采购、生产、人事等部门，例外管理筛选调查对象）→ 局限性（交叉项并入价格差异；模型只说"差多少"不说"为什么"；标准本身可能过时；阈值主观。固定制造费用差异用的是另一套两差异/三差异框架，超出本篇范围）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/13-standard-costing-variance.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：差异分解通用框架（面积=数量×价格=总成本），以直接材料为例 =====
+    // AQ=19,500 磅, AP=$15.40, SQ=20,000 磅, SP=$15.00
+    // 蓝=AQ×SP=292,500；红条=价格差异 (AP-SP)×AQ=7,800 U；绿条=用量差异 (SQ-AQ)×SP=7,500 F
+    Charts.xy(document.getElementById('fig-decomp'), {
+      width: 760,
+      height: 460,
+      xLabel: '数量（磅）',
+      yLabel: '单价（$/磅）',
+      xMax: 24000,
+      yMax: 17,
+      xTicks: [0, 6000, 12000, 18000, 24000],
+      yTicks: [0, 5, 10],
+      areas: [
+        { points: [[0, 0], [19500, 0], [19500, 15], [0, 15]], color: '#2563eb', opacity: 0.15, label: '中间栏 AQ×SP = $292,500' },
+        { points: [[0, 15], [19500, 15], [19500, 15.4], [0, 15.4]], color: '#dc2626', opacity: 0.55 },
+        { points: [[19500, 0], [20000, 0], [20000, 15], [19500, 15]], color: '#16a34a', opacity: 0.4 },
+      ],
+      markers: [
+        { x: 19500, y: 15.4, color: '#dc2626', guides: true, gyLabel: '$15.40', label: 'AQ=19,500磅', labelDx: -88, labelDy: -14 },
+        { x: 20000, y: 15, color: '#2563eb', guides: true, label: 'SQ=20,000磅，SP=$15.00', labelDx: -152, labelDy: 26 },
+        { x: 9750, y: 15.4, color: '#dc2626', label: '价格差异 (AP−SP)×AQ = $7,800 U', labelDx: -115, labelDy: -12 },
+        { x: 22000, y: 12, color: '#16a34a', lineTo: [19950, 8], label: '用量差异 (SQ−AQ)×SP = $7,500 F', labelDx: -250, labelDy: -12 },
+      ],
+      legend: [
+        { label: '中间栏成本 AQ×SP（蓝区）', color: '#2563eb', style: 'dot' },
+        { label: '价格差异（红条，不利 U）', color: '#dc2626', style: 'dot' },
+        { label: '用量差异（绿条，有利 F）', color: '#16a34a', style: 'dot' },
+      ],
+      legendPosition: 'top',
+      caption: '图 1：差异分解通用框架（以直接材料为例）——实际成本 = 蓝区 + 红条 = $300,300，标准成本 = 蓝区 + 绿条 = $300,000；红条 $7,800 U 与绿条 $7,500 F 轧平为总差异 $300 U。材料/人工/变动 MOH 共用此图',
+    });
+
+    // ===== 图2：直接人工三栏模型（单位：千美元）=====
+    Charts.bar(document.getElementById('fig-labor'), {
+      width: 700,
+      height: 420,
+      yMax: 350,
+      yStep: 50,
+      yLabel: '成本（千美元）',
+      categories: ['AQ×AP（实际）', 'AQ×SP（中间）', 'SQ×SP（标准）'],
+      series: [
+        { label: '直接人工成本', color: '#7c3aed', values: [309.96, 302.4, 288] },
+      ],
+      caption: '图 2：直接人工三栏模型——左−中 = 工资率差异 $7,560 U（12,600 时 × $0.60），中−右 = 效率差异 $14,400 U（600 时 × $24），合计 $21,960 U',
+    });
+
+    // ===== 图3：变动制造费用三栏模型（单位：千美元）=====
+    Charts.bar(document.getElementById('fig-voh'), {
+      width: 700,
+      height: 420,
+      yMax: 320,
+      yStep: 40,
+      yLabel: '成本（千美元）',
+      categories: ['AQ×AP（实际）', 'AQ×SP（中间）', 'SQ×SP（标准）'],
+      series: [
+        { label: '变动制造费用', color: '#b45309', values: [292.6, 277.2, 270] },
+      ],
+      caption: '图 3：变动制造费用三栏模型——左−中 = 开支差异 $15,400 U（15,400 时 × $1），中−右 = 效率差异 $7,200 U（400 时 × $18），合计 $22,600 U；效率差异动因是 DLH 超标',
+    });
+
+    // ===== 图4：例外管理决策流程 =====
+    Charts.tree(document.getElementById('fig-mbe'), {
+      width: 720,
+      layers: [
+        [{ id: 'v', label: '月末算出各项差异', width: 200, fill: '#f8fafc' }],
+        [
+          { id: 'sig', label: '超过阈值（重大）', color: '#dc2626', width: 160 },
+          { id: 'insig', label: '低于阈值（轻微）', color: '#16a34a', width: 160 },
+        ],
+        [
+          { id: 'inv', label: '启动调查', color: '#dc2626', width: 130 },
+          { id: 'trace', label: '追责并改进', color: '#dc2626', width: 130 },
+          { id: 'skip', label: '不耗管理精力', color: '#16a34a', width: 150 },
+        ],
+      ],
+      edges: [
+        { from: 'v', to: 'sig', color: '#dc2626', label: '金额/百分比超标', labelDx: -96 },
+        { from: 'v', to: 'insig', color: '#16a34a', label: '视为正常噪声', labelDx: 90 },
+        { from: 'sig', to: 'inv', color: '#dc2626' },
+        { from: 'sig', to: 'trace', color: '#dc2626' },
+        { from: 'insig', to: 'skip', color: '#16a34a' },
+      ],
+      caption: '图 4：例外管理（MBE）决策流程——只有重大差异才触发调查，管理精力集中于例外',
+      legend: [
+        { label: '重大差异路径（调查）', color: '#dc2626', style: 'dot' },
+        { label: '轻微差异路径（放过）', color: '#16a34a', style: 'dot' },
+      ],
+    });
+
+    // ===== 图5：六个差异绝对值对比（单位：千美元）=====
+    Charts.bar(document.getElementById('fig-summary'), {
+      width: 720,
+      height: 420,
+      yMax: 16,
+      yStep: 2,
+      yLabel: '差异绝对值（千美元）',
+      categories: ['直接材料', '直接人工', '变动 MOH'],
+      series: [
+        { label: '价格类差异（价格/工资率/开支）', color: '#dc2626', values: [7.8, 7.56, 15.4] },
+        { label: '用量类差异（用量/效率/效率）', color: '#2563eb', values: [7.5, 14.4, 7.2] },
+      ],
+      caption: '图 5：三类成本 × 两类差异的绝对值对比——除材料用量差异 $7.5k 为有利（F）外，其余五项均为不利（U）；最大单项为 MOH 开支差异 $15.4k',
+    });
+  </script>
+</body>
+</html>
