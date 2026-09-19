@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 财务报表分析 I：趋势分析与共同尺寸分析 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>03 财务报表分析 I：趋势分析与共同尺寸分析</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）Ch14 财务报表分析的前四讲：MA9 趋势分析、MA10 共同尺寸利润表、MA11 共同尺寸资产负债表、MA19 共同尺寸双报表综合教程。Ch14 回答一个朴素的问题：报表编出来了，<strong>怎么看</strong>？本篇先学两种最基础、也最常用的"看法"——顺着时间看（趋势分析）和拆成比例看（共同尺寸分析），下一篇（P04）再进入约 22 个财务比率。</p>
+
+      <div class="callout">
+        <strong>【与财务会计重叠】</strong>Ch14 财务报表分析是两门课之间的过渡带：它既可以放在财务会计序列的结尾，也可以放在管理会计序列的开头（讲师原话），内容完全相同。本篇默认你已经认识四大报表（利润表、资产负债表、现金流量表、所有者权益表），需要复习请见财务会计篇 <a href="../financial-accounting/01-basics-and-statements.html">01 会计基础与四大报表</a>。
+      </div>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、趋势分析：顺着时间看</h2>
+
+      <h3>1.1 引入：收入年年增长 10%，听起来很好？</h3>
+      <p><strong>反直觉开场：</strong>一家公司收入年年增长 10%，年报标题漂亮，股东会上掌声不断——但如果成本年年增长 15% 呢？收入的<strong>绝对数字</strong>年年创新高，利润却被成本一口口吃掉。反过来，一家公司收入下降了 5%，但成本下降了 12%，它的盈利质量反而在改善。结论是：<strong>绝对数字会骗人，比例和趋势不会</strong>。报表分析的第一步，就是把"大数字"翻译成"相对于基准的变化"。</p>
+
+      <h3>1.2 定义与算法：基年 = 100</h3>
+      <p><span class="term">趋势分析</span><span class="term-en">（Trend Analysis）</span>，也叫<span class="term">水平分析</span><span class="term-en">（Horizontal Analysis）</span>：选定某一年为<span class="term">基年</span><span class="term-en">（Base Year）</span>并令其指数 = 100，其余各年的每个项目都除以基年同项目的值，得到一串指数。两种等价呈现：</p>
+      <ul>
+        <li><strong>指数式</strong>：指数 = 当年值 ÷ 基年值 × 100。如收入 120 → 127 → 144，指数为 100 → 105.8 → 120；</li>
+        <li><strong>变动式</strong>：变动% = 指数 − 100，即 0% → +5.8% → +20%，更直观地读作"累计涨了多少"。</li>
+      </ul>
+      <p><strong>【呼应经济学】</strong>这正是<span class="term">消费者价格指数</span><span class="term-en">（Consumer Price Index, CPI）</span>的构造方法：基年 = 100，之后各年的指数就是累计通胀。宏观里用它衡量物价，这里用它衡量报表项目——同一个思想，换了一个分母。</p>
+      <div class="callout">
+        <strong>Excel 技巧：</strong>讲师全程用 Excel 演示——把基年单元格按 <code>F4</code> 锁成绝对引用（如 <code>$B$3</code>），再向下/向右拖动公式，每一行每一项就都会除以同一个基年数字。手算容易错的地方，Excel 一步搞定。
+      </div>
+
+      <h3>1.3 例题（MA9）：收入涨 20%，成本涨 30%，利润涨 8.3%</h3>
+      <p>例题给出三年数据：收入 120 → 127 → 144。以第 1 年为基年逐项算指数：收入 127 ÷ 120 = 105.8，144 ÷ 120 = 120；销货成本两年累计 +30%（指数 100 → 130）；净利润两年累计仅 +8.3%（指数 100 → 108.3）。逐项判断<strong>有利（favorable）还是不利（unfavorable）</strong>：</p>
+      <ul>
+        <li><strong>收入 +20%</strong>：增长本身是<strong>有利</strong>趋势；</li>
+        <li><strong>销货成本 +30%</strong>：成本增速（30%）跑赢了收入增速（20%），<strong>不利</strong>；</li>
+        <li><strong>净利润 +8.3%</strong>：涨总比跌好，但远低于收入增速 20%——成本正在侵蚀利润，仍判<strong>不利</strong>。这正是"1.1 引入"的现实版。</li>
+      </ul>
+      <div id="fig-trend"></div>
+      <p><strong>图 1 解读：</strong>三条线从共同的基年 100 出发，两年后明显张开"剪刀口"：红线（销货成本指数 130）在最上方，蓝线（收入指数 120）居中，绿线（净利润指数 108.3）被压在下面。剪刀口越张越大，说明增长质量在恶化——<strong>趋势分析的价值不在算出 120，而在看出三条线的相对速度</strong>。注意：例题只给了收入的三点完整数据，成本与净利润只有基年与第 3 年两个端点（故画直线），这不妨碍趋势判断。</p>
+      <p><strong>优点与缺点：</strong>趋势分析的<strong>优点</strong>是把跨年变化量化、可直接读出"谁跑得快"，且对上升和下降同样适用（下降就是负变动）。<strong>缺点</strong>：一是基年选择敏感——基年若恰逢异常年份，整条指数曲线都被扭曲；二是只看相对变化，丢失绝对规模信息（+20% 的基数是 120 还是 1.2 亿，意义完全不同），所以要和共同尺寸分析、比率分析配合使用。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、共同尺寸利润表：拆成"每 1 元销售收入"</h2>
+
+      <h3>2.1 引入：小公司和大公司怎么比？</h3>
+      <p><strong>反直觉开场：</strong>一家销售 35 万的公司和一家销售 42 万的公司，谁的成本控制得好？直接比成本金额没有意义——规模不同。甚至同一家公司今年和去年比，规模也变了。<span class="term">共同尺寸分析</span><span class="term-en">（Common-Size Analysis）</span>，也叫<span class="term">垂直分析</span><span class="term-en">（Vertical Analysis）</span>，解法是把整张表"归一化"：利润表上<strong>每一项都除以销售收入</strong>，使销售收入 = 100%，其余项目都读作"每 1 元销售收入中占几角几分"。规模被约掉，结构浮出水面。</p>
+
+      <h3>2.2 例题（MA10）：销售涨了 20%，净利润反而降了</h3>
+      <p>例题给出 2029 与 2030 两年对比利润表。<strong>先看陷阱</strong>：讲义原表把 2030（第二年）放在左列、2029（第一年）放在右列——做表前务必确认哪列是哪年。下表已按时间顺序重排，占比保留一位小数（每一项 ÷ 当年销售收入）：</p>
+      <table>
+        <thead>
+          <tr><th>项目（利润表）</th><th>2029 金额</th><th>2029 占比</th><th>2030 金额</th><th>2030 占比</th><th>占比变化</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>销售收入（Sales）</td><td>$350,000</td><td>100.0%</td><td>$420,000</td><td>100.0%</td><td>—</td></tr>
+          <tr><td>销货成本（COGS）</td><td>211,000</td><td>60.3%</td><td>251,000</td><td>59.8%</td><td>−0.5 pp</td></tr>
+          <tr><td>毛利（Gross Profit）</td><td>139,000</td><td>39.7%</td><td>169,000</td><td>40.2%</td><td>+0.5 pp</td></tr>
+          <tr><td>运营费用（Operating Exp.）</td><td>33,950</td><td>9.7%</td><td>67,200</td><td><strong style="color:#dc2626">16.0%</strong></td><td><strong style="color:#dc2626">+6.3 pp</strong></td></tr>
+          <tr><td>研发费用（R&amp;D）</td><td>36,050</td><td>10.3%</td><td>42,400</td><td>10.1%</td><td>−0.2 pp</td></tr>
+          <tr><td><strong>净利润（Net Income）</strong></td><td><strong>69,000</strong></td><td><strong>19.7%</strong></td><td><strong>59,400</strong></td><td><strong>14.1%</strong></td><td><strong>−5.6 pp</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>表 1 解读：</strong>2029 年每 1 元销售收入：销货成本约 6 角（60.3%）、毛利约 4 角、净利约 2 角（19.7%）。2030 年销售从 $350,000 涨到 $420,000（+20%），净利润却从 $69,000 <strong>跌到</strong> $59,400。逐项排查占比：销货成本 60.3% → 59.8%，稳定甚至略改善；研发费用 10.3% → 10.1%，稳定；唯独<strong>运营费用从 9.7% 飙到 16.0%（+6.3 个百分点）</strong>——它就是净利润下滑的主因。管理者的下一步问题立刻明确："运营费用为什么大涨？明年能控制住吗？"这就是共同尺寸分析的杀伤力：<strong>把"利润下降"这个模糊结论，精确定位到某一行</strong>。</p>
+      <p><strong>优点与缺点：</strong><strong>优点</strong>是消除规模差异，跨年份、跨公司（哪怕一大一小）都能在同一起跑线上比较，且异常项一眼可见。<strong>缺点</strong>：它是一张静态"切片"，告诉你结构变了，但不告诉你为什么（运营费用里是工资涨了还是租金涨了？要翻明细账）；占比还可能被分母"带偏"——销售萎缩时，某费用即使金额没变，占比也会被动上升。所以读占比务必对照金额。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、共同尺寸资产负债表：拆成"每 1 元总资产"</h2>
+
+      <h3>3.1 定义：基准换成总资产</h3>
+      <p>同一张归一化思想搬到资产负债表，基准换成<span class="term">总资产</span><span class="term-en">（Total Assets, TA）</span>：<strong>每一项 ÷ 总资产</strong>，总资产 = 100%。由于报表必然平衡，负债与所有者权益合计也恰好 = 100%——于是资产侧回答"钱放在哪儿"（资产构成），负债与权益侧回答"钱从哪儿来"（融资结构）。</p>
+
+      <h3>3.2 例题（MA11）：总资产涨了，主要是哪一项在涨？</h3>
+      <p>例题给出两年对比资产负债表：总资产 $396,000 → $452,500。直接比各项目金额很困难（分母变了），归一化后逐项对比占比：</p>
+      <table>
+        <thead>
+          <tr><th>项目（资产负债表）</th><th>2029 占总资产</th><th>2030 占总资产</th><th>变化</th><th>解读</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>现金（Cash）</td><td>9.4%</td><td>5.3%</td><td>−4.1 pp</td><td>金额占比双降（2030 现金 $24,000），流动性收紧</td></tr>
+          <tr><td>应收账款（AR）</td><td>13.3%</td><td><strong style="color:#dc2626">20.3%</strong></td><td><strong style="color:#dc2626">+7.0 pp</strong></td><td><strong>资产增长的第一驱动</strong>（约 $52,700 → $91,900）：货卖出去了，钱还没收回来</td></tr>
+          <tr><td>存货及预付等其他流动资产</td><td>—</td><td>19.2%</td><td>—</td><td>复算：44.8% − 5.3% − 20.3%</td></tr>
+          <tr><td><strong>流动资产合计</strong></td><td>—</td><td><strong>44.8%</strong></td><td>—</td><td>—</td></tr>
+          <tr><td>厂房资产（净额）</td><td>—</td><td>55.2%</td><td>—</td><td>复算：100% − 44.8%；"净额"=已扣累计折旧</td></tr>
+          <tr><td><strong>总资产</strong></td><td><strong>100.0%</strong></td><td><strong>100.0%</strong></td><td>—</td><td>基准</td></tr>
+          <tr><td>应付账款（AP）</td><td>—</td><td><strong style="color:#dc2626">25.8%</strong></td><td>明显上升</td><td><strong>负债增长的第一驱动</strong>：更多靠赊欠供应商融资</td></tr>
+          <tr><td>长期应付票据</td><td>—</td><td>基本稳定</td><td>略降</td><td>占比不升反降，不是负债增长来源</td></tr>
+          <tr><td><strong>负债与权益合计</strong></td><td><strong>100.0%</strong></td><td><strong>100.0%</strong></td><td>—</td><td>与总资产互为镜像（报表必平衡）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>表 2 解读：</strong>回答例题的两个问题——总资产为何增加？主因是<strong>应收账款占比 +7 个百分点</strong>（13.3% → 20.3%）；负债为何增加？主因是<strong>应付账款占比上升</strong>（至 25.8%），而长期应付票据占比稳定甚至略降。把两侧连起来读更有味道：公司扩张的资金，相当一部分来自"拖欠供应商"，而扩张的果实沉淀为"客户欠我们的钱"——链条紧绷，值得追问回款风险。注意表中部分 2029 占比讲义未给全（留"—"），19.2%、55.2% 两项为按合计复算所得。</p>
+      <p><strong>优点与缺点：</strong><strong>优点</strong>：一眼看清资产构成与融资结构，"占比异常项"（如 AR 骤升）自动浮出，方便与往年或同行对标。<strong>缺点</strong>：资产负债表的共同尺寸只是一天的快照，受年末时点影响大（年末突击收款、压库存都会"美化"占比）；且"多少算异常"依赖行业基准——零售业 20% 的 AR 和制造业 20% 的 AR 含义完全不同，需要专业判断（讲师原话：不只是算数，更要结合情境判断）。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、综合案例（MA19）：双报表一起做</h2>
+
+      <h3>4.1 完整走一遍：利润表 + 资产负债表</h3>
+      <p>综合教程把两种共同尺寸报表并排做完整：利润表以<strong>净销售额 $425,600</strong> 为 100%，资产负债表以<strong>总资产 $466,000</strong> 为 100%。下表左半为利润表、右半为资产负债表，占比异常/关键项已标红加粗：</p>
+      <table>
+        <thead>
+          <tr><th colspan="3">共同尺寸利润表（基准：净销售额 $425,600）</th><th colspan="3">共同尺寸资产负债表（基准：总资产 $466,000）</th></tr>
+          <tr><th>项目</th><th>金额</th><th>占比</th><th>项目</th><th>金额</th><th>占比</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>净销售额（Net Sales）</td><td>$425,600</td><td>100.0%</td><td>现金</td><td>$16,600</td><td>3.6%</td></tr>
+          <tr><td>销货成本（COGS）</td><td>277,500</td><td>65.2%</td><td>应收账款（AR）</td><td>79,220</td><td>17.0%</td></tr>
+          <tr><td>毛利（Gross Profit）</td><td>148,100</td><td>34.8%</td><td>存货（Inventory）</td><td>72,230</td><td>15.5%</td></tr>
+          <tr><td>管理费用（G&amp;A）</td><td>89,376</td><td><strong style="color:#dc2626">21.0%</strong></td><td>预付及其他流动资产</td><td>16,776</td><td>3.6%</td></tr>
+          <tr><td>营业利润（Operating Income）</td><td>58,724</td><td>13.8%</td><td><strong>流动资产合计</strong></td><td><strong>184,826</strong></td><td><strong>39.7%</strong></td></tr>
+          <tr><td>利息费用（Interest Exp.）</td><td>9,800</td><td>2.3%</td><td>长期资产（净额）</td><td>281,174</td><td>60.3%</td></tr>
+          <tr><td>税前利润</td><td>48,924</td><td>11.5%</td><td><strong>总资产</strong></td><td><strong>466,000</strong></td><td><strong>100.0%</strong></td></tr>
+          <tr><td>所得税费用（Income Tax）</td><td>12,768</td><td>3.0%</td><td>应付账款（AP）</td><td>47,600</td><td>10.2%</td></tr>
+          <tr><td><strong>净利润（Net Income）</strong></td><td><strong>36,156</strong></td><td><strong>8.5%</strong></td><td>其他流动负债</td><td>33,950</td><td>7.3%</td></tr>
+          <tr><td colspan="3" style="text-align:center;color:#6b7280">净利率 = 8.5%，即每 $1 销售净赚 8.5 美分</td><td><strong>流动负债合计</strong></td><td><strong>81,550</strong></td><td><strong>17.5%</strong></td></tr>
+          <tr><td colspan="3" rowspan="3" style="text-align:center;color:#6b7280">提问模板：现金是不是太少？存货是不是太高？<br>费用占比与上年/同行比如何？<br>——占比只是线索，判断要靠对比</td><td>长期负债</td><td>200,850</td><td>43.1%</td></tr>
+          <tr><td><strong>负债合计</strong></td><td><strong>282,400</strong></td><td><strong style="color:#dc2626">60.6%</strong></td></tr>
+          <tr><td><strong>股东权益合计</strong>（普通股+留存收益）</td><td><strong>183,600</strong></td><td><strong>39.4%</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>表 3 解读：</strong>利润表侧，每 $1 净销售额的旅程：65 分被销货成本拿走 → 剩 35 分毛利（34.8%）→ 管理费用再拿走 21 分 → 营业利润约 14 分（13.8%）→ 利息约 2 分、税约 3 分 → <strong>净利率 8.5%</strong>。这个 8.5% 就是和上年、和同行比较"费用控制能力"的核心数字。资产负债表侧，钱放在哪儿：流动资产 39.7%（其中 AR 17.0%、存货 15.5%）、长期资产 60.3%；钱从哪儿来：<strong>负债融资 60.6%</strong>（流动 17.5% + 长期 43.1%）、股东权益仅 39.4%——杠杆偏高，每 $1 资产里超过 6 角是借来的。讲师提醒：这张表里的金额（如现金 $16,600、AP $47,600）先存起来，下一篇 P04 的约 22 个财务比率都要用到它们。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、收尾：两种方法对比</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>趋势分析（水平分析）</th><th>共同尺寸分析（垂直分析）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>回答什么问题</td><td>这个项目随时间<strong>变了多少、变多快</strong>？</td><td>这张表的<strong>结构</strong>是怎样的？每一元去了哪儿/从哪儿来？</td></tr>
+          <tr><td>基准</td><td>基年值 = 100（选定某一年）</td><td>利润表：销售收入 = 100%；资产负债表：总资产 = 100%</td></tr>
+          <tr><td>计算</td><td>当年值 ÷ 基年值 × 100（再减 100 得变动%）</td><td>各项 ÷ 本表基准 × 100%</td></tr>
+          <tr><td>方向</td><td>横向：同一行项目跨年份比</td><td>纵向：同一年表内各项目上下比</td></tr>
+          <tr><td>适用场景</td><td>识别增长/萎缩趋势、判断有利不利（如成本增速 &gt; 收入增速）</td><td>跨规模比较（大小公司、不同年份）、定位占比异常项</td></tr>
+          <tr><td>局限</td><td>基年选择敏感；丢失绝对规模</td><td>静态快照；占比受分母影响；异常判断依赖行业基准与专业判断</td></tr>
+        </tbody>
+      </table>
+      <p><strong>表 4 解读：</strong>两种方法天然互补——趋势分析发现"成本涨得比收入快"，共同尺寸分析定位"是运营费用这一行在涨"；前者给变化的速度，后者给结构的解剖。实战中两者叠加：先做趋势发现疑点，再用共同尺寸下钻到行项目。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（编好的报表怎么看？绝对数字会骗人）→ 简化模型（两种归一化：对时间归一 = 趋势指数，对规模归一 = 共同尺寸占比）→ 推导（指数 = 当年 ÷ 基年；占比 = 项目 ÷ 销售收入或总资产）→ 实际应用（MA9 剪刀口、MA10 运营费用异常、MA11 应收/应付双驱动、MA19 净利率 8.5% 与负债率 60.6%）→ 局限性（基年敏感、快照时点、占比≠金额、行业差异——所以下一篇 P04 要用约 22 个比率把分析做深）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/03-trend-common-size.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：趋势分析（MA9）——基年=100，收入 +20%、销货成本 +30%、净利润仅 +8.3% =====
+    Charts.xy(document.getElementById('fig-trend'), {
+      width: 700,
+      height: 430,
+      xLabel: '年份',
+      yLabel: '趋势指数（第 1 年 = 100）',
+      xMin: 0.8,
+      xMax: 3.5,
+      xTicks: [{ v: 1, label: '第1年(基年)' }, { v: 2, label: '第2年' }, { v: 3, label: '第3年' }],
+      yMin: 90,
+      yMax: 136,
+      yTicks: [90, 100, 110, 120, 130],
+      legendPosition: 'top',
+      series: [
+        { points: [[1, 100], [2, 105.8], [3, 120]], type: 'spline', color: '#1d4ed8', label: '收入指数（120→127→144）' },
+        { points: [[1, 100], [3, 130]], type: 'linear', color: '#dc2626', label: '销货成本指数（+30%，不利）' },
+        { points: [[1, 100], [3, 108.3]], type: 'linear', color: '#16a34a', label: '净利润指数（+8.3%，不利）' },
+      ],
+      markers: [
+        { x: 1, y: 100, label: '基年 = 100', color: '#374151', labelDx: 8, labelDy: -12 },
+        { x: 2, y: 105.8, label: '105.8（127÷120）', color: '#1d4ed8', labelDx: 6, labelDy: -12 },
+        { x: 3, y: 120, label: '120（+20%）', color: '#1d4ed8', labelDx: -4, labelDy: -14 },
+        { x: 3, y: 130, label: '130（+30%）', color: '#dc2626', labelDx: -4, labelDy: -12 },
+        { x: 3, y: 108.3, label: '108.3（+8.3%）', color: '#16a34a', labelDx: -10, labelDy: 18 },
+      ],
+      caption: '图 1：趋势分析（基年 = 100）——销货成本（130）跑赢收入（120），净利润（108.3）被侵蚀，三线张开"剪刀口"',
+    });
+  </script>
+</body>
+</html>

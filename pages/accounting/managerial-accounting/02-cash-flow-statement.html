@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 现金流量表专项 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>02 现金流量表专项</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）现金流量表专题七讲：02 三大活动分类练习、03 间接法双例、04 间接法完整利润表例、05 直接法例、06 投资活动计算、07 筹资活动计算、08 间接法全程教程——对应讲师连续编号中的 <strong>Ch13 现金流量表</strong>。讲师的风格是解题导向：概念从简、规则成口诀、然后大量刷题。本篇按同样路线组织：先学会给交易归类，再拿下经营活动的两种算法，最后一张完整现金流量表从头编到尾。</p>
+
+      <div class="callout">
+        <strong>【与财务会计重叠】</strong>Ch13 在讲师的财务会计与管理会计两门课中都讲，概念层面（为什么需要现金流量表、三大活动的正式定义、报表官方格式）与《财务会计》第 12 讲完全重叠，细节请锚链 <a href="../financial-accounting/12-statement-of-cash-flows.html">财务会计 · 12 现金流量表</a>。本页不重复概念铺垫，聚焦讲师特有的<strong>解题步骤与口诀</strong>：分类判断口径、间接法调整规则、直接法逐项改写技巧，以及"编完必须勾稽验证"的收尾动作。
+      </div>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入：利润表说你赚了，银行账户却空了</h2>
+      <p><strong>反直觉开场：</strong>Martin 公司今年<span class="term">净利润</span><span class="term-en">（Net Income, NI）</span> $10,500——利润表明明是赚的，可翻开银行对账单，现金却从 $30,550 降到 $29,400，反而少了 $1,150。反过来，Stocks 公司净利润 $63,000，经营活动实际产生的现金却有 $92,000，比利润多出近一半。利润和现金是<strong>两条不同的河</strong>：利润按应计制（权责发生制）记账——货发了就算收入、机器用旧了就计提折旧，不管钱有没有到手；现金只认真金白银的收付。两条河之间的水位差，正是<span class="term">现金流量表</span><span class="term-en">（Statement of Cash Flows, SCF）</span>要解释的东西。它把全年的现金收付分成三类活动，编完之末还要回答一个硬问题：三类活动加起来，必须恰好等于期初到期末的现金差额——差一分钱都说明编错了。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、三大活动分类（第 02 讲）</h2>
+
+      <h3>2.1 三个筐与一条附注</h3>
+      <p>讲师的分类口径极其朴素，先记住三个筐的"守门问题"：</p>
+      <ul>
+        <li><span class="term">经营活动</span><span class="term-en">（Operating Activities）</span>：<strong>"它进利润表吗？"</strong>凡与净利润相关的事都归这里——利润表上的所有项目、<strong>流动资产与流动负债的变动</strong>、以及处置资产的利得与损失；</li>
+        <li><span class="term">投资活动</span><span class="term-en">（Investing Activities）</span>：<strong>"它在买卖长期资产吗？"</strong>土地、厂房、设备、机器、无形资产（专利、版权）、长期投资——不管买还是卖，都算投资活动；</li>
+        <li><span class="term">筹资活动</span><span class="term-en">（Financing Activities）</span>：<strong>"它在给公司找钱或还钱吗？"</strong>借入或偿还<strong>长期</strong>债务（发债、长期票据），以及股权交易（发行股票、回购股票、支付股利）。</li>
+      </ul>
+      <p>还有第四类特殊情况：假如公司<strong>发行股票直接换一块土地</strong>，买地像投资、发股像筹资，可全程没有一分钱现金过手——这叫<span class="term">非现金投资与筹资活动</span><span class="term-en">（Non-cash Investing and Financing Activities）</span>，<strong>不进报表主体，只在附注中披露</strong>。</p>
+      <div id="fig-activities"></div>
+      <p><strong>图 1 解读：</strong>拿到任何一笔交易，从上到下过一遍这棵树就能归类。注意两个最容易错的分工：<strong>处置固定资产的"利得/损失"归经营活动</strong>（因为它进了利润表），而<strong>处置收到的全部现金归投资活动</strong>——同一笔卖设备，被拆进了两个筐；股利则归筹资（对股东的回报），不按"花钱"的直觉归经营。分类模型的<strong>优点</strong>是三个守门问题覆盖面极全，做题快；<strong>缺点</strong>是边界情形（如非现金交易、应付税费的期限判断）需要额外规则兜底，好在入门阶段只考附注这一种特例。</p>
+
+      <h3>2.2 分类实战：14 项交易归哪边？</h3>
+      <p>沿用第 02 讲练习集，先自己归类再对照（判断要点列是讲师的原话逻辑）：</p>
+      <table>
+        <thead>
+          <tr><th>交易/项目</th><th>归类</th><th>判断要点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>折旧费用（Depreciation Expense）</td><td><strong>经营</strong></td><td>在利润表上 → 经营</td></tr>
+          <tr><td>支付现金股利</td><td><strong>筹资</strong></td><td>股权相关，对股东的回报</td></tr>
+          <tr><td>偿还长期应付债券</td><td><strong>筹资</strong></td><td>偿还长期债务</td></tr>
+          <tr><td>预付租金变动</td><td><strong>经营</strong></td><td>预付租金是流动资产</td></tr>
+          <tr><td>应收账款变动</td><td><strong>经营</strong></td><td>流动资产</td></tr>
+          <tr><td>发行普通股购买土地</td><td><strong>非现金投资+筹资</strong></td><td>买地=投资、发股=筹资，但无现金 → 附注披露</td></tr>
+          <tr><td>存货增加</td><td><strong>经营</strong></td><td>流动资产</td></tr>
+          <tr><td>发行股票（收现金）</td><td><strong>筹资</strong></td><td>股权融资</td></tr>
+          <tr><td>出售设备（收取现金）</td><td><strong>投资</strong></td><td>设备是非流动资产，买卖归投资</td></tr>
+          <tr><td>出售设备的利得</td><td><strong>经营</strong></td><td>利得进了利润表；卖设备的现金本身在投资</td></tr>
+          <tr><td>发行债券</td><td><strong>筹资</strong></td><td>长期借债</td></tr>
+          <tr><td>应付账款增加</td><td><strong>经营</strong></td><td>流动负债</td></tr>
+          <tr><td>应交税费增加</td><td><strong>经营</strong></td><td>默认流动负债（你不会五年后才交税）</td></tr>
+          <tr><td>净利润</td><td><strong>经营</strong></td><td>经营活动部分的起点</td></tr>
+        </tbody>
+      </table>
+      <p>规律一眼可见：<strong>流动资产/流动负债的变动一律归经营；非流动资产的买卖一律归投资；长期债务与股权一律归筹资。</strong>14 项里只有"发股购地"一项逃出三个筐——它考验的不是记忆，而是"有没有现金过手"这最后一问。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、间接法编经营活动（第 03 / 04 / 08 讲）</h2>
+
+      <h3>3.1 调整规则：一套口诀走天下</h3>
+      <p><span class="term">间接法</span><span class="term-en">（Indirect Method）</span>只用于经营活动部分，思路是<strong>从净利润出发，加加减减把它"洗"成现金</strong>。讲师的调整规则压缩成四句：</p>
+      <ul>
+        <li><strong>非现金费用永远加回</strong>：<span class="term">折旧</span><span class="term-en">（Depreciation）</span>与<span class="term">摊销</span><span class="term-en">（Amortization）</span>在利润表里减掉了利润，但一分钱现金没花，加回去；</li>
+        <li><strong>损失加回、利得减去</strong>：处置资产的利得/损失不是经营现金（全部卖款归投资活动），把它从净利润里剔除；</li>
+        <li><strong>流动资产与现金反向</strong>：流动资产增加→减（钱变成了货/白条），减少→加（货/白条变回了钱）；</li>
+        <li><strong>流动负债与现金同向</strong>：流动负债增加→加（欠着没付=手里留着钱），减少→减（拿现金还了账）。</li>
+      </ul>
+      <div class="callout">
+        <strong>记忆钩子：</strong>"资产和现金是冤家（反向），负债和现金是一家（同向）。"应收账款增加 $9,000 意味着销售做了、钱没回来——利润里有，现金里没有，所以减；应付账款增加意味着货拿了、钱没付——等于向供应商"借了钱"，所以加。
+      </div>
+
+      <h3>3.2 例题一、二（第 03 讲）：Any 公司与 Stocks 公司</h3>
+      <p><strong>Any 公司</strong>：净利润 $32,000，折旧 $20,000；应收账款增加 $9,000，存货减少 $17,000，应付薪金增加 $3,000。套口诀：</p>
+      <p style="text-align:center"><strong>$32,000 + $20,000（折旧加回）− $9,000（流动资产增）+ $17,000（流动资产减）+ $3,000（流动负债增）= 经营现金流 $63,000</strong></p>
+      <p><strong>Stocks 公司</strong>（多一个利得陷阱）：净利润 $63,000，折旧 $30,000；出售设备收款 $20,000、账面利得 $6,000（即账面价值 $14,000）；应收账款减少 $14,000，应付薪金减少 $3,000，存货增加 $6,000。关键一步：<strong>卖设备的 $20,000 全额归投资活动，利得 $6,000 只是账面计算结果、不是额外现金</strong>，但它已经加进了净利润，必须减去：</p>
+      <p style="text-align:center"><strong>$63,000 + $30,000 − $6,000（剔除利得）+ $14,000 − $3,000（流动负债减）− $6,000 = 经营现金流 $92,000</strong></p>
+      <p>净利润 $63,000、经营现金流 $92,000——这就是开篇说的"两条河"。</p>
+
+      <h3>3.3 例题三（第 04 讲）：Taylor 公司完整利润表</h3>
+      <p>升级题：给整张利润表（收入 $1,922,000、销货成本 $1,044,000、销售与管理费用若干、出售机器利得 $14,500，净利润 $490,100）加四条资产负债表变动信息。讲师提醒：销售与管理费用在题目里可能叫 S&amp;A、SG&amp;A、G&amp;A 或干脆"营业费用"——<strong>同一个东西，别被换名唬住</strong>。逐项调整如下表（+/− 严格按口诀）：</p>
+      <table>
+        <thead>
+          <tr><th>步骤</th><th>项目</th><th>+/−</th><th>金额</th><th>理由</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>起点</td><td>净利润</td><td>—</td><td>$490,100</td><td>应计制利润，待"洗"成现金</td></tr>
+          <tr><td>非现金费用加回</td><td>折旧费用</td><td>+</td><td>56,000</td><td>减了利润没花钱</td></tr>
+          <tr><td></td><td>摊销费用</td><td>+</td><td>5,800</td><td>同为非现金费用</td></tr>
+          <tr><td>剔除投资性损益</td><td>出售机器利得</td><td>−</td><td>14,500</td><td>全部卖款归投资活动，利得非额外现金</td></tr>
+          <tr><td>流动资产变动</td><td>应收账款增加</td><td>−</td><td>30,500</td><td>收入确认了，钱没全收回来</td></tr>
+          <tr><td></td><td>存货减少</td><td>+</td><td>19,400</td><td>吃了库存，进货付现少于销货成本</td></tr>
+          <tr><td>流动负债变动</td><td>应付账款增加</td><td>+</td><td>18,100</td><td>欠供应商没付 = 现金留在手里</td></tr>
+          <tr><td></td><td>应付薪金减少</td><td>−</td><td>3,500</td><td>用现金结清了欠薪（"付薪只能用现金，不能用公司周边"）</td></tr>
+          <tr><td><strong>合计</strong></td><td><strong>经营活动现金流量净额</strong></td><td>=</td><td><strong>$540,900</strong></td><td>下一节直接法将独立验证此数</td></tr>
+        </tbody>
+      </table>
+      <p>讲师特别强调：这张表里<strong>折旧与摊销往往就是净利润和经营现金流之间最大的两个差异源</strong>——光这两项就把 $490,100 抬到了 $551,900。</p>
+      <div class="callout warn">
+        <strong>资料质量提示：</strong>第 04 讲原始字幕（自动生成）中存货与应付账款的变动数字有转写错误，且未报出摊销金额。本页采用与第 05 讲（同题直接法）及"净利润 $490,100、最终答案 $540,900"双重勾稽后自洽的一组数：存货减少 $19,400、应付账款增加 $18,100、摊销 $5,800。验证：收入 1,922,000 − 销货成本 1,044,000 −（薪金 254,600 + 折旧 56,000 + 摊销 5,800 + 租金 66,000 + 水电 20,000）+ 利得 14,500 = 净利润 490,100 ✓。
+      </div>
+
+      <h3>3.4 例题四（第 08 讲）：Martin 公司全程教程——编完整张表并勾稽</h3>
+      <p>最后把三段拼成完整报表。Martin 公司给两年对比资产负债表，现金从 $30,550 降到 $29,400——<strong>编表的目标就是解释这 $1,150 的减少</strong>：</p>
+      <ol>
+        <li><strong>经营活动</strong>：净利润 10,500 + 折旧 7,200 + 应收账款减少 3,450 − 存货增加 22,550 + 应付账款增加 1,200 − 应付薪金减少 1,550 = <strong>−$1,750</strong>（利润是正的，经营现金流却是负的——钱全压进了存货）；</li>
+        <li><strong>投资活动</strong>：设备从 $41,000 增至 $51,400，对应现金购买设备 <strong>−$10,400</strong>（累计折旧的变动已由经营段的折旧加回处理，不重复计）；</li>
+        <li><strong>筹资活动</strong>：普通股从 $25,000 增至 $37,000 → 发行股票 +$12,000；宣告并支付股利 −$1,000；合计 <strong>+$11,000</strong>；</li>
+        <li><strong>勾稽验证（magic moment）</strong>：−1,750 − 10,400 + 11,000 = <strong>−$1,150</strong>，恰等于现金实际变动；期初 30,550 − 1,150 = 期末 <strong>$29,400</strong>，与资产负债表对上 ✓。附带验证：留存收益变动 = 净利润 10,500 − 股利 1,000 = +9,500 ✓。</li>
+      </ol>
+      <p><strong>间接法评价：优点</strong>是编制省事（利润表+资产负债表变动即可推出），且天然回答"为什么利润≠现金"，约 95% 的美国公司用它；<strong>缺点</strong>是倒推结构不直观，初学者容易把 +/− 方向搞反——所以口诀和勾稽验证缺一不可。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、直接法 + 投资/筹资段（第 05 / 06 / 07 讲）</h2>
+
+      <h3>4.1 直接法（第 05 讲）：把应计利润表逐项改写成现金收付</h3>
+      <p><span class="term">直接法</span><span class="term-en">（Direct Method）</span>不从净利润出发，而是把利润表每个应计项目<strong>翻译</strong>成现金口径：收入→从客户收到的现金、销货成本→付给供应商的现金……同一道 Taylor 公司题重做一遍，讲师称之为"现金流的 CSI 查案"：</p>
+      <table>
+        <thead>
+          <tr><th>现金项目</th><th>换算过程</th><th>现金收付</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>从客户处收到的现金</td><td>收入 1,922,000 − 应收账款增加 30,500</td><td><strong>+$1,891,500</strong></td></tr>
+          <tr><td>支付给供应商的现金</td><td>销货成本 1,044,000 − 存货减少 19,400 − 应付账款增加 18,100</td><td><strong>−$1,006,500</strong></td></tr>
+          <tr><td>支付薪金的现金</td><td>薪金费用 254,600 + 应付薪金减少 3,500</td><td><strong>−$258,100</strong></td></tr>
+          <tr><td>支付租金的现金</td><td>无预付/应付信息，费用 = 付现</td><td><strong>−$66,000</strong></td></tr>
+          <tr><td>支付水电的现金</td><td>同上</td><td><strong>−$20,000</strong></td></tr>
+          <tr><td>（折旧、摊销、出售利得）</td><td>非现金 / 属投资活动 → <strong>不进直接法</strong></td><td>—</td></tr>
+          <tr><td><strong>经营活动现金流量净额</strong></td><td>五项加总</td><td><strong>$540,900</strong></td></tr>
+        </tbody>
+      </table>
+      <p>结果与间接法分毫不差——<strong>两种方法只是经营段的两种呈现，答案必然相同</strong>（$540,900 就是讲师预设的校验数）。换算方向的直觉与间接法同根：应收账款增加说明没收全 → 从收入里减；应付账款增加说明没付全 → 从成本里减；应付薪金减少说明多付了 → 加到付现上。</p>
+
+      <h3>4.2 投资活动（第 06 讲）：只认到手/付出的现金</h3>
+      <p>Wilder 公司六项信息，计算投资活动现金流。核心纪律：<strong>区分相关与无关信息——原始成本、累计折旧、利得损失统统无关，只有现金收付数进表</strong>：</p>
+      <ol>
+        <li><strong>出售设备</strong>：账面价值（Book Value, BV）$78,400、损失 $18,400 → 倒推现金收入 = BV − 损失 = 78,400 − 18,400 = <strong>+$60,000</strong>（原始成本 $133,000 是干扰项）；</li>
+        <li><strong>购买新卡车</strong>：<strong>−$93,500</strong>；</li>
+        <li><strong>发行普通股收款 $125,000</strong>：归<strong>筹资</strong>，不进本段；</li>
+        <li><strong>出售土地</strong>：只看出售所得 <strong>+$202,000</strong>（原始成本 $154,000 与利得 $48,000 均无关）；</li>
+        <li><strong>支付股利 $30,000</strong>：归<strong>筹资</strong>；</li>
+        <li><strong>出售投资</strong>：所得 <strong>+$72,600</strong>。</li>
+      </ol>
+      <p>投资活动净现金流 = 60,000 − 93,500 + 202,000 + 72,600 = <strong>+$241,100</strong>。顺手记住对称公式：现金收入 = 账面价值 + 利得（或 − 损失）。</p>
+
+      <h3>4.3 筹资活动（第 07 讲）：长债与股权</h3>
+      <p>Flesher 公司七项信息先过一遍分类筛子（净利润→经营、买卡车/卖土地→投资，均不用），剩下四项筹资交易：</p>
+      <ul>
+        <li>发行普通股收现金 <strong>+$102,000</strong>；</li>
+        <li>支付现金股利 <strong>−$26,300</strong>；</li>
+        <li>偿还长期应付票据 <strong>−$74,200</strong>；</li>
+        <li>回购本公司股票（<span class="term">库藏股</span><span class="term-en">（Treasury Stock）</span>）<strong>−$38,700</strong>。</li>
+      </ul>
+      <p>筹资活动净现金流 = 102,000 − 26,300 − 74,200 − 38,700 = <strong>−$37,200</strong>。再次提醒特例：若"发行 $500,000 普通股直接购地"，买地是投资、发股是筹资，但无现金过手 → 只作附注披露，不进报表主体。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、收尾：直接法 vs 间接法</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>间接法（Indirect Method）</th><th>直接法（Direct Method）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>起点</td><td>净利润，加减排利润与现金的差异</td><td>直接从应计利润表逐项换算现金收支</td></tr>
+          <tr><td>呈现</td><td>一张"净利润→经营现金流"的调节表</td><td>收客户 / 付供应商 / 付薪金等逐行现金流水</td></tr>
+          <tr><td>GAAP 立场</td><td>允许，实务绝对主流</td><td>FASB 表态更偏好，但不强制</td></tr>
+          <tr><td>实务采用率</td><td>约 95% 的美国公司</td><td>约 5%</td></tr>
+          <tr><td>优点</td><td>编制省事；直接回答"利润为何≠现金"</td><td>读者一眼看懂现金从哪来、到哪去</td></tr>
+          <tr><td>缺点</td><td>倒推不直观，+/− 方向易错</td><td>编制繁琐（逐行做 CSI 换算）</td></tr>
+        </tbody>
+      </table>
+      <p>注意两法<strong>只影响经营活动部分</strong>：投资与筹资两段在任何方法下都长一个样（4.2 / 4.3 的做法通用）。所以"95% 用间接法"说的只是经营段的呈现选择。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（应计利润≠真金白银，如何向报表使用者交代现金的来龙去脉？）→ 简化模型（现金收付三分法：经营/投资/筹资 + 非现金交易走附注）→ 推导（间接法四句口诀把净利润洗成现金；直接法把应计科目逐行换算；两法殊途同归于 $540,900）→ 实际应用（14 项分类练习、Taylor 两法对照、Wilder/Flesher 分段计算、Martin 全程编表）→ 局限性（口诀依赖"流动"假设，边界交易需附注兜底；间接法调节表对非财务读者不友好，这也是 FASB 偏好直接法的原因——但编制成本让 95% 的公司选择了间接法）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/02-cash-flow-statement.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：三大活动分类速查树 =====
+    Charts.tree(document.getElementById('fig-activities'), {
+      width: 800,
+      layers: [
+        [{ id: 'q', label: '一笔交易：现金往哪儿流？', width: 300, fill: '#f8fafc' }],
+        [
+          { id: 'op', label: '经营活动 Operating', color: '#1d4ed8', width: 175 },
+          { id: 'inv', label: '投资活动 Investing', color: '#0f766e', width: 175 },
+          { id: 'fin', label: '筹资活动 Financing', color: '#b45309', fill: '#fff7ed', width: 175 },
+          { id: 'nc', label: '非现金投融资(附注)', color: '#6b7280', fill: '#f9fafb', width: 175 },
+        ],
+        [
+          { id: 'op2', label: '净利润·折旧·营运资本变动', color: '#1d4ed8', width: 175 },
+          { id: 'inv2', label: '买卖长期资产与投资', color: '#0f766e', width: 175 },
+          { id: 'fin2', label: '长债·股票·股利', color: '#b45309', fill: '#fff7ed', width: 175 },
+          { id: 'nc2', label: '如发股购地，无现金过手', color: '#6b7280', fill: '#f9fafb', width: 175 },
+        ],
+      ],
+      edges: [
+        { from: 'q', to: 'op', color: '#1d4ed8', label: '进利润表吗', labelDx: -92 },
+        { from: 'q', to: 'inv', color: '#0f766e', label: '买卖长期资产', labelDx: -34 },
+        { from: 'q', to: 'fin', color: '#b45309', label: '找钱/还钱', labelDx: 34 },
+        { from: 'q', to: 'nc', color: '#6b7280', label: '无现金过手', labelDx: 92 },
+        { from: 'op', to: 'op2', color: '#1d4ed8' },
+        { from: 'inv', to: 'inv2', color: '#0f766e' },
+        { from: 'fin', to: 'fin2', color: '#b45309' },
+        { from: 'nc', to: 'nc2', color: '#6b7280' },
+      ],
+      caption: '图 1：三大活动分类速查——经营/投资/筹资三个筐，外加不进报表主体、仅附注披露的非现金投资与筹资活动',
+      legend: [
+        { label: '经营活动（利润表项目+流动资产/负债变动）', color: '#1d4ed8', style: 'dot' },
+        { label: '投资活动（非流动资产买卖）', color: '#0f766e', style: 'dot' },
+        { label: '筹资活动（长期债务+股权）', color: '#b45309', style: 'dot' },
+        { label: '非现金投资与筹资（附注披露）', color: '#6b7280', style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15 相关成本与短期经营决策 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>15 相关成本与短期经营决策</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）最后四讲：MA57 特殊订单决策（概念篇）、MA58 特殊订单决策（完整计算题）、MA59 自制还是外购、MA60 停产产品线。四讲同属<strong>相关成本（Relevant Costing）</strong>一章——这是全课程的收官章，也是管理会计"决策导向"最纯粹的体现：扔掉报表上的平均数字，只问一个问题——<strong>这个决策会让哪些成本发生变化？</strong>本篇也是本课程（P01–P15）的收官页。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入：关掉"亏损"产品线，利润反而从 $32,000 跌到 $6,000</h2>
+      <p><strong>反直觉开场：</strong>Consolidated 公司有三条产品线——Basic、Deluxe、Fantastic。账面分部损益如下：销售额 $200,000 / $120,000 / $50,000，变动成本 $140,000 / $72,000 / $24,000，公司固定成本 $102,000 被<strong>均摊</strong>到三条线（各 $34,000），于是账面利润分别为 $26,000 / $14,000 / <strong>−$8,000</strong>，公司合计利润 $32,000。管理层开会讨论：Fantastic 在亏钱，把它关掉吧？</p>
+      <p>直觉告诉你：关掉一条亏 $8,000 的线，利润应该涨到 $40,000（$26,000 + $14,000）。<strong>真实答案是把账算一遍后所有人都沉默了：利润从 $32,000 跌到 $6,000。</strong>为什么？因为 Fantastic 关门了，它那份 $34,000 的固定成本<strong>一分钱都不会消失</strong>——厂房还在、设备还在、管理人员还在——只是没人再替它"背"贡献边际了。账面亏损 $8,000 是"分摊"分摊出来的假象；Fantastic 实际每年贡献 $26,000 的真金白银去覆盖固定成本。本章就是教你识破这类假象的一套方法：<strong>相关成本分析</strong>。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、相关成本：只有"会变"的成本才相关</h2>
+
+      <h3>2.1 定义与基本假设</h3>
+      <p><span class="term">相关成本</span><span class="term-en">（Relevant Cost）</span>，也叫<span class="term">增量成本</span><span class="term-en">（Incremental Cost）</span>或<span class="term">差异成本</span><span class="term-en">（Differential Cost）</span>：研究的是<strong>当我们选择方案 A 而非方案 B 时，哪些成本会发生变化</strong>——只有随方案改变的成本才与决策相关。这套分析的基本假设是：<strong>总固定成本保持不变，变动成本随业务量变化</strong>。用 P09 的成本公式写就是 y = a + bx（y 为总成本，a 为总固定成本，b 为单位变动成本，x 为业务量）：多生产一单位的代价永远只是 b，不是报表上"总成本÷产量"算出来的平均数。</p>
+      <div class="callout warn">
+        <strong>本章最大陷阱：</strong>题目常把"单位固定成本"（如 $30/单位）直接给你，诱导你以为下一单位的成本是"变动成本 + 单位固定成本"。错。单位固定成本只是<strong>总固定成本 ÷ 当前产量</strong>的算术结果，它描述的是历史分摊，不是未来增量。下一件产品的成本只有变动成本。
+      </div>
+
+      <h3>2.2 【呼应经济学】机会成本与沉没成本的决策观</h3>
+      <p>学过经济学的话，相关成本几乎没有新东西——它是两套熟悉决策观的会计落地：</p>
+      <ul>
+        <li><strong>"理性人考虑边际量"：</strong>曼昆原理三说决策比较的是边际收益与边际成本（<a href="../../economics/principles-of-economics/01-introduction.html">经济学原理 P01</a>）。相关成本分析里"增量收入 vs 增量成本"正是 MB vs MC 的会计版；</li>
+        <li><strong>沉没成本不影响决策：</strong><span class="term">沉没成本</span><span class="term-en">（Sunk Cost）</span>是已经发生且不可收回的成本，理性决策应当它不存在（<a href="../../economics/principles-of-economics/05-firms-and-industry.html">经济学原理·企业行为</a> 中"餐馆午餐时段该不该继续营业"是同一个逻辑）。本章里"总额不变的固定成本"在决策层面就是沉没成本——接不接受订单、关不关产品线，它都在那里，所以它<strong>不相关</strong>；</li>
+        <li><strong>另一面是机会成本：</strong>一旦产能用满，接受特殊订单就要挤掉常规订单，放弃的贡献边际成为相关成本——规则立刻反转（见 3.3 局限性）。</li>
+      </ul>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、特殊订单（Special Order）：有闲置产能，单价盖住变动成本就接（MA57 + MA58）</h2>
+
+      <h3>3.1 概念与前提：闲置产能（MA57）</h3>
+      <p><span class="term">特殊订单</span><span class="term-en">（Special Order）</span>指客户提出<strong>以低于正常价的特殊价格、一次性大量采购</strong>的订单。考虑它的前提是公司存在<span class="term">闲置产能</span><span class="term-en">（Excess Capacity）</span>——产能没用完，接下这单不需要新增设备厂房，也不挤占现有销售。若已满负荷，低价订单根本无从谈起。</p>
+      <p><strong>Scotch 公司小例（MA57）：</strong>产能 8,000 单位、现产 6,000（闲置 2,000），正常售价 $70。单位变动成本 = 材料 $21.40 + 人工 $17.30 + 变动制造费用 $14.10 = <strong>$52.80</strong>；固定制造费用总额 $72,600，摊到 6,000 单位是 $12.10/单位，于是"平均总成本"$64.90。Bonico 公司出价 $60 买 1,000 单位，接不接？拿 $60 比 $64.90 → "每件亏 $4.90，不接"——<strong>错</strong>。增量成本只有 $52.80，增量利润 = 1,000 × ($60 − $52.80) = <strong>$7,200</strong>，公司利润从 $30,600 升到 $37,800。接。</p>
+
+      <h3>3.2 完整计算题：Margo 公司（MA58）</h3>
+      <p>Margo 公司：产能 10,000 单位，现产 8,000；常规售价 <strong>$52</strong>；单位变动成本 <strong>$24</strong>。题目给了个陷阱数字——"单位固定成本 $30"。注意这其实是<strong>总固定成本 $240,000 ÷ 现产 8,000</strong> 的分摊结果，成本公式为 y = 240,000 + 24x：产量为 0 时成本仍是 $240,000。Robe 公司提出特殊订单：1,600 单位 × $47。</p>
+      <p>先算现状：8,000 × ($52 − $24) = $224,000 贡献边际，减固定成本 $240,000，<strong>当前亏损 $16,000</strong>。再看订单：增量收入 1,600 × $47 = $75,200，增量成本 1,600 × $24 = $38,400，增量贡献边际 <strong>$36,800</strong>——新增固定成本为零，全部落进利润。三栏对照如下：</p>
+      <table>
+        <thead>
+          <tr><th>项目</th><th>现状（8,000 单位）</th><th>特殊订单（1,600 单位）</th><th>接受后合计（9,600 单位）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>销售额</td><td>8,000 × $52 = $416,000</td><td>1,600 × $47 = $75,200</td><td>$491,200</td></tr>
+          <tr><td>减：变动成本</td><td>8,000 × $24 = $192,000</td><td>1,600 × $24 = $38,400</td><td>$230,400</td></tr>
+          <tr><td><strong>贡献边际（CM）</strong></td><td><strong>$224,000</strong></td><td><strong>$36,800</strong></td><td><strong>$260,800</strong></td></tr>
+          <tr><td>减：固定成本</td><td>$240,000</td><td><strong>$0（不新增）</strong></td><td>$240,000</td></tr>
+          <tr><td><strong>净利润</strong></td><td><strong>−$16,000（亏损）</strong></td><td><strong>+$36,800</strong></td><td><strong>+$20,800（扭亏为盈）</strong></td></tr>
+        </tbody>
+      </table>
+      <p>接受这一单，公司从亏 $16,000 变成赚 $20,800——只多卖了 1,600 单位。顺带【呼应经济学】：固定成本摊到更多单位上、单位成本随之下降，这正是<strong>规模经济</strong>（Economies of Scale）的成本公式表达。</p>
+      <div class="callout">
+        <strong>判定规则：</strong>有闲置产能 + 特殊单价 &gt; 单位变动成本（即增量贡献边际为正）→ <strong>接受</strong>。$47 当然不如常规价 $52 好，但只要高于 $24 就值得卖。前提是固定成本总额确定不变——除非题目明确说有新增固定成本。
+      </div>
+      <p><strong>优点：</strong>规则极简，一眼看穿"平均成本"障眼法；增量视角可直接推广到一切短期决策。<strong>缺点：</strong>成立条件苛刻——必须有闲置产能、订单为一次性、不影响常规售价（老客户知道有人 $47 买到货会怎么想？）；满负荷时挤占常规销售的机会成本必须计入，纯财务规则之外还有客户关系、定价体系等定性因素。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、自制 vs 外购（Make or Buy）：关键在"可避免"三个字（MA59）</h2>
+
+      <h3>4.1 引入：报价 $20 对成本 $28，外购稳赢？</h3>
+      <p><strong>反直觉开场：</strong>一家咖啡公司自产零件 45-358，年产 4,500 个，单位变动成本 $13、单位固定成本 $15，自制总成本 $28/个。供应商报价 $20/个。$20 &lt; $28，外包每年"省"$36,000？<strong>不一定——甚至多半不省。</strong>因为那 $15 的固定成本是"分摊"上来的：除非关掉生产线后它真的会消失，否则外购之后它照样发生，只是换了个名头留在损益表上。</p>
+
+      <h3>4.2 可避免固定成本与四情景对比</h3>
+      <p>核心概念是<span class="term">可避免固定成本</span><span class="term-en">（Avoidable Fixed Cost）</span>：选择外购后<strong>确实不再发生</strong>的那部分固定成本（如可辞退的专属质检员、可退租的专用设备）。<strong>默认假设：题目不说，就没有任何固定成本可避免（0%）。</strong>于是外购的真实代价是：</p>
+      <p><strong>外购有效成本 = 供应商报价 + 不可避免固定成本</strong></p>
+      <table>
+        <thead>
+          <tr><th>可避免 FC 比例</th><th>不可避免 FC / 单位</th><th>外购有效成本</th><th>自制成本</th><th>决策</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>0%（默认）</strong></td><td>$15.00</td><td>$20 + $15.00 = <strong>$35.00</strong></td><td>$28.00</td><td><strong>自制</strong>（省 $7.00）</td></tr>
+          <tr><td>30%</td><td>$15 × 70% = $10.50</td><td>$20 + $10.50 = <strong>$30.50</strong></td><td>$28.00</td><td><strong>自制</strong>（省 $2.50）</td></tr>
+          <tr><td>50%</td><td>$15 × 50% = $7.50</td><td>$20 + $7.50 = <strong>$27.50</strong></td><td>$28.00</td><td><strong>外购</strong>（省 $0.50）← 决策翻转</td></tr>
+          <tr><td>100%</td><td>$0</td><td>$20 + $0 = <strong>$20.00</strong></td><td>$28.00</td><td><strong>外购</strong>（省 $8.00）</td></tr>
+        </tbody>
+      </table>
+      <p>自制成本在所有情景中恒为 $28（变动 $13 + 固定 $15，反正都要发生）；变的只是外购一侧"甩掉了多少固定成本"。决策在 30% 与 50% 之间翻转，精确翻转点即<span class="term">无差异点</span><span class="term-en">（Indifference Point）</span>：0% 可避免时外购贵出 $7（$35 − $28），这 $7 必须靠避免固定成本来消除，故需避免 $7 ÷ $15 ≈ <strong>46.67%</strong>（46⅔%）。此时外购有效成本 = $20 + $15 × (1 − 46.67%) = $28，两方案财务上无差异；可避免比例超过 46.67% 才轮到外购。</p>
+      <p><strong>优点：</strong>把"外包潮"中最大的错觉——"报价低于我的账面成本就外包"——量化成了单一参数（可避免比例），谈判与尽调的目标立刻清晰：去核实的不是供应商靠不靠谱，而是<strong>哪些固定成本真的能砍</strong>。<strong>缺点：</strong>"可避免比例"本身最难估（设备残值、人员安置、场地改作他用的机会成本）；模型不含质量、交期、供应链安全与核心技术外流等战略因素，而这些往往才是自制外购的真正胜负手。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、停产决策（Drop a Product Line）：分摊出来的亏损是假象（MA60）</h2>
+
+      <h3>5.1 固定成本的分摊是任意的</h3>
+      <p>回到开篇的 Consolidated 公司。注意题目里固定成本是 ⅓、⅓、⅓ 均摊的——这是一个<strong>危险信号</strong>。讲师的原话值得抄下来：<strong>"固定成本本身不任意，但固定成本的分摊是任意的"</strong>（The allocation of fixed cost is <span class="term">arbitrary</span><span class="term-en">（Arbitrary Allocation）</span>）。可以均摊、可以按销售额摊（那样销售额占 54% 的 Basic 要背一半以上）、可以按厂房面积摊，<strong>也可以干脆不摊</strong>。分摊方式不同，每条产品线的"账面利润"就不同，但公司利润总额永远是 $32,000——分摊只是切蛋糕，不改变蛋糕大小。用分摊后的"分部利润"决定砍哪条线，等于让切蛋糕的方式决定谁的生死。</p>
+
+      <h3>5.2 正确问法：关掉它，公司失去什么、省下什么？</h3>
+      <p>关掉 Fantastic：失去的是它整条贡献边际 50,000 − 24,000 = <strong>$26,000</strong>；省下的是固定成本 <strong>$0</strong>（默认不可避免）。公司只剩 Basic + Deluxe 的贡献边际 $60,000 + $48,000 = $108,000，去扛不变的 $102,000 固定成本 → 利润 <strong>$6,000</strong>。$32,000 与 $6,000 之间 $26,000 的差额，恰好就是 Fantastic 的贡献边际——它虽然盖不住分摊给它的 $34,000，但它实实在在地替公司扛了 $26,000。</p>
+      <div id="fig-drop"></div>
+      <p><strong>图 1 解读：</strong>决策树的两个分支对比——关闭路径（红）失去 $26,000 贡献边际而固定成本分文不减，利润从 $32,000 恶化到 $6,000；保留路径（绿）$26,000 继续覆盖固定成本，利润维持 $32,000。核心信息：<strong>关停决策比较的是"失去的 CM"与"省下的 FC"，而不是账面分部利润的符号。</strong></p>
+
+      <h3>5.3 换个视角：Fantastic 其实是全公司"最能打"的产品线</h3>
+      <p>用<span class="term">贡献边际率</span><span class="term-en">（CM Ratio = CM ÷ 销售额）</span>重新排名：Basic = $60,000 ÷ $200,000 = <strong>30%</strong>；Deluxe = $48,000 ÷ $120,000 = <strong>40%</strong>；Fantastic = $26,000 ÷ $50,000 = <strong>52%</strong>——全公司最高！每 $1 销售额，Fantastic 贡献 52 美分去覆盖固定成本，Basic 只有 30 美分。公司差点关掉的是自己效率最高的产品线。</p>
+      <p>讲师还布置了一道角色扮演题：<strong>如果你是 Fantastic 的经理，怎么自保？</strong>标准答辩词：① "我的 CM 率 52% 全司最高，Basic 走量但每块钱只贡献 30 美分"；② "与其关我，不如帮我多卖——我多卖 $1，固定成本就被多覆盖 52 美分"；③ "⅓-⅓-⅓ 均摊太天真，要不按销售额/面积分摊，要不干脆不摊——<strong>用贡献边际考核分部</strong>：Basic 贡献 $60,000，我只有它 1/4 的规模却贡献了将近一半（$26,000），公司需要我，更应该让我长大"。</p>
+      <p><strong>优点：</strong>一刀切开"分摊幻觉"，把分部考核拉回贡献边际这一可追溯到业务本身的指标。<strong>缺点：</strong>现实中"固定成本不变"假设常有例外（关线可退租、可裁员，即可避免固定成本 &gt; 0，此时应与失去的 CM 比较再定）；产品线之间可能有销售联动（Fantastic 给客户引流）；CM 率只是相对效率，绝对规模仍影响总贡献。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、收尾：一套思维框架通吃三类决策</h2>
+      <table>
+        <thead>
+          <tr><th>决策类型</th><th>相关项（盯紧）</th><th>不相关项（放下）</th><th>判定规则</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>特殊订单</strong></td><td>特殊单价、单位变动成本、（若有）新增固定成本</td><td>现有固定成本总额、"平均单位成本"</td><td>有闲置产能且单价 &gt; 单位变动成本（增量 CM &gt; 0）→ 接受</td></tr>
+          <tr><td><strong>自制 vs 外购</strong></td><td>自制变动成本、可避免固定成本、供应商报价</td><td>不可避免的固定成本</td><td>比较自制成本与外购有效成本（报价 + 不可避免 FC），取低者；可避免比例 &gt; 无差异点 → 外购</td></tr>
+          <tr><td><strong>停产产品线</strong></td><td>该产品线的贡献边际、可避免的固定成本</td><td>分摊的固定成本、分摊后的账面"利润"</td><td>失去的 CM &gt; 可避免的 FC → 保留；反之才考虑关闭</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（短期经营决策该看哪些数字？）→ 简化模型（y = a + bx：固定成本总额默认不变，只有变动成本随方案改变）→ 推导（相关成本 = 增量成本；特殊订单看增量 CM，自制外购看可避免 FC，停产看失去的 CM 与省下的 FC）→ 实际应用（Margo 接单一举扭亏、咖啡公司 46.67% 无差异点、Fantastic 的 52% CM 率辩护词）→ 局限性（闲置产能与"固定成本不变"是易碎的假设；机会成本、定性因素与战略考量都在模型之外——模型负责算清账，拍板仍要通盘看）。</p>
+      <div class="callout">
+        <strong>课程收束语（管理会计 P01–P15 完结）：</strong>十五页走完，主线只有一条：<strong>财务会计回答"过去发生了什么"，管理会计回答"下一步该怎么办"。</strong>从 FA/MA 分野与成本分类（P01），经报表衔接（P02–P04）、成本归集（分批/分步/作业成本法，P05–P08）、本量利与预算（P09–P12）、差异分析与资本预算（P13–P14），到本篇的相关成本决策——工具一路在换，灵魂始终是同一个：<strong>盯住会变的，放下不变的。</strong>这也是经济学边际思维在会计里的最终形态。
+      </div>
+      <div class="callout warn">
+        <strong>资料质量提示：</strong>MA58、MA60 的原始讲义为未精修的 YouTube 字幕（逐句碎片），本页已按其他讲次的精修风格提炼重写，所有例题数字均经复算，结论与讲师口径一致。
+      </div>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/15-relevant-costing.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：停产决策树 —— 关闭 Fantastic 失去 CM $26,000，固定成本 $102,000 不变，利润 $32,000 → $6,000 =====
+    Charts.tree(document.getElementById('fig-drop'), {
+      width: 860,
+      layers: [
+        [{ id: 'q', label: '关闭账面亏损的 Fantastic 产品线？', width: 330, fill: '#f8fafc' }],
+        [
+          { id: 'drop', label: '关闭', color: '#b91c1c', fill: '#fef2f2', width: 120 },
+          { id: 'keep', label: '保留', color: '#15803d', fill: '#f0fdf4', width: 120 },
+        ],
+        [
+          { id: 'l1', label: '失去贡献边际 −$26,000', color: '#b91c1c', fill: '#fef2f2', width: 195 },
+          { id: 'l2', label: '固定成本 $102,000 不变', color: '#b91c1c', fill: '#fef2f2', width: 195 },
+          { id: 'r1', label: 'CM $26,000 继续覆盖固定成本', color: '#15803d', fill: '#f0fdf4', width: 195 },
+          { id: 'r2', label: '固定成本同样 $102,000', color: '#15803d', fill: '#f0fdf4', width: 195 },
+        ],
+        [
+          { id: 'p1', label: '利润 $32,000 → $6,000（恶化 $26,000）', color: '#b91c1c', fill: '#fef2f2', width: 300 },
+          { id: 'p2', label: '利润维持 $32,000', color: '#15803d', fill: '#f0fdf4', width: 190 },
+        ],
+      ],
+      edges: [
+        { from: 'q', to: 'drop', color: '#b91c1c', label: '以为能止血', labelDx: -56 },
+        { from: 'q', to: 'keep', color: '#15803d', label: '继续经营', labelDx: 56 },
+        { from: 'drop', to: 'l1', color: '#b91c1c' },
+        { from: 'drop', to: 'l2', color: '#b91c1c' },
+        { from: 'keep', to: 'r1', color: '#15803d' },
+        { from: 'keep', to: 'r2', color: '#15803d' },
+        { from: 'l1', to: 'p1', color: '#b91c1c' },
+        { from: 'l2', to: 'p1', color: '#b91c1c' },
+        { from: 'r1', to: 'p2', color: '#15803d' },
+        { from: 'r2', to: 'p2', color: '#15803d' },
+      ],
+      caption: '图 1：停产决策树——关闭 Fantastic 失去 $26,000 贡献边际，而 $102,000 固定成本不变，公司利润从 $32,000 跌至 $6,000',
+      legend: [
+        { label: '关闭路径（利润恶化 $26,000）', color: '#b91c1c', style: 'dot' },
+        { label: '保留路径（维持利润 $32,000）', color: '#15803d', style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>

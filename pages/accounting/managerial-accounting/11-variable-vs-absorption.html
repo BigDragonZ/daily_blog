@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 变动成本法 vs 吸收成本法 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>11 变动成本法 vs 吸收成本法</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）变动成本法章节（Ch20）开篇三讲：MA42 两种方法算单位产品成本、MA43 变动成本法利润表、MA44 吸收成本法利润表。这是本课程前半段的"招牌分歧"：<strong>同一套产销数据，两种完全合规的算法报出不同的利润</strong>——差别只在固定制造费用是被"关进"存货，还是当期直接放走。P01 学过的产品成本/期间成本之分（<a href="01-intro-and-cost-classification.html">01 导论与成本分类</a>）在这里裂开成两条路线。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、核心分歧：固定制造费用去哪儿了？</h2>
+
+      <h3>1.1 引入：同一家 Ace 公司，一件产品值 $22 还是 $29.50？</h3>
+      <p><strong>反直觉开场：</strong>Ace 公司本期生产 2,000 件产品，成本数据摆在桌上——直接材料 $5/件、直接人工 $7/件、变动制造费用 $10/件、固定制造费用合计 $15,000。问：一件产品的成本是多少？两位会计师给出两个答案：$22 和 $29.50，而且<strong>两人都没算错</strong>。分歧不在算术，在立场：固定制造费用（厂房折旧、工厂主管薪资这类"不开工也得付"的钱）算不算产品成本？</p>
+      <ul>
+        <li><strong>算法一（$22）：</strong>$5 + $7 + $10 = <strong>$22/件</strong>。固定 MOH 一分钱都不进产品，全额当作本期费用。这就是<span class="term">变动成本法</span><span class="term-en">（Variable Costing）</span>——产品成本只装变动制造成本；</li>
+        <li><strong>算法二（$29.50）：</strong>先把固定 MOH 按产量摊薄：$15,000 ÷ 2,000 件 = <strong>$7.50/件</strong>，再加回去：$22 + $7.50 = <strong>$29.50/件</strong>。这就是<span class="term">吸收成本法</span><span class="term-en">（Absorption Costing）</span>，也叫完全成本法——产品成本"吸收"全部制造成本，固定 MOH 先钻进存货（资产），等产品卖出时才随 <span class="term">销货成本</span><span class="term-en">（Cost of Goods Sold, COGS）</span>变成费用。</li>
+      </ul>
+      <p>单位成本差 $7.50 看似小事，但它会顺着存货传导到利润表：<strong>只要产量≠销量，两法报出的净利润就不同</strong>。这正是后面两节例题要演示的。</p>
+      <div class="callout">
+        <strong>一句话记住分歧：</strong>变动成本法把固定 MOH 当<strong>期间成本</strong>（当期费用化，与产量脱钩）；吸收成本法把它当<strong>产品成本</strong>（计入存货，售出才费用化）。变动制造费用、直接材料、直接人工在两法下待遇完全相同——唯一的分歧只有固定 MOH。
+      </div>
+
+      <h3>1.2 两法的身份：对内利器 vs 对外法定</h3>
+      <p><span class="term">吸收成本法</span><span class="term-en">（Absorption Costing）</span>是"传统方法"：<strong>GAAP 对外报告与税务申报必须用它</strong>——外部投资者看到的存货和利润都含固定 MOH。<span class="term">变动成本法</span><span class="term-en">（Variable Costing）</span>则是管理会计的内部分析利器：它把成本按"随量变/不随量变"整齐切开，天然产出<span class="term">边际贡献</span><span class="term-en">（Contribution Margin, CM）</span>，直接喂给本量利（CVP）分析和短期决策。实务中常见配置是：<strong>对外编吸收法报表，对内用变动法分析</strong>。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、变动成本法利润表（MA43 例题）</h2>
+
+      <h3>2.1 例题数据：Blue 公司，产 5,000 件、只卖出 4,200 件</h3>
+      <p>Blue 公司本期生产 5,000 件、售出 4,200 件（期末存货 800 件），售价 $100/件。成本：直接材料 $11/件、直接人工 $9/件、变动 MOH $6/件、变动销管费用（G&amp;A）$4/件；固定 MOH 合计 $82,000、固定销管费用 $67,000。假设无所得税。任务：编变动成本法利润表，并算期末存货成本。</p>
+      <p><strong>结构模板：</strong>销售收入 − 全部变动成本 = 边际贡献 CM；CM − 全部固定成本 = 净利润。变动成本法利润表也叫<strong>贡献式利润表</strong>，因为它的中点站是 CM 而不是毛利。</p>
+
+      <h3>2.2 逐步计算（每个数字都可复算）</h3>
+      <ol>
+        <li><strong>销售收入</strong> = 4,200 件 × $100 = <strong>$420,000</strong>；</li>
+        <li><strong>变动销货成本</strong> = 4,200 × ($11 + $9 + $6) = 4,200 × $26 = <strong>$109,200</strong>（只含变动<strong>产品</strong>成本）；</li>
+        <li><strong>变动销管费用</strong> = 4,200 × $4 = <strong>$16,800</strong>（变动<strong>期间</strong>成本也扣，这是贡献式的特点）；</li>
+        <li><strong>边际贡献 CM</strong> = $420,000 − $109,200 − $16,800 = <strong>$294,000</strong>；</li>
+        <li><strong>固定成本</strong> = 固定 MOH $82,000 + 固定销管 $67,000 = <strong>$149,000</strong>（固定 MOH <strong>全额</strong>在此当期费用化，一件都不许进存货）；</li>
+        <li><strong>净利润</strong> = $294,000 − $149,000 = <strong>$145,000</strong>。</li>
+      </ol>
+      <p><strong>期末存货</strong> = 800 件 × 变动单位产品成本 $26 = <strong>$20,800</strong>。存货里只有变动制造成本，没有固定 MOH。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、吸收成本法利润表（MA44 例题）</h2>
+
+      <h3>3.1 关键预备步：先把固定 MOH 摊进单位成本</h3>
+      <p>同一份 Blue 公司数据，换吸收成本法。动手编表前先算单位产品成本：固定 MOH 按<strong>产量</strong>（不是销量！）摊薄——$82,000 ÷ 5,000 件 = <strong>$16.40/件</strong>，所以吸收法单位产品成本 = $11 + $9 + $6 + $16.40 = <strong>$42.40/件</strong>（对比变动法的 $26）。</p>
+      <div class="callout warn">
+        <strong>易错点：</strong>固定 MOH 的分配基数是<strong>产量 5,000 件</strong>，不是销量 4,200 件。吸收法把固定 MOH "附着"在每一件被<strong>生产</strong>出来的产品上——卖出去的那部分随 COGS 进利润表，没卖出去的就留在存货里等下期。
+      </div>
+
+      <h3>3.2 逐步计算（传统式：中点站是毛利）</h3>
+      <ol>
+        <li><strong>销售收入</strong> = 4,200 × $100 = <strong>$420,000</strong>；</li>
+        <li><strong>销货成本 COGS</strong> = 4,200 × $42.40 = <strong>$178,080</strong>（其中固定 MOH 部分 = 4,200 × $16.40 = $68,880）；</li>
+        <li><strong>毛利</strong><span class="term-en">（Gross Profit, GP）</span> = $420,000 − $178,080 = <strong>$241,920</strong>；</li>
+        <li><strong>销管费用</strong> = 变动 $16,800 + 固定 $67,000 = <strong>$83,800</strong>（传统式把销管费用合并列示，不分变动/固定）；</li>
+        <li><strong>净利润</strong> = $241,920 − $83,800 = <strong>$158,120</strong>。</li>
+      </ol>
+      <p><strong>期末存货</strong> = 800 件 × $42.40 = <strong>$33,920</strong>——比变动法的 $20,800 高，因为每件多背了 $16.40 的固定 MOH。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、产量≠销量：利润差额的来源与方向</h2>
+
+      <h3>4.1 并排对比：同一份数据，两套结构</h3>
+      <table>
+        <thead>
+          <tr><th>项目</th><th>变动成本法（贡献式）</th><th>吸收成本法（传统式）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>销售收入（4,200 × $100）</td><td>$420,000</td><td>$420,000</td></tr>
+          <tr><td>变动销货成本（× $26）</td><td>−$109,200</td><td>（已含在 COGS 内）</td></tr>
+          <tr><td>变动销管费用（× $4）</td><td>−$16,800</td><td>（并入销管费用 $83,800）</td></tr>
+          <tr><td>销货成本 COGS（× $42.40）</td><td>—</td><td>−$178,080</td></tr>
+          <tr><td><strong>中点站</strong></td><td><strong>边际贡献 CM $294,000</strong></td><td><strong>毛利 GP $241,920</strong></td></tr>
+          <tr><td>固定制造费用 $82,000</td><td>−$82,000（<strong>全额当期费用化</strong>）</td><td>$68,880 藏在 COGS；<strong>$13,120 关进存货</strong></td></tr>
+          <tr><td>固定销管费用</td><td>−$67,000</td><td>（并入销管费用 $83,800）</td></tr>
+          <tr><td><strong>净利润</strong></td><td><strong>$145,000</strong></td><td><strong>$158,120</strong></td></tr>
+          <tr><td>期末存货（800 件）</td><td>$20,800（$26/件）</td><td>$33,920（$42.40/件）</td></tr>
+        </tbody>
+      </table>
+      <p>同一份数据，吸收法净利润高出 $13,120，期末存货也恰好高出 $13,120——这不是巧合：<strong>两法利润之差 = 存货中固定 MOH 的增减变动</strong>。本期 800 件存货 × $16.40 = $13,120 的固定 MOH，在吸收法下被"关进"了存货（资产负债表），没有在利润表上当费用；变动法则把 $82,000 全额放走了。验证：$158,120 − $145,000 = $13,120 ✓；$33,920 − $20,800 = $13,120 ✓；$68,880（售出部分）+ $13,120（存货部分）= $82,000 ✓。</p>
+
+      <div id="fig-flow"></div>
+      <p><strong>图 1 解读：</strong>把固定 MOH 想成一池水。变动成本法开闸放水——$82,000 当期全部流过利润表；吸收成本法修了个<strong>存货蓄水池</strong>——本期生产的每件产品携带 $16.40 固定 MOH，售出的 4,200 件（$68,880）随 COGS 流进利润表，未售出的 800 件（$13,120）蓄在存货里，等下期卖出时才释放。吸收法利润更高，不代表多赚了钱，只是部分固定费用被挪到资产负债表上"暂住"。</p>
+
+      <h3>4.2 利润差异方向规则（记住三种情形）</h3>
+      <ul>
+        <li><strong>产量 &gt; 销量（存货增加）→ 吸收法利润更高</strong>。本期新增的固定 MOH 有一部分被关进存货，利润表少扣了费用（本例：+$13,120）；</li>
+        <li><strong>产量 = 销量（存货不变）→ 两法利润相同</strong>。没有存货增减，固定 MOH 进多少出多少，殊途同归；</li>
+        <li><strong>产量 &lt; 销量（存货减少）→ 变动法利润更高</strong>。本期不仅承担本期固定 MOH，存货还释放出<strong>以前期间</strong>递延的固定 MOH，吸收法利润表被"补刀"。</li>
+      </ul>
+      <div id="fig-bar"></div>
+      <p><strong>图 2 解读：</strong>Blue 公司案例（产 5,000 &gt; 销 4,200）下，吸收法的净利润与期末存货双双更高，两根柱子的差距同为 $13,120——正是蓄在存货里的固定 MOH。注意：<strong>两法下公司的现金流完全相同</strong>，差异纯粹是费用在"本期利润表"与"存货"之间的时点对弈，长期看（存货最终都会卖掉）总利润相等。</p>
+      <div class="callout warn">
+        <strong>呼应经济学 + 管理层激励陷阱：</strong>吸收法下固定 MOH 按产量摊薄，产量越大，单位固定成本越低（经济学里平均固定成本 AFC 随产量递减的会计版）。这给了管理层一个危险杠杆——<strong>"为利润而生产"</strong>：哪怕卖不出去，多生产就能把更多固定费用关进存货，把本期利润"做高"。变动成本法堵死了这条路（利润只随销量动，不随产量动），这也是它更适合对内业绩评价的原因之一。
+      </div>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、收尾对比：变动成本法 vs 吸收成本法</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>变动成本法（Variable Costing）</th><th>吸收成本法（Absorption Costing）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>固定 MOH 处理</td><td><strong>期间成本</strong>：当期全额费用化</td><td><strong>产品成本</strong>：计入存货，售出才费用化</td></tr>
+          <tr><td>单位产品成本（Blue 例）</td><td>$26（DM $11 + DL $9 + 变动 MOH $6）</td><td>$42.40（再加固定 MOH $16.40）</td></tr>
+          <tr><td>报表结构中点站</td><td>边际贡献 CM（贡献式，按变动/固定切分）</td><td>毛利 GP（传统式，按产品/期间切分）</td></tr>
+          <tr><td>利润差异规则</td><td colspan="2">产&gt;销 → 吸收法利润高；产=销 → 两法相同；产&lt;销 → 变动法利润高；差额 = 存货中固定 MOH 的变动额</td></tr>
+          <tr><td>主要用途</td><td><strong>对内</strong>：CVP 分析、短期决策、业绩评价</td><td><strong>对外</strong>：财务报告、税务申报</td></tr>
+          <tr><td>GAAP 合规性</td><td><strong>不合规</strong>，不能用于对外报告</td><td><strong>合规且强制</strong>（GAAP/税务要求）</td></tr>
+          <tr><td>优点</td><td>成本性态清晰，直接产出 CM；利润不被产量操纵</td><td>符合配比原则与对外报告惯例；存货计价"完整"</td></tr>
+          <tr><td>缺点</td><td>对外不能用，需另行折算；存货被低估（不含固定 MOH）</td><td>固定 MOH 分摊粗糙；诱发"为利润而生产"的过度生产</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（固定制造费用该进产品成本还是当期费用？）→ 简化模型（Ace 单位成本 $22 vs $29.50，分歧只剩固定 MOH 一项）→ 推导（变动法：销售−变动成本=CM−固定成本=利润；吸收法：销售−COGS=毛利−销管=利润；利润差 = 存货中固定 MOH 的变动）→ 实际应用（Blue 公司同数据两套报表：$145,000 vs $158,120，差额 $13,120 = 800 件 × $16.40）→ 局限性（吸收法分摊基数粗糙且诱发过度生产；变动法对内好用但 GAAP 不认——两套报表并存是常态）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/11-variable-vs-absorption.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：固定 MOH 流转——变动法当期放走 vs 吸收法关进存货蓄水池 =====
+    Charts.tree(document.getElementById('fig-flow'), {
+      width: 780,
+      layers: [
+        [{ id: 'root', label: '本期固定制造费用 $82,000', width: 300, fill: '#f8fafc' }],
+        [
+          { id: 'abs', label: '吸收成本法：摊入产品成本', color: '#1d4ed8', width: 280 },
+          { id: 'var', label: '变动成本法：当期费用化', color: '#b45309', fill: '#fff7ed', width: 280 },
+        ],
+        [
+          { id: 'cogs', label: '售出 → COGS $68,880', color: '#1d4ed8', width: 170 },
+          { id: 'inv', label: '存货蓄水池 $13,120', color: '#1d4ed8', width: 170 },
+          null,
+          { id: 'exp', label: '当期费用 $82,000', color: '#b45309', fill: '#fff7ed', width: 170 },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 'abs', color: '#1d4ed8', label: '$16.40/件 × 产量 5,000', labelDx: -120 },
+        { from: 'root', to: 'var', color: '#b45309', label: '不进产品成本', labelDx: 100 },
+        { from: 'abs', to: 'cogs', color: '#1d4ed8', label: '4,200 件售出', labelDx: -92, labelDy: -4 },
+        { from: 'abs', to: 'inv', color: '#1d4ed8', label: '800 件未售出', labelDx: 96, labelDy: -4 },
+        { from: 'var', to: 'exp', color: '#b45309' },
+      ],
+      caption: '图 1：固定 MOH 的两种命运——吸收成本法把它摊入产品（售出部分进 COGS，未售出部分蓄在存货）；变动成本法当期全额放走',
+      legend: [
+        { label: '吸收成本法路径（固定 MOH 进存货）', color: '#1d4ed8', style: 'dot' },
+        { label: '变动成本法路径（固定 MOH 当期费用化）', color: '#b45309', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：同数据两法对比——净利润与期末存货（产>销时吸收法双高，差额同为 $13,120） =====
+    Charts.bar(document.getElementById('fig-bar'), {
+      categories: ['净利润', '期末存货（800 件）'],
+      series: [
+        { label: '变动成本法', color: '#b45309', values: [145000, 20800] },
+        { label: '吸收成本法', color: '#1d4ed8', values: [158120, 33920] },
+      ],
+      yLabel: '金额（美元）',
+      yMax: 180000,
+      yStep: 30000,
+      width: 640,
+      caption: '图 2：Blue 公司（产 5,000 > 销 4,200）两法结果对比——吸收法净利润与期末存货均高出 $13,120（= 800 件 × $16.40 递延固定 MOH）',
+    });
+  </script>
+</body>
+</html>

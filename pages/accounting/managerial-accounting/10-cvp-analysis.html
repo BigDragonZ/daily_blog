@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 本量利分析 CVP - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>10 本量利分析 CVP</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）第 39–41 讲：MA39 边际贡献与盈亏平衡分析、MA40 目标利润 vs 盈亏平衡、MA41 两种产品的快速保本计算。<span class="term">本量利分析</span><span class="term-en">（Cost-Volume-Profit Analysis, CVP）</span>回答的是每个经营者睡前都会想的问题：<strong>要卖多少件才不亏？要赚某个数，得卖多少件？</strong>它只需要三个输入——单价、单位变动成本、固定成本，却能推导出整张"销量—利润"地图。对学过经济学的读者，本篇会感到格外亲切：CVP 就是边际分析在会计里的落地。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入：每多卖一件赚 $28，多少件能填平 $39,200 的坑？</h2>
+
+      <h3>1.1 X-ray 公司：只知道三个数</h3>
+      <p><strong>反直觉开场：</strong>讲师给出 X-ray 公司，全部已知条件只有三个数——售价 $70/件、变动成本 $42/件、固定成本 $39,200。然后他问：这家公司要卖多少件才能不亏？直觉反应是"信息不够吧？收入表呢？产能呢？"——其实<strong>三个数就够了</strong>。关键在于换个视角看每一件产品：每卖出一件，收进 $70，随即被变动成本吃掉 $42，<strong>净剩 $28 拿去填固定成本那个 $39,200 的大坑</strong>。坑填平之前公司整体是亏的；填平之后，每多卖一件的 $28 全部变成利润。于是答案呼之欲出：39,200 ÷ 28 = 1,400 件。这就是全部 CVP 分析的雏形。</p>
+
+      <h3>1.2 【呼应经济学】CVP 就是边际分析的企业应用</h3>
+      <div class="callout">
+        <strong>已学经济学的读者请注意：</strong>CVP 的骨架你在经济学里已经见过。每多卖一件"净剩 $28"，这正是<span class="term">边际分析</span><span class="term-en">（Marginal Analysis）</span>——比较边际收益与边际成本做决策（见<a href="../../economics/principles-of-economics/05-firms-and-industry.html">经济学原理 · 企业与产业</a>、<a href="../../economics/mit-micro/05-costs.html">MIT 微观 · 成本理论</a>）。而固定成本 $39,200 在短期决策中是<strong>已经发生、不受销量影响的</strong>——经济学的<span class="term">沉没成本</span><span class="term-en">（Sunk Cost）</span>视角告诉你：多生产一件的决策只看变动成本，固定成本不改变边际计算。CVP 做的事就是把这个边际逻辑搬到整个企业：用单位边际贡献去"摊"固定成本总量，找到利润由负转正的临界点。<strong>区别只在时间跨度</strong>：经济学里固定成本在长期也可变，CVP 明确假设分析期内售价、单位变动成本、固定成本都不变——这是模型的简化，也是它的局限（见第六节末尾）。
+      </div>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、边际贡献：每卖一件"贡献"了多少？</h2>
+
+      <h3>2.1 定义与 X-ray 例题</h3>
+      <p><span class="term">边际贡献</span><span class="term-en">（Contribution Margin, CM）</span> = 售价 − 单位变动成本，即每卖一件产品，在覆盖自身变动成本之后，<strong>剩下多少去覆盖固定成本、进而形成利润</strong>。X-ray 公司：CM = $70 − $42 = <strong>$28</strong>。</p>
+      <p>再换成百分比视角：永远把售价当作 100%。变动成本率 = 42 ÷ 70 = 60%，<span class="term">边际贡献率</span><span class="term-en">（Contribution Margin Ratio, CM%）</span> = 28 ÷ 70 = <strong>40%</strong>。两种等价的表述："每卖一件赚 $28"，或"每收进 $1，有 40 美分变成边际贡献"。</p>
+      <div class="callout">
+        <strong>两个口径，各管一件事：</strong>单位 CM（$28）用来算<strong>件数</strong>口径的答案；CM%（40%）用来算<strong>金额</strong>口径的答案。后面所有公式都是这一对。
+      </div>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、盈亏平衡：收入线与总成本线的交点</h2>
+
+      <h3>3.1 定义与公式</h3>
+      <p><span class="term">盈亏平衡点</span><span class="term-en">（Breakeven Point, BE）</span>是总收入 = 总成本、利润恰为零的销量（或销售额）。推导一行就够：设销量为 Q，利润 = Q×(P−VC) − FC = 0，解得——</p>
+      <ul>
+        <li><strong>BE 件数 = 固定成本 ÷ 单位 CM</strong>：39,200 ÷ 28 = <strong>1,400 件</strong>；</li>
+        <li><strong>BE 金额 = 固定成本 ÷ CM%</strong>：39,200 ÷ 40% = <strong>$98,000</strong>。</li>
+      </ul>
+      <p>两个答案互相校验：1,400 件 × $70 = $98,000 ✓。含义很直白：卖到 1,400 件之前一直在亏，第 1,400 件刚好把坑填平，从第 1,401 件起每件净赚 $28。</p>
+
+      <div id="fig-cvp"></div>
+      <p><strong>图 1 解读：</strong>总收入线 TR = 70Q 过原点，总成本线 TC = 39,200 + 42Q 从纵轴 $39,200（Q=0 时一分钱没卖也要付固定成本）出发、斜率更缓。两线交于 BE 点（1,400 件，$98,000）。交点左侧 TC 在 TR 上方，夹出的三角形是<strong>亏损区</strong>（红色，Q=0 时亏损额恰为全部固定成本 $39,200）；交点右侧 TR 反超，夹出<strong>盈利区</strong>（绿色）。两线斜率之差（70 − 42 = 28）就是单位 CM——CM 越大，两线张开越快，BE 点越靠左。<strong>模型的优点</strong>：一张图同时给出 BE 位置、任意销量下的盈亏额和安全空间；<strong>缺点</strong>：两条都是直线，隐含"卖多少都一个价、单位变动成本恒定"，批量折扣、加班费等现实因素都会让线弯曲。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、边际贡献式利润表：三种写法，一个验证</h2>
+
+      <h3>4.1 总额 / 单位 / 百分比三栏并列</h3>
+      <p><span class="term">边际贡献式利润表</span><span class="term-en">（Contribution Margin Income Statement，也叫变动成本法利润表 Variable Costing Income Statement）</span>与财务会计的利润表不同：它不按"销售成本/期间费用"分，而按<strong>成本性态</strong>分——先减变动成本得到边际贡献，再减固定成本得到利润。把 BE 点 1,400 件写成三栏：</p>
+      <table>
+        <thead>
+          <tr><th>项目（X-ray 公司，1,400 件）</th><th>总额</th><th>单位</th><th>占销售额 %</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>销售收入（Sales）</td><td>$98,000</td><td>$70</td><td>100%</td></tr>
+          <tr><td>变动成本（Variable Cost）</td><td>58,800</td><td>42</td><td>60%</td></tr>
+          <tr><td><strong>边际贡献（CM）</strong></td><td><strong>39,200</strong></td><td><strong>28</strong></td><td><strong>40%</strong></td></tr>
+          <tr><td>固定成本（Fixed Cost）</td><td>39,200</td><td>—</td><td>—</td></tr>
+          <tr><td><strong>利润（Profit）</strong></td><td><strong>$0</strong></td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p>三栏互通：总额 = 单位 × 件数 = 百分比 × 销售总额。变动成本两种算法交叉验证：1,400 × $42 = $58,800，或 $98,000 × 60% = $58,800 ✓。利润 = 39,200 − 39,200 = 0，<strong>正好证明 1,400 件就是 BE 点</strong>。注意固定成本没有"单位"和"%"两栏——它不随件数摊，摊到每件会随销量变化，这正是 P01 成本分类里强调过的陷阱。</p>
+
+      <h3>4.2 三档销量验证：BE 点上下各看一眼</h3>
+      <table>
+        <thead>
+          <tr><th>销量</th><th>销售收入</th><th>变动成本</th><th>边际贡献</th><th>固定成本</th><th>利润</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1,000 件（低于 BE）</td><td>$70,000</td><td>$42,000</td><td>$28,000</td><td>$39,200</td><td><strong>−$11,200（亏）</strong></td></tr>
+          <tr><td>1,400 件（恰为 BE）</td><td>98,000</td><td>58,800</td><td>39,200</td><td>39,200</td><td><strong>$0</strong></td></tr>
+          <tr><td>1,500 件（高于 BE）</td><td>105,000</td><td>63,000</td><td>42,000</td><td>39,200</td><td><strong>+$2,800（赚）</strong></td></tr>
+        </tbody>
+      </table>
+      <p>注意规律：<strong>销量每变动 1 件，利润变动恰为单位 CM $28</strong>——从 1,400 到 1,500 多卖 100 件，利润 0 → +$2,800，恰是 100 × 28。越过 BE 点之后，固定成本已填平，每一件的 CM 全部掉进利润。讲师还给了第四档：2,000 件时利润 $16,800，合每件 $8.40、利润率 12%。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、目标利润：BE 公式的"加一项"推广</h2>
+
+      <h3>5.1 Zulu 公司：换个给法，照样三栏开局</h3>
+      <p>MA40 换一家公司练手：Zulu 公司售价 $80/件，<strong>变动成本是销售额的 65%</strong>，固定成本 $42,000。注意这次没直接给单位变动成本——先换算：VC% = 65% → CM% = 35%，单位 VC = 80 × 65% = $52，单位 CM = 80 × 35% = $28。然后套 BE 公式：BE 件数 = 42,000 ÷ 28 = <strong>1,500 件</strong>；BE 金额 = 42,000 ÷ 35% = <strong>$120,000</strong>（校验：1,500 × 80 = 120,000 ✓）。</p>
+
+      <h3>5.2 目标利润（Target Profit）：分子加上想要的利润</h3>
+      <p>管理层通常不满足于"不亏"，而是问：<strong>要赚 $7,000，得卖多少？</strong>把推导再走一遍：Q×CM − FC = 目标利润，解得——</p>
+      <ul>
+        <li><strong>目标销量（件）=（FC + 目标利润）÷ 单位 CM</strong> =（42,000 + 7,000）÷ 28 = <strong>1,750 件</strong>；</li>
+        <li><strong>目标销售额 =（FC + 目标利润）÷ CM%</strong> = 49,000 ÷ 35% = <strong>$140,000</strong>。</li>
+      </ul>
+      <p>验证：1,750 件 → 销售 $140,000 − 变动成本 $91,000 = CM $49,000 − FC $42,000 = <strong>$7,000</strong> ✓。一眼看清与 BE 的关系：<strong>BE 就是目标利润 = 0 的特例</strong>——同一个公式，分子从 FC 变成 FC + 目标利润，仅此而已。也可以这样理解：1,500 件填平固定成本，再多卖 250 件（7,000 ÷ 28）赚出目标利润，合计 1,750 件。</p>
+
+      <h3>5.3 两个变体：目标利润率与安全边际</h3>
+      <ul>
+        <li><strong>目标利润"率"</strong>（如利润率 10%）不是加一项而是<strong>换个分母</strong>：CM 的 35% 里要留 10% 作利润，剩下 25% 去覆盖固定成本 → 所需销售额 = FC ÷（CM% − 目标利润率）= 42,000 ÷ 25% = <strong>$168,000</strong>（2,100 件；验证：CM $58,800 − FC $42,000 = $16,800 = 168,000 × 10% ✓）；</li>
+        <li><span class="term">安全边际</span><span class="term-en">（Margin of Safety, MOS）</span> = 当前（或预计）销量 − BE 销量，回答"销售下滑多少才会开始亏"。Zulu 在 2,100 件时：MOS = 2,100 − 1,500 = <strong>600 件</strong>（$48,000），MOS% = 600 ÷ 2,100 ≈ <strong>28.6%</strong>——销售跌 5%、10% 都动不了盈利状态。图 1 里 BE 点右侧、当前销量左侧的那段距离就是它。</li>
+      </ul>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、多产品盈亏平衡：把产品组合"打包"成一件复合产品</h2>
+
+      <h3>6.1 引入：咖啡店卖两种拼配，BE 怎么算？</h3>
+      <p><strong>反直觉开场：</strong>Double B 公司卖两种咖啡拼配——Bold 与 Barista，售价、变动成本都不同。固定成本 $35,880 该除以哪个 CM？除以 Bold 的还是 Barista 的？都不对。诀窍是：<strong>先按销售组合把两种产品打包成一件"复合产品"，再当单产品算。</strong>已知<span class="term">销售组合</span><span class="term-en">（Sales Mix）</span>：每卖 100 件，70 件 Bold、30 件 Barista。</p>
+
+      <h3>6.2 加权平均 CM：一张表算到底</h3>
+      <table>
+        <thead>
+          <tr><th>项目</th><th>Bold（权重 70%）</th><th>Barista（权重 30%）</th><th>复合产品（加权）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>售价</td><td>$20</td><td>$30</td><td>0.7×20 + 0.3×30 = <strong>$23.00</strong></td></tr>
+          <tr><td>变动成本</td><td>14</td><td>18</td><td>0.7×14 + 0.3×18 = <strong>$15.20</strong></td></tr>
+          <tr><td><strong>单位 CM</strong></td><td><strong>$6</strong></td><td><strong>$12</strong></td><td>0.7×6 + 0.3×12 = <strong>$7.80</strong></td></tr>
+          <tr><td>CM%</td><td>30%</td><td>40%</td><td>7.80 ÷ 23 ≈ <strong>33.91%</strong></td></tr>
+        </tbody>
+      </table>
+      <p>复合 CM 可以两路互验：$23.00 − $15.20 = $7.80，或 0.7×6 + 0.3×12 = 4.20 + 3.60 = $7.80 ✓（Excel 里一行 SUMPRODUCT 搞定）。复合 CM%（33.91%）落在 30% 与 40% 之间且更靠近 30%——因为低利润率的 Bold 卖得更多；计算时多保留几位小数，避免四舍五入误差。</p>
+
+      <h3>6.3 套公式，再拆回去</h3>
+      <ul>
+        <li><strong>BE 复合件数</strong> = 35,880 ÷ 7.80 = <strong>4,600 件</strong>；<strong>BE 金额</strong> = 35,880 ÷ 33.91% ≈ <strong>$105,800</strong>（校验：4,600 × 23 = 105,800 ✓）；</li>
+        <li><strong>按销售组合拆回</strong>：Bold = 4,600 × 70% = <strong>3,220 件</strong>，Barista = 4,600 × 30% = <strong>1,380 件</strong>（合计恰为 4,600 ✓）；</li>
+        <li><strong>利润表验证</strong>：销售 4,600 × $23 = $105,800 − 变动成本 4,600 × $15.20 = $69,920 → CM $35,880 − FC $35,880 = <strong>$0</strong> ✓。</li>
+      </ul>
+      <div class="callout warn">
+        <strong>敏感性提示：</strong>多产品 BE 高度依赖销售组合。若组合变为 75% Bold（低 CM 产品占比上升），复合 CM 降到 0.75×6 + 0.25×12 = $7.50，BE 升至 35,880 ÷ 7.50 = <strong>4,784 件</strong>；若变为 60% Bold / 40% Barista，复合 CM 升到 $8.40，BE 降至 35,880 ÷ 8.40 ≈ <strong>4,271 件</strong>。同样的公司、同样的固定成本，仅因为"卖的是什么"变了，保本难度就差出 500 多件——这也是"优化产品结构"的量化含义。
+      </div>
+      <p><strong>方法优缺点：</strong>加权平均法的<strong>优点</strong>是把多产品问题一键降维成单产品，公式零新增；<strong>缺点</strong>是全部结论押在"销售组合不变"上——组合一漂，BE 点就漂（上面的敏感性正是例证），且它回答不了"单个产品各自赚不赚钱"（那要追溯到各自 CM%）。</p>
+
+      <!-- ==================== 七 ==================== -->
+      <h2>七、收尾对比表</h2>
+      <table>
+        <thead>
+          <tr><th>对比</th><th>情形 A</th><th>情形 B</th><th>关键关系</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>BE vs 目标利润</strong></td><td>BE 件数 = FC ÷ 单位 CM</td><td>目标销量 =（FC + 目标利润）÷ 单位 CM</td><td>同一公式，<strong>只差分子加一项</strong>；BE 是目标利润 = 0 的特例（金额口径同理：分母换 CM%）</td></tr>
+          <tr><td><strong>目标利润额 vs 目标利润率</strong></td><td>赚固定金额 $7,000：分子加利润</td><td>赚销售额的 10%：分母改为 CM% − 10%</td><td>"额"动分子，"率"动分母</td></tr>
+          <tr><td><strong>单产品 vs 多产品</strong></td><td>直接用该产品单位 CM 与 CM%</td><td>先按销售组合加权出"复合产品"的 CM 与 CM%，算完再按组合拆回各产品</td><td>公式结构完全相同，多一步<strong>加权打包 + 拆分还原</strong>；结论对销售组合高度敏感</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（要卖多少件才不亏、要赚目标利润得卖多少？）→ 简化模型（期内 P、VC、FC 均不变，成本只分变动/固定两类）→ 推导（CM = P − VC 逐件填固定成本之坑；令利润 = 0 得 BE，令利润 = 目标值得目标销量；多产品先加权打包）→ 实际应用（X-ray 三档验证、Zulu 目标利润与安全边际、Double B 双产品保本与组合敏感性）→ 局限性（线性假设忽略量价互动与成本阶梯；多产品结论押注组合不变；固定成本"不变"只在相关区间内成立——这正是经济学里短期 vs 长期的老话）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/10-cvp-analysis.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：CVP 盈亏平衡图 —— TR = 70Q 与 TC = 39,200 + 42Q 交于 BE（1,400 件，$98,000） =====
+    Charts.xy(document.getElementById('fig-cvp'), {
+      width: 720,
+      height: 480,
+      xLabel: '销量 Q（件）',
+      yLabel: '金额（$）',
+      xMax: 2000,
+      yMax: 140000,
+      xTicks: [0, 500, 1000, 2000],
+      yTicks: [
+        { v: 0, label: '0' },
+        { v: 39200, label: '39,200' },
+        { v: 70000, label: '70,000' },
+        { v: 140000, label: '140,000' },
+      ],
+      areas: [
+        { points: [[0, 0], [0, 39200], [1400, 98000]], color: '#dc2626', opacity: 0.12, label: '亏损区' },
+        { points: [[1400, 98000], [2000, 140000], [2000, 123200]], color: '#15803d', opacity: 0.14, label: '盈利区' },
+      ],
+      series: [
+        { points: [[0, 0], [2000, 140000]], type: 'linear', color: '#1d4ed8', label: '总收入线 TR = 70Q' },
+        { points: [[0, 39200], [2000, 123200]], type: 'linear', color: '#b45309', label: '总成本线 TC = 39,200 + 42Q' },
+      ],
+      markers: [
+        {
+          x: 1400, y: 98000, color: '#0f172a',
+          label: 'BE（1,400 件，$98,000）', labelDx: 14, labelDy: -10,
+          guides: true, gxLabel: '1,400 件', gyLabel: '$98,000',
+        },
+        {
+          x: 0, y: 39200, color: '#b45309',
+          label: '固定成本 $39,200', labelDx: 12, labelDy: -8,
+        },
+      ],
+      legendPosition: 'top',
+      legend: [
+        { label: '总收入线 TR = 70Q', color: '#1d4ed8', style: 'line' },
+        { label: '总成本线 TC = 39,200 + 42Q', color: '#b45309', style: 'line' },
+        { label: '亏损区（TR < TC）', color: '#dc2626', style: 'dot' },
+        { label: '盈利区（TR > TC）', color: '#15803d', style: 'dot' },
+      ],
+      caption: '图 1：CVP 盈亏平衡图——两线交点即 BE（1,400 件 / $98,000），左侧三角为亏损区、右侧为盈利区',
+    });
+  </script>
+</body>
+</html>

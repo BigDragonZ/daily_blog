@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08 制造费用分配：全厂费率 vs 作业成本法 ABC - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>08 制造费用分配：全厂费率 vs 作业成本法 ABC</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）第 34–36 讲：MA34 全厂费率计算、MA35 ABC 作业费率、MA36 ABC 单位成本。<a href="01-intro-and-cost-classification.html">P01</a> 把成本分成了 DM / DL / <span class="term">制造费用</span><span class="term-en">（Manufacturing Overhead, MOH）</span>三要素，当时留了个尾巴：MOH 是个"杂物桶"，间接成本归集得太粗糙会造成成本扭曲。本篇就来修这个桶——先用最粗糙的全厂单一费率打底，再引入按活动拆池的<span class="term">作业成本法</span><span class="term-en">（Activity-Based Costing, ABC）</span>。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入：复杂产品正在"搭便车"</h2>
+      <p><strong>反直觉开场：</strong>同一家工厂生产两种产品——一款是工艺简单、大批量跑量的"走量款"，一款是小批量、要频繁换模调试、反复检验、采购零碎的"复杂款"。到了月底分制造费用，会计说：简单，全厂的 MOH 除以全厂的直接人工工时，谁用工时多谁多分。听起来天经地义？<strong>但复杂款真正烧钱的地方——换模设置、检验、下采购订单——跟它用了多少人工小时往往不成比例。</strong>按人工小时分摊，等于让走量款替复杂款的设置费和检验费买单：复杂款被"补贴"了，账上成本偏低；走量款被高估，定价随之失真——报高了丢订单，报低了卖一件亏一件。问题不在数字算错，而在<strong>分配基础（Allocation Base）选错</strong>：一个动因装不下形态各异的所有间接成本。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、全厂单一费率（Plantwide Overhead Rate）</h2>
+
+      <h3>2.1 定义：一口大锅，一个费率</h3>
+      <p>最传统的做法是把全厂所有 MOH 装进<strong>一个成本池</strong>，选一个全厂统一的分配基础（最常见是直接人工工时 DLH），算出唯一一个费率：</p>
+      <p style="text-align:center"><strong>全厂费率 = 预算制造费用总额 ÷ 预算直接人工工时总额</strong></p>
+      <p>然后每种产品按自己消耗的人工工时 × 这个费率领走自己的那份 MOH。它本质上是<span class="term">预定分配率</span><span class="term-en">（Predetermined Overhead Rate, POHR）</span>的最简形态——期初用预算数定费率，期中随时能把 MOH"分摊"到产品，不必等期末结账。</p>
+
+      <h3>2.2 例题（MA34）：Sierra 公司 Good vs Great</h3>
+      <p>Sierra 公司生产 Good、Great 两种型号。预算制造费用 $112,625，预算直接人工工时 8,500 小时；Good 每单位 DM $23、DL $33、耗 3 个工时；Great 每单位 DM $35、DL $48、耗 5 个工时。三步走：</p>
+      <ol>
+        <li><strong>全厂费率</strong> = $112,625 ÷ 8,500 小时 = <strong>$13.25 / 直接人工小时（DLH）</strong>；</li>
+        <li><strong>单位 MOH</strong>：Good = $13.25 × 3 = $39.75；Great = $13.25 × 5 = $66.25；</li>
+        <li><strong>单位总成本</strong> = DM + DL + MOH，见下表。</li>
+      </ol>
+      <table>
+        <thead>
+          <tr><th>成本项目</th><th>Good 型号</th><th>Great 型号</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直接材料（DM）</td><td>$23.00</td><td>$35.00</td></tr>
+          <tr><td>直接人工（DL）</td><td>$33.00</td><td>$48.00</td></tr>
+          <tr><td>直接人工工时</td><td>3 小时</td><td>5 小时</td></tr>
+          <tr><td>单位制造费用（$13.25 × 工时）</td><td>$39.75</td><td>$66.25</td></tr>
+          <tr><td><strong>单位总成本</strong></td><td><strong>$95.75</strong></td><td><strong>$149.25</strong></td></tr>
+          <tr><td>成本扭曲方向（定性示意）</td><td>若 Good 是走量款：单一费率下倾向被<strong>高估 ↑</strong>（替别人买单）</td><td>若 Great 的设置/检验/采购远超其工时占比：倾向被<strong>低估 ↓</strong>（被补贴）</td></tr>
+        </tbody>
+      </table>
+      <p>注意扭曲方向的逻辑：Great 工时多，单一费率下确实多分了 MOH——<strong>但只要它消耗的设置、检验、采购订单等"非工时型"资源比工时占比还高，多分的这部分仍然不够，它照样被低估。</strong>扭曲的根源是"一个动因代表不了所有成本"，而不是费率本身算错。</p>
+      <p><strong>优点：</strong>一个费率打天下，计算量极小、数据随手可得、便于理解，产品同质化程度高时足够用。<strong>缺点：</strong>当产品之间的工艺复杂度、批量差异大时，单一动因必然系统性错配——扭曲不是随机噪音，而是有方向的偏差。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、作业成本法（ABC）：先找活动，再找动因</h2>
+
+      <h3>3.1 思想：成本不是被产品"吸收"的，是被活动"驱动"的</h3>
+      <p>ABC 换一个问法：不问"这个产品用了多少人工小时"，而问"<strong>这笔间接费用到底是哪项活动（Activity）引起的？这项活动的成本又被什么驱动？</strong>"——采购费用是采购订单数量驱动的，检验费用是检验次数驱动的，换模设置费是设置次数驱动的。于是分两步：</p>
+      <ol>
+        <li><strong>识别活动、建成本池</strong>（Cost Pool）：把 MOH 按活动拆成若干小池子，每个池子里的成本<strong>同因同质</strong>；</li>
+        <li><strong>为每个池子选成本动因</strong>（Cost Driver）并算<span class="term">作业费率</span><span class="term-en">（Activity Rate）</span>：<strong>作业费率 = 该活动成本池 ÷ 该动因总量</strong>，产品按实际消耗的各动因量领成本。</li>
+      </ol>
+      <div id="fig-abc-vs-plantwide"></div>
+      <p><strong>图 1 解读：</strong>左半（橙色）是传统全厂费率：一笔 MOH 一个池、一个动因（DLH）、一条分配线直达产品；右半（青色）是 ABC：同一笔 MOH 先按活动拆成采购、检验、设置、装配四个成本池，各自选动因、各算作业费率，再按产品实际消耗的动因量逐活动汇总。池子多了、线多了，换来的是每笔成本都沿着"真正驱动它的那个因素"流向产品。</p>
+
+      <h3>3.2 例题（MA35）：Tango 公司算四个作业费率</h3>
+      <p>Tango 公司采用 ABC，识别出采购、检验、设置、装配四项活动。其中"设置"指切换产品线时关停装配线、重新调试（可能动用机器人）——每次设置都是一笔固定开销，与这一批生产多少件无关，所以动因是<strong>次数</strong>而不是产量。各池成本、动因量与作业费率如下：</p>
+      <table>
+        <thead>
+          <tr><th>活动（成本池）</th><th>成本动因</th><th>预算成本池</th><th>预算动因量</th><th>作业费率 = 池 ÷ 量</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>采购（Purchasing）</td><td>采购订单数</td><td>$142,000</td><td>4,000 份</td><td><strong>$35.50 / 订单</strong></td></tr>
+          <tr><td>检验（Inspection）</td><td>被检验单位数</td><td>$32,000</td><td>8,000 单位</td><td><strong>$4.00 / 单位</strong></td></tr>
+          <tr><td>设置（Setup）</td><td>设置次数</td><td>$65,000</td><td>75 次</td><td><strong>$866.67 / 次</strong></td></tr>
+          <tr><td>装配（Assembly）</td><td>直接人工小时</td><td>$168,000</td><td>4,500 小时</td><td><strong>$37.33 / 小时</strong></td></tr>
+          <tr><td><strong>合计</strong></td><td>—</td><td><strong>$407,000</strong></td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p>两点值得注意：其一，设置费率高得吓人（$866.67/次）——这正是单一费率下最容易被"摊薄、藏起来"的成本，ABC 让它现形；其二，装配池仍用 DLH 作动因——ABC 并不排斥人工工时，只是不再让它<strong>一个动因代表全厂</strong>。复算校验：$142,000÷4,000=$35.50；$32,000÷8,000=$4.00；$65,000÷75≈$866.67；$168,000÷4,500≈$37.33。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、ABC 下的单位成本（例题 MA36：Uniform 公司）</h2>
+      <p>有了作业费率，剩下的就是"数一数产品消耗了多少动因"。Uniform 公司事先定好三个作业费率：设置 $2,500/次、材料处理 $180/张领料单（Requisition）、检验 $6/件。某批生产 2,000 件，实际发生 4 次设置、30 张领料单、检验 2,000 件。逐活动"实际动因量 × 作业费率"：</p>
+      <ol>
+        <li>设置：4 次 × $2,500 = $10,000；</li>
+        <li>材料处理：30 张 × $180 = $5,400；</li>
+        <li>检验：2,000 件 × $6 = $12,000；</li>
+        <li>该批分摊 MOH 合计 = $10,000 + $5,400 + $12,000 = <strong>$27,400</strong>；</li>
+        <li>单位 MOH = $27,400 ÷ 2,000 件 = <strong>$13.70 / 件</strong>。</li>
+      </ol>
+      <p>这套"费率 × 动因量 → 汇总 → 除以产量"的流程就是 ABC 的全部日常操作——思路朴素，威力在于<strong>每一笔钱都能说出它为什么跟着这个产品走</strong>：这批货分摊高，是因为它换了 4 次模、领了 30 次料，而不是因为会计拍脑袋。</p>
+      <div class="callout warn">
+        <strong>资料质量提示：</strong>MA35、MA36 的原始讲义为 YouTube 字幕碎片（逐句重复），本页已按其他讲次的精修风格提炼重写，数字与例题结论均与讲师口径一致并已复算。
+      </div>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、收尾：全厂费率 vs ABC</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>全厂单一费率（Plantwide Rate）</th><th>作业成本法（ABC）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>成本池 / 费率</td><td>1 个池、1 个费率（通常 DLH）</td><td>多池多费率，每池一个动因</td></tr>
+          <tr><td>精度</td><td>粗：产品同质时够用，差异大时失真</td><td>细：成本沿真实驱动因素归属产品</td></tr>
+          <tr><td>实施成本</td><td>极低，数据随手可得</td><td>高：要识别活动、持续统计各动因量</td></tr>
+          <tr><td>适用场景</td><td>产品单一 / 工艺相近 / MOH 占比小</td><td>产品多样 / 批量与复杂度差异大 / MOH 占比高</td></tr>
+          <tr><td>成本扭曲风险</td><td>高且有方向：走量简单品被高估 ↑，复杂小批量品被低估 ↓（被补贴）</td><td>低，但动因选错照样扭曲——垃圾进垃圾出</td></tr>
+        </tbody>
+      </table>
+      <p><strong>ABC 的优点：</strong>成本归属更准，定价、产品组合决策有了可信底数；顺带让设置、检验这类"隐性高费率活动"现形，本身就是流程改进的线索。<strong>缺点：</strong>实施与维护贵——每个动因都要持续计量；动因选择仍带主观判断，选错了精度反而不如看似粗糙但稳定的单一费率；且 ABC 是对外准则之外的内部工具，财报存货计价仍须回到 GAAP 口径。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（间接成本该按什么分给产品？分错了会怎样？）→ 简化模型（全厂一个池 ÷ DLH = 单一费率，Sierra 例题：Good $95.75 / Great $149.25）→ 推导（单一动因装不下异质的间接成本 → 按活动拆池、各选动因 → 作业费率 = 池 ÷ 动因量）→ 实际应用（Tango 四费率、Uniform 单位 MOH $13.70）→ 局限性（ABC 贵在数据、动因选择有主观性、仅服务内部决策；产品同质时全厂费率反而划算）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/08-overhead-abc.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：传统全厂单一费率（左）vs ABC 多成本池（右）分配流程对比 =====
+    Charts.tree(document.getElementById('fig-abc-vs-plantwide'), {
+      width: 900,
+      layers: [
+        [
+          { id: 'L0', label: '传统：全部 MOH 一个池', color: '#b45309', fill: '#fff7ed', width: 220 },
+          { id: 'R0', label: 'ABC：同一笔 MOH 按活动拆池', color: '#0f766e', fill: '#f0fdfa', width: 250 },
+        ],
+        [
+          { id: 'L1', label: '单一费率 $13.25/DLH', color: '#b45309', fill: '#fff7ed', width: 158 },
+          { id: 'P1', label: '采购池', color: '#0f766e', fill: '#f0fdfa', width: 96 },
+          { id: 'P2', label: '检验池', color: '#0f766e', fill: '#f0fdfa', width: 96 },
+          { id: 'P3', label: '设置池', color: '#0f766e', fill: '#f0fdfa', width: 96 },
+          { id: 'P4', label: '装配池', color: '#0f766e', fill: '#f0fdfa', width: 96 },
+        ],
+        [
+          { id: 'L2', label: '按各产品 DLH 分配', color: '#b45309', fill: '#fff7ed', width: 150 },
+          null, null,
+          { id: 'R2', label: '各产品：动因量 × 作业费率', color: '#0f766e', fill: '#f0fdfa', width: 176 },
+          null,
+        ],
+        [
+          { id: 'L3', label: 'Good $39.75 · Great $66.25', color: '#b45309', fill: '#fff7ed', width: 168 },
+          null, null,
+          { id: 'R3', label: '单位 MOH（如 $13.70/件）', color: '#0f766e', fill: '#f0fdfa', width: 168 },
+          null,
+        ],
+      ],
+      edges: [
+        { from: 'L0', to: 'L1', color: '#b45309', label: '$112,625 ÷ 8,500 DLH', labelDx: 96, labelDy: -6 },
+        { from: 'L1', to: 'L2', color: '#b45309' },
+        { from: 'L2', to: 'L3', color: '#b45309', label: 'Good 3h · Great 5h', labelDx: 84 },
+        { from: 'R0', to: 'P1', color: '#0f766e', label: '$142,000', labelDx: -26, labelDy: -8 },
+        { from: 'R0', to: 'P2', color: '#0f766e', label: '$32,000', labelDx: -14, labelDy: 12 },
+        { from: 'R0', to: 'P3', color: '#0f766e', label: '$65,000', labelDx: 22, labelDy: -8 },
+        { from: 'R0', to: 'P4', color: '#0f766e', label: '$168,000', labelDx: 34, labelDy: 12 },
+        { from: 'P1', to: 'R2', color: '#0f766e' },
+        { from: 'P2', to: 'R2', color: '#0f766e' },
+        { from: 'P3', to: 'R2', color: '#0f766e' },
+        { from: 'P4', to: 'R2', color: '#0f766e' },
+        { from: 'R2', to: 'R3', color: '#0f766e', label: '逐活动汇总 ÷ 产量', labelDx: 92 },
+      ],
+      caption: '图 1：制造费用分配流程对比——传统全厂费率（左，一池一动因一条线）vs 作业成本法 ABC（右，多成本池多动因逐活动汇总）',
+      legend: [
+        { label: '传统全厂单一费率（Plantwide Rate）', color: '#b45309', style: 'dot' },
+        { label: '作业成本法（ABC，多成本池多动因）', color: '#0f766e', style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>

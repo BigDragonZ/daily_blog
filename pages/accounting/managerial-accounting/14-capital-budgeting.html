@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14 资本预算：回收期、NPV、IRR、PI - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>14 资本预算：回收期、NPV、IRR、PI</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）资本预算章节的四讲：MA53 回收期法、MA54 用 Excel 算 NPV 与 IRR、MA55 用 BA II Plus 金融计算器算 NPV 与 IRR、MA56 获利指数与三指标对比。<span class="term">资本预算</span><span class="term-en">（Capital Budgeting）</span>回答的问题是：要不要把一大笔钱投进一个长期项目（买机器设备、发起营销战役），指望未来若干年分批收回？讲师给出四个评价工具——<strong>回收期、NPV、IRR、PI</strong>——并用两组例题（Alpha/Suma 双项目、Kylo 单项目）把它们全部算了一遍。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、先立框架：时间价值与现金流</h2>
+
+      <h3>1.1 引入：三年后收回本钱的项目，真的"安全"吗？</h3>
+      <p><strong>反直觉开场：</strong>两个项目摆在你面前——Alpha 花 $160,000，3.33 年回本；Suma 花 $240,000，要 4.25 年才回本。直觉告诉你选 Alpha：回本快，夜长梦少。但讲师用同一组数据算出：在 12% 的必要报酬率下，Alpha 的净现值是 <strong>−$2,617（拒绝）</strong>，Suma 的净现值是 <strong>+$13,758（接受）</strong>。"安全"的回收期法给出了错误答案——因为它有两只眼睛都看不见的东西：<strong>回收期之后发生的一切现金流</strong>，以及<strong>钱的时间价值</strong>。这正是本篇要解决的：四个工具谁看见了什么、谁瞎在哪里。</p>
+
+      <h3>1.2【呼应经济学】货币时间价值：资本成本就是机会成本</h3>
+      <p>经济学里讲跨期选择时已经见过<span class="term">货币时间价值</span><span class="term-en">（Time Value of Money, TVM）</span>：今天的一块钱比明年的一块钱值钱，因为今天的钱可以拿去生息。资本预算就是把这个原理用在企业投资决策上：未来的现金流必须<strong>折现</strong>（discount）回今天，才能和今天的投入放在同一把尺上比较。</p>
+      <p>折现用的利率叫<span class="term">必要报酬率</span><span class="term-en">（Required Rate of Return, RRR）</span>，它等于企业的<span class="term">资本成本</span><span class="term-en">（Cost of Capital）</span>——而资本成本的本质正是经济学里的<span class="term">机会成本</span><span class="term-en">（Opportunity Cost）</span>：这 $110,000 不投这个项目，也能投到别处赚 10%。所以"NPV &gt; 0 才接受"的经济含义是：<strong>这个项目赚得比次优选择多，才真正创造了价值</strong>。这不神秘，就是机会成本思维的又一件马甲。</p>
+
+      <h3>1.3 用现金流，不用净利润</h3>
+      <p><strong>反直觉点：</strong>Kylo 公司给了一份未来五年的预计利润表——但讲师第一件事是把它<strong>扔到一边</strong>：资本预算看的是现金流，不是净利润（Net Income）。为什么？因为折旧（Depreciation）是<strong>非现金费用</strong>：买设备的 $110,000 在第 0 年已经真金白银付出去了，之后每年的折旧只是账面上把这笔旧支出摊回来，并没有新的钱流出。于是每年的<span class="term">经营现金流</span><span class="term-en">（Operating Cash Flow, OCF）</span>：</p>
+      <p style="text-align:center"><strong>经营现金流 = 净利润 + 折旧（非现金费用加回）</strong></p>
+      <p>Kylo 项目由此得到每年现金流入 <strong>$31,500</strong>（五年相同），第 0 年流出 $110,000。这个"净利润 + 折旧"的加回逻辑，和现金流量表间接法把折旧加回净利润求经营现金流是同一招——见 <a href="02-cash-flow-statement.html">02 现金流量表</a>。</p>
+      <div class="callout">
+        <strong>现金流已定，工具任选：</strong>四个评价指标吃的是同一份现金流（第 0 年 −$110,000，第 1–5 年每年 +$31,500），区别只在"怎么看"这笔钱。下面逐个开箱。
+      </div>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、回收期法（Payback Period）：简单，但瞎了一半</h2>
+
+      <h3>2.1 定义与计算</h3>
+      <p><span class="term">回收期</span><span class="term-en">（Payback Period, PP）</span>回答一个问题：<strong>多久能把本钱收回来？</strong>若每年现金流相等，直接套公式：</p>
+      <p style="text-align:center"><strong>回收期 = 初始投资 ÷ 年净现金流</strong>（Kylo：$110,000 ÷ $31,500 ≈ <strong>3.49 年</strong>）</p>
+      <p>若每年现金流不等，就用<strong>累计现金流</strong>逐年追，并假设现金在年内均匀流入。讲师的例题（MA53）：DC 公司在 Alpha 与 Suma 之间二选一——</p>
+      <table>
+        <thead>
+          <tr><th>年份</th><th>Alpha 当年现金流</th><th>Alpha 累计</th><th>Suma 当年现金流</th><th>Suma 累计</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>−$160,000</td><td>−$160,000</td><td>−$240,000</td><td>−$240,000</td></tr>
+          <tr><td>1</td><td>+$60,000</td><td>−$100,000</td><td>+$40,000</td><td>−$200,000</td></tr>
+          <tr><td>2</td><td>+$50,000</td><td>−$50,000</td><td>+$50,000</td><td>−$150,000</td></tr>
+          <tr><td>3</td><td>+$40,000</td><td>−$10,000（还差 $10,000）</td><td>+$60,000</td><td>−$90,000</td></tr>
+          <tr><td>4</td><td>+$30,000</td><td>转正 → <strong>回收期 3 + 10,000/30,000 = 3.33 年</strong></td><td>+$70,000</td><td>−$20,000（还差 $20,000）</td></tr>
+          <tr><td>5</td><td>+$20,000</td><td>回收期法不再看</td><td>+$80,000</td><td>转正 → <strong>回收期 4 + 20,000/80,000 = 4.25 年</strong></td></tr>
+          <tr><td>6</td><td>+$10,000</td><td>回收期法不再看</td><td>+$90,000</td><td>回收期法不再看（大额流入被无视）</td></tr>
+        </tbody>
+      </table>
+      <p>回收期越短越好：Alpha 3.33 年 &lt; Suma 4.25 年，按回收期应选 Alpha。但注意最后一列：Suma 第 5、6 年还有 $80,000、$90,000 的大额流入，回收期法已经"翻篇"不看了——记住这一点，第三节会翻盘。</p>
+
+      <h3>2.2 优点与致命缺点</h3>
+      <ul>
+        <li><strong>优点：</strong>① 极其简单，一句话能向任何人解释（"3.3 年回本"）；② 粗略度量<strong>流动性风险</strong>——回本越快，资金被占用、夜长梦多的时间越短，现金流紧张的小公司会看重这一点。</li>
+        <li><strong>致命缺点：</strong>① <strong>完全忽略货币时间价值</strong>——第 1 年的一块钱和第 6 年的一块钱被当成同样的钱；② <strong>完全忽略回收期之后的现金流</strong>——Alpha 第 4 年回本后该方法就不看了，Suma 第 5、6 年的 $170,000 大额流入被整个无视。两个缺点叠加，回收期法<strong>不能作为首选决策工具</strong>，只能当粗筛。</li>
+      </ul>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、净现值（NPV）：把一切折回今天</h2>
+
+      <h3>3.1 定义与判定规则</h3>
+      <p><span class="term">净现值</span><span class="term-en">（Net Present Value, NPV）</span>：把项目未来每一笔现金流按必要报酬率折现到今天，加总，再减去初始投资：</p>
+      <p style="text-align:center"><strong>NPV = 未来现金流现值合计 − 初始投资　→　NPV &gt; 0 接受，NPV &lt; 0 拒绝</strong></p>
+      <p>NPV &gt; 0 的含义：项目收益率<strong>超过</strong>必要报酬率，除了赚回资本成本还有剩余——真正创造价值。NPV 是两个"首选方法"之一，因为它同时治好了回收期法的两个瞎点：考虑时间价值，且看见全部现金流。</p>
+
+      <h3>3.2 Excel 实操与 NPV 函数陷阱（Kylo 例题）</h3>
+      <p>讲师强烈推荐用 Excel 或金融计算器，而不是教科书附录的利率表（"现实世界里没人那么算"）。以 Kylo 项目为例（必要报酬率 10%）：</p>
+      <div class="callout warn">
+        <strong>Excel NPV 函数陷阱：</strong><code>=NPV(10%, 第1年:第5年现金流)</code> 只把<strong>第 1 年起</strong>的现金流折现，得出 $119,410——它<strong>不包含第 0 年</strong>的初始投资（那笔钱本来就在"今天"，无需折现）。真正的净现值要再手动减去投资：<strong>NPV = 119,410 − 110,000 = $9,409</strong>。把第 0 年也塞进 NPV 函数是初学者最常见的错误，会多折现一次初始投资。
+      </div>
+      <div id="fig-discount"></div>
+      <p><strong>图 1 解读：</strong>第 1–5 年名义现金流都是 $31,500（蓝柱等高），但折现到今天的现值（橙柱）逐年缩水——第 1 年 $28,636，第 5 年只剩 $19,559。五年现值合计 $119,410，减去第 0 年投入的 $110,000（图外），得 NPV = <strong>+$9,409</strong> → 接受。这张图就是"货币时间价值"的直观形状：同样的钱，越晚到越不值钱。</p>
+      <p>复算验证：31,500 × 年金现值系数（10%，5 年）= 31,500 × 3.7908 ≈ $119,410；119,410 − 110,000 = $9,409，与讲师一致。</p>
+
+      <h3>3.3 Alpha 与 Suma：NPV 推翻回收期的结论</h3>
+      <p>把 MA53 那两个项目放到 12% 必要报酬率下重算（MA54、MA55），回收期的答案被整个翻转：</p>
+      <table>
+        <thead>
+          <tr><th>指标</th><th>Alpha（投入 $160,000）</th><th>Suma（投入 $240,000）</th><th>结论</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>回收期</td><td><strong>3.33 年 ✓ 更短</strong></td><td>4.25 年</td><td>回收期法选 Alpha</td></tr>
+          <tr><td>NPV（12%）</td><td>−$2,617</td><td><strong>+$13,758 ✓</strong></td><td rowspan="2">首选方法都选 <strong>Suma</strong></td></tr>
+          <tr><td>IRR</td><td>11.24% &lt; 12%</td><td><strong>13.74% &gt; 12% ✓</strong></td></tr>
+        </tbody>
+      </table>
+      <p>Suma 的现金流"前小后大"，回收期法看不见后半程的 $80,000、$90,000；NPV 全看见了——尽管要折现，后期的钱仍然值钱到足以翻盘。<strong>若两个项目互斥且只能选一个，以 NPV 为准。</strong></p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、内含报酬率（IRR）：让 NPV 恰好为零的折现率</h2>
+
+      <h3>4.1 定义与判定规则</h3>
+      <p><span class="term">内含报酬率</span><span class="term-en">（Internal Rate of Return, IRR）</span>是使 <strong>NPV 恰好等于零</strong>的那个折现率——可以理解为项目自身的"真实收益率"。判定规则：</p>
+      <p style="text-align:center"><strong>IRR &gt; 必要报酬率 → 接受；IRR &lt; 必要报酬率 → 拒绝</strong></p>
+      <p>逻辑上与 NPV 完全同构：IRR &gt; 必要报酬率 ⟺ 用必要报酬率折现的 NPV &gt; 0。所以单一项目的接受/拒绝决策上，NPV 与 IRR 永远给出相同信号。</p>
+
+      <h3>4.2 例题与工具：Excel、BA II Plus</h3>
+      <p>Kylo 项目：Excel 里 <code>=IRR(第0年:第5年全部现金流)</code>——注意 IRR 函数与 NPV 函数相反，<strong>必须包含第 0 年的负投资</strong>——得 <strong>IRR = 13.29% &gt; 10%</strong> → 接受。复算验证：令 31,500 × 年金系数 = 110,000，系数 = 3.4921，对应折现率约 13.3%，与讲师一致。由于 NPV(10%) &gt; 0，我们事先就知道 IRR 必然大于 10%，计算只是给出精确值。</p>
+      <div class="callout">
+        <strong>BA II Plus 计算器步骤框（以 Alpha 为例，MA55）：</strong>
+        <ol>
+          <li><code>CF</code> 键进入现金流模式 → <code>2nd</code> <code>CLR WORK</code> 清空旧数据；</li>
+          <li>CF0 = <code>−160,000</code>（输入数字后按 <code>+/−</code> 变负）<code>ENTER</code> <code>↓</code>；</li>
+          <li>C01 = 60,000 <code>ENTER</code> <code>↓</code>（频率 F01 留 1），依此录入 50,000 / 40,000 / 30,000 / 20,000 / 10,000；</li>
+          <li>按 <code>NPV</code> → 输入 I = 12 <code>ENTER</code> <code>↓</code> → <code>CPT</code> → 得 <strong>−2,617</strong>（拒绝）；</li>
+          <li>按 <code>IRR</code> → <code>CPT</code> → 得 <strong>11.24%</strong>。Professional 版继续按 <code>↓</code> 还能直接算出回收期 PB = 4.25（对 Suma）。</li>
+        </ol>
+        Excel 与计算器结果完全相同（Alpha：NPV −$2,617、IRR 11.24%；Suma：NPV +$13,758、IRR 13.74%）。BA II Plus 是 CFA 等考试允许携带的机型，值得练熟。
+      </div>
+      <p><strong>IRR 的优点：</strong>用一个百分数表达项目收益率，沟通直观（"这项目赚 13.29%"），不必先选定折现率就能看出项目大概处于什么水平。<strong>缺点：</strong>① 手算几乎不可能，必须借助工具；② 它隐含假设中间收到的现金流能按 IRR 本身再投资——13.29% 的再投资收益率往往不现实（NPV 假设按必要报酬率再投资，更保守合理）；③ 现金流符号多次变号时可能出现多个 IRR，互斥项目比较时也可能与 NPV 冲突（此时以 NPV 为准）。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、获利指数（PI）：每投 $1 收回多少</h2>
+
+      <h3>5.1 定义与判定规则</h3>
+      <p><span class="term">获利指数</span><span class="term-en">（Profitability Index, PI）</span>把 NPV 改写成<strong>比率</strong>形式：</p>
+      <p style="text-align:center"><strong>PI = 未来现金流现值合计 ÷ 初始投资　→　PI &gt; 1 接受，PI &lt; 1 拒绝</strong></p>
+      <p>Kylo 项目：PI = 119,410 ÷ 110,000 = <strong>1.09</strong>。解读："每投入 $1，按现值收回 $1.09"。由于 PI 的分子减去分母就是 NPV，所以 <strong>PI &gt; 1 ⟺ NPV &gt; 0</strong>——两者给出完全相同的接受/拒绝信号。</p>
+
+      <h3>5.2 PI 的独特优势：比较不同规模的项目</h3>
+      <p>既然 PI 与 NPV 同信号，为什么还要它？因为 NPV 是绝对金额，<strong>受项目规模影响</strong>：一个投 $10,000,000 赚 NPV $50,000 的项目，和一个投 $100,000 赚 NPV $20,000 的项目，哪个"效率"高？NPV 答不上来，PI 可以：前者 PI = 1.005，后者 PI = 1.20——后者每美元投资的产出效率高得多。<strong>当资金有限（资本配给）、要在多个项目间排优先级时，PI 是比 NPV 更好的排序工具。</strong>缺点是它丢失了绝对规模信息：PI 1.20 的小项目创造的总财富可能仍少于 PI 1.005 的大项目。</p>
+
+      <h3>5.3 敏感性演示：必要报酬率 10% → 15%，三指标全部翻转</h3>
+      <p>NPV/IRR/PI 都依赖必要报酬率，而它只是企业的估计值。把 Kylo 项目的必要报酬率从 10% 提到 15%（资金更贵或风险更高），三个指标整齐划一地翻转：</p>
+      <table>
+        <thead>
+          <tr><th>指标</th><th>必要报酬率 10%</th><th>必要报酬率 15%</th><th>判定翻转</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>未来现金流现值</td><td>$119,410</td><td>$105,593</td><td>折现率↑ → 现值↓</td></tr>
+          <tr><td>NPV</td><td><strong>+$9,409 → 接受</strong></td><td><strong>−$4,407 → 拒绝</strong></td><td>正转负</td></tr>
+          <tr><td>IRR（不随折现率变）</td><td>13.29% &gt; 10% → 接受</td><td>13.29% &lt; 15% → 拒绝</td><td>超过变为不足</td></tr>
+          <tr><td>PI</td><td><strong>1.09 → 接受</strong></td><td><strong>0.96 → 拒绝</strong></td><td>"每 $1 收回 $1.09"变成"每 $1 只收回 $0.96"</td></tr>
+        </tbody>
+      </table>
+      <p>复算验证：15% 下 PV = 31,500 × 3.3522 ≈ $105,593；NPV = 105,593 − 110,000 = −$4,407；PI = 105,593 ÷ 110,000 ≈ 0.96，均与讲师一致。IRR 本身不变（它是项目的内在属性），变的是它与必要报酬率的相对位置。三指标同进同退，再次印证它们共享同一个折现内核。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、收尾：四种方法横向对比</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>回收期（PP）</th><th>净现值（NPV）</th><th>内含报酬率（IRR）</th><th>获利指数（PI）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>核心问题</td><td>多久回本？</td><td>创造价值多少（$）？</td><td>真实收益率多少（%）？</td><td>每 $1 投入收回多少？</td></tr>
+          <tr><td>考虑时间价值</td><td><strong>否</strong></td><td>是</td><td>是</td><td>是</td></tr>
+          <tr><td>考虑全部现金流</td><td><strong>否</strong>（回收后不看）</td><td>是</td><td>是</td><td>是</td></tr>
+          <tr><td>判定规则</td><td>越短越好</td><td>NPV &gt; 0 接受</td><td>IRR &gt; 必要报酬率接受</td><td>PI &gt; 1 接受</td></tr>
+          <tr><td>规模可比性</td><td>弱</td><td><strong>弱</strong>（绝对金额受规模影响）</td><td>强（百分数）</td><td><strong>强</strong>（比率，适合资本配给排序）</td></tr>
+          <tr><td>再投资假设</td><td>不涉及</td><td>按必要报酬率再投资（合理）</td><td><strong>按 IRR 本身再投资（偏乐观）</strong></td><td>同 NPV</td></tr>
+          <tr><td>优点</td><td>简单直观、粗测流动性风险</td><td>直接度量价值创造，决策金标准</td><td>收益率形式好沟通，无需先定折现率</td><td>效率比率，便于跨规模排序</td></tr>
+          <tr><td>缺点</td><td>两个"看不见"，不可单独决策</td><td>需先估计折现率；不反映规模效率</td><td>手算困难；非常规现金流可能多解</td><td>丢失绝对规模信息</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（一大笔今天的钱换未来一串现金流，投不投？）→ 简化模型（把项目抽象为第 0 年负现金流 + 未来正现金流序列；折现率 = 资本成本 = 机会成本）→ 推导（四个指标同吃一份现金流：回收期数年头、NPV 折现减投资、IRR 求 NPV=0 的折现率、PI 把 NPV 改成比率）→ 实际应用（Alpha/Suma 互斥选择：回收期与 NPV 结论相反时以 NPV 为准；Kylo 单项目三指标联算与 15% 敏感性测试）→ 局限性（一切依赖必要报酬率这个估计值；IRR 的再投资假设偏乐观；回收期只能当粗筛——但它确实是饭桌上最好讲清楚的那个指标）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/14-capital-budgeting.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：Kylo 项目现金流折现过程 —— 名义现金流等高，现值逐年缩水 =====
+    Charts.bar(document.getElementById('fig-discount'), {
+      categories: ['第1年', '第2年', '第3年', '第4年', '第5年'],
+      series: [
+        { label: '名义现金流（每年 $31,500）', color: '#1d4ed8', values: [31500, 31500, 31500, 31500, 31500] },
+        { label: '按 10% 折现后的现值', color: '#b45309', values: [28636, 26033, 23666, 21515, 19559] },
+      ],
+      yMax: 35000,
+      yStep: 5000,
+      yLabel: '金额（美元）',
+      xLabel: '现金流发生年份（第 0 年另有 −$110,000 初始投资，无需折现）',
+      caption: '图 1：Kylo 项目现金流折现过程——五年现值合计 $119,410，减初始投资 $110,000，得 NPV = +$9,409',
+      legendPosition: 'top',
+    });
+  </script>
+</body>
+</html>

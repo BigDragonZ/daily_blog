@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 财务报表分析 II：比率分析 PALMS - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>04 财务报表分析 II：比率分析 PALMS</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）Ch14 财务报表分析的比率部分：MA12 流动性比率、MA13 营运效率比率、MA14 偿债能力比率、MA15 盈利能力比率、MA16 杜邦分析、MA17 市场比率、MA18 由比率反推资产负债表，以及 MA20 Martin Corp 全套比率实战。上一篇（P03）讲了趋势分析与共同比报表，回答"报表内部的结构与变化"；本篇回答"跨公司、跨年份怎么比"——答案是把报表数字浓缩成<strong>比率</strong>。</p>
+      <div class="callout">
+        <strong>【与财务会计重叠】</strong>Ch14 在财务会计与管理会计两门课里都讲，比率公式本身两边完全一致。财务会计课程已有专页讨论比率的"少即是多"哲学——比率再多，决策常用的就是那一小把——见<a href="../accounting-101/06-financial-ratios.html">《财务会计 06 财务比率》</a>。本篇重心放在<strong>计算熟练度与比率之间的换算关系</strong>上，例题数值全部来自讲师的解题视频并已逐一复算。
+      </div>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入与 PALMS 框架</h2>
+
+      <h3>1.1 引入：两家公司 ROE 都是 20%，一样好吗？</h3>
+      <p><strong>反直觉开场：</strong>A 公司与 B 公司，<span class="term">净资产收益率</span><span class="term-en">（Return on Equity, ROE）</span>都是 20%。单看这个数字，两家一样优秀。但拆开看：A 公司净利率 10%、每 1 元权益对应 2 元资产（杠杆温和）；B 公司净利率只有 5%、每 1 元权益却撬动了 4 元资产（高杠杆）。同样 20% 的 ROE，A 靠<strong>赚钱能力</strong>，B 靠<strong>借钱放大</strong>——B 的利润薄一倍，一旦收入下滑，利息照付，ROE 会跌得比 A 快得多。单看一个汇总数，你永远看不出这个差别；这正是本篇主角<span class="term">杜邦分解</span><span class="term-en">（DuPont Analysis）</span>存在的理由（详见第三节）。</p>
+
+      <h3>1.2 PALMS：五类比率一个首字母词</h3>
+      <p>财务比率有几十个，讲师用 <strong>PALMS</strong> 五个字母归拢全部：</p>
+      <ul>
+        <li><strong>P — 盈利能力（Profitability）</strong>：每 1 元销售/资产/权益赚回多少利润；</li>
+        <li><strong>A — 经营效率（Activity，也叫 Efficiency）</strong>：资产"转"得多快，存货多久卖光、货款多久收回；</li>
+        <li><strong>L — 流动性（Liquidity）</strong>：短期还债能力——"离现金有多近"（nearness to cash）；</li>
+        <li><strong>M — 市场（Market）</strong>：股票市场上投资者愿意为每 1 元利润付多少钱；</li>
+        <li><strong>S — 偿债能力（Solvency）</strong>：长期还债能力——资本结构里债务占多重。</li>
+      </ul>
+      <p>下表是全篇的总地图，例题数值统一取自 MA20 的 Martin Corp 综合案例（净利润 $36,200、销售 $425,000、总资产 $466,500、股东权益 $182,400、总负债 $284,100），后文各节再展开推导。</p>
+      <table>
+        <thead>
+          <tr><th>类别</th><th>比率</th><th>公式</th><th>含义</th><th>方向</th><th>Martin Corp 数值</th></tr>
+        </thead>
+        <tbody>
+          <tr><td rowspan="5"><strong>P</strong> 盈利</td><td>毛利率</td><td>毛利 ÷ 销售</td><td>每 $1 销售剩多少毛利（管 COGS 的能力）</td><td>越高越好</td><td>148,000/425,000 = <strong>34.81%</strong></td></tr>
+          <tr><td>营业利润率</td><td>EBIT ÷ 销售</td><td>再扣掉营业费用后剩多少</td><td>越高越好</td><td>58,700/425,000 = <strong>13.82%</strong></td></tr>
+          <tr><td>净利率（ROS）</td><td>净利润 ÷ 销售</td><td>每 $1 销售最终留下多少</td><td>越高越好</td><td>36,200/425,000 = <strong>8.52%</strong></td></tr>
+          <tr><td>ROA</td><td>净利润 ÷ 总资产</td><td>每 $1 资产赚多少利润</td><td>越高越好</td><td>36,200/466,500 = <strong>7.76%</strong></td></tr>
+          <tr><td>ROE</td><td>净利润 ÷ 股东权益</td><td>股东每 $1 投入赚多少</td><td>越高越好</td><td>36,200/182,400 = <strong>19.85%</strong></td></tr>
+          <tr><td rowspan="5"><strong>A</strong> 效率</td><td>存货周转率</td><td>COGS ÷ 存货</td><td>一年把存货卖空几次</td><td>越高越好</td><td>277,000/72,000 = <strong>3.85 次</strong></td></tr>
+          <tr><td>存货周转天数 DIO</td><td>365 ÷ 存货周转率</td><td>一批存货压多少天</td><td><strong>越低越好</strong></td><td>365/3.85 = <strong>94.8 天</strong></td></tr>
+          <tr><td>应收周转率</td><td>销售 ÷ 应收账款</td><td>一年把欠款收回几次</td><td>越高越好</td><td>425,600/79,600 = <strong>5.35 次</strong></td></tr>
+          <tr><td>应收周转天数 DSO</td><td>365 ÷ 应收周转率</td><td>平均多少天收回货款</td><td><strong>越低越好</strong></td><td>365/5.35 = <strong>68.2 天</strong></td></tr>
+          <tr><td>总资产周转率</td><td>销售 ÷ 总资产</td><td>每 $1 资产产生多少销售</td><td>越高越好</td><td>425,000/466,500 = <strong>0.91</strong></td></tr>
+          <tr><td rowspan="3"><strong>L</strong> 流动</td><td>净营运资本</td><td>流动资产 − 流动负债</td><td>日常运营可用的缓冲金额（不是比率）</td><td>追踪趋势</td><td>185,400−81,700 = <strong>$103,700</strong></td></tr>
+          <tr><td>流动比率</td><td>流动资产 ÷ 流动负债</td><td>每 $1 短债有多少流动资产兜底</td><td>&gt;1.5 较健康</td><td>185,400/81,700 = <strong>2.27</strong></td></tr>
+          <tr><td>速动比率</td><td>（现金+有价证券+应收）÷ 流动负债</td><td>剔除存货后的严格版</td><td>≥1 较安心</td><td>113,400/81,700 = <strong>1.39</strong></td></tr>
+          <tr><td rowspan="4"><strong>M</strong> 市场</td><td>每股收益 EPS</td><td>（净利润−优先股利）÷ 股数</td><td>每股赚多少</td><td>与自身历史比</td><td>36,200/9,540 = <strong>$3.79</strong></td></tr>
+          <tr><td>市盈率 P/E</td><td>股价 ÷ EPS</td><td>为每 $1 盈利付几倍价格</td><td>看行业（15–20 常见）</td><td>107.30/3.79 = <strong>28.31</strong></td></tr>
+          <tr><td>股利支付率</td><td>每股股利 ÷ EPS</td><td>利润中多少分给股东</td><td>无绝对好坏</td><td>0.70/3.79 = <strong>18.47%</strong></td></tr>
+          <tr><td>市值</td><td>股价 × 股数</td><td>市场给公司的总定价</td><td>—</td><td>107.30×9,540 = <strong>$1,023,642</strong></td></tr>
+          <tr><td rowspan="4"><strong>S</strong> 偿债</td><td>债务比率</td><td>总负债 ÷ 总资产</td><td>资产中几成靠债务融资</td><td>越低越稳</td><td>284,100/466,500 = <strong>60.90%</strong></td></tr>
+          <tr><td>产权比率 D/E</td><td>总负债 ÷ 股东权益</td><td>每 $1 权益配多少债务</td><td>越低越稳</td><td>284,100/182,400 = <strong>1.56</strong></td></tr>
+          <tr><td>权益乘数</td><td>总资产 ÷ 股东权益</td><td>每 $1 权益控制多少资产</td><td>= 1 + D/E</td><td>466,500/182,400 = <strong>2.56</strong></td></tr>
+          <tr><td>利息保障倍数 TIE</td><td>EBIT ÷ 利息费用</td><td>利润够付几遍利息</td><td>越高越好</td><td>58,700/9,200 = <strong>6.38 倍</strong></td></tr>
+        </tbody>
+      </table>
+      <p>PALMS 框架的<strong>优点</strong>是不遗漏：任何一个新比率都能挂进五类之一；<strong>缺点</strong>是 20 个比率一齐算完容易"只见树木"——所以讲师反复强调：<strong>比率必须两年对比或与同行对比才有意义</strong>，孤立的一个数字几乎不可解释。以下各节按 P→A→L→M→S 之外的教学顺序（先流动性、再效率、偿债、盈利、市场）逐个展开。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、盈利能力比率（MA15）</h2>
+
+      <h3>2.1 引入：哪个"利润"才是真利润？</h3>
+      <p><strong>反直觉开场：</strong>毛利 $170,000 的公司可能比毛利 $200,000 的公司更赚钱——如果前者销售只有后者的一半。绝对金额没法比，所以要除以同一个分母"销售"，把利润变成<strong>利润率</strong>。利润表自上而下有三个利润，对应三个利润率，分母都是销售，区别只在"扣到哪一层"。</p>
+
+      <h3>2.2 三个利润率 + 两个回报率（MA15 例题）</h3>
+      <ul>
+        <li><span class="term">毛利率</span><span class="term-en">（Gross Profit Margin）</span>＝毛利 ÷ 销售。例题：170,000 ÷ 销售 ≈ <strong>40.42%</strong>——每 $1 销售产生约 40 美分毛利，也意味着 COGS 吃掉约 60%；</li>
+        <li><span class="term">营业利润率</span><span class="term-en">（Operating Profit Margin）</span>＝EBIT ÷ 销售。EBIT（息税前利润）与营业利润同义。61,000 ÷ 销售 ≈ <strong>14.47%</strong>。<strong>注意：比率一律报百分数，不报小数</strong>；</li>
+        <li><span class="term">净利率</span><span class="term-en">（Net Profit Margin）</span>，又名<span class="term">销售回报率</span><span class="term-en">（Return on Sales, ROS）</span>＝净利润 ÷ 销售。40,000 ÷ 销售 ≈ <strong>9.64%</strong>，较上年的 5.3% 大幅改善。<strong>陷阱</strong>：别人只说 "profit margin" 时通常指净利率，但最好当场问清；</li>
+        <li><span class="term">总资产回报率</span><span class="term-en">（Return on Assets, ROA）</span>＝净利润 ÷ 总资产 ≈ <strong>11.4%</strong>——每 $1 资产赚 11.4 美分；</li>
+        <li><span class="term">净资产收益率</span><span class="term-en">（Return on Equity, ROE）</span>＝净利润 ÷ 股东权益 ≈ <strong>23.36%</strong>，较上年 11.84% 翻倍。<strong>为什么 ROE 总是大于 ROA？</strong>因为资产＝负债＋权益，只要公司有债，权益这个分母就比总资产小；若公司零负债，ROA 与 ROE 恰好相等。</li>
+      </ul>
+      <p>这套比率的<strong>优点</strong>是把不同规模的盈利拉到同一标尺；<strong>缺点</strong>是三个利润率分母相同、只换分子，容易机械记忆而不知该用哪个——判断口诀：<strong>管生产看毛利率，管运营看营业利润率，管全局看净利率</strong>。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、杜邦分解（MA15、MA16）</h2>
+
+      <h3>3.1 三因子公式</h3>
+      <p><span class="term">杜邦方程</span><span class="term-en">（DuPont Equation）</span>1920 年代由杜邦公司内部发明，把 ROE 拆成三个驱动因子：</p>
+      <p style="text-align:center"><strong>ROE ＝ 净利率（NI/Sales） × 总资产周转率（Sales/Assets） × 权益乘数（Assets/Equity）</strong></p>
+      <p>数学上 Sales 与 Assets 上下约掉，正好回到 NI/Equity，所以它不是新理论，而是<strong>把一个汇总数拆成三个可问责的部门指标</strong>：销售团队管净利率、运营团队管资产周转、财务团队管杠杆。Martin Corp 的验证：8.52% × 0.91 × 2.56 ＝ 19.85%，与直接相除的 ROE 分毫不差。</p>
+      <div id="fig-dupont"></div>
+      <p><strong>图 1 解读：</strong>ROE 向下拆成三个因子，每条边上标了该因子的公式。前两个因子相乘还有一层中间含义——净利率 × 总资产周转率 ＝ ROA（Martin Corp：8.52% × 0.91 ≈ 7.76%），所以提高 ROA 只有两条路：<strong>赚得更厚</strong>（净利率）或<strong>转得更快</strong>（周转率）；ROE 再乘上权益乘数，就是杠杆对股东回报的放大倍数。</p>
+
+      <h3>3.2 MA16 对照实验：只差负债的两家公司</h3>
+      <p>讲师构造了"高负债公司"与"低负债公司"，除资本结构外一切相同：净利润都是 $32,000、总资产都是 $350,000、销售相同。结果：</p>
+      <ul>
+        <li><strong>ROA 完全相同</strong>：32,000 ÷ 350,000 ＝ 9.14%——债务多少不影响资产赚钱能力，因为 ROA 的分母不含资本结构信息；</li>
+        <li><strong>ROE 天差地别</strong>：高负债公司权益只有 $100,000 → ROE ＝ 32%；低负债公司权益 $300,000 → ROE ＝ 10.67%；</li>
+        <li><strong>杜邦验证</strong>：净利率 7.62%（32,000/420,000）× 总资产周转率 1.20（420,000/350,000）× 权益乘数 3.5（350,000/100,000）＝ 32% ✓；低负债公司仅把权益乘数换成 1.17（350,000/300,000）→ 10.67% ✓。两家公司的盈利能力和运营效率<strong>一模一样</strong>，ROE 的 3 倍差距全部来自第三个因子——杠杆。</li>
+      </ul>
+      <div class="callout warn">
+        <strong>杠杆是放大器，不是发动机：</strong>加债能抬高 ROE 的前提是公司在赚钱（ROA 为正且高于债务利率）。方向反过来时，杠杆同样放大亏损。所以读 ROE 必须做杜邦分解——回到本篇开头的引入：A、B 两家公司 ROE 都是 20%，分解后一个是 10%×1.0×2.0，另一个是 5%×1.0×4.0，质量完全不同。
+      </div>
+      <p>杜邦分析的<strong>优点</strong>：把 ROE 归因到盈利、效率、杠杆三条可行动的路径，跨公司比较时一眼看出"谁在靠本事、谁在靠借钱"；<strong>缺点</strong>：三个因子仍由会计利润构成，受折旧政策、资产账面价值等影响，且因子本身无法告诉你杠杆加到什么程度算危险——那要看偿债能力比率（第四节）。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、经营效率比率（MA13）</h2>
+
+      <h3>4.1 引入："买下全年的存货"为什么蠢？</h3>
+      <p><strong>反直觉开场：</strong>假设你知道一年能卖 365 件货，为什么不年初一次进 365 件？因为钱压在货架上不生息，还占仓库。理想状态是进一批、卖光、再进一批——这个"买进→卖空→再买进"的循环次数就是<span class="term">周转率</span><span class="term-en">（Turnover）</span>。效率比率（Activity Ratios，也叫 Efficiency Ratios）衡量的是<strong>事情一年发生几次</strong>，以及换算成天数的等价说法。</p>
+
+      <h3>4.2 五个效率比率（MA13 两年对比例题）</h3>
+      <ul>
+        <li><span class="term">应收账款周转率</span><span class="term-en">（Receivables Turnover）</span>＝净销售 ÷ 应收账款：本年 7.3 次（应收从 $52,000 涨到 $92,000，收款明显变慢），上年 11.8 次。配套 <span class="term">应收周转天数</span><span class="term-en">（Days Sales Outstanding, DSO）</span>＝365 ÷ 周转率：50 天 vs 31 天——你愿意 31 天回款还是 50 天？DSO 还有个常见别名"平均收账期"（Average Collection Period），开会听到陌生名词别慌，问一句公式往往就是老朋友；</li>
+        <li><span class="term">存货周转率</span><span class="term-en">（Inventory Turnover）</span>＝COGS ÷ 存货：411,000 ÷ 80,000 ≈ <strong>5.1 次</strong>；上年 392,000 ÷ 54,000 ≈ 7.25 次。配套 <span class="term">存货周转天数</span><span class="term-en">（Days Inventory Outstanding, DIO）</span>：71 天 vs 50 天。<strong>注意分子用 COGS 而不是销售</strong>——存货按成本计价，分子分母要同口径（COGS 在报表上也可能叫 Cost of Sales / Cost of Revenue，同义）；</li>
+        <li><span class="term">总资产周转率</span><span class="term-en">（Total Asset Turnover, TAT）</span>＝净销售 ÷ 总资产：本年 1.41，上年 1.57——"It takes money to make money"，每 $1 资产产生多少销售。</li>
+      </ul>
+      <table>
+        <thead>
+          <tr><th>比率</th><th>本年（2030）</th><th>上年（2029）</th><th>变动方向</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>应收周转率 / DSO</td><td>7.3 次 / 50 天</td><td>11.8 次 / 31 天</td><td>变差：回款慢了 19 天</td></tr>
+          <tr><td>存货周转率 / DIO</td><td>5.1 次 / 71 天</td><td>7.25 次 / 50 天</td><td>变差：存货多压 21 天</td></tr>
+          <tr><td>总资产周转率</td><td>1.41</td><td>1.57</td><td>变差：资产产出的销售变少</td></tr>
+        </tbody>
+      </table>
+      <p>三个比率同向恶化：这家公司的效率全面下滑。<strong>讲师提醒：他刻意不用平均余额做分母</strong>（很多教材用平均应收/平均存货）——本例应收从 52,000 涨到 92,000，取平均会把"正在变糟的趋势"平均掉。效率比率的<strong>优点</strong>是同时给出"次数"与"天数"两种直觉；<strong>缺点</strong>是"次数"本身是理论化的（真实经营中买卖连续发生），且快周转不一定好——过度压库存可能缺货丢单。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、流动性比率（MA12）</h2>
+
+      <h3>5.1 引入：账上有货，为什么还发不出工资？</h3>
+      <p><strong>反直觉开场：</strong>一家仓库里堆满存货的公司，流动比率可能高达 2.2，看起来偿债无忧；但如果这批货是过季时装，三个月也卖不掉，下月到期的应付账款拿什么付？<strong>流动性（Liquidity）＝ 离现金有多近</strong>。存货和预付费用是流动资产里离现金最远的两项——把它们剔除，才是严格的偿债考验。</p>
+
+      <h3>5.2 三个流动性指标（MA12 例题）</h3>
+      <ul>
+        <li><span class="term">净营运资本</span><span class="term-en">（Net Working Capital, NWC）</span>＝流动资产 − 流动负债。本年 202,000 − 116,000 ＝ <strong>$86,000</strong>，上年 $80,300。它是金额不是比率，适合追踪自身趋势，不适合跨公司比较；</li>
+        <li><span class="term">流动比率</span><span class="term-en">（Current Ratio）</span>＝流动资产 ÷ 流动负债。本年 202,000 ÷ 116,000 ＝ <strong>1.74</strong>，上年 2.19。经验值：&gt;1.5 或接近 2 算健康，&lt;1 进入危险区；</li>
+        <li><span class="term">速动比率</span><span class="term-en">（Quick Ratio）</span>，又名<span class="term">酸性测试比率</span><span class="term-en">（Acid-Test Ratio）</span>＝（现金＋有价证券＋应收账款）÷ 流动负债，<strong>剔除存货与预付费用</strong>。本年 ＝ <strong>0.99</strong>，上年 1.34——每 $1 短债只有 99 美分高流动性资产兜底。</li>
+      </ul>
+      <p><strong>两个比率什么时候看哪个？</strong>存货周转快、变现确定性高的行业（超市、快餐），流动比率已足够说明问题；存货重、变现慢的行业（制造、地产、过季风险大的零售），速动比率才是真话。本例公司流动比率 1.74 尚属健康，速动比率却跌破 1——说明流动资产里一大半是存货，短期偿债其实偏紧，两个比率必须一起看。流动性比率的<strong>优点</strong>是计算快、数据全在资产负债表最上方；<strong>缺点</strong>是静态快照——年末时点的数字可能被"年末突击回款"美化，且不反映经营现金流（那要看 Ch13 的现金流量表，本课程 P02–P03）。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、偿债能力比率（MA14）</h2>
+
+      <h3>6.1 引入：同一个资本结构，为什么要三个比率？</h3>
+      <p><strong>反直觉开场：</strong>"公司 45% 的资产靠债务融资"、"每 $1 权益配 82 美分债务"、"每 $1 权益控制 $1.82 资产"——三句话说的是<strong>同一家公司、同一张资产负债表</strong>。会计恒等式 资产＝负债＋权益 只有三个量，任取两个相比就得到一个杠杆比率，所以它们是同一件事的三种说法，可以互相换算。</p>
+
+      <h3>6.2 四个偿债比率（MA14 例题）</h3>
+      <p>例题数据：总资产 $478,600，总负债 $216,000，普通股 $95,000＋留存收益 $167,600＝股东权益 $262,600；净利润 $28,500，利息费用 $12,100，所得税 $12,200。</p>
+      <table>
+        <thead>
+          <tr><th>比率</th><th>公式</th><th>计算</th><th>读法</th><th>上年</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="term">债务比率</span><span class="term-en">（Debt Ratio）</span></td><td>总负债 ÷ 总资产</td><td>216,000/478,600 ＝ <strong>45.1%</strong></td><td>每 $1 资产有 45 美分靠债务融资</td><td>39%</td></tr>
+          <tr><td><span class="term">产权比率</span><span class="term-en">（Debt-to-Equity, D/E）</span></td><td>总负债 ÷ 股东权益</td><td>216,000/262,600 ＝ <strong>82.2%</strong></td><td>每 $1 权益配 82 美分债务</td><td>64%</td></tr>
+          <tr><td><span class="term">权益乘数</span><span class="term-en">（Equity Multiplier, EM）</span></td><td>总资产 ÷ 股东权益</td><td>478,600/262,600 ＝ <strong>1.82</strong></td><td>每 $1 权益控制 $1.82 资产</td><td>1.64</td></tr>
+          <tr><td><span class="term">利息保障倍数</span><span class="term-en">（Times Interest Earned, TIE）</span></td><td>EBIT ÷ 利息费用</td><td>52,800/12,100 ＝ <strong>4.36 倍</strong></td><td>息税前利润够付 4.36 遍利息</td><td>3.00</td></tr>
+        </tbody>
+      </table>
+      <p><strong>三率换算关系（重点）：</strong>由会计恒等式，<strong>权益乘数 ＝ 1 ＋ 产权比率</strong>（1.82 ≈ 1＋0.822 ✓）；债务比率 ＝ 产权比率 ÷（1＋产权比率）（0.822÷1.822 ≈ 45.1% ✓）。三个比率同向升降，任知其一可推其余。TIE 用的不是资产负债表而是利润表：EBIT ＝ 净利润＋利息＋所得税 ＝ 28,500＋12,100＋12,200 ＝ $52,800。TIE 接近 1 意味着利润刚够付息，对贷款人是红灯。本例三个杠杆比率都在上升（债务使用增加），但 TIE 从 3.00 改善到 4.36——杠杆加得还不算危险。偿债比率的<strong>优点</strong>是一眼看穿资本结构风险；<strong>缺点</strong>是负债全部按账面值计量，且"多高的杠杆算高"高度依赖行业（公用事业 60%+ 很正常，软件公司则罕见）。</p>
+
+      <!-- ==================== 七 ==================== -->
+      <h2>七、市场比率（MA17）与逆向应用（MA18）</h2>
+
+      <h3>7.1 引入：EPS $6.13 的公司比 EPS $4.47 的公司好吗？</h3>
+      <p><strong>反直觉开场：</strong>不一定。前者股价 $126，后者只有 $56——你为每 $1 盈利付的价格分别是 20 倍和 12.5 倍。<strong>EPS 不能跨公司直接比</strong>（股数是人为切分的），要除以股价变成市盈率才有意义；EPS 只适合和<strong>本公司自己的历史</strong>比（Echo 去年 $4.20 → 今年 $4.47，是进步）。市场比率需要报表之外的两个数据：股价与股数。</p>
+
+      <h3>7.2 五个市场指标（MA17：Echo vs Foxtrot）</h3>
+      <table>
+        <thead>
+          <tr><th>指标</th><th>公式</th><th>Echo 公司</th><th>Foxtrot 公司</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="term">每股收益</span><span class="term-en">（Earnings Per Share, EPS）</span></td><td>净利润 ÷ 加权平均股数（无优先股时）</td><td>42,000/9,400 ＝ <strong>$4.47</strong></td><td><strong>$6.13</strong></td></tr>
+          <tr><td><span class="term">市盈率</span><span class="term-en">（Price-to-Earnings, P/E）</span></td><td>股价 ÷ EPS</td><td>56/4.47 ＝ <strong>12.5</strong></td><td>126/6.13 ≈ <strong>20</strong></td></tr>
+          <tr><td><span class="term">每股股利</span><span class="term-en">（Dividends Per Share, DPS）</span></td><td>股利总额 ÷ 股数</td><td>4,200/9,400 ＝ <strong>$0.45</strong></td><td><strong>$1.23</strong></td></tr>
+          <tr><td><span class="term">股利支付率</span><span class="term-en">（Dividend Payout Ratio）</span></td><td>DPS ÷ EPS</td><td>0.45/4.47 ≈ <strong>10%</strong></td><td>1.23/6.13 ≈ <strong>20%</strong></td></tr>
+          <tr><td><span class="term">市值</span><span class="term-en">（Market Capitalization, Market Cap）</span></td><td>股价 × 股数</td><td>56×9,400 ＝ <strong>$526,400</strong></td><td>126×8,000 ＝ <strong>$1,008,000</strong></td></tr>
+        </tbody>
+      </table>
+      <p>读法：P/E 的历史均值大约 15–20，明显低于此可能是被低估的"价值股"，明显高于此说明市场在为未来成长付溢价（Martin Corp 的 28.31 就偏贵）。股利支付率高＝股东当下拿现金多，但公司留存再投资的钱就少——Foxtrot 分 20%，Echo 只分 10%、留 90% 谋增长，没有绝对好坏，取决于公司处于什么阶段。市值则是个"惊叹号"指标：年赚 $42,000 的 Echo，市场定价超过 50 万。</p>
+
+      <h3>7.3 逆向应用：由比率反推整张资产负债表（MA18）</h3>
+      <p>比率不仅会"压缩"报表，还能反向"解压"。例题给定：利润表（销售 $100,000、COGS $66,000、净利润 $9,000），四个比率（应收周转率 8、存货周转率 4、ROA 7.5%、债务比率 35%），以及两个账户余额（现金 $10,000、应付账款 $14,000）。反推步骤：</p>
+      <ol>
+        <li><strong>应收账款</strong>＝销售 ÷ 应收周转率 ＝ 100,000 ÷ 8 ＝ $12,500；</li>
+        <li><strong>存货</strong>＝COGS ÷ 存货周转率 ＝ 66,000 ÷ 4 ＝ $16,500 → 流动资产合计 ＝ 10,000＋12,500＋16,500 ＝ $39,000；</li>
+        <li><strong>总资产</strong>＝净利润 ÷ ROA ＝ 9,000 ÷ 0.075 ＝ $120,000 → 固定资产 ＝ 120,000 − 39,000 ＝ $81,000；</li>
+        <li><strong>总负债</strong>＝总资产 × 债务比率 ＝ 120,000 × 35% ＝ $42,000 → 长期负债 ＝ 42,000 − 14,000（应付）＝ $28,000；</li>
+        <li><strong>股东权益</strong>＝120,000 − 42,000 ＝ <strong>$78,000</strong>。资产 120,000 ＝ 负债 42,000 ＋ 权益 78,000 ✓，报表配平。</li>
+      </ol>
+      <p>这个练习的价值在于<strong>检验你是否真的理解每个比率的分子分母</strong>——会正算只是记忆，会反推才是理解。实务中它也是尽调技巧：当对方只肯给比率和零散数据时，你可以还原出报表的大致轮廓。</p>
+
+      <!-- ==================== 八 ==================== -->
+      <h2>八、收尾对比与思想链路</h2>
+
+      <h3>8.1 两组天然对比</h3>
+      <table>
+        <thead>
+          <tr><th>对比组</th><th>分子差异</th><th>回答的问题</th><th>何时用哪个</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>流动比率 vs 速动比率</td><td>流动资产 vs 剔除存货与预付费用后的"快资产"</td><td>宽口径 vs 严格口径的短期偿债能力</td><td>存货周转快的行业看流动比率；存货重、变现慢的行业必须看速动比率；两者背离大（如本例 1.74 vs 0.99）说明资产里存货占比高</td></tr>
+          <tr><td>ROE vs ROA vs 净利率</td><td>分母分别是股东权益、总资产、销售</td><td>股东的回报 / 全部资产的回报 / 销售的利润厚度</td><td>比较资本结构影响用 ROA（剔除杠杆）；比较股东回报用 ROE 并做杜邦分解；比较成本控制用净利率。ROE 与 ROA 的差距本身就是杠杆的度量</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>本篇思想链路：</strong>核心问题（报表数字规模各异，怎么跨公司、跨年份比较？）→ 简化模型（把两个报表数字相除浓缩成比率，按 PALMS 五类归档）→ 推导（三个利润率同分母逐级扣减；周转率与天数互为 365 的换算；债务比率、产权比率、权益乘数由会计恒等式互相换算；ROE 经杜邦分解为 ROS×TAT×EM）→ 实际应用（Martin Corp 全套 20 个比率实战；Echo/Foxtrot 市场比率对比；由四个比率反推整张资产负债表）→ 局限性（比率必须对比才有意义，孤立数字不可解释；取平均做分母会抹平趋势；比率是静态快照可被年末修饰；杠杆放大 ROE 也放大亏损——20 个比率在手，判断仍需回到业务本身）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/04-ratio-analysis-palms.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：杜邦三因子分解树（Martin Corp 数值，MA20） =====
+    Charts.tree(document.getElementById('fig-dupont'), {
+      width: 780,
+      layers: [
+        [{ id: 'roe', label: 'ROE ＝ 19.85%（净利润÷股东权益）', width: 300, color: '#0f172a', fill: '#f8fafc' }],
+        [
+          { id: 'ros', label: '净利率 ROS ＝ 8.52%', color: '#1d4ed8', width: 190 },
+          { id: 'tat', label: '总资产周转率 ＝ 0.91', color: '#047857', width: 190 },
+          { id: 'em', label: '权益乘数 ＝ 2.56', color: '#b45309', fill: '#fff7ed', width: 190 },
+        ],
+        [
+          null,
+          { id: 'roa', label: 'ROA ＝ 7.76%（前两个因子相乘）', color: '#6d28d9', fill: '#f5f3ff', width: 260 },
+          null,
+        ],
+      ],
+      edges: [
+        { from: 'roe', to: 'ros', color: '#1d4ed8', label: '净利润÷销售', labelDx: -64 },
+        { from: 'roe', to: 'tat', color: '#047857', label: '销售÷总资产', labelDy: -6 },
+        { from: 'roe', to: 'em', color: '#b45309', label: '总资产÷权益', labelDx: 64 },
+        { from: 'ros', to: 'roa', color: '#6d28d9', label: '×', labelDx: -14 },
+        { from: 'tat', to: 'roa', color: '#6d28d9', label: '×', labelDx: 14 },
+      ],
+      caption: '图 1：杜邦三因子分解——ROE ＝ 净利率 × 总资产周转率 × 权益乘数（Martin Corp：8.52% × 0.91 × 2.56 ＝ 19.85%）；前两个因子相乘即 ROA 7.76%',
+      legend: [
+        { label: '盈利能力（Profitability）', color: '#1d4ed8', style: 'dot' },
+        { label: '资产效率（Asset Efficiency）', color: '#047857', style: 'dot' },
+        { label: '财务杠杆（Financial Leverage）', color: '#b45309', style: 'dot' },
+        { label: '中间结果：ROA（ROS × 周转率）', color: '#6d28d9', style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>

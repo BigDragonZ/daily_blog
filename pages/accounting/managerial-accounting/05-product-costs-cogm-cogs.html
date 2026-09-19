@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 产品成本基础：COGM/COGS 与成本流转 - 管理会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>05 产品成本基础：COGM/COGS 与成本流转</h1>
+      <p>本篇覆盖《管理会计》（Managerial Accounting，讲师 Jeff / Finally Learn）Ch15 导论章的 MA21–MA26 与 Ch16 的 MA30 共七讲：产品成本 vs 期间成本、产品成本三要素（DM/DL/MOH）、直接材料耗用量、制造成本（COGM）与销货成本（COGS）的编制、成本在三个存货账户间的流转，以及反向推算与期末余额实战。上一篇 <a href="01-intro-and-cost-classification.html">P01</a> 已经把成本按"工厂内/外"分成了产品成本与期间成本，本篇回答它留下的悬念：产品成本进了存货之后，<strong>什么时候、沿着什么路径</strong>才变成利润表上的费用。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、产品成本 vs 期间成本：费用化的时点之争</h2>
+
+      <h3>1.1 引入：仓库里没卖掉的存货，今年不算费用</h3>
+      <p><strong>反直觉开场：</strong>家具厂今年花 10 万美元买木料、付工钱，到了年底，一半家具还躺在仓库里没卖掉。直觉说"钱都花了，当然是今年的费用"——会计说不。没卖掉的那部分成本<strong>不进入今年的利润表</strong>，而是作为存货"躺"在资产负债表上（它是一项资产），等未来售出的那一年才变费用。花钱的时点与费用化的时点被刻意拆开——<strong>这个"何时算费用"的问题，正是管理会计与财务会计必须达成共识的分水岭</strong>：存货计价高一点，今年利润就高一点，所以外部报表规则（GAAP/IFRS）对此管得最严。</p>
+      <p>规则本身一句话就能说完：<span class="term">产品成本</span><span class="term-en">（Product Cost）</span>先计入存货（资产），产品<strong>售出时</strong>才转为<span class="term">销货成本</span><span class="term-en">（Cost of Goods Sold, COGS）</span>费用；<span class="term">期间成本</span><span class="term-en">（Period Cost）</span>不与产品挂钩，<strong>发生当期</strong>直接费用化（销售费用、管理费用、研发费用等）。判断口诀仍是 P01 那句：<strong>"这事发生在工厂里吗？"</strong>（Did it happen in the factory?）</p>
+
+      <h3>1.2 一字之差定归属（MA24：家具厂十二项成本）</h3>
+      <p>同样是折旧、同样是用品，<strong>"factory"与"office"一字之差，归属天差地别</strong>。家具厂（造桌椅）的 12 项成本逐项分类，先自己判断再对照：</p>
+      <table>
+        <thead>
+          <tr><th>成本项目</th><th>分类</th><th>判断要点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>家具用木料（Wood）</td><td>产品成本 — <strong>DM</strong></td><td>进入产品实体的主要材料</td></tr>
+          <tr><td>家具用胶水（Glue）</td><td>产品成本 — <strong>MOH</strong></td><td>间接材料：不值得逐滴追踪到每件产品</td></tr>
+          <tr><td>造家具工人工资（Wages）</td><td>产品成本 — <strong>DL</strong></td><td>手直接接触产品（hands on the product）</td></tr>
+          <tr><td>工厂水电费</td><td>产品成本 — <strong>MOH</strong></td><td>出现 "factory" 字样 → 产品成本；非料非工 → MOH</td></tr>
+          <tr><td>工厂设备折旧</td><td>产品成本 — <strong>MOH</strong></td><td>工厂资产折旧是最经典的制造费用</td></tr>
+          <tr><td>工厂耗材（Factory supplies）</td><td>产品成本 — <strong>MOH</strong></td><td>维持工厂运转，但金额不值得追溯 → 间接材料</td></tr>
+          <tr><td>工厂经理薪资</td><td>产品成本 — <strong>MOH</strong></td><td>间接人工：在工厂但不亲手做产品</td></tr>
+          <tr><td>广告费</td><td>期间成本 — 销售费用</td><td>为卖产品而发生，不造产品</td></tr>
+          <tr><td>销售部门薪资与佣金</td><td>期间成本 — 销售费用</td><td>销售职能，当期费用化</td></tr>
+          <tr><td>办公用品（Office supplies）</td><td>期间成本 — 管理费用</td><td>"office" → 行政管理</td></tr>
+          <tr><td>办公设备折旧</td><td>期间成本 — 管理费用</td><td>与工厂设备折旧对照：一字之差，产品变期间</td></tr>
+          <tr><td>CFO（首席财务官）薪资</td><td>期间成本 — 管理费用</td><td>高管与造产品无关；注意它连 MOH 都不是</td></tr>
+        </tbody>
+      </table>
+      <p><strong>优点与缺点：</strong>产品/期间二分法让存货计价与利润确认清晰衔接（本篇后半的 COGM/COGS 全靠它）；缺点是所有"工厂内但不可追溯"的成本都被扫进 MOH 这个杂物桶，归集粗糙会扭曲产品成本——这正是 P08 作业成本法要修的问题。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、产品成本三要素：DM / DL / MOH</h2>
+
+      <h3>2.1 三要素与三个存货账户</h3>
+      <p>制造业企业的产品在报表上要经过<strong>三个存货阶段</strong>：<span class="term">原材料</span><span class="term-en">（Raw Materials, RM）</span>→ <span class="term">在产品</span><span class="term-en">（Work in Process, WIP，已开工未完工）</span>→ <span class="term">产成品</span><span class="term-en">（Finished Goods, FG，完工待售）</span>。以木制家具为例：木料是原材料，锯开打磨到一半的是在产品，组装完毕可以卖的是产成品。</p>
+      <p>把产品"造"出来的成本恰有三类，合称产品成本（也叫制造成本，Manufacturing Costs）：</p>
+      <ul>
+        <li><span class="term">直接材料</span><span class="term-en">（Direct Materials, DM）</span>：进入产品实体、值得逐件追溯的材料，如木料；</li>
+        <li><span class="term">直接人工</span><span class="term-en">（Direct Labor, DL）</span>：亲手加工产品的工人薪酬，如木工；</li>
+        <li><span class="term">制造费用</span><span class="term-en">（Manufacturing Overhead, MOH，也叫 Factory Overhead, FOH）</span>：<strong>其余一切工厂成本</strong>——间接材料（胶水）、间接人工（工厂主管、维修、保洁）、设备折旧、工厂水电、工厂财产税。</li>
+      </ul>
+      <div class="callout">
+        <strong>MOH 的本质是"杂物桶"：</strong>凡发生在工厂里、但既不是直接材料也不是直接人工的成本，统统倒进 MOH。它还分两层：<strong>实际</strong>制造费用按发生数归集，<strong>分摊</strong>到产品上的制造费用用预定分配率估算（MA30 的 70% 分配率见第六节；估计与实际的差异即"多分摊/少分摊"，P06 分批成本法详讲）。
+      </div>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、直接材料耗用量：原材料账户的流出</h2>
+
+      <h3>3.1 引入：买了≠用了</h3>
+      <p><strong>反直觉开场：</strong>今年采购了 $144,800 的木料，计入产品成本的材料就是 $144,800 吗？不是——年初仓库里还有去年剩下的料，年底仓库里也还有没用完的料。<strong>采购是流入，耗用才是流出</strong>，两者之差被期初、期末库存吸收。</p>
+      <p>材料是资产账户，借方记增加、贷方记减少，于是：</p>
+      <p style="text-align:center;"><strong>耗用直接材料（DM Used）= 期初材料 + 本期采购 − 期末材料</strong></p>
+
+      <h3>3.2 例题（MA22，Samco 公司）：公式法与 T 型账户</h3>
+      <p>已知：期初材料 $5,100，本期采购 $144,800，期末材料 $8,500。</p>
+      <ul>
+        <li><strong>公式法：</strong>可供使用的材料 = 5,100 + 144,800 = <strong>$149,900</strong>；减去没用完的期末 $8,500 → 耗用直接材料 = <strong>$141,400</strong>。</li>
+        <li><strong>T 型账户法：</strong>把同一笔账画成 T 型账户，左右必相等——它的真正威力在<strong>反向推算</strong>：若未知数换成期初余额或采购额，把已知三项摆进去一减即得（像解谜）。</li>
+      </ul>
+      <table>
+        <thead>
+          <tr><th colspan="2">原材料（Raw Materials）</th></tr>
+          <tr><th>借方（增加）</th><th>贷方（减少）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>期初余额　5,100</td><td>耗用转出（→WIP）　<strong>141,400</strong></td></tr>
+          <tr><td>本期采购　144,800</td><td>期末余额　8,500</td></tr>
+          <tr><td><strong>合计　149,900</strong></td><td><strong>合计　149,900</strong></td></tr>
+        </tbody>
+      </table>
+      <p>这 $141,400 离开原材料账户后的去向是在产品账户，会计分录为：<strong>借：在产品（WIP）141,400　贷：原材料 141,400</strong>。成本没有消失，只是换了个资产账户继续"躺"着——这是理解全篇的关键一步。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、制造成本（COGM）：在产品账户的流出</h2>
+
+      <h3>4.1 公式与"总制造成本"</h3>
+      <p>在产品账户是生产的"搅拌碗"：期初 WIP（去年没做完的）加上今年投入的 DM、DL、MOH，是本期经手的全部成本；减去期末还没做完的（期末 WIP），剩下的就是<strong>完工</strong>产品的成本——<span class="term">制造成本</span><span class="term-en">（Cost of Goods Manufactured, COGM）</span>：</p>
+      <p style="text-align:center;"><strong>COGM = 期初 WIP +（DM 耗用 + DL + MOH）− 期末 WIP</strong><br>其中 DM + DL + MOH 合称<span class="term">总制造成本</span><span class="term-en">（Total Manufacturing Costs）</span>，与"总产品成本"是同义词。</p>
+
+      <h3>4.2 例题（MA23，承 MA22 数据）：编制 COGM 计算表</h3>
+      <p>沿用 Samco：耗用直接材料 $141,400（上节已算）、直接人工 $97,000；制造费用由间接人工、折旧、水电加总为 $46,200；期初 WIP $13,000、期末 WIP $10,000。</p>
+      <ul>
+        <li>总制造成本 = 141,400 + 97,000 + 46,200 = <strong>$284,600</strong>；</li>
+        <li>在产品总成本 = 284,600 + 13,000 = <strong>$297,600</strong>（本期经手的一切）；</li>
+        <li>COGM = 297,600 − 10,000 = <strong>$287,600</strong>（本期真正完工的部分）。</li>
+      </ul>
+      <p>一个题目若同时问"总制造费用、总制造成本、在产品总成本、COGM"四个数，不用慌——<strong>它们全是 COGM 计算表的内置小计</strong>，把表编完四个答案自然浮现。COGM 转出时的分录：<strong>借：产成品　贷：在产品</strong>。</p>
+      <p>T 型账户验证（讲师自用的速算法，与长格式结果一致）：借方 期初 13,000 + DM 141,400 + DL 97,000 + MOH 46,200 = 297,600；贷方 期末 10,000 + COGM 287,600 = 297,600。✓</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、销货成本（COGS）：产成品账户的流出</h2>
+
+      <h3>5.1 公式与"制造业版 COGS"</h3>
+      <p>完工产品进入产成品账户后，再套用同一个"期初 + 流入 − 期末 = 流出"模板：</p>
+      <p style="text-align:center;"><strong>COGS = 期初 FG + COGM − 期末 FG</strong></p>
+      <p>回忆商业企业的 COGS = 期初存货 + <strong>购货</strong> − 期末存货——制造业只是把"购货"换成了"自己造出来的 COGM"，结构完全同构。<strong>COGS 是整条成本流转链上第一个、也是唯一一个费用</strong>：此前的每一步，成本都只是在资产负债表内部的三个存货账户之间搬家。</p>
+
+      <h3>5.2 全流程例题（MA25）：从期初材料一路算到 COGS</h3>
+      <p>某制造商本年数据：期初材料 $2,300、材料采购 $97,400、期末材料 $4,100；直接人工 $122,400；工厂相关间接成本（间接人工、工厂设备折旧、工厂水电）合计 $48,000——注意要<strong>剔除</strong>混在题里的管理费用、销售费用与利息费用（它们是期间成本，永远不进这道流水线）；期初 WIP $8,500、期末 WIP $9,700；期初 FG $6,400、期末 FG $9,100。三段计算连成一张计算表：</p>
+      <table>
+        <thead>
+          <tr><th>项目</th><th>金额（$）</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>期初原材料</td><td style="text-align:right;">2,300</td><td rowspan="3">第一段：原材料账户，求耗用 DM</td></tr>
+          <tr><td>＋ 本期材料采购</td><td style="text-align:right;">97,400</td></tr>
+          <tr><td>－ 期末原材料</td><td style="text-align:right;">(4,100)</td></tr>
+          <tr><td><strong>＝ 耗用直接材料（DM Used）</strong></td><td style="text-align:right;"><strong>95,600</strong></td><td>2,300+97,400−4,100</td></tr>
+          <tr><td>＋ 直接人工（DL）</td><td style="text-align:right;">122,400</td><td rowspan="3">第二段：在产品账户，求 COGM</td></tr>
+          <tr><td>＋ 制造费用（MOH）</td><td style="text-align:right;">48,000</td></tr>
+          <tr><td><strong>＝ 总制造成本</strong></td><td style="text-align:right;"><strong>266,000</strong></td><td>95,600+122,400+48,000</td></tr>
+          <tr><td>＋ 期初在产品（WIP）</td><td style="text-align:right;">8,500</td><td></td></tr>
+          <tr><td>－ 期末在产品（WIP）</td><td style="text-align:right;">(9,700)</td><td></td></tr>
+          <tr><td><strong>＝ 制造成本（COGM）</strong></td><td style="text-align:right;"><strong>264,800</strong></td><td>266,000+8,500−9,700</td></tr>
+          <tr><td>＋ 期初产成品（FG）</td><td style="text-align:right;">6,400</td><td rowspan="2">第三段：产成品账户，求 COGS</td></tr>
+          <tr><td>－ 期末产成品（FG）</td><td style="text-align:right;">(9,100)</td></tr>
+          <tr><td><strong>＝ 销货成本（COGS）</strong></td><td style="text-align:right;"><strong>262,100</strong></td><td>6,400+264,800−9,100</td></tr>
+        </tbody>
+      </table>
+      <p>收尾看意义：若这批货卖出 $400,000 收入，毛利 = 400,000 − 262,100 = <strong>$137,900</strong>——COGS 算对了，盈利性才谈得上。这张表就是<span class="term">制造成本计算表</span><span class="term-en">（Schedule of Cost of Goods Manufactured）</span>的主干，考试与实务都按这个格式编。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、成本流转全景：RM → WIP → FG → COGS</h2>
+
+      <h3>6.1 一张图看全：三个存货账户 + 一个费用出口</h3>
+      <div id="fig-costflow"></div>
+      <p><strong>图 1 解读：</strong>蓝色方框是资产负债表上的三个存货账户（资产），绿色是本期注入的成本流（采购、直接人工、制造费用），橙色的 COGS 是整张图里<strong>唯一的费用</strong>——它流向利润表；棕色的期间成本当期直接费用化，从不进入这条流水线。每条箭头对应一笔会计分录（如"耗用直接材料"即 借 WIP / 贷 原材料）。讲师提醒这张图"初看像一盘意大利面"，但只要记住<strong>跟着箭头走</strong>，每个账户都是同一个公式：期初 + 流入 − 期末 = 流出。优点：全景、防漏项，任何缺数题都能对号入座；缺点：把 MOH 画成一条干净箭头，掩盖了它"先实际归集、再按分配率估算分摊"的两层结构（P06 展开）。</p>
+
+      <h3>6.2 反向推算（MA26）：缺什么，就用公式倒挤什么</h3>
+      <p>这类题不能盯着数字发呆，必须套计算表格式倒挤。两道实战：</p>
+      <ul>
+        <li><strong>Juliet 公司：</strong>已知总产品成本 $302,500、DL $87,400、MOH $113,000 → DM = 302,500 − 87,400 − 113,000 = <strong>$102,100</strong>；已知在产品总成本 $344,700 → 期初 WIP = 344,700 − 302,500 = <strong>$42,200</strong>；已知 COGM $287,300 → 期末 WIP = 344,700 − 287,300 = <strong>$57,400</strong>。</li>
+        <li><strong>Kilo 公司：</strong>已知总制造成本 $26,400、DM $12,600、MOH $6,700 → DL = 26,400 − 12,600 − 6,700 = <strong>$7,100</strong>；期初 WIP $7,200 → 在产品总成本 = 26,400 + 7,200 = <strong>$33,600</strong>；期末 WIP $4,400 → COGM = 33,600 − 4,400 = <strong>$29,200</strong>。</li>
+      </ul>
+
+      <h3>6.3 三个存货账户期末余额（MA30，Oscar 公司，T 型账户实战）</h3>
+      <p>分批成本法下的完整演练：已知期初余额（材料 $8,200、WIP $7,100、FG $6,400）、本期采购 $22,800、耗用材料 $27,400、直接人工 $34,500、MOH 预定分配率 = 直接人工的 70%、COGM $47,400、COGS $38,900。逐账户套用"期初 + 流入 − 流出 = 期末"：</p>
+      <ul>
+        <li><strong>原材料：</strong>8,200 + 22,800 − 27,400 = <strong>$3,600</strong>（没用完的留下）；</li>
+        <li><strong>在产品：</strong>分摊 MOH = 34,500 × 70% = <strong>$24,150</strong>；期末 WIP = 7,100 + 27,400 + 34,500 + 24,150 − 47,400 = <strong>$45,750</strong>；</li>
+        <li><strong>产成品：</strong>6,400 + 47,400 − 38,900 = <strong>$14,900</strong>。</li>
+      </ul>
+      <div class="callout">
+        <strong>彩蛋（P06 预告）：</strong>本期实际 MOH 为 $24,800，而分摊进产品的只有 $24,150——实际 &gt; 分摊的 $650 称为<strong>少分摊制造费用</strong>（Underapplied Overhead），期末通常直接转入 COGS 调整；反之则为多分摊（Overapplied）。估算很少完美，小额差异是常态。
+      </div>
+
+      <h3>6.4 收尾对比：产品成本 vs 期间成本</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>产品成本（Product Cost）</th><th>期间成本（Period Cost）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>判断口诀</td><td>发生在<strong>工厂内</strong></td><td>发生在工厂外（销售/办公/研发）</td></tr>
+          <tr><td>举例</td><td>木料、造家具工人工资、工厂设备折旧、工厂经理薪资、胶水</td><td>广告费、销售佣金、办公设备折旧、CFO 薪资</td></tr>
+          <tr><td>费用化前落脚</td><td>资产负债表：RM → WIP → FG（资产）</td><td>不停留，直接进利润表</td></tr>
+          <tr><td>费用化时点</td><td>产品<strong>售出时</strong>转为 COGS</td><td><strong>发生当期</strong>即费用</td></tr>
+          <tr><td>报表位置</td><td>售出前进资产负债表；售出后进利润表 COGS</td><td>利润表：销售费用 / 管理费用 / 研发费用</td></tr>
+          <tr><td>优点</td><td>与存货计价、利润确认无缝衔接，匹配收入与成本</td><td>处理简单，无需归集分摊</td></tr>
+          <tr><td>缺点</td><td>MOH 杂物桶归集粗糙会扭曲单位成本（P08 ABC 修）</td><td>不提供产品维度的成本信息</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（花出去的成本什么时候才算费用？）→ 简化模型（工厂内→产品成本→进存货；工厂外→期间成本→当期费用；三个存货账户各套"期初＋流入−期末＝流出"）→ 推导（DM Used → COGM → COGS 三段计算表首尾相接）→ 实际应用（Samco 的 COGM 编制、全流程 COGS、Juliet/Kilo 倒挤、Oscar 期末余额）→ 局限性（MOH 是估算出来的，分配率失真则单位成本失真；T 型账户是万能备胎但考试要按计算表格式书写）。</p>
+      <div class="callout warn">
+        <strong>资料质量提示：</strong>MA21、MA23、MA24、MA26、MA30 的原始讲义为未精修的英文自动字幕（逐句重复），本页已按精修风格提炼重写，所有数值均来自讲义并逐一复算（复算过程见 changelog）。
+      </div>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/managerial-accounting/05-product-costs-cogm-cogs.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：成本流转全景 —— RM → WIP → FG → COGS（横向分层流程） =====
+    var C_ACCT = '#1d4ed8', C_ACCT_FILL = '#eff6ff';
+    var C_IN = '#15803d', C_IN_FILL = '#f0fdf4';
+    var C_EXP = '#c2410c', C_EXP_FILL = '#fff7ed';
+    Charts.tree(document.getElementById('fig-costflow'), {
+      width: 780,
+      layers: [
+        [{ id: 'purch', label: '本期采购（流入）', color: C_IN, fill: C_IN_FILL, width: 150 }, null, null],
+        [
+          { id: 'rm', label: '原材料 RM（资产）', color: C_ACCT, width: 170 },
+          { id: 'wip', label: '在产品 WIP（资产）', color: C_ACCT, width: 170 },
+          { id: 'fg', label: '产成品 FG（资产）', color: C_ACCT, width: 170 },
+        ],
+        [null, null, { id: 'dl', label: '直接人工 DL', color: C_IN, fill: C_IN_FILL, width: 132 }, { id: 'moh', label: '制造费用 MOH', color: C_IN, fill: C_IN_FILL, width: 132 }, { id: 'per', label: '期间成本', color: '#b45309', fill: C_EXP_FILL, width: 120 }],
+        [null, null, { id: 'cogs', label: '销货成本 COGS（费用）', color: C_EXP, fill: C_EXP_FILL, width: 190 }],
+      ],
+      edges: [
+        { from: 'purch', to: 'rm', color: C_IN, label: '借：原材料', labelDx: 78 },
+        { from: 'rm', to: 'wip', color: C_ACCT, label: '耗用直接材料', labelDx: -34, labelDy: -14 },
+        { from: 'dl', to: 'wip', color: C_IN, label: '直接人工', labelDx: -34 },
+        { from: 'moh', to: 'wip', color: C_IN, label: '分摊 MOH', labelDx: 44 },
+        { from: 'wip', to: 'fg', color: C_ACCT, label: '完工转出（COGM）', labelDy: -14 },
+        { from: 'fg', to: 'cogs', color: C_EXP, label: '售出 → 费用化', labelDx: 96 },
+      ],
+      caption: '图 1：制造成本流转全景——三个存货账户各按"期初＋流入−期末＝流出"运转，全图唯一费用是 COGS；期间成本不进流水线',
+      legend: [
+        { label: '存货账户（资产负债表·资产）', color: C_ACCT, style: 'dot' },
+        { label: '本期投入的成本（采购/DL/MOH）', color: C_IN, style: 'dot' },
+        { label: '费用（利润表）', color: C_EXP, style: 'dot' },
+        { label: '期间成本（当期直接费用化）', color: '#b45309', style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>
