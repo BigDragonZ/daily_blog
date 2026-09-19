@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 舞弊、内部控制与现金 - 财务会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>05 舞弊、内部控制与现金</h1>
+      <p>本篇覆盖《财务会计》（Financial Accounting）Lesson 5 全部 15 讲（5.1–5.16，其中 5.10 缺号）。前四课我们建立了从<span class="term">借贷记账</span>到四大报表的完整骨架，本课把镜头对准六桶中最特殊的一个——<strong>现金</strong>：先理解<span class="term">舞弊</span><span class="term-en">（Fraud）</span>为什么会发生（舞弊三角），再看立法者与公司如何回应（SOX 法案与<span class="term">内部控制</span><span class="term-en">（Internal Controls）</span>），最后落到现金的三项实务控制——收款流程、<span class="term">凭证系统</span><span class="term-en">（Voucher System）</span>与<span class="term">银行对账</span><span class="term-en">（Bank Reconciliation）</span>，以及现金的报告口径与<span class="term">零用金</span><span class="term-en">（Petty Cash）</span>制度。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入与舞弊的类型</h2>
+
+      <h3>1.1 引入：桌上的桌子没人偷，桌上的钞票留不住</h3>
+      <p><strong>反直觉开场：</strong>把一张桌子放在谁都能进出的公共教室里，一周后它大概率还在——桌子笨重、难搬、难以销赃。但在同一张桌子上放一张 100 美元钞票，明天它还在的几率就小得多了。钞票不过是一张纸（在美国其实是布料），它之所以危险，是因为<strong>整个社会公认它值 100 美元</strong>，而且谁持有它就归谁——除非你记下每张钞票的序列号，否则无法证明某张钞票是你的，所谓"占有即所有"。高价值、易携带、不可追踪，这三个属性叠加，使现金具有极高的<span class="term">固有风险</span><span class="term-en">（Inherent Risk）</span>，成为企业中最易被侵占的资产。这就是为什么会计要围绕现金建一整套控制制度——本篇的全部内容都从这张 100 美元钞票出发。</p>
+
+      <h3>1.2 舞弊的定义与三种类型</h3>
+      <p><span class="term">舞弊</span><span class="term-en">（Fraud）</span>指为个人利益而欺骗他人的行为——利益通常是金钱，也可能是间接的经济好处。会计上把舞弊分三类：</p>
+      <ul>
+        <li><span class="term">财务报表舞弊</span><span class="term-en">（Financial Statement Fraud）</span>：俗称"<span class="term">粉饰账目</span><span class="term-en">（Cooking the Books）</span>"——虚增收入、压低费用（没人会夸大费用，那对舞弊者没好处），让公司看起来比实际更好。动机是间接获利：虚假利好推高股价，持股高管趁机抛售套现。这是典型的<span class="term">白领犯罪</span><span class="term-en">（White-collar Crime）</span>，因为只有能接触并修改报表的高层才做得到；</li>
+        <li><span class="term">资产侵占</span><span class="term-en">（Misappropriation of Assets）</span>：实质就是从组织里<strong>偷窃</strong>——杂货店员工下班时把商品塞进包里、出纳私吞收款。它常被称为<span class="term">蓝领犯罪</span><span class="term-en">（Blue-collar Crime）</span>，因为实施者是有机会接触资产的普通员工；现金是被侵占最多的资产，任何资产只要员工够得着都可能被偷；</li>
+        <li><span class="term">腐败</span><span class="term-en">（Corruption）</span>：关键词是<strong>滥用职权</strong>——政客收受贿赂，帮企业项目绕过环境审批；公司高管利用职权收取回扣。没有那个职位，就办不成这件事。</li>
+      </ul>
+      <p>三类舞弊每天都在发生。管理者与会计师必须对其形式保持敏感——不保持警觉，你就会对身边正在发生的侵占与腐败视而不见。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、舞弊三角：抽掉哪条腿？</h2>
+      <p>要防舞弊，先得理解舞弊为什么发生。犯罪学家唐纳德·克雷西（Donald Cressey）提出<span class="term">舞弊三角</span><span class="term-en">（Fraud Triangle）</span>：舞弊发生时通常同时存在三个因素，缺任何一个，舞弊就不会发生（注意：三者齐备也不必然舞弊，只是"可能"）。</p>
+      <ul>
+        <li><strong>压力/动机</strong><span class="term-en">（Pressure / Incentive）</span>：舞弊风险极高，必须有利可图才值得冒险。最常见的压力是财务压力——想赚更多钱、有账单要还；</li>
+        <li><strong>机会</strong><span class="term-en">（Opportunity）</span>：必须有可乘之机。无现金商店里不存在偷现金的机会，因为店里根本没有现金；</li>
+        <li><strong>合理化</strong><span class="term-en">（Rationalization）</span>：舞弊者要在心里说服自己"这没什么"——"我工资太低，这是我应得的""我只是借，以后会还"。</li>
+      </ul>
+      <div id="fig-triangle"></div>
+      <p><strong>图 1 解读：</strong>把舞弊三角想成一张三条腿的桌子，抽掉任何一条腿桌子就倒——企业防舞弊的本质就是拆其中一条腿。拆哪条？<strong>压力</strong>拆不掉：财务动机永远存在；<strong>合理化</strong>可以缓解（优厚薪酬 + 让员工有归属感的企业文化，员工即使薪水稍低也不愿背叛），但很难降到零；唯有<strong>机会</strong>可以被系统性压缩甚至归零——不收现金，就没有现金可偷。<strong>所以"机会"端是公司的主战场，后面讲的整套内部控制，打的全是这一条腿。</strong>本模型的<strong>优点</strong>是把"防舞弊"从道德说教变成可操作的工程问题（移除一条腿即可）；<strong>缺点</strong>是它只解释个体舞弊的触发条件，无法量化风险大小，也不涵盖有组织、有预谋的系统性欺诈。</p>
+      <div class="callout warn">
+        <strong>别忘了成本效益约束：</strong>消除机会也要算账。为防止价值 $3 的笔被盗而安装 $50,000 的安保系统显然荒谬；但为存放数百万美元珠宝的店铺装同样的系统就值得。有时你不得不接受小额损失——防损成本可能远高于损失本身。这条约束在第五节"内部控制的局限"还会回来。
+      </div>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、《萨班斯-奥克斯利法案》：丑闻催生的立法</h2>
+      <p>2001–02 年，安然（Enron）、世通（WorldCom）等公司接连爆出财务报表舞弊：做假账、操纵数据让报表好看，真相败露后股价崩塌，投资者血本无归，市场对"报表上的数字是否真实"丧失信心。作为回应，美国国会 2002 年通过《<span class="term">萨班斯-奥克斯利法案</span><span class="term-en">（Sarbanes-Oxley Act, SOX）</span>》，从根本上重塑了会计行业的运作方式（本系列 <a href="01-basics-and-statements.html">第 01 篇 4.2 节</a>曾简要提及）。主要变化：</p>
+      <ul>
+        <li><strong>更严厉的处罚</strong>：白领犯罪面临更高罚款与监禁；</li>
+        <li><strong>强化内部控制评估</strong>：公司必须建立并维护内部控制，审计师除了审报表，还必须就公司内控是否有效出具报告；</li>
+        <li><strong>独立审计委员会</strong><span class="term-en">（Audit Committee）</span>：成员由董事会中的外部人士担任，不得兼任公司雇员，确保独立性；</li>
+        <li><strong>举报人保护</strong><span class="term-en">（Whistleblower Protection）</span>：增设举报热线与道德准则；</li>
+        <li><strong>审计合伙人轮换</strong>：审计项目合伙人每五年轮换，防止与被审计公司关系过密而生串通；</li>
+        <li><strong>设立 PCAOB</strong>：<span class="term">上市公司会计监督委员会</span><span class="term-en">（Public Company Accounting Oversight Board, PCAOB）</span>——此前审计行业自我监管，SOX 之后由政府机构监管上市公司审计。</li>
+      </ul>
+      <p>这套组合拳的目的只有一个：<strong>恢复投资者对财务资本市场的信心</strong>。它也把我们顺理成章地带到下一节——SOX 反复强调的"内部控制"到底是什么。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、内部控制：目标与五大控制活动原则</h2>
+
+      <h3>4.1 内部控制是什么、为了什么</h3>
+      <p>内部控制其实无处不在：家门钥匙、网银密码、ATM 的 PIN 码、十字路口的红绿灯，都是"为降低风险而设定的规则"。把钱存进银行而不是随身揣着，本身就是一种内部控制——金库与密码比你口袋安全得多。公司语境下，<span class="term">内部控制</span><span class="term-en">（Internal Controls）</span>是一系列规则与程序，服务于<strong>三大目标</strong>：</p>
+      <ul>
+        <li><strong>运营的效率与效果</strong>：让公司运转更高效、降低运营成本，同时<strong>保护公司资产</strong>（如公司车辆必须停进封闭车库）；</li>
+        <li><strong>财务报告的可靠性</strong>：提升会计信息质量，让报表上的数字可信；</li>
+        <li><strong>合规</strong>：确保遵守所在州、县、市的法律法规，避免巨额罚款。</li>
+      </ul>
+      <p>注意：SOX 只强制审计师评估<strong>上市公司</strong>的内控（有 PCAOB 与 SEC 双重监管），但这不代表私营公司不需要——私营公司同样需要内控，只是面对的外部审查更少。</p>
+
+      <h3>4.2 控制活动的五大原则</h3>
+      <p><span class="term">控制活动原则</span><span class="term-en">（Principles of Control Activities）</span>是公司建立内控的框架：框架不告诉你具体怎么做，只提醒你必须考虑哪些要素——就像建房必须有地基、立柱、墙体。五大原则：</p>
+      <ul>
+        <li><strong>明确责任</strong><span class="term-en">（Establishing Responsibility）</span>：每项任务的责任只归于<strong>一个人</strong>。"人人负责"等于无人负责——出了问题不知道追谁，做出成绩不知道奖谁；</li>
+        <li><strong>职责分离</strong><span class="term-en">（Segregation of Duties）</span>：一项活动（activity）由多个任务（tasks）组成，把不同任务分给不同的人，使无人能单独控制整个活动。开支票的人不应是授权签支票的人，也不应是事后复核账簿的人——要舞弊就得多人串通，而串通难得多；</li>
+        <li><strong>限制访问</strong><span class="term-en">（Restricting Access）</span>：资产（实体与电子）只向有正当授权的人开放——手机密码、电脑登录、保险库钥匙。这直接抽掉舞弊三角的"机会"腿；</li>
+        <li><strong>凭证记录</strong><span class="term-en">（Documenting Procedures）</span>：凡事留证据。每笔日记账分录必须有单据支持，所有操作有据可查，而非仅凭口头；</li>
+        <li><strong>独立核查</strong><span class="term-en">（Independently Verify）</span>：设立控制不等于控制有效，须由流程之外的人定期复核——内部审计团队可以承担，外部审计师基于成本效益考虑也常依赖内部审计的工作。</li>
+      </ul>
+      <p>这套框架的<strong>优点</strong>是普适——任何业务流程都可以拿五条原则逐条对照查漏；<strong>缺点</strong>是它只开"检查清单"不给实施方案，具体控制设计仍需结合业务判断，且落地质量取决于执行者。下一节我们就看执行会在哪里塌方。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、内部控制的局限：没有完美的控制，只有多层防护网</h2>
+      <p>设了内控不等于高枕无忧。内部控制有三大固有局限：</p>
+      <ul>
+        <li><strong>成本效益约束</strong>：控制的成本不能超过它保护的效益。沃尔玛理论上可以把所有商品锁起来，但一棵成本 50 美分的生菜，为它花数千美元装锁还要员工跑来开锁，显然不合算；而一台 $350 的 iPad 用 $250 的柜子锁住就很值——一个柜子保护多台设备，避免数千美元损失。控制强度必须跟着资产价值走；</li>
+        <li><strong>人为错误</strong>：人都会疏忽、疲劳、误解。一项控制要求两组数字核对相符，员工若把两组数字都录错且恰好相等，控制程序执行了，错误却溜了过去；</li>
+        <li><strong>串通与凌驾</strong>：<span class="term">串通</span><span class="term-en">（Collusion）</span>指两人以上合谋绕过控制——职责分离能逼舞弊者串通，但串通并非不可能，尤其一项活动只涉及两个人时；<span class="term">管理层凌驾</span><span class="term-en">（Management Override）</span>指权限足够高的管理者直接越过常规程序，控制形同虚设。</li>
+      </ul>
+      <p>应对之道是<strong>多层防护网思想</strong>：没有单一控制是完美的，第一层可能有漏洞，但叠加第二层、第三层后，绕过整个体系的难度指数级上升——把关键活动拆给十个人，十人串通的难度远超两人。配套做法是定期评估内控有效性、随业务变化调整。正视局限不是悲观，而是让防线设计更现实。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、现金收款流程：收款、记账、保管三分离</h2>
+      <p>回到那张 100 美元钞票。现金收款内部控制的最终目标很朴素：<strong>公司应收 100 美元，就有 100 美元完整、安全地进入银行账户</strong>，途中不被偷、不缩水。以零售店为例，一个典型现金收款流程共八步，注意每一步都套用了第四节的五大原则：</p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>步骤</th><th>执行人</th><th>体现的控制原则</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>扫描商品，确定应收金额</td><td rowspan="3">收银员（Cashier）</td><td>凭证记录</td></tr>
+          <tr><td>2</td><td>向顾客收款（商品换付款）</td><td>限制访问（收银机钱箱）</td></tr>
+          <tr><td>3</td><td>日终清点，编制现金盘点表（Cash Count Sheet）</td><td>凭证记录</td></tr>
+          <tr><td>4</td><td>将钱箱实点现金与 POS 系统记录核对</td><td rowspan="3">主管（Supervisor）</td><td>独立核查</td></tr>
+          <tr><td>5</td><td>现金存入保险库，限制接触</td><td>限制访问</td></tr>
+          <tr><td>6</td><td>备妥存款单，运钞车取走或送存银行</td><td>凭证记录</td></tr>
+          <tr><td>7</td><td>将银行存款凭条（Bank Deposit Slip）与现金盘点表核对</td><td rowspan="2">会计部门（Accounting）</td><td>独立核查</td></tr>
+          <tr><td>8</td><td>编制日记账分录，记入账簿——收款会计循环完成</td><td>凭证记录</td></tr>
+        </tbody>
+      </table>
+      <p>整个流程的关键设计是<strong>收款（收银员）、保管（主管）、记账（会计）三权分立</strong>：碰钱的人不记账，记账的人不碰钱，同时每一步都有明确责任人。不必八步八个人——小公司可以把某些任务合并，但底线是整个活动不能由一个人从头管到尾。无论现金以何种方式流入（柜台现金、异地销售、信用卡、<span class="term">电子资金转账</span><span class="term-en">（Electronic Funds Transfer, EFT）</span>——电子转账同样有欺诈风险），都必须保证对现金的妥善保管。</p>
+
+      <!-- ==================== 七 ==================== -->
+      <h2>七、凭证系统：凭单齐备才付款</h2>
+      <p>收款要防"进不来"，付款要防"出得冤"。现金支付内部控制的核心目标：<strong>只为公司确实收到的商品或服务付款</strong>——绝不在没收到任何东西的情况下付款。实现工具是<span class="term">凭证系统</span><span class="term-en">（Voucher System）</span>：一套"文件不齐、支票不开"的审批链，开出支票或 EFT 之前必须集齐整套文件，合成<span class="term">凭证包</span><span class="term-en">（Voucher Package）</span>：</p>
+      <div id="fig-voucher"></div>
+      <p><strong>图 2 解读：</strong>链条上每张单据都堵一个特定的窟窿，且各自对应一条控制原则——①<span class="term">采购申请</span><span class="term-en">（Purchase Requisition）</span>由内部发起人填写、经理签字批准，<strong>明确责任</strong>（没有它，不知道谁真正需要这批货）；②<span class="term">采购订单</span><span class="term-en">（Purchase Order, PO）</span>相当于发给供应商的销售合同，只发给经审批的合格供应商，<strong>限制交易对象</strong>；③货到后收货部门开箱、对照提货单（Bill of Lading）清点并出具<span class="term">验收报告</span><span class="term-en">（Receiving Report）</span>——收货职责独立于采购与付款，是<strong>职责分离 + 凭证记录</strong>（收货人通常不知道货物价值，只客观清点数量；服务类采购无验收报告，确认服务完成即可）；④<span class="term">供应商发票</span><span class="term-en">（Supplier's Invoice）</span>由供应商单独寄来，与验收报告、采购订单三方核对，构成<strong>独立核查</strong>；⑤凭证包集齐后，由不参与制单的负责人批准并签开<strong>支票或 EFT</strong>。缺任何一张单据，链条就断：没有 PO 不知采购是否获批，没有发票不知金额是否正确，没有验收报告不知货是否真的到了。凭证系统的<strong>优点</strong>是把"付款是否正确"从信任问题变成文件核验问题，审计追踪完整；<strong>缺点</strong>是流程重、单据多，对小公司而言运行成本不低——又回到成本效益约束。</p>
+      <div class="callout">
+        <strong>讲义缺号说明（5.10）：</strong>本课程 Lesson 5 的编号中 5.10 缺失（源文件直接从 5.9 跳到 5.11）。按教材标准结构，此处通常是"银行账户的使用"过渡内容：企业为什么把现金存进银行（银行本身就是一道内部控制——金库、密码、清算记录），以及支票与银行存款单等基本工具。这一讲的核心结论已并入本篇：第六节现金"存入银行"的流程设计与第八节银行对账，都以"现金在银行账户中流转"为前提，内容无缺环。
+      </div>
+
+      <!-- ==================== 八 ==================== -->
+      <h2>八、银行对账：两本账对到同一个真实余额</h2>
+
+      <h3>8.1 为什么两套数字永远对不上</h3>
+      <p>公司账簿里有一个现金余额，银行对账单（Bank Statement）上也有一个现金余额——理论上它们记录的是同一笔钱，但月末拿到对账单时两个数字几乎从不相等。原因只有两类：<strong>时间差</strong>（一方已记、另一方尚未知）与<strong>错误</strong>（一方记错）。<span class="term">银行对账</span><span class="term-en">（Bank Reconciliation）</span>就是每月结账时把两本账逐笔比对、各自调整，最终收敛到同一个"真实余额"的过程。它本身就是一项内部控制，且一身兼四项原则：对账人不管现金收支（职责分离）、逐笔独立核实（独立核查）、对账表本身是存档文件（凭证记录）、指定专人负责（明确责任）。</p>
+      <p>判断每项调整归哪侧，只需问两个问题：<strong>"谁知道这件事？"</strong>——公司知、银行不知的，调银行侧；银行知、公司不知的，调账簿侧。<strong>"谁错了？"</strong>——谁错了就调谁。由此得到七步流程：①填列双方期末余额；②银行侧<strong>减</strong><span class="term">未兑现支票</span><span class="term-en">（Outstanding Checks）</span>——公司已开出并记账、持票人尚未兑现的支票（用账簿支票清单与对账单已兑现清单逐笔勾对找出）；③银行侧<strong>加</strong><span class="term">在途存款</span><span class="term-en">（Deposits in Transit）</span>——公司已存、银行尚未入账的存款（如周末投入夜间投递箱，银行周一才处理）；④账簿侧<strong>减</strong><span class="term">存款不足支票</span><span class="term-en">（Non-sufficient Funds Check, NSF）</span>——客户开的"空头支票"，银行 24–48 小时后发现对方账户余额不足而扣回，公司看到对账单才知道；⑤账簿侧<strong>加</strong>银行已记的<span class="term">利息收入</span><span class="term-en">（Interest Revenue）</span>；⑥处理剩余错误与其他项目（如银行误记金额、EDI 直接入账的收入）；⑦两侧加总，<strong>调整后余额必须相等</strong>，不等就回头当侦探。</p>
+
+      <h3>8.2 配套例题：唐娜日托中心银行对账全流程</h3>
+      <p>已知唐娜日托中心（Donna Day Care）2019 年 6 月 30 日：银行对账单余额 $5,586，公司账簿余额 $5,055；未兑现支票共 $1,816；在途存款 $750；一张 NSF 支票 $450；银行利息收入 $15；第 800 号支票支付应付账款，银行正确兑现 $1,100 但公司误记为 $800；公司一笔 $6,000 存款被银行误记为 $6,200（银行多记 $200）。按七步填入双栏对账表：</p>
+      <table>
+        <thead>
+          <tr><th colspan="2">银行方（Bank Side）</th><th colspan="2">账簿方（Book Side）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>期末银行结单余额</td><td>$5,586</td><td>期末账簿余额</td><td>$5,055</td></tr>
+          <tr><td>加：在途存款（公司知、银行不知）</td><td>+750</td><td>加：利息收入（银行知、公司不知）</td><td>+15</td></tr>
+          <tr><td>减：未兑现支票（公司知、银行不知）</td><td>−1,816</td><td>减：NSF 支票（银行知、公司不知）</td><td>−450</td></tr>
+          <tr><td>减：银行多记存款 $200（银行错，调银行）</td><td>−200</td><td>减：支票少记支出 $300（公司错，调账簿）</td><td>−300</td></tr>
+          <tr><td><strong>调整后现金余额</strong></td><td><strong>$4,320</strong></td><td><strong>调整后现金余额</strong></td><td><strong>$4,320</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>复算：</strong>银行方 5,586 + 750 − 1,816 − 200 = 4,320；账簿方 5,055 + 15 − 450 − 300 = 4,320。两侧收敛 ✓。注意两笔错误的归属完全不同：公司把 $1,100 记成 $800，少记支出 $300，须补减账簿现金；银行把 $6,000 存款记成 $6,200，多记 $200，银行发现后会自行扣回，所以银行侧预先减掉。实务中最耗时的不是填表，而是<strong>找出</strong>差异项——逐笔勾对支票与存款清单。</p>
+
+      <h3>8.3 对账后的账务处理：只动账簿侧</h3>
+      <p>对账表调平了，但调整不会自动进账。规则只有一条：<strong>银行侧的调整由银行自行处理（在途存款会到账、未兑现支票会被兑现、银行错误银行自己改），公司只对账簿侧的调整项做日记账分录</strong>。做分录的两步心法：先定现金增减（增则借现金、减则贷现金），再找对方科目。上例账簿侧三项调整的分录：</p>
+      <table>
+        <thead>
+          <tr><th>调整项</th><th>借方（Debit）</th><th>贷方（Credit）</th><th>逻辑</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>利息收入 $15</td><td>现金 15</td><td>利息收入 15</td><td>现金增加；钱存银行赚的利息，确认收入</td></tr>
+          <tr><td>NSF 支票 $450</td><td>应收账款 450</td><td>现金 450</td><td>现金减少；客户实际没付成，恢复其欠款</td></tr>
+          <tr><td>支票记账错误 $300</td><td>应付账款 300</td><td>现金 300</td><td>现金减少；偿还供应商债务比账面多 $300，负债再减</td></tr>
+        </tbody>
+      </table>
+      <p>NSF 那笔最易错：当初收到客户支票时做的是"借现金、贷应收账款"，以为账已结清；支票跳票意味着客户仍欠 $450，所以要<strong>反向重建应收账款</strong>。本例未涉及的常见项：银行手续费（Bank Fees）——减少现金，分录为借"银行手续费（费用）"、贷"现金"。银行对账的<strong>优点</strong>是每月一次把两本账强制对齐，顺带捕获公司未知的交易（利息、NSF、EDI 入账）与双方错误；<strong>缺点</strong>是滞后——它发现的是已经发生的差异，属于事后控制而非事前预防，且逐笔勾对在业务量大时相当繁琐。</p>
+
+      <!-- ==================== 九 ==================== -->
+      <h2>九、现金的报告与零用金</h2>
+
+      <h3>9.1 资产负债表上的"现金"到底包括什么</h3>
+      <p>现金是资产，出现在资产负债表与现金流量表上（不进利润表）。但会计口径的"现金"比日常理解宽：<strong>银行愿意接受为存款的任何东西都算现金</strong>——硬币、纸币、支票，加上手头的零用金。此外还包括<span class="term">现金等价物</span><span class="term-en">（Cash Equivalents）</span>：<strong>购买时</strong>原始到期日三个月以内的短期高流动性投资（如短期国库券）。注意"购买时"三个字：买时到期一年、如今只剩两个月的投资不算。理由是它与现金足够接近，按<span class="term">重要性</span><span class="term-en">（Materiality）</span>原则并入现金报告不产生重大差异。</p>
+      <p>反向的边界同样重要：<strong>现金不含<span class="term">受限资金</span><span class="term-en">（Restricted Cash）</span></strong>——为特定目的预留、不能用于日常运营的资金。两例：银行要求你存入 $25,000 贷款保证金且贷款期内不得动用；董事会专项拨出 $500 万建新厂房。受限资金在资产负债表上单列（排在现金、应收账款之后），绝不并入现金余额。</p>
+
+      <h3>9.2 零用金：定额备用制</h3>
+      <p>员工外出买了一令 $4.95 的打印纸，值得为此走一遍凭证系统、开张支票吗？不值得。<span class="term">零用金</span><span class="term-en">（Petty Cash）</span>就是为小额采购预留的备用现金（"小额"标准由公司自定），核心是<span class="term">定额备用制</span><span class="term-en">（Imprest System）</span>：<strong>保管人（Custodian）手中的现金 + 收据必须始终等于基金定额</strong>。$100 基金报销 $20 后，盒子里是 $80 现金 + $20 收据，合计仍是 $100——收据就是"缺失现金"的化身。三步循环：①<strong>设立</strong>：开支票给保管人，兑现保管；②<strong>报销</strong>：员工凭收据换现金（公司政策可对零头取整，$4.95 直接付 $5），此时<strong>不做任何分录</strong>；③<strong>补足</strong>：现金过低或会计期末时，保管人把收据交会计部门换一张新支票，此时才统一入账。</p>
+      <p><strong>配套例题：</strong>A 公司 1 月 1 日设立 $200 零用金基金。1 月 2–15 日支出：餐厅聚餐 $92、办公用品 $22、租车燃料 $18、收发室办公用品 $48、包裹运费 $14；1 月 16 日保管人申请补足。三问：</p>
+      <table>
+        <thead>
+          <tr><th>环节</th><th>借方（Debit）</th><th>贷方（Credit）</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A. 设立基金（1/1）</td><td>零用金 200</td><td>现金 200</td><td>把这 $200 从主现金账户隔离出来</td></tr>
+          <tr><td>B. 日常报销（1/2–1/15）</td><td colspan="2"><strong>不做分录</strong></td><td>收据代替分录，补足时统一入账</td></tr>
+          <tr><td>C. 补足基金（1/16）</td><td>餐饮费 92；办公用品费 70（22+48）；交通费 18；运费 14</td><td>现金 194</td><td>补足后盒内恢复 $200（现金 6 + 新支票兑现 194）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>复算：</strong>支出合计 92 + 70 + 18 + 14 = 194；补足前盒内剩现金 200 − 194 = 6。这是"一步法"：直接借费用、贷现金，"零用金"账户余额恒为 $200，只有基金定额永久增减时才动它。理论上还有"两步法"（先借费用、贷零用金使账面降至 $6，再借零用金、贷现金补回 $200），结果相同但更繁琐，实务不用。零用金制度的<strong>优点</strong>是用最小的流程成本管住最易流失的小额现金，且自带对账机制（现金+收据=定额，少了立刻穿帮）；<strong>缺点</strong>是费用确认滞后到补足时点，且全靠保管人一人经手——定额必须小到"丢了也不心疼"。</p>
+
+      <!-- ==================== 十 ==================== -->
+      <h2>十、收尾对比：银行对账的两侧调整一览</h2>
+      <table>
+        <thead>
+          <tr><th>调整项</th><th>归属侧（方向）</th><th>是否做日记账分录</th><th>原因</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>在途存款（Deposits in Transit）</td><td>银行侧（+）</td><td>否</td><td>公司已记账，银行尚未处理，会自动入账</td></tr>
+          <tr><td>未兑现支票（Outstanding Checks）</td><td>银行侧（−）</td><td>否</td><td>公司已记账，持票人尚未兑现</td></tr>
+          <tr><td>银行错误（如多记存款 $200）</td><td>银行侧（视错加减）</td><td>否</td><td>银行发现后自行更正</td></tr>
+          <tr><td>利息收入（Interest Revenue）</td><td>账簿侧（+）</td><td>是：借现金，贷利息收入</td><td>银行已记、公司看到对账单才知</td></tr>
+          <tr><td>NSF 支票</td><td>账簿侧（−）</td><td>是：借应收账款，贷现金</td><td>客户未真正付款，恢复欠款</td></tr>
+          <tr><td>银行手续费（Bank Fees）</td><td>账簿侧（−）</td><td>是：借银行手续费，贷现金</td><td>银行已扣、公司未记</td></tr>
+          <tr><td>公司记账错误（如 $1,100 误记 $800）</td><td>账簿侧（视错加减）</td><td>是：本例借应付账款 300，贷现金 300</td><td>谁错了就调谁的账</td></tr>
+        </tbody>
+      </table>
+      <p>一句话记住整张表：<strong>时间差归银行侧（不做分录），"银行知、公司不知"与公司错误归账簿侧（必做分录）</strong>——因为公司唯一能改的账，是自己的账。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（现金高价值、易携带、不可追踪，是全公司最易被侵占的资产，如何防？）→ 简化模型（舞弊三角：压力×机会×合理化缺一不发生，公司主战场是"机会"）→ 推导（SOX 立法施压 → 内控三大目标与五大原则 → 用多层防护网对冲成本效益、人为错误、串通与凌驾四大局限）→ 实际应用（收款三权分离、凭证系统凭单付款、银行对账七步收敛两本账、零用金定额备用制）→ 局限性（一切控制都受成本效益约束，$3 的笔不配 $50,000 的安保；对账是事后控制；防线只能趋近零风险，永远到不了零）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/financial-accounting/05-fraud-internal-control-cash.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：舞弊三角 —— 三要素齐备舞弊才可能发生，抽掉任一要素即瓦解 =====
+    Charts.stateFlows(document.getElementById('fig-triangle'), {
+      nodes: ['压力/动机 Pressure', '机会 Opportunity', '合理化 Rationalization'],
+      flows: [
+        { from: 0, to: 1, label: '有压力才会寻找机会', color: '#b45309' },
+        { from: 1, to: 2, label: '有机会还需心理开脱', color: '#0f766e' },
+        { from: 2, to: 0, label: '合理化反哺动机', color: '#6d28d9' },
+      ],
+      caption: '图 1：舞弊三角（Fraud Triangle）——三条腿的桌子，抽掉任一要素舞弊即瓦解；公司能直接干预的是"机会"',
+      legend: [
+        { label: '压力/动机：财务压力永远存在，公司难以消除', color: '#b45309', style: 'dot' },
+        { label: '机会：公司的主战场，可靠内控系统性压缩至零', color: '#0f766e', style: 'dot' },
+        { label: '合理化：可靠优厚薪酬与企业文化缓解，难归零', color: '#6d28d9', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：凭证系统流程 —— 凭单齐备才付款 =====
+    Charts.tree(document.getElementById('fig-voucher'), {
+      width: 720,
+      layers: [
+        [{ id: 'req', label: '① 采购申请 Purchase Requisition', width: 300, fill: '#eff6ff' }],
+        [{ id: 'po', label: '② 采购订单 Purchase Order', width: 280, fill: '#eff6ff' }],
+        [
+          { id: 'rr', label: '③ 验收报告 Receiving Report', width: 280, color: '#0f766e', fill: '#f0fdfa' },
+          { id: 'inv', label: '④ 供应商发票 Supplier\u2019s Invoice', width: 290, color: '#0f766e', fill: '#f0fdfa' },
+        ],
+        [{ id: 'vp', label: '凭证包 Voucher Package 集齐核对', width: 320, color: '#b45309', fill: '#fff7ed' }],
+        [{ id: 'chk', label: '⑤ 批准并签开支票 / EFT', width: 300, color: '#15803d', fill: '#f0fdf4' }],
+      ],
+      edges: [
+        { from: 'req', to: 'po', label: '经理签字批准', labelDx: 96 },
+        { from: 'po', to: 'rr', label: '发货 → 对照提货单清点', color: '#0f766e', labelDx: -160 },
+        { from: 'po', to: 'inv', label: '供应商按单开票', color: '#0f766e', labelDx: 130 },
+        { from: 'rr', to: 'vp', color: '#b45309' },
+        { from: 'inv', to: 'vp', color: '#b45309', label: '三方核对', labelDx: 86 },
+        { from: 'vp', to: 'chk', color: '#15803d', label: '凭证不齐不付款', labelDx: 120 },
+      ],
+      caption: '图 2：凭证系统（Voucher System）付款控制链——每张单据堵一个窟窿，凭证包集齐并经独立核对后才可付款',
+      legend: [
+        { label: '内部发起与订购（明确责任、限制交易对象）', color: '#1d4ed8', style: 'dot' },
+        { label: '独立产生的证据（职责分离、独立核查）', color: '#0f766e', style: 'dot' },
+        { label: '汇总核对与付款授权', color: '#b45309', style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>

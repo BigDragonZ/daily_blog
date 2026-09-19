@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07 存货计价：FIFO/LIFO/加权平均 - 财务会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>07 存货计价：FIFO/LIFO/加权平均</h1>
+      <p>本篇覆盖《财务会计》（Financial Accounting）Lesson 7 的 14 讲（7.2–7.15；7.1 缺号，本章导论由本篇按课程逻辑补齐）。核心问题只有一个：<strong>同款商品分批进货、进价各不相同时，卖出一件该把哪笔成本转进销售成本？</strong>答案是四种合法的<span class="term">成本流转假设</span><span class="term-en">（Cost Flow Assumption）</span>——<span class="term">个别计价法</span><span class="term-en">（Specific Identification）</span>、<span class="term">先进先出法</span><span class="term-en">（First-In, First-Out, FIFO）</span>、<span class="term">后进先出法</span><span class="term-en">（Last-In, First-Out, LIFO）</span>、<span class="term">加权平均法</span><span class="term-en">（Weighted Average）</span>——外加定期/永续两种盘存时点、成本与可变现净值孰低的减记规则，以及存货周转率与销售天数两个比率。所有例题均在定期盘存制下演算，数字已逐一复算。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入：同一件商品，四种合法的销货成本</h2>
+
+      <h3>1.1 反直觉开场：地球仪该记 $15 还是 $16？</h3>
+      <p><strong>场景：</strong>你的店年初库存两个地球仪，每个进价 $15，售价 $20。卖得很好，于是向供应商补货四个——但供应商涨价了，新货每个 $16。你决定自己消化涨幅，售价仍保持 $20。此时存货账户里躺着 2 × $15 + 4 × $16 = <strong>$94</strong>。这时一位顾客进店，买走一个地球仪。问题：<strong>从存货转入<span class="term">销售成本</span><span class="term-en">（Cost of Goods Sold, COGS）</span>的金额该是多少？</strong></p>
+      <p>直觉说"看他拿走的是哪件"——但会计上这笔分录（借：COGS，贷：存货）的金额有<strong>四种合法答案</strong>：可以是 $15（先进先出）、$16（后进先出）、$15.67（加权平均，94 ÷ 6）、或者那件被拿走商品的真实成本 $15 或 $16（个别计价）。同一家店、同一件商品、同一笔销售，仅仅因为选用了不同的<span class="term">成本核算方法</span><span class="term-en">（Costing Method）</span>，利润表上的利润就不一样。本章的任务就是搞懂这四种答案各自的规则、适用场景与后果。</p>
+
+      <h3>1.2 成本流转 ≠ 实物流转</h3>
+      <p>理解本章的钥匙是一条总原则：<strong>账面上的成本流转不必与商品的实物流转一致</strong>。顾客明明拿走了那个进价 $16 的新地球仪，账上照样可以把 $15 费用化——完全合规。买牛奶是最好的类比：顾客总会从货架深处掏出保质期最晚（通常也是最晚进货、成本最高）的那瓶，把早几天到的旧货留在前面；但商店用 FIFO 记账时，假定卖掉的是"最先进来"的那瓶的成本。<strong>实物流是顾客行为，成本流是会计政策</strong>，两者各走各的。因此方法选择的本质不是"猜顾客拿了哪件"，而是：<strong>把可供销售的总成本，在"已售出（费用）"与"未售出（资产）"之间做分配</strong>。</p>
+
+      <h3>1.3 分配框架：可供销售商品成本的一分为二</h3>
+      <div class="callout warn">
+        <strong>缺失提示：</strong>本课程 Lesson 7 从 7.2 讲起，<strong>7.1 缺号</strong>。按前后文逻辑，7.1 应为本章导论，其核心是<span class="term">可供销售商品成本</span><span class="term-en">（Cost of Goods Available for Sale, COGAS）</span>框架：<strong>可供销售商品成本 = 期初存货 + 本期采购</strong>，而这笔总额在期末必然恰好分成两块——已售出部分进 COGS（利润表），未售出部分留作期末存货（资产负债表），即 <strong>COGAS = COGS + 期末存货</strong>。四种计价方法的唯一分歧就是这条切线画在哪里。
+      </div>
+      <div id="fig-cogas"></div>
+      <p><strong>图 1 解读：</strong>以本章综合例的数据为例——期初存货 2,000 件（@$40）加两次采购共 16,000 件，COGAS = $744,000。期末盘点发现售出 9,000 件、剩 7,000 件，于是 $744,000 必须切成 COGS 与期末存货两块：FIFO 切法是 $394,000 / $350,000，LIFO 切法是 $444,000 / $300,000，加权平均切法是 $418,500 / $325,500。<strong>三种切法的总和永远是 $744,000</strong>——COGS 多分一点，期末存货就少留一点，利润与资产此消彼长。这个零和结构是本章所有结论的根源。</p>
+
+      <h3>1.4 四种方法总览</h3>
+      <table>
+        <thead>
+          <tr><th>方法</th><th>成本流转假设</th><th>适用商品</th><th>一句话记忆</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>个别计价法</strong>（Specific Identification）</td><td>追踪每件商品的真实成本，卖哪件转哪件</td><td>高价、低销量、可辨识（汽车、珠宝、房屋）</td><td>唯一与实物流永远一致的方法</td></tr>
+          <tr><td><strong>先进先出法</strong>（FIFO）</td><td>最早购入的成本最先转出</td><td rowspan="3">低价值、高销量、同质化、难以逐件追踪的商品（杂货、牛奶、打印机）</td><td>期末存货最接近现行市价</td></tr>
+          <tr><td><strong>后进先出法</strong>（LIFO）</td><td>最近购入的成本最先转出</td><td>通胀期 COGS 高、利润与税负低；IFRS 禁用</td></tr>
+          <tr><td><strong>加权平均法</strong>（Weighted Average）</td><td>不区分批次，全部摊成同一个平均单位成本</td><td>结果居中（加权而非简单平均）</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、个别计价法：唯一与实物流匹配的方法</h2>
+
+      <h3>2.1 规则与适用边界</h3>
+      <p><span class="term">个别计价法</span><span class="term-en">（Specific Identification）</span>直接把售出商品的真实成本转入 COGS——顾客买了 4 号地球仪，就把 4 号那颗的 $16 转出去，其余成本概不关心。它是四种方法中<strong>唯一成本流与实物流始终一致</strong>的方法（FIFO/LIFO 只是偶尔巧合一致）。代价是必须能逐件追踪，因此适用条件有四条：<strong>高价值</strong>（汽车、珠宝、船只、房屋）、<strong>低销量</strong>（汽车经销商一天卖不出几辆，追得过来）、<strong>商品独特可辨识</strong>（每颗生菜贴着同一个 UPC 码，无从区分；每辆车有唯一的<span class="term">车辆识别码</span><span class="term-en">（VIN）</span>、每套房有唯一门牌）、<strong>易于追踪</strong>（序列号、VIN、地址等标识）。</p>
+
+      <h3>2.2 配套例题：A 公司批发机器（7.4）</h3>
+      <p>A 公司从本地制造商购入五台机器转售，一月份售出其中两台——<strong>机器 B 和机器 D</strong>。用个别计价法求 COGS、期末存货与毛利润，并编制分录：</p>
+      <table>
+        <thead>
+          <tr><th>机器</th><th>成本</th><th>售价</th><th>状态与归属</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>$12,500</td><td>$20,000</td><td>未售 → 期末存货</td></tr>
+          <tr><td>B</td><td>$12,800</td><td>$21,000</td><td><strong>已售 → COGS</strong></td></tr>
+          <tr><td>C</td><td>$13,500</td><td>$22,500</td><td>未售 → 期末存货</td></tr>
+          <tr><td>D</td><td>$14,350</td><td>$24,000</td><td><strong>已售 → COGS</strong></td></tr>
+          <tr><td>E</td><td>$15,800</td><td>$26,000</td><td>未售 → 期末存货</td></tr>
+          <tr><td><strong>合计（COGAS）</strong></td><td><strong>$68,950</strong></td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p>逐步复算：<strong>① COGS</strong> = 售出两台的实际成本 = 12,800（B）+ 14,350（D）= <strong>$27,150</strong>。<strong>② 期末存货</strong> = 未售三台 = 12,500 + 13,500 + 15,800 = <strong>$41,800</strong>；验证：68,950 − 27,150 = 41,800 ✓。<strong>③ 销售收入</strong> = 21,000 + 24,000 = $45,000，<strong>毛利润</strong> = 45,000 − 27,150 = <strong>$17,850</strong>。<strong>④ 分录两笔</strong>：记录销售——借：现金 $45,000，贷：销售收入 $45,000；结转成本——借：销售成本 $27,150，贷：存货 $27,150。</p>
+      <p><strong>优点：</strong>计量最精确，成本与实物一一对应，无假设成分。<strong>缺点：</strong>①只适用于高价低量商品，一天卖 250 加仑牛奶的杂货店根本追不起；②<strong>易被用来"挑成本"操纵利润</strong>——管理者想抬高利润就卖低成本那件、想压利润避税就卖高成本那件，利润成了可以"点单"的选择，这是它最大的治理软肋。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、定期 vs 永续：与计价方法正交的另一条轴</h2>
+      <p>FIFO/LIFO/加权平均回答的是"转<strong>多少</strong>"，<span class="term">定期盘存制</span><span class="term-en">（Periodic Inventory System）</span>与<span class="term">永续盘存制</span><span class="term-en">（Perpetual Inventory System）</span>回答的是"<strong>何时</strong>转"——两条轴可以自由组合，同一组数据在不同组合下可能算出不同答案：</p>
+      <ul>
+        <li><strong>定期盘存制</strong>：平时销售只记收入分录，不碰成本；到期末（月末/年末）一次性计算并把成本从存货转入 COGS。工作量小，但期内存货账面与实物脱节；</li>
+        <li><strong>永续盘存制</strong>：每次销售立即做两笔分录（一笔收入、一笔成本），存货与 COGS 随时是最新的。工作量大，信息也更及时准确。</li>
+      </ul>
+      <div class="callout">
+        <strong>一致性原则：</strong>盘存制度与计价方法一旦选定，不应跨期随意更换（今年定期明年永续、今年 FIFO 明年 LIFO，都破坏可比性——可比性正是 Lesson 1 讲的报表质量特征之一）。<strong>本章全部例题均为定期盘存制</strong>：先把整个期间的 COGAS 汇总，期末再按成本流转假设一次性切分。
+      </div>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、先进先出法（FIFO）：老成本先走，新成本留下</h2>
+
+      <h3>4.1 规则与直觉</h3>
+      <p><span class="term">先进先出法</span><span class="term-en">（First-In, First-Out, FIFO）</span>假定最先购入存货的<strong>成本</strong>最先转入 COGS，无论顾客实际拿走哪件。回到地球仪：顾客拿走 4 号（真实成本 $16），FIFO 照样把最早入库那批的 $15 费用化，存货账户剩 $79。再卖一件，仍用 $15（第二批次的 $15 尚未用完）；卖到第三件才轮到 $16。<strong>效果：COGS 装着最老的成本，期末存货装着最新的成本</strong>——所以 FIFO 下资产负债表上的存货最接近现行重置市价，这是它报表质量上的招牌优点。</p>
+
+      <h3>4.2 配套例题：简例（7.7）</h3>
+      <p>A 公司五台机器（政策强制 FIFO，即使机器可辨识也不许用个别计价），每台售价 $18,000，五月售出两台。FIFO 只看入库顺序：最早的两台是 A（$12,600）和 B（$12,800），于是 <strong>COGS = 12,600 + 12,800 = $25,400</strong>；<strong>期末存货</strong> = 68,950 − 25,400 = <strong>$43,550</strong>（恰为剩余三台 C、D、E 的成本之和）；收入 = 2 × 18,000 = $36,000，<strong>毛利润 = 36,000 − 25,400 = $10,600</strong>。分录：借现金 $36,000 / 贷销售收入 $36,000；借销售成本 $25,400 / 贷存货 $25,400。对比个别计价例：<strong>同样卖两台机器，方法不同，COGS 与毛利全变</strong>。</p>
+
+      <h3>4.3 配套例题：综合例（7.8，定期盘存）</h3>
+      <p>A 公司全年逐笔记录采购与销售的<strong>数量</strong>，但到期末才做成本计价（定期制）。数据如下（销售行没有单位成本——这正是要算的）：</p>
+      <table>
+        <thead>
+          <tr><th>日期</th><th>事项</th><th>数量</th><th>单位成本</th><th>批次成本</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>7月1日</td><td>期初存货</td><td>2,000</td><td>$40</td><td>$80,000</td></tr>
+          <tr><td>7月5日</td><td>售出</td><td>1,000</td><td>—</td><td>—</td></tr>
+          <tr><td>7月13日</td><td>采购</td><td>6,000</td><td>$44</td><td>$264,000</td></tr>
+          <tr><td>7月17日</td><td>售出</td><td>3,000</td><td>—</td><td>—</td></tr>
+          <tr><td>7月25日</td><td>采购</td><td>8,000</td><td>$50</td><td>$400,000</td></tr>
+          <tr><td>7月27日</td><td>售出</td><td>5,000</td><td>—</td><td>—</td></tr>
+          <tr><td colspan="2"><strong>可供销售合计（COGAS）</strong></td><td><strong>16,000</strong></td><td>—</td><td><strong>$744,000</strong></td></tr>
+        </tbody>
+      </table>
+      <p>五步法（FIFO）：<strong>① 总销量</strong> = 1,000 + 3,000 + 5,000 = 9,000 件。<strong>② 按期入库排序</strong>：7/1（2,000@40）→ 7/13（6,000@44）→ 7/25（8,000@50）。<strong>③ COGAS</strong> = 80,000 + 264,000 + 400,000 = $744,000。<strong>④ 为 9,000 件销量从最早批次逐层分配</strong>：先吃 7/1 全部 2,000 件（$80,000），再吃 7/13 全部 6,000 件（$264,000），还差 1,000 件从 7/25 批取（$50,000）——<strong>COGS = 80,000 + 264,000 + 50,000 = $394,000</strong>。<strong>⑤ 期末存货</strong> = 744,000 − 394,000 = <strong>$350,000</strong>；验证：只剩 7/25 批的 7,000 件 × $50 = $350,000 ✓。学习纪律：初学分五步慢算，别走捷径——数字搞混几乎都发生在跳步时。</p>
+      <p><strong>优点：</strong>期末存货按最新成本计价，资产负债表最贴近现值；实物流常与假设天然吻合（食品、药品本来就要先卖旧货），是实务中采用最广的方法。<strong>缺点：</strong>通胀期 COGS 用的是过时的便宜老成本，利润被"虚增"，所得税跟着多缴；利润表上老成本对新售价，配比质量打折。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、后进先出法（LIFO）：新成本先走，税单变薄</h2>
+
+      <h3>5.1 规则与动机</h3>
+      <p><span class="term">后进先出法</span><span class="term-en">（Last-In, First-Out, LIFO）</span>与 FIFO 镜像相反：假定<strong>最近</strong>购入的成本最先转入 COGS——仿佛顾客专挑刚到货的商品买（买牛奶时人们确实如此，专掏保质期最晚的那瓶）。地球仪例中，LIFO 把最新那颗的 $16 费用化，哪怕顾客拿走的其实是 $15 的旧货。动机在通胀环境里格外清晰：<strong>最新的成本最高 → COGS 高 → 账面利润低 → 所得税负低</strong>。代价是期末存货滞留陈年低价，资产负债表失真。注意：<span class="term">国际财务报告准则</span><span class="term-en">（IFRS）</span><strong>禁止使用 LIFO</strong>，只有 US GAAP 允许——跨国比较报表时这是必须留意的口径差异。</p>
+
+      <h3>5.2 配套例题：简例（7.10）</h3>
+      <p>A 公司五台机器按采购先后为 A $10,250、B $12,700、C $14,000、D $14,350、E $17,650（合计 $68,950），每台售 $18,000，五月售出两台（实物上是 B 和 D，但 LIFO 不在乎）。从最底部向上取两台的成本：E $17,650 + D $14,350，<strong>COGS = $32,000</strong>；<strong>期末存货</strong> = 68,950 − 32,000 = <strong>$36,950</strong>（= A+B+C = 10,250+12,700+14,000 ✓）；<strong>毛利润</strong> = 36,000 − 32,000 = <strong>$4,000</strong>。同样的"卖两台机器"，LIFO 毛利 $4,000 vs FIFO 简例毛利 $10,600——成本上行期，LIFO 利润显著更低，这正是它的节税逻辑。分录：借现金 $36,000 / 贷销售收入 $36,000；借销售成本 $32,000 / 贷存货 $32,000。</p>
+
+      <h3>5.3 配套例题：综合例（7.11，定期盘存）</h3>
+      <p>沿用 4.3 的同一组数据（COGAS = 16,000 件 / $744,000，销量 9,000 件）。LIFO 从最新批次向前追溯：先吃 7/25 全部 8,000 件 × $50 = $400,000，还差 1,000 件从 7/13 批取 × $44 = $44,000——<strong>COGS = $444,000</strong>。<strong>期末存货</strong> = 744,000 − 444,000 = <strong>$300,000</strong>；验证：7/1 批原封未动 2,000 × $40 = $80,000，加上 7/13 批剩余 5,000 × $44 = $220,000，合计 $300,000 ✓。对照 FIFO 综合例：COGS 高出 $50,000、期末存货低 $50,000——零和切分再次应验。</p>
+      <p><strong>优点：</strong>通胀期把最接近现值的成本送进利润表，配比更及时，且税负最低（利润低），美国公司选用 LIFO 几乎都是冲着这条税务动机。<strong>缺点：</strong>期末存货可能沉淀几十年前的老成本，资产负债表严重失真；IFRS 禁用，跨国可比性差；利润被人为压低也会误导只看利润表的投资者。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、加权平均法：不偏不倚的折中</h2>
+
+      <h3>6.1 规则</h3>
+      <p><span class="term">加权平均法</span><span class="term-en">（Weighted Average）</span>放弃追踪批次，把全部可供销售成本摊平：</p>
+      <p style="text-align:center;"><strong>加权平均单位成本 = 可供销售商品总成本 ÷ 可供销售商品总数量</strong></p>
+      <p>再用这个单价分别乘以销量（得 COGS）与剩余量（得期末存货）。它调和 FIFO 与 LIFO 的分歧，结果落在两者之间——<strong>但不是简单算术平均</strong>：大批量高成本批次会把均价往高处"拽"（所以叫加权）。注意按商品种类分别计算，不能把不同商品混在一起摊。适用场景与 FIFO/LIFO 相同：低价值、高销量、同质化商品（每袋乐事薯片都一模一样）。</p>
+
+      <h3>6.2 配套例题：简例（7.12）</h3>
+      <p>A 公司五台机器成本 A $12,600、B $13,500、C $12,750、D $14,400、E $15,700，合计 $68,950，每台售 $18,000，五月售出两台。第一步：<strong>平均单位成本 = 68,950 ÷ 5 = $13,790</strong>。第二步：<strong>COGS = 2 × 13,790 = $27,580</strong>；<strong>期末存货 = 3 × 13,790 = $41,370</strong>（= 68,950 − 27,580 ✓）；<strong>毛利润 = 36,000 − 27,580 = $8,420</strong>。分录：借现金 $36,000 / 贷销售收入 $36,000；借销售成本 $27,580 / 贷存货 $27,580。</p>
+
+      <h3>6.3 配套例题：综合例（7.13，定期盘存）</h3>
+      <p>同一组数据：COGAS = $744,000，可供 16,000 件，售出 9,000 件。<strong>平均单位成本 = 744,000 ÷ 16,000 = $46.50</strong>——合理性自检：46.50 落在最低批次 $40 与最高批次 $50 之间，且因 $50 批次量大（8,000 件）而更靠近 $50 ✓。<strong>COGS = 9,000 × 46.50 = $418,500</strong>；<strong>期末存货 = 744,000 − 418,500 = $325,500</strong>（= 7,000 × 46.50 ✓）。恰如预期：COGS 在 FIFO 的 $394,000 与 LIFO 的 $444,000 之间。</p>
+      <p><strong>优点：</strong>平滑价格波动，不受单笔采购时点影响，计算最简单（定期制下一次除法搞定），数字永远居中、不易被指责操纵。<strong>缺点：</strong>两端信息都被抹平——期末存货不如 FIFO 贴近市价，COGS 不如 LIFO 贴近现值；"居中"在价格剧烈波动时意味着两头都不够准。</p>
+
+      <!-- ==================== 七 ==================== -->
+      <h2>七、通胀环境下三法对决</h2>
+      <p>把 4.3 / 5.3 / 6.3 的综合例放到一张图上——同一组采购（$40 → $44 → $50，成本一路上行）、同样卖出 9,000 件。为补齐毛利润一列，<strong>假设单位售价 $60</strong>（销售收入 = 9,000 × 60 = $540,000），三种方法的报表面貌如下：</p>
+      <div id="fig-compare"></div>
+      <p><strong>图 2 解读：</strong>成本上行（通胀）时方向性规律一目了然——<strong>FIFO</strong>：最老最便宜的 $40/$44 批次进 COGS（$394,000，三法中最低），毛利润最高（$146,000），期末存货 $350,000 全是 $50 新货、最贴近市价；<strong>LIFO</strong> 恰好反转：COGS 最高 $444,000、毛利润最低 $96,000、期末存货最低 $300,000；<strong>加权平均</strong>三项全部居中（$418,500 / $325,500 / $121,500）。COGS 每高一点，利润与所得税就低一点——LIFO 比 FIFO 在本例中少报 $50,000 利润，若税率 30% 即少缴 $15,000 税款。通货紧缩期全部方向反转。这就是"方法选择的本质是成本在存货与 COGS 之间的分配"的完整含义：<strong>总量不变，切点即利润</strong>。</p>
+
+      <!-- ==================== 八 ==================== -->
+      <h2>八、成本与可变现净值孰低：存货跌价必须认亏</h2>
+      <p>计价方法决定存货按什么<strong>成本</strong>入账，但如果存货的市场价值跌破了成本怎么办？<strong>反直觉点在于：涨了就装没看见，跌了必须立刻认账</strong>——US GAAP 的稳健性要求：当存货价值（市价/重置成本）低于账面成本时，必须<span class="term">减记</span><span class="term-en">（Write-down）</span>至较低者，规则称<span class="term">成本与市价孰低</span><span class="term-en">（Lower of Cost or Market, LCM）</span>或<span class="term">成本与可变现净值孰低</span><span class="term-en">（Lower of Cost or Net Realizable Value, LCNRV）</span>。例：$10 进货计划卖 $20，竞争对手杀价到 $8，你只能跟着卖 $8——市价 $8 &lt; 成本 $10，每件确认 $2 损失；反之市价高于成本则<strong>不做任何处理</strong>（未实现利得不入账）。</p>
+      <p><strong>配套例题（7.14）：</strong>某公司 20X1 年末存货账面总成本 $5,465，逐项比较（单位成本为 FIFO 口径）：</p>
+      <table>
+        <thead>
+          <tr><th>产品</th><th>数量</th><th>单位成本</th><th>年末单位市价</th><th>账面总成本</th><th>孰低取值</th><th>减记损失</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>20</td><td>$12</td><td>$14</td><td>$240</td><td>$12（成本）</td><td>—</td></tr>
+          <tr><td>B</td><td>75</td><td>$40</td><td>$38</td><td>$3,000</td><td>$38（市价）</td><td>$150</td></tr>
+          <tr><td>C</td><td>35</td><td>$55</td><td>$50</td><td>$1,925</td><td>$50（市价）</td><td>$175</td></tr>
+          <tr><td>D</td><td>10</td><td>$30</td><td>$35</td><td>$300</td><td>$30（成本）</td><td>—</td></tr>
+          <tr><td colspan="4"><strong>合计</strong></td><td><strong>$5,465</strong></td><td><strong>$5,140</strong></td><td><strong>$325</strong></td></tr>
+        </tbody>
+      </table>
+      <p>复算：B 减记 3,000 − 75×38=2,850 → $150；C 减记 1,925 − 35×50=1,750 → $175；合计 <strong>$325</strong>，存货账面降至 5,465 − 325 = <strong>$5,140</strong>。分录：<strong>借：销售成本 $325，贷：存货 $325</strong>——借方走 COGS 而非"减值损失"，因为存货跌价被视为备货的正常经营风险（想不断货就得承担部分商品贬值的可能），计入当期销售成本。LCM/NRV 的<strong>优点</strong>是防止存货高估、亏损失信于报表使用者；<strong>缺点</strong>是规则不对称（只许认亏不许认涨），且"市价/可变现净值"本身需要估计，留下了主观判断空间。</p>
+
+      <!-- ==================== 九 ==================== -->
+      <h2>九、比率分析：存货周转率与销售天数</h2>
+      <p>存货躺在货架上 = 现金被冻结。衡量冻得快不快、解冻勤不勤的指标是<span class="term">存货周转率</span><span class="term-en">（Inventory Turnover）</span>——一年内"进货→上架→售出→回款"这个循环能跑几圈：</p>
+      <p style="text-align:center;"><strong>存货周转率 = 销售成本（COGS）÷ 平均存货；平均存货 =（期初存货 + 期末存货）÷ 2</strong></p>
+      <p>它是少数<strong>同时取数于利润表（COGS）与资产负债表（存货）</strong>的比率。但"一年 6.2 次"对管理者并不直观，于是换算成<span class="term">销售天数</span><span class="term-en">（Days to Sell）</span>：</p>
+      <p style="text-align:center;"><strong>销售天数 = 365 ÷ 存货周转率</strong></p>
+      <p><strong>配套例题（7.15，百思买真实报表）：</strong>利润表 COGS = $329.18 亿；资产负债表期末存货 $54.09 亿、上年期末（=本年期初）$52.09 亿。平均存货 = (54.09 + 52.09) ÷ 2 = $53.09 亿；<strong>存货周转率 = 329.18 ÷ 53.09 ≈ 6.20 次</strong>；<strong>销售天数 = 365 ÷ 6.20 ≈ 58.87 天</strong>——从进货到卖出平均近两个月。好坏没有绝对标准：6.2 次单看很高，但若行业平均 30 天周转一次（约 12 次），百思买就是慢了一倍，得砍库存或促销提速。比率分析的价值正在于把规模悬殊的公司拉到同一标尺上——十亿美元的大零售商与几十万美元的小店可以直接比周转。<strong>优点</strong>：直观量化现金占用效率，横向纵向都可比；<strong>缺点</strong>：周转率还受计价方法影响（LIFO 压低期末存货会抬高周转率，跨公司比较前先看方法口径），且过快周转可能意味着缺货风险。</p>
+
+      <!-- ==================== 十 ==================== -->
+      <h2>十、收尾对比：FIFO vs LIFO vs 加权平均</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>FIFO</th><th>LIFO</th><th>加权平均</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>成本流转假设</td><td>最早成本先转 COGS</td><td>最新成本先转 COGS</td><td>全部批次摊成同一均价</td></tr>
+          <tr><td>通胀下 COGS 与利润</td><td>COGS 最低、利润最高（本例 $394,000 / $146,000）</td><td>COGS 最高、利润最低（$444,000 / $96,000）</td><td>居中（$418,500 / $121,500）</td></tr>
+          <tr><td>报表计价质量</td><td>期末存货最贴近现行市价（资产负债表真实）</td><td>COGS 最贴近现值（利润表配比及时），但存货滞留老成本</td><td>两端都被平滑，两头都不够准</td></tr>
+          <tr><td>税务影响（通胀期）</td><td>利润高 → 税负最高</td><td>利润低 → <strong>税负最低</strong>（美国公司选用 LIFO 的主因）</td><td>居中</td></tr>
+          <tr><td>IFRS 兼容性</td><td>允许</td><td><strong>禁止</strong>（仅 US GAAP 允许）</td><td>允许</td></tr>
+          <tr><td>典型适用</td><td>食品、药品等实物本就先进先出者</td><td>通胀严重、节税诉求强的美国企业</td><td>高度同质化、单价低量大的商品</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（同款商品进价不同，卖出一件的成本记多少？）→ 简化模型（COGAS = 期初存货 + 本期采购 = COGS + 期末存货，零和二分）→ 推导（四种成本流转假设各自划定切点；定期制期末一次切，永续制逐笔切）→ 实际应用（五台机器与三批次综合例全方法演算；通胀下 LIFO 节税、FIFO 靓表；LCM/NRV 强制认亏；百思买 6.2 次 / 58.87 天）→ 局限性（成本流≠实物流使利润带有人为选择空间；个别计价可"挑成本"操纵；LIFO 资产负债表失真且 IFRS 禁用；比率跨公司比较须先核对计价口径）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/financial-accounting/07-inventory-costing.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：成本分配二分图 —— COGAS 在 COGS 与期末存货之间的零和切分 =====
+    Charts.tree(document.getElementById('fig-cogas'), {
+      width: 700,
+      layers: [
+        [{ id: 'cogas', label: '可供销售商品成本 COGAS = 期初存货 + 本期采购（$744,000）', width: 440, fill: '#f8fafc' }],
+        [
+          { id: 'cogs', label: '销货成本 COGS → 利润表费用', color: '#b45309', fill: '#fff7ed', width: 250 },
+          { id: 'ei', label: '期末存货 → 资产负债表资产', color: '#0f766e', fill: '#f0fdfa', width: 250 },
+        ],
+      ],
+      edges: [
+        { from: 'cogas', to: 'cogs', label: '已售 9,000 件费用化（FIFO：$394,000）', color: '#b45309', labelDx: -46, labelDy: -6 },
+        { from: 'cogas', to: 'ei', label: '未售 7,000 件留资产（FIFO：$350,000）', color: '#0f766e', labelDx: 46, labelDy: -6 },
+      ],
+      caption: '图 1：成本分配二分图——COGAS 恒定（$744,000），四种计价方法的分歧只是切点位置：COGS 多分，期末存货就少留',
+      legend: [
+        { label: '费用去向（利润表 COGS）', color: '#b45309', style: 'dot' },
+        { label: '资产去向（资产负债表期末存货）', color: '#0f766e', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：同一组数据三种方法的 COGS / 期末存货 / 毛利润对比（单位：千美元） =====
+    Charts.bar(document.getElementById('fig-compare'), {
+      width: 680,
+      height: 420,
+      categories: ['FIFO', 'LIFO', '加权平均'],
+      series: [
+        { label: '销货成本 COGS', color: '#b45309', values: [394, 444, 418.5] },
+        { label: '期末存货', color: '#0f766e', values: [350, 300, 325.5] },
+        { label: '毛利润（售价假设 $60/件）', color: '#1d4ed8', values: [146, 96, 121.5] },
+      ],
+      yMax: 500,
+      yStep: 100,
+      yLabel: '千美元',
+      caption: '图 2：同一组采购销售数据（COGAS $744,000、售出 9,000 件、假设售价 $60/件）下三种方法的对比——通胀期 FIFO 利润最高、LIFO 最低，加权平均居中',
+    });
+  </script>
+</body>
+</html>

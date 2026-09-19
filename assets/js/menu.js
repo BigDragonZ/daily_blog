@@ -81,6 +81,17 @@ const MENU = [
         title: '财务会计',
         children: [
           { title: '01 会计基础与四大报表', link: 'pages/accounting/financial-accounting/01-basics-and-statements.html' },
+          { title: '02 会计等式与借贷记账', link: 'pages/accounting/financial-accounting/02-debits-and-credits.html' },
+          { title: '03 权责发生制与利润表', link: 'pages/accounting/financial-accounting/03-accrual-income-statement.html' },
+          { title: '04 调整分录与结账：完整会计循环', link: 'pages/accounting/financial-accounting/04-adjusting-closing.html' },
+          { title: '05 舞弊、内部控制与现金', link: 'pages/accounting/financial-accounting/05-fraud-internal-control-cash.html' },
+          { title: '06 商业运营与商品存货', link: 'pages/accounting/financial-accounting/06-merchandising-inventory.html' },
+          { title: '07 存货计价：FIFO/LIFO/加权平均', link: 'pages/accounting/financial-accounting/07-inventory-costing.html' },
+          { title: '08 应收款项与坏账', link: 'pages/accounting/financial-accounting/08-receivables-bad-debt.html' },
+          { title: '09 长期资产与折旧', link: 'pages/accounting/financial-accounting/09-long-lived-assets.html' },
+          { title: '10 负债与债券', link: 'pages/accounting/financial-accounting/10-liabilities-bonds.html' },
+          { title: '11 公司股权', link: 'pages/accounting/financial-accounting/11-corporate-equity.html' },
+          { title: '12 现金流量表', link: 'pages/accounting/financial-accounting/12-statement-of-cash-flows.html' },
         ],
       },
       {

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08 应收款项与坏账 - 财务会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>08 应收款项与坏账</h1>
+      <p>本篇覆盖《财务会计》（Financial Accounting）Lesson 8 的 8.1–8.13 共 12 讲（<strong>8.8 原课程缺号</strong>，其主题"核销分录"由 8.4 的内容补全，文中以提示框说明）。主线只有一条：<strong>赊销必然伴随坏账，会计的任务是在客户违约发生之前就把代价如实记进报表</strong>——先讲企业为什么明知有坏账还要授信，再讲 GAAP 的两条原则与备抵法的全套分录（计提 → 核销 → 收回），然后是估计坏账的两种方法、更正式的应收票据及其利息计算，最后用应收账款周转率衡量收款效率。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、授信：明知有人不还钱，为什么还要赊销？</h2>
+
+      <h3>1.1 引入：一笔注定有去无回的生意</h3>
+      <p><strong>反直觉开场：</strong>假设你知道，每赊销出去 100 万元，平均就有 1 万元永远收不回来。理性的选择似乎是"只收现金、概不赊账"——但现实中几乎所有 B2B 企业都在赊销。为什么？因为<strong>不授信的代价更大</strong>：你的竞争对手给 30 天账期，客户在其他条件相同时就会转投对手——他们可以先拿货去卖，用卖货的钱来付你的账单，等于供应商在替他们垫资营运。所以坏账不是赊销的"事故"，而是赊销的<strong>必然成本</strong>，就像开餐馆必然有食材损耗一样。问题不是"要不要承担坏账"，而是"如何在报表里诚实地计量它"。</p>
+
+      <h3>1.2 授信的运作：尽职调查与两种应收</h3>
+      <p>在<span class="term">企业对企业</span><span class="term-en">（Business-to-Business, B2B）</span>的商业活动中，<span class="term">授信</span><span class="term-en">（Extending Credit）</span>是常态：交货时客户不付款，企业开出账单、给客户一段付款期。但授信不是来者不拒——事前要做<span class="term">尽职调查</span><span class="term-en">（Due Diligence）</span>与<span class="term">信用审查</span><span class="term-en">（Credit Check）</span>，确认对方有偿还能力。授信形成的债权有两种形态：</p>
+      <ul>
+        <li><span class="term">应收账款</span><span class="term-en">（Accounts Receivable, AR）</span>：日常赊销形成的<strong>非正式</strong>债权——客户可能只在交货单上签字确认收货，通常不计息，付款期（如"net 30"）有一定弹性；</li>
+        <li><span class="term">应收票据</span><span class="term-en">（Notes Receivable）</span>：更<strong>正式</strong>的债权——双方签署书面票据，载明金额、利率、到期日，<strong>从第一天起计息</strong>，打起官司来是有签字的法律文件（详见第四节）。</li>
+      </ul>
+
+      <h3>1.3 授信的权衡：收益与三类代价</h3>
+      <div id="fig-credit"></div>
+      <p><strong>图 1 解读：</strong>授信的理由有二：①<strong>直接增加收入</strong>——客户不必等凑足现金才下单，资金周转中的企业可以先拿货再付款，销售与利润当期就变好看；②<strong>保持竞争力</strong>——授信是行业常态，不给账期就是把客户让给对手。代价有三类：<strong>现金流周期拉长</strong>（现金先被困在存货的货架上，再被困在应收款项里，无法用于再投资）；<strong>坏账费用</strong>（总有一部分客户付不出钱，哪怕是最"可靠"的客户也可能暴雷）；<strong>管理成本</strong>（信用评估、记账对账、电话催收，甚至聘请专业催收公司）。如果能在销售第一天就收到现金，这些成本全都不存在——但那门生意可能也就不存在了。<strong>优点与缺点小结：</strong>授信模型的优点是解释了 B2B 商业为何普遍赊销（收益 &gt; 代价时理性选择授信）；缺点是企业无法预知"哪一个"客户会违约——这个"知道会发生、不知落在谁头上"的特征，正是下一节会计处理的全部难点。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、坏账的 GAAP 原则与备抵法</h2>
+
+      <h3>2.1 两条原则：按能收回多少报告，在赚钱当期认亏</h3>
+      <p>只要赊销，就必然有坏账——<span class="term">坏账</span><span class="term-en">（Bad Debt）</span>指客户未能支付的欠款。US GAAP 对此立下两条原则：</p>
+      <ol>
+        <li><strong>按净可实现价值报告应收账款：</strong>资产负债表上的应收账款必须按<span class="term">净可实现价值</span><span class="term-en">（Net Realizable Value, NRV）</span>列示，即"预期实际能收回的金额"。你借出 $1,000，其中 $900 借给一家企业、$100 借给你兄弟——账面只应报 $900，因为你对那 $100 心里没底；</li>
+        <li><strong>坏账费用与收入同期配比：</strong>按<span class="term">配比原则</span><span class="term-en">（Matching Principle，即费用确认原则 Expense Recognition Principle）</span>，坏账的根源是<strong>赊销行为本身</strong>，而不是客户"决定赖账"的那一刻——不赊销就不会有坏账。所以坏账费用必须记在<strong>销售发生的同一期间</strong>，不能等到客户违约时才确认。</li>
+      </ol>
+      <p>由此排除了一条"偷懒"的路：<span class="term">直接核销法</span><span class="term-en">（Direct Write-off Method）</span>——等到客户确定不付钱才记费用。它把费用拖到了违约当期，违反配比原则，<strong>不符合 GAAP</strong>。合规的做法是备抵法。</p>
+
+      <h3>2.2 备抵法与坏账准备：往"饼干罐"里存钱</h3>
+      <p><span class="term">备抵法</span><span class="term-en">（Allowance Method）</span>要求在销售当期就<strong>估计</strong>坏账并记录费用——尽管此时不知道具体哪个客户会违约。为此引入一个新账户：<span class="term">坏账准备</span><span class="term-en">（Allowance for Doubtful Accounts，也称 Allowance for Bad Debt）</span>。它是一个<span class="term">抵减资产账户</span><span class="term-en">（Contra-asset Account）</span>：方向与普通资产相反，<strong>贷方表示增加</strong>，在资产负债表上从应收账款总额中扣掉，使报表呈现 NRV。</p>
+      <p>把坏账准备想象成一个<strong>饼干罐</strong>：每笔赊销（实务上是期末按赊销总额一次性计提，即一笔<span class="term">调整分录</span><span class="term-en">（Adjusting Entry）</span>），都按估计往罐子里放饼干；将来某个客户确认违约，就从罐子里取饼干去冲账，<strong>不再惊动当期的利润表</strong>。两笔核心分录：</p>
+      <ul>
+        <li><strong>计提（赊销当期期末）：</strong>借：坏账费用（Bad Debt Expense）／贷：坏账准备（Allowance for Doubtful Accounts）——费用进当期利润表，饼干进罐；</li>
+        <li><strong>核销（确认某客户无法收回时）：</strong>借：坏账准备／贷：应收账款——从罐里取饼干冲掉该客户的欠款，<strong>不涉及任何收入费用账户</strong>。</li>
+      </ul>
+      <div class="callout warn">
+        <strong>讲义缺号提示（8.8）：</strong>本课程 8.8 一节原始资料缺号，其主题正是<strong>核销（Write-off）</strong>分录详解，此处依据 8.4 补全。核销分录"借坏账准备、贷应收账款"有两个极易考错的性质：①<strong>不影响当期费用与净利润</strong>——费用早在计提当期就认过了，核销只是动用既有储备；②<strong>不影响净应收</strong>——应收账款总额与坏账准备同额减少，NRV 纹丝不动（见下方表 1 的数字演示）。另外注意：核销只是账面上把该客户余额清零，公司通常保留内部记录（如 Excel 台账）；若该客户日后想再交易，可要求其先结清旧账——除非债务已在破产程序中被法院正式免除。
+      </div>
+
+      <h3>2.3 配套例题：备抵法全流程对两张报表的影响</h3>
+      <p><strong>例题 A（8.3，直接给数）：</strong>A 公司按 CPA 建议采用备抵法，按销售额估计应计提坏账 $20,000；两周后得知某客户破产，核销其 $3,000 欠款。两笔分录：①计提——借：坏账费用 $20,000／贷：坏账准备 $20,000；②核销——借：坏账准备 $3,000／贷：应收账款 $3,000。</p>
+      <p><strong>例题 B（8.4，看报表影响）：</strong>1 月赊销 $10,000（销货成本 $6,000），估计其中 $500 收不回。销售当期做三笔分录：借应收账款 $10,000／贷销售收入 $10,000；借销货成本 $6,000／贷存货 $6,000；借坏账费用 $500／贷坏账准备 $500。利润表当期即体现：收入 10,000 − COGS 6,000 − 坏账费用 500 = 简化净利润 <strong>$3,500</strong>。月底确认某客户 $200 收不回，核销（借坏账准备 $200／贷应收账款 $200）后，资产负债表上的结构变化如下：</p>
+      <table>
+        <thead>
+          <tr><th>资产负债表局部（例题 B）</th><th>计提后、核销前</th><th>核销 $200 后</th><th>变化</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>应收账款（总额）</td><td>$10,000</td><td>$9,800</td><td>−200</td></tr>
+          <tr><td>减：坏账准备（抵减资产）</td><td>($500)</td><td>($300)</td><td>−200</td></tr>
+          <tr><td><strong>应收账款净额 = 净可实现价值（NRV）</strong></td><td><strong>$9,500</strong></td><td><strong>$9,500</strong></td><td><strong>不变</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>表 1 解读：</strong>应收账款 − 坏账准备 = NRV，这是备抵法在资产负债表上的呈现方式。核销让总额与准备同减 $200，NRV 保持 $9,500 不变；利润表同样毫无波澜（净利润仍是 $3,500）。直觉上："损失"在销售当期估计时已经认过，核销只是<strong>确认当初的估计兑现了</strong>。<strong>备抵法的优点</strong>是同时满足 NRV 报告与配比原则，报表更真实；<strong>缺点</strong>是金额全靠估计——估计错了，利润与资产就错了（估计误差留待下期调整消化，见 3.2 节）。</p>
+
+      <h3>2.4 收回已核销的坏账：必须走两步</h3>
+      <p>偶尔，被核销的客户又回来付钱了（常见动机：想恢复交易资格，而公司要求先清旧账）。<span class="term">收回已核销坏账</span><span class="term-en">（Recovering Bad Debt）</span>的标准处理是<strong>两笔分录</strong>：</p>
+      <ol>
+        <li><strong>冲回核销</strong>（假装核销没发生过）：借：应收账款／贷：坏账准备——重建该笔应收，把饼干放回罐子；</li>
+        <li><strong>正常记录收款</strong>：借：现金／贷：应收账款——结清该客户欠款。</li>
+      </ol>
+      <p>有学生会问：第一步借应收、第二步贷应收，能不能合并成一笔"借现金／贷坏账准备"？借贷上平衡，<strong>但实务上不可接受</strong>：它绕过了客户的<span class="term">明细分类账</span><span class="term-en">（Subsidiary Account）</span>，客户的付款历史里不会留下"曾被核销、后来又付了"的痕迹。两步法保留了完整的<span class="term">审计追踪</span><span class="term-en">（Audit Trail）</span>——未来评估是否再给该客户授信时，这段历史至关重要。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、估计坏账的两种方法</h2>
+
+      <h3>3.1 引入：$500、$20,000 这些估计数从哪来？</h3>
+      <p>到目前为止，坏账金额都是题目直接给的。现实中它当然不是拍脑袋：GAAP 与 IFRS 都认可两种估计方法——<span class="term">赊销百分比法</span><span class="term-en">（Percentage of Credit Sales）</span>与<span class="term">应收账款账龄分析法</span><span class="term-en">（Aging of Accounts Receivable）</span>。一个从利润表出发"先定费用"，一个从资产负债表出发"先定准备余额"，思路正好相反。</p>
+
+      <h3>3.2 赊销百分比法（利润表导向）</h3>
+      <p>最简单的方法：<strong>坏账费用 = 赊销净额 × 坏账损失率</strong>，算出多少就计提多少。两个要点：①只用<strong>赊销</strong>（剔除现金销售——现收现付不可能产生坏账）；②<span class="term">坏账损失率</span><span class="term-en">（Bad Debt Loss Rate）</span>来自公司历史数据（实际坏账 ÷ 总赊销额，新公司先用行业估计值、日后逐年修正）。因为它直接挂钩利润表上的"销售"，又称<span class="term">利润表法</span><span class="term-en">（Income Statement Approach）</span>。</p>
+      <p><strong>配套例题（8.6）：</strong>A 公司本期赊销 $250,000（COGS $150,000，干扰信息），估计 1% 的赊销将无法收回；调整前坏账准备已有 $250 <strong>贷方</strong>余额。坏账费用 = $250,000 × 1% = <strong>$2,500</strong>，分录：借坏账费用 $2,500／贷坏账准备 $2,500。<strong>陷阱提示：</strong>那 $250 的既有余额在此法下<strong>完全无关</strong>——利润表法直接定费用，不看罐子里还剩多少饼干；计提后坏账准备余额自然变为 250 + 2,500 = $2,750。</p>
+
+      <h3>3.3 应收账款账龄分析法（资产负债表导向）</h3>
+      <p>更精细、步骤更多但更准确的方法：不盯销售，而是解剖期末<strong>应收账款余额本身</strong>，故又称<span class="term">资产负债表法</span><span class="term-en">（Balance Sheet Approach）</span>。背后的逻辑很朴素：<strong>欠款拖得越久，收不回的概率越大</strong>。四步走：①编制账龄分析表，把所有应收按未付天数分组（0–30 / 31–60 / 61–90 / 90+ 天）；②按历史经验给每组设定坏账损失率（账龄越长、比率越高）；③各组金额 × 比率加总，得到坏账准备的<strong>期末目标余额</strong>；④目标余额 − 调整前已有余额 = 本期应计提的坏账费用（<strong>先定余额、倒挤费用</strong>——这是与利润表法的根本区别）。</p>
+      <p><strong>配套例题（8.7，四步全流程）：</strong>A 公司年末应收账款按账龄分三组：1–30 天 $11,000（损失率 6%）、31–90 天 $4,000（12%）、90 天以上 $2,000（20%）；调整前坏账准备有 $700 贷方余额。</p>
+      <table>
+        <thead>
+          <tr><th>账龄分析表（第 ①②③ 步）</th><th>1–30 天</th><th>31–90 天</th><th>90 天以上</th><th>合计</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>应收账款余额（已知）</td><td>$11,000</td><td>$4,000</td><td>$2,000</td><td>$17,000</td></tr>
+          <tr><td>× 坏账损失率（已知）</td><td>6%</td><td>12%</td><td>20%</td><td>—（比率不可加总）</td></tr>
+          <tr><td><strong>= 预计坏账金额（计算列）</strong></td><td><strong>$660</strong></td><td><strong>$480</strong></td><td><strong>$400</strong></td><td><strong>$1,540</strong></td></tr>
+          <tr><td>第 ④ 步：目标余额 $1,540 − 已有贷余 $700</td><td colspan="3">= 本期应计提坏账费用</td><td><strong>$840</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>表 2 解读：</strong>$17,000 的应收中预计 $1,540 收不回——这是年末坏账准备账户<strong>应该有</strong>的余额，不是费用。调整分录：借坏账费用 $840／贷坏账准备 $840，计提后余额 700 + 840 = $1,540 达标。<strong>特殊情形：</strong>若调整前坏账准备是 $700 <strong>借方</strong>余额（说明此前核销超出了估计、罐子被掏穿了），则要先把 −700 填回 0 再堆到 +1,540，本期费用 = 700 + 1,540 = <strong>$2,240</strong>——之前估计偏乐观的部分，通过更大的当期费用补回来，这正是备抵法"估计误差下期消化"的机制。</p>
+      <div id="fig-methods"></div>
+      <p><strong>图 2 解读：</strong>两种方法的逻辑起点相反。赊销百分比法从利润表出发，一笔乘法直接定出费用，简单快捷，常用于<strong>季度中期报告</strong>；账龄分析法从资产负债表出发，先解剖应收余额定出准备目标、再倒挤费用，更精确，常用于<strong>年度报告</strong>。许多公司两种并用：季报求快用百分比法，年报求准用账龄法。各自的缺点：百分比法完全不校验准备余额是否合理（估计偏差会在罐子里无声累积）；账龄法依赖分组与比率的设定，且步骤多、成本高。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、应收票据：更正式、带息的债权</h2>
+
+      <h3>4.1 什么时候把"欠条"升级成"票据"？</h3>
+      <p><span class="term">应收票据</span><span class="term-en">（Notes Receivable）</span>与应收账款本质相同，都是"别人欠我的钱"，但它是一份<strong>正式的书面法律文件</strong>。公司采用票据通常有三种情形：①<strong>对外放款</strong>——借钱给员工（如新员工入职前的安家预支）或其他企业；②<strong>高风险销售</strong>——对付款能力存疑的客户，宁可要一份签了字、打官司好用的票据；③<strong>应收账款转票据</strong>——客户拖欠账款后协商分期，把非正式的 AR 转成载明"三年内每月还 $100、年息 2%"之类条款的正式票据。与 AR 的三点差别：<strong>签署正式协议</strong>（承认债务而非仅确认收货）、<strong>从第一天起计息</strong>（AR 通常宽限期内无息）、<strong>还款期限严格明确</strong>。</p>
+
+      <h3>4.2 利息计算：P×R×T，小心半年付息与期末计提</h3>
+      <p style="text-align:center;"><strong>利息 = 本金（Principal）× 年利率（Rate）× 时间（Time，以年为单位）</strong></p>
+      <p>两个易错点：①<strong>时间单位必须与年利率匹配</strong>——算 4 个月利息，T = 4/12；半年则 T = 6/12；②票据利息常<strong>每半年（semi-annually）付一次</strong>，而付息日往往与公司年末错位——按权责发生制，年末必须把"已赚取未收到"的利息<span class="term">计提</span><span class="term-en">（Accrue）</span>入账。情况复杂时画一条时间轴，标出出票日、付息日与年末，就不容易错。</p>
+      <div id="fig-timeline"></div>
+      <p><strong>图 3 解读：</strong>配套例题（8.11）——20X1 年 9 月 1 日，A 公司赊销 $35,000 设备，客户签 5 年期票据、年利率 4%，每年 3 月 1 日与 9 月 1 日付息，本金到期一次还清。利息按 $35,000 × 4% ÷ 12 ≈ $116.67/月 匀速累积（图中直线）。第一次付息日是 20X2 年 3 月 1 日（届时收 6 个月利息 $700），但公司年末是 20X1 年 12 月 31 日——中间 4 个月（9–12 月）的利息已经赚取却尚未收到，必须计提：$35,000 × 0.04 × 4/12 = <strong>$466.67</strong>（图中红点）。12 月 31 日调整分录：借应收利息（Interest Receivable）$466.67／贷利息收入（Interest Revenue）$466.67。次年 3 月 1 日收到的 $700 中，$466.67 冲掉应收利息，其余 $233.33 才是 20X2 年的利息收入。</p>
+
+      <h3>4.3 配套例题：应收票据全生命周期分录</h3>
+      <p><strong>例题（8.12）：</strong>20X1 年 7 月 1 日 A 公司出借 $25,000，对方签一年期、年利率 7.5% 的票据。四步分录（数值已复算：半年息 = 25,000 × 7.5% × 6/12 = $937.50；全年息 = $1,875）：</p>
+      <table>
+        <thead>
+          <tr><th>日期</th><th>业务</th><th>借方</th><th>贷方</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>20X1/7/1</td><td>签发票据放款</td><td>应收票据 $25,000</td><td>现金 $25,000</td></tr>
+          <tr><td>20X1/12/31</td><td>年末计提 6 个月利息</td><td>应收利息 $937.50</td><td>利息收入 $937.50</td></tr>
+          <tr><td>20X2/7/1</td><td>收到全年利息 $1,875：一半冲去年的应收利息，一半是今年的收入</td><td>现金 $1,875</td><td>应收利息 $937.50；利息收入 $937.50</td></tr>
+          <tr><td>20X2/7/1</td><td>收回本金</td><td>现金 $25,000</td><td>应收票据 $25,000</td></tr>
+        </tbody>
+      </table>
+      <p><strong>表 3 解读：</strong>注意第 2、3 行的衔接——年末计提的应收利息，在次年收息时先被冲销，差额才确认为当期收入；若客户到期违约拒付，则需把应收票据与应收利息一并转回应收账款（并按备抵法评估坏账），这正是票据与 AR 在账上的接口。<strong>应收票据的优点</strong>是法律约束力强、利息补偿资金占用；<strong>缺点</strong>是正式文件的协商与管理成本高，且计提/收息的跨期切分容易出错。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、比率分析：应收账款周转率与平均收账期</h2>
+      <p>授信把现金困在应收款项里，管理层自然要问：<strong>我们收钱到底有多快？</strong><span class="term">应收账款周转率</span><span class="term-en">（Receivable Turnover）</span>回答这个问题——它衡量一年内公司平均把应收账款完整收回几次：</p>
+      <p style="text-align:center;"><strong>应收账款周转率 = 销售净收入 ÷ 平均应收账款净额</strong>（平均 = (期初 + 期末) ÷ 2）　<strong>平均收账期（Days to Collect）= 365 ÷ 周转率</strong></p>
+      <p><strong>案例（8.13，百思买 Best Buy）：</strong>销售净收入 $428.79 亿，期初应收净额 $10.15 亿、期末 $10.49 亿 → 平均 $10.32 亿；周转率 = 428.79 ÷ 10.32 ≈ <strong>41.55 次/年</strong>；收账期 = 365 ÷ 41.55 ≈ <strong>8.78 天</strong>。奇怪——在百思买买电视不是当场刷卡吗？因为信用卡结算要 2–7 天、且含企业客户赊销，8.78 天仍算合理。<strong>管理含义：</strong>若公司给的账期是 30 天而实际收账期 45 天，红灯亮起——是催收不力还是授信太松？把收账期压回 30 天，等于提前两周拿到现金去再投资。解读时必须与<strong>同行业</strong>比较：制造商与零售商的收款周期天差地别。<strong>优点</strong>是把收款效率压缩成一个可跨公司、跨期比较的数；<strong>缺点</strong>是比率本身不告诉你原因（45 天可能是催收问题，也可能是行业惯例），且用平均余额掩盖了季节波动。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、收尾对比：两种坏账估计方法</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>赊销百分比法（Percentage of Credit Sales）</th><th>账龄分析法（Aging of AR）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>导向与别名</td><td>利润表导向 → 利润表法</td><td>资产负债表导向 → 资产负债表法</td></tr>
+          <tr><td>计算基础</td><td>赊销净额 × 单一坏账损失率</td><td>各账龄组应收余额 × 分档损失率，加总</td></tr>
+          <tr><td>先定什么</td><td><strong>先定坏账费用</strong>（乘出来就是费用）</td><td><strong>先定坏账准备期末目标余额</strong>，再倒挤费用</td></tr>
+          <tr><td>调整前准备余额的角色</td><td>无关（干扰项）</td><td>必须考虑：费用 = 目标余额 − 已有余额（借余则相加）</td></tr>
+          <tr><td>精度</td><td>粗略，偏差不校验、在准备账户中累积</td><td>较精确，每期重新校准 NRV</td></tr>
+          <tr><td>典型适用场景</td><td>季度/月度中期报告（求快）</td><td>年度报告（求准）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（赊销必然产生坏账，如何在客户违约前就如实记账？）→ 简化模型（备抵法：往"饼干罐"计提储备，违约时取罐核销，NRV 不变、费用不重复）→ 推导（利润表法先定费用、资产负债表法先定余额倒挤费用；票据利息 P×R×T 与跨期计提）→ 实际应用（账龄四步法算 $840/$2,240；百思买 41.55 次、8.78 天检验收款效率）→ 局限性（一切始于估计：损失率与账龄比率错了，费用与资产就错了，只能靠下期调整消化；周转率给结果不给原因）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/financial-accounting/08-receivables-bad-debt.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：授信的权衡 —— 收益 vs 三类代价 =====
+    Charts.tree(document.getElementById('fig-credit'), {
+      width: 920,
+      layers: [
+        [{ id: 'root', label: '授信（Extending Credit）：要不要赊销？', width: 340, fill: '#f8fafc' }],
+        [
+          { id: 'pro', label: '收益：为什么必须赊', color: '#0f766e', fill: '#f0fdfa', width: 220 },
+          { id: 'con', label: '代价：赊销的必然成本', color: '#b45309', fill: '#fff7ed', width: 230 },
+        ],
+        [
+          { id: 'p1', label: '收入与利润当期提升', color: '#0f766e', fill: '#f0fdfa', width: 200 },
+          { id: 'p2', label: '不授信就丢掉生意', color: '#0f766e', fill: '#f0fdfa', width: 200 },
+          { id: 'c1', label: '现金流周期拉长', color: '#b45309', fill: '#fff7ed', width: 190 },
+          { id: 'c2', label: '坏账＋评估催收成本', color: '#b45309', fill: '#fff7ed', width: 200 },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 'pro', color: '#0f766e' },
+        { from: 'root', to: 'con', color: '#b45309' },
+        { from: 'pro', to: 'p1', color: '#0f766e' },
+        { from: 'pro', to: 'p2', color: '#0f766e' },
+        { from: 'con', to: 'c1', color: '#b45309' },
+        { from: 'con', to: 'c2', color: '#b45309' },
+      ],
+      caption: '图 1：授信的权衡——坏账不是事故而是赊销的必然成本，问题只在如何计量',
+      legend: [
+        { label: '收益（B2B 中普遍大于代价）', color: '#0f766e', style: 'dot' },
+        { label: '代价（含坏账）', color: '#b45309', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：两种坏账估计方法的逻辑对比 =====
+    Charts.tree(document.getElementById('fig-methods'), {
+      width: 780,
+      layers: [
+        [{ id: 'q', label: '坏账金额怎么估？（GAAP / IFRS 均认可的两种方法）', width: 420, fill: '#f8fafc' }],
+        [
+          { id: 'is', label: '赊销百分比法（利润表法）', color: '#1d4ed8', width: 240 },
+          { id: 'bs', label: '账龄分析法（资产负债表法）', color: '#7c3aed', fill: '#f5f3ff', width: 260 },
+        ],
+        [
+          { id: 'is1', label: '赊销净额 × 损失率 = 坏账费用', color: '#1d4ed8', width: 250 },
+          { id: 'bs1', label: 'Σ(账龄组余额 × 分档损失率)', color: '#7c3aed', fill: '#f5f3ff', width: 250 },
+        ],
+        [
+          { id: 'is2', label: '先定费用，直接计提（不看已有余额）', color: '#1d4ed8', width: 280 },
+          { id: 'bs2', label: '先定准备目标余额 − 已有余额 = 倒挤费用', color: '#7c3aed', fill: '#f5f3ff', width: 300 },
+        ],
+        [
+          { id: 'is3', label: '优点快、缺点粗 → 季度中期报告', color: '#1d4ed8', width: 260 },
+          { id: 'bs3', label: '优点准、缺点繁 → 年度报告', color: '#7c3aed', fill: '#f5f3ff', width: 260 },
+        ],
+      ],
+      edges: [
+        { from: 'q', to: 'is', color: '#1d4ed8' },
+        { from: 'q', to: 'bs', color: '#7c3aed' },
+        { from: 'is', to: 'is1', color: '#1d4ed8' },
+        { from: 'bs', to: 'bs1', color: '#7c3aed' },
+        { from: 'is1', to: 'is2', color: '#1d4ed8' },
+        { from: 'bs1', to: 'bs2', color: '#7c3aed' },
+        { from: 'is2', to: 'is3', color: '#1d4ed8' },
+        { from: 'bs2', to: 'bs3', color: '#7c3aed' },
+      ],
+      caption: '图 2：两种坏账估计方法——利润表法先定费用，资产负债表法先定准备余额再倒挤费用',
+      legend: [
+        { label: '赊销百分比法（利润表导向）', color: '#1d4ed8', style: 'dot' },
+        { label: '账龄分析法（资产负债表导向）', color: '#7c3aed', style: 'dot' },
+      ],
+    });
+
+    // ===== 图3：应收票据利息时间轴（8.11 例题：$35,000, 4%, 半年付息）=====
+    // 每月应计利息 = 35000*0.04/12 = 116.67；年末(第4个月)累计 466.67；次年3/1(第6个月)付 700
+    Charts.xy(document.getElementById('fig-timeline'), {
+      width: 700,
+      height: 400,
+      xLabel: '时间（20X1/9/1 出票 → 20X2/3/1 首次付息）',
+      yLabel: '累计应计利息（$）',
+      xMax: 7, yMax: 800, yStep: 200,
+      xTicks: [
+        { v: 0, label: '9/1 出票' },
+        { v: 4, label: '12/31 年末' },
+        { v: 6, label: '次年 3/1 付息' },
+      ],
+      series: [
+        {
+          points: [[0, 0], [1, 116.67], [2, 233.33], [3, 350], [4, 466.67], [5, 583.33], [6, 700]],
+          type: 'linear', color: '#1d4ed8', label: '利息匀速累积（$116.67/月）',
+        },
+      ],
+      markers: [
+        {
+          x: 4, y: 466.67, color: '#dc2626', guides: true,
+          label: '年末计提 $466.67（4/12 年）', labelDx: -150, labelDy: -14,
+        },
+        {
+          x: 6, y: 700, color: '#0f766e', guides: true,
+          label: '3/1 实收半年息 $700', labelDx: -120, labelDy: -16,
+        },
+      ],
+      caption: '图 3：应收票据利息时间轴——付息日（次年 3/1）晚于年末（12/31），故年末须计提已赚取的 4 个月利息',
+      legendPosition: 'top',
+    });
+  </script>
+</body>
+</html>

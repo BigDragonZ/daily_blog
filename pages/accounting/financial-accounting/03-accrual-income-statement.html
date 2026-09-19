@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 权责发生制与利润表 - 财务会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>03 权责发生制与利润表</h1>
+      <p>本篇覆盖《财务会计》（Financial Accounting）Lesson 3 全部 17 讲（3.1–3.12 理论 + 例题 1–5）。Lesson 1 里我们已经见过四大报表，Lesson 2 学会了借贷记账；本课回答一个更根本的问题：<strong>一笔交易到底该记在哪一期？</strong>答案是<span class="term">权责发生制</span><span class="term-en">（Accrual Basis Accounting）</span>——它由两大原则（收入确认原则、配比原则）支撑，派生出递延与应计四件套，并最终通过收入/费用分录、未调整试算平衡表，一路流向利润表 → 留存收益表 → 资产负债表的完整编制流程。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、两种会计基础：现金收付制 vs 权责发生制</h2>
+
+      <h3>1.1 引入：12 月预收客户全年咨询费——现金到手就算收入吗？</h3>
+      <p><strong>反直觉开场：</strong>12 月 1 日，客户一次性付清 $12,000，购买你未来 12 个月的咨询服务。银行账户实打实多了 $12,000——今年的利润表上该记多少收入？<span class="term">现金收付制</span><span class="term-en">（Cash Basis）</span>说：<strong>$12,000 全算今年的</strong>，因为现金到了。权责发生制说：<strong>今年只算 $1,000</strong>（12 月这一个月的服务），其余 $11,000 是你<strong>欠客户的服务</strong>，属于负债。同一家公司、同一笔现金，两种规则报出的利润相差 12 倍。选错规则，报表就是在讲另一个故事。</p>
+      <p>这个分歧的根源在于利润表的性质：它汇总<strong>一段期间</strong>内的收入与费用（不是某一天），其背后是<span class="term">会计期间假设</span><span class="term-en">（Time Period Assumption）</span>——企业的持续经营可以被人为切分成月、季、年，分期报告成果。切分之后就必须回答"哪笔交易归哪一期"。技术上，<strong>收入</strong>是因向客户提供商品或服务而导致的资产增加或负债减少（股东注资、捐赠不算）；<strong>费用</strong>则是同一过程中资产的减少或负债的增加——两个定义都不提现金。</p>
+
+      <h3>1.2 两种基础的规则与适用者</h3>
+      <p>两种<span class="term">会计基础</span><span class="term-en">（Basis of Accounting）</span>用的是同一堆原始数据，区别只在<strong>确认时点</strong>：</p>
+      <ul>
+        <li><span class="term">现金收付制</span><span class="term-en">（Cash Basis）</span>：跟着现金走——收到现金记收入，付出现金记费用。一张银行对账单就是全部账簿。规则极简，因此<strong>个人理财</strong>和无需对外报告的夫妻小店用它完全够；</li>
+        <li><span class="term">权责发生制</span><span class="term-en">（Accrual Basis）</span>：跟着<strong>交易的实质</strong>走——收入在"挣得"时确认，费用在"发生"时确认，与现金何时收付无关。商业世界充满信用条款（先交货、30 天后付款；先用电、月底出账单），只有权责发生制能把收入与费用配到正确的期间，真实反映经营。<strong>GAAP 要求对外报告必须使用权责发生制，本课程全程使用权责发生制。</strong></li>
+      </ul>
+      <table>
+        <thead>
+          <tr><th>交易情形</th><th>现金收付制：何时确认</th><th>权责发生制：何时确认</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>12 月预收客户 $12,000 全年咨询费，服务明年逐月提供</td><td>12 月全额确认收入 $12,000</td><td>12 月只确认已服务月份（如 $1,000），其余记<strong>递延收入</strong>（负债），逐月转收入</td></tr>
+          <tr><td>12 月交付商品，客户 30 天后付款</td><td>次年 1 月收款时才确认收入</td><td>12 月交付即确认收入，同时记<strong>应收账款</strong></td></tr>
+          <tr><td>12 月预付明年一季度房租</td><td>12 月全额计费用</td><td>12 月记<strong>预付费用</strong>（资产），明年逐月摊销为费用</td></tr>
+          <tr><td>12 月用电，账单次年 1 月才支付</td><td>1 月付款时才计费用</td><td>12 月用电即计费用，同时记<strong>应付账款</strong></td></tr>
+        </tbody>
+      </table>
+      <p>两种基础各有优劣：现金收付制的<strong>优点</strong>是简单、客观、零判断空间；<strong>缺点</strong>是利润可以被"推迟付款、提前收款"随意操纵，且完全无法反映赊销赊购下的真实经营。权责发生制的<strong>优点</strong>是收入费用配比到正确期间，跨期、跨公司可比；<strong>缺点</strong>是规则复杂、需要职业判断，且<strong>利润从此与现金脱钩</strong>——赚没赚钱和有没有钱变成两个问题。权责发生制下"分析者如何用利润表还原现金与利润质量"，参见<a href="../accounting-101/02-income-statement.html">《财务会计基础 · 02 利润表》</a>的分析者视角。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、两大确认原则：收入确认与配比</h2>
+
+      <h3>2.1 收入确认原则：挣得 + 已实现或可实现</h3>
+      <p><strong>引入案例：</strong>6 月 30 日，顾客刷信用卡买走一件商品，银行 7 月 2 日才把款项结算给商店。这笔收入属于 6 月还是 7 月？直觉看现金会说 7 月，但<em>商品的控制权在 6 月 30 日就已经转移</em>——答案是 6 月。<span class="term">收入确认原则</span><span class="term-en">（Revenue Recognition Principle）</span>规定：收入在<strong>挣得（earned）</strong>且<strong>已实现或可实现（realized or realizable）</strong>时确认，与现金收付时点无关。挣得 = 已实质完成<span class="term">履约义务</span><span class="term-en">（Performance Obligation，货物已交付或服务已提供）</span>；已实现/可实现 = 已收到现金，或取得了可转换为已知金额现金的权利（如应收账款）。</p>
+      <p>IFRS 15 与 ASC 606 把这个原则操作化为<strong>五步法</strong>：①识别与客户的合同 → ②识别合同中的履约义务 → ③确定交易价格 → ④将交易价格分摊至各履约义务 → ⑤履行履约义务时确认收入（时点确认或时段确认）。本课程只需建立"履约完成即确认"的直觉。</p>
+      <p>把现金时点与交易时点放在一起比较，只有三种位置关系，<strong>收入的确认点永远钉在交易发生时</strong>：</p>
+      <ul>
+        <li><strong>现金先于交易</strong>（先收款后服务）→ 记<span class="term">递延收入</span><span class="term-en">（Deferred Revenue）</span>，见第四节；</li>
+        <li><strong>现金与交易同时</strong>（快餐店、杂货店）→ 当场确认收入，最简单；</li>
+        <li><strong>现金后于交易</strong>（先服务后收款）→ 记<span class="term">应计收入</span><span class="term-en">（Accrued Revenue）</span>与应收账款，见第五节。</li>
+      </ul>
+
+      <h3>2.2 配比原则：费用跟着收入走</h3>
+      <p><strong>引入案例：</strong>你从 Sam's Club 以 $1 批发价买入一件商品摆上货架，今天现金付了 $1。这 $1 是今天的费用吗？<strong>不是</strong>——它还以"存货"的形态躺在货架上，是一项资产。只有当顾客以 $2 买走它的那一刻，你才同时确认 $2 收入和 $1 费用，利润 $1。若永远卖不掉，理论上还能退货拿回 $1，费用根本不发生。这就是<span class="term">配比原则</span><span class="term-en">（Matching Principle）</span>，又称<span class="term">费用确认原则</span><span class="term-en">（Expense Recognition Principle）</span>：<strong>费用在帮助产生收入的同一期间确认</strong>，而不是在付现金时确认。</p>
+      <p>应用时分两类费用：①<strong>与创收直接相关</strong>的费用（如存货成本）——延迟到相关收入确认时配比入账（卖货时：借记<span class="term">销售成本</span><span class="term-en">（Cost of Goods Sold, COGS）</span>、贷记存货）；②<strong>与创收无直接关系</strong>的期间费用（水电、广告、管理人员薪水）——无法挂在某一笔收入上，就在<strong>发生的当期</strong>费用化。Gatorade 的品牌广告可能十年后才促成购买，没法匹配，只能当期入账。费用侧的现金时点同样有三种位置：先付现金（<span class="term">预付费用</span><span class="term-en">（Prepaid Expenses）</span>，如礼品卡、预付保险）、同时（当场结账）、后付现金（<span class="term">应计费用</span><span class="term-en">（Accrued Expenses）</span>，如水电先用后付）。</p>
+      <div class="callout">
+        <strong>两个判断问题（考试与实务的第一步）：</strong>面对任何一笔开支，先问"它与某笔收入直接相关吗？"——是，则挂为资产、等收入出现时配比；否，则在发生当期费用化。面对任何一笔收款，先问"履约义务完成了吗？"——否，则是负债不是收入。
+      </div>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、收入与费用的分录规则</h2>
+
+      <h3>3.1 记忆锚点：收入贷增、费用借增，最终都汇入留存收益</h3>
+      <p>Lesson 2 的扩展会计等式给出借贷方向的机械规则：等式左侧（资产、费用、股利）<strong>借增贷减</strong>，右侧（负债、权益、收入）<strong>贷增借减</strong>。落在利润表上就两个锚点：<strong>收入增加记贷方，费用增加记借方</strong>。注意方向感的陷阱——费用明明"减少"利润，为什么账户却是借增？把收入和费用账户想成<strong>记分牌</strong>：每做成一笔销售，收入记分牌就加分（贷记）；每发生一笔开支，费用记分牌也加分（借记）。它们只增不减地累计发生额，年末清零、净额结转入<span class="term">留存收益</span><span class="term-en">（Retained Earnings）</span>——所以收入和费用本质上是留存收益的<strong>年度流量明细</strong>（Lesson 4 结账详述）。记分牌的读法是"累计发生额"，不是"对利润的贡献方向"。</p>
+
+      <h3>3.2 配套例题：Walnut Creek 的 8 笔收入费用分录</h3>
+      <p>Walnut Creek 公司（经营活动场地租赁 + 橘子园）4 月发生以下交易。每笔分录严格遵守"有借必有贷、借贷必相等"，且借方顶格、贷方缩进。这 8 笔恰好覆盖收入费用的全部四种现金位置关系：</p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>交易</th><th>借方（Debit）</th><th>贷方（Credit）</th><th>金额</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>提供租赁服务并当场收现（钱货两清）</td><td>现金（资产↑）</td><td>服务收入（收入↑）</td><td>$7,500</td></tr>
+          <tr><td>2</td><td>预收 5 月婚礼场地定金（现金先于确认）</td><td>现金（资产↑）</td><td>递延收入（<strong>负债</strong>↑）</td><td>$1,000</td></tr>
+          <tr><td>3</td><td>赊销 5,000 磅橘子给 Baldwin 超市，30 天账期（确认先于现金）</td><td>应收账款（资产↑）</td><td>销售收入（收入↑）</td><td>$2,500</td></tr>
+          <tr><td>4</td><td>收到 Baldwin 部分还款支票（<strong>不再记收入</strong>，只是资产形态转换）</td><td>现金（资产↑）</td><td>应收账款（资产↓）</td><td>$2,000</td></tr>
+          <tr><td>5</td><td>支付采摘工人工资（费用与现金同步）</td><td>工资费用（费用↑）</td><td>现金（资产↓）</td><td>$1,600</td></tr>
+          <tr><td>6</td><td>预付 4–6 月三个月保险费（现金先于确认）</td><td>预付保险（资产↑）</td><td>现金（资产↓）</td><td>$1,500</td></tr>
+          <tr><td>7</td><td>4 月投放 Facebook 广告，账单 5 月才付（确认先于现金）</td><td>广告费用（费用↑）</td><td>应付账款（负债↑）</td><td>$500</td></tr>
+          <tr><td>8</td><td>银行自动扣款付当月网费（费用与现金同步）</td><td>网络服务费（费用↑）</td><td>现金（资产↓）</td><td>$125</td></tr>
+        </tbody>
+      </table>
+      <p>三个易错点：①第 2 笔的"递延收入"名字带"收入"，实为<strong>负债</strong>（收了钱欠着服务）——同理"应计费用"名字带"费用"，实为负债；②第 4 笔收款时若再贷记收入，同一笔销售就被记了两次；③第 6 笔预付保险在 4 月底还要把已耗用的 $500（1,500÷3）从资产转为保险费用，属于 Lesson 4 的调整分录。同一套方法在 Polar Pop 例题 2 中再走一遍：发行股票收现 $15,000（借现金/贷普通股，与收入费用无关）、收到垃圾处理账单 $118 下月付（借水电费/贷应付账款）、赊销服务 $8,000、付工资 $3,500、付交通费 $450——账户类别判断对了，借贷方向就是机械的。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、未调整试算平衡表：六类账户的总盘点</h2>
+      <p>日记账分录过账到各 T 型账户、算出期末余额后，下一步是把<strong>全部</strong>账户余额抄进一张清单——<span class="term">未调整试算平衡表</span><span class="term-en">（Unadjusted Trial Balance）</span>。"未调整"是因为还没做<span class="term">调整分录</span><span class="term-en">（Adjusting Entries）</span>（Lesson 4 的内容）。它按 资产 → 负债 → 股东权益 → 股利 → 收入 → 费用 的顺序排列，借方合计必须等于贷方合计——不等就说明前面某笔分录借贷不平。把上面 8 笔交易过账后，Walnut Creek 的试算平衡表如下（Lesson 2 期初余额已含在内）：</p>
+      <table>
+        <thead>
+          <tr><th>类别</th><th>账户</th><th>借方（Debit）</th><th>贷方（Credit）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td rowspan="7">资产</td><td>现金（Cash）</td><td>47,700</td><td></td></tr>
+          <tr><td>应收账款（Accounts Receivable）</td><td>500</td><td></td></tr>
+          <tr><td>预付保险（Prepaid Insurance）</td><td>1,500</td><td></td></tr>
+          <tr><td>物料（Supplies）</td><td>825</td><td></td></tr>
+          <tr><td>设备（Equipment）</td><td>11,850</td><td></td></tr>
+          <tr><td>招牌（Sign）</td><td>6,540</td><td></td></tr>
+          <tr><td>商标（Logo）</td><td>650</td><td></td></tr>
+          <tr><td rowspan="3">负债</td><td>应付账款（Accounts Payable）</td><td></td><td>10,790</td></tr>
+          <tr><td>递延收入（Deferred Revenue）</td><td></td><td>1,000</td></tr>
+          <tr><td>应付票据（Notes Payable）</td><td></td><td>10,000</td></tr>
+          <tr><td>股东权益</td><td>普通股（Common Stock）</td><td></td><td>40,000</td></tr>
+          <tr><td rowspan="2">收入</td><td>服务收入（Service Revenue）</td><td></td><td>7,500</td></tr>
+          <tr><td>销售收入（Sales Revenue）</td><td></td><td>2,500</td></tr>
+          <tr><td rowspan="3">费用</td><td>工资费用（Wages Expense）</td><td>1,600</td><td></td></tr>
+          <tr><td>广告费用（Advertising Expense）</td><td>500</td><td></td></tr>
+          <tr><td>网络服务费（Internet Service Expense）</td><td>125</td><td></td></tr>
+          <tr><td colspan="2"><strong>合计</strong></td><td><strong>71,790</strong></td><td><strong>71,790 ✓ 平衡</strong></td></tr>
+        </tbody>
+      </table>
+      <p>校验：借方 47,700+500+1,500+825+11,850+6,540+650+1,600+500+125 = 71,790；贷方 10,790+1,000+10,000+40,000+7,500+2,500 = 71,790。这张表是编报表的<strong>原料仓</strong>——例题 3–5 将从这里取材。它的<strong>优点</strong>是一张表汇总所有账户、自动检查借贷平衡；<strong>缺点</strong>是平衡只证明"借贷相等"，查不出"借贷记反""科目用错""整笔漏记"这类错误。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、递延与应计：现金与确认的错位</h2>
+
+      <h3>5.1 递延：现金先于确认</h3>
+      <p><span class="term">递延</span><span class="term-en">（Deferral）</span>的共同结构是<strong>先动现金、后确认</strong>，两步走。①<strong>递延收入</strong>（站在收款方）：客户 4 月 15 日预付 $3,000 拍摄费、5 月 12 日才拍摄。收款时——借：现金 $3,000，贷：递延收入 $3,000（负债，也叫<span class="term">未赚取收入</span><span class="term-en">（Unearned Revenue）</span>）；履约时——借：递延收入 $3,000，贷：服务收入 $3,000。②<strong>预付费用</strong>（站在付款方）：4 月 1 日付 $1,500 买三个月保险。付款时——借：预付保险 $1,500，贷：现金 $1,500（资产，像充值进星巴克 App 的礼品卡余额）；每个月末——借：保险费用 $500，贷：预付保险 $500，逐月摊完为止。</p>
+
+      <h3>5.2 应计：确认先于现金</h3>
+      <p><span class="term">应计</span><span class="term-en">（Accrual，狭义）</span>正好相反：<strong>先确认、后动现金</strong>。①<strong>应计收入</strong>：4 月 1 日赊销橘子 $2,500 并开票——借：应收账款（A/R）$2,500，贷：销售收入 $2,500；4 月 25 日收到 $2,000 支票——借：现金 $2,000，贷：应收账款 $2,000，应收账款余额剩 $500 表示客户还欠着。B2B 生意大多如此：百事给沃尔玛送货、月底才开总账单。②<strong>应计费用</strong>：本月用了 $1,200 水电、账单 30 天后付。确认时——借：水电费 $1,200，贷：应付账款（A/P）$1,200；付款时——借：应付账款 $1,200，贷：现金 $1,200。</p>
+      <p>四件套汇总成一张 2×2 矩阵——行是现金与确认的先后，列是收入侧还是费用侧：</p>
+      <table>
+        <thead>
+          <tr><th></th><th>收入侧</th><th>费用侧</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>递延（Deferral）<br>现金先、确认后</strong></td>
+            <td><span class="term">递延收入</span><span class="term-en">（Deferred Revenue）</span>＝<strong>负债</strong>。收了钱还没履约：预收咨询费、健身房年费、礼品卡储值。两步：收款时贷记负债 → 履约时转入收入</td>
+            <td><span class="term">预付费用</span><span class="term-en">（Prepaid Expenses）</span>＝<strong>资产</strong>。付了钱还没消耗：预付保险、预付租金、物料。两步：付款时借记资产 → 耗用时摊入费用</td>
+          </tr>
+          <tr>
+            <td><strong>应计（Accrual）<br>确认先、现金后</strong></td>
+            <td><span class="term">应计收入</span><span class="term-en">（Accrued Revenue）</span>＝<strong>应收账款（资产）</strong>。已履约没收钱：赊销、月底集中开票。两步：履约时借记应收、贷记收入 → 收款时应收转现金</td>
+            <td><span class="term">应计费用</span><span class="term-en">（Accrued Expenses）</span>＝<strong>应付账款（负债）</strong>。已消耗没付钱：水电先用后付、赊购广告。两步：发生时借记费用、贷记应付 → 付款时应付转现金</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>记忆钩子：<strong>递延是"钱先动"，应计是"事先认"</strong>；预收对你是负债（欠服务），预付对你是资产（存着的服务）。这套两步机制的<strong>优点</strong>是让每一期利润表只装属于该期的业绩；<strong>缺点</strong>是期末必须做调整分录把资产/负债与收入/费用之间的结转补齐——漏调就会同时错报两期，这正是 Lesson 4 的主题。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、比率分析：净利润率</h2>
+      <p><strong>引入问题：</strong>Facebook 年收入 558 亿美元，你家楼下餐厅年收入 50 万美元——哪家"更会赚钱"？绝对数字没法比，规模差了十万倍。<span class="term">比率分析</span><span class="term-en">（Ratio Analysis）</span>把大数字除成无量纲的比例，让不同规模的公司站在同一起跑线上比较。利润表上最重要的比率是<span class="term">净利润率</span><span class="term-en">（Net Profit Margin）</span>：</p>
+      <p style="text-align:center;"><strong>净利润率 = 净利润 ÷ 总收入</strong>（每一美元收入中最终留下多少利润）</p>
+      <p>代入 Facebook 2018：$22,112 ÷ $55,838 = <strong>39.6%</strong>——每收入 $1，付完所有费用（工资、服务器、办公室……约 61 美分）后净剩 39.6 美分。这个水平的解读必须有<strong>行业背景</strong>：杂货店净利润率通常只有 3–5%，若哪家突然报出 50%，反而要起疑；Facebook 卖的是广告位这种<span class="term">无形商品</span><span class="term-en">（Intangible Good）</span>，没有实体库存成本，40% 才合理。比率的另外两个用法：与<strong>同行群体</strong><span class="term-en">（Peer Group）</span>横比（LinkedIn、Snapchat、Google），与<strong>自身历史</strong>纵比（去年 45% 今年 39.6%，下降的原因是什么——涨薪？欧盟罚款？）。比率分析的<strong>优点</strong>是抹平规模、快速定位异常；<strong>缺点</strong>是比率本身不解释原因，且分子分母都可被会计政策选择影响。</p>
+
+      <!-- ==================== 七 ==================== -->
+      <h2>七、配套例题：从两种基础到三张报表</h2>
+
+      <h3>7.1 例题 1（Polar Pop）：现金制 vs 应计制利润表对照</h3>
+      <p>Polar Pop 公司 1 月发生四笔交易：①售出 $22,000 音乐活动门票（活动月底才举行），已收现 $9,000、其余赊账；②收到 $800 广告费账单，2 月支付；③支付本月咨询费 $450；④销售 T 恤收现 $12,000，货已当场交付。逐笔判断：</p>
+      <ul>
+        <li><strong>门票</strong>：现金制认 $9,000（只看收现）；应计制认 <strong>$0</strong>——活动还没办，履约义务未完成，$22,000 全额都是递延收入（包括已收的 $9,000！）；</li>
+        <li><strong>广告费</strong>：现金制认 $0（未付现）；应计制认 $800（服务 1 月已发生）；</li>
+        <li><strong>咨询费</strong>：发生与支付同月，两法都认 $450；</li>
+        <li><strong>T 恤</strong>：货银两讫，两法都认 $12,000。</li>
+      </ul>
+      <div id="fig-polarpop"></div>
+      <p><strong>图 1 解读：</strong>同一堆交易，现金收付制报出净利润 <strong>$20,550</strong>（收入 21,000 − 费用 450），权责发生制只有 <strong>$10,750</strong>（收入 12,000 − 费用 1,250）——相差近一倍。差别全部来自"时点错位"的两笔：门票的 $9,000 预收（现金制提前认收入）与广告的 $800 账单（现金制推迟认费用）。等月底活动举行，应计制将一次性确认 $22,000 门票收入，两期合并看两法利润总额相同——<strong>权责发生制不改变一辈子赚多少，只改变每一期认多少</strong>。若投资者只看现金制的 1 月报表，会把一个"预售火热但服务未交付"的月份误读成暴利月份。</p>
+
+      <h3>7.2 例题 3–5（Walnut Creek）：利润表 → 留存收益表 → 资产负债表全流程</h3>
+      <p>从第四节的试算平衡表取材，<strong>先筛选</strong>：利润表只收收入、费用两桶（现金、应收、预付、物料、设备、招牌、商标是资产，应付、递延收入、应付票据是负债，普通股是权益，统统不进）。表头三要素 Who/What/When 不可少：</p>
+      <table>
+        <thead>
+          <tr><th>Walnut Creek 公司 利润表（截至 20X1 年 4 月 30 日的月份）</th><th>明细</th><th>合计</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>收入：服务收入 / 销售收入</td><td>$7,500 / $2,500</td><td>$10,000</td></tr>
+          <tr><td>费用：工资费用 / 广告费用 / 网络服务费</td><td>$1,600 / $500 / $125</td><td>$2,225</td></tr>
+          <tr><td><strong>净利润（Net Income）</strong></td><td></td><td><strong>$7,775</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>不可跳过的中间步</strong>：留存收益表——试算平衡表里没有留存收益账户，期初视为 $0；本期未派股利。期末留存收益 = $0 + $7,775 − $0 = <strong>$7,775</strong>（全额留存再投资，对初创公司是健康信号；柯达固守胶片不愿投资数码的反面教材说明：留存的利润要投向创新才有意义）。然后编资产负债表，<strong>权益端必须用留存收益表算出的期末余额</strong>，不能抄试算平衡表（那里只有期初值或未更新值）：</p>
+      <table>
+        <thead>
+          <tr><th colspan="2">Walnut Creek 公司 资产负债表（20X1 年 4 月 30 日）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>流动资产：现金 / 应收账款 / 预付保险 / 物料</td><td>47,700 + 500 + 1,500 + 825 = $50,525</td></tr>
+          <tr><td>非流动资产：设备 / 招牌 / 商标</td><td>$11,850 / $6,540 / $650</td></tr>
+          <tr><td><strong>总资产</strong></td><td><strong>$69,565</strong></td></tr>
+          <tr><td>负债：应付账款 + 递延收入（流动）＋应付票据（长期）</td><td>11,790 + 10,000 = $21,790</td></tr>
+          <tr><td>股东权益：普通股 + 留存收益（期末）</td><td>40,000 + 7,775 = $47,775</td></tr>
+          <tr><td><strong>负债与股东权益总计</strong></td><td><strong>$69,565 ✓ 平衡</strong></td></tr>
+        </tbody>
+      </table>
+      <p>顺序锁死的原因：试算平衡表里混着收入费用这些<strong>临时账户</strong>，不先把它们轧成净利润、再滚入期末留存收益，直接取资产负债权益编表必然不平衡。顺手算个比率：净利润率 = 7,775 ÷ 10,000 = <strong>77.8%</strong>——别忘了第 6 笔预付保险还有 $500 未摊销，调整分录（Lesson 4）之后这个数字才会是最终版。</p>
+
+      <!-- ==================== 八 ==================== -->
+      <h2>八、收尾对比：现金收付制 vs 权责发生制</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>现金收付制（Cash Basis）</th><th>权责发生制（Accrual Basis）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>确认时点</td><td>现金收付的那一刻</td><td>交易发生的那一刻（收入挣得、费用发生）</td></tr>
+          <tr><td>规则复杂度</td><td>极简，一张银行对账单搞定</td><td>规则多：两大原则 + 递延/应计四件套 + 期末调整</td></tr>
+          <tr><td>GAAP 是否允许对外报告</td><td><strong>不允许</strong>（上市公司禁用）</td><td><strong>必须</strong>（本课程全程采用）</td></tr>
+          <tr><td>典型使用者</td><td>个人理财、无外部报告义务的夫妻小店</td><td>一切需要对外报告或经审计的企业</td></tr>
+          <tr><td>利润与现金的关系</td><td>利润 ≡ 现金净变动</td><td>利润 ≠ 现金（应收账款、递延收入等科目吸收差异）</td></tr>
+          <tr><td>最大软肋</td><td>可被收款/付款节奏随意操纵，扭曲各期业绩</td><td>需要职业判断；利润与现金脱钩，需现金流量表补足</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（一笔交易记在哪一期？）→ 简化模型（权责发生制：确认时点钉在交易发生，两大原则分别管收入与费用）→ 推导（现金与确认的错位只有三种位置，派生出递延收入/预付费用/应计收入/应计费用四件套与两步分录；收入贷增、费用借增的记分牌汇入试算平衡表）→ 实际应用（Polar Pop 两法利润相差近一倍；Walnut Creek 从 8 笔分录走到三张报表平衡于 $69,565；Facebook 净利润率 39.6%）→ 局限性（权责发生制让利润与现金脱钩——利润是意见、现金是事实，这条裂缝最终要靠 Lesson 12 的现金流量表闭合；四件套依赖期末调整分录，是 Lesson 4 的战场）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/financial-accounting/03-accrual-income-statement.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：Polar Pop 同一堆交易在两种会计基础下的利润表结果对比 =====
+    Charts.bar(document.getElementById('fig-polarpop'), {
+      categories: ['总收入', '总费用', '净利润'],
+      series: [
+        { label: '现金收付制（跟现金走）', color: '#b45309', values: [21000, 450, 20550] },
+        { label: '权责发生制（跟交易实质走）', color: '#0f766e', values: [12000, 1250, 10750] },
+      ],
+      yMax: 22500,
+      yStep: 4500,
+      yLabel: '金额（美元）',
+      caption: '图 1：Polar Pop 1 月四笔交易在两种会计基础下的利润表——净利润 $20,550 vs $10,750，差异全部来自门票预收款与广告账单的确认时点',
+      legendPosition: 'top',
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 会计等式与借贷记账 - 财务会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>02 会计等式与借贷记账</h1>
+      <p>本篇覆盖《财务会计》（Financial Accounting）Lesson 2 全部 16 讲（2.1–2.8、2.10–2.17 共 13 讲理论 + 2.15–2.17 三个配套例题；<strong>2.9 在原课程中缺号</strong>，缺口内容本篇以提示框补齐）。Lesson 1 我们学会了<strong>读</strong>四大报表，但报表不是天上掉下来的——企业每天发生的交易，必须先被"翻译"成会计语言记入账簿，期末才能汇总成报表。本篇就学这套翻译机制：<span class="term">扩展会计等式</span><span class="term-en">（Expanded Accounting Equation）</span>是密钥，<span class="term">借</span><span class="term-en">（Debit, Dr）</span>与<span class="term">贷</span><span class="term-en">（Credit, Cr）</span>是语言，<span class="term">日记账分录</span><span class="term-en">（Journal Entry）</span>是句子，最后经<span class="term">过账</span><span class="term-en">（Posting）</span>、<span class="term">试算平衡表</span><span class="term-en">（Trial Balance）</span>一路走到<span class="term">分类资产负债表</span><span class="term-en">（Classified Balance Sheet）</span>。讲师的类比：你知道 2+2，也知道 2×2，但要算 2+2×2，就必须先懂运算规则——本篇就是会计的"运算规则"。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入：借记卡上的"借"，和会计毫无关系</h2>
+      <p><strong>反直觉开场：</strong>你钱包里的借记卡（Debit Card），刷卡等于从账户扣钱——"借"听起来就是<strong>减少</strong>；银行发短信说"您的账户已贷记（credit）5,000 元"——"贷"听起来就是<strong>增加</strong>。请把这两个预设<strong>彻底清空</strong>，它是初学者做分录全错的第一根因：在会计里，借现金是<strong>增加</strong>，借应付账款却是<strong>减少</strong>——"借"与增减没有固定关系。</p>
+      <p>会计中的定义朴素到像个笑话：<strong>借（Debit）仅仅意味着"左"，贷（Credit）仅仅意味着"右"</strong>。理论上你甚至可以用它们指路："在下一个红绿灯向'借'转，过三个路口再向'贷'转，快餐店就在你的'贷'边。"左右之分源自后文要讲的 T 型账户——每个账户画一个"T"，左边记借、右边记贷。至于银行对账单为什么和你账簿的方向相反，第五节揭晓（你的存款是<strong>银行</strong>的负债，银行说的"贷"是它自己的贷）。先记住一句话：<strong>本篇学习的不是"借贷是什么意思"，而是"借贷这套方向语言如何运转"</strong>。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、扩展会计等式：处理每笔交易的"密钥"</h2>
+
+      <h3>2.1 回顾：基本等式与"记分牌清零"</h3>
+      <p><span class="term">基本会计等式</span><span class="term-en">（Basic Accounting Equation）</span>——<strong>资产 = 负债 + 股东权益</strong>——是 Lesson 1 的地基：左端回答"公司拥有或控制什么"，右端回答"这些资产的钱是谁出的"（债权人的要求权 = 负债，所有者的要求权 = 股东权益）。资产负债表就建在这条等式上，因此<strong>必须永远平衡</strong>：Facebook 合并资产负债表上，总资产 97,334 百万美元 = 负债与股东权益合计 97,334 百万美元，分毫不差。报表项目按<span class="term">流动性</span><span class="term-en">（Liquidity，变现速度）</span>从高到低排列，现金永远排第一，其后是有价证券这类"先卖掉才能变钱"的资产。</p>
+      <p>Lesson 1 还埋过一个伏笔：年末要把收入、费用、股利三个"流量"账户清零，净额结转入<span class="term">留存收益</span><span class="term-en">（Retained Earnings）</span>。为什么要清零？和棒球赛记分牌归零是同一个道理——上一场 6:2 的比分若直接带进下一场，对新上场的队伍太不公平。每年从干净的记分牌重新计分，各年经营成果才可比（结账机制在 Lesson 4 展开）。资产、负债、股东权益账户则<strong>不清零</strong>，余额跨年结转。</p>
+
+      <h3>2.2 推导：两个等式合并成一个</h3>
+      <p>Lesson 1 其实学过两条等式。其一，基本等式：<strong>资产 = 负债 + 股东权益</strong>。其二，权益等式：<strong>股东权益 = 所有者资本 − 股利 + 收入 − 费用</strong>（所有者资本是股东的真金白银投入；股利是股东取走的，故减；收入减费用即净利润）。两条等式有共同变量"股东权益"，按代数规则把权益等式右侧整体代入基本等式，得到<span class="term">扩展会计等式</span><span class="term-en">（Expanded Accounting Equation）</span>：</p>
+      <p style="text-align:center;"><strong>资产 = 负债 + 所有者资本 − 股利 + 收入 − 费用</strong></p>
+      <p>这个形式完整但带着减号，记和用都不顺手。再做一步移项——把"− 股利""− 费用"从右边移到左边、减号变加号——得到<strong>全正形式</strong>，取六项英文首字母即助记词 <strong>DEALOR</strong>：</p>
+      <p style="text-align:center;"><strong><span style="color:#1d4ed8;">股利（D）+ 费用（E）+ 资产（A）</span> = <span style="color:#b45309;">负债（L）+ 所有者资本（O）+ 收入（R）</span></strong></p>
+      <div id="fig-dealor"></div>
+      <p><strong>图 1 解读：</strong>三步推导——①权益等式整体代入基本等式中的"股东权益"；②两个减项移到等号左边（移项变号），六项全部变正；③取首字母得到 DEALOR。请注意最终格局：<strong>股利、费用、资产站左边，负债、所有者资本、收入站右边</strong>——这不是任意排列，第五节将看到，等式左侧正是"借方记增加"的三类，右侧正是"贷方记增加"的三类。讲师把 DEALOR 称为处理每笔交易的"<strong>密钥</strong>"：任何交易的分析，最终都落在"等式哪一侧、哪个类别、增还是减"这三个问题上；掌握它，日记账分录就成功了一半，而本课程后续大部分内容都建立在"会为交易做分录"之上。</p>
+      <p><strong>这套模型的优点</strong>是即插即用：六个类别、一条等式，任何交易都能套进同一个分析框架；<strong>缺点</strong>是形式不直觉——股利、费用明明"消耗"权益，却和资产站在同一边，只能靠 DEALOR 硬记，且它只负责"怎么记"，不负责告诉你某笔业务该不该记、记多少（那是第三、四节的问题）。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、入账的前提：证据、交换与成本</h2>
+
+      <h3>3.1 文档记录：任何继任会计都能复现账簿</h3>
+      <p>会计工作部分建立在<span class="term">证据</span><span class="term-en">（Evidence）</span>之上：把任何信息录入会计系统之前，必须先有支持它的文档，这个要求叫<span class="term">文档记录</span><span class="term-en">（Documentation）</span>。目的很务实——<strong>换任何一位会计接手，都能凭留存的文档复现前人的全部工作</strong>。常见证据形式：<span class="term">收据</span><span class="term-en">（Receipts）</span>、<span class="term">发票</span><span class="term-en">（Invoices）</span>、<span class="term">已兑付支票</span><span class="term-en">（Canceled Checks）</span>、股票证书、<span class="term">贷款本票</span><span class="term-en">（Promissory Note）</span>等。取舍偏好：<strong>第三方证据优先于内部自制证据</strong>——供应商开的收据可以找供应商核实，而"原始收据丢了、自己补做一份"则无从核实。但内部证据并非不可用：<span class="term">折旧</span><span class="term-en">（Depreciation）</span>的计算只能由公司会计内部完成，无法从外部取得，此时内部文档完全可以接受。</p>
+
+      <h3>3.2 交易的本质："付出与收获"的交换</h3>
+      <p>会计用<span class="term">交易</span><span class="term-en">（Transaction）</span>概括企业的商业活动，每一笔入账的交易都存在"<strong>付出与收获</strong>（give and take）"的关系：顾客用现金买走一部手机，公司付出<span class="term">存货</span><span class="term-en">（Inventory）</span>、得到现金。只有付出没有收获（或反之）不成立，<strong>仅仅是承诺更不成立</strong>。交易分两类：<span class="term">外部交易</span><span class="term-en">（External Transactions）</span>——与外部独立方的交换，如可口可乐送货给塔吉特；<span class="term">内部交易</span><span class="term-en">（Internal Transactions）</span>——公司内部的价值转移，如塔可钟门店之间调拨玉米饼壳。</p>
+      <div class="callout warn">
+        <strong>交易陷阱（Transaction Trap）：承诺不是交易。</strong>有人承诺给你 40,000 美元、你承诺购买 5,000 美元商品、双方签了一份一年的供货合同——只要没有实际的交换发生，就不做任何分录。注意一个易混点：签合同不入账，但"签了票据、拿到现金"<strong>是</strong>交易——现金已实际易手，还款承诺（应付票据）只是交换来的对价之一。合同本身要留档备查，等标的实际交付时才入账。
+      </div>
+      <p>交换的双面性直接催生了<span class="term">复式记账系统</span><span class="term-en">（Double-Entry Accounting System）</span>：有付出必有收获，每笔交易至少记两行。会计绝不会用祖辈支票簿那种只记一边的<span class="term">单式记账</span><span class="term-en">（Single-Entry Accounting）</span>。账户的口径靠<span class="term">会计科目表</span><span class="term-en">（Chart of Accounts）</span>统一：公司全部账户及其编号（如 100 代表现金）列成一张表，输入编号自动带出账户，既快又保证全公司记账口径一致。</p>
+
+      <h3>3.3 成本原则：入账金额按成交价，不按市价</h3>
+      <p>入账时填什么数字？<span class="term">成本原则</span><span class="term-en">（Cost Principle）</span>规定：资产负债表项目按<strong>成本</strong>（实际支付的价格）记录，不按<span class="term">公允价值</span><span class="term-en">（Fair Value，市场售价）</span>。你砍价后花 1.5 万美元买下一辆市价 2 万美元的新车，哪怕第二天就能 2 万转手，账上也只记 1.5 万。真实案例：麦当劳几十年前在纽约市中心等黄金地段以极低价格（如 1.5 万美元）购入的土地，如今市值翻了数倍，账簿上仍按原始成本列示。资产、负债、权益乃至收入、费用、股利，都按成本口径入账。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、交易分析四步骤：从商业语言到会计语言</h2>
+      <p>交易分析（Transaction Analysis）是会计工作的核心，固定四步：<strong>①发生了什么</strong>（用大白话描述）→ <strong>②影响了哪些账户</strong> → <strong>③账户属于哪个类别</strong>（归入 DEALOR 六类之一）→ <strong>④各类别如何变动</strong>（增还是减、多少金额）。还有一个隐性的第五步：<strong>验证会计等式仍然平衡</strong>。</p>
+      <div id="fig-steps"></div>
+      <p><strong>图 2 解读：</strong>四步是把一句商业描述（"公司借钱买了台设备"）翻译成会计语言的标准流水线。两个实用技巧：①<strong>从现金入手</strong>——涉及现金的交易先判断现金（收 = 增、付 = 减），这是最容易的一端，再据此反推另一端；②<strong>用等式反推</strong>——不确定某账户增减时，先把确定的部分填进等式，平衡关系会逼出另一边的方向。下面用 Walnut Creek 公司（德州圣安东尼奥的活动场地公司，4 月 1 日注册成立）的八笔系列交易完整走一遍：</p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>交易内容</th><th>受影响账户</th><th>类别归属</th><th>类别变动</th><th>等式验证</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>向 Karen 与 Robin 发行普通股，收现金 40,000</td><td>现金 / 普通股</td><td>资产 / 所有者资本</td><td>资产 +40,000；股本 +40,000</td><td>+40,000 = +40,000 ✓</td></tr>
+          <tr><td>2</td><td>付现 650 请艺术家设计品牌徽标</td><td>现金 / 商标徽标</td><td>资产 / 资产</td><td>现金 −650；徽标 +650</td><td>0 = 0 ✓（资产内部一增一减）</td></tr>
+          <tr><td>3</td><td>签正式票据向银行借款 10,000</td><td>现金 / 应付票据</td><td>资产 / 负债</td><td>资产 +10,000；负债 +10,000</td><td>+10,000 = +10,000 ✓（同向变动）</td></tr>
+          <tr><td>4</td><td>赊购办公家具设备（FF&amp;E）11,850，承诺信用期内付款</td><td>设备 / 应付账款</td><td>资产 / 负债</td><td>资产 +11,850；负债 +11,850</td><td>+11,850 = +11,850 ✓</td></tr>
+          <tr><td>5</td><td>偿还第 4 笔设备款的一半 5,925</td><td>现金 / 应付账款</td><td>资产 / 负债</td><td>资产 −5,925；负债 −5,925</td><td>−5,925 = −5,925 ✓</td></tr>
+          <tr><td>6</td><td>与设计师 Joe 签订 6,540 的招牌设计安装合同</td><td>无</td><td>无</td><td><strong>仅交换承诺，不入账</strong></td><td>—（合同留档备查）</td></tr>
+          <tr><td>7</td><td>招牌交付安装完成：付现 3,000，余款 3,540 三十天内付清</td><td>招牌 / 现金 / 应付账款</td><td>资产 / 资产 / 负债</td><td>招牌 +6,540；现金 −3,000；负债 +3,540</td><td>+3,540 = +3,540 ✓（复合交易）</td></tr>
+          <tr><td>8</td><td>赊购（on account）物料 825</td><td>物料 / 应付账款</td><td>资产 / 负债</td><td>资产 +825；负债 +825</td><td>+825 = +825 ✓</td></tr>
+        </tbody>
+      </table>
+      <p>四个值得停下来的细节：①<strong>例 2 的徽标为什么是资产而不是费用</strong>——它能带来未来经济利益（安德玛的对勾让同样的衣服卖出更高价），费用则是一次性消耗；②<strong>例 3 是"同向变动"</strong>——别把直觉建立在"一个增另一个必减"上，等式两边可以同增同减；③<strong>例 6 vs 例 7</strong>——签合同时双方只是交换承诺（对方承诺做、你承诺付），不入账；招牌实际交付安装，交换发生，立刻入账，且这是一笔涉及三个账户的<span class="term">复合交易</span><span class="term-en">（Compounded Transaction）</span>——一笔交易可以涉及任意多个账户，只要等式平衡；④<strong>"on account"是双向词</strong>——赊账语境下既可能是应付账款也可能是应收账款，看我们是收货方还是供货方；本例我们收到物料，欠供应商钱，是应付。关键词"应付（Payable）"意味着<strong>你</strong>必须支付，两个应付账户都是负债。</p>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>应付账款（Accounts Payable, AP）</th><th>应付票据（Notes Payable, NP）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>正式程度</td><td>非正式商业信用，靠发票确立债务</td><td>正式：签署票据 / 贷款协议 / 本票</td></tr>
+          <tr><td>典型期限</td><td>短（如 30 天信用期）</td><td>较长，有明确还款计划</td></tr>
+          <tr><td>利息</td><td>信用期内付款通常无息</td><td>通常附带利息</td></tr>
+          <tr><td>典型对手</td><td>供应商</td><td>银行等贷方</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、借贷规则：借 = 左，贷 = 右</h2>
+
+      <h3>5.1 T 型账户：左右方向的来源</h3>
+      <p>"借左贷右"的说法源自<span class="term">T 型账户</span><span class="term-en">（T-account）</span>：给每个账户画一个"T"，左边是借方、右边是贷方。"借记现金 10,000"就是把 10,000 写在现金 T 的左侧。T 型账户像一只桶，追踪账户内金额的流入流出。实际工作中 T 型账户太占空间（200 个账户就要 200 个 T），现代系统用更紧凑的日记账与分类账（第六节），但教学上 T 型账户无可替代——它让"借 = 左、贷 = 右"看得见摸得着。</p>
+
+      <h3>5.2 六类账户的借贷方向：DEALOR 的直接推论</h3>
+      <p>规则只有一句话：<strong>等式左侧三类（股利、费用、资产）借方记增加、贷方记减少；等式右侧三类（负债、所有者资本、收入）贷方记增加、借方记减少</strong>。为什么？每个类别在自己所属的那一侧记增加——左边的就是借，右边的就是贷。每类账户余额通常停留在其增加方向，这个方向叫<span class="term">正常余额</span><span class="term-en">（Normal Balance）</span>。</p>
+      <div class="figure" id="fig-tarray">
+        <table style="text-align:center;">
+          <thead>
+            <tr><th colspan="2" style="color:#1d4ed8;">股利 D</th><th colspan="2" style="color:#1d4ed8;">费用 E</th><th colspan="2" style="color:#1d4ed8;">资产 A</th><th colspan="2" style="color:#b45309;">负债 L</th><th colspan="2" style="color:#b45309;">股本 O</th><th colspan="2" style="color:#b45309;">收入 R</th></tr>
+            <tr><th>借（左）</th><th>贷（右）</th><th>借（左）</th><th>贷（右）</th><th>借（左）</th><th>贷（右）</th><th>借（左）</th><th>贷（右）</th><th>借（左）</th><th>贷（右）</th><th>借（左）</th><th>贷（右）</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>增加 ↑</strong></td><td>减少 ↓</td><td><strong>增加 ↑</strong></td><td>减少 ↓</td><td><strong>增加 ↑</strong></td><td>减少 ↓</td><td>减少 ↓</td><td><strong>增加 ↑</strong></td><td>减少 ↓</td><td><strong>增加 ↑</strong></td><td>减少 ↓</td><td><strong>增加 ↑</strong></td></tr>
+            <tr><td colspan="2">正常余额：<strong>借方</strong></td><td colspan="2">正常余额：<strong>借方</strong></td><td colspan="2">正常余额：<strong>借方</strong></td><td colspan="2">正常余额：<strong>贷方</strong></td><td colspan="2">正常余额：<strong>贷方</strong></td><td colspan="2">正常余额：<strong>贷方</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="figure-caption">图 3：六类账户借贷方向总图（T 型账户阵列）——DEALOR 等式左侧三类借增贷减、右侧三类贷增借减；余额停留在增加方向，即"正常余额"</div>
+      </div>
+      <p><strong>图 3 解读：</strong>把六个类别各画成一个"T"，左借右贷。蓝色（D/E/A）与棕色（L/O/R）正好对应图 1 中 DEALOR 等式的左右两侧——这就是为什么讲师说扩展等式是"密钥"。使用时严守纪律：<strong>先问账户属于哪类，再谈增减</strong>。反例巩固：偿还欠款是"借：应付账款"——负债类借方记<strong>减少</strong>，与"借 = 增加"的日常直觉正好相反。银行对账单的口径之谜也在此解开：你的存款对银行而言是<strong>负债</strong>，银行"贷记你的账户"是在记它自己负债的增加，方向自然与你账簿里的现金（资产）相反。<strong>这套规则的优点</strong>是机械可靠：记账时无需每次重新推理经济含义，批量处理不出错，"有借必有贷、借贷必相等"还自带校验；<strong>缺点</strong>是反直觉（必须先清空日常含义），且规则只保证方向正确——账户归错类（如把"应计费用"这个负债当成费用），借贷再平衡也是错的。</p>
+
+      <h3>5.3 日记账分录：格式与铁律</h3>
+      <p>交易分析的最终产物是<span class="term">日记账分录</span><span class="term-en">（Journal Entry）</span>——记在<span class="term">日记账</span><span class="term-en">（Journal）</span>上的交易原始记录。格式铁律：<strong>借方顶格写在前面，贷方缩进写在后面；有借必有贷，借贷必相等</strong>。以交易 1 为例，标准长相如下：</p>
+      <table style="max-width:520px;">
+        <thead>
+          <tr><th>账户名称</th><th>借方</th><th>贷方</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>现金（Cash）</td><td>40,000</td><td></td></tr>
+          <tr><td>　　普通股（Common Stock）</td><td></td><td>40,000</td></tr>
+        </tbody>
+      </table>
+      <div class="callout warn">
+        <strong>讲义缺号提示（2.9）：</strong>原课程 2.8（借贷概念）之后直接跳到 2.10（借贷示例 3–8），缺失的 2.9 讲的是"借贷记账示例 1–2"，本页按标准教材内容补全：<strong>示例 1</strong>（交易 1，发行股票收现 40,000）——资产（现金）增加记借方、股本（普通股）增加记贷方，分录即上方示范：<em>借：现金 40,000 / 贷：普通股 40,000</em>；<strong>示例 2</strong>（交易 2，付现 650 购徽标）——资产（徽标）增加记借方、资产（现金）减少记贷方：<em>借：商标徽标 650 / 贷：现金 650</em>。两例合计借贷各自相等，与 2.10 开场所述"上节课已介绍示例 1 和 2"衔接。
+      </div>
+      <p>把八笔全部分录写出来，就是 Walnut Creek 公司 4 月份的日记账：</p>
+      <div class="figure" id="fig-journal">
+        <table>
+          <thead>
+            <tr><th>#</th><th>账户名称（借方顶格，贷方缩进）</th><th>借方</th><th>贷方</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>现金<br>　　普通股</td><td>40,000</td><td><br>40,000</td></tr>
+            <tr><td>2</td><td>商标徽标<br>　　现金</td><td>650</td><td><br>650</td></tr>
+            <tr><td>3</td><td>现金<br>　　应付票据</td><td>10,000</td><td><br>10,000</td></tr>
+            <tr><td>4</td><td>设备<br>　　应付账款</td><td>11,850</td><td><br>11,850</td></tr>
+            <tr><td>5</td><td>应付账款<br>　　现金</td><td>5,925</td><td><br>5,925</td></tr>
+            <tr><td>6</td><td colspan="3" style="text-align:center;">— 仅签订招牌合同，承诺不构成交易，无分录 —</td></tr>
+            <tr><td>7</td><td>招牌<br>　　现金<br>　　应付账款</td><td>6,540</td><td><br>3,000<br>3,540</td></tr>
+            <tr><td>8</td><td>物料<br>　　应付账款</td><td>825</td><td><br>825</td></tr>
+          </tbody>
+        </table>
+        <div class="figure-caption">图 4：Walnut Creek 公司 4 月日记账（八笔交易的分录汇总）——借方顶格在前、贷方缩进在后；每笔分录借方合计 = 贷方合计</div>
+      </div>
+      <p><strong>图 4 解读：</strong>逐笔核对"借贷必相等"：分录 1–5、8 都是一借一贷同额；分录 7 是<span class="term">复合分录</span><span class="term-en">（Compound Journal Entry）</span>，一借两贷，借方 6,540 = 贷方 3,000 + 3,540 ✓。注意分录 5 的方向：偿还欠款时<strong>借</strong>应付账款——负债减少记借方，之前贷记的增加被部分冲销。分录 6 的空行本身就是考点：账簿上不留痕迹，但分析过程（判断它不是交易）必须存在。</p>
+
+      <h3>5.4 配套例题（一）：Polar Pop 公司日记账分录</h3>
+      <p>Polar Pop Inc. 六月发生四件事，任务是为每件事做分录：</p>
+      <table>
+        <thead>
+          <tr><th>日期</th><th>事项与分析</th><th>借方</th><th>贷方</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>6/1</td><td>购设备一台 12,000，付现 4,000，余款 30 天内付清。设备（资产）↑记借；现金（资产）↓记贷；欠款承诺（负债）↑记贷。设备按<strong>全部成本</strong> 12,000 入账，差额 8,000 挂应付</td><td>设备 12,000</td><td>现金 4,000<br>应付账款 8,000</td></tr>
+          <tr><td>6/8</td><td>向供应商<strong>订购</strong>一批物料，两周后交付。<strong>只是下单承诺，没有任何交换发生</strong></td><td colspan="2" style="text-align:center;">— 无分录 —</td></tr>
+          <tr><td>6/18</td><td>向设备供应商开出 1,000 支票支付部分货款。付出现金（资产）↓记贷；所欠债务（负债）↓记借——用借方冲销 6/1 贷记的部分应付账款</td><td>应付账款 1,000</td><td>现金 1,000</td></tr>
+          <tr><td>6/28</td><td>收到 6/8 订购的物料，发票金额 5,000，交货后 30 天内付款。<strong>此刻交换才发生</strong>：物料（资产，未耗用前有未来利益）↑记借；应付账款（负债）↑记贷</td><td>物料 5,000</td><td>应付账款 5,000</td></tr>
+        </tbody>
+      </table>
+      <p>6/8 与 6/28 的对照是"交易陷阱"最干净的演示：<strong>下单不入账、收货才入账</strong>。注意 6/1 与 6/8 的差别——6/1 也有未付承诺，但设备已经到手，交换已发生，所以必须入账（承诺部分记应付账款）；6/8 则是双向都只有承诺，什么都不记。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、会计流水线：日记账 → 过账 → 试算平衡</h2>
+      <div id="fig-pipeline"></div>
+      <p><strong>图 5 解读：</strong>蓝色五步是本篇覆盖的区段——交易发生（凭证先行）→ 四步分析 → 记入日记账（按时间组织）→ 过账到分类账（按账户组织）→ 试算平衡表（体检）→ 编制四大报表（顺序 IS → RE → BS → CF，Lesson 1 已学）。灰色一步是 Lesson 4 的内容：期末编表前还要做调整分录与结账分录，届时"试算平衡"会细分为调整前、调整后、结账后三张。整条流水线的每一步都只是把上一步的信息<strong>换种方式重新组织</strong>——本质上是一连串"复制粘贴"。</p>
+
+      <h3>6.1 日记账按时间、分类账按账户</h3>
+      <p><span class="term">日记账</span><span class="term-en">（Journal）</span>是交易的首次落脚点，按<strong>时间顺序</strong>罗列全部分录。为保持<span class="term">总日记账</span><span class="term-en">（General Journal）</span>清晰，可以把同类交易先记进<span class="term">明细日记账</span><span class="term-en">（Subsidiary Journals）</span>（如销售日记账），定期汇总总额再过入。但日记账有一个硬伤：翻完它你仍然答不出"<strong>现金现在还剩多少</strong>"——答案散落在几十笔分录里。于是需要第二步：<span class="term">过账</span><span class="term-en">（Posting）</span>，把每笔分录的借、贷两行分别转移到对应账户的<span class="term">分类账</span><span class="term-en">（Ledger）</span>中。分类账按<strong>账户</strong>组织，每个账户一户，汇总该账户全部借贷记录后得出余额；全部账户的分类账合称<span class="term">总分类账</span><span class="term-en">（General Ledger）</span>。T 型账户就是分类账的教学形态。</p>
+
+      <h3>6.2 过账演示：把分录"复制粘贴"进 T 型账户</h3>
+      <p>过账规则：分录的借方行 → 该账户 T 型左侧，贷方行 → 右侧，金额旁标注交易编号（TRX 1 等），便于日后追溯来源。期末算余额：<strong>分别加总左右两栏，大数减小数，余额写在较大的那一侧</strong>。把图 4 的八笔分录全部过账后，最忙的两个账户长这样：</p>
+      <div class="figure" id="fig-ledger">
+        <table style="text-align:center; max-width:560px;">
+          <thead>
+            <tr><th colspan="2">现金 Cash（资产）</th></tr>
+            <tr><th>借方（左）</th><th>贷方（右）</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>TRX 1　40,000</td><td>TRX 2　650</td></tr>
+            <tr><td>TRX 3　10,000</td><td>TRX 5　5,925</td></tr>
+            <tr><td></td><td>TRX 7　3,000</td></tr>
+            <tr><td><strong>余额　40,425</strong></td><td></td></tr>
+          </tbody>
+        </table>
+        <table style="text-align:center; max-width:560px;">
+          <thead>
+            <tr><th colspan="2">应付账款 Accounts Payable（负债）</th></tr>
+            <tr><th>借方（左）</th><th>贷方（右）</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>TRX 5　5,925</td><td>TRX 4　11,850</td></tr>
+            <tr><td></td><td>TRX 7　3,540</td></tr>
+            <tr><td></td><td>TRX 8　825</td></tr>
+            <tr><td></td><td><strong>余额　10,290</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="figure-caption">图 6：过账后的 T 型账户（分类账教学形态）——现金借方合计 50,000 − 贷方合计 9,575 = 借方余额 40,425；应付账款贷方合计 16,215 − 借方合计 5,925 = 贷方余额 10,290</div>
+      </div>
+      <p><strong>图 6 解读：</strong>现金账户左栏 40,000 + 10,000 = 50,000，右栏 650 + 5,925 + 3,000 = 9,575，50,000 − 9,575 = <strong>40,425</strong>，写在较大的左侧——借方余额，与资产的正常余额方向一致。应付账款右栏 11,850 + 3,540 + 825 = 16,215，左栏 5,925，16,215 − 5,925 = <strong>10,290</strong>，写在右侧——贷方余额，与负债的正常余额方向一致。过账本身毫无技术含量（就是复制粘贴），<strong>最易错的两处</strong>是贴错 T 型账户、或把借贷方向弄反——记住：分录里是借就贴左边，是贷就贴右边。</p>
+
+      <h3>6.3 配套例题（二）：Polar Pop 过账到分类账</h3>
+      <p>把 5.4 节 Polar Pop 的三笔分录（6/8 无分录）过账。设期初余额：现金 35,000、物料 8,000（承讲义示例设定），其余账户从零开始：</p>
+      <table>
+        <thead>
+          <tr><th>账户</th><th>期初余额</th><th>本期过账（借 / 贷）</th><th>期末余额</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>现金（资产）</td><td>借 35,000</td><td>贷 4,000（6/1）；贷 1,000（6/18）</td><td>借 <strong>30,000</strong></td></tr>
+          <tr><td>物料（资产）</td><td>借 8,000</td><td>借 5,000（6/28）</td><td>借 <strong>13,000</strong></td></tr>
+          <tr><td>设备（资产）</td><td>0</td><td>借 12,000（6/1）</td><td>借 <strong>12,000</strong></td></tr>
+          <tr><td>应付账款（负债）</td><td>0</td><td>贷 8,000（6/1）；借 1,000（6/18）；贷 5,000（6/28）</td><td>贷 <strong>12,000</strong></td></tr>
+        </tbody>
+      </table>
+      <p>验算：现金 35,000 − 4,000 − 1,000 = 30,000 ✓；应付账款 8,000 − 1,000 + 5,000 = 12,000 ✓（仍欠供应商的款项）。</p>
+      <div class="callout">
+        <strong>数字口径说明：</strong>讲义示例 2（2.16 过账）的字幕把 6/18 的付款转写为 8,000（从而得出现金 23,000、应付账款 5,000），与示例 1（2.15 分录）明确给出的 1,000 支票矛盾。本页以示例 1 的分录为准按 <strong>1,000</strong> 过账；若按 8,000 口径，应付账款恰好清零（"不欠任何人钱"），两种口径的过账机制完全相同。
+      </div>
+
+      <h3>6.4 试算平衡表：编表前的体检</h3>
+      <p>直接给管理者看一堆 T 型账户既繁琐又不直观——他们不关心过程，只要各账户的最终余额。<span class="term">试算平衡表</span><span class="term-en">（Trial Balance）</span>就是这份清单：列出所有账户及其期末余额。它有两大用途：①<strong>快速呈报</strong>全部账户的期末状况；②<strong>验证借贷平衡</strong>——借方合计必须等于贷方合计，否则记账/过账过程必有错。它也是编制财务报表（尤其资产负债表）的直接取数来源。表头三要素齐备：<strong>Who</strong>（Walnut Creek Inc.）、<strong>What</strong>（<span class="term">调整前试算平衡表</span><span class="term-en">（Unadjusted Trial Balance）</span>——"调整前"对应 Lesson 4 的调整分录，之后还有调整后、结账后两张）、<strong>When</strong>（截至 20X1 年 4 月 30 日，是<strong>时点</strong>而非期间）。账户排列顺序：资产 → 负债 → 权益 → 股利 → 收入 → 费用，类内按流动性从高到低。</p>
+      <div class="figure" id="fig-trial">
+        <table style="max-width:520px;">
+          <thead>
+            <tr><th colspan="3" style="text-align:center;">Walnut Creek Inc.　调整前试算平衡表（截至 20X1 年 4 月 30 日）</th></tr>
+            <tr><th>账户</th><th>借方</th><th>贷方</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>现金</td><td>40,425</td><td></td></tr>
+            <tr><td>物料</td><td>825</td><td></td></tr>
+            <tr><td>设备</td><td>11,850</td><td></td></tr>
+            <tr><td>招牌</td><td>6,540</td><td></td></tr>
+            <tr><td>商标徽标</td><td>650</td><td></td></tr>
+            <tr><td>应付账款</td><td></td><td>10,290</td></tr>
+            <tr><td>应付票据</td><td></td><td>10,000</td></tr>
+            <tr><td>普通股</td><td></td><td>40,000</td></tr>
+            <tr><td><strong>合计</strong></td><td><strong>60,290</strong></td><td><strong>60,290</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="figure-caption">图 7：Walnut Creek 调整前试算平衡表——借方合计 40,425 + 825 + 11,850 + 6,540 + 650 = 60,290；贷方合计 10,290 + 10,000 + 40,000 = 60,290，两栏相等 ✓</div>
+      </div>
+      <p><strong>图 7 解读：</strong>八个数字全部来自图 6 那批 T 型账户的期末余额（现金 40,425、应付账款 10,290 刚算过；物料 825、设备 11,850、招牌 6,540、徽标 650 各自只有单边记录；应付票据 10,000、普通股 40,000 同理）。两栏合计均为 <strong>60,290</strong>，试算平衡通过。但请刻进脑子里：<strong>平衡 ≠ 无错</strong>。借贷同时记错同额、或把金额记错账户但借贷方向正确（该记设备误记物料），试算表照样平衡——它是"记账正确"的<strong>必要不充分</strong>条件。<strong>优点</strong>是一行一账户、失衡一眼可见，且顺手产出编报表所需的全部余额；<strong>缺点</strong>正是这个查不出账户归类错误的盲区。</p>
+      <div class="callout">
+        <strong>数字口径说明：</strong>讲义 2.12 字幕版把本表数字转写为合计 60,920（招牌 1,200、徽标 6,620、应付账款 10,920），与八笔交易流水及 2.13 资产负债表均不吻合，属转写误差。本页以逐笔核算并与 2.13 一致的 <strong>60,290</strong> 为准。
+      </div>
+
+      <!-- ==================== 七 ==================== -->
+      <h2>七、分类资产负债表：流动与非流动</h2>
+      <p>有了平衡的试算平衡表，编<span class="term">资产负债表</span><span class="term-en">（Balance Sheet）</span>基本就是"复制 + 分类"：取出全部资产、负债、权益账户（收入、费用、股利不进此表——它们年末已结转留存收益，本例尚未发生），再做两层组织。第一层，把资产和负债划分为<span class="term">流动</span><span class="term-en">（Current）</span>与<span class="term">非流动</span><span class="term-en">（Non-current）</span>：预期在<strong>一年或一个<span class="term">营业周期</span><span class="term-en">（Operating Cycle）</span>（以较长者为准）</strong>内被消耗/清偿的，为流动。多数公司营业周期短于一年，用一年即可；但建筑公司盖一栋楼要两三年，波音的营业周期约 18–24 个月，此时以营业周期为准。一盒办公用品预期一年内用完 → 流动资产；设备、建筑物能用好多年 → 非流动资产。第二层，各类内部按<strong>流动性从高到低</strong>排序（现金永远第一；非流动资产里设备通常排在建筑物前、建筑物排在土地前）。经这两层组织后的报表，就叫<span class="term">分类资产负债表</span><span class="term-en">（Classified Balance Sheet）</span>。</p>
+      <div class="figure" id="fig-bs">
+        <table style="max-width:560px;">
+          <thead>
+            <tr><th colspan="2" style="text-align:center;">Walnut Creek Inc.　分类资产负债表（20X1 年 4 月 30 日）</th></tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="2"><strong>资产</strong></td></tr>
+            <tr><td>　流动资产：现金 / 物料</td><td>40,425 / 825</td></tr>
+            <tr><td>　<strong>流动资产合计</strong></td><td><strong>41,250</strong></td></tr>
+            <tr><td>　非流动资产：设备 / 招牌 / 商标徽标</td><td>11,850 / 6,540 / 650</td></tr>
+            <tr><td><strong>资产总计</strong></td><td><strong>60,290</strong></td></tr>
+            <tr><td colspan="2"><strong>负债与股东权益</strong></td></tr>
+            <tr><td>　流动负债：应付账款</td><td>10,290</td></tr>
+            <tr><td>　长期负债：应付票据</td><td>10,000</td></tr>
+            <tr><td>　股东权益：普通股</td><td>40,000</td></tr>
+            <tr><td><strong>负债与股东权益总计</strong></td><td><strong>60,290</strong> ✓</td></tr>
+          </tbody>
+        </table>
+        <div class="figure-caption">图 8：Walnut Creek 分类资产负债表——资产按流动/非流动分层、层内按流动性排序；资产总计 60,290 = 负债与股东权益总计 60,290 ✓</div>
+      </div>
+      <p><strong>图 8 解读：</strong>资产端：流动资产合计 41,250（40,425 + 825），非流动资产三项合计 19,040，资产总计 <strong>60,290</strong>；权益端：流动负债 10,290 + 长期负债 10,000 + 普通股 40,000 = <strong>60,290</strong>，两侧相等 ✓。若不平衡，就回试算平衡表查转录错误。注意报表特意给出了"流动资产合计"与"流动负债合计"两行的<strong>小计</strong>——这不是装饰，第八节的流动比率正好只取这两个数。<strong>分类资产负债表的优点</strong>是结构清晰、一眼看清短期偿债资源与短期债务的对比；<strong>缺点</strong>仍是 Lesson 1 说过的两条：一天的快照 + 成本口径（不反映市价）。</p>
+
+      <h3>7.1 配套例题（三）：Barbour &amp; Company 编制分类资产负债表</h3>
+      <p>这次不给试算平衡表，直接给 Barbour &amp; Company 截至 20X1 年 12 月 31 日的七个账户数字：现金 33,200、物料 8,900、设备 21,000、普通股 48,200、<span class="term">应收账款</span><span class="term-en">（Accounts Receivable, AR）</span> 22,000、应付账款（AP）58,400、存货 21,500。解题三步：<strong>①分类</strong>——现金、物料、设备、应收账款、存货是资产，应付账款是负债，普通股是权益（没有收入/费用/股利很正常，它们本就不上资产负债表）；<strong>②分层</strong>——现金、应收账款、物料、存货为流动资产，设备为唯一非流动资产，应付账款为流动负债，权益不做流动划分；<strong>③填表加总</strong>：</p>
+      <table style="max-width:560px;">
+        <thead>
+          <tr><th colspan="2" style="text-align:center;">Barbour &amp; Company　分类资产负债表（20X1 年 12 月 31 日）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>流动资产：现金 / 应收账款 / 物料 / 存货</td><td>33,200 / 22,000 / 8,900 / 21,500</td></tr>
+          <tr><td>　<strong>流动资产合计</strong>（33,200+22,000+8,900+21,500）</td><td><strong>85,600</strong></td></tr>
+          <tr><td>非流动资产：设备</td><td>21,000</td></tr>
+          <tr><td><strong>资产总计</strong>（85,600 + 21,000）</td><td><strong>106,600</strong></td></tr>
+          <tr><td>流动负债：应付账款</td><td>58,400</td></tr>
+          <tr><td>股东权益：普通股</td><td>48,200</td></tr>
+          <tr><td><strong>负债与股东权益总计</strong>（58,400 + 48,200）</td><td><strong>106,600</strong> ✓</td></tr>
+        </tbody>
+      </table>
+      <p>自检永远用会计等式：资产 106,600 = 负债 58,400 + 权益 48,200 ✓，报表平衡。</p>
+
+      <!-- ==================== 八 ==================== -->
+      <h2>八、比率分析：流动比率</h2>
+      <p><span class="term">比率分析</span><span class="term-en">（Ratio Analysis）</span>是对财务报表的快速体检：把报表上的两个数相除，与过去、与目标、与同行对比。第一个要掌握的是<span class="term">流动比率</span><span class="term-en">（Current Ratio）</span>，衡量<strong>短期偿债能力</strong>：</p>
+      <p style="text-align:center;"><strong>流动比率 = 流动资产（Current Assets）÷ 流动负债（Current Liabilities）</strong></p>
+      <p>它回答的问题很直接：<strong>如果业务今天停止，账上的流动资产够不够还清一年内到期的全部债务？</strong>健康基准是 <strong>≥ 1.0</strong>——等于 1.0 意味着变卖全部流动资产恰好能清偿全部流动负债。2.0、3.0 当然更稳，但精益运营的企业很难达到。这就是为什么分类资产负债表要单列出两个"流动合计"——取数即算。把本篇三家公司与基准线放在一起：</p>
+      <div id="fig-ratio"></div>
+      <p><strong>图 9 解读：</strong>Walnut Creek：41,250 ÷ 10,290 ≈ <strong>4.01</strong>，短期偿债无虞；Barbour：85,600 ÷ 58,400 ≈ <strong>1.47</strong>，越过 1.0 但余裕不大；Facebook（2018，百万美元）：50,480 ÷ 7,017 ≈ <strong>7.19</strong>，远超基准。Facebook 为什么不干脆还清流动负债？其流动负债大头是<strong>应计费用</strong>——费用已发生但账单尚未到期，提前付款毫无必要，资金留在账上还能赚利息。但 7.19 到底有多好，单看绝对值答不出——比率分析的真正威力在<strong>横向对比</strong>：与 Snapchat、Twitter 等同行比，与商业模式相近的 Google（同为广告驱动）比，乃至与行业均值比。<strong>为什么短期偿债能力如此要紧？</strong>停止向供应商付款 → 供应商断供 → 无货可卖 → 收入下滑 → 恶性循环直至倒闭；维护供应商关系就是维护生命线。</p>
+      <p><strong>流动比率的优点</strong>是两数一除、秒级可得，跨期跨公司可比；<strong>缺点</strong>有三：①它是"<strong>快照假设</strong>"——现实中业务不会今天停止，未来几个月的销售回款同样是偿债来源，比率对此一概不知；②只看流动部分，<strong>长期负债完全不在视野内</strong>；③流动资产内部变现能力参差（存货未必卖得掉），同样的比率"含金量"可能不同。</p>
+
+      <!-- ==================== 九 ==================== -->
+      <h2>九、收尾对比：日记账 vs 分类账 vs 试算平衡表</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>日记账（Journal）</th><th>分类账（Ledger）</th><th>试算平衡表（Trial Balance）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>组织维度</td><td>按<strong>时间</strong>：交易发生的先后顺序</td><td>按<strong>账户</strong>：每个账户一户</td><td>按账户<strong>余额</strong>：全部账户期末余额清单</td></tr>
+          <tr><td>回答什么问题</td><td>发生了什么交易、何时发生、分录怎么做的？</td><td>某个账户（如现金）现在的余额是多少？</td><td>借方合计是否等于贷方合计？各账户余额汇总起来是什么样？</td></tr>
+          <tr><td>主要使用者</td><td>记账会计（交易发生即记）</td><td>过账与查账的会计（随时查余额）</td><td>管理层（看余额不看过程）、编表会计（编报表的取数来源）</td></tr>
+          <tr><td>在流水线中的位置</td><td>第一步：原始记录</td><td>第二步：过账的目的地</td><td>第三步：编表前的体检与汇总</td></tr>
+          <tr><td>软肋</td><td>看不出任何账户的当前余额</td><td>逐户分散，无法一眼总览全局</td><td>平衡 ≠ 无错：借贷同错、记错账户查不出</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（如何把每笔交易翻译成统一的会计语言，并保证账簿可复现、可校验？）→ 简化模型（扩展会计等式 DEALOR 六个类别 + 借左贷右的方向语言）→ 推导（凭证先行 → 四步交易分析 → 借贷规则 → 分录借贷必相等 → 过账汇总余额 → 试算验证平衡）→ 实际应用（Walnut Creek 八笔交易全流程走通：分析 → 分录 → 过账 → 试算 60,290 → 分类资产负债表；Polar Pop 分录与过账；Barbour 直接编表 106,600；流动比率 4.01 / 1.47 / 7.19 横向对比）→ 局限性（试算平衡查不出归类错误；承诺与交易的边界依赖判断；成本口径偏离市价；流动比率是不看长期负债的快照。期末账簿的"校准"问题——调整与结账——留待 Lesson 4 闭环会计循环）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/financial-accounting/02-debits-and-credits.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：扩展会计等式推导 —— 基本等式 → 代入 → 移项全正 → DEALOR =====
+    Charts.tree(document.getElementById('fig-dealor'), {
+      width: 680,
+      layers: [
+        [{ id: 'b', label: '基本等式：资产 = 负债 + 股东权益', width: 340, fill: '#f8fafc' }],
+        [{ id: 'e', label: '资产 = 负债 + 股本 − 股利 + 收入 − 费用', width: 420, fill: '#f8fafc' }],
+        [{ id: 'd', label: '股利 + 费用 + 资产 = 负债 + 股本 + 收入', width: 420, fill: '#eff6ff', color: '#1d4ed8' }],
+        [{ id: 'm', label: '助记词 DEALOR：D+E+A = L+O+R', width: 340, fill: '#f0fdfa', color: '#0f766e' }],
+      ],
+      edges: [
+        { from: 'b', to: 'e', label: '权益等式代入"股东权益"', labelDx: 130 },
+        { from: 'e', to: 'd', label: '减项移到左边（移项变号）', color: '#1d4ed8', labelDx: 150 },
+        { from: 'd', to: 'm', label: '取六项英文首字母', color: '#0f766e', labelDx: 120 },
+      ],
+      caption: '图 1：扩展会计等式的推导——两条等式合并、减项移左变加，得全正形式与助记词 DEALOR；左侧三类（D/E/A）与右侧三类（L/O/R）正是借贷方向的来源',
+      legend: [
+        { label: '等式左侧三类（D/E/A）：第五节将看到它们"借增贷减"', color: '#1d4ed8', style: 'dot' },
+        { label: '助记终点 DEALOR：处理每笔交易的密钥', color: '#0f766e', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：交易分析四步骤（+隐性第五步验证） =====
+    Charts.tree(document.getElementById('fig-steps'), {
+      width: 460,
+      layers: [
+        [{ id: 's1', label: '① 发生了什么？', width: 250, color: '#1d4ed8' }],
+        [{ id: 's2', label: '② 影响哪些账户？', width: 250, color: '#1d4ed8' }],
+        [{ id: 's3', label: '③ 属于哪个类别？', width: 250, color: '#1d4ed8' }],
+        [{ id: 's4', label: '④ 类别如何变动？', width: 250, color: '#1d4ed8' }],
+        [{ id: 's5', label: '⑤ 验证等式平衡', width: 250, fill: '#f8fafc', color: '#6b7280' }],
+      ],
+      edges: [
+        { from: 's1', to: 's2', color: '#1d4ed8', label: '用大白话描述', labelDx: 78 },
+        { from: 's2', to: 's3', color: '#1d4ed8', label: '找出变动账户', labelDx: 78 },
+        { from: 's3', to: 's4', color: '#1d4ed8', label: '归入六类之一', labelDx: 78 },
+        { from: 's4', to: 's5', color: '#6b7280', label: '定增减与金额', labelDx: 78 },
+      ],
+      caption: '图 2：交易分析四步骤（+ 隐性第五步）——从商业描述到会计语言的标准流水线，每一步的输出是下一步的输入',
+    });
+
+    // ===== 图5：会计流水线（本篇区段） =====
+    var step = { color: '#1d4ed8', fill: '#eff6ff' };
+    Charts.tree(document.getElementById('fig-pipeline'), {
+      width: 480,
+      layers: [
+        [{ id: 'p0', label: '交易发生（凭证先行）', width: 260, fill: '#f8fafc', color: '#6b7280' }],
+        [Object.assign({ id: 'p1', label: '① 分析交易（四步骤）', width: 260 }, step)],
+        [Object.assign({ id: 'p2', label: '② 日记账分录（按时间）', width: 260 }, step)],
+        [Object.assign({ id: 'p3', label: '③ 过账到分类账（按账户）', width: 260 }, step)],
+        [Object.assign({ id: 'p4', label: '④ 试算平衡表（体检）', width: 260 }, step)],
+        [Object.assign({ id: 'p5', label: '⑤ 编制财务报表', width: 260 }, step)],
+        [{ id: 'p6', label: '期末调整与结账（Lesson 4）', width: 280, fill: '#f8fafc', color: '#6b7280' }],
+      ],
+      edges: [
+        { from: 'p0', to: 'p1', color: '#6b7280', label: '收据/发票等证据', labelDx: 100 },
+        { from: 'p1', to: 'p2', color: '#1d4ed8', label: '借/贷语言', labelDx: 70 },
+        { from: 'p2', to: 'p3', color: '#1d4ed8', label: 'Posting 复制粘贴', labelDx: 108 },
+        { from: 'p3', to: 'p4', color: '#1d4ed8', label: '汇总各户余额', labelDx: 86 },
+        { from: 'p4', to: 'p5', color: '#1d4ed8', label: '顺序 IS→RE→BS→CF', labelDx: 116 },
+        { from: 'p5', to: 'p6', color: '#6b7280' },
+      ],
+      caption: '图 5：会计流水线（本篇覆盖区段）——交易 → 分析 → 日记账（按时间）→ 过账 → 分类账（按账户）→ 试算平衡 → 报表；灰色为 Lesson 4 的调整与结账环节',
+      legend: [
+        { label: '本篇（Lesson 2）：从交易到报表', color: '#1d4ed8', style: 'dot' },
+        { label: '前置凭证 / 后续 Lesson 4 调整结账', color: '#6b7280', style: 'dot' },
+      ],
+    });
+
+    // ===== 图9：流动比率对比 —— 基准 1.0 / 本篇三家公司 =====
+    Charts.bar(document.getElementById('fig-ratio'), {
+      categories: ['健康基准', 'Barbour', 'Walnut Creek', 'Facebook(2018)'],
+      series: [
+        { label: '流动比率 = 流动资产 ÷ 流动负债', color: '#1d4ed8', values: [1.0, 1.47, 4.01, 7.19] },
+      ],
+      yLabel: '流动比率（倍）',
+      yMax: 8,
+      yStep: 2,
+      width: 660,
+      caption: '图 9：流动比率对比——1.0 为短期偿债健康线；Walnut Creek 4.01（41,250÷10,290）、Barbour 1.47（85,600÷58,400）、Facebook 7.19（50,480÷7,017）',
+    });
+  </script>
+</body>
+</html>

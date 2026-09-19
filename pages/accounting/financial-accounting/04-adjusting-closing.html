@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 调整分录与结账：完整会计循环 - 财务会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>04 调整分录与结账：完整会计循环</h1>
+      <p>本篇覆盖《财务会计》（Financial Accounting）Lesson 4 的 16 讲（4.1–4.12、4.14 共 13 讲理论 + 4.15–4.17 三个配套例题；<strong>4.13 在原课程中缺号</strong>，缺口内容本篇以提示框补齐）。Lesson 1 我们学会了编四大报表，Lesson 2–3 学会了日常交易的借贷分录与权责发生制。但这两步之间藏着一个被跳过的环节：<strong>期末编表前，账簿必须先"校准"</strong>。本篇主角就是校准工具——<span class="term">调整分录</span><span class="term-en">（Adjusting Entries, AJE）</span>，以及编表之后的收尾工序——<span class="term">结账分录</span><span class="term-en">（Closing Entries）</span>。学完本篇，整个<span class="term">会计循环</span><span class="term-en">（Accounting Cycle）</span>闭环。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、为什么期末账簿天然"不准"：调整分录登场</h2>
+
+      <h3>1.1 引入：账上 2,000 美元的保险，实际只剩 1,000</h3>
+      <p><strong>反直觉开场：</strong>年末盘点账簿，"预付保险费"账户端端正正躺着 2,000 美元余额——但你心里清楚，保单已经耗掉一半，真正还能享受保障的价值只剩 1,000 美元。账簿说谎了吗？没有。<strong>账簿只是从来没被要求"自动更新"</strong>：它忠实记录了每一笔现金往来，却对"时间流逝"这种没有发票、没有收据的事件一无所知。保险每天在被消耗，设备每天在被磨损，员工每天在挣工资——这些经济活动静默发生，没有任何原始凭证触发记账。</p>
+      <p>这正是<span class="term">权责发生制</span><span class="term-en">（Accrual Accounting）</span>的代价与荣耀（承 <a href="01-basics-and-statements.html">Lesson 1</a> 预告、Lesson 3 主题）：现金的收付时点与收入费用的确认时点经常错位，于是期末账簿的"当前余额"与"应有余额"之间出现裂缝。<strong>调整分录就是期末校准时钟的动作</strong>：算出"应有 − 现有"的差额，用一笔不碰现金的分录把账户调到应有状态。上例中，调整额 = 2,000 − 1,000 = 1,000 美元。</p>
+      <div class="callout">
+        <strong>铁律：调整分录永不触碰现金。</strong>如果你在一笔所谓"调整分录"里看到现金账户，那它就不是调整分录。现金的收付发生在调整之前（预付时）或之后（结账/付款时），调整日当天的分录只涉及非现金账户。这条规则在例题 2 里会成为强大的自检工具。
+      </div>
+      <p>为什么必须调？四个理由：①<strong>收入正确归属</strong>——20X1 年完成的服务，即使 20X2 年才收款，收入也记在 20X1；②<strong>费用正确配比</strong>——年底还没收到电费账单，当期已耗的电也必须估记入费；③<strong>资产如实</strong>——已服务未收款的债权要补记为应收账款；④<strong>负债如实</strong>——已享用未付费的义务要补记为应付。一句话：调整分录是权责发生制的执行机构。</p>
+
+      <h3>1.2 两大类四小类：现金与确认谁先动</h3>
+      <p>所有调整分录按"现金与确认谁先动"分成两大类：<span class="term">递延</span><span class="term-en">（Deferrals，推迟）</span>——<strong>现金先动</strong>，确认推迟到以后；<span class="term">应计</span><span class="term-en">（Accruals，已发生）</span>——<strong>确认先动</strong>，现金以后才来。每类再按收入/费用一分为二：</p>
+      <div id="fig-types"></div>
+      <p><strong>图 1 解读：</strong>这是本篇的"地图"。左支（递延）：现金早已收付，期末要做的是把<strong>已耗用/已挣得</strong>的部分从资产负债表账户挪进利润表——递延费用把预付资产转费用，递延收入把预收负债转收入。右支（应计）：收入费用已经发生但账上毫无痕迹，期末要<strong>从零补记</strong>——应计收入补记"收入 + 应收"，应计费用补记"费用 + 应付"。注意方向感：递延是<strong>减少</strong>一个资产负债表账户，应计是<strong>增加</strong>一个资产负债表账户，两者都同时增加一个利润表账户。</p>
+      <p>这套分类框架（调整蓝图）的优点是<strong>即插即用</strong>：识别类型 → 套用分录结构 → 算差额，三步搞定任何调整题；缺点是它只告诉你"怎么记"，<strong>金额仍要你自己算</strong>——而调整分录没有发票提醒你该算多少，这正是它对初学者最难的地方。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、递延调整：现金先动，确认后至</h2>
+
+      <h3>2.1 递延费用：预付资产的"耗用部分"转费用</h3>
+      <p><span class="term">递延费用</span><span class="term-en">（Deferred Expenses）</span>指现金已付、费用未发生，账上先记一笔<span class="term">预付费用</span><span class="term-en">（Prepaid Expenses）</span>资产。随时间推移资产被耗用，期末把耗用部分转为费用。分录蓝图：<strong>借：××费用；贷：预付××（资产）</strong>。最常见的错误是顺手贷记现金——现金早在预付那天就付掉了，再贷一次等于"重复付款"。</p>
+      <p><strong>例（办公用品）：</strong>Walnut Creek 公司期初办公用品 $825，期末盘点只剩 $220。没有被盗，唯一的解释是本月消耗了 $605（825 − 220）。调整分录：借 办公用品费用 $605 / 贷 办公用品 $605。<strong>例（预付保险）：</strong>4 月 1 日预付 $1,500 保费覆盖三个月，每月摊 $500。4 月底调整：借 保险费用 $500 / 贷 预付保险 $500。调整后预付保险余额 $1,000——这个余额有个名字，叫<span class="term">账面价值</span><span class="term-en">（Carrying Value / Book Value）</span>：账户在某时点的余额，代表未来还能带来经济利益的部分。像礼品卡一样，充 $1,500、每月刷 $500，卡里剩多少就是账面价值。</p>
+
+      <h3>2.2 折旧与摊销：披着新名字的递延费用调整</h3>
+      <p>你花 $25,000 买一辆送货车，预计用 5 年。如果按收付实现制，第一年费用 $25,000、后四年费用为零——但车明明年年都在帮你赚钱。这违反<span class="term">配比原则</span><span class="term-en">（Matching Principle）</span>：<strong>费用必须与它帮助创造的收入确认在同一期间</strong>。于是权责发生制把 $25,000 的<strong>成本</strong>（一次性现金流出）分摊为每年 $5,000 的<strong>费用</strong>——这就是<span class="term">折旧</span><span class="term-en">（Depreciation）</span>：把长期<span class="term">有形资产</span><span class="term-en">（Tangible Asset）</span>的成本在其<span class="term">使用寿命</span><span class="term-en">（Useful Life）</span>内系统分摊的成本分配过程。</p>
+      <div id="fig-dep"></div>
+      <p><strong>图 2 解读：</strong>同一辆车、同一笔 $25,000，两种制度下的费用路径完全不同。收付实现制（棕柱）把全部成本砸在第 1 年，后四年"免费用车"，严重扭曲各年利润；权责发生制（青柱）每年平稳确认 $5,000，费用与车创造收入的期间一一对应。注意区分两个词：<strong>成本（Cost）是付出的对价，费用（Expense）是耗用的部分</strong>——$25,000 是成本，每年 $5,000 才是费用。</p>
+      <p>折旧的账务处理有个独特设计：<strong>不直接贷记资产</strong>，而是贷记一个叫<span class="term">累计折旧</span><span class="term-en">（Accumulated Depreciation）</span>的<span class="term">备抵资产账户</span><span class="term-en">（Contra Asset Account）</span>——它属于资产类、但方向与资产相反（贷方余额），专门与该资产配对，记录购入以来计提的折旧总和。这样资产负债表上同时保留原始成本与已摊信息：</p>
+      <table>
+        <thead>
+          <tr><th>资产负债表列报（节选）</th><th>金额</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>设备（原值）</td><td>$12,000</td><td>4 月 1 日购入，资产账户保持原始成本不动</td></tr>
+          <tr><td>减：累计折旧</td><td>(350)</td><td>本月调整：借 折旧费用 350 / 贷 累计折旧 350</td></tr>
+          <tr><td><strong>设备账面净值</strong></td><td><strong>$11,650</strong></td><td>账面价值 ≠ 公允价值（Fair Value，市场售价），只是账上口径</td></tr>
+        </tbody>
+      </table>
+      <p><span class="term">摊销</span><span class="term-en">（Amortization）</span>是折旧在<span class="term">无形资产</span><span class="term-en">（Intangible Asset，专利、版权、特许经营权）</span>上的孪生兄弟：机制完全一致，账户换成"摊销费用 / <span class="term">累计摊销</span><span class="term-en">（Accumulated Amortization）</span>"。例：$12,000 的专利每月摊 $200，分录为借 摊销费用 200 / 贷 累计摊销 200，列报为 $12,000 − $200 = 账面净值 $11,800。耐克的对勾标志这类内部自创品牌不摊销（无确定使用寿命），改为每年做减值测试。<strong>折旧/摊销的优点</strong>是让利润表忠实反映资产消耗、让资产负债表保留成本信息；<strong>缺点</strong>是账面价值可能严重偏离市场价值（账面 $11,650 的设备市场上也许值 $20,000）。折旧与摊销的具体计算方法（直线法、加速法等）在 Lesson 9 展开，本篇例题金额一律给定。</p>
+
+      <h3>2.3 递延收入：预收款中"已挣得"的部分转收入</h3>
+      <p><span class="term">递延收入</span><span class="term-en">（Deferred Revenue）</span>是递延的收入镜像：客户先付钱、我们后履约。收款时分录为借 现金 / 贷 递延收入——<strong>收钱不能记收入</strong>，因为我们还欠着服务，这是一笔负债。当履行了<span class="term">履约义务</span><span class="term-en">（Performance Obligation）</span>，期末把已挣得部分从负债转为收入：<strong>借：递延收入；贷：服务收入</strong>。</p>
+      <p><strong>例（婚礼场地定金）：</strong>Walnut Creek 上月收到新人 $1,000 场地定金（当时贷记递延收入），本月婚礼已办完，$1,000 全部挣得。调整分录：借 递延收入 $1,000 / 贷 服务收入 $1,000。递延收入账户清零，服务收入从 $7,500 升至 $8,500。注意调整额<strong>不必等于预收全额</strong>：若预付 $1,000 买 10 件产品、本期只交付 5 件，只转 $500，剩下的等交付再调——一笔初始收款可能对应多笔后续调整，直到义务履行完毕。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、应计调整：确认先动，现金后至</h2>
+
+      <h3>3.1 应计收入：已挣未收，补记"收入 + 应收"</h3>
+      <p><span class="term">应计收入</span><span class="term-en">（Accrued Revenue）</span>指收入已挣得、现金未收到——你的工资就是天然例子：这两周你已在为雇主干活，薪酬系统要第三周才发钱；即使今天辞职，公司也欠你已挣的工资。既然货已交、服务已给，收入必须现在确认，同时挂一笔债权。分录蓝图：<strong>借：<span class="term">应收账款</span><span class="term-en">（Accounts Receivable, AR）</span>；贷：收入</strong>。以后收款时再做常规分录：借 现金 / 贷 应收账款（这不是调整分录）。</p>
+      <p><strong>例（橘子园）：</strong>Walnut Creek 收获季末向 Baldwin 超市交付 5,000 磅橘子、作价 $2,500，发票约定 30 天内付款。期末无论款到与否，调整分录：借 应收账款 $2,500 / 贷 销售收入 $2,500。T 型账户上：销售收入从 $2,500 升至 $5,000（应有 − 现有 = 调整额 $2,500），应收账款从 $500 升至 $3,000；下期收到 $2,500 现金时再贷记应收账款冲回 $500。</p>
+
+      <h3>3.2 应计费用：已发生未付，补记"费用 + 应付"</h3>
+      <p><span class="term">应计费用</span><span class="term-en">（Accrued Expense）</span>是应计收入的镜像：费用已发生、账单未到。水电费最典型——开灯的每一分钟费用都在发生，电力公司月底才寄账单。按配比原则，费用记入耗用当期。分录蓝图：<strong>借：××费用；贷：应付××（负债）</strong>。以后付款时：借 应付×× / 贷 现金（常规分录，费用不再重复记）。</p>
+      <p><strong>例（广告费）：</strong>Walnut Creek 4 月在 Facebook 投广告 $500，4 月 30 日收到账单、5 月付款。4 月底调整：借 广告费用 $500 / 贷 <span class="term">应付账款</span><span class="term-en">（Accounts Payable, AP）</span> $500。广告费用升至 $1,000（含月中已记的另一笔 $500），应付账款从 $10,790 升至 $11,290；5 月付款时借 应付账款 $500 / 贷 现金 $500 冲回。<strong>命名纪律：</strong>讲义偏好用更具体的负债科目——"应付账款"留给存货采购，工资用"应付工资"，水电用"应付水电费"，税用"应付所得税"。名字越具体，报表读者越清楚欠的是什么。</p>
+
+      <h3>3.3 所得税费用计提：先计提，后缴纳</h3>
+      <p>所得税是最"教科书式"的应计费用：税是<strong>本年利润</strong>产生的，但要等次年账目结清后才缴纳——费用与现金天然跨年。简化公式（课堂口径，现实税务复杂得多）：</p>
+      <p style="text-align:center;"><strong>所得税费用（Income Tax Expense） = 净利润 × 税率</strong>（若题目给应税收入则用应税收入）</p>
+      <p><strong>例：</strong>Walnut Creek 净利润 $7,775，税率 21%，20X2 年才缴纳。期末必须计提：$7,775 × 21% = <strong>$1,632.75</strong>。分录：借 所得税费用 $1,632.75 / 贷 <span class="term">应付所得税</span><span class="term-en">（Income Tax Payable）</span> $1,632.75；次年三月缴纳时：借 应付所得税 / 贷 现金。若不做这笔计提，本年利润表会<strong>高估净利润</strong>——费用少记了一块，这正是配比原则要堵的漏洞。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、调整后试算平衡表：编表前的最后一次体检</h2>
+
+      <h3>4.1 机制：调整分录过账，刷新余额，再试算</h3>
+      <p>日常交易逐笔记入<span class="term">总分类账</span><span class="term-en">（General Ledger）</span>，期末先编未调整试算平衡表，做完调整分录后把它们过账到 T 型账户刷新余额，就得到<span class="term">调整后试算平衡表</span><span class="term-en">（Adjusted Trial Balance）</span>——它是编制财务报表的<strong>唯一合法起点</strong>：调整不完成，四大报表编出来就是错的。余额为零的账户不上表。</p>
+
+      <h3>4.2 配套例题 1+2：四笔调整分录，然后试算（A 公司 20X2 年 2 月）</h3>
+      <p>例题 1（Lesson 4.15）把四类调整各来一笔，例题 2（Lesson 4.16）接着过账编表。四笔分录及其计算：</p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>类型与背景</th><th>计算</th><th>借方账户（金额）</th><th>贷方账户（金额）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>AJE1</td><td>递延费用：20X1/12/1 购 6 个月保险 $4,170，按月调整</td><td>$4,170 ÷ 6 = $695/月</td><td>保险费用 695</td><td>预付保险 695</td></tr>
+          <tr><td>AJE2</td><td>应计收入：40 个工作日合同 $11,600，2 月工作 18 天，完工后 30 天收款</td><td>$11,600 ÷ 40 = $290/天 × 18 = <strong>$5,220</strong></td><td>应收账款 5,220</td><td>服务收入 5,220</td></tr>
+          <tr><td>AJE3</td><td>递延收入：1/29 预收 $3,600，服务期 2/8–3/9 共 30 天，2 月已服务 21 天</td><td>$3,600 ÷ 30 = $120/天 × 21 = <strong>$2,520</strong></td><td>递延收入 2,520</td><td>服务收入 2,520</td></tr>
+          <tr><td>AJE4</td><td>应计费用：水电费 $224/天 × 2 月 28 天，账单 3/15 才付</td><td>$224 × 28 = <strong>$6,272</strong></td><td>水电费 6,272</td><td>应付水电费 6,272</td></tr>
+        </tbody>
+      </table>
+      <p>两个细节：①AJE1 里 2 月天数最少，为什么不按天摊？<span class="term">重要性原则</span><span class="term-en">（Materiality）</span>——一两天保费的差异不足以改变报表使用者的决策，按月平均即可。②讲义例题 2 的幻灯片把 AJE4 的贷方列示为"应付账款"（金额相同），账户命名口径不同不影响机制。把四笔 AJE 过账后，受影响账户的余额迁移如下：</p>
+      <table>
+        <thead>
+          <tr><th>账户</th><th>未调整余额</th><th>调整（借 / 贷）</th><th>调整后余额</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>预付保险（资产）</td><td>借 2,780</td><td>贷 695（AJE1）</td><td>借 <strong>2,085</strong></td></tr>
+          <tr><td>保险费用（费用）</td><td>借 695</td><td>借 695（AJE1）</td><td>借 <strong>1,390</strong></td></tr>
+          <tr><td>应收账款（资产）</td><td>借 6,380</td><td>借 5,220（AJE2）</td><td>借 <strong>11,600</strong></td></tr>
+          <tr><td>服务收入（收入）</td><td>贷 6,380</td><td>贷 5,220 + 2,520（AJE2、3）</td><td>贷 <strong>14,120</strong></td></tr>
+          <tr><td>递延收入（负债）</td><td>贷 3,600</td><td>借 2,520（AJE3）</td><td>贷 <strong>1,080</strong></td></tr>
+          <tr><td>应付账款（负债）</td><td>贷 10,214</td><td>贷 6,272（AJE4）</td><td>贷 <strong>16,486</strong></td></tr>
+          <tr><td>水电费（费用）</td><td>借 6,944</td><td>借 6,272（AJE4）</td><td>借 <strong>13,216</strong></td></tr>
+        </tbody>
+      </table>
+      <p>未调整余额也有迹可循：预付保险 $2,780 正是 $4,170 扣掉 12 月、1 月两笔 $695 调整后的余额，本月再扣一笔剩 $2,085。全部账户新余额填入试算表后，<strong>借方合计 = 贷方合计 = $105,636</strong>（讲义口径，未受影响的账户照抄未调整表）。两个自检点：①<strong>现金账户在调整前后必须分文不动</strong>——动了就说明你把现金写进了调整分录；②借贷平衡只是<strong>必要不充分</strong>条件——记错账户但借贷相等，试算表照样平衡。试算平衡表的优点是一行行列出全部账户、一眼看出失衡；缺点正是这个"平衡 ≠ 正确"的盲区，账户归类错误它查不出来。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、结账分录：清空记分牌，迎接新赛季</h2>
+
+      <h3>5.1 引入：棒球比分为什么要清零？</h3>
+      <p><strong>反直觉开场：</strong>棒球赛主队 4:3 获胜。几天后对阵新对手，开球时记分牌竟显示 4:2——上一场对旧对手的 4 分直接带了过来。荒唐之处一目了然：每场比赛的得分只对该场有意义。利润表账户同理："本年赚了 14,120"只对今年有意义，<strong>明年必须从 0 重新计起</strong>，否则两年的收入费用混在一起，哪年经营好坏都说不清。这是<span class="term">会计期间假设</span><span class="term-en">（Time Period Assumption）</span>的直接要求：把企业连续的生命切成一段段可比期间，每段结束都要"清空记分牌"。</p>
+      <p>清空靠的不是橡皮擦，而是正式分录——<span class="term">结账分录</span><span class="term-en">（Closing Entries）</span>，<span class="term">结账流程</span><span class="term-en">（Closing Process）</span>的两个目的：①把收入、费用、股利账户余额清零；②把本期经营成果汇总进留存收益。需要清零的收入/费用/股利叫<span class="term">临时账户</span><span class="term-en">（Temporary Accounts）</span>——只管一个期间；资产、负债、权益（含留存收益）叫<span class="term">永久账户</span><span class="term-en">（Permanent Accounts）</span>——余额跨年结转。</p>
+
+      <h3>5.2 三步结账法：全部结转至留存收益</h3>
+      <p>结账固定三步，每一步的对方科目都是<span class="term">留存收益</span><span class="term-en">（Retained Earnings）</span>：</p>
+      <ol>
+        <li><strong>清收入</strong>：收入是贷方余额，反向借记清零，总额贷记留存收益（利润流入）；</li>
+        <li><strong>清费用</strong>：费用是借方余额，反向贷记清零，总额借记留存收益（利润流出）；</li>
+        <li><strong>清股利</strong>：股利是借方余额，贷记清零，借记留存收益——股利不是费用，但它是利润的分配，分掉的钱不再"留存"，故同样冲减留存收益。</li>
+      </ol>
+      <div class="callout warn">
+        <strong>讲义缺号提示（4.13）：</strong>原课程 4.12 之后直接跳到 4.14，缺失的 4.13 按教材惯例讲的是一个过渡账户——<span class="term">收益汇总</span><span class="term-en">（Income Summary）</span>：先把所有收入、所有费用先后结转到 Income Summary（此时它的余额恰等于净利润），再把 Income Summary 一笔结转到留存收益，最后清股利。本课讲师采用简化做法，让收入、费用<strong>直接</strong>结转至留存收益，跳过这个中转站。两者终点完全相同（留存收益净变动 = 净利润 − 股利），考试若要求经 Income Summary 过渡，多写两笔分录即可。
+      </div>
+
+      <h3>5.3 配套例题 3：A 公司年末结账</h3>
+      <p>沿用上文调整后试算平衡表（本例无股利）。三步分录：</p>
+      <table>
+        <thead>
+          <tr><th>步骤</th><th>借方</th><th>贷方</th><th>逻辑</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>① 清收入</td><td>服务收入 14,120<br>销售收入 33,950</td><td>留存收益 <strong>48,070</strong></td><td>14,120 + 33,950 = 48,070，收入总额进留存收益</td></tr>
+          <tr><td>② 清费用</td><td>留存收益 <strong>27,456</strong></td><td>薪资费用 12,850<br>水电费 13,216<br>保险费用 1,390</td><td>12,850 + 13,216 + 1,390 = 27,456，费用总额冲出留存收益</td></tr>
+          <tr><td>③ 清股利</td><td colspan="3">本例无股利。若有：借 留存收益 / 贷 股利（分配的利润不再留存）</td></tr>
+        </tbody>
+      </table>
+      <p>留存收益的净变动 = 48,070 − 27,456 = <strong>+20,614</strong>（= 本期净利润），与留存收益表"期初 + 净利润 − 股利"完全咬合。结完账编<span class="term">结账后试算平衡表</span><span class="term-en">（Post-closing Trial Balance）</span>：临时账户余额全部归零、不再上表，只剩资产、负债、权益三类永久账户，本例借贷合计均为 <strong>$78,180</strong>。它比调整后试算表短得多——这张"干净"的表就是新年度的起点。</p>
+
+      <h3>5.4 全景：完整会计循环</h3>
+      <div id="fig-cycle"></div>
+      <p><strong>图 3 解读：</strong>九步构成一个完整的<span class="term">会计循环</span><span class="term-en">（Accounting Cycle）</span>，每年循环一次。蓝色四步（交易 → 日记账分录 → 过账 → 未调整试算）是 Lesson 2–3 的日常记账流程；灰色一步（编制财务报表，顺序 IS → RE → BS → CF）在 Lesson 1 已学；<strong>青色四步是本篇的覆盖区段</strong>——调整分录校准账簿、调整后试算体检、出表后结账清零、结账后试算开启新周期。至此 Lesson 1 预告的"年末清零、净额结转留存收益"在本篇兑现，会计循环闭环。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、收尾对比：四类调整分录一览</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>递延费用</th><th>递延收入</th><th>应计收入</th><th>应计费用</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>谁先动</td><td>现金先付</td><td>现金先收</td><td>收入先挣</td><td>费用先发生</td></tr>
+          <tr><td>涉及的账户对</td><td>费用 + 预付资产（↓）</td><td>递延负债（↓）+ 收入</td><td>应收资产（↑）+ 收入</td><td>费用 + 应付负债（↑）</td></tr>
+          <tr><td>分录结构</td><td>借 费用 / 贷 预付××</td><td>借 递延收入 / 贷 收入</td><td>借 应收账款 / 贷 收入</td><td>借 费用 / 贷 应付××</td></tr>
+          <tr><td>对利润表影响</td><td>增费用（利润↓）</td><td>增收入（利润↑）</td><td>增收入（利润↑）</td><td>增费用（利润↓）</td></tr>
+          <tr><td>现金方向</td><td>前期已流出</td><td>前期已流入</td><td>后期流入</td><td>后期流出</td></tr>
+          <tr><td>典型例子</td><td>预付保险、物料、折旧/摊销</td><td>预收定金、礼品卡</td><td>赊销、已挣未收服务费</td><td>水电、工资、所得税</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（权责发生制下现金与确认错位，期末账簿必然"不准"）→ 简化模型（调整额 = 应有余额 − 当前余额；两大类四小类蓝图）→ 推导（递延减资产负债账户、应计增资产负债账户，所得税 = 净利润 × 税率；调整后试算体检）→ 实际应用（保险/用品/折旧摊销/定金/赊销/广告/水电/所得税八例 + A 公司四笔调整、调整试算 105,636、三步结账净入留存收益 20,614）→ 局限性（调整无原始凭证提醒、金额靠估算；试算平衡查不出账户归类错误；账面价值偏离公允价值——后者留待 Lesson 9 折旧方法处再论）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/financial-accounting/04-adjusting-closing.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：调整分录两大类四小类 —— 按"现金与确认谁先动"分类 =====
+    Charts.tree(document.getElementById('fig-types'), {
+      width: 720,
+      layers: [
+        [{ id: 'root', label: '调整分录：现金时点 ≠ 确认时点', width: 340, fill: '#f8fafc' }],
+        [
+          { id: 'def', label: '递延 Deferrals（现金先动）', color: '#b45309', fill: '#fff7ed', width: 250 },
+          { id: 'acc', label: '应计 Accruals（确认先动）', color: '#1d4ed8', width: 250 },
+        ],
+        [
+          { id: 'de', label: '递延费用：预付资产 → 费用', color: '#b45309', fill: '#fff7ed', width: 170 },
+          { id: 'dr', label: '递延收入：预收负债 → 收入', color: '#b45309', fill: '#fff7ed', width: 170 },
+          { id: 'ar', label: '应计收入：补记收入 + 应收', color: '#1d4ed8', width: 170 },
+          { id: 'ae', label: '应计费用：补记费用 + 应付', color: '#1d4ed8', width: 170 },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 'def', color: '#b45309', label: '先收付现金，后确认', labelDx: -80 },
+        { from: 'root', to: 'acc', color: '#1d4ed8', label: '先确认，后收付现金', labelDx: 86 },
+        { from: 'def', to: 'de', color: '#b45309' },
+        { from: 'def', to: 'dr', color: '#b45309' },
+        { from: 'acc', to: 'ar', color: '#1d4ed8' },
+        { from: 'acc', to: 'ae', color: '#1d4ed8' },
+      ],
+      caption: '图 1：调整分录的分类地图——递延（现金先动，减少一个资产负债表账户）与应计（确认先动，增加一个资产负债表账户）各分收入/费用两类',
+      legend: [
+        { label: '递延（Deferrals）：现金先动', color: '#b45309', style: 'dot' },
+        { label: '应计（Accruals）：确认先动', color: '#1d4ed8', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：$25,000 送货车（5 年）两种制度下的年度费用对比 =====
+    Charts.bar(document.getElementById('fig-dep'), {
+      categories: ['第 1 年', '第 2 年', '第 3 年', '第 4 年', '第 5 年'],
+      series: [
+        { label: '收付实现制：付款当年一次性计费用', color: '#b45309', values: [25000, 0, 0, 0, 0] },
+        { label: '权责发生制：折旧每年摊 $5,000', color: '#0f766e', values: [5000, 5000, 5000, 5000, 5000] },
+      ],
+      yLabel: '当年确认费用（美元）',
+      yMax: 26000,
+      yStep: 5000,
+      width: 660,
+      caption: '图 2：同一辆 $25,000 送货车的费用确认路径——收付实现制扭曲各年利润，权责发生制按配比原则把成本分摊到受益的每一年',
+    });
+
+    // ===== 图3：完整会计循环九步竖链 —— 颜色区分本篇覆盖区段 =====
+    var thisLesson = { color: '#0f766e', fill: '#f0fdfa' };
+    var prevLesson = { color: '#1d4ed8', fill: '#eff6ff' };
+    Charts.tree(document.getElementById('fig-cycle'), {
+      width: 440,
+      layers: [
+        [Object.assign({ id: 's1', label: '① 交易发生', width: 250 }, prevLesson)],
+        [Object.assign({ id: 's2', label: '② 日记账分录', width: 250 }, prevLesson)],
+        [Object.assign({ id: 's3', label: '③ 过账：总分类账', width: 250 }, prevLesson)],
+        [Object.assign({ id: 's4', label: '④ 未调整试算平衡表', width: 250 }, prevLesson)],
+        [Object.assign({ id: 's5', label: '⑤ 调整分录（本篇）', width: 250 }, thisLesson)],
+        [Object.assign({ id: 's6', label: '⑥ 调整后试算平衡表（本篇）', width: 250 }, thisLesson)],
+        [{ id: 's7', label: '⑦ 编制财务报表（IS→RE→BS→CF）', width: 290, fill: '#f8fafc', color: '#6b7280' }],
+        [Object.assign({ id: 's8', label: '⑧ 结账分录（本篇）', width: 250 }, thisLesson)],
+        [Object.assign({ id: 's9', label: '⑨ 结账后试算平衡表（本篇）', width: 250 }, thisLesson)],
+      ],
+      edges: [
+        { from: 's1', to: 's2', color: '#1d4ed8' },
+        { from: 's2', to: 's3', color: '#1d4ed8' },
+        { from: 's3', to: 's4', color: '#1d4ed8' },
+        { from: 's4', to: 's5', color: '#0f766e' },
+        { from: 's5', to: 's6', color: '#0f766e' },
+        { from: 's6', to: 's7', color: '#6b7280' },
+        { from: 's7', to: 's8', color: '#0f766e' },
+        { from: 's8', to: 's9', color: '#0f766e' },
+      ],
+      caption: '图 3：完整会计循环九步——蓝色为 Lesson 2–3 日常记账，灰色为 Lesson 1 报表编制，青色为本篇（Lesson 4）覆盖的调整与结账区段',
+      legend: [
+        { label: 'Lesson 2–3：日常记账与试算', color: '#1d4ed8', style: 'dot' },
+        { label: '本篇（Lesson 4）：调整与结账', color: '#0f766e', style: 'dot' },
+        { label: 'Lesson 1：编制四大报表', color: '#6b7280', style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>

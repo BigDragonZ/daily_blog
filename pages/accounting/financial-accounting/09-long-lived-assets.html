@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 长期资产与折旧 - 财务会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>09 长期资产与折旧</h1>
+      <p>本篇覆盖《财务会计》（Financial Accounting）Lesson 9 全部 14 讲（9.1–9.14，无缺号）。核心问题只有一个：<strong>花一大笔钱买台能用十年的设备，这笔钱在报表上该怎么"流"？</strong>答案是：先<span class="term">资本化</span><span class="term-en">（Capitalize）</span>成资产，再通过<span class="term">折旧</span><span class="term-en">（Depreciation）</span>在使用年限里系统地分摊为费用。全章围绕一台成本 $295,000、残值 $55,000、寿命 10 年的设备，把直线法、工作量法、余额递减法三种折旧方法算到底，再加上减值、处置、无形资产与固定资产周转率。所有例题数字沿用讲义，已逐年复算。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、引入：$100,000 的设备与"几乎不动"的利润表</h2>
+      <p><strong>反直觉开场：</strong>年初你花 $100,000 现金买了一台设备——公司账上真金白银少了十万。年末看利润表，当年的费用里却没有这笔 $100,000，利润几乎没受影响。钱明明花出去了，利润表却装没看见？这不是漏洞，而是会计对长期资产的基本立场：<strong>买资产不是费用</strong>。你付出的 $100,000 换来的是一项能在未来十年持续创造收入的资源——它只是从"现金"这种资产换成了"设备"这种资产，总资产一分没少。真正的费用发生在随后的每一年：设备被一点点用旧，它的成本就一点点"流"进利润表，这个流动过程叫折旧。本章的任务就是搞懂：哪些支出该变成资产、成本按什么规则流出、流完了（或没流完）资产卖掉时又怎么算账。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、什么是长期资产：定义与三大分类</h2>
+      <p><span class="term">长期资产</span><span class="term-en">（Long-Lived Assets）</span>是为<strong>经营自用</strong>而购置、预计使用期限<strong>超过一年</strong>、且<strong>不以转售为目的</strong>的资产。三个条件缺一不可，其中"非转售"最容易踩坑：同一台拖拉机，对生产它的制造商是<span class="term">存货</span><span class="term-en">（Inventory，Lesson 7 的主角）</span>，对买来耕地的农场才是长期资产——资产归类取决于<strong>你拿它做什么</strong>，而不是它是什么。办公用品寿命不足一年，也不算长期资产。</p>
+      <div id="fig-classes"></div>
+      <p><strong>图 1 解读：</strong>长期资产分三类，会计处理各不相同。①<span class="term">有形资产</span><span class="term-en">（Tangible Assets）</span>——有物理形态，也叫<span class="term">固定资产</span><span class="term-en">（Fixed Assets）</span>，如设备、土地、建筑物，成本分摊叫<strong>折旧</strong>（注意：土地不折旧，因为它不会被"用旧"）；②<span class="term">无形资产</span><span class="term-en">（Intangible Assets）</span>——无物理形态但价值巨大，如商标、专利、版权，成本分摊叫<strong>摊销</strong>；③<span class="term">自然资源</span><span class="term-en">（Natural Resources）</span>——木材、石油、煤炭等，本课程不展开。长期资产往往是资产负债表上最大的项目：塔吉特（Target）总资产约 $390 亿，其中财产与设备就占 $250 亿。本章主线是有形资产的完整生命周期：<strong>购置 → 持有使用（折旧）→ 处置</strong>，最后单独讲无形资产。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、成本 vs 费用：资本化的门槛</h2>
+
+      <h3>3.1 成本与费用：一字之差，报表两重天</h3>
+      <p>日常语言里"成本"和"费用"常混用，本章起必须分开。<span class="term">成本</span><span class="term-en">（Cost）</span>是为获取长期资产付出的全部代价——不只是现金：$25,000 买辆车，首付 $3,000、贷款 $22,000，成本仍是完整的 $25,000。<span class="term">费用</span><span class="term-en">（Expense）</span>是成本中被<strong>摊进某一期利润表</strong>的那部分。两者的关系：成本先趴在资产负债表上，再按规则逐年转化为费用。例：$10,000 买辆车用 5 年，平均分摊则每年费用 $2,000——成本是 $10,000（一次性），费用是每年 $2,000（分五次）。按<span class="term">公认会计原则</span><span class="term-en">（GAAP, Generally Accepted Accounting Principles）</span>，长期资产成本必须在其<span class="term">使用寿命</span><span class="term-en">（Useful Life）</span>内系统分摊，不能像办公用品那样当年一次性核销。</p>
+
+      <h3>3.2 资本化的门槛：合理且必要</h3>
+      <p><span class="term">资本化</span><span class="term-en">（Capitalize）</span>指把一笔支出记为<strong>资产</strong>而不是当期费用。买设备时我们不借记"设备费用"，而是借记"设备"这个资产账户——先不费用化，留待以后按规则分摊。哪些支出可以搭车进入资产成本？规则只有一条：<strong>为使资产达到预定可使用状态而发生的一切"合理且必要"的支出</strong>，不止买价本身。买电脑 $699，加销售税、加专家安装软件费、加运费——全是成本。"合理"指价格公道不过度支出；"必要"指该支出能带来未来经济利益。这条门槛是防造假的第一道闸：把本该费用化的 $100 万工资违规资本化，当年净利润就凭空多出 $100 万——这是世通（WorldCom）式丑闻的经典手法，违法。</p>
+      <table>
+        <thead>
+          <tr><th>资产类别</th><th>应资本化的典型支出</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>土地（Land）</td><td>买价、产权调查与保险费、场地清理费（拆旧建新）、勘测费、法律费用</td></tr>
+          <tr><td>建筑物（Buildings）</td><td>买价、评估费（如贷款评估）、法律费用、建筑师费、建筑检查费</td></tr>
+          <tr><td>设备（Equipment）</td><td>买价（扣除折扣）、运输费、安装费、调试测试费、销售税</td></tr>
+        </tbody>
+      </table>
+      <p>记忆钩子：<strong>从购买、运输到安装调试，让资产"能用了"之前的一切必要花费都进成本</strong>。另有一条务实的豁免——<span class="term">重要性</span><span class="term-en">（Materiality）</span>：一个 $2.50 的订书机寿命也超一年，但为每年 $0.25 的折旧做分录，记账成本比金额本身还贵。公司通常设阈值（如 $500），低于阈值的长期资产直接当期费用化。</p>
+
+      <h3>3.3 配套例题：购置分录（9.4）</h3>
+      <p>A 公司购入一台设备：标价 $295,000，获 10% 折扣，现金支付；运输费 $6,350 由 Freight Services Inc. 承运，30 天内付款（挂账）；安装调试费 $2,800 现金支付。问：资本化总成本与分录？</p>
+      <table>
+        <thead>
+          <tr><th>项目</th><th>金额</th><th>处理</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>设备净买价 = $295,000 − 10% × $295,000</td><td>$265,500</td><td>现金支付</td></tr>
+          <tr><td>运输费（达到可用状态的必要支出）</td><td>$6,350</td><td>挂应付账款</td></tr>
+          <tr><td>安装调试费</td><td>$2,800</td><td>现金支付</td></tr>
+          <tr><td><strong>设备入账成本（资本化总额）</strong></td><td><strong>$274,650</strong></td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p>支付方式拆分：现金共付 265,500 + 2,800 = $268,300；欠运输公司 $6,350。分录（借贷必相等）：</p>
+      <table>
+        <thead>
+          <tr><th>账户</th><th>借方（Debit）</th><th>贷方（Credit）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>设备（Equipment）</td><td>$274,650</td><td>—</td></tr>
+          <tr><td>　现金（Cash）</td><td>—</td><td>$268,300</td></tr>
+          <tr><td>　应付账款（Accounts Payable）</td><td>—</td><td>$6,350</td></tr>
+        </tbody>
+      </table>
+      <p>关键纪律：<strong>运输、安装支出不借记"运输费用""安装费用"，而是直接借记资产账户本身</strong>。若各笔账单不同时到达，就分开做几笔分录（如借：设备 $6,350，贷：应付账款 $6,350），最终结果一样——全部成本都归集进"设备"。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、后续支出：维修费用化 vs 改良资本化</h2>
+      <p>设备投入使用后还会持续花钱——换机油、修零件、大改造。这些<strong>后续支出</strong>是资本化还是费用化？分水岭在于：<strong>这笔钱是"维持"资产原状，还是让资产"变得更好/更耐用"</strong>。</p>
+      <div id="fig-subsequent"></div>
+      <p><strong>图 2 解读：</strong>后续支出分两类。①<span class="term">日常维修与保养</span><span class="term-en">（Ordinary Repairs and Maintenance）</span>：维持正常运转的开销（汽车换机油），效益只及当期，<strong>发生时直接费用化</strong>（借：维修费用）。②<span class="term">重大修理、重置与增添</span><span class="term-en">（Extraordinary Repairs, Replacements and Additions）</span>：不频繁、金额大，能显著延长寿命或提升性能——例如给汽车发动机大修，实质是"再造"了一辆更好的车，必须<strong>资本化</strong>（通常单设账户如"汽车大修"），再在其带来的效益期内分摊。例：一辆车原寿命 10 年，用到第 5 年时大修，使总寿命延长到 12 年——大修成本在"剩余 5 年 + 新增 2 年 = 7 年"内分摊。判断失误的代价回到 3.2 节：把日常维修包装成"改良"资本化，就是虚增利润。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、折旧基础：成本分摊，不是估值</h2>
+
+      <h3>5.1 折旧的定义与两个新账户</h3>
+      <p><span class="term">折旧</span><span class="term-en">（Depreciation）</span>是在资产使用寿命内，对其<span class="term">资本化成本</span><span class="term-en">（Capitalized Cost）</span>进行<span class="term">系统性分摊</span><span class="term-en">（Systematic Allocation）</span>的过程。关键词是"系统性"——每年提多少折旧由既定公式算出，<strong>不许看心情随机挑数</strong>。例：$30,000 的车用 5 年，最简单的方法是每年固定摊 $6,000。记录折旧涉及两个新账户：</p>
+      <ul>
+        <li><span class="term">折旧费用</span><span class="term-en">（Depreciation Expense）</span>：<strong>利润表</strong>费用账户，记录<strong>当期</strong>分摊的金额。临时账户，年末结清零；</li>
+        <li><span class="term">累计折旧</span><span class="term-en">（Accumulated Depreciation）</span>：<strong>资产负债表</strong>上的<span class="term">备抵资产账户</span><span class="term-en">（Contra Asset Account）</span>，记录自购入以来折旧的<strong>累计总和</strong>。永久账户，持续累加直到资产处置。三年后的余额就是 $18,000（3 × $6,000）。</li>
+      </ul>
+      <p>折旧分录永远长一个样，与用哪种方法无关：<strong>借：折旧费用　贷：累计折旧</strong>。注意两点：①<strong>不直接贷记"设备"账户</strong>——保留原始成本在账上，报表使用者才能同时看到"买价多少"与"已摊多少"；②折旧是<strong>非现金费用</strong>——计提折旧没有一分现金流出，现金早在购置当年就花掉了，这对 Lesson 12 的现金流分析至关重要。</p>
+
+      <h3>5.2 三要素与可折旧成本</h3>
+      <p>计算任何折旧都需要三个输入：①<strong>资产成本</strong>（3.2 节的资本化总额）；②<span class="term">使用寿命</span><span class="term-en">（Useful Life）</span>——注意是<strong>对购买者</strong>的寿命而非物理总寿命：公司计划新车用 5 年就卖掉换新，哪怕车还能再开 10 年，使用寿命就是 5 年；③<span class="term">残值</span><span class="term-en">（Salvage Value / Residual Value）</span>——寿命结束时预计能卖回的金额。三者组合出：</p>
+      <p style="text-align:center;"><strong>可折旧成本（Depreciable Cost） = 资产成本 − 残值</strong></p>
+      <p>$30,000 的车残值 $5,000，则可折旧成本 $25,000——寿命内总共只摊 $25,000，因为最后还能收回 $5,000。</p>
+
+      <h3>5.3 账面价值 ≠ 公允价值</h3>
+      <p style="text-align:center;"><strong>账面价值（Book Value） = 资本化成本 − 累计折旧</strong></p>
+      <p>设备成本 $2,000、累计折旧 $500，<span class="term">账面价值</span><span class="term-en">（Book Value）</span>就是 $1,500。但<span class="term">公允价值</span><span class="term-en">（Fair Value）</span>是市场上能卖出的价格——账面 $1,500 的设备可能只能卖 $1,200，就像新车开出 4S 店门立刻跌价 20%。<strong>折旧是成本分摊程序，不是估值程序</strong>：账面价值只是"还没摊完的成本"，从不承诺等于市价。这条原则在本章两次发威：市价暴跌时要确认减值（第八节），处置时卖价与账面价值之差就是损益（第九节）。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、三种折旧方法：同一台设备的三种命运</h2>
+      <p>本节全用讲义的同一道例题：<strong>A 公司 2001 年 1 月 1 日购入设备，成本 $295,000，预计使用 10 年后以 $55,000 售出</strong>。可折旧成本 = 295,000 − 55,000 = <strong>$240,000</strong>——无论选哪种方法，十年摊掉的总额都是这 $240,000，分歧只在<strong>时间分布</strong>。</p>
+
+      <h3>6.1 直线法（Straight-Line）：最常用的匀速流</h3>
+      <p><span class="term">直线法</span><span class="term-en">（Straight-Line Method, SL）</span>假定资产效用随时间均匀流失，每年分摊相同金额：</p>
+      <p style="text-align:center;"><strong>年折旧费用 =（成本 − 残值）÷ 使用年限 =（295,000 − 55,000）÷ 10 = $24,000/年</strong></p>
+      <p>每月折旧 = 24,000 ÷ 12 = $2,000（按月计算时注意单位别混）。十年下来累计折旧恰好 $240,000，第 10 年末账面价值 = 295,000 − 240,000 = $55,000，<strong>正好等于残值</strong>——这是检验任何折旧计算是否正确的标志。图形上，年折旧费用是一条水平直线，累计折旧是一条稳定上行的斜线，方法因此得名。绝大多数公司用直线法，因为简单、一致、好交代。<strong>优点：</strong>计算最简、每年金额一致、跨期可比性最强，新人也能算对。<strong>缺点：</strong>"效用均匀流失"的假设常与事实不符——很多资产（汽车、电脑）明显是年轻时更能干；匀速费用也抹平了资产产出能力的变化。</p>
+
+      <h3>6.2 工作量法（Units of Production）：用多少，摊多少</h3>
+      <p><span class="term">工作量法</span><span class="term-en">（Units of Production Method, UOP）</span>换了一个假设：资产的消耗不由时间决定，而由<strong>实际使用量</strong>决定——机器不开工就不折旧。两步计算：</p>
+      <p style="text-align:center;"><strong>① 单位折旧率 =（成本 − 残值）÷ 预计总工作量　② 当年折旧 = 当年实际工作量 × 单位折旧率</strong></p>
+      <p><strong>配套例题（9.8）：</strong>同一台设备，预计总寿命 220,000 <span class="term">机器小时</span><span class="term-en">（Machine Hours）</span>，第 1 年实际运行 21,000 小时。单位折旧率 = 240,000 ÷ 220,000 ≈ <strong>$1.0909/小时</strong>（讲义四舍五入为 $1.091）；第 1 年折旧 = 21,000 × 1.0909 ≈ <strong>$22,909</strong>（讲义用 1.091 算得 $22,911，差异纯系四舍五入）。若第 2 年跑 100,000 小时，折旧就飙到约 $109,000；只跑 1 小时就只有 $1.09——费用完全跟着使用量波动。工作量可以是机器小时、行驶里程、产量件数等<span class="term">成本动因</span><span class="term-en">（Cost Driver）</span>。同样有一条铁律：<strong>账面价值不得低于残值</strong>——累计折旧总额到 $240,000 就停，哪怕机器还在转。<strong>优点：</strong>费用与实际消耗、当期收入完美配比（Matching 精神的极致），资产闲时不冤枉利润。<strong>缺点：</strong>必须能可靠计量使用量（里程表、工时记录），且"预计总工作量"本身难估准；产量波动会直接传导成利润波动。</p>
+
+      <h3>6.3 余额递减法（Declining Balance）：先重后轻的加速流</h3>
+      <p><span class="term">余额递减法</span><span class="term-en">（Declining Balance Method）</span>的假设相反：资产在寿命<strong>初期</strong>更有用（维修少、不停机），所以前期应多摊。实务默认使用 200% 比率，即<span class="term">双倍余额递减法</span><span class="term-en">（Double Declining Balance, DDB）</span>：</p>
+      <p style="text-align:center;"><strong>年折旧费用 =（成本 − 累计折旧）×（2 ÷ 使用年限）</strong></p>
+      <p>两个易错点：①括号里减的是<strong>累计折旧</strong>（即对期初账面价值取固定比率），<strong>残值不进公式</strong>；②残值仍是底线——哪一年按公式算会使账面价值跌破残值，该年就只提"补差"金额，把账面价值恰好降到残值，之后不再计提。<strong>配套例题（9.9）：</strong>第 1 年 =（295,000 − 0）× 2/10 = <strong>$59,000</strong>；第 2 年 =（295,000 − 59,000）× 2/10 = <strong>$47,200</strong>；第 3 年 =（295,000 − 106,200）× 2/10 = <strong>$37,760</strong>……逐年递减。到第 7 年末账面价值 $61,866；第 8 年按公式应提 61,866 × 20% ≈ $12,373，但这会把账面价值打到 $49,493 &lt; 残值 $55,000——于是第 8 年只提 <strong>$6,866</strong>（= 61,866 − 55,000），账面价值落稳在残值上，第 9、10 年折旧为零。完整逐年数字见 6.4 节对照表。<strong>优点：</strong>费用前高后低，匹配"资产早期效率高、维修少"的真实经济形态；若税法允许，早期大额折旧能推迟纳税（货币时间价值）。<strong>缺点：</strong>计算最繁琐，逐年滚动依赖上年结果（强烈建议用表格/Excel 跟踪）；"早期更有用"同样是人为假设；后期费用骤降甚至归零，利润前低后高，波动被人为放大。</p>
+
+      <h3>6.4 三法对决：同一张设备，三条下降曲线</h3>
+      <p>工作量法的讲义例题只给了第 1 年用量（21,000 小时）。为画出完整十年对比，<strong>本篇假设各年用量为 21,000 / 30,000 / 35,000 / 32,000 / 28,000 / 24,000 / 20,000 / 15,000 / 10,000 / 5,000 小时（合计恰为 220,000 小时）</strong>，逐年数字如下表（单位：美元）：</p>
+      <table>
+        <thead>
+          <tr><th>年份</th><th>直线法 年折旧</th><th>工作量法 年折旧*</th><th>DDB 年折旧</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>24,000</td><td>22,909</td><td>59,000</td></tr>
+          <tr><td>2</td><td>24,000</td><td>32,727</td><td>47,200</td></tr>
+          <tr><td>3</td><td>24,000</td><td>38,182</td><td>37,760</td></tr>
+          <tr><td>4</td><td>24,000</td><td>34,909</td><td>30,208</td></tr>
+          <tr><td>5</td><td>24,000</td><td>30,545</td><td>24,166</td></tr>
+          <tr><td>6</td><td>24,000</td><td>26,182</td><td>19,333</td></tr>
+          <tr><td>7</td><td>24,000</td><td>21,818</td><td>15,467</td></tr>
+          <tr><td>8</td><td>24,000</td><td>16,364</td><td><strong>6,866（补差）</strong></td></tr>
+          <tr><td>9</td><td>24,000</td><td>10,909</td><td>0</td></tr>
+          <tr><td>10</td><td>24,000</td><td>5,455</td><td>0</td></tr>
+          <tr><td><strong>合计</strong></td><td><strong>240,000</strong></td><td><strong>240,000</strong></td><td><strong>240,000</strong></td></tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr><th>年末</th><th>直线法 账面价值</th><th>工作量法 账面价值</th><th>DDB 账面价值</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0（购入）</td><td>295,000</td><td>295,000</td><td>295,000</td></tr>
+          <tr><td>1</td><td>271,000</td><td>272,091</td><td>236,000</td></tr>
+          <tr><td>2</td><td>247,000</td><td>239,364</td><td>188,800</td></tr>
+          <tr><td>3</td><td>223,000</td><td>201,182</td><td>151,040</td></tr>
+          <tr><td>4</td><td>199,000</td><td>166,273</td><td>120,832</td></tr>
+          <tr><td>5</td><td>175,000</td><td>135,728</td><td>96,666</td></tr>
+          <tr><td>6</td><td>151,000</td><td>109,546</td><td>77,332</td></tr>
+          <tr><td>7</td><td>127,000</td><td>87,728</td><td>61,866</td></tr>
+          <tr><td>8</td><td>103,000</td><td>71,364</td><td><strong>55,000（触及残值）</strong></td></tr>
+          <tr><td>9</td><td>79,000</td><td>60,455</td><td>55,000</td></tr>
+          <tr><td>10</td><td><strong>55,000</strong></td><td><strong>55,000</strong></td><td>55,000</td></tr>
+        </tbody>
+      </table>
+      <p>* 工作量法按精确比率 240,000/220,000 ≈ $1.0909/小时计算并四舍五入到整数，十年合计恰好 $240,000；讲义第 1 年用 $1.091 的近似值得 $22,911（差 $2，为四舍五入差异）。</p>
+      <div id="fig-depr"></div>
+      <p><strong>图 3 解读：</strong>三种方法的年折旧费用形态截然不同。<strong>直线法</strong>（蓝线）是 $24,000 的水平线；<strong>工作量法</strong>（绿线）随产量起伏——本例产量先升后降，费用画出一座小山（峰值 $38,182 出现在第 3 年产量最高的年份）；<strong>DDB</strong>（橙线）从 $59,000 的高点逐年几何衰减，第 8 年受残值约束"补差"至 $6,866 后归零。第 3 年附近三线交汇不是巧合：此时 DDB 的递减额恰好与直线额打平。<strong>殊途同归：三条曲线下方的总面积都是 $240,000</strong>，方法之争只是"何时认费用"的时间分布之争。</p>
+      <div id="fig-bv"></div>
+      <p><strong>图 4 解读：</strong>账面价值的下降路径更直观。直线法（蓝）匀速下行，恰在第 10 年末落到残值 $55,000；DDB（橙）前段骤降、第 8 年就提前"触底"残值线（灰色虚线），最后两年贴着残值走平——账面价值可以等于残值，<strong>永远不能低于它</strong>；工作量法（绿）的下降节奏完全由产量驱动，本例产量前高后低，所以曲线先陡后缓。注意对照：DDB 前期费用高 → 前期账面价值低 → 前期净利润低。方法选择不改变资产的物理命运，只改变利润在十年间的<strong>分布形状</strong>。</p>
+
+      <!-- ==================== 七 ==================== -->
+      <h2>七、特殊折旧情况：一致性、部分年度与税会差异</h2>
+      <ul>
+        <li><strong><span class="term">一致性</span><span class="term-en">（Consistency）</span>：</strong>不同<strong>类别</strong>的资产可用不同方法（设备用 DDB、厂房用直线、车辆用工作量，完全合法），但<strong>同一类别一旦选定方法就应持续使用</strong>，随意更换会破坏报表可比性。实务中多数公司索性全用直线法——简单到新来的毕业生也不会算错。</li>
+        <li><strong>部分年度折旧：</strong>资产很少恰好 1 月 1 日买入。年中购置时，<strong>基于时间的方法</strong>（直线、DDB）第一年要按比例（prorate）计提：5 月 1 日购入的直线法资产，首年只提 8/12（5–12 月，"当月使用即算整月"是常见惯例），寿命最后一年再补剩下的 4/12。<strong>工作量法不存在此问题</strong>——直接用当年实际产量，天然与时间无关。</li>
+        <li><strong>税会差异：</strong>给股东看的财务账按 GAAP（如直线法），给税务局看的税账往往用加速体系——美国的<span class="term">修正加速成本回收法</span><span class="term-en">（MACRS, Modified Accelerated Cost Recovery System）</span>允许早期大额抵扣。同一资产税账第一年折旧 65%、财账只提 10%，完全正常——早折旧 = 早抵税 = 晚缴税，公司当然乐意。本课程只讲财务账。</li>
+      </ul>
+
+      <!-- ==================== 八 ==================== -->
+      <h2>八、资产减值：市场不答应时强制认亏</h2>
+      <p>5.3 节说过账面价值不等于公允价值，平时这种偏离没人管——资产的价值在于用它创造收入，而不是卖它。但如果价值<strong>大幅且非暂时地</strong>下跌呢？<strong>反直觉点：涨了就装没看见（未实现利得绝不入账），跌狠了必须立刻认账</strong>。当公司通过未来经营<strong>收回</strong>资产账面价值的能力受阻时，即发生<span class="term">资产减值</span><span class="term-en">（Asset Impairment）</span>：账面 $100 万的机器，未来只能带来约 $25 万的收入，就必须把账面价值减记到能收回的水平，差额确认<span class="term">减值损失</span><span class="term-en">（Impairment Loss）</span>。</p>
+      <p><strong>配套例题（9.11，两步走）：</strong>设备成本 $1,000 万，已用十年，累计折旧 $400 万（账面价值 $600 万）。因技术更新/市场变化，估计公允价值只剩 $150 万。</p>
+      <ul>
+        <li><strong>第一步：冲销累计折旧</strong>——借：累计折旧 $4,000,000；贷：设备 $4,000,000。设备账面从 $1,000 万降至 $600 万，累计折旧归零；</li>
+        <li><strong>第二步：减记至公允价值</strong>——差额 600 − 150 = $450 万计入减值损失：借：减值损失 $4,500,000；贷：设备 $4,500,000。设备账面落在 $150 万 = 公允价值。</li>
+      </ul>
+      <div id="fig-impair"></div>
+      <p><strong>图 5 解读：</strong>减值的账是一张"三段式"分解：冲销累计折旧后的账面价值 $600 万，被拆成"承认永远收不回的部分"（减值损失 $450 万）与"市场还承认的部分"（公允价值 $150 万）。减值损失列在利润表<strong>营业费用</strong>下，直接砍掉当年净利润 $450 万——心疼，但这笔现金十年前就花出去了，确认损失只是承认现实，并非新的现金流出。减值规则的<strong>优点</strong>是及时挤掉资产水分，防止报表使用者被虚高资产误导；<strong>缺点</strong>是规则不对称（只许认亏不许认涨），且"未来能收回多少"依赖管理层估计，留下了操纵与洗大澡（big bath）的空间。</p>
+
+      <!-- ==================== 九 ==================== -->
+      <h2>九、处置：先补折旧，再算损益</h2>
+      <p>资产生命周期的最后一站是<span class="term">处置</span><span class="term-en">（Disposal）</span>。最复杂也最有代表性的情形是<strong>寿命中途出售</strong>（学通了它，"提足折旧后处置"自然更简单）。固定两步：</p>
+      <div id="fig-disposal"></div>
+      <p><strong>图 6 解读：</strong>①<strong>把折旧更新到处置日</strong>——年中卖掉资产，从年初到卖出这几个月的折旧还没提，必须先补（已提足至残值的资产可跳过）；②<strong>一笔复合分录记录处置</strong>——收现金、注销资产原值与全部累计折旧、确认<span class="term">处置损益</span><span class="term-en">（Gain/Loss on Disposal）</span>：<strong>处置损益 = 卖价 − 处置日账面价值</strong>。</p>
+      <p><strong>配套例题（9.12）：</strong>4 月 1 日，A 公司以 $20,000 出售 A 机器。1 月 1 日账面：成本 $76,200，直线法，寿命 15 年，残值 $4,200，已用 13 年，累计折旧 $62,400（验证：年折旧 =（76,200 − 4,200）÷ 15 = $4,800，13 × 4,800 = $62,400 ✓）。</p>
+      <table>
+        <thead>
+          <tr><th>步骤</th><th>计算</th><th>结果</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>① 补提 1–3 月折旧</td><td>月折旧 $4,800 ÷ 12 = $400；3 个月 × $400</td><td>$1,200</td></tr>
+          <tr><td>　分录</td><td colspan="2">借：折旧费用 $1,200　贷：累计折旧 $1,200</td></tr>
+          <tr><td>② 更新后累计折旧</td><td>62,400 + 1,200</td><td>$63,600</td></tr>
+          <tr><td>② 处置日账面价值</td><td>76,200 − 63,600</td><td>$12,600</td></tr>
+          <tr><td>② 处置收益</td><td>卖价 20,000 − 账面 12,600</td><td><strong>收益 $7,400</strong></td></tr>
+        </tbody>
+      </table>
+      <p>处置分录一笔搞定四件事（收钱、销原值、销累计折旧、认收益）：</p>
+      <table>
+        <thead>
+          <tr><th>账户</th><th>借方（Debit）</th><th>贷方（Credit）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>现金（Cash）</td><td>$20,000</td><td>—</td></tr>
+          <tr><td>累计折旧（Accumulated Depreciation）</td><td>$63,600</td><td>—</td></tr>
+          <tr><td>　设备（Equipment）</td><td>—</td><td>$76,200</td></tr>
+          <tr><td>　设备出售收益（Gain on Sale of Equipment）</td><td>—</td><td>$7,400</td></tr>
+        </tbody>
+      </table>
+      <p>验证：借方合计 20,000 + 63,600 = $83,600 = 贷方合计 76,200 + 7,400 ✓。若卖价低于账面价值，则差额记在借方——<span class="term">设备出售损失</span><span class="term-en">（Loss on Sale of Equipment）</span>。直觉检查：账面价值 $12,600 是"还没摊完的成本"，卖到 $20,000 说明过去的折旧提得太狠了，多出来的 $7,400 本质是<strong>对以往多计费用的纠正</strong>，而非经营利润。</p>
+
+      <!-- ==================== 十 ==================== -->
+      <h2>十、无形资产：看不见，但更贵</h2>
+      <p><span class="term">无形资产</span><span class="term-en">（Intangible Assets）</span>摸不着，却可能是一家公司最值钱的东西——耐克的对勾标志本身价值连城。常见类型：<span class="term">商标</span><span class="term-en">（Trademark，注册商标 ® 效力强于未注册的 TM，注册后维权靠自己起诉）</span>、<span class="term">版权</span><span class="term-en">（Copyright，书籍音乐等作品的专有出版销售权）</span>、<span class="term">专利</span><span class="term-en">（Patent，政府授予约 20 年垄断权；药企专利一到期，仿制药立刻涌入）</span>、<span class="term">特许经营权</span><span class="term-en">（Franchise，如开一家麦当劳所买的那份许可）</span>、<span class="term">商誉</span><span class="term-en">（Goodwill）</span>。商誉最特殊：<strong>只能通过收购产生，不能内部创造</strong>——账面价值 $100 万的公司被 $200 万买走，多付的 $100 万就是商誉，买的是报表上看不见的团队、声誉与客户关系。</p>
+      <div id="fig-intangible"></div>
+      <p><strong>图 7 解读：</strong>无形资产的处理按"寿命是否有限"分岔。<strong>有限寿命</strong>（专利、版权、特许经营权——受法律/合同期限约束）：成本在寿命内<span class="term">摊销</span><span class="term-en">（Amortization）</span>，通常用直线法，账户叫"摊销费用"与"累计摊销"，逻辑与折旧完全同构。<strong>无限寿命</strong>（商标、商誉——只要公司在，价值就在）：<strong>不摊销</strong>，但每年必须做减值测试，价值下跌或被处置时才冲减账面。另一条铁律：<strong>只有"买来的"无形资产才资本化</strong>——花 $50,000 请人设计自家 logo，只能进广告/研发费用（R&amp;D）当期费用化；买下耐克的品牌，才能作为无形资产入账。处置无形资产与有形资产同理：有限寿命的先补摊销再算损益，无限寿命的直接按卖价与账面价值之差算损益。<strong>优点</strong>：外购才入账的规则保证了入账价值有真实交易背书，可验证；<strong>缺点</strong>：内部培育的品牌价值被系统性排除在表外——耐克的资产负债表永远装不下那个对勾的真实价值，"不摊销只测减值"也让商誉高度依赖主观测试。</p>
+
+      <!-- ==================== 十一 ==================== -->
+      <h2>十一、比率分析：固定资产周转率</h2>
+      <p>固定资产是公司最烧钱的投资之一，投得值不值？<span class="term">比率分析</span><span class="term-en">（Ratio Analysis）</span>用<span class="term">固定资产周转率</span><span class="term-en">（Fixed Asset Turnover Ratio）</span>回答："每在固定资产上投 $1，一年能带回多少收入？"</p>
+      <p style="text-align:center;"><strong>固定资产周转率 = 净收入 ÷ 平均固定资产净值；平均固定资产净值 =（期初净值 + 期末净值）÷ 2</strong></p>
+      <p>其中"净值"指扣除累计折旧后的账面净额。<strong>配套例题（9.14，百思买真实报表）：</strong>净收入 $428.79 亿；期初、期末固定资产净值分别为 $25.10 亿、$24.21 亿。平均净值 =（25.10 + 24.21）÷ 2 = $24.655 亿；<strong>周转率 = 428.79 ÷ 24.655 ≈ 17.39</strong>——每 $1 固定资产年产出 $17.39 销售额。高低没有绝对标准，必须<strong>同行相比</strong>：Facebook（轻资产的网站）和杂货连锁店（重资产的门店货架）比较毫无意义，但百思买 vs 另一家电子零售商就有说服力。也别推出"多买固定资产就能线性多赚"的结论——销售额会到平台期，更聪明的问题往往是：能否在保住收入的同时<strong>减少</strong>固定资产占用，把周转率做高。<strong>优点：</strong>把规模悬殊的公司拉到同一标尺，直观量化资产利用效率；<strong>缺点：</strong>分母用的是账面净值，受折旧方法与资产龄期影响（老资产净值低会抬高比率），跨公司比较前须先核对折旧口径。</p>
+
+      <!-- ==================== 十二 ==================== -->
+      <h2>十二、收尾对比：三种折旧方法一览</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>直线法（SL）</th><th>工作量法（UOP）</th><th>余额递减法（DDB）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>费用形态假设</td><td>效用随时间均匀流失</td><td>消耗由实际使用量决定</td><td>资产早期更有用，效用加速衰减</td></tr>
+          <tr><td>公式</td><td>（成本 − 残值）÷ 年限</td><td>单位折旧 × 当年产量</td><td>期初账面价值 ×（2 ÷ 年限）</td></tr>
+          <tr><td>前期 / 后期费用</td><td>每年相等（本例均 $24,000）</td><td>随产量波动（$22,909→峰值 $38,182→$5,455）</td><td>前高后低（$59,000 → 第 8 年补差 $6,866 → 0）</td></tr>
+          <tr><td>残值的角色</td><td>先扣再摊</td><td>先扣再摊（累计不得超成本−残值）</td><td>不进公式，但为账面价值下限（不得跌破）</td></tr>
+          <tr><td>适用资产</td><td>效用均匀、通用默认（建筑物、办公家具）；实务采用最广</td><td>损耗与使用强度挂钩（车辆按里程、设备按机器小时、产线按产量）</td><td>技术更新快、早期效率高的资产（电脑、车辆、高科技设备）</td></tr>
+          <tr><td>对利润与税的影响</td><td>利润平滑；前期费用最低 → 前期账面利润最高</td><td>利润随产量同步波动，收入费用配比最佳</td><td>前期费用高 → 前期利润低；若税法允许加速，早抵税、晚缴税</td></tr>
+          <tr><td>主要缺点</td><td>与真实效用流失常不符</td><td>需可靠计量使用量；总产量估计难</td><td>计算最繁、假设人为、后期利润被动抬高</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（买设备的一大笔钱何时进利润表？）→ 简化模型（先资本化为资产，再按"成本 − 残值"在使用寿命内系统分摊；账面价值 = 成本 − 累计折旧）→ 推导（三种分摊假设给出三种时间分布，殊途同归总额恒为可折旧成本 $240,000，账面价值永不跌破残值）→ 实际应用（$274,650 购置分录；三法十年对照表；减值两步减记 $450 万；4/1 处置补提 $1,200 后确认收益 $7,400；商誉只外购不摊销；百思买周转率 17.39）→ 局限性（折旧是分摊不是估值，账面价值 ≠ 公允价值；寿命与残值全靠估计；方法选择给利润分布留出合法操纵空间；减值与商誉测试依赖主观判断）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/financial-accounting/09-long-lived-assets.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：长期资产三大分类 =====
+    Charts.tree(document.getElementById('fig-classes'), {
+      width: 680,
+      layers: [
+        [{ id: 'root', label: '长期资产分类', width: 170, fill: '#f8fafc' }],
+        [
+          { id: 't', label: '有形资产', color: '#1d4ed8', width: 130 },
+          { id: 'i', label: '无形资产', color: '#0f766e', fill: '#f0fdfa', width: 130 },
+          { id: 'n', label: '自然资源', color: '#b45309', fill: '#fff7ed', width: 130 },
+        ],
+        [
+          { id: 't2', label: '设备/土地/建筑', color: '#1d4ed8', width: 150 },
+          { id: 'i2', label: '商标/专利/商誉', color: '#0f766e', fill: '#f0fdfa', width: 150 },
+          { id: 'n2', label: '木材/石油/煤炭', color: '#b45309', fill: '#fff7ed', width: 150 },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 't', color: '#1d4ed8' },
+        { from: 'root', to: 'i', color: '#0f766e' },
+        { from: 'root', to: 'n', color: '#b45309' },
+        { from: 't', to: 't2', color: '#1d4ed8', label: '计提折旧', labelDx: -34 },
+        { from: 'i', to: 'i2', color: '#0f766e', label: '计提摊销', labelDx: 34 },
+        { from: 'n', to: 'n2', color: '#b45309', label: '本课不展开', labelDx: 40 },
+      ],
+      caption: '图 1：长期资产三大分类——有形（折旧）、无形（摊销）、自然资源（本课略）；土地虽为有形资产但不折旧',
+      legend: [
+        { label: '有形资产（Tangible）', color: '#1d4ed8', style: 'dot' },
+        { label: '无形资产（Intangible）', color: '#0f766e', style: 'dot' },
+        { label: '自然资源（Natural Resources）', color: '#b45309', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：后续支出的资本化/费用化决策 =====
+    Charts.tree(document.getElementById('fig-subsequent'), {
+      width: 640,
+      layers: [
+        [{ id: 'root', label: '资产后续支出', width: 170, fill: '#f8fafc' }],
+        [
+          { id: 'ord', label: '日常维修保养', color: '#b45309', fill: '#fff7ed', width: 150 },
+          { id: 'ext', label: '重大修理改良', color: '#0f766e', fill: '#f0fdfa', width: 150 },
+        ],
+        [
+          { id: 'exp', label: '当期费用化', color: '#b45309', fill: '#fff7ed', width: 150 },
+          { id: 'cap', label: '资本化再分摊', color: '#0f766e', fill: '#f0fdfa', width: 150 },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 'ord', color: '#b45309', label: '维持正常运转', labelDx: -54 },
+        { from: 'root', to: 'ext', color: '#0f766e', label: '延寿/提质/增效', labelDx: 58 },
+        { from: 'ord', to: 'exp', color: '#b45309', label: '借：维修费用', labelDx: -48 },
+        { from: 'ext', to: 'cap', color: '#0f766e', label: '效益期内折旧', labelDx: 50 },
+      ],
+      caption: '图 2：后续支出决策——换机油等日常维修直接费用化；发动机大修等重大改良资本化，在延长后的寿命内分摊',
+      legend: [
+        { label: '费用化路径（进当期利润表）', color: '#b45309', style: 'dot' },
+        { label: '资本化路径（先进资产负债表）', color: '#0f766e', style: 'dot' },
+      ],
+    });
+
+    // ===== 图3：三种方法各年折旧费用对比（同一资产） =====
+    Charts.xy(document.getElementById('fig-depr'), {
+      width: 720,
+      height: 460,
+      xLabel: '年份',
+      yLabel: '年折旧费用（美元）',
+      xMin: 0,
+      xMax: 11,
+      xTicks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      yMax: 65000,
+      yTicks: [0, 10000, 20000, 30000, 40000, 50000, 60000],
+      legendPosition: 'top',
+      series: [
+        { label: '直线法（每年 $24,000）', color: '#1d4ed8',
+          points: [[1,24000],[2,24000],[3,24000],[4,24000],[5,24000],[6,24000],[7,24000],[8,24000],[9,24000],[10,24000]] },
+        { label: '工作量法（随产量波动）', color: '#0f766e',
+          points: [[1,22909],[2,32727],[3,38182],[4,34909],[5,30545],[6,26182],[7,21818],[8,16364],[9,10909],[10,5455]] },
+        { label: '双倍余额递减法（DDB）', color: '#b45309',
+          points: [[1,59000],[2,47200],[3,37760],[4,30208],[5,24166],[6,19333],[7,15467],[8,6866],[9,0],[10,0]] },
+      ],
+      markers: [
+        { x: 1, y: 59000, color: '#b45309', label: '59,000', labelDx: 10, labelDy: -10 },
+        { x: 1, y: 24000, color: '#1d4ed8', label: '24,000', labelDx: 12, labelDy: -12 },
+        { x: 1, y: 22909, color: '#0f766e', label: '22,909', labelDx: -20, labelDy: 20 },
+        { x: 8, y: 6866, color: '#b45309', label: '6,866（补差）', labelDx: 12, labelDy: -12 },
+        { x: 10, y: 24000, color: '#1d4ed8', label: '24,000', labelDx: 8, labelDy: -12 },
+        { x: 10, y: 5455, color: '#0f766e', label: '5,455', labelDx: 8, labelDy: 4 },
+        { x: 10, y: 0, color: '#b45309', label: '0（第8年提足）', labelDx: -96, labelDy: -16 },
+      ],
+      caption: '图 3：同一资产（成本 $295,000、残值 $55,000、10 年）三种方法的年折旧费用——三条曲线下方面积都等于可折旧成本 $240,000',
+    });
+
+    // ===== 图4：三种方法账面价值下降曲线 =====
+    Charts.xy(document.getElementById('fig-bv'), {
+      width: 720,
+      height: 460,
+      xLabel: '年末',
+      yLabel: '账面价值（美元）',
+      xMin: 0,
+      xMax: 10,
+      xTicks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      yMax: 300000,
+      yStep: 50000,
+      legendPosition: 'top',
+      series: [
+        { label: '直线法', color: '#1d4ed8',
+          points: [[0,295000],[1,271000],[2,247000],[3,223000],[4,199000],[5,175000],[6,151000],[7,127000],[8,103000],[9,79000],[10,55000]] },
+        { label: '工作量法', color: '#0f766e',
+          points: [[0,295000],[1,272091],[2,239364],[3,201182],[4,166273],[5,135728],[6,109546],[7,87728],[8,71364],[9,60455],[10,55000]] },
+        { label: '双倍余额递减法（DDB）', color: '#b45309',
+          points: [[0,295000],[1,236000],[2,188800],[3,151040],[4,120832],[5,96666],[6,77332],[7,61866],[8,55000],[9,55000],[10,55000]] },
+        { label: '残值 $55,000', color: '#6b7280', dash: true,
+          points: [[0,55000],[10,55000]] },
+      ],
+      markers: [
+        { x: 0, y: 295000, color: '#374151', label: '成本 295,000', labelDx: 10, labelDy: -8 },
+        { x: 8, y: 55000, color: '#b45309', label: 'DDB 第8年触线', labelDx: 12, labelDy: 18 },
+        { x: 10, y: 55000, color: '#1d4ed8', label: '55,000', labelDx: -54, labelDy: -14 },
+      ],
+      caption: '图 4：三种方法年末账面价值下降曲线——DDB 第 8 年提前触及残值线后走平；账面价值可等于残值，永不低于残值',
+    });
+
+    // ===== 图5：资产减值三段分解（百万美元） =====
+    Charts.bar(document.getElementById('fig-impair'), {
+      width: 640,
+      height: 400,
+      categories: ['账面价值（冲销累计折旧后）', '减值损失', '公允价值（减记目标）'],
+      series: [
+        { label: '金额（百万美元）', color: '#b45309', values: [6, 4.5, 1.5] },
+      ],
+      yMax: 7,
+      yStep: 1,
+      yLabel: '百万美元',
+      caption: '图 5：减值分解——账面价值 $600 万 = 减值损失 $450 万（认亏）+ 公允价值 $150 万（市场仍承认的部分）',
+    });
+
+    // ===== 图6：处置两步骤 =====
+    Charts.tree(document.getElementById('fig-disposal'), {
+      width: 640,
+      layers: [
+        [{ id: 'root', label: '处置 A 机器', width: 170, fill: '#f8fafc' }],
+        [
+          { id: 's1', label: '①补提折旧至4/1', color: '#1d4ed8', width: 160 },
+          { id: 's2', label: '②记录处置分录', color: '#0f766e', fill: '#f0fdfa', width: 160 },
+        ],
+        [
+          { id: 's1b', label: '补提$1,200', color: '#1d4ed8', width: 150 },
+          { id: 's2b', label: '收益$7,400', color: '#0f766e', fill: '#f0fdfa', width: 150 },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 's1', color: '#1d4ed8', label: '3个月×$400', labelDx: -48 },
+        { from: 'root', to: 's2', color: '#0f766e', label: 'BV=$12,600', labelDx: 46 },
+        { from: 's1', to: 's1b', color: '#1d4ed8', label: '借折旧费 贷累计折旧', labelDx: -76 },
+        { from: 's2', to: 's2b', color: '#0f766e', label: '卖价$20,000−BV', labelDx: 58 },
+      ],
+      caption: '图 6：中途处置两步骤——先把折旧更新到处置日（1–3 月补提 $1,200），再按"卖价 − 账面价值"确认损益（收益 $7,400）',
+      legend: [
+        { label: '步骤①：更新折旧', color: '#1d4ed8', style: 'dot' },
+        { label: '步骤②：记录处置', color: '#0f766e', style: 'dot' },
+      ],
+    });
+
+    // ===== 图7：无形资产分类与处理 =====
+    Charts.tree(document.getElementById('fig-intangible'), {
+      width: 640,
+      layers: [
+        [{ id: 'root', label: '无形资产', width: 150, fill: '#f8fafc' }],
+        [
+          { id: 'lim', label: '有限寿命', color: '#1d4ed8', width: 140 },
+          { id: 'unl', label: '无限寿命', color: '#b45309', fill: '#fff7ed', width: 140 },
+        ],
+        [
+          { id: 'lim2', label: '专利/版权/特许', color: '#1d4ed8', width: 160 },
+          { id: 'unl2', label: '商标/商誉', color: '#b45309', fill: '#fff7ed', width: 160 },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 'lim', color: '#1d4ed8', label: '直线法摊销', labelDx: -42 },
+        { from: 'root', to: 'unl', color: '#b45309', label: '不摊销·年测减值', labelDx: 62 },
+        { from: 'lim', to: 'lim2', color: '#1d4ed8', label: '寿命受法律/合同限制', labelDx: -70 },
+        { from: 'unl', to: 'unl2', color: '#b45309', label: '商誉只能外购', labelDx: 48 },
+      ],
+      caption: '图 7：无形资产按寿命分岔——有限寿命直线法摊销；无限寿命（含商誉）不摊销、每年测减值；只有外购的无形资产才资本化',
+      legend: [
+        { label: '有限寿命（摊销）', color: '#1d4ed8', style: 'dot' },
+        { label: '无限寿命（不摊销，测减值）', color: '#b45309', style: 'dot' },
+      ],
+    });
+  </script>
+</body>
+</html>

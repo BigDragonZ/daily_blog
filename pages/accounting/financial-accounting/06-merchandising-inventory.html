@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 商业运营与商品存货 - 财务会计 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>06 商业运营与商品存货</h1>
+      <p>本篇覆盖《财务会计》（Financial Accounting）Lesson 6 的 6.1–6.22 讲（6.16、6.19 原课程缺号，本篇按上下文补全并加提示）。前五讲（见 <a href="01-basics-and-statements.html">01 会计基础与四大报表</a>）里我们默认研究的都是<strong>服务型公司</strong>；从本讲开始，主角换成<strong>商业（零售）公司</strong>——它们的经营链条里多了一环"存货"，而这一环牵出一整套新分录：采购、运费、退货折让、折扣、两笔销售分录、盘亏调整，最后以毛利率收尾。</p>
+
+      <!-- ==================== 一 ==================== -->
+      <h2>一、从服务型到商业型：多出来的"存货"一环</h2>
+
+      <h3>1.1 引入：同样从现金出发，零售商的路多了一站</h3>
+      <p><strong>对比开场：</strong>一家咨询公司（服务型）的循环很短——手里有现金，给客户提供服务，开出账单，收回现金，再付掉工资房租，现金变多，循环结束。而塔吉特（Target）这样的零售商，现金不能直接变成服务：它必须先<strong>买入一仓库的商品</strong>，等商品在货架上被卖掉，才能开始收钱。链条里硬生多出来的这一站就是<span class="term">存货</span><span class="term-en">（Inventory）</span>——公司打算转卖给客户的商品。别小看这一站：钱压在货架上动不了、商品会被偷会损坏、运货要花钱、客户会退货会砍价——本章几乎所有新规则，都是这一站惹的祸。</p>
+      <p>先划清一个边界：<strong>存货 ≠ 办公用品</strong>。史泰博（Staples）货架上待售的订书钉是存货；店员自己拿来接收订单的 Apple Pencil 是办公用品（Supplies）。区分标准只有一条：<strong>这东西是打算卖给客户的，还是留着自己用的</strong>。</p>
+
+      <h3>1.2 三类公司：服务、商业、制造</h3>
+      <p>按"靠什么赚钱"，公司大致分三类。本课程只处理前两类，制造型（原材料→在产品→产成品的成本流转）留给成本会计课程。</p>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>服务型（Service）</th><th>商业/零售型（Merchandising）</th><th>制造型（Manufacturing）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>盈利方式</td><td>提供服务</td><td>低买高卖<strong>现成的</strong>商品（不自己生产）</td><td>把原材料加工成产成品再卖</td></tr>
+          <tr><td>代表公司</td><td>西南航空（客运服务）</td><td>塔吉特、沃尔玛、百思买</td><td>可口可乐、菲多利</td></tr>
+          <tr><td>资产负债表特色</td><td>现金、应收账款、物料、设备</td><td>多一项关键流动资产：<strong>存货</strong></td><td>存货再拆三种：原材料/在产品/产成品</td></tr>
+          <tr><td>利润表特色</td><td>服务收入 − 运营费用 = 净利润</td><td>收入之下多一行<strong>销货成本</strong>（COGS），先算毛利再减运营费用</td><td>COGS 需经成本核算层层归集</td></tr>
+        </tbody>
+      </table>
+      <p>现实公司业务会重叠（西南航空也在飞机上卖零食），但会计上按主营业务归类。本章全程以"从供应商买入存货、加价卖给客户"的商业公司为视角。</p>
+
+      <h3>1.3 存货的会计身份：先当资产，卖出才变费用</h3>
+      <p>以 $1 买入、计划 $2 卖出的一盒订书钉为例，成本的旅程分两段：<strong>买入时</strong>——按<span class="term">成本原则</span><span class="term-en">（Cost Principle）</span>与<span class="term">配比原则</span><span class="term-en">（Matching Principle）</span>，购入不记费用，而是借记资产账户"存货" $1；<strong>卖出时</strong>——才把这 $1 从存货转入费用账户<span class="term">销货成本</span><span class="term-en">（Cost of Goods Sold, COGS）</span>：借记 COGS $1、贷记存货 $1。成本的流转方向永远是 <strong>存货（资产）→ COGS（费用）</strong>，且只在售出那一刻转移。</p>
+      <p>由此得到贯穿全章的<strong>存货方程式</strong>。期初存货 + 本期采购 = <span class="term">可供销售商品</span><span class="term-en">（Goods Available for Sale）</span>，而可供销售的商品只有两种去向——卖出（进 COGS）或没卖出（留作期末存货）：</p>
+      <p style="text-align:center;"><strong>期初存货 + 采购 − 期末存货 = 销货成本（COGS）</strong></p>
+      <p style="text-align:center;"><strong>期初存货 + 采购 − 销货成本 = 期末存货</strong></p>
+      <p><strong>小例题：</strong>A 公司本年采购存货 $22,000，期初存货 $12,000，年末盘点剩 $6,250。可供销售 = 12,000 + 22,000 = $34,000；COGS = 34,000 − 6,250 = <strong>$27,750</strong>。为什么实务中常倒挤 COGS？因为你没法跑到每个客户家里核对买了什么，但你可以关上仓库门数自己还剩什么——期初有账、采购有票、期末能盘，三个已知数推出 COGS。这个方程式的优点是一个等式解遍所有未知数；缺点是它只告诉你"总量去哪儿了"，回答不了"哪一件、哪一笔"。</p>
+
+      <!-- ==================== 二 ==================== -->
+      <h2>二、经营周期：现金多久能回家</h2>
+      <p><span class="term">经营周期</span><span class="term-en">（Operating Cycle）</span>指公司从现金出发、完成全部运营、最终收回（更多）现金的全过程。CFO 的一项核心工作就是缩短"从现金回到现金"的天数——现金压在货架上，既是机会成本，还面临贬值与损耗风险。</p>
+      <div id="fig-cycle"></div>
+      <p><strong>图 1 解读：</strong>服务型公司的循环是"现金 → 提供服务 → 收现金"三段；商业企业在正中间插入了<strong>存货</strong>这一环（现金 → 存货 → 应收账款 → 现金），周期因此被拉长两处：①存货周转——买进的货多快能卖掉；②信用条款——赊销给客户后多快能回款。最糟糕的情形是现金以存货形态闲置在货架上且不断贬值。这个模型的优点是直观定位"卡钱"的环节；缺点是它只看流转不看盈利——转得飞快但每件都亏本，循环越快死得越快。</p>
+
+      <!-- ==================== 三 ==================== -->
+      <h2>三、存货盘存制度与盘亏</h2>
+
+      <h3>3.1 永续盘存制 vs 定期盘存制</h3>
+      <p><strong>引入：</strong>你在塔吉特官网能查到某家门店某款商品"还剩 3 件"——收银员每扫一次码，库存就实时减一。这就是<span class="term">永续盘存制</span><span class="term-en">（Perpetual Inventory System）</span>。而街角杂货铺老板要知道赚了多少，只能月底关门盘点，用存货方程式倒挤——这是<span class="term">定期盘存制</span><span class="term-en">（Periodic Inventory System）</span>。</p>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>永续盘存制（Perpetual）</th><th>定期盘存制（Periodic）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>更新时点</td><td>每笔采购/销售/退货<strong>实时</strong>更新存货与 COGS</td><td>期末盘点后一次性更新</td></tr>
+          <tr><td>采购入账</td><td>直接借记"存货"</td><td>借记"采购（Purchases）"账户</td></tr>
+          <tr><td>COGS 来源</td><td>销售时逐笔记</td><td>期末用存货方程式<strong>倒挤</strong></td></tr>
+          <tr><td>账面准确性</td><td>任何时点可知存货余量</td><td>期内账面不准，期末才校准</td></tr>
+          <tr><td>技术依赖</td><td>POS 扫码系统，成本较高</td><td>几乎零成本</td></tr>
+          <tr><td>典型用户</td><td>大中型企业（Home Depot、Target）</td><td>小型企业</td></tr>
+          <tr><td>能否计算盘亏</td><td><strong>能</strong>（账面数 vs 实盘数）</td><td><strong>不能</strong>（无账面基准可比对）</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本章约定：此后所有分录均按永续盘存制书写。</strong>永续制的优点是数据实时、可管理盘亏；缺点是系统贵、维护重。定期制恰好相反：便宜省心，但期内是"盲飞"，且永远说不清有多少货是被偷的。</p>
+
+      <h3>3.2 存货盘亏：账上有、架上无</h3>
+      <p><span class="term">存货盘亏</span><span class="term-en">（Shrinkage / Shrink）</span>是因盗窃、损坏、失误而既没卖出也不在库的存货成本。它的每一美元都<strong>等额击穿净利润</strong>——货的成本已付，对应的收入却永远不会来。只有永续盘存制能算出它：账面给出"应有存货"，盘点给出"实有存货"，差额即盘亏。</p>
+      <p><strong>配套例题（6.6）：</strong>A 公司用永续盘存制。期初存货 $84,000，本年采购 $185,000，账面 COGS $208,000；盘点公司清点实存 $56,500。三步求解：</p>
+      <ul>
+        <li>① 预期期末存货 = 84,000 + 185,000 − 208,000 = <strong>$61,000</strong>；</li>
+        <li>② 盘亏 = 61,000 − 56,500 = <strong>$4,500</strong>；</li>
+        <li>③ 调整分录：<strong>借：销货成本（COGS）$4,500；贷：存货 $4,500</strong>。</li>
+      </ul>
+      <p>为什么损失计进 COGS 而非单列"盘亏费用"？因为行业惯例把合理损耗视为<span class="term">经营成本</span><span class="term-en">（Cost of Doing Business）</span>——为防几棵生菜被盗而雇专人盯梢开锁，成本远超生菜本身（也可以借记专门的盘亏费用账户，本课取简化处理）。沃尔玛、塔吉特这类大零售商都会聘请专业盘点公司定期清点，按<strong>成本价</strong>而非零售价计算差异。</p>
+
+      <!-- ==================== 四 ==================== -->
+      <h2>四、采购端：存货成本是"到手可售"的全部代价</h2>
+
+      <h3>4.1 采购与付款分录</h3>
+      <p>A 公司赊购（On Account）$535,000 存货，分录为：<strong>借：存货 $535,000；贷：应付账款 $535,000</strong>（现购则贷记现金）。日后付清货款：<strong>借：应付账款 $535,000；贷：现金 $535,000</strong>。两个高频误区：①<strong>付款时不产生费用</strong>——只是清偿负债，费用要等售出时才以 COGS 出现；②<strong>付款时不再碰存货</strong>——只是冲销已入账的欠款。</p>
+
+      <h3>4.2 反直觉点：买进存货的运费，要计入存货成本</h3>
+      <p>你买一台标价 $899 的电脑，加税加费实付 $1,020——问你电脑花了多少钱，你会说"一千出头"，因为那是口袋真实流出的数。同一逻辑适用于存货：<strong>凡是使存货"到达预定地点、达到可售状态"的合理必要支出，统统计入存货成本</strong>——采购运费、关税、检验费都是。</p>
+      <p>A 公司付 $8,000 现金给货运公司，把采购的存货从供应商运到自己仓库。直觉分录"借：运输费用 / 贷：现金"是<strong>错的</strong>；正确分录是<strong>借：存货 $8,000；贷：现金 $8,000</strong>——运费被资本化进存货。亚马逊从中国采购 1,000 件、单价 $1 的商品并付 $1,000 海运，则每件实际成本 = 1 + 1,000/1,000 = <strong>$2</strong>。注意区分方向：<strong>运进来</strong>（供应商→我方仓库）的运费进存货；<strong>运出去</strong>（我方→客户）的运费是销售费用，当期费用化。</p>
+
+      <h3>4.3 运输条款：海上沉船谁来赔</h3>
+      <p><strong>引入案例：</strong>你从中国采购商品，货船驶往洛杉矶，第五天沉了。重置损失谁承担？通常不是船运公司——承运合同里早有免责条款（所以 FedEx、UPS 总问你要不要买保险）。问题只剩：卖方还是买方？答案写在合同的<span class="term">运输条款</span><span class="term-en">（Shipping Terms）</span>里，它规定<span class="term">所有权转移</span><span class="term-en">（Transfer of Title）</span>的时点——事故发生时谁持有所有权，谁吞损失。FOB 是"船上交货"（Free on Board）的缩写，两大基本类型：</p>
+      <div id="fig-fob"></div>
+      <p><strong>图 2 解读：</strong>蓝线（上）为 <span class="term">FOB 起运点</span><span class="term-en">（FOB Shipping Point）</span>——货一交给承运人，所有权立刻归买方：途中出事买方担责、运费买方付，买方<strong>发货当天</strong>就把在途货物计入存货，卖方发货当天即可确认收入。橙线（下）为 <span class="term">FOB 目的地</span><span class="term-en">（FOB Destination）</span>——送达买方才转移所有权：途中风险与运费归卖方，卖方须等送达才能确认收入。红星处货船沉没：合同是蓝线条款则买方认赔，橙线条款则卖方认赔。运输条款还是价格谈判筹码：FOB 起运点报价通常更低（买方担风险换折扣），精明买家可以"选起运点压价 + 自购运输保险"两头占便宜。</p>
+
+      <h3>4.4 采购退货与采购折让（买方视角）</h3>
+      <p>买到的货不满意，两条出路。<span class="term">采购退货</span><span class="term-en">（Purchase Returns）</span>——把货寄回去：存货减少（贷记），欠款减少或收回退款。A 公司退回 $36,000 不合格存货、尚未付款，供应商开来<span class="term">贷项通知单</span><span class="term-en">（Credit Memo）</span>，分录：<strong>借：应付账款 $36,000；贷：存货 $36,000</strong>（原欠 $20,000 的账单变成只付 $19,000 加附贷项通知单——若已付款则借记现金/应收退款）。</p>
+      <p><span class="term">采购折让</span><span class="term-en">（Purchase Allowances）</span>——货<strong>不退</strong>，卖方降价补偿。为什么卖方愿意？成本效益账：三星把电视运到美国，两台包装破损，运回中国的运费比电视还贵，不如给塔吉特每台 $100 折让、让它当"开箱品"折价卖。A 公司保留 1,000 件包装受损商品、获 $25,000 折让、尚未付款，分录：<strong>借：应付账款 $25,000；贷：存货 $25,000</strong>。注意贷记存货的含义：存货<strong>数量</strong>没变（货还在），是单位<strong>成本</strong>变便宜了。退货与折让的共同点是都按"采购成本"而非"售价"冲减存货。</p>
+
+      <h3>4.5 信用条款与折扣：2/10, n/30 怎么读</h3>
+      <p><strong>引入：</strong>供应商赊销等于无息借钱给客户 30 天，它当然想早点回款——于是给一个小折扣当诱饵。<span class="term">信用条款</span><span class="term-en">（Credit Terms）</span>写作 <strong>2/10, n/30</strong>，读作："10 天（<span class="term">折扣期</span><span class="term-en">（Discount Period）</span>）内付款，享 2% 折扣；否则净额（Net，已扣除退货折让后的应付额）30 天内付清"。$1,000 账单按此条款：期内付只需 1,000 × (1−2%) = <strong>$980</strong>。别小看这 $20——它可以让你的零售价压得比对手低一截，长期就是竞争优势。同一笔折扣，买方叫<span class="term">采购折扣</span><span class="term-en">（Purchase Discount）</span>，卖方叫<span class="term">销售折扣</span><span class="term-en">（Sales Discount）</span>——视角不同，分录不同。</p>
+      <p>买卖双方各有两种报告方法：<span class="term">总价法</span><span class="term-en">（Gross Method）</span>——预计不会用折扣，先按全额入账，真享到折扣再调整；<span class="term">净价法</span><span class="term-en">（Net Method）</span>——预计会用折扣，直接按折后净额入账，错过折扣的差额视为融资成本（买方记利息费用，卖方记利息收入）。<strong>无特别说明时默认总价法。</strong>以 $1,000、2/10 n/30 为例对照：</p>
+      <table>
+        <thead>
+          <tr><th>视角 × 方法</th><th>购销入账时</th><th>折扣期内付款</th><th>折扣期外付款</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>买方 · 总价法</td><td>借 存货 1,000<br>贷 应付账款 1,000</td><td>借 应付账款 1,000<br>贷 现金 980 / 存货 20</td><td>借 应付账款 1,000<br>贷 现金 1,000</td></tr>
+          <tr><td>买方 · 净价法</td><td>借 存货 980<br>贷 应付账款 980</td><td>借 应付账款 980<br>贷 现金 980</td><td>借 应付账款 980 / 利息费用 20<br>贷 现金 1,000</td></tr>
+          <tr><td>卖方 · 总价法</td><td>借 应收账款 1,000<br>贷 销售收入 1,000</td><td>借 现金 980 / 销售收入 20<br>贷 应收账款 1,000</td><td>借 现金 1,000<br>贷 应收账款 1,000</td></tr>
+          <tr><td>卖方 · 净价法</td><td>借 应收账款 980<br>贷 销售收入 980</td><td>借 现金 980<br>贷 应收账款 980</td><td>借 现金 1,000<br>贷 应收账款 980 / 利息收入 20</td></tr>
+        </tbody>
+      </table>
+      <p>读表抓两个规律：①买方的折扣永远<strong>冲减存货成本</strong>（贷记存货），卖方的折扣永远<strong>冲减销售收入</strong>（借记销售收入）；②净价法把"错过的折扣"显性化为利息——总价法逻辑直白、最常用，净价法的优点是能暴露"拖延付款的真实代价"，缺点是错过折扣时多做一笔调整。</p>
+
+      <!-- ==================== 五 ==================== -->
+      <h2>五、销售端：一笔销售，两笔分录</h2>
+
+      <h3>5.1 卖方视角的标配动作</h3>
+      <p>永续盘存制下，每卖一笔商品<strong>必然两笔分录</strong>：第一笔记"卖了多少"（收入端），第二笔记"货的成本"（成本端，存货→COGS）。$1 进的订书钉卖 $2：既要记 $2 的销售，也要把 $1 成本从存货搬进 COGS。且收入按<strong>期望实际收到</strong>的金额记，不是按标价记（标价 $1,000 卖给只肯付 $600 的朋友，就记 $600）。</p>
+      <p><strong>例题：</strong>A 公司赊销 5 件产品，单价 $10，单位成本 $2。销售分录：<strong>借：应收账款 $50；贷：销售收入 $50</strong>；成本分录：<strong>借：销货成本 $10；贷：存货 $10</strong>。本笔利润 $40 = 5 × (10 − 2)，与"收入 50 − 费用 10"一致。若是现销，把应收账款换成现金即可。</p>
+
+      <div class="callout">
+        <strong>补讲提示（6.16 缺号）：销售退回与折让（Sales Returns &amp; Allowances）。</strong>原课程 6.15 与 6.17 之间缺号一讲，内容应为客户退货/折让的卖方分录，与 4.4 节镜像对称。客户<strong>退货</strong>时做两组分录——冲减销售：<strong>借：销售收入；贷：应收账款</strong>（或现金）；商品回库：<strong>借：存货；贷：销货成本</strong>（按原成本）。客户<strong>折让</strong>（货不退、只降价）只做第一组，不碰存货与 COGS。完整数字演示见 6.17 综合例（下表"配套例题"中 9/7、9/9 两笔即此内容）。
+      </div>
+
+      <h3>5.2 配套例题：销售交易全套分录求净毛利（6.17 + 6.22）</h3>
+      <p>先用 6.17 把"销售→退货→折让→折扣收款"全链条走一遍，再用 6.22 的不同条款数字巩固并算出毛利率。6.17：9/5 赊销 $250,000（成本 $120,000，条款 2/10, n/30）；9/7 客户退回售价 $25,000（成本 $12,000）的货；9/9 就包装瑕疵给 $12,000 折让；9/12 客户付清余款（第 7 天，在折扣期内）。6.22：两笔赊销 $50,000（成本 $35,000，3/10 n/30）与 $32,000（成本 $20,000，2/10 n/30），前者第 5 天付款享 3% 折扣，后者第 12–20 天付款无折扣。</p>
+      <table>
+        <thead>
+          <tr><th>日期 / 交易</th><th>分录（借 ↑ / 贷 ↓）</th><th>关键计算</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>6.17 · 9/5 赊销</td><td>借 应收账款 250,000 / 贷 销售收入 250,000<br>借 销货成本 120,000 / 贷 存货 120,000</td><td>有信用条款即赊销</td></tr>
+          <tr><td>6.17 · 9/7 退货</td><td>借 销售收入 25,000 / 贷 应收账款 25,000<br>借 存货 12,000 / 贷 销货成本 12,000</td><td>两笔分录<strong>反向</strong>冲销</td></tr>
+          <tr><td>6.17 · 9/9 折让</td><td>借 销售收入 12,000 / 贷 应收账款 12,000</td><td>货未退，不碰存货/COGS</td></tr>
+          <tr><td>6.17 · 9/12 收款</td><td>借 现金 208,740 / 销售收入 4,260<br>贷 应收账款 213,000</td><td>应收余额 250,000−25,000−12,000=213,000；折扣 213,000×2%=4,260</td></tr>
+          <tr><td><strong>6.17 净毛利</strong></td><td colspan="2">净销售额 208,740 − 净 COGS（120,000−12,000=108,000）= <strong>毛利 $100,740</strong></td></tr>
+          <tr><td>6.22 · 销售一</td><td>借 应收账款 50,000 / 贷 销售收入 50,000<br>借 销货成本 35,000 / 贷 存货 35,000</td><td>3/10, n/30</td></tr>
+          <tr><td>6.22 · 销售二</td><td>借 应收账款 32,000 / 贷 销售收入 32,000<br>借 销货成本 20,000 / 贷 存货 20,000</td><td>2/10, n/30</td></tr>
+          <tr><td>6.22 · 收款一（第 5 天）</td><td>借 现金 48,500 / 销售收入 1,500<br>贷 应收账款 50,000</td><td>折扣 50,000×3%=1,500</td></tr>
+          <tr><td>6.22 · 收款二（第 12–20 天）</td><td>借 现金 32,000 / 贷 应收账款 32,000</td><td>过折扣期，全额付款</td></tr>
+          <tr><td><strong>6.22 净毛利与毛利率</strong></td><td colspan="2">净销售额 50,000+32,000−1,500=80,500；COGS 55,000；<strong>毛利 $25,500</strong>；毛利率 25,500/80,500 ≈ <strong>31.68%</strong></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>补讲提示（6.19 缺号）：多步式利润表（Multi-step Income Statement）。</strong>6.18 与 6.20 之间缺号一讲，应为商业公司的多步式利润表——收入不再一步到位算净利润，而是分层下楼梯：<br>
+        销售收入 − 销售退回与折让 − 销售折扣 = <strong>净销售额（Net Sales）</strong><br>
+        净销售额 − 销货成本 = <strong>毛利（Gross Profit）</strong><br>
+        毛利 − 营业费用 = <strong>营业利润（Operating Income）</strong><br>
+        营业利润 ± 其他收支 = <strong>净利润（Net Income）</strong><br>
+        用 6.17 的数字：净销售额 208,740 − COGS 108,000 = 毛利 100,740；这 100,740 就是用来覆盖工资、租金、保险等营业费用并最终形成净利润的"弹药库"。毛利率分析（第六节）正是站在"毛利"这一级台阶上做文章。
+      </div>
+
+      <h3>5.3 捆绑销售：一笔总价，多个承诺</h3>
+      <p><strong>引入：</strong>买手机送一年延保、$195 买"播放器 + 12 个月音乐订阅"——客户付的是一笔钱，公司欠的却是好几件事。按收入确认原则（ASC 606 框架）的<strong>五步法</strong>处理：①识别合同；②识别合同中的各项<span class="term">履约义务</span><span class="term-en">（Performance Obligation）</span>；③确定交易价格；④把总价按各项<strong>独立售价的比例</strong>分摊到每个履约义务；⑤在每个履约义务履行时（或随履行进度）确认收入。<span class="term">捆绑销售</span><span class="term-en">（Bundled Sales）</span>的难点全在④⑤两步。</p>
+      <p><strong>例题：</strong>B 公司 1/1 售出捆绑包 $195，含音乐播放器（单卖 $95，成本 $65）与 12 个月订阅（单卖 $120）。独立售价合计 95 + 120 = $215；播放器分摊 195 × 95/215 ≈ <strong>$86.16</strong>，订阅分摊 195 × 120/215 ≈ <strong>$108.84</strong>。1/1 交付播放器（该义务即时完成），订阅尚未履行、记入负债<span class="term">递延收入</span><span class="term-en">（Deferred Revenue）</span>：</p>
+      <ul>
+        <li>1/1：<strong>借：现金 $195 / 销货成本 $65；贷：销售收入 $86.16 / 递延收入 $108.84 / 存货 $65</strong>；</li>
+        <li>1/31（服务过了一个月，赚得 108.84 ÷ 12 ≈ $9.07）：<strong>借：递延收入 $9.07；贷：销售收入 $9.07</strong>，此后每月末重复，11 个月后递延收入清零。</li>
+      </ul>
+      <p>要点：产品类义务在<strong>时点</strong>确认收入，服务类义务在<strong>时段</strong>内分期确认；先收的钱不是收入而是负债。五步法的优点是让"收入何时算数"有据可依；缺点是比例分摊与进度估计引入主观判断。</p>
+
+      <!-- ==================== 六 ==================== -->
+      <h2>六、比率分析：毛利率——零售商的生命线</h2>
+      <p><span class="term">比率分析</span><span class="term-en">（Ratio Analysis）</span>的价值在于<strong>可比性</strong>：亚马逊与百思买规模悬殊，直接比销售额没意义，比百分比才有意义。<span class="term">毛利率</span><span class="term-en">（Gross Profit Percentage）</span>回答："每收入 1 美元，付掉商品成本后还剩几美分去覆盖营业费用和利润？"</p>
+      <p style="text-align:center;"><strong>毛利率 =（净销售额 − 销货成本）÷ 净销售额 × 100%</strong></p>
+      <p>注意分子分母都用<strong>净销售额</strong>（总销售 − 退回折让 − 折扣）。以百思买（Best Buy）真实合并利润表（合并收益表即利润表，单位百万美元）计算：净销售额 42,879 − 销售成本 32,918 = 毛利 9,961；毛利率 = 9,961 ÷ 42,879 ≈ <strong>23.23%</strong>。含义：每 1 美元收入只剩约 23 美分去养全部运营——难怪它年收入 420 多亿、净利润仅约 14.6 亿。</p>
+      <div id="fig-gp"></div>
+      <p><strong>图 3 解读：</strong>23.23% 单看不知是优是劣，必须放进<strong>行业坐标系</strong>：杂货店典型毛利率仅 20%–30%（价格敏感、替代品多、薄利多销），百思买正落在这个区间；而 Facebook 这类科技公司可高达 70%–80%（复制软件/广告的边际成本近零）。解读纪律：与<strong>自己历史</strong>比趋势、与<strong>同行业对手</strong>比高低，跨行业比较只会得出荒谬结论。毛利率的优点是一眼看穿定价权与成本结构；缺点是它只覆盖商品成本，对运营效率（营业费用控制）一无所知——要搭配营业利润率与净利率使用。</p>
+
+      <!-- ==================== 七 ==================== -->
+      <h2>七、配套例题：采购净额计算（6.21）</h2>
+      <p>A 公司（永续盘存制，期初存货为 0）二月采购业务如下，求期末存货成本。抓两条规则：<strong>退货减存货</strong>（货已不属于我）；<strong>折扣减存货</strong>（那部分钱根本没付——正如标价 $10 打五折的商品，成本就是 $5）。</p>
+      <table>
+        <thead>
+          <tr><th>交易</th><th>内容</th><th>存货影响</th><th>存货滚动余额</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>期初</td><td>—</td><td>—</td><td>$0</td></tr>
+          <tr><td>① 采购（供应商 H）</td><td>赊购 $285,000，条款 2/10, n/30</td><td>+285,000</td><td>285,000</td></tr>
+          <tr><td>② 退货</td><td>退回成本 $45,000 的货，抵减应付</td><td>−45,000</td><td>240,000</td></tr>
+          <tr><td>③ 折扣期内付款（第 5 天）</td><td>应付 240,000，折扣 240,000×2%=4,800，实付 235,200</td><td>−4,800</td><td>235,200</td></tr>
+          <tr><td>④ 采购（供应商 I）</td><td>赊购 $100,000，条款 2/10, n/30</td><td>+100,000</td><td>335,200</td></tr>
+          <tr><td>⑤ 折扣期外付款</td><td>第 10–30 天付清，无折扣</td><td>0</td><td><strong>$335,200</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>交叉验证：</strong>实际付出的现金 = 235,200（付 H）+ 100,000（付 I）= $335,200，与滚动余额一致——存货成本最终就等于"为它实际掏出的钱"。</p>
+
+      <!-- ==================== 八 ==================== -->
+      <h2>八、收尾对比：同一笔购销业务的两张脸</h2>
+      <p>同一笔交易，买方与卖方各自记账。设卖方以 $1,000（成本 $700）赊销商品给买方，条款 2/10, n/30；随后买方退回 $100 的货、就瑕疵品获 $50 折让，并在折扣期内付清余款（双方均用总价法）：</p>
+      <table>
+        <thead>
+          <tr><th>环节</th><th>买方（采购方）分录</th><th>卖方（销售方）分录</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>购销发生</td><td>借 存货 1,000<br>贷 应付账款 1,000</td><td>借 应收账款 1,000 / 贷 销售收入 1,000<br>借 销货成本 700 / 贷 存货 700</td></tr>
+          <tr><td>退货 $100（成本 $70）</td><td>借 应付账款 100<br>贷 存货 100</td><td>借 销售收入 100 / 贷 应收账款 100<br>借 存货 70 / 贷 销货成本 70</td></tr>
+          <tr><td>折让 $50（货不退）</td><td>借 应付账款 50<br>贷 存货 50</td><td>借 销售收入 50<br>贷 应收账款 50</td></tr>
+          <tr><td>折扣期内结清<br>（余额 850，折扣 850×2%=17）</td><td>借 应付账款 850<br>贷 现金 833 / 存货 17</td><td>借 现金 833 / 销售收入 17<br>贷 应收账款 850</td></tr>
+        </tbody>
+      </table>
+      <p>镜像规律一目了然：买方的"存货"对应卖方的"销售收入/COGS"，买方的"应付账款"对应卖方的"应收账款"；买方的折扣记存货贷方，卖方的折扣记销售收入借方；卖方永远比买方多一组"成本结转"分录。再结合 4.5 节的总价法/净价法对照表，购销两端的所有排列组合就都齐了。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（零售商链条里多出的"存货"一环如何记账？）→ 简化模型（存货先当资产、卖出转 COGS；存货方程式支配一切流量）→ 推导（永续/定期两制度；采购端"到手可售的一切代价"进存货；销售端恒为两笔分录；折扣、退货、折让、盘亏皆为对存货或收入的微调）→ 实际应用（FOB 沉船判责、百思买 23.23% 毛利率、捆绑销售五步法、两个全套例题）→ 局限性（定期制看不见盘亏；毛利率不懂运营效率；捆绑分摊依赖独立售价估计；利润与现金的裂缝仍要等 Lesson 12 现金流量表彻底闭合）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/financial-accounting/06-merchandising-inventory.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：商业企业经营周期环形图（现金→存货→应收账款→现金） =====
+    Charts.cycle(document.getElementById('fig-cycle'), {
+      nodes: ['现金 Cash', '存货 Inventory', '应收账款 AR', '现金（变多了）'],
+      notes: ['采购存货', '售出：确认收入 + 结转 COGS', '收回应收款', '付费用、再采购'],
+      color: '#1d4ed8',
+      caption: '图 1：商业企业的经营周期——比服务型公司（现金→服务→收现金）多出"存货"一环，周期因此变长',
+      legend: [
+        { label: '商业企业：现金 → 存货 → 应收账款 → 现金（四环节）', color: '#1d4ed8', style: 'dot' },
+        { label: '服务型：现金 → 服务 → 收现金（无存货环节）', color: '#9ca3af', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：FOB 两种运输条款的所有权转移时间轴 =====
+    Charts.xy(document.getElementById('fig-fob'), {
+      width: 680, height: 380,
+      xMin: 0, xMax: 10, yMin: 0, yMax: 3,
+      xTicks: [{ v: 0, label: '起运点（发货）' }, { v: 5, label: '运输途中' }, { v: 10, label: '目的地（送达）' }],
+      yTicks: [],
+      xLabel: '运输进程 →', yLabel: '',
+      series: [
+        { points: [[0, 2.4], [10, 2.4]], color: '#1d4ed8', label: 'FOB 起运点：发货后所有权归买方（风险+运费由买方承担）' },
+        { points: [[0, 1.1], [10, 1.1]], color: '#b45309', label: 'FOB 目的地：送达前所有权归卖方（风险+运费由卖方承担）' },
+      ],
+      markers: [
+        { x: 0, y: 2.4, color: '#1d4ed8', label: '所有权转移点：交给承运人即转移', labelDx: 8, labelDy: -14 },
+        { x: 10, y: 1.1, color: '#b45309', label: '所有权转移点：送达才转移', labelDx: -158, labelDy: -16 },
+        { x: 5, y: 1.75, shape: 'star', color: '#dc2626', label: '货船在此沉没：谁担责？看条款', labelDx: 16, labelDy: -8 },
+      ],
+      legendPosition: 'top',
+      caption: '图 2：FOB 起运点 vs FOB 目的地——所有权转移时点决定途中货损由谁承担、双方何时入账',
+    });
+
+    // ===== 图3：毛利率行业对比柱状图 =====
+    Charts.bar(document.getElementById('fig-gp'), {
+      categories: ['科技公司（示意区间中值）', '杂货店（示意区间中值）', '百思买（实际报表）'],
+      series: [
+        { label: '毛利率（%）', color: '#0f766e', values: [75, 25, 23.23] },
+      ],
+      yLabel: '毛利率（%）', yMax: 80, yStep: 20,
+      caption: '图 3：毛利率必须放进行业坐标系解读——百思买 23.23% 落在杂货店 20–30% 的零售区间，远低于科技公司 70–80%',
+    });
+  </script>
+</body>
+</html>
