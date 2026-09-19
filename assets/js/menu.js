@@ -70,6 +70,11 @@ const MENU = [
         title: '财务会计基础',
         children: [
           { title: '01 为什么学会计：三大报表全景', link: 'pages/accounting/accounting-101/01-why-accounting.html' },
+          { title: '02 利润表：权责发生制与利润阶梯', link: 'pages/accounting/accounting-101/02-income-statement.html' },
+          { title: '03 资产负债表：历史成本 vs 公允价值', link: 'pages/accounting/accounting-101/03-balance-sheet.html' },
+          { title: '04 现金流量表：从净利润到自由现金流', link: 'pages/accounting/accounting-101/04-cash-flows.html' },
+          { title: '05 会计不一致性：税率、租赁、研发与股权激励', link: 'pages/accounting/accounting-101/05-accounting-inconsistencies.html' },
+          { title: '06 财务比率：少即是多', link: 'pages/accounting/accounting-101/06-financial-ratios.html' },
         ],
       },
       {

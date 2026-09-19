@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 利润表：权责发生制与利润阶梯 - 财务会计基础 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>02 利润表：权责发生制与利润阶梯</h1>
+      <p>本篇覆盖 Accounting 101《财务会计基础》的第 2 讲与第 2A 讲（Session 2: The Income Statement；Session 2A: The Income Statement (Examples)）。<a href="01-why-accounting.html">P01</a> 回答了"为什么需要会计"，本篇打开三张报表中的第一张——<span class="term">利润表</span><span class="term-en">（Income Statement）</span>：它建立在权责发生制之上，把企业庞杂的支出分成经营、资本、财务三类各就其位，沿"收入 → 毛利 → 营业利润 → 税前利润 → 净利润"的阶梯逐级下行。前半篇讲规则（含折旧三世界、显性与隐性利息、并表与少数股东损益、备考利润表），后半篇（S2A）用 Peloton、Netflix、可口可乐、丰田四家生命周期各阶段的公司，以及道达尔、汇丰、Dr. Reddy's 三个行业特有科目样本做实战穿透。</p>
+
+      <!-- ==================== 引入 ==================== -->
+      <h2>一、引入：12 月 30 日卖出的商品，算不算今年的收入？</h2>
+      <p><strong>反直觉开场：</strong>你的公司在 12 月 30 日卖出一件商品，客户签收、承诺明年 1 月付款——到 12 月 31 日关账时，你的银行账户一分钱都没多。这笔销售算今年的收入吗？直觉说"没收到钱就不算"，会计却说：<strong>算，全额计入今年</strong>。不但收入要记，与这笔销售相关的费用——哪怕你还没付货款、或者去年就预付过了——也必须在今年确认。</p>
+      <p>这就是<span class="term">权责发生制</span><span class="term-en">（Accrual Accounting）</span>的刚性要求：<strong>交易实质发生的瞬间就记账，而不是等现金交割</strong>。它的对立面是<span class="term">收付实现制</span><span class="term-en">（Cash Accounting）</span>——讲师称之为"流水账会计"（checkbook accounting）：钱进记收入、钱出记费用，只有极小的微型商户才被允许这么干。从这一刻起，<strong>利润与现金分道扬镳</strong>：利润表上的每个数字都是会计师对"交易何时发生"的判断，而不是银行对账单的复印件。利润与现金的差额去了哪里，正是 <a href="04-cash-flows.html">P04 现金流量表</a>要回答的问题。</p>
+
+      <h3>两套记账范式对比</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>收付实现制（Cash Accounting）</th><th>权责发生制（Accrual Accounting）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>确认时点</strong></td>
+            <td>现金实际流入记收入，现金实际流出记费用</td>
+            <td>交易实质发生即确认：12 月 30 日卖出即记当年收入，哪怕一分未收</td>
+          </tr>
+          <tr>
+            <td><strong>适用对象</strong></td>
+            <td>极小型个体商户；个人记账</td>
+            <td>法律与准则强制要求的绝大多数现代企业；公司金融与估值全部建立在其上</td>
+          </tr>
+          <tr>
+            <td><strong>优点</strong></td>
+            <td>简单、客观，与银行流水完全对得上</td>
+            <td>收入与费用在同一期间配比，利润更接近真实经营成果</td>
+          </tr>
+          <tr>
+            <td><strong>缺点 / 对分析者的陷阱</strong></td>
+            <td>收入费用错期，利润毫无经营含义</td>
+            <td><strong>利润 ≠ 现金</strong>：盈利的公司可能缺钱，亏损的公司可能现金充裕；确认时点涉及主观判断，给粉饰留了门缝</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ==================== 支出三分法 ==================== -->
+      <h2>二、支出三分法：每笔花费都有自己的"归宿"</h2>
+      <p>利润表的结构之所以不混乱，是因为会计师先把所有支出分成三类，每一类在报表里有自己专属的"座位"。分类标准只有一条第一性原理：<strong>这笔支出的效益能持续几年？以及它是为谁付的？</strong></p>
+      <ul>
+        <li><span class="term">经营费用</span><span class="term-en">（Operating Expenses）</span>：只为<strong>当年</strong>创造收入的支出——人工、原材料。当年全额进利润表，扣出营业利润。</li>
+        <li><span class="term">资本支出</span><span class="term-en">（Capital Expenses / CapEx）</span>：能在<strong>多年</strong>持续创造效益的投入——厂房、设备。发生的当年<strong>禁止</strong>全额计费用：先登上资产负债表成为资产，再在寿命期内以折旧、摊销的形式逐年回流利润表。</li>
+        <li><span class="term">财务费用</span><span class="term-en">（Financing Expenses）</span>：为使用非股东资本（债务）付出的对价——贷款利息、债券票息。被隔离在<strong>营业利润线下方</strong>，因为资本结构的选择不该污染对经营能力的度量。</li>
+      </ul>
+      <div id="fig-expense-triad"></div>
+      <p><strong>图 1 解读：</strong>三类支出从同一个问题分叉——"效益持续几年、付给谁"。经营费用（蓝）当年直接进利润表；资本支出（绿）绕路而行，先上资产负债表沉淀为资产，再经折旧摊销这条"传送带"逐年回流利润表；财务费用（橙）被压在营业利润线下方，与利息、税收为伍。这套分类的<strong>优点</strong>是让营业利润成为"不受资本结构污染的纯经营信号"；<strong>缺点</strong>是分类边界依赖判断——研发、获客、品牌广告明明多年受益却被塞进经营费用，这正是 <a href="05-accounting-inconsistencies.html">P05</a> 要动的手术。</p>
+
+      <!-- ==================== 利润阶梯 ==================== -->
+      <h2>三、利润阶梯：四级利润，四种信号</h2>
+      <p>把支出各就各位后，利润表呈现为一条逐级下行的阶梯。每下一级，回答的问题就更接近股东；但<strong>每一级都有独立的信息含量</strong>，不能只盯着最底部的净利润：</p>
+      <table>
+        <thead>
+          <tr><th>阶梯</th><th>公式</th><th>经营信号</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><span class="term">毛利</span><span class="term-en">（Gross Profit）</span></strong></td>
+            <td>营业收入（Revenues） − 销货成本（<span class="term">COGS</span><span class="term-en">（Cost of Goods Sold）</span>）</td>
+            <td>产品或服务最初始的边际盈利空间——定价减去直接生产成本还剩多少</td>
+          </tr>
+          <tr>
+            <td><strong><span class="term">营业利润</span><span class="term-en">（Operating Income / EBIT）</span></strong></td>
+            <td>毛利 − 其他经营费用（<span class="term">SG&amp;A</span><span class="term-en">（Selling, General &amp; Administrative）</span>、折旧摊销）</td>
+            <td>主营业务的造血能力，剥离了资本结构与税务的干扰——分析师最看重的一级</td>
+          </tr>
+          <tr>
+            <td><strong><span class="term">税前利润</span><span class="term-en">（Taxable Income）</span></strong></td>
+            <td>营业利润 − 财务费用（利息费用）</td>
+            <td>引入债务资本结构之后、纳税之前的利润</td>
+          </tr>
+          <tr>
+            <td><strong><span class="term">净利润</span><span class="term-en">（Net Income）</span></strong></td>
+            <td>税前利润 − 所得税（Taxes）</td>
+            <td>终局清算：名义上属于股东、可自由支配的剩余</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>两个边界提示：COGS 与 SG&amp;A 的分野在于<strong>能否直接追踪到单件产品</strong>——可口可乐的糖浆和瓶装成本是 COGS，全球广告费和销售团队费用则归入 SG&amp;A 这个"大杂烩"科目。而利润阶梯的<strong>优点</strong>是层层递进、各司其职；<strong>缺点</strong>是每一级都是权责发生制下的估计，阶梯越往下，累积的主观判断越多。</p>
+
+      <!-- ==================== 收入确认 ==================== -->
+      <h2>四、收入确认与递延收入</h2>
+      <p><strong>反直觉案例：</strong>你是一家软件公司，签下一份三年期订阅合同，客户第一年就把三年服务费 300 万元一次性付清。今年能确认 300 万收入吗？<strong>不能</strong>——你只交付了三分之一的服务，把未来两年还没履约的部分算作今年收入，等于挪用未来的业绩粉饰当下。</p>
+      <p><span class="term">收入确认</span><span class="term-en">（Revenue Recognition）</span>新准则要求精确切割：只把归属于本年的服务份额（100 万）确认为当期收入，其余 200 万挂到资产负债表负债端，记为<span class="term">递延收入</span><span class="term-en">（Deferred Revenue）</span>——它对客户是一笔"欠债"（欠的是服务），在未来年度逐步解锁为收入。递延收入在资产负债表中的位置，详见 <a href="03-balance-sheet.html">P03</a>。</p>
+      <div id="fig-deferred"></div>
+      <p><strong>图 2 解读：</strong>300 万现金第一年已全部到账，但权责发生制下利润表每年只确认 100 万（蓝色柱）；尚未履约的部分以递延收入挂在负债端，年末余额从 200 万 → 100 万 → 0（橙色柱）逐年释放。<strong>现金早已到手，收入却要排队</strong>——这是"利润 ≠ 现金"最直观的一例。对投资者而言，递延收入余额的增减是订阅制公司未来收入的先行指标。</p>
+      <p>收入的另一层穿透来自<strong>附注披露</strong>。随着公司跨行业、跨地域扩张，准则要求企业在附注中交代收入的来源构成：</p>
+      <ul>
+        <li><strong>地理细分（Geographical Breakdown）</strong>：很多美国公司只粗略报告"75% 来自美国、25% 来自世界其他地区"——世界其他地区是个很大的筐，但分析师只能在被给予的颗粒度内推演。</li>
+        <li><strong>业务板块细分（Business Segment Breakdown）</strong>：以迪士尼（Disney）为例，附注把收入拆为主题乐园、广播电视、电影娱乐等板块，让外部人看清各业务的造血能力。反面教材是可口可乐：地理分区里混进了"全球风险投资""装瓶投资"两个业务口径，外加一个装总部开销的"公司"类别——地理与业务两种维度混排，分析时必须先拆开。</li>
+      </ul>
+
+      <!-- ==================== 折旧 ==================== -->
+      <h2>五、折旧的三个世界</h2>
+      <p>资本支出经折旧摊销回流利润表，但"折旧"这个词同时活在三个互不相同的世界里。同一台设备，一年可以有三个折旧额：</p>
+      <table>
+        <thead>
+          <tr><th>折旧口径</th><th>目的</th><th>算法特征</th><th>在哪里看到它</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><span class="term">经济折旧</span><span class="term-en">（Economic Depreciation）</span></strong></td>
+            <td>度量资产随老化、磨损与技术迭代发生的<strong>真实</strong>使用价值衰减</td>
+            <td>理论上最正确，实践中无法客观测度</td>
+            <td>哪里都看不到——读报表时可以忘掉它</td>
+          </tr>
+          <tr>
+            <td><strong><span class="term">会计折旧</span><span class="term-en">（Accounting Depreciation）</span></strong></td>
+            <td>按会计准则把历史成本分摊到各年</td>
+            <td>机械、规则驱动。典型如<span class="term">直线折旧</span><span class="term-en">（Straight-line Depreciation）</span>：寿命 10 年的设备，每年雷打不动抹掉初始成本的 1/10</td>
+            <td>利润表（经营费用的一部分）</td>
+          </tr>
+          <tr>
+            <td><strong><span class="term">税务折旧</span><span class="term-en">（Tax Depreciation）</span></strong></td>
+            <td>既不为反映真实损耗，也不为遵守会计准则——<strong>唯一目的是合规则内少缴税</strong></td>
+            <td>税务局允许加速折旧等公式，人为压低当期应纳税额</td>
+            <td>纳税申报单——与利润表上的会计折旧系统性偏离</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>三世界框架的<strong>优点</strong>是解释了"公司可以合法持有两套账簿"（财务报告一套、税务一套）这一让初学者困惑的现象，两套折旧之差正是 <a href="05-accounting-inconsistencies.html">P05</a> 中递延税的来源之一；<strong>缺点</strong>是报表使用者拿到的会计折旧既不等于经济真实、也不等于税务口径，做跨公司比较时折旧政策的差异必须先对齐。</p>
+
+      <!-- ==================== 利息与股权 ==================== -->
+      <h2>六、利息的显与隐，股权的少数与多数</h2>
+      <h3>6.1 显性利息与隐性利息</h3>
+      <p>财务费用的主角是<span class="term">利息费用</span><span class="term-en">（Interest Expense）</span>——银行贷款利息、公司债票息，这些是<span class="term">显性利息</span><span class="term-en">（Explicit Interest）</span>。但会计师逐渐承认：很多不叫"贷款"的刚性合同，实质就是债务。零售公司签一份十年不可撤销的租约，未来十年无论生意好坏都要付租金——这与发一笔十年期债券在风险上毫无二致。租赁资本化后，必须虚拟计算出这笔"债务"对应的<span class="term">隐性利息</span><span class="term-en">（Implicit Interest）</span>计入财务费用（Nordstrom 的完整计算见 <a href="05-accounting-inconsistencies.html">P05</a>）。</p>
+      <p>还有一个容易踩的坑：一些公司把利息费用与现金及有价证券赚来的利息收入<strong>轧差</strong>后只报一个净额。像苹果、谷歌这样账上趴着巨额现金、几乎不借债的公司，利息收入会吞掉利息支出，<span class="term">净利息费用</span><span class="term-en">（Net Interest Expense）</span><strong>可以是负数</strong>——利润表上"利息"那一行反而在赚钱。</p>
+      <h3>6.2 少数股权与多数股权</h3>
+      <p>营业利润线下方还有一块"打扫战场"的区域：非经营资产（如投资国债、商业票据的现金头寸）的收益全部在这里列示。对外股权投资如何映射进利润表，取决于<strong>持股比例</strong>：</p>
+      <ul>
+        <li><span class="term">少数股权</span><span class="term-en">（Minority Holding，如 3%–5%）</span>：无实质控制力，只按持股比例把对方的净利润（或亏损）份额记为自己的投资收益，列在营业利润线下方——可口可乐报表上的"权益收入或损失"、丰田的"关联公司权益收入"就是这一类。</li>
+        <li><span class="term">多数股权</span><span class="term-en">（Majority Holding，&gt;50%）</span>：触发强制<span class="term">并表</span><span class="term-en">（Consolidation）</span>——哪怕只持股 51%，也要假装 100% 拥有，把子公司全部收入与费用并入自己报表；然后在利润表末尾通过<span class="term">少数股东损益</span><span class="term-en">（Minority Interest / Non-controlling Interest）</span>把不属于你的那部分净利润剔掉，资产负债表上同步列示对应权益。</li>
+      </ul>
+
+      <!-- ==================== 非经常性与备考 ==================== -->
+      <h2>七、非经常性损益与备考利润表：第一性原理测试</h2>
+      <p>利润表尾部常见一个敏感科目：<span class="term">非经常性损益</span><span class="term-en">（Extraordinary Items / One-time Charges）</span>——一次性资产处置利得、突发诉讼罚款、历史错误的大额减值。设计初衷是容纳"仅此一次"的偶发事件，估值时理应剔除。<strong>但如果一家公司年年都有"非经常性"项目，它就不再是非经常的</strong>——Netflix 的报表年年出现外币换算损益且时正时负，对一家全球公司而言这是常态而非例外；真正像一次性项目的，是那个只在 2017 年出现过一次的"未实现收益变动"。判断标准很朴素：<em>它是不是反复出现？</em></p>
+      <p>近年来越来越多公司在标准报表之外发布<span class="term">备考利润表</span><span class="term-en">（Pro Forma Income Statement）</span>，公开"打破"会计规则。动机有高下之分：</p>
+      <ul>
+        <li><strong>合理的调整</strong>：Netflix 可以辩称，获客成本（Subscriber Acquisition Costs）不该当期全额费用化——高黏性订户未来三五年持续贡献订阅费，资本化后跨期摊销更符合配比原则。这类修正分析师应当采纳（修正方法论见 <a href="05-accounting-inconsistencies.html">P05</a>）。</li>
+        <li><strong>粉饰的调整</strong>：管理层为了把亏损"加回"成盈利，把研发费用、股权激励统统塞进备考报表的加回清单，直到凑出正数。Peloton 招股书的"调整后 EBITDA"最大一笔调整就是全额加回股权激励——这是数字整容。</li>
+      </ul>
+      <div class="callout">
+        <strong>第一性原理测试：</strong>对备考报表既不要全盘否定，也不要照单全收。每一项挪动、抹除与加回，都投入同一个问题里过筛——<em>这种腾挪在商业常识上讲得通吗？</em>讲得通（获客成本确实多年受益），采纳；讲不通（股权激励明明稀释了股东），拒绝。
+      </div>
+
+      <!-- ==================== S2A 生命周期 ==================== -->
+      <h2>八、S2A 实战一：生命周期视角下的利润表</h2>
+      <p>S2A 进入真实公司财报。读表之前，讲师先给了一个宏观框架：<strong>公司和人一样有生命周期</strong>——诞生、成长、成熟、衰退。利润表会忠实地反映公司所处的阶段：早期基数小，收入连年翻番但费用高企、深陷亏损；成长与成熟期收入增速放缓、亏损转为利润并趋于稳定；衰退期收入开始萎缩，利润随之回落。<strong>只看利润表，你大致就能判断一家公司在生命周期的哪个位置</strong>（个别公司能靠转型重塑自己）。</p>
+      <div id="fig-lifecycle"></div>
+      <p><strong>图 3 解读：</strong>蓝色曲线为收入增速的示意路径——从初创期的高位（Peloton 收入 2017→2018→2019 连年翻番，约 +100%）一路下滑，成熟期趋近于零（可口可乐 2017–2019 收入几乎没动），衰退期转负（丰田 2020 年收入低于 2019 年）。红色曲线为净利率的示意路径——初创期深负（Peloton 巨额亏损），成长与成熟期转正并见顶（Netflix 盈利、可口可乐利润更厚），衰退期回落。四个散点把本篇的四家样本公司钉在各自的生命周期位置上。这套框架的<strong>优点</strong>是读表前先有预期：年轻公司亏损不是警报而是常态，成熟公司零增长不是失误而是宿命；<strong>缺点</strong>是曲线只是示意，转型、并购与宏观冲击都会让个体偏离路径，且"阶段判断"本身带有事后归因的成分。</p>
+
+      <h2>九、S2A 实战二：四家公司穿透</h2>
+      <table>
+        <thead>
+          <tr><th>公司</th><th>生命周期</th><th>收入特征</th><th>盈利</th><th>关键科目与疑点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Peloton</strong><br>（健身单车 + 订阅）</td>
+            <td>初创期（2019 年上市，招股书数据）</td>
+            <td>2017→2018 翻番，2018→2019 再翻番——小基数高增长的典型</td>
+            <td>毛利健康（COGS 之外的费用尚未压顶），但<strong>净利润巨额亏损</strong>——年轻公司的常态，不必惊慌</td>
+            <td><strong>R&amp;D 疑点</strong>：研发明明创造多年效益，却被当作当期经营费用——与 Netflix、Total、Dr. Reddy's 共同的全行业失真</td>
+          </tr>
+          <tr>
+            <td><strong>Netflix</strong></td>
+            <td>成熟成长期</td>
+            <td>仍在增长但增速低于 Peloton——考虑到庞大基数，这个增速反而更令人印象深刻</td>
+            <td>净利润转正，已迈过初创阶段</td>
+            <td>① 报表底部并列<span class="term">基本每股收益</span><span class="term-en">（Basic EPS）</span>与<span class="term">稀释每股收益</span><span class="term-en">（Diluted EPS）</span>：后者假设期权与限制性股票全部行权，分母更大、数值更保守；② 年年出现的"外币换算损益"时正时负，<strong>不是</strong>非经常项；③ 技术与开发费用被费用化，同 R&amp;D 疑点</td>
+          </tr>
+          <tr>
+            <td><strong>可口可乐</strong></td>
+            <td>成熟期</td>
+            <td>2017–2019 收入几乎零增长——伟大的成长岁月已成往事</td>
+            <td>利润丰厚且稳定</td>
+            <td><strong>SG&amp;A ≈ COGS</strong>：糖浆与瓶装成本极低，最大开销是营销——因为品牌才是它最大的资产，而品牌靠广告维护；另有"权益收入或损失"（对外少数股权投资的映射）；附注中地理与业务口径混排</td>
+          </tr>
+          <tr>
+            <td><strong>丰田</strong></td>
+            <td>衰退边缘</td>
+            <td>2020 年收入<strong>低于</strong> 2019 年——传统车企正受新能源与电动车冲击</td>
+            <td>仍盈利但承压</td>
+            <td>① 报表中嵌入"<strong>金融业务收入 / 金融业务成本</strong>"——几乎每家车企内部都有一家为购车客户提供融资的"专属银行"，制造公司里塞进一家银行，分析时必须先解开这团乱麻；② 外汇损益与"关联公司权益收入"（大量交叉持股）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>一条清晰的演化线：Peloton 亏损 → Netflix 盈利 → 可口可乐利润更厚，而丰田演示了衰退期的样貌。<strong>读陌生公司利润表的第一步不是算比率，而是先定位生命周期</strong>——同一句"公司亏损了"，对 Peloton 是常态，对可口可乐就是灾难。</p>
+
+      <!-- ==================== 行业特有科目 ==================== -->
+      <h2>十、S2A 实战三：行业特有科目</h2>
+      <p>会计基本原则跨行业通用，但每个行业会长出自己独有的科目。三个典型样本：</p>
+      <table>
+        <thead>
+          <tr><th>行业 / 公司</th><th>特有科目</th><th>解读</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>大宗商品：道达尔（Total）</strong><br>（IFRS 与 GAAP 并不妨碍跨国比较）</td>
+            <td>① 收入下方第一个减项是<strong>消费税</strong>——石油公司的很大一块支出是向资源国政府缴税；② <strong>勘探成本</strong>——为找新油田的支出，与 Peloton 的 R&amp;D、Netflix 的技术费用同病：多年受益却被费用化；③ <strong>非控股权益</strong>——就是"交叉持股/少数股东损益"的另一种说法，同一件事不同术语</td>
+            <td>业务按石油业结构细分：勘探与生产（受油价影响最大）、天然气与可再生能源、炼油与化工、市场营销与服务，外加装总部费用的"公司"列</td>
+          </tr>
+          <tr>
+            <td><strong>银行：汇丰（HSBC）</strong></td>
+            <td>① 报表以<strong>利息收入 − 利息费用</strong>开头，再加手续费收支——"收入"对银行难以定义（贷款算不算收入？）；② <strong>坏账准备</strong>——为收不回的贷款计提；③ <strong>商誉减值</strong>——收购失败后对商誉的年度重估减记，本质是承认过去的错误投资，不是当期费用</td>
+            <td>对普通公司，债务是资本来源；对银行，<strong>债务是原材料</strong>（吸收存款再放贷）。因此"营业利润"在银行业没有意义，直接忽略——分析金融公司只该盯住归属于股东的净利润</td>
+          </tr>
+          <tr>
+            <td><strong>制药：Dr. Reddy's</strong></td>
+            <td><strong>R&amp;D 藏在"销售及其他费用"这个大杂烩科目里</strong>——而研发恰是制药公司最核心的资本性支出</td>
+            <td>若把 R&amp;D 正确地资本化并多年摊销，Dr. Reddy's 的<strong>真实利润远高于报表数字</strong>——报表系统性地低估了它的盈利能力</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>行业穿透的<strong>优点</strong>是让跨行业比较成为可能——准则正在趋同而非分化，毛利、营业利润、净利润的度量目标一致；<strong>缺点</strong>是金融服务公司是那个"例外"：毛利与营业利润口径在银行身上失效，只有净利润可比。</p>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>十一、收尾：对比与预告</h2>
+      <p>回到开篇的两条范式：<strong>权责发生制</strong>按交易实质确认收支——12 月 30 日的赊销计入当年，三年订阅只确认当年份额，利润更接近经营实质但引入了判断与粉饰空间；<strong>收付实现制</strong>按现金进出记账——简单客观却毫无经营含义，只配留给微型商户。现代企业被强制使用前者，于是"利润 ≠ 现金"成为一切财务分析的默认前提。</p>
+      <p>利润阶梯的每一级除以收入，就是一类利润率——这是下一篇的核心工具：</p>
+      <table>
+        <thead>
+          <tr><th>利润层级</th><th>对应利润率</th><th>它回答的问题</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>毛利（Gross Profit）</td><td>毛利率</td><td>产品本身的定价与直接成本之间还剩多少空间？</td></tr>
+          <tr><td>营业利润（EBIT）</td><td>营业利润率</td><td>剔除资本结构与税负后，主营业务的造血能力有多强？</td></tr>
+          <tr><td>税前利润（Taxable Income）</td><td>税前利润率</td><td>扛上债务负担之后还剩多少？</td></tr>
+          <tr><td>净利润（Net Income）</td><td>净利率</td><td>一切费用与税付清后，股东真正能拿走多少？</td></tr>
+        </tbody>
+      </table>
+      <p>四种利润率各自传递不同信号，如何系统计算、比较与解读，留待 <a href="06-financial-ratios.html">P06 财务比率</a>展开；利润与现金之间的鸿沟，则由 <a href="04-cash-flows.html">P04 现金流量表</a>负责缝合。</p>
+      <p><strong>本篇思想链路：</strong>核心问题（没有现金交割时，如何度量企业一段时期的经营成果？）→ 简化模型（权责发生制 + 支出三分法，把每笔收支按"效益年限与支付对象"归档到利润阶梯的固定层级）→ 推导（收入 − COGS = 毛利；毛利 − SG&amp;A 与折旧摊销 = EBIT；EBIT − 利息 = 税前利润；− 税 = 净利润；三年订阅 300 万 = 每年确认 100 万 + 递延收入 200/100/0）→ 实际应用（生命周期定位后再读表：Peloton 连年翻番的亏损是常态、丰田收入下滑是警报；银行的营业利润直接忽略；备考调整一律过"商业上讲得通吗"的筛子）→ 局限性（权责发生制的每个确认时点都是判断，给粉饰留门缝；会计折旧既不反映经济真实也不等于税务口径；生命周期曲线只是示意）。<strong>一句话收尾：利润表度量的是"交易发生"，不是"现金到账"——读懂它，就是读懂会计师眼中企业的样子，然后带着怀疑把它翻译成你自己的判断。</strong></p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/accounting-101/02-income-statement.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：支出三分法流向图 =====
+    Charts.tree(document.getElementById('fig-expense-triad'), {
+      width: 780,
+      layers: [
+        [{ id: 'root', label: '一笔支出：效益持续几年？付给谁？', width: 360, fill: '#f8fafc' }],
+        [
+          { id: 'opex', label: '经营费用（当年效益）', color: '#1d4ed8', width: 200 },
+          { id: 'capex', label: '资本支出（多年效益）', color: '#0f766e', width: 200 },
+          { id: 'fin', label: '财务费用（债务对价）', color: '#b45309', width: 200 },
+        ],
+        [
+          { id: 'opex1', label: '当年全额进利润表', color: '#1d4ed8', width: 200, fill: '#fff' },
+          { id: 'capex1', label: '先上资产负债表（资产）', color: '#0f766e', width: 200, fill: '#f0fdfa' },
+          { id: 'fin1', label: '隔离在营业利润线下方', color: '#b45309', width: 200, fill: '#fff7ed' },
+        ],
+        [
+          null,
+          { id: 'capex2', label: '经折旧/摊销逐年回流利润表', color: '#0f766e', width: 220, fill: '#fff' },
+          null,
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 'opex', color: '#1d4ed8' },
+        { from: 'root', to: 'capex', color: '#0f766e' },
+        { from: 'root', to: 'fin', color: '#b45309' },
+        { from: 'opex', to: 'opex1', color: '#1d4ed8' },
+        { from: 'capex', to: 'capex1', color: '#0f766e' },
+        { from: 'fin', to: 'fin1', color: '#b45309' },
+        { from: 'capex1', to: 'capex2', color: '#0f766e', label: '寿命期内分摊', labelDx: 56 },
+      ],
+      caption: '图 1：支出三分法流向图——经营费用当年进利润表；资本支出先上资产负债表，再经折旧摊销回流；财务费用隔离在营业利润线下方',
+      legend: [
+        { label: '经营费用路径（蓝）', color: '#1d4ed8', style: 'dot' },
+        { label: '资本支出路径（绿）', color: '#0f766e', style: 'dot' },
+        { label: '财务费用路径（橙）', color: '#b45309', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：三年订阅一次付清 300 万的收入确认与递延收入 =====
+    Charts.bar(document.getElementById('fig-deferred'), {
+      width: 680,
+      categories: ['第 1 年', '第 2 年', '第 3 年'],
+      series: [
+        { label: '当年确认收入（利润表）', color: '#2563eb', values: [100, 100, 100] },
+        { label: '年末递延收入余额（负债端）', color: '#b45309', values: [200, 100, 0] },
+      ],
+      yMax: 250, yStep: 50,
+      yLabel: '万元',
+      caption: '图 2：三年订阅一次收 300 万——权责发生制下每年只确认 100 万，余额挂递延收入逐年释放（200 → 100 → 0）',
+    });
+
+    // ===== 图3：生命周期 × 收入增速与净利率演化 + 四家公司定位 =====
+    Charts.xy(document.getElementById('fig-lifecycle'), {
+      width: 720,
+      xMax: 40, yMin: -50, yMax: 110,
+      xTicks: [{ v: 4, label: '初创期' }, { v: 16, label: '成长期' }, { v: 28, label: '成熟期' }, { v: 37, label: '衰退期' }],
+      yTicks: [-40, -20, 0, 20, 40, 60, 80, 100],
+      xLabel: '公司生命周期（示意）', yLabel: '%',
+      legendPosition: 'top',
+      series: [
+        {
+          label: '收入增速（蓝，示意）',
+          color: '#2563eb', type: 'spline',
+          points: [[0, 100], [5, 72], [10, 46], [15, 28], [20, 16], [25, 9], [30, 4], [35, 0], [40, -5]],
+        },
+        {
+          label: '净利率（红，示意）',
+          color: '#dc2626', type: 'spline',
+          points: [[0, -45], [5, -33], [10, -19], [15, -7], [20, 2], [25, 7], [30, 10], [35, 9], [40, 4]],
+        },
+      ],
+      markers: [
+        { x: 4, y: 100, label: 'Peloton：收入连年翻番 ≈+100%', color: '#7c3aed', labelDx: 10, labelDy: -4 },
+        { x: 16, y: 25, label: 'Netflix：成熟成长', color: '#0f766e', labelDx: 8, labelDy: 18 },
+        { x: 29, y: 3, label: '可口可乐：收入零增长', color: '#b45309', labelDx: -90, labelDy: -18 },
+        { x: 37, y: -3, label: '丰田：收入下滑（2020<2019）', color: '#dc2626', labelDx: -130, labelDy: 26 },
+      ],
+      legend: [
+        { label: '收入增速（蓝，示意）', color: '#2563eb', style: 'line' },
+        { label: '净利率（红，示意）', color: '#dc2626', style: 'line' },
+        { label: '公司定位（散点）', color: '#7c3aed', style: 'dot' },
+      ],
+      caption: '图 3：生命周期四阶段 × 收入增速与净利率演化（曲线为示意）；散点标注四家样本公司所处位置',
+    });
+  </script>
+</body>
+</html>

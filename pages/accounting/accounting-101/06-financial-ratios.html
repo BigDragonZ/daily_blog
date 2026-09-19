@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 财务比率：少即是多 - 财务会计基础 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>06 财务比率：少即是多</h1>
+      <p>本篇覆盖 Accounting 101《财务会计基础》的第 6 讲与第 6A 讲（Session 6: Financial Ratios；Session 6A: Financial Ratios (Examples)），也是本课的收官篇。三大报表（<a href="01-why-accounting.html">P01</a> 至 P04）提供了原材料，<a href="05-accounting-inconsistencies.html">P05</a> 完成了四处"修正手术"，本篇回答最后一个问题：<strong>如何把报表上的绝对数字，变成可以跨公司、跨时间比较的相对指标？</strong>讲师先给出五大比率族的分类框架，再把每一族应用到 Peloton、Netflix、可口可乐、丰田、道达尔（Total）、雷迪博士（Dr. Reddy's）六家公司身上——最后用一句话收束全课：比率是手段，不是目的。</p>
+
+      <!-- ==================== 引入 ==================== -->
+      <h2>一、引入：50 个比率的表格，是噪音</h2>
+      <p><strong>反直觉开场：</strong>打开任何一个金融数据终端，一家公司的比率页面能列出上百行——各种口径的利润率、周转率、杠杆倍数琳琅满目。按直觉，数据越多分析越扎实。但讲师的忠告恰恰相反：<em>"当我看到一张包含 50 个或 100 个比率的表格时，我看到的不是信息，是噪音。"</em></p>
+      <p>为什么还要算比率？因为<strong>绝对值无法比较</strong>。大公司的利润绝对值天然高于小公司，拿两家公司的净利润直接对比，无异于拿苹果和橘子作比较。解决办法是<span class="term">标准化</span><span class="term-en">（Standardization）</span>：把利润、投资或任何想比较的数字，除以一个所有公司共通的指标（收入、资产、投入资本），得到比率——跨公司、跨时间的比较这才有了共同语言。</p>
+      <p>但标准化的另一面是：<strong>分母的选择本身就是一种立场</strong>。用不同的标准化指标，会得到完全不同的比率，讲出完全不同的故事——这正是比率可以被用来<em>推进议程</em>的原因。想把公司显得便宜，就挑一个有利的分母；想显得稳健，就换另一个。所以讲师的方法论是"少即是多"（Less is More）：<strong>挑出你认为最能衡量这门生意的少数几个比率，坚持使用它们</strong>——利润率不要用十几种口径，选一个你偏好的，然后盯住它在公司间与时间上的变化。</p>
+      <div class="callout">
+        <strong>本篇立场：</strong>比率分析的价值不在"算得多"，而在"比得对"——跨公司（同一时点谁更强）、跨时间（同一公司在变好还是变坏）、跨基准（与行业或历史均值相比）。比率是帮你为公司构建一个<strong>关于未来的故事</strong>的工具，而不是孤立存在的数字。
+      </div>
+
+      <!-- ==================== 总览 ==================== -->
+      <h2>二、五大比率族总览</h2>
+      <div id="fig-overview"></div>
+      <p><strong>图 1 解读：</strong>五大比率族按"分母"分野——①<strong>利润率族</strong>分母一律是收入，分子沿利润阶梯逐级下行；②<strong>会计回报率族</strong>分母是资本（股东权益或投入资本），衡量每一美元资本赚回多少利润；③<strong>效率比率族</strong>把收入放上分子，分母是资产或投入资本，衡量资产的"创收效率"；④<strong>财务杠杆族</strong>衡量公司借了多少钱，分母可以是资本（D/E、D/Capital）也可以是现金流（Debt/EBITDA）；⑤<strong>流动性与信用风险族</strong>衡量公司履行付款义务的缓冲。五族合起来回答一个完整的问题链：赚钱吗？→ 资本用得好吗？→ 资产转得快吗？→ 借得多吗？→ 还得起吗？</p>
+      <p>这套五族分类的<strong>优点</strong>是把上百个比率归入五个可记忆的问题，每族内部只需精选一两个指标；<strong>缺点</strong>是每一族都依赖会计数字——分子分母都可能被 P05 讲的四大不一致扭曲，用之前先修正。</p>
+
+      <!-- ==================== 利润率 ==================== -->
+      <h2>三、利润率家族：收入分母上的六层阶梯</h2>
+      <p><strong>反直觉案例：</strong>视频会议公司 Zoom 的<span class="term">毛利率</span><span class="term-en">（Gross Margin）</span>高达 <strong>92%</strong>——每多卖一美元订阅，只有 8 美分要花在直接服务成本上。这意味着每增加一个用户的边际成本几乎为零，用户增长会以极高的"转换率"直接变成利润。毛利率这一个数字，就把一门生意的<strong>边际经济学</strong>讲透了。</p>
+      <p><span class="term">利润率</span><span class="term-en">（Profit Margins）</span>家族的规则最简单：<strong>分母一律是收入</strong>，差异全在分子——沿利润阶梯（P02）每往下走一层，就得到一种利润率：</p>
+      <table>
+        <thead>
+          <tr><th>利润率</th><th>分子（利润口径）</th><th>回答什么问题</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><span class="term">贡献毛益率</span><span class="term-en">（Contribution Margin）</span></strong></td>
+            <td>收入 − 与产品/服务直接相关的可变成本</td>
+            <td>每多卖一单位，边际上能赚多少？（Zoom 92% 的毛利率说明边际成本趋近于零）</td>
+          </tr>
+          <tr>
+            <td><strong><span class="term">毛利率</span><span class="term-en">（Gross Margin）</span></strong></td>
+            <td>贡献毛益 − 其余销货成本（COGS）</td>
+            <td>这门生意本身的边际经济性如何？</td>
+          </tr>
+          <tr>
+            <td><strong><span class="term">营业利润率</span><span class="term-en">（Operating Margin）</span></strong></td>
+            <td>毛利 − 研发（R&amp;D）、销售管理费用（SG&amp;A）等运营费用 = EBIT</td>
+            <td>覆盖全部运营成本后，核心业务赚不赚钱？</td>
+          </tr>
+          <tr>
+            <td><strong>税后营业利润率</strong></td>
+            <td>EBIT ×（1 − 有效税率）</td>
+            <td>剔除融资结构影响后，业务本身的税后盈利能力（ROIC 的分子）</td>
+          </tr>
+          <tr>
+            <td><strong><span class="term">净利率</span><span class="term-en">（Net Margin）</span></strong></td>
+            <td>利润表最底部的净利润（Net Income）</td>
+            <td>最后还留给股东多少？与营业利润率的差距暴露利息负担（高负债公司差距大）</td>
+          </tr>
+          <tr>
+            <td><strong>EBITDA 利润率</strong></td>
+            <td>息税折旧摊销前利润（EBITDA）</td>
+            <td>业务产生现金利润的能力——<strong>银行与贷款方的视角</strong>：够不够还利息和本金</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>阶梯内部的<strong>层间落差</strong>比任何单层数字都更有信息量。最值得记住的一条：<strong>毛利率很高、营业利润率很低</strong>，说明研发、营销等其他运营费用吃掉了毛利——如果这些费用相对固定（增速慢于收入），那么随着收入规模扩大，营业利润率会通过<span class="term">规模经济</span><span class="term-en">（Economies of Scale）</span>快速提升。这正是年轻科技公司的典型形态：今天的亏损里埋着明天的利润弹性。</p>
+      <p>从生命周期看（S2A 已埋钩子）：年轻公司毛利率可以是正的，但营业利润率与净利率为负；成长中营业利润率先转正，净利率后转正；成熟期若公司加大借贷，营业利润率与净利率之间的差距会因利息费用而拉大。利润率家族的<strong>优点</strong>是口径统一、层层可解释；<strong>缺点</strong>是分母只有收入——它完全看不见公司为赚这些利润投入了多少资本，这个问题要交给下一族。</p>
+
+      <!-- ==================== 会计回报率 ==================== -->
+      <h2>四、会计回报率：分子必须配得上分母</h2>
+      <p><strong>反直觉之处：</strong>"这家公司回报率 25%"——这句话在说出分子与分母之前毫无意义。净利润除以投入资本？营业利润除以股东权益？错配的分子分母能"制造"出任何想要的数字。<span class="term">会计回报率</span><span class="term-en">（Accounting Returns）</span>的第一戒律是<strong>一致性原则</strong>：分子的回报必须匹配分母的资本来源——谁出的钱，就配谁的回报。</p>
+      <ul>
+        <li><strong><span class="term">净资产收益率</span><span class="term-en">（Return on Equity, ROE）</span></strong> = 净利润 ÷ <span class="term">股东权益</span><span class="term-en">（Shareholders' Equity）</span>。净利润是还完利息后归属股东的回报，股东权益是股东投入的资本——股东视角，两者匹配。这是最常见的会计回报率。</li>
+        <li><strong><span class="term">投入资本回报率</span><span class="term-en">（Return on Invested Capital, ROIC）</span></strong> = 税后营业利润 EBIT ×（1 − t）÷ <span class="term">投入资本</span><span class="term-en">（Invested Capital = 总债务 + 股东权益 − 现金）</span>。分子是归属于<strong>全体资本提供者</strong>（股东+债权人）的税后回报，分母是他们共同投入的资本——全资本视角。减去现金，是因为现金通常未被投资于核心运营。ROIC 是公司金融与估值中至关重要的指标。</li>
+      </ul>
+      <div class="callout">
+        <strong>与 P05 的衔接：</strong>ROIC 的分子分母都是会计数字，算之前必须先做 P05 的修正手术——<strong>租赁资本化</strong>会把租赁债务加进投入资本（2019 年后准则已自动完成）、把 EBIT 调整为剔除融资成本口径；<strong>研发资本化</strong>会把研发资产加进投入资本、把 EBIT 加回当期研发减摊销。不修正，研发密集型公司的 ROIC 会被系统性扭曲（分母漏掉了最大的资本投入）。
+      </div>
+      <p>会计回报率的<strong>优点</strong>是把"盈利能力"和"资本规模"绑在一起，是衡量竞争优势与再投资质量的锚；<strong>缺点</strong>是双重脆弱——分子受会计规则摆布（研发费用化、租赁口径），分母是历史成本的账面值（P03：账面权益是"终极历史数据"），两头都可能失真。记住：会计回报率是<strong>业务经济性与会计选择的综合效应</strong>，读数时永远要拆这两层。</p>
+
+      <!-- ==================== 效率比率 ==================== -->
+      <h2>五、效率比率：每一美元资本产生多少收入</h2>
+      <p><strong>反直觉之处：</strong>增长是好事——收入扩大、利润变厚，谁会反对增长？讲师的回答是：增长有<strong>阴暗面</strong>。为了实现规模扩张，你必须先把钱投进去——建厂房、做研发、囤内容。增长可能创造价值，也可能摧毁价值，关键在于<strong>每一美元再投资能换回多少收入</strong>。衡量这件事的就是效率比率。</p>
+      <p><span class="term">效率比率</span><span class="term-en">（Efficiency Ratios）</span>又称<span class="term">周转率</span><span class="term-en">（Turnover Ratios）</span>，规则与利润率恰好颠倒：<strong>收入在分子</strong>，分母是某种资产或资本：</p>
+      <ul>
+        <li><strong>营运资本周转率</strong> = 收入 ÷ 营运资本。越高说明营运资本管理越高效（注意 P04 的提醒：成长公司的营运资本是个"现金陷阱"）。</li>
+        <li><strong>总资产周转率</strong> = 收入 ÷ 总资产。每一美元资产产生多少收入。</li>
+        <li><strong>销售额÷投入资本</strong><span class="term-en">（Sales to Invested Capital）</span> = 收入 ÷ 投入资本（与 ROIC 同一个分母）。讲师最偏好的一个：它直接回答<strong>成长型公司的再投资需求</strong>——想支撑预期的收入增长，公司必须再投多少钱。有些轻资产生意这个数字可达 5、7 甚至 10，意味着增长几乎不花钱。</li>
+      </ul>
+      <p>效率比率的<strong>优点</strong>是把"增长"从免费午餐还原成一笔明码标价的买卖，是估值中连接增长与再投资的桥梁；<strong>缺点</strong>是分母仍是账面口径——P03 讲的品牌、研发等"不在表上的资产"会让轻资产公司的周转率虚高。</p>
+
+      <!-- ==================== 财务杠杆 ==================== -->
+      <h2>六、财务杠杆比率：三个定义选择题</h2>
+      <p><strong>反直觉之处：</strong>"这家公司负债率多少？"——在回答之前，你必须先连过三道选择题，每一道的答案不同，算出的比率可以天差地别。<span class="term">财务杠杆比率</span><span class="term-en">（Financial Leverage Ratios）</span>没有一个"天然正确"的版本：</p>
+      <ul>
+        <li><strong>选择题一：债务含不含租赁？</strong> 只算长期债务、全部带息债务，还是把租赁等合同承诺也算进来？讲师的立场（与 P05 一致）：<strong>租赁承诺就是债务</strong>，必须含。</li>
+        <li><strong>选择题二：账面还是市值？</strong> 分母用资产负债表上的账面权益，还是市场给出的市值？账面是历史成本的残骸，市值是当下的共识——两者可以相差几十倍（下文 Netflix 案例）。</li>
+        <li><strong>选择题三：总债务还是净债务？</strong> <span class="term">净债务</span><span class="term-en">（Net Debt）</span> = 总债务 − 现金。一家公司有 1 亿美元债务、同时握着 1 亿美元现金，它实质上"没有净债"——随时可以用现金还清。</li>
+      </ul>
+      <p>过完了定义关，才是公式。<strong>基于资本</strong>的口径：<span class="term">负债权益比</span><span class="term-en">（Debt to Equity Ratio, D/E）</span> = 债务 ÷ 股东权益；<span class="term">负债资本比</span><span class="term-en">（Debt to Capital Ratio）</span> = 债务 ÷（债务 + 股东权益）。<strong>基于现金流</strong>的口径：<strong>Debt/EBITDA</strong> = 债务 ÷ 息税折旧摊销前利润，衡量债务相当于几年的"现金利润"。</p>
+      <p>为什么如此在意杠杆？因为债务是双刃剑：借钱的理由是利息可抵税、债务比股权便宜；代价是创造了<strong>还不上的可能性</strong>——<span class="term">财务困境</span><span class="term-en">（Financial Distress）</span>。杠杆比率就是在"税盾收益"与"困境风险"之间称重的秤。讲师还有一个实操忠告：<strong>从不使用数据服务商现成的债务比率</strong>——不是不信它们，而是看不到计算口径的透明度。债务比率不过是一个数除以另一个数，自己动手，定义权才在你手里。这一族的<strong>优点</strong>是直击偿债风险这一生死问题；<strong>缺点</strong>是定义敏感性极高，不同口径间不可比，且账面口径严重滞后。</p>
+
+      <!-- ==================== 流动性与信用风险 ==================== -->
+      <h2>七、流动性与信用风险比率：缓冲有多厚</h2>
+      <p>最后一个问题最朴素：<strong>这家公司还得起钱吗？</strong>分两类指标：</p>
+      <ul>
+        <li><strong>偿付能力比率（Coverage Ratios）</strong>衡量利润对固定支出的"缓冲厚度"。<span class="term">利息保障倍数</span><span class="term-en">（Interest Coverage Ratio）</span> = 营业利润 ÷ 利息支出——倍数 5 意味着营业利润是利息的 5 倍，越高越安全。<span class="term">固定费用保障倍数</span><span class="term-en">（Fixed Charge Coverage Ratio）</span>在利息之外再计入租赁付款、债务偿还等其他固定支出，更保守、更全面。</li>
+        <li><strong>流动性比率（Liquidity Ratios）</strong>衡量短期偿债风险。<span class="term">流动比率</span><span class="term-en">（Current Ratio）</span> = 流动资产 ÷ 流动负债；<span class="term">速动比率</span><span class="term-en">（Quick Ratio）</span>从流动资产中剔除流动性较差的存货后再除，是更保守的版本。</li>
+      </ul>
+      <p>这一族的<strong>优点</strong>是把"困境风险"从抽象概念变成可监控的数字缓冲；<strong>缺点</strong>很快会在实证中暴露——固定费用保障倍数会被不稳定的债务偿还额污染，而流动/速动比率是为"存货+应收账款"的旧经济设计的，对现代公司近乎失效（详见第九节）。</p>
+
+      <!-- ==================== 生命周期 ==================== -->
+      <h2>八、S6A：比率的生命周期演化</h2>
+      <p>S2A 讲过公司像人一样有生老病死；S6A 把这个视角推进一步：<strong>同一个比率，在生命周期的不同阶段应该呈现完全不同的面貌</strong>。拿成熟公司的标准去要求一家初创公司，就像拿成人的体温计去量婴儿——读数本身没有错，错的是参照系。</p>
+      <div id="fig-lifecycle"></div>
+      <p><strong>图 2 解读：</strong>三条示意曲线分别是一族代表性比率随生命周期的演化（纵轴为示意水平，三族单位不同，只比较形状）。<strong>蓝色利润率</strong>：年轻公司毛利率为正，但营业利润率与净利率皆为负；成长中<strong>营业利润率在坐标点 (11, 0) 率先转正</strong>，净利率随后转正，成熟期稳定在高位。<strong>绿色会计回报率</strong>：年轻公司为负（甚至因投入资本为负而无法计算），随成熟转正并一路爬升，在公司巅峰期（约 (30, 25)）见顶，进入衰退期后回落。<strong>橙色债务比率</strong>：年轻公司<strong>不应该有债务</strong>——左上角红色星标 (2, 42) 是警告：年轻公司的高债务是致命的，可能直接把公司拖垮；债务比率在成长后期与成熟期上升是健康的（此时有稳定现金流支撑税盾）；衰退期<strong>应当</strong>随业务收缩而下降（曲线右端 (40, 20) 的回落）——不主动去杠杆的衰退公司是在自寻危机。</p>
+      <p>生命周期视角的<strong>优点</strong>是给每一个比率读数装上"年龄参照系"，避免跨阶段误比；<strong>缺点</strong>是它只描述趋势——具体公司在哪个阶段、拐点何时到来，曲线不会告诉你。</p>
+
+      <!-- ==================== 六公司实证 ==================== -->
+      <h2>九、S6A 实证：六家公司横切面</h2>
+      <p>讲师把五大比率族应用到六家贯穿全课的公司——Peloton（年轻）、Netflix（成熟成长）、可口可乐（成熟）、丰田（衰退边缘）、道达尔（成熟能源）、雷迪博士（印度制药）。六家公司横跨不同生命周期阶段与行业，正好检验每一族比率的解释力与陷阱。</p>
+
+      <h3>9.1 利润率与有效税率：生命周期与生意属性的双重烙印</h3>
+      <table>
+        <thead>
+          <tr><th>公司（2019）</th><th>毛利率</th><th>营业利润率</th><th>税后营业利润率</th><th>净利率</th><th>有效税率</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Peloton</td><td>正（偏低，年轻的反映）</td><td><strong>负</strong></td><td>负</td><td><strong>负</strong></td><td>0%（持续亏损）</td></tr>
+          <tr><td>Netflix</td><td>正</td><td>正</td><td>正（= 营业利润率 × (1 − 9.5%)）</td><td>正</td><td>9.5%</td></tr>
+          <tr><td>可口可乐</td><td>高</td><td><strong>高</strong>（糖浆与瓶子成本极低，主要开支是营销）</td><td>高</td><td>高</td><td>16.8%</td></tr>
+          <tr><td>丰田</td><td>低得多</td><td>低（造一辆车的成本远高于造一瓶苏打水）</td><td>低</td><td>低</td><td>29%</td></tr>
+          <tr><td>道达尔</td><td>低得多</td><td>低（与丰田同组的重资产生意）</td><td>低</td><td>低</td><td>—（讲义未披露）</td></tr>
+          <tr><td>雷迪博士</td><td><strong>≈ 80%</strong></td><td>高（与可口可乐同组）</td><td>高</td><td>高</td><td><strong>负税率</strong>（2019 年巨额税收抵免）</td></tr>
+        </tbody>
+      </table>
+      <p>两点解读。其一，<strong>生命周期的烙印</strong>：Peloton 正毛利率 + 负营业/净利率，正是图 2 蓝色曲线最左端的形态——毛利健康但固定费用尚未被收入规模覆盖；随着公司变老，利润率会沿曲线上移，Netflix 正处在"从成长走向成熟、利润率如何演化"的观察窗口。其二，<strong>生意属性的烙印</strong>：可口可乐与雷迪博士的营业利润率天然高于丰田与道达尔——这不是谁比谁优秀，是生意的成本结构不同；制造业的单件成本远高于"糖水+瓶子"或专利药。另外，营业利润率与净利率之间的落差主要暴露债务——负债越重，利息把营业利润侵蚀得越狠。读表纪律：<strong>利润率只应在相似阶段、相似生意之间比较</strong>。</p>
+
+      <h3>9.2 会计回报率：Peloton 的 ROE 为何是 −79%</h3>
+      <table>
+        <thead>
+          <tr><th>公司（2019）</th><th>ROE（净利润 ÷ 账面权益）</th><th>ROIC（税后 EBIT ÷ 投入资本）</th><th>解读</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Peloton</td><td><strong>−79%</strong></td><td><strong>无法计算</strong>（投入资本为负）</td><td>持续亏损 + 账面权益极少 → ROE 深度为负；现金 &gt; 账面权益 + 债务 → 投入资本为负，ROIC 失去意义</td></tr>
+          <tr><td>Netflix</td><td>六家中最高组</td><td>最高组</td><td>成长型公司的高回报</td></tr>
+          <tr><td>可口可乐</td><td>六家中最高组</td><td>最高组</td><td>拥有巨大竞争优势（进入壁垒）的企业，回报率理应高企</td></tr>
+          <tr><td>丰田</td><td>个位数</td><td>低得多</td><td>低回报反映行业的激烈竞争（进入壁垒低，高回报会引来竞争把它压低）</td></tr>
+          <tr><td>道达尔</td><td>个位数</td><td>低得多</td><td>同上——竞争更激烈的行业</td></tr>
+          <tr><td>雷迪博士</td><td>回升至较高</td><td>高</td><td><strong>小心</strong>：研发被费用化 → 账面权益与投入资本漏掉最大资产 → 回报率可能被系统性高估</td></tr>
+        </tbody>
+      </table>
+      <p>这张表把会计回报率的"双重解读"演绎得淋漓尽致。经济学层面：如果会计回报率能近似真实的经济回报，那么 Netflix、可口可乐式的高回报是<strong>竞争优势与进入壁垒</strong>的信号，丰田、道达尔式的个位数回报是<strong>行业竞争性</strong>的信号——壁垒低的行业，高回报会引来竞争把它打回去。会计层面：雷迪博士的高回报要打个问号——对研发最大的资本支出被费用化的公司（P05），投入资本被低估，回报率被高估；若按 Amgen 案例的方法把研发资本化，回报率会明显回落。至于 Peloton：投入资本 = 账面权益 + 债务 − 现金，它的现金超过了权益与债务之和，分母为负，比率直接失去意义——<strong>对烧钱换增长的年轻公司，会计回报率尚未到登场的时刻</strong>，请回到生命周期参照系。</p>
+
+      <h3>9.3 效率比率与"增长的阴暗面"</h3>
+      <p>六家公司中，Netflix 是"创收效率"的冠军：<strong>销售额÷投入资本 = 1.71</strong>——每投入一美元资本，一年产生 1.71 美元收入。这意味着在其他条件相同的情况下，Netflix 为支撑增长所需的再投资，少于同组任何一家公司。更值得注意的趋势是：<strong>五年前这个数字是 1.5</strong>——随着规模扩大，Netflix 每一美元资本产生收入的效率在改善。</p>
+      <p>但请同时记住讲师的两句降温。其一，1.71 也不算高——资本极轻的生意这个数字可达 5、7 甚至 10。其二，效率比率衡量的是"<strong>增长的阴暗面</strong>"：增长必须花钱买来，这个数字告诉你价格。增长本身无所谓好坏——再投资回报高于资本成本，增长创造价值；反之，增长越快毁灭价值越快。过去 20 年最伟大的公司，恰恰是那些用更少的资本实现规模扩张的公司。</p>
+
+      <h3>9.4 债务比率实证：账面 100% vs 市值 7%，信哪个？</h3>
+      <p><strong>反直觉案例：</strong>Netflix 的账面负债权益比超过 100%——按资产负债表，它借的钱比股东的钱还多，看起来杠杆惊人。但同一家公司的<strong>市值</strong>负债权益比只有约 <strong>7%</strong>。两个数字差出一个数量级，必有一个在说谎——说谎的是账面：<strong>会计师说 Netflix 的权益值 76 亿美元，市场说它值 2,160 亿美元</strong>。讲师的选择毫不含糊：信市场。（技术细节：从账面切换到市值时，他用市值权益替换账面权益，但保留账面债务作为市值债务的近似——因为账面债务与市值债务通常相当接近，这个"草率"无伤大雅。）</p>
+      <table>
+        <thead>
+          <tr><th>公司（2019）</th><th>账面 D/E</th><th>市值 D/E</th><th>信号解读</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Netflix</td><td><strong>&gt; 100%</strong></td><td><strong>≈ 7%</strong></td><td>账面权益 76 亿 vs 市值 2,160 亿 → 账面被研发/内容的费用化处理严重压低；信市场口径</td></tr>
+          <tr><td>丰田</td><td>&gt; 100%</td><td>≈ 账面水平（两者接近）</td><td>账面与市值给出一致信息；且丰田是六家中<strong>杠杆最高</strong>的——D/E、D/Capital、Debt/EBITDA 三个口径一致指向（注意丰田体内嵌着一家"银行"）</td></tr>
+          <tr><td>雷迪博士</td><td colspan="2"><strong>怎么算都几乎无债</strong></td><td>账面/市值、总债务/净债务，任何口径下杠杆都极低</td></tr>
+          <tr><td>Peloton / 可口可乐 / 道达尔</td><td colspan="2">无一家杠杆极高</td><td>六家之内仍有明显梯度：丰田最高，雷迪博士最低</td></tr>
+        </tbody>
+      </table>
+      <p>Netflix 与丰田构成完美的对照组：同样的账面 D/E（都超过 100%），市值口径下一个骤降到 7%、一个几乎原地不动——因为丰田的账面与市值本就接近。教训：<strong>账面与市值口径的分歧本身，就是关于"会计漏记了多少价值"的诊断信息</strong>；分歧越大，越要追问账面权益里少了什么（对 Netflix，答案是内容与品牌）。</p>
+
+      <h3>9.5 覆盖与流动性：哪些信号可信</h3>
+      <p>六家公司的覆盖比率给出三幕戏。第一幕，<strong>丰田的悖论</strong>：它的利息保障倍数出奇地高（EBIT 远远覆盖利息），看起来极安全；但把租赁付款、债务偿还等固定支出加进来后，<strong>固定费用保障倍数暴露出更高的风险</strong>——覆盖口径越全面，丰田的缓冲越薄，与其"六家中杠杆最高"互相印证。第二幕，<strong>可口可乐的反例</strong>：它的利息保障倍数与固定费用保障倍数差异巨大——原因是固定费用里计入了<strong>债务偿还额</strong>，而偿还安排天然不稳定（某些年份高、某些年份低），把比率打得忽上忽下。对这种明显失真，讲师的选择是：<strong>信利息保障倍数</strong>，它更真实地衡量困境风险。第三幕，雷迪博士两个比率都极好看（几乎无债，分母趋近于零），Netflix 两个维度都传递中性信号——没有风险警报。</p>
+      <p>至于流动比率与速动比率，讲师的 verdict 近乎残忍：<strong>对今天要分析的公司，它们几乎无用</strong>。它们诞生于"存货+应收账款"主导的制造业时代；更反直觉的是，高流动比率不但不意味着低风险，<strong>在很多情况下它甚至是估值毒药</strong>——账上堆积的现金与存货，往往是资本被低效闲置的证据。</p>
+
+      <!-- ==================== 正常化 ==================== -->
+      <h2>十、正常化：别用单年数据给公司定罪</h2>
+      <p><strong>反直觉之处：</strong>以上所有比率，分母分子都来自"去年"这一年的报表。如果这家公司收入不稳定，你手里那张比率表可能只是一个<strong>特别好的年份（或特别坏的年份）的快照</strong>——拿它外推，就是拿运气当能力。</p>
+      <p>解药是<span class="term">正常化</span><span class="term-en">（Normalization）</span>：不用单年，改用<strong>一段时间的平均值</strong>——怀疑 2019 年异常好，就把过去几年收入与利润平均后再算比率。但对<strong>年轻公司</strong>，正常化更复杂：公司本身在飞速变大，"过去几年平均"平均掉的不是波动，而是成长本身。此时正常化只能建立在对未来的判断上——你必须先回答"Peloton 两年或五年后会是什么样子"，再倒推它今天"应该有"的比率水平。正常化的<strong>优点</strong>是滤掉单年噪音，让比率代表"常态"而非"偶然"；<strong>缺点</strong>是它把客观计算变成了主观判断——尤其对年轻公司，正常化后的数字里藏着你对这家公司未来的全部假设。</p>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>十一、收尾：少即是多，面向未来</h2>
+      <table>
+        <thead>
+          <tr><th>比率族</th><th>回答什么问题</th><th>分子</th><th>分母</th><th>常见陷阱</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>利润率</strong></td>
+            <td>这门生意赚钱吗？每一美元收入留下多少？</td>
+            <td>利润阶梯各层（毛利 → EBIT → 税后 EBIT → 净利润 / EBITDA）</td>
+            <td>一律为收入</td>
+            <td>看不见资本投入；跨阶段/跨生意误比；净利率被利息负担扭曲</td>
+          </tr>
+          <tr>
+            <td><strong>会计回报率</strong></td>
+            <td>每一美元资本赚回多少？有没有竞争优势？</td>
+            <td>净利润（ROE）/ 税后 EBIT（ROIC）</td>
+            <td>股东权益 / 投入资本（债务+权益−现金）</td>
+            <td>分子分母必须匹配；研发/租赁不修正则失真（雷迪博士）；投入资本为负时失效（Peloton）</td>
+          </tr>
+          <tr>
+            <td><strong>效率比率</strong></td>
+            <td>每一美元资产/资本产生多少收入？增长要花多少钱买？</td>
+            <td>一律为收入</td>
+            <td>营运资本 / 总资产 / 投入资本</td>
+            <td>账面分母漏记表外资产；"增长的阴暗面"——效率高不等于增长创造价值</td>
+          </tr>
+          <tr>
+            <td><strong>财务杠杆</strong></td>
+            <td>借了多少钱？税盾收益 vs 困境风险的天平在哪边？</td>
+            <td>债务（含租赁；总债务或净债务）</td>
+            <td>权益（D/E）/ 资本（D/Capital）/ EBITDA</td>
+            <td>三个定义选择题（租赁、账面 vs 市值、总 vs 净）让口径不可比（Netflix 100% vs 7%）；别用服务商现成口径</td>
+          </tr>
+          <tr>
+            <td><strong>流动性与信用风险</strong></td>
+            <td>还得起钱吗？缓冲有多厚？</td>
+            <td>EBIT（保障倍数）/ 流动资产（剔除存货为速动）</td>
+            <td>利息与固定支出 / 流动负债</td>
+            <td>固定费用保障倍数被债务偿还波动污染（可口可乐）；流动/速动比率对现代公司近乎无用，高流动比率可能是估值毒药</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（绝对数字无法跨公司、跨时间比较，如何标准化？）→ 简化模型（五大比率族，每族一个共同分母：收入 / 资本 / 资产 / 债务 / 固定支出）→ 推导（一致性原则：分子回报匹配分母资本来源；投入资本 = 债务 + 权益 − 现金；净债务 = 总债务 − 现金）→ 实际应用（先按 P05 修正再算 ROIC；六公司横切面：生命周期阶段 × 生意属性 × 会计选择三层解读比率差异；账面 vs 市值分歧本身是诊断信息）→ 局限性（每一族都是会计数字的函数，分子分母皆可被扭曲；生命周期曲线只给趋势不给拐点；正常化把计算变成对未来的主观判断）。</p>
+      <p><strong>全课收束（P01–P06）：</strong>六页走完了一条完整的链——<a href="01-why-accounting.html">P01</a> 用三个问题立起三大报表；P02 沿利润阶梯读懂权责发生制下的利润；P03 在历史成本与公允价值的夹缝中读懂资产负债表的混合信息；P04 用现金流量表验证利润的含金量并推出自由现金流；<a href="05-accounting-inconsistencies.html">P05</a> 对税率、租赁、研发与股权激励做了四处修正手术；本篇 P06 把修正后的数字压缩成五大比率族。讲师最后的赠言是这门课的题眼：<em>"比率是达到目的的手段，而不是目的本身。算比率，是因为你想知道公司擅长什么、不擅长什么，危险与机遇在哪里。你的工作是<strong>用比率为公司构建一个关于未来的故事——过去已成定局，你无法改变</strong>，反复咀嚼过去十年的比率毫无意义。把焦点放在未来。"</em>至此，"够用的会计"装备完毕：报表是原材料，比率是透镜，而故事——关于未来的那个故事——永远由你自己讲。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/accounting-101/06-financial-ratios.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：五大比率族总览 =====
+    Charts.tree(document.getElementById('fig-overview'), {
+      width: 760,
+      layers: [
+        [{ id: 'root', label: '财务比率：绝对值 ÷ 共同分母 = 可比较', width: 380, fill: '#f8fafc' }],
+        [
+          { id: 'm', label: '① 利润率', color: '#1d4ed8', width: 132 },
+          { id: 'r', label: '② 会计回报率', color: '#0f766e', width: 132 },
+          { id: 'e', label: '③ 效率比率', color: '#7c3aed', width: 132 },
+          { id: 'l', label: '④ 财务杠杆', color: '#b45309', width: 132 },
+          { id: 'c', label: '⑤ 流动性与信用', color: '#dc2626', width: 132 },
+        ],
+        [
+          { id: 'm1', label: '各层利润 ÷ 收入', color: '#1d4ed8', width: 132, fill: '#fff' },
+          { id: 'r1', label: '回报 ÷ 权益·资本', color: '#0f766e', width: 132, fill: '#f0fdfa' },
+          { id: 'e1', label: '收入 ÷ 资产·资本', color: '#7c3aed', width: 132, fill: '#f5f3ff' },
+          { id: 'l1', label: '债务 ÷ 资本·EBITDA', color: '#b45309', width: 132, fill: '#fff7ed' },
+          { id: 'c1', label: '利润 ÷ 固定支出', color: '#dc2626', width: 132, fill: '#fef2f2' },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 'm', color: '#1d4ed8' },
+        { from: 'root', to: 'r', color: '#0f766e' },
+        { from: 'root', to: 'e', color: '#7c3aed' },
+        { from: 'root', to: 'l', color: '#b45309' },
+        { from: 'root', to: 'c', color: '#dc2626' },
+        { from: 'm', to: 'm1', color: '#1d4ed8' },
+        { from: 'r', to: 'r1', color: '#0f766e' },
+        { from: 'e', to: 'e1', color: '#7c3aed' },
+        { from: 'l', to: 'l1', color: '#b45309' },
+        { from: 'c', to: 'c1', color: '#dc2626' },
+      ],
+      caption: '图 1：五大比率族总览——分母分野：收入 / 资本 / 资产 / 债务 / 固定支出',
+      legend: [
+        { label: '利润率（蓝）', color: '#1d4ed8', style: 'dot' },
+        { label: '会计回报率（绿）', color: '#0f766e', style: 'dot' },
+        { label: '效率比率（紫）', color: '#7c3aed', style: 'dot' },
+        { label: '财务杠杆（橙）', color: '#b45309', style: 'dot' },
+        { label: '流动性与信用（红）', color: '#dc2626', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：三族比率的生命周期演化（示意） =====
+    Charts.xy(document.getElementById('fig-lifecycle'), {
+      width: 720,
+      xMax: 40, yMin: -20, yMax: 45,
+      xTicks: [{ v: 2, label: '初创' }, { v: 12, label: '成长' }, { v: 24, label: '成熟' }, { v: 36, label: '衰退' }],
+      yTicks: [-20, -10, 0, 10, 20, 30, 40],
+      xLabel: '公司生命周期（示意）', yLabel: '比率水平（示意）',
+      legendPosition: 'top',
+      series: [
+        {
+          label: '利润率（营业/净利率为代表）',
+          color: '#2563eb', type: 'spline',
+          points: [[0, -15], [3, -12], [6, -8], [9, -3], [11, 0], [14, 4], [18, 8], [22, 11], [26, 13], [30, 14], [34, 13.5], [38, 12], [40, 11]],
+        },
+        {
+          label: '会计回报率（ROE/ROIC）',
+          color: '#0f766e', type: 'spline',
+          points: [[0, -10], [4, -8], [8, -4], [12, 2], [16, 8], [20, 14], [24, 20], [27, 24], [30, 25], [33, 23], [36, 18], [40, 12]],
+        },
+        {
+          label: '债务比率（D/Capital 为代表）',
+          color: '#b45309', type: 'spline',
+          points: [[0, 2], [4, 2], [8, 4], [12, 8], [16, 14], [20, 20], [24, 26], [28, 30], [32, 32], [36, 28], [40, 20]],
+        },
+      ],
+      markers: [
+        { x: 11, y: 0, label: '营业利润率先转正 (11, 0)', color: '#2563eb', labelDx: 8, labelDy: 22 },
+        { x: 30, y: 25, label: '回报率峰值 (30, 25)', color: '#0f766e', labelDx: 10, labelDy: -12 },
+        { x: 2, y: 42, label: '年轻公司高债务 = 致命（禁区）', color: '#dc2626', shape: 'star', labelDx: 14, labelDy: 4, legend: '警示' },
+        { x: 40, y: 20, label: '衰退期应去杠杆 (40, 20)', color: '#b45309', labelDx: -150, labelDy: 26 },
+      ],
+      caption: '图 2：利润率 / 会计回报率 / 债务比率随生命周期的演化（示意曲线；三族单位不同，仅比较形状）',
+    });
+  </script>
+</body>
+</html>

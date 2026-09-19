@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 资产负债表：历史成本 vs 公允价值 - 财务会计基础 - Daily Blog</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../../../index.html">Daily Blog</a>
+      <nav class="top-nav" id="topnav"></nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav id="menu"></nav>
+    </aside>
+    <main class="main" id="main-content">
+      <h1>03 资产负债表：历史成本 vs 公允价值</h1>
+      <p>本篇覆盖 Accounting 101《财务会计基础》的第 3 讲（Session 3: The Balance Sheet）与第 3A 讲（Session 3A: The Balance Sheet - Examples）。P01 把<a href="../accounting-101/01-why-accounting.html">资产负债表</a>定位为"时点快照"，并留下悬念：公司最有价值的资产可能不在表上。本篇把这个悬念拆开——先看会计师内部关于"资产负债表该记什么"的三派之争，再逐项解剖资产（固定/金融/无形）、负债与股东权益的记账规则，最后用 Peloton、Netflix、可口可乐、丰田等真实公司的报表穿透这些规则在实践中的样子。</p>
+
+      <!-- ==================== 引入 ==================== -->
+      <h2>一、引入：2000 亿美元的可口可乐，账上找不到"品牌"</h2>
+      <p><strong>反直觉开场：</strong>可口可乐的总市值约 2000 亿美元。任何有商业常识的人都知道，这家公司最值钱的资产是那个红色商标——品牌。现在打开它的资产负债表去找"品牌"这一项：<strong>找不到</strong>。报表上倒是有"无形资产"科目，列着商誉、客户关系、瓶装商特许权之类，合计账面价值不到十亿美元——相对于 2000 亿的总价值，约等于零。</p>
+      <p>更讽刺的是会计师的态度：他们谈论无形资产时滔滔不绝，反复强调无形资产占公司总价值的比重越来越高——这完全正确；但轮到记账，落到资产负债表上的无形资产却反映了另一番景象。讲师的评语是：<strong>"说大话，办小事"</strong>（talk the talk, but don't walk the walk）。本篇的全部内容，就是弄清为什么会出现这种落差：它源于会计师内部一场从未解决的路线之争。</p>
+
+      <!-- ==================== 三种世界观 ==================== -->
+      <h2>二、三种世界观：资产负债表到底该记什么？</h2>
+      <p>即使在会计师之间，关于资产负债表应该捕捉什么信息也存在对立的观点：</p>
+      <ol>
+        <li><strong>记录已投资本</strong>：报表应反映你实际投进资产的钱——土地、厂房、设备当初花了多少。这是传统观点，即<span class="term">历史成本</span><span class="term-en">（Historical Cost）</span>原则；</li>
+        <li><strong>记录当前价值</strong>：报表应反映这些资产<strong>今天</strong>在市场上值多少。这是<span class="term">公允价值会计</span><span class="term-en">（Fair Value Accounting, FVA）</span>的核心主张；</li>
+        <li><strong>记录清算价值</strong>：报表应反映现在把这些资产拿到市场上卖掉能收回多少，即<span class="term">清算价值</span><span class="term-en">（Liquidation Value）</span>视角。</li>
+      </ol>
+      <div id="fig-worldview"></div>
+      <p><strong>图 1 解读：</strong>三派各有道理——历史成本客观可验证，公允价值对估值最有用，清算价值回答"最坏情况能收回多少"。但现实的资产负债表<strong>没有</strong>选择其中任何一条路走到底：公允价值只被应用到部分项目（主要是金融资产），其余仍是历史成本。结果就是讲师所说的"不伦不类"（neither fish nor fowl）的大杂烩——三十五年前的报表虽有局限，但至少你知道它记的是什么；今天的报表两不靠，反而是"最糟糕的情况"。这套折中的<strong>优点</strong>是部分资产（有价证券）有了市价信息，比纯历史成本更贴近现实；<strong>缺点</strong>是混合口径让跨科目、跨公司的比较变得困难，使用者必须逐项弄清每个数字是按什么规则记的——这正是本篇后面每一节的任务。</p>
+      <div class="callout">
+        <strong>记住这条主线：</strong>读资产负债表的每一个科目时，先问一个问题——"这个数字是历史成本、公允价值，还是别的什么？"同一个报表里，答案会随科目而变。
+      </div>
+
+      <!-- ==================== 资产端 ==================== -->
+      <h2>三、资产端：四类资产的记账规则</h2>
+
+      <h3>3.1 固定资产与流动资产：成本减折旧，还是按市价？</h3>
+      <p><span class="term">固定资产</span><span class="term-en">（Fixed Assets）</span>是使用寿命长的实物资产（土地、厂房、设备），<span class="term">流动资产</span><span class="term-en">（Current Assets）</span>是寿命少于一年的资产（现金、应收账款、存货）。两类资产正被两套规则拉扯：</p>
+      <ul>
+        <li><strong>旧法（历史成本）</strong>：按购买时的成本入账，再减去自购买以来累计的价值损耗，即<span class="term">折旧</span><span class="term-en">（Depreciation）</span>——账面值 = 原始成本 − 累计折旧；</li>
+        <li><strong>新法（公允价值）</strong>：按资产今天的市场价值入账，价格涨跌都反映在报表上。</li>
+      </ul>
+      <p>两法差异有多大，取决于两个变量：<strong>公司越老、资产越"固定"，差异越大</strong>。道理很直观：存货放不了 15 或 20 年，成本与市价的差距来不及拉开；但一块 30 年前买的土地，账面成本可能只有今天市价的零头。讲师本人立场鲜明——会计师不该去估值资产，公允价值会计恰恰在逼他们做这件不擅长的事；但他也承认，对年代久远、资产偏重的公司，历史成本数字的参考意义确实有限。</p>
+
+      <h3>3.2 金融资产：一张持股比例驱动的决策树</h3>
+      <p><span class="term">金融资产</span><span class="term-en">（Financial Assets）</span>是公司对证券或其他公司的投资，它的记账规则是全表最"分叉"的一块——怎么记，取决于有没有公开市价、持股比例多高、持有目的是什么：</p>
+      <div id="fig-fin-tree"></div>
+      <p><strong>图 2 解读：</strong>决策分三层——</p>
+      <ol>
+        <li><strong>公开交易证券</strong>：有公开市价可查，会计界几乎完全的共识是<span class="term">按市价计价</span><span class="term-en">（Mark-to-Market）</span>，持股价值随市场价格波动；</li>
+        <li><strong>少数股权</strong>（如持有另一家公司 3%、5%、10%）：再看持有目的——为<strong>交易</strong>而持有，必须按市价；为<strong>长期业务</strong>目的持有，可按账面价值，并采用<span class="term">权益法</span><span class="term-en">（Equity Method）</span>：在营业利润线下单独报告你在该公司利润或亏损中所占的份额；</li>
+        <li><strong>多数股权</strong>（持股 &gt; 50%，取得控制权）：必须<span class="term">并表</span><span class="term-en">（Consolidation）</span>——把子公司 100% 的资产、负债、收入和营业利润全部并入母公司报表，再把不属于母公司的那部分（比如 40%）单列为<span class="term">非控股权益</span><span class="term-en">（Non-controlling Interest, NCI）</span>。</li>
+      </ol>
+      <p>这套规则树的<strong>优点</strong>是按"控制程度与持有意图"匹配计量方式，逻辑自洽；<strong>缺点</strong>是同是"金融资产"科目，底下可能混着市价、账面价值与并表数字三种口径——只看报表表面数字会被误导，必须深入附注弄清每一项是怎么记的（汇丰与可口可乐的案例见第六节）。</p>
+
+      <h3>3.3 商誉：会计中最具破坏性的"轧差虚构项"</h3>
+      <p>报表上最常见的<span class="term">无形资产</span><span class="term-en">（Intangible Assets）</span>根本不是一种资产——它叫<span class="term">商誉</span><span class="term-en">（Goodwill）</span>。先看一个反直觉的事实：<strong>如果一家公司纯靠内生增长发展壮大、从不收购，它的资产负债表上商誉为零</strong>——哪怕它是世界上最伟大的公司。商誉只在收购时诞生：</p>
+      <p style="text-align:center;"><strong>商誉 = 收购支付价格 − 被收购公司的会计账面价值</strong></p>
+      <p>也就是说，商誉是为了让资产负债表在收购后仍然平衡而插入的"调节项"（plug figure）——你多付的钱没地方放，就塞进商誉。讲师的定性毫不留情：商誉是<strong>"虚构"（fiction）</strong>，是会计中最具破坏性、最危险的项目，因为它几乎不反映任何真实的东西；但它却是会计口径下"无形资产"的最大组成部分。</p>
+      <p><strong>商誉的后续处理也经历了一次制度转向：</strong>过去，商誉按 30 或 40 年以等额分期自动<span class="term">摊销</span><span class="term-en">（Amortization）</span>——雷打不动，每年扣一笔，与实际价值变化无关。自 90 年代末起，GAAP 与 IFRS 改为<span class="term">减值测试制</span><span class="term-en">（Impairment）</span>：每年评估被收购业务，若判断当初买贵了、价值已下跌，就把商誉减记；价值上升则不做任何处理（注意这个不对称：只许减、不许增）。</p>
+      <div id="fig-impair"></div>
+      <p><strong>图 3 解读：</strong>以"四年前 100 亿美元收购一家公司"为例——被收购业务的真实价值（蓝线）在第二年就已跌到 20 亿，市场早已消化这个事实；但报表上的商誉（橙色虚线）要到第四年减值测试时才一次性减记。会计师声称减值测试给投资者提供了更多信息，可观察市场对巨额商誉减值的反应：<strong>几乎没有反应</strong>——因为到会计师确认时，这早已是旧闻。减值制的<strong>优点</strong>是比机械摊销更接近经济现实、至少承认价值会跌；<strong>缺点</strong>是确认严重滞后且不对称（只减不增），制造的是噪音而非信息。对分析者的启示：别把减值当作"新闻"，把它当作会计系统迟到的收据。</p>
+
+      <!-- ==================== 负债端 ==================== -->
+      <h2>四、负债端：流动负债三分类与债务附注</h2>
+      <p><span class="term">流动负债</span><span class="term-en">（Current Liabilities）</span>是一年内到期的义务，广义上分为三类，性质截然不同：</p>
+      <ol>
+        <li><strong>无息流动负债</strong>：应付账款、供应商信贷等，经营过程中自然产生、无利息负担——计入非现金营运资本；</li>
+        <li><strong>有息短期负债</strong>：短期借款、长期债务的一年内到期部分——本质是<strong>融资决策</strong>而非经营决策。计算非现金<span class="term">营运资本</span><span class="term-en">（Working Capital, WC）</span>时应把它<strong>剔除</strong>，否则会污染经营效率指标；</li>
+        <li><strong>递延项目</strong>：递延收入、递延税款、递延薪金等"已收款未履约 / 已发生未支付"的时间差项目——逐项看性质（Netflix 案例见第七节）。</li>
+      </ol>
+      <p><strong>长期债务</strong>有三种形式：公司债券、银行贷款与租赁债务。一个重要变化：2019 年以前，<span class="term">租赁承诺</span><span class="term-en">（Lease Commitments）</span>在大多数情况下不出现在资产负债表上（租来的门店、设备产生的付款义务藏在附注里）；<strong>2019 年起，所有公司必须把租赁承诺上表</strong>，同时确认租赁资产与租赁负债——这让大量"轻资产"公司的债务一夜显形。另一个与资产端的不对称：当资产端在按市价计价的方向上推进时，<strong>债务端大部分仍按发行时筹集的原始金额记录</strong>，而非今天的市场价值。</p>
+      <p>不过债务端有一口富矿：<strong>报表附注</strong>。通过附注通常能找到——按年度划分的债务到期时间表（哪一年要还多少）、固定利率还是浮动利率、是否为可转换债务、货币构成与票面利率。注意票面利率是<strong>借款时承诺的账面利率</strong>，不是当前市场利率，不能直接当作估值中的债务成本（债务成本将在后续财务分析中讨论）。附注挖掘的<strong>优点</strong>是信息真实详尽、能重建债务全貌；<strong>缺点</strong>是它散落在报表正文之外，只看主表的人永远看不到。</p>
+
+      <!-- ==================== 股东权益 ==================== -->
+      <h2>五、股东权益：终极历史数据，和它越来越奇怪的读数</h2>
+      <p><span class="term">股东权益</span><span class="term-en">（Shareholders' Equity）</span>传统上是"终极历史数据"：它反映公司自成立以来的全部历史活动——每一笔留存收益的累积、每一次增发、每一次回购。随着按市价计价的推行，权益又叠加了资产重估的涨落，变得更加嘈杂和波动。会计师这么做的野心，是让账面股东权益去逼近<span class="term">市值</span><span class="term-en">（Market Capitalization, Market Cap）</span>——市场对股权价值的度量。讲师的判断：成功机会微乎其微，但他们会继续尝试。读股东权益时，记住四个要点：</p>
+      <ol>
+        <li><strong>票面价值已无意义</strong>：权益明细里的<span class="term">票面价值</span><span class="term-en">（Par Value）</span>是纸质股票证书时代的遗迹，如今完全没有经济含义，可以直接忽略；</li>
+        <li><strong>公司越老，权益通常越大</strong>：靠<span class="term">留存收益</span><span class="term-en">（Retained Earnings）</span>逐年累积—— Coca-Cola 式的成熟公司权益体量就是这么来的；</li>
+        <li><strong>研发费用化会压低权益</strong>：只有被资本化的支出才进资产负债表；当研发、技术、内容创作这类实质上的资本性支出被当作运营费用处理时（药企、科技公司、Netflix 皆如此），资产被低估，股东权益也被同步压低；</li>
+        <li><strong>回购能把权益打成负数</strong>：<span class="term">股票回购</span><span class="term-en">（Buybacks）</span>必须按回购花费的金额冲减股东权益，回购的股票或注销、或记为<span class="term">库存股</span><span class="term-en">（Treasury Stock）</span>（日后可再发行，但在表上持续压低权益）。由于市值通常是账面价值的数倍，一次规模不大的回购就可能耗尽账面权益。<strong>美国约八分之一的公司账面股东权益为负</strong>——这不等于濒临破产，它可能只说明公司持续亏损（年轻公司常见），或者回购太猛。</li>
+      </ol>
+      <div class="callout warn">
+        <strong>分析者须知：</strong>账面权益为负 ≠ 资不抵债的市场信号。看到负权益先问两个问题——是常年亏损磨掉的，还是大额回购冲掉的？前者指向经营问题，后者可能只是资本配置选择，两者的估值含义天差地别。
+      </div>
+
+      <!-- ==================== S3A 生命周期 ==================== -->
+      <h2>六、S3A 穿透（上）：资产负债表随生命周期如何变形</h2>
+      <p>资产负债表是公司历史的反映——公司走到生命周期哪个阶段，报表就长成什么样。下表是六个阶段的特征总览（与分析利润表时用的是同一个生命周期框架）：</p>
+      <table>
+        <thead>
+          <tr><th>生命周期阶段</th><th>资产基础</th><th>债务</th><th>股东权益</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>初创</strong>（Young）</td><td>很小，但增长快；最大资产往往是现金</td><td>几乎没有——初创公司承担不起债务，除非作为最后手段</td><td><strong>可能为负</strong>：持续亏损把权益磨成负数</td></tr>
+          <tr><td><strong>成长初创</strong>（Young Growth）</td><td>仍然很小，快速增长</td><td>保持低位或为零</td><td>可能转正——不是因为有盈利，而是风险投资或 IPO 注入了股权资本</td></tr>
+          <tr><td><strong>高增长</strong>（High Growth）</td><td>在更大的基数上继续增长</td><td>继续低位</td><td>开始累积：公司开始盈利</td></tr>
+          <tr><td><strong>成熟成长</strong>（Mature Growth）</td><td>趋于稳定</td><td>开始增长</td><td>增长：留存收益不断累积</td></tr>
+          <tr><td><strong>成熟稳定</strong>（Mature Stable）</td><td>已经稳定</td><td>通常规模较大且仍在增长</td><td><strong>可能缩减</strong>：大额分红或回购（往往由债务资助）冲减权益</td></tr>
+          <tr><td><strong>衰退</strong>（Declining）</td><td>开始下降</td><td>健康公司应随资产基础同步下降；<strong>债务不降则陷入危机</strong></td><td>随亏损与收缩而下降</td></tr>
+        </tbody>
+      </table>
+      <p>读表的实用推论：看到"资产小 + 现金为主 + 负权益"，别急着喊破产——这可能是再正常不过的初创公司报表；看到"资产平稳 + 债务庞大 + 权益缩减"，也别急着喊危机——这可能只是成熟公司在用债务资助回购分红。真正危险的是错配：<strong>衰退中的公司资产在缩、债务却不缩</strong>，那才是困境信号。</p>
+
+      <!-- ==================== S3A 四公司 ==================== -->
+      <h2>七、S3A 穿透（中）：四家公司的资产负债表</h2>
+      <p>沿生命周期拾级而上，看四家真实公司的报表如何印证上述规律：</p>
+      <table>
+        <thead>
+          <tr><th>公司（阶段）</th><th>资产端看点</th><th>负债端看点</th><th>权益端看点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Peloton</strong><br>（初创）</td>
+            <td>总资产从 2.71 亿美元一年内增至 8.65 亿美元——基数小、增速猛；最大单项资产是现金与有价证券。但公司大部分价值来自<strong>未来增长</strong>，而未来增长不在任何资产负债表上</td>
+            <td>几乎无债务</td>
+            <td><strong>负权益</strong>：持续亏损所致，属初创常态</td>
+          </tr>
+          <tr>
+            <td><strong>Netflix</strong><br>（成长）</td>
+            <td>最大资产是<strong>非流动内容资产</strong>（电视剧、电影）——难得地，最大的"无形资产"真的在表上（内容是外购/资本化的）</td>
+            <td>流动负债中有<span class="term">递延收入</span><span class="term-en">（Deferred Revenue）</span>：12 个月订阅预收款，钱已收、服务尚欠——已收款未履约的义务</td>
+            <td>普通股面值 0.001 美元——票面价值无意义的活标本，只是对实体股票证书时代的致敬</td>
+          </tr>
+          <tr>
+            <td><strong>可口可乐</strong><br>（成熟成长）</td>
+            <td>资产基数庞大但增长放缓；<strong>权益法投资</strong>按账面价值记录（非交易目的），读数需打折扣；<strong>递延所得税资产</strong>= 往年多缴的税，未来可少缴（但现在拿不回现金）；<strong>商誉</strong>只是收购史的账簿记录；最值钱的品牌不在表上</td>
+            <td>附注披露债务的货币构成、到期时间与票面利率（账面利率，非市场债务成本）</td>
+            <td><strong>库存股</strong>压低账面权益：回购的股票未注销，留待日后可能再发行</td>
+          </tr>
+          <tr>
+            <td><strong>丰田</strong><br>（成熟稳定）</td>
+            <td>总资产与收入一样近乎停滞；<strong>金融应收款</strong>暴露其体内嵌着一家"专属银行"（为购车客户提供贷款）；<strong>关联公司投资</strong>是日本企业常见的交叉持股，同样按账面价值</td>
+            <td><strong>应计养老金与遣散费</strong>：养老金计划资金缺口在部分国家必须上表（各国准则不一）；<strong>递延所得税负债</strong> = 往年少缴的税，未来要补——与可口可乐的递延所得税资产恰好镜像</td>
+            <td>多年累积的留存收益，体量可观</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>四家公司连成一条线：<strong>公司越成熟，资产负债表越"充实"，但充实不等于更接近真实价值</strong>——可口可乐的表比 Peloton 厚得多，可它漏掉的资产（品牌）也贵得多。</p>
+
+      <!-- ==================== S3A 行业差异 ==================== -->
+      <h2>八、S3A 穿透（下）：行业给报表打上的烙印</h2>
+      <p>与利润表一样，不同行业会在资产负债表上留下行业特有的科目与风险：</p>
+      <table>
+        <thead>
+          <tr><th>行业（代表公司）</th><th>报表特征</th><th>分析含义</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>大宗商品</strong><br>（道达尔 Total）</td>
+            <td>存货是已开采的石油：油价从每桶 60 美元跌到 35 美元，存货价值一夜缩水——不像制造业存货那样稳定；权益端还有<strong>货币换算调整</strong><span class="term-en">（Currency Translation Adjustment, CTA）</span>：汇率波动对价值的影响绕过利润表、直接调整权益</td>
+            <td>大宗商品公司的账面值随商品价格剧烈波动，历史成本参考意义更弱</td>
+          </tr>
+          <tr>
+            <td><strong>金融服务</strong><br>（汇丰 HSBC）</td>
+            <td>整张表几乎都是金融资产；金融资产易获市价，按市价计价在银行业早已实行；并表非全资子公司产生<strong>非控股权益</strong>——并进来 100% 的资产负债，再把不属于自己那份单列</td>
+            <td>银行报表是"公允价值含量"最高的报表；读银行表本质是读其资产质量</td>
+          </tr>
+          <tr>
+            <td><strong>制药</strong><br>（Dr. Reddy's Labs）</td>
+            <td>最大的资产应该是自研专利——但研发费用化规则下，它<strong>不在表上</strong>；表上的"无形资产"主要是收购产生的商誉</td>
+            <td>对内生研发驱动型公司，资产负债表系统性漏掉最值钱的资产，账面值与真实价值的裂口最大</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ==================== 收尾 ==================== -->
+      <h2>九、收尾对比：历史成本 vs 公允价值</h2>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>历史成本（Historical Cost）</th><th>公允价值（Fair Value）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>记什么</td><td>当初为资产投入的资本（成本 − 折旧）</td><td>资产今天的市场价值</td></tr>
+          <tr><td>优点</td><td>客观、可验证、不被估值判断污染；使用者清楚数字是什么</td><td>信息更贴近现状，对估值与决策更相关</td></tr>
+          <tr><td>缺点</td><td>越老的资产越失真，内生无形资产完全缺席</td><td>逼会计师做估值（他们并不擅长）；引入主观判断与波动；只减不增等不对称规则制造噪音</td></tr>
+          <tr><td>谁在用 / 现状</td><td>固定资产、存货、负债端（按发行额记录）仍是主流</td><td>公开交易证券、交易目的持股、银行金融资产；2019 年起租赁上表也是向"确认更多现实义务"迈进</td></tr>
+        </tbody>
+      </table>
+      <p><strong>本篇思想链路：</strong>核心问题（资产负债表该记录已投资本、当前价值还是清算价值？）→ 简化模型（三派世界观 → 现实中两不靠的混合报表）→ 推导（按科目拆解记账规则：固定资产两法拉扯、金融资产按持股比例决策树、商誉=收购轧差项、租赁上表、权益被研发费用化与回购双向压低）→ 实际应用（生命周期六阶段特征 + Peloton/Netflix/可口可乐/丰田/道达尔/汇丰/Dr. Reddy's 七家公司穿透）→ 局限性（报表传递的是<strong>复杂而混合的信息</strong>：既不完全是你投入的资本，也不完全是今天的价值；逐科目录入口径是阅读的前提，而公司最值钱的资产——品牌、专利、未来增长——可能根本不在表上）。</p>
+    </main>
+    <aside class="toc-wrap">
+      <div class="toc-sticky" id="toc"></div>
+    </aside>
+  </div>
+
+  <script src="../../../assets/js/menu.js"></script>
+  <script src="../../../assets/js/charts.js"></script>
+  <script>
+    renderNav({
+      topEl: document.getElementById('topnav'),
+      sideEl: document.getElementById('menu'),
+      basePath: '../../../',
+      activeLink: 'pages/accounting/accounting-101/03-balance-sheet.html',
+    });
+    renderToc(document.getElementById('toc'), document.getElementById('main-content'));
+
+    // ===== 图1：资产负债表的三种世界观 —— 三派之争汇入"不伦不类"的现实 =====
+    Charts.tree(document.getElementById('fig-worldview'), {
+      width: 780,
+      layers: [
+        [{ id: 'root', label: '资产负债表应该记录什么？', width: 300, fill: '#f8fafc' }],
+        [
+          { id: 'hc', label: '已投资本（历史成本）', color: '#1d4ed8' },
+          { id: 'fv', label: '当前价值（公允价值）', color: '#0f766e', fill: '#f0fdfa' },
+          { id: 'lv', label: '清算价值', color: '#b45309', fill: '#fff7ed' },
+        ],
+        [{ id: 'mix', label: '现实：两不靠的混合报表（neither fish nor fowl）', width: 400, color: '#b91c1c', fill: '#fef2f2' }],
+      ],
+      edges: [
+        { from: 'root', to: 'hc', color: '#1d4ed8', label: '传统观点', labelDx: -34, labelDy: -2 },
+        { from: 'root', to: 'fv', color: '#0f766e', label: '公允价值会计主张', labelDy: -2 },
+        { from: 'root', to: 'lv', color: '#b45309', label: '清算视角', labelDx: 30, labelDy: -2 },
+        { from: 'hc', to: 'mix', color: '#1d4ed8', label: '大部分科目仍用', labelDx: -46, labelDy: -2 },
+        { from: 'fv', to: 'mix', color: '#0f766e', label: '只应用于部分项目', labelDy: -2 },
+        { from: 'lv', to: 'mix', color: '#b45309', label: '基本未采纳', labelDx: 40, labelDy: -2 },
+      ],
+      caption: '图 1：资产负债表的三派世界观——历史成本、公允价值、清算价值谁也没赢，现实是三者的混合体',
+      legend: [
+        { label: '历史成本（蓝，主流）', color: '#1d4ed8', style: 'dot' },
+        { label: '公允价值（绿，部分采用）', color: '#0f766e', style: 'dot' },
+        { label: '清算价值（橙，未采纳）', color: '#b45309', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：金融资产记账规则决策树 —— 按公开市价、持股比例、持有目的分叉 =====
+    Charts.tree(document.getElementById('fig-fin-tree'), {
+      width: 920,
+      layers: [
+        [{ id: 'root', label: '金融资产如何记账？', width: 260, fill: '#f8fafc' }],
+        [
+          { id: 'pub', label: '公开交易证券', color: '#1d4ed8' },
+          { id: 'stake', label: '持有其他公司股权', color: '#b45309', fill: '#fff7ed' },
+        ],
+        [
+          { id: 'mv', label: '按市价计价（Mark-to-Market）', color: '#1d4ed8' },
+          null,
+          { id: 'minor', label: '少数股权', color: '#b45309', fill: '#fff7ed' },
+          { id: 'major', label: '多数股权', color: '#b45309', fill: '#fff7ed' },
+        ],
+        [
+          null, null, null,
+          { id: 'trade', label: '按市价计价', color: '#0f766e', fill: '#f0fdfa' },
+          { id: 'hold', label: '账面价值 + 权益法', color: '#0f766e', fill: '#f0fdfa' },
+          { id: 'consol', label: '并表 100% + 非控股权益', color: '#7c3aed', fill: '#f5f3ff' },
+        ],
+      ],
+      edges: [
+        { from: 'root', to: 'pub', color: '#1d4ed8', label: '有公开市价', labelDx: -30, labelDy: -2 },
+        { from: 'root', to: 'stake', color: '#b45309', label: '持有 3% / 10% / 60%…', labelDx: 30, labelDy: -2 },
+        { from: 'pub', to: 'mv', color: '#1d4ed8', label: '几乎完全共识', labelDx: -52, labelDy: -2 },
+        { from: 'stake', to: 'minor', color: '#b45309', label: '持股 < 50%', labelDx: -8, labelDy: -2 },
+        { from: 'stake', to: 'major', color: '#b45309', label: '持股 > 50%（控制）', labelDx: 44, labelDy: -2 },
+        { from: 'minor', to: 'trade', color: '#0f766e', label: '为交易而持有', labelDx: -46, labelDy: -2 },
+        { from: 'minor', to: 'hold', color: '#0f766e', label: '长期业务目的', labelDx: 24, labelDy: 14 },
+        { from: 'major', to: 'consol', color: '#7c3aed', label: '并表', labelDx: 26, labelDy: -2 },
+      ],
+      caption: '图 2：金融资产记账规则决策树——先看有无公开市价，再看持股比例（50% 为界），少数股权再看持有目的',
+      legend: [
+        { label: '公开交易证券（蓝）', color: '#1d4ed8', style: 'dot' },
+        { label: '持股比例判断（橙）', color: '#b45309', style: 'dot' },
+        { label: '少数股权处理（绿）', color: '#0f766e', style: 'dot' },
+        { label: '多数股权并表（紫）', color: '#7c3aed', style: 'dot' },
+      ],
+    });
+
+    // ===== 图3：商誉减值时滞 —— 真实价值早已下跌，账面商誉滞后确认 =====
+    Charts.xy(document.getElementById('fig-impair'), {
+      xLabel: '时间（收购后年数）', yLabel: '价值（亿美元）',
+      xMax: 5, yMax: 120, xStep: 1, yStep: 20,
+      legendPosition: 'top',
+      series: [
+        {
+          label: '被收购业务的真实价值（市场早已知晓）',
+          color: '#2563eb', type: 'spline',
+          points: [[0, 100], [0.6, 78], [1.2, 52], [1.8, 28], [2, 20], [3, 20], [4, 20], [5, 20]],
+        },
+        {
+          label: '报表上的商誉相关账面值（减值才调整）',
+          color: '#d97706', dash: true, type: 'linear',
+          points: [[0, 100], [3.97, 100], [4, 20], [5, 20]],
+        },
+      ],
+      markers: [
+        { x: 0, y: 100, label: 'T0：100 亿收购', color: '#374151', labelDx: 12, labelDy: -6 },
+        { x: 2, y: 20, label: 'T2：价值已跌至 20 亿（市场已定价）', color: '#2563eb', labelDx: 10, labelDy: 22 },
+        { x: 4, y: 20, label: 'T4：减值确认（旧闻，市场无反应）', color: '#d97706', labelDx: -14, labelDy: -22 },
+      ],
+      caption: '图 3：商誉减值的信息时滞——真实价值第 2 年已跌到 20 亿，账面值第 4 年减值时才跟上（示意）',
+    });
+  </script>
+</body>
+</html>
