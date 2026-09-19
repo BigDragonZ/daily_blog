@@ -57,6 +57,8 @@
 
       <h3>1.4 课程地图：从 FA 到 MA</h3>
       <p>讲师的两门课共用连续章节号：<strong>财务会计 Ch1–Ch12</strong>（导论、记录交易、调整分录与会计循环、货币时间价值、商业活动、现金与内控、存货 LIFO/FIFO、应收与坏账、长期资产、流动负债、长期负债与债券、股权）→ <strong>管理会计 Ch13–Ch25</strong>。Ch13 现金流量表与 Ch14 财务报表分析是两课之间的过渡带（本课程 P02–P04 处理，与财务会计内容重叠处会锚链回去）；Ch15 起进入管理会计核心：分批/分步成本法、作业成本法、本量利分析、预算、标准成本与差异、资本预算、相关成本决策——对应本站 P05–P15。成本（Cost）是前半段的主角：看似简单，实则相当复杂，下一节就开箱。</p>
+      <div id="fig-coursemap"></div>
+      <p><strong>图 1 解读：</strong>两门课共用连续章节号，构成一条完整学习路径：<strong>财务会计 Ch1–12</strong>（本站《财务会计》P01–P12）打底四大报表与记账循环；<strong>Ch13 现金流量表、Ch14 财务报表分析</strong>是两课之间的过渡带，与本课程 P02–P04 重叠（页面内会锚链回财务会计对应章节）；<strong>Ch15 起进入管理会计核心</strong>——成本法、本量利、预算、差异分析、资本预算与相关成本决策，对应本站 P05–P15。看懂这张地图的意义在于：管理会计不是另起炉灶，而是站在财务会计算出的报表之上，向"对内决策"延伸。</p>
 
       <!-- ==================== 二 ==================== -->
       <h2>二、成本分类</h2>
@@ -71,7 +73,7 @@
         <li><strong>问题三：能直接追溯到产品吗？</strong>（仅对产品成本继续追问）→ <span class="term">直接材料</span><span class="term-en">（Direct Materials, DM）</span> / <span class="term">直接人工</span><span class="term-en">（Direct Labor, DL）</span> / <span class="term">制造费用</span><span class="term-en">（Manufacturing Overhead, MOH）</span>。</li>
       </ul>
       <div id="fig-costtree"></div>
-      <p><strong>图 1 解读：</strong>这是后两个问题的分类树，也是讲师整节课反复使用的判断问句——<strong>"Did it happen in the factory?"（这事发生在工厂里吗？）</strong>工厂内 → 产品成本，再按可追溯性分 DM/DL/MOH；工厂外 → 期间成本，按用途分销售/管理/研发。产品成本的<strong>优点</strong>是与存货计价、利润确认无缝衔接（P05 展开 COGM/COGS 流转）；<strong>缺点</strong>是 MOH 是个"杂物桶"，间接成本归集的粗糙会造成成本扭曲（P08 作业成本法要解决的就是它）。</p>
+      <p><strong>图 2 解读：</strong>这是后两个问题的分类树，也是讲师整节课反复使用的判断问句——<strong>"Did it happen in the factory?"（这事发生在工厂里吗？）</strong>工厂内 → 产品成本，再按可追溯性分 DM/DL/MOH；工厂外 → 期间成本，按用途分销售/管理/研发。产品成本的<strong>优点</strong>是与存货计价、利润确认无缝衔接（P05 展开 COGM/COGS 流转）；<strong>缺点</strong>是 MOH 是个"杂物桶"，间接成本归集的粗糙会造成成本扭曲（P08 作业成本法要解决的就是它）。</p>
 
       <h3>2.3 判断口诀与汉堡小例</h3>
       <ul>
@@ -134,7 +136,32 @@
     });
     renderToc(document.getElementById('toc'), document.getElementById('main-content'));
 
-    // ===== 图1：成本分类决策树 —— 先问"发生在工厂里吗"，产品成本再分 DM/DL/MOH =====
+    // ===== 图1：FA→MA 课程章节地图 —— 连续章节号 Ch1–12 → Ch13/14 过渡带 → Ch15–25 =====
+    Charts.tree(document.getElementById('fig-coursemap'), {
+      width: 680,
+      layers: [
+        [{ id: 'fa', label: 'FA Ch1–12 报表基础', color: '#1d4ed8', width: 190 }],
+        [
+          { id: 'b13', label: 'Ch13 现金流量表', color: '#6d28d9', fill: '#f5f3ff', width: 160 },
+          { id: 'b14', label: 'Ch14 报表分析', color: '#6d28d9', fill: '#f5f3ff', width: 160 },
+        ],
+        [{ id: 'ma', label: 'MA Ch15–25 成本与决策', color: '#047857', fill: '#f0fdf4', width: 220 }],
+      ],
+      edges: [
+        { from: 'fa', to: 'b13', color: '#6d28d9', label: '本站 P02', labelDx: -70 },
+        { from: 'fa', to: 'b14', color: '#6d28d9', label: '本站 P03–04', labelDx: 84 },
+        { from: 'b13', to: 'ma', color: '#047857' },
+        { from: 'b14', to: 'ma', color: '#047857', label: '本站 P05–15', labelDx: 84 },
+      ],
+      caption: '图 1：FA→MA 课程章节地图——财务会计 Ch1–12 打底，Ch13/14 为两课过渡带（本站 P02–P04），Ch15–25 进入管理会计核心（本站 P05–P15）',
+      legend: [
+        { label: '财务会计（本站《财务会计》P01–P12）', color: '#1d4ed8', style: 'dot' },
+        { label: '过渡带（两课重叠，本站 P02–P04）', color: '#6d28d9', style: 'dot' },
+        { label: '管理会计核心（本站 P05–P15）', color: '#047857', style: 'dot' },
+      ],
+    });
+
+    // ===== 图2：成本分类决策树 —— 先问"发生在工厂里吗"，产品成本再分 DM/DL/MOH =====
     Charts.tree(document.getElementById('fig-costtree'), {
       width: 760,
       layers: [
@@ -162,7 +189,7 @@
         { from: 'per', to: 'adm', color: '#b45309' },
         { from: 'per', to: 'rnd', color: '#b45309' },
       ],
-      caption: '图 1：成本分类决策树——先按"工厂内/外"分产品成本与期间成本，产品成本再按可追溯性分 DM/DL/MOH，期间成本按用途分销售/管理/研发',
+      caption: '图 2：成本分类决策树——先按"工厂内/外"分产品成本与期间成本，产品成本再按可追溯性分 DM/DL/MOH，期间成本按用途分销售/管理/研发',
       legend: [
         { label: '产品成本（= DM + DL + MOH）', color: '#1d4ed8', style: 'dot' },
         { label: '期间成本（销售/管理/研发）', color: '#b45309', style: 'dot' },
